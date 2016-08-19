@@ -1,0 +1,37 @@
+    <RUN alias="{$barcode}.fastq" center_name="{$center_name}" broker_name="{$broker_name}">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="{$center_name}">{$barcode}.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="{$center_name}">{$library_name}</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="{$file_checksum_1}" checksum_method="{$file_checksum_method_1}" filetype="fastq" filename="{$file_name_1}" />
+                <FILE checksum="{$file_checksum_2}" checksum_method="{$file_checksum_method_2}" filetype="fastq" filename="{$file_name_2}" />
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>

@@ -1,0 +1,1783 @@
+idx,library_id,hybrid_selection,sequencer,run_date,patient,sample_source,molecule
+0,839,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-09-22,PALHRL,Tumor,Genomic DNA
+1,839,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-08,PALHRL,Tumor,Genomic DNA
+2,840,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-09-22,PAKFVX,Tumor,Genomic DNA
+3,840,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-08,PAKFVX,Tumor,Genomic DNA
+4,841,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-09-22,PALFYN,Tumor,Genomic DNA
+5,841,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-08,PALFYN,Tumor,Genomic DNA
+6,842,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALKDP,Tumor,Genomic DNA
+7,842,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-08,PALKDP,Tumor,Genomic DNA
+8,843,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALKGN,Tumor,Genomic DNA
+9,843,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PALKGN,Tumor,Genomic DNA
+10,844,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALHRL,Normal,Genomic DNA
+11,845,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PAKFVX,Normal,Genomic DNA
+12,846,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALFYN,Normal,Genomic DNA
+13,847,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALKDP,Normal,Genomic DNA
+14,848,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALKGN,Normal,Genomic DNA
+15,848,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2010-10-22,PALKGN,Normal,Genomic DNA
+16,849,,Clipper,2010-10-05,PALHRL,Tumor,mRNA
+17,849,,Dogfish,2010-12-29,PALHRL,Tumor,mRNA
+18,850,,Dogfish,2010-09-22,PAKFVX,Tumor,mRNA
+19,850,,FlyingDog,2010-10-22,PAKFVX,Tumor,mRNA
+20,851,,Dogfish,2010-09-22,PALFYN,Tumor,mRNA
+21,851,,FlyingDog,2010-10-22,PALFYN,Tumor,mRNA
+22,851,,Dogfish,2010-12-29,PALFYN,Tumor,mRNA
+23,852,,Dogfish,2010-09-22,PALKDP,Tumor,mRNA
+24,852,,FlyingDog,2010-10-22,PALKDP,Tumor,mRNA
+25,853,,Clipper,2010-10-05,PALKGN,Tumor,mRNA
+26,853,,Stone,2010-10-15,PALKGN,Tumor,mRNA
+27,965,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PAMHYN,Normal,Genomic DNA
+28,966,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PAMJXS,Normal,Genomic DNA
+29,967,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PAMYYJ,Normal,Genomic DNA
+30,967,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-11-18,PAMYYJ,Normal,Genomic DNA
+31,968,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PANPUM,Normal,Genomic DNA
+32,969,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PANSEN,Normal,Genomic DNA
+33,970,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PANXSC,Normal,Genomic DNA
+34,970,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PANXSC,Normal,Genomic DNA
+35,971,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PALWWX,Normal,Genomic DNA
+36,971,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-28,PALWWX,Normal,Genomic DNA
+37,972,,Stone,2010-10-29,PAMHYN,Tumor,mRNA
+38,972,,Clipper,2010-11-05,PAMHYN,Tumor,mRNA
+39,973,,Stone,2010-10-29,PAMJXS,Tumor,mRNA
+40,973,,Clipper,2010-11-05,PAMJXS,Tumor,mRNA
+41,974,,Stone,2010-10-29,PAMYYJ,Tumor,mRNA
+42,974,,Clipper,2010-11-05,PAMYYJ,Tumor,mRNA
+43,975,,Stone,2010-10-29,PANPUM,Tumor,mRNA
+44,975,,Clipper,2010-11-05,PANPUM,Tumor,mRNA
+45,976,,Stone,2010-10-29,PANSEN,Tumor,mRNA
+46,976,,Clipper,2010-11-05,PANSEN,Tumor,mRNA
+47,977,,Stone,2010-10-29,PANXSC,Tumor,mRNA
+48,977,,Stone,2010-12-02,PANXSC,Tumor,mRNA
+49,978,,Stone,2010-10-29,PALWWX,Tumor,mRNA
+50,978,,Stone,2010-12-02,PALWWX,Tumor,mRNA
+51,979,,Clipper,2010-11-05,PALZGU,Tumor,mRNA
+52,979,,Stone,2010-12-02,PALZGU,Tumor,mRNA
+53,995,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-11-05,PALZGU,Normal,Genomic DNA
+54,995,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PALZGU,Normal,Genomic DNA
+55,996,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PAMJXS,Tumor,Genomic DNA
+56,996,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PAMJXS,Tumor,Genomic DNA
+57,997,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PAMYYJ,Tumor,Genomic DNA
+58,997,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PAMYYJ,Tumor,Genomic DNA
+59,998,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PANPUM,Tumor,Genomic DNA
+60,998,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PANPUM,Tumor,Genomic DNA
+61,999,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PANSEN,Tumor,Genomic DNA
+62,999,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PANSEN,Tumor,Genomic DNA
+63,999,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PANSEN,Tumor,Genomic DNA
+64,999,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PANSEN,Tumor,Genomic DNA
+65,1000,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PANXSC,Tumor,Genomic DNA
+66,1000,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PANXSC,Tumor,Genomic DNA
+67,1000,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PANXSC,Tumor,Genomic DNA
+68,1000,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PANXSC,Tumor,Genomic DNA
+69,1001,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PALWWX,Tumor,Genomic DNA
+70,1001,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PALWWX,Tumor,Genomic DNA
+71,1001,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PALWWX,Tumor,Genomic DNA
+72,1001,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PALWWX,Tumor,Genomic DNA
+73,1002,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PALZGU,Tumor,Genomic DNA
+74,1002,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PALZGU,Tumor,Genomic DNA
+75,1002,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PALZGU,Tumor,Genomic DNA
+76,1002,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PALZGU,Tumor,Genomic DNA
+77,1003,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2010-11-24,PAMHYN,Tumor,Genomic DNA
+78,1003,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2010-11-24,PAMHYN,Tumor,Genomic DNA
+79,1003,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PAMHYN,Tumor,Genomic DNA
+80,1037,,Clipper,2011-01-26,PAPNVD,Tumor,mRNA
+81,1038,,Clipper,2011-01-26,PAPXGT,Tumor,mRNA
+82,1038,,Clipper,2011-01-26,PAPXGT,Tumor,mRNA
+83,1039,,Stone,2011-01-14,PASEBY,Tumor,mRNA
+84,1039,,Stone,2011-01-14,PASEBY,Tumor,mRNA
+85,1040,,Stone,2011-01-14,PASFCV,Tumor,mRNA
+86,1040,,Stone,2011-01-14,PASFCV,Tumor,mRNA
+87,1041,,Clipper,2011-01-26,PASKZZ,Tumor,mRNA
+88,1041,,Clipper,2011-01-26,PASKZZ,Tumor,mRNA
+89,1042,,Stone,2011-01-14,PASSLM,Tumor,mRNA
+90,1042,,Stone,2011-01-14,PASSLM,Tumor,mRNA
+91,1043,,Clipper,2011-01-26,PASEFS,Tumor,mRNA
+92,1043,,Clipper,2011-01-26,PASEFS,Tumor,mRNA
+93,1052,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASEBY,Normal,Genomic DNA
+94,1052,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PASEBY,Normal,Genomic DNA
+95,1053,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PAPNVD,Normal,Genomic DNA
+96,1053,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-11-23,PAPNVD,Normal,Genomic DNA
+97,1054,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASKZZ,Normal,Genomic DNA
+98,1054,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PASKZZ,Normal,Genomic DNA
+99,1055,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PAPXGT,Normal,Genomic DNA
+100,1055,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-28,PAPXGT,Normal,Genomic DNA
+101,1055,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PAPXGT,Normal,Genomic DNA
+102,1056,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASSLM,Normal,Genomic DNA
+103,1056,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PASSLM,Normal,Genomic DNA
+104,1057,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASEFS,Normal,Genomic DNA
+105,1057,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PASEFS,Normal,Genomic DNA
+106,1058,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASFCV,Normal,Genomic DNA
+107,1058,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PASFCV,Normal,Genomic DNA
+108,1063,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASFCV,Tumor,Genomic DNA
+109,1063,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASFCV,Tumor,Genomic DNA
+110,1064,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASKZZ,Tumor,Genomic DNA
+111,1064,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASKZZ,Tumor,Genomic DNA
+112,1065,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASSLM,Tumor,Genomic DNA
+113,1065,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASSLM,Tumor,Genomic DNA
+114,1067,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PAPNVD,Tumor,Genomic DNA
+115,1067,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PAPNVD,Tumor,Genomic DNA
+116,1068,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PAPXGT,Tumor,Genomic DNA
+117,1068,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PAPXGT,Tumor,Genomic DNA
+118,1069,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PASEBY,Tumor,Genomic DNA
+119,1069,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PASEBY,Tumor,Genomic DNA
+120,1071,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-02-11,PASEFS,Tumor,Genomic DNA
+121,1071,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-02-11,PASEFS,Tumor,Genomic DNA
+122,1072,,Clipper,2011-02-11,PAKXLD,Tumor,mRNA
+123,1072,,FlyingDog,2011-02-11,PAKXLD,Tumor,mRNA
+124,1073,,Clipper,2011-02-11,PAMEKS,Tumor,mRNA
+125,1073,,FlyingDog,2011-02-11,PAMEKS,Tumor,mRNA
+126,1074,,FlyingDog,2011-02-11,PAMLKS,Tumor,mRNA
+127,1074,,Clipper,2011-03-02,PAMLKS,Tumor,mRNA
+128,1074,,FlyingDog,2012-02-23,PAMLKS,Tumor,mRNA
+129,1075,,FlyingDog,2011-02-11,PARDAX,Tumor,mRNA
+130,1075,,Clipper,2011-03-02,PARDAX,Tumor,mRNA
+131,1076,,FlyingDog,2011-02-11,PARFTG,Tumor,mRNA
+132,1076,,FlyingDog,2011-03-11,PARFTG,Tumor,mRNA
+133,1077,,FlyingDog,2011-02-11,PARGTM,Tumor,mRNA
+134,1077,,FlyingDog,2011-03-11,PARGTM,Tumor,mRNA
+135,1078,,FlyingDog,2011-02-11,PARJXU,Tumor,mRNA
+136,1078,,FlyingDog,2011-03-11,PARJXU,Tumor,mRNA
+137,1079,,FlyingDog,2011-03-11,PARKAF,Tumor,mRNA
+138,1194,,Dogfish,2011-02-23,PAMHLF,Tumor,mRNA
+139,1194,,Stone,2011-02-24,PAMHLF,Tumor,mRNA
+140,1195,,Dogfish,2011-02-23,PANVJJ,Tumor,mRNA
+141,1195,,Stone,2011-02-24,PANVJJ,Tumor,mRNA
+142,1195,,FlyingDog,2012-02-23,PANVJJ,Tumor,mRNA
+143,1196,,Dogfish,2011-02-23,PAMHLF,Tumor,mRNA
+144,1196,,Stone,2011-02-24,PAMHLF,Tumor,mRNA
+145,1197,,Dogfish,2011-02-23,PASRNE,Tumor,mRNA
+146,1197,,Stone,2011-02-24,PASRNE,Tumor,mRNA
+147,1197,,FlyingDog,2012-02-23,PASRNE,Tumor,mRNA
+148,1198,,Dogfish,2011-02-23,PATJVI,Tumor,mRNA
+149,1198,,Stone,2011-02-24,PATJVI,Tumor,mRNA
+150,1198,,Stone,2012-02-10,PATJVI,Tumor,mRNA
+151,1199,,Dogfish,2011-02-23,PAMRHD,Tumor,mRNA
+152,1199,,Stone,2011-02-24,PAMRHD,Tumor,mRNA
+153,1199,,FlyingDog,2012-02-23,PAMRHD,Tumor,mRNA
+154,1200,,Dogfish,2011-02-23,PASYUK,Tumor,mRNA
+155,1200,,Stone,2011-02-24,PASYUK,Tumor,mRNA
+156,1200,,Stone,2012-02-10,PASYUK,Tumor,mRNA
+157,1201,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PAMHLF,Tumor,Genomic DNA
+158,1201,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PAMHLF,Tumor,Genomic DNA
+159,1202,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PASRNE,Tumor,Genomic DNA
+160,1202,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PASRNE,Tumor,Genomic DNA
+161,1203,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PATJVI,Tumor,Genomic DNA
+162,1203,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PATJVI,Tumor,Genomic DNA
+163,1210,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PAMRHD,Tumor,Genomic DNA
+164,1210,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PAMRHD,Tumor,Genomic DNA
+165,1211,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PASYUK,Tumor,Genomic DNA
+166,1211,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PASYUK,Tumor,Genomic DNA
+167,1212,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PATAWV,Tumor,Genomic DNA
+168,1212,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PATAWV,Tumor,Genomic DNA
+169,1213,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PAKXLD,Tumor,Genomic DNA
+170,1213,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PAKXLD,Tumor,Genomic DNA
+171,1214,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PAMEKS,Tumor,Genomic DNA
+172,1214,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PAMEKS,Tumor,Genomic DNA
+173,1214,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PAMEKS,Tumor,Genomic DNA
+174,1215,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PAMLKS,Tumor,Genomic DNA
+175,1215,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PAMLKS,Tumor,Genomic DNA
+176,1215,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PAMLKS,Tumor,Genomic DNA
+177,1216,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PARDAX,Tumor,Genomic DNA
+178,1216,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PARDAX,Tumor,Genomic DNA
+179,1217,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-11,PARFTG,Tumor,Genomic DNA
+180,1217,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-11,PARFTG,Tumor,Genomic DNA
+181,1218,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-11,PAMHLF,Normal,Genomic DNA
+182,1218,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PAMHLF,Normal,Genomic DNA
+183,1219,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PAMEKS,Normal,Genomic DNA
+184,1220,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PAMLKS,Normal,Genomic DNA
+185,1220,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PAMLKS,Normal,Genomic DNA
+186,1221,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARDAX,Normal,Genomic DNA
+187,1222,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARFTG,Normal,Genomic DNA
+188,1223,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARGTM,Normal,Genomic DNA
+189,1223,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PARGTM,Normal,Genomic DNA
+190,1224,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARJXU,Normal,Genomic DNA
+191,1224,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PARJXU,Normal,Genomic DNA
+192,1225,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARKAF,Normal,Genomic DNA
+193,1226,,Dogfish,2011-03-25,PATAWV,Tumor,mRNA
+194,1226,,Clipper,2011-03-28,PATAWV,Tumor,mRNA
+195,1227,,Stone,2011-03-21,PANMIG,Tumor,mRNA
+196,1227,,Stone,2011-03-21,PANMIG,Tumor,mRNA
+197,1229,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PANVJJ,Tumor,Genomic DNA
+198,1229,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-28,PANVJJ,Tumor,Genomic DNA
+199,1230,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-28,PANMIG,Tumor,Genomic DNA
+200,1230,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-04-08,PANMIG,Tumor,Genomic DNA
+201,1231,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PASRNE,Normal,Genomic DNA
+202,1232,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PATJVI,Normal,Genomic DNA
+203,1232,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PATJVI,Normal,Genomic DNA
+204,1233,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PASYUK,Normal,Genomic DNA
+205,1233,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PASYUK,Normal,Genomic DNA
+206,1234,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-28,PATAWV,Normal,Genomic DNA
+207,1234,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PATAWV,Normal,Genomic DNA
+208,1235,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PAKXLD,Normal,Genomic DNA
+209,1236,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARGTM,Tumor,Genomic DNA
+210,1236,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARGTM,Tumor,Genomic DNA
+211,1237,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARJXU,Tumor,Genomic DNA
+212,1237,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARJXU,Tumor,Genomic DNA
+213,1237,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,PARJXU,Tumor,Genomic DNA
+214,1238,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARKAF,Tumor,Genomic DNA
+215,1238,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARKAF,Tumor,Genomic DNA
+216,1263,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PANVJJ,Normal,Genomic DNA
+217,1264,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PANMIG,Normal,Genomic DNA
+218,1270,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-04-08,PAMHLF,Tumor,Genomic DNA
+219,1270,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-04-08,PAMHLF,Tumor,Genomic DNA
+220,1271,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-04-08,PAMRHD,Normal,Genomic DNA
+221,1271,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,PAMRHD,Normal,Genomic DNA
+222,1290,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PAKZZK,Tumor,Genomic DNA
+223,1290,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PAKZZK,Tumor,Genomic DNA
+224,1291,,FlyingDog,2011-05-12,PANMIG,Tumor,mRNA
+225,1291,,Stone,2011-06-01,PANMIG,Tumor,mRNA
+226,1292,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PANMIG,Tumor,Genomic DNA
+227,1292,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PANMIG,Tumor,Genomic DNA
+228,1293,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PANGRW,Tumor,Genomic DNA
+229,1293,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PANGRW,Tumor,Genomic DNA
+230,1294,,FlyingDog,2011-05-12,PANGRW,Tumor,mRNA
+231,1294,,Clipper,2011-07-01,PANGRW,Tumor,mRNA
+232,1295,,FlyingDog,2011-05-12,PAKZZK,Tumor,mRNA
+233,1295,,FlyingDog,2011-06-02,PAKZZK,Tumor,mRNA
+234,1296,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PANZZJ,Tumor,Genomic DNA
+235,1296,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PANZZJ,Tumor,Genomic DNA
+236,1297,,FlyingDog,2011-05-12,PANZZJ,Tumor,mRNA
+237,1297,,FlyingDog,2011-06-02,PANZZJ,Tumor,mRNA
+238,1298,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PARBGW,Tumor,Genomic DNA
+239,1298,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PARBGW,Tumor,Genomic DNA
+240,1299,,FlyingDog,2011-05-12,PARBGW,Tumor,mRNA
+241,1299,,FlyingDog,2011-06-02,PARBGW,Tumor,mRNA
+242,1300,,FlyingDog,2011-05-12,PANZHX,Tumor,mRNA
+243,1300,,FlyingDog,2011-06-02,PANZHX,Tumor,mRNA
+244,1301,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PASUUH,Tumor,Genomic DNA
+245,1301,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PASUUH,Tumor,Genomic DNA
+246,1302,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PATEEM,Tumor,Genomic DNA
+247,1302,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PATEEM,Tumor,Genomic DNA
+248,1303,,FlyingDog,2011-05-12,PAPKWD,Tumor,mRNA
+249,1303,,FlyingDog,2011-06-02,PAPKWD,Tumor,mRNA
+250,1304,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PATEEM,Tumor,Genomic DNA
+251,1304,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-01,PATEEM,Tumor,Genomic DNA
+252,1305,,Clipper,2011-06-02,PAPWWC,Tumor,mRNA
+253,1305,,Dogfish,2011-06-17,PAPWWC,Tumor,mRNA
+254,1305,,FlyingDog,2011-07-06,PAPWWC,Tumor,mRNA
+255,1306,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PAMTCM,Tumor,Genomic DNA
+256,1306,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PAMTCM,Tumor,Genomic DNA
+257,1307,,Clipper,2011-06-02,PAMTCM,Tumor,mRNA
+258,1307,,Dogfish,2011-06-17,PAMTCM,Tumor,mRNA
+259,1307,,FlyingDog,2011-07-06,PAMTCM,Tumor,mRNA
+260,1308,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PAPWWC,Tumor,Genomic DNA
+261,1308,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PAPWWC,Tumor,Genomic DNA
+262,1309,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PATEEM,Tumor,Genomic DNA
+263,1309,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PATEEM,Tumor,Genomic DNA
+264,1310,,Clipper,2011-06-02,PATEEM,Tumor,mRNA
+265,1310,,FlyingDog,2011-07-06,PATEEM,Tumor,mRNA
+266,1311,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-05-20,PANZHX,Tumor,Genomic DNA
+267,1311,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-05-20,PANZHX,Tumor,Genomic DNA
+268,1312,,Clipper,2011-06-02,PASUUH,Tumor,mRNA
+269,1312,,Dogfish,2011-06-17,PASUUH,Tumor,mRNA
+270,1312,,FlyingDog,2011-07-06,PASUUH,Tumor,mRNA
+271,1313,,Clipper,2011-06-02,PALECC,Tumor,mRNA
+272,1313,,Dogfish,2011-06-17,PALECC,Tumor,mRNA
+273,1313,,FlyingDog,2011-07-06,PALECC,Tumor,mRNA
+274,1505,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-01,PALECC,Tumor,Genomic DNA
+275,1505,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-01,PALECC,Tumor,Genomic DNA
+276,1506,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-06-02,PAKZZK,Normal,Genomic DNA
+277,1506,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,PAKZZK,Normal,Genomic DNA
+278,1507,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-06-02,PARBGW,Normal,Genomic DNA
+279,1507,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PARBGW,Normal,Genomic DNA
+280,1507,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,PARBGW,Normal,Genomic DNA
+281,1528,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PANGRW,Normal,Genomic DNA
+282,1529,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PANZZJ,Normal,Genomic DNA
+283,1530,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PAMTCM,Normal,Genomic DNA
+284,1530,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PAMTCM,Normal,Genomic DNA
+285,1531,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PANZHX,Normal,Genomic DNA
+286,1532,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PAPKWD,Normal,Genomic DNA
+287,1533,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PAPWWC,Normal,Genomic DNA
+288,1547,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PATEEM,Normal,Genomic DNA
+289,1547,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,PATEEM,Normal,Genomic DNA
+290,1548,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PASUUH,Normal,Genomic DNA
+291,1548,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-11-18,PASUUH,Normal,Genomic DNA
+292,1549,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PALECC,Normal,Genomic DNA
+293,1553,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PAPVYW,Normal,Genomic DNA
+294,1553,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-11-18,PAPVYW,Normal,Genomic DNA
+295,1554,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PAMTCM,Normal,Genomic DNA
+296,1905,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PANGPE,Tumor,Genomic DNA
+297,1906,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PAPFLB,Tumor,Genomic DNA
+298,1907,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PASNZV,Tumor,Genomic DNA
+299,1908,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PATMPU,Tumor,Genomic DNA
+300,1909,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PATMXR,Tumor,Genomic DNA
+301,1910,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PATPBS,Tumor,Genomic DNA
+302,1911,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PATUXZ,Tumor,Genomic DNA
+303,1912,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-09,PANGPE,Normal,Genomic DNA
+304,1913,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-22,PAPFLB,Normal,Genomic DNA
+305,1913,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PAPFLB,Normal,Genomic DNA
+306,1913,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PAPFLB,Normal,Genomic DNA
+307,1914,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-22,PASNZV,Normal,Genomic DNA
+308,1914,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PASNZV,Normal,Genomic DNA
+309,1914,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PASNZV,Normal,Genomic DNA
+310,1915,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-22,PATMPU,Normal,Genomic DNA
+311,1915,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PATMPU,Normal,Genomic DNA
+312,1916,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-22,PATMXR,Normal,Genomic DNA
+313,1916,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PATMXR,Normal,Genomic DNA
+314,1916,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2012-03-02,PATMXR,Normal,Genomic DNA
+315,1916,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PATMXR,Normal,Genomic DNA
+316,1992,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-09,PATPBS,Normal,Genomic DNA
+317,1992,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PATPBS,Normal,Genomic DNA
+318,1993,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-09,PATUXZ,Normal,Genomic DNA
+319,1993,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PATUXZ,Normal,Genomic DNA
+320,2071,,Dogfish,2011-08-26,PANGPE,Tumor,mRNA
+321,2071,,FlyingDog,2011-09-02,PANGPE,Tumor,mRNA
+322,2072,,Dogfish,2011-08-26,PAPFLB,Tumor,mRNA
+323,2072,,FlyingDog,2011-09-02,PAPFLB,Tumor,mRNA
+324,2073,,Dogfish,2011-08-26,PASNZV,Tumor,mRNA
+325,2073,,FlyingDog,2011-09-02,PASNZV,Tumor,mRNA
+326,2074,,Dogfish,2011-08-26,PATMPU,Tumor,mRNA
+327,2074,,FlyingDog,2011-09-02,PATMPU,Tumor,mRNA
+328,2075,,Dogfish,2011-08-26,PATMXR,Tumor,mRNA
+329,2075,,FlyingDog,2011-09-02,PATMXR,Tumor,mRNA
+330,2076,,Dogfish,2011-08-26,PATPBS,Tumor,mRNA
+331,2076,,FlyingDog,2011-09-02,PATPBS,Tumor,mRNA
+332,2077,,Dogfish,2011-08-26,PATUXZ,Tumor,mRNA
+333,2077,,FlyingDog,2011-09-02,PATUXZ,Tumor,mRNA
+334,2280,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-12,0A4HLD,Tumor,Genomic DNA
+335,2280,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-01-20,0A4HLD,Tumor,Genomic DNA
+336,2281,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-12,0A4HLQ,Normal,Genomic DNA
+337,2281,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-01-20,0A4HLQ,Normal,Genomic DNA
+338,2282,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-12,0A4HMJ,Tumor,Genomic DNA
+339,2282,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-01-20,0A4HMJ,Tumor,Genomic DNA
+340,2282,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4HMJ,Tumor,Genomic DNA
+341,2283,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-12,0A4HX8,Tumor,Genomic DNA
+342,2283,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-01-20,0A4HX8,Tumor,Genomic DNA
+343,2284,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HXG,Tumor,Genomic DNA
+344,2285,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HYB,Normal,Genomic DNA
+345,2286,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HZR,Normal,Genomic DNA
+346,2287,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I0W,Tumor,Genomic DNA
+347,2288,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I3S,Tumor,Genomic DNA
+348,2289,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I40,Tumor,Genomic DNA
+349,2290,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I42,Tumor,Genomic DNA
+350,2290,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2013-05-30,0A4I42,Tumor,Genomic DNA
+351,2291,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I44,Tumor,Genomic DNA
+352,2292,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I48,Tumor,Genomic DNA
+353,2293,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I4E,Tumor,Genomic DNA
+354,2294,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I65,Tumor,Genomic DNA
+355,2295,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I8U,Tumor,Genomic DNA
+356,2296,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I0S,Tumor,Genomic DNA
+357,2297,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I4M,Tumor,Genomic DNA
+358,2298,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I5B,Tumor,Genomic DNA
+359,2299,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I4O,Tumor,Genomic DNA
+360,2300,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HLD,Normal,Genomic DNA
+361,2301,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HLQ,Normal,Genomic DNA
+362,2302,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HMJ,Normal,Genomic DNA
+363,2303,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HX8,Normal,Genomic DNA
+364,2304,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,PAKUZU,Normal,Genomic DNA
+365,2305,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,PAPIJR,Normal,Genomic DNA
+366,2306,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,PAKUZU,Tumor,Genomic DNA
+367,2307,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,PAPIJR,Tumor,Genomic DNA
+368,2388,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I9I,Tumor,Genomic DNA
+369,2389,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I9K,Tumor,Genomic DNA
+370,2390,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HMC,Tumor,Genomic DNA
+371,2390,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4HMC,Tumor,Genomic DNA
+372,2391,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HY5,Tumor,Genomic DNA
+373,2392,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HXG,Normal,Genomic DNA
+374,2393,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HYB,Normal,Genomic DNA
+375,2394,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HZR,Normal,Genomic DNA
+376,2395,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I0W,Normal,Genomic DNA
+377,2396,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I3S,Normal,Genomic DNA
+378,2396,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I3S,Normal,Genomic DNA
+379,2397,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I40,Normal,Genomic DNA
+380,2398,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I42,Normal,Genomic DNA
+381,2399,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I44,Normal,Genomic DNA
+382,2400,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I48,Normal,Genomic DNA
+383,2401,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I4E,Normal,Genomic DNA
+384,2402,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I65,Normal,Genomic DNA
+385,2402,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I65,Normal,Genomic DNA
+386,2403,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I8U,Normal,Genomic DNA
+387,2403,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I8U,Normal,Genomic DNA
+388,2404,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I9I,Normal,Genomic DNA
+389,2404,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I9I,Normal,Genomic DNA
+390,2405,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I9K,Normal,Genomic DNA
+391,2406,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HMC,Normal,Genomic DNA
+392,2407,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HY5,Normal,Genomic DNA
+393,2408,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I0S,Normal,Genomic DNA
+394,2409,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I4M,Normal,Genomic DNA
+395,2410,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I4O,Normal,Genomic DNA
+396,2411,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I5B,Normal,Genomic DNA
+397,2412,,HiSeq-ATC,2011-12-29,PAKUZU,Tumor,mRNA
+398,2413,,HiSeq-ATC,2011-12-29,0A4I4M,Tumor,mRNA
+399,2414,,HiSeq-ATC,2011-12-29,0A4I9I,Tumor,mRNA
+400,2415,,HiSeq-ATC,2011-12-29,0A4I8U,Tumor,mRNA
+401,2416,,HiSeq-ATC,2011-12-29,0A4I65,Tumor,mRNA
+402,2417,,HiSeq-ATC,2011-12-29,0A4I44,Tumor,mRNA
+403,2418,,HiSeq-ATC,2011-12-29,0A4I48,Tumor,mRNA
+404,2419,,HiSeq-ATC,2011-12-29,0A4I42,Tumor,mRNA
+405,2420,,HiSeq-ATC,2011-12-29,0A4I3S,Tumor,mRNA
+406,2421,,HiSeq-ATC,2011-12-29,0A4I0W,Tumor,mRNA
+407,2422,,HiSeq-ATC,2011-12-29,0A4HZR,Tumor,mRNA
+408,2423,,HiSeq-ATC,2011-12-29,0A4HYB,Tumor,mRNA
+409,2424,,HiSeq-ATC,2011-12-29,0A4HXG,Tumor,mRNA
+410,2425,,HiSeq-ATC,2012-01-05,0A4HX8,Tumor,mRNA
+411,2426,,HiSeq-ATC,2012-01-05,0A4HMJ,Tumor,mRNA
+412,2427,,HiSeq-ATC,2012-01-05,0A4HLQ,Tumor,mRNA
+413,2428,,HiSeq-ATC,2012-01-05,0A4HLD,Tumor,mRNA
+414,2780,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAMTCM,Tumor,Genomic DNA
+415,2781,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAPWWC,Tumor,Genomic DNA
+416,2782,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PANZHX,Tumor,Genomic DNA
+417,2782,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2013-05-09,PANZHX,Tumor,Genomic DNA
+418,2783,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAPKWD,Tumor,Genomic DNA
+419,2784,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAPVYW,Tumor,Genomic DNA
+420,2784,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2013-05-09,PAPVYW,Tumor,Genomic DNA
+421,2785,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PANGRW,Tumor,Genomic DNA
+422,2786,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PASUUH,Tumor,Genomic DNA
+423,2787,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAMEKS,Tumor,Genomic DNA
+424,3273,,HiSeq-ATC,2012-05-24,0A4HMC,Tumor,mRNA
+425,3274,,HiSeq-ATC,2012-05-24,0A4HY5,Tumor,mRNA
+426,3275,,HiSeq-ATC,2012-05-24,0A4I0S,Tumor,mRNA
+427,3276,,HiSeq-ATC,2012-05-24,0A4I4O,Tumor,mRNA
+428,3277,,HiSeq-ATC,2012-05-24,0A4I5B,Tumor,mRNA
+429,3278,,HiSeq-ATC,2012-05-03,0A4I4E,Tumor,mRNA
+430,3279,,HiSeq-ATC,2012-05-03,0A4I9K,Tumor,mRNA
+431,3280,,HiSeq-ATC,2012-05-03,PAPIJR,Tumor,mRNA
+432,3281,,HiSeq-ATC,2012-05-03,0A4I40,Tumor,mRNA
+433,3282,,HiSeq-ATC,2012-04-16,PATMIF,Tumor,mRNA
+434,3283,,HiSeq-ATC,2012-04-16,0A4HXS,Tumor,mRNA
+435,3284,,HiSeq-ATC,2012-04-16,0A4I0Q,Tumor,mRNA
+436,3285,,HiSeq-ATC,2012-04-16,0A4I6O,Tumor,mRNA
+437,3449,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HLD,Normal,Genomic DNA
+438,3449,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HLD,Normal,Genomic DNA
+439,3449,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4HLD,Normal,Genomic DNA
+440,3450,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I5B,Tumor,Genomic DNA
+441,3450,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I5B,Tumor,Genomic DNA
+442,3450,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I5B,Tumor,Genomic DNA
+443,3451,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I40,Tumor,Genomic DNA
+444,3451,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I40,Tumor,Genomic DNA
+445,3451,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I40,Tumor,Genomic DNA
+446,3452,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HX8,Normal,Genomic DNA
+447,3452,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HX8,Normal,Genomic DNA
+448,3452,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4HX8,Normal,Genomic DNA
+449,3453,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I44,Tumor,Genomic DNA
+450,3453,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I44,Tumor,Genomic DNA
+451,3453,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I44,Tumor,Genomic DNA
+452,3454,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I4M,Tumor,Genomic DNA
+453,3454,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I4M,Tumor,Genomic DNA
+454,3454,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I4M,Tumor,Genomic DNA
+455,3455,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I4O,Tumor,Genomic DNA
+456,3455,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I4O,Tumor,Genomic DNA
+457,3455,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I4O,Tumor,Genomic DNA
+458,3457,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HLQ,Normal,Genomic DNA
+459,3457,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HLQ,Normal,Genomic DNA
+460,3457,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4HLQ,Normal,Genomic DNA
+461,3479,None,HiSeq-ATC,2012-06-15,0A4HMJ,Tumor,Genomic DNA
+462,3479,None,HiSeq-ATC,2012-07-03,0A4HMJ,Tumor,Genomic DNA
+463,3479,None,HiSeq-ATC,2012-08-10,0A4HMJ,Tumor,Genomic DNA
+464,3479,None,HiSeq-ATC,2013-02-04,0A4HMJ,Tumor,Genomic DNA
+465,3480,None,HiSeq-ATC,2012-06-15,0A4HMJ,Normal,Genomic DNA
+466,3480,None,HiSeq-ATC,2012-07-03,0A4HMJ,Normal,Genomic DNA
+467,3480,None,HiSeq-ATC,2012-08-10,0A4HMJ,Normal,Genomic DNA
+468,3481,None,HiSeq-ATC,2012-06-15,0A4HY5,Tumor,Genomic DNA
+469,3481,None,HiSeq-ATC,2012-07-03,0A4HY5,Tumor,Genomic DNA
+470,3481,None,HiSeq-ATC,2012-08-10,0A4HY5,Tumor,Genomic DNA
+471,3481,None,HiSeq-ATC,2013-02-27,0A4HY5,Tumor,Genomic DNA
+472,3482,None,M00357,2012-05-09,0A4I3S,Tumor,Genomic DNA
+473,3482,None,HiSeq-ATC,2013-02-27,0A4I3S,Tumor,Genomic DNA
+474,3483,None,M00357,2012-05-09,0A4I3S,Normal,Genomic DNA
+475,3483,None,HiSeq-ATC,2012-06-15,0A4I3S,Normal,Genomic DNA
+476,3483,None,HiSeq-ATC,2012-07-03,0A4I3S,Normal,Genomic DNA
+477,3484,None,M00357,2012-05-09,0A4I0S,Normal,Genomic DNA
+478,3484,None,HiSeq-ATC,2012-07-03,0A4I0S,Normal,Genomic DNA
+479,3484,None,HiSeq-ATC,2012-08-10,0A4I0S,Normal,Genomic DNA
+480,3484,None,HiSeq-ATC,2013-02-27,0A4I0S,Normal,Genomic DNA
+481,3488,None,M00357,2012-05-09,0A4HY5,Tumor,Genomic DNA
+482,3707,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PARKAF,Tumor,Genomic DNA
+483,3708,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PANVJJ,Tumor,Genomic DNA
+484,3710,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I42,Tumor,Genomic DNA
+485,3711,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I0S,Tumor,Genomic DNA
+486,3712,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PARBGW,Tumor,Genomic DNA
+487,3713,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PAKZZK,Tumor,Genomic DNA
+488,3714,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PANZZJ,Tumor,Genomic DNA
+489,3715,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PATEEM,Tumor,Genomic DNA
+490,3716,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4HMJ,Normal,Genomic DNA
+491,3717,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I42,Normal,Genomic DNA
+492,3718,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I3S,Normal,Genomic DNA
+493,3728,None,HiSeq-ATC,2012-07-20,0A4I42,Tumor,Genomic DNA
+494,3729,None,HiSeq-ATC,2012-07-20,0A4I42,Normal,Genomic DNA
+495,3730,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I3S,Tumor,Genomic DNA
+496,3751,None,HiSeq-ATC,2012-07-20,0A4HY5,Normal,Genomic DNA
+497,3751,None,HiSeq-ATC,2013-04-23,0A4HY5,Normal,Genomic DNA
+498,3752,None,HiSeq-ATC,2012-07-20,0A4I0S,Normal,Genomic DNA
+499,3806,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4HMC,Normal,Genomic DNA
+500,3806,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4HMC,Normal,Genomic DNA
+501,3872,None,HiSeq-ATC,2012-08-31,0A4I8U,Tumor,Genomic DNA
+502,3872,None,HiSeq-ATC,2012-12-12,0A4I8U,Tumor,Genomic DNA
+503,3873,None,HiSeq-ATC,2012-08-31,0A4I8U,Normal,Genomic DNA
+504,3874,None,HiSeq-ATC,2012-08-31,PAPIJR,Tumor,Genomic DNA
+505,3874,None,HiSeq-ATC,2012-12-12,PAPIJR,Tumor,Genomic DNA
+506,3875,None,HiSeq-ATC,2012-08-31,PAPIJR,Normal,Genomic DNA
+507,3877,None,HiSeq-ATC,2012-08-31,PAMLKS,Normal,Genomic DNA
+508,3878,None,HiSeq-ATC,2012-08-31,PAMYYJ,Tumor,Genomic DNA
+509,3878,None,HiSeq-ATC,2012-12-12,PAMYYJ,Tumor,Genomic DNA
+510,3880,None,HiSeq-ATC,2012-08-31,PANSEN,Tumor,Genomic DNA
+511,3880,None,HiSeq-ATC,2012-12-12,PANSEN,Tumor,Genomic DNA
+512,3881,None,HiSeq-ATC,2012-09-13,PANSEN,Normal,Genomic DNA
+513,3882,None,HiSeq-ATC,2012-09-13,PASEBY,Tumor,Genomic DNA
+514,3882,None,HiSeq-ATC,2012-12-12,PASEBY,Tumor,Genomic DNA
+515,3882,None,HiSeq-ATC,2013-10-01,PASEBY,Tumor,Genomic DNA
+516,3882,None,HiSeq-ATC,2013-10-01,PASEBY,Tumor,Genomic DNA
+517,3883,None,HiSeq-ATC,2012-09-13,PASEBY,Normal,Genomic DNA
+518,3885,None,HiSeq-ATC,2012-09-13,PASKZZ,Normal,Genomic DNA
+519,3887,None,HiSeq-ATC,2012-09-13,PASSLM,Normal,Genomic DNA
+520,3959,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,PATMIF,Tumor,Genomic DNA
+521,3960,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4HXS,Tumor,Genomic DNA
+522,3961,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4I0Q,Tumor,Genomic DNA
+523,3962,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4I6O,Tumor,Genomic DNA
+524,3963,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,PATMIF,Normal,Genomic DNA
+525,3964,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4HXS,Normal,Genomic DNA
+526,3965,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4I0Q,Normal,Genomic DNA
+527,3966,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4I6O,Normal,Genomic DNA
+528,3970,None,HiSeq-ATC,2012-09-13,PAMLKS,Tumor,Genomic DNA
+529,3970,None,HiSeq-ATC,2012-12-12,PAMLKS,Tumor,Genomic DNA
+530,3970,None,HiSeq-ATC,2013-02-04,PAMLKS,Tumor,Genomic DNA
+531,3971,None,HiSeq-ATC,2012-09-13,PASKZZ,Tumor,Genomic DNA
+532,3971,None,HiSeq-ATC,2013-02-04,PASKZZ,Tumor,Genomic DNA
+533,3972,None,HiSeq-ATC,2012-09-13,PASSLM,Tumor,Genomic DNA
+534,3972,None,HiSeq-ATC,2012-12-04,PASSLM,Tumor,Genomic DNA
+535,3973,None,HiSeq-ATC,2012-09-27,PAMHYN,Tumor,Genomic DNA
+536,3973,None,HiSeq-ATC,2013-05-09,PAMHYN,Tumor,Genomic DNA
+537,3973,None,HiSeq-ATC,2013-05-30,PAMHYN,Tumor,Genomic DNA
+538,3974,None,HiSeq-ATC,2012-09-27,PAMYYJ,Normal,Genomic DNA
+539,3975,None,HiSeq-ATC,2012-09-27,PAMHYN,Normal,Genomic DNA
+540,3976,None,HiSeq-ATC,2012-09-27,PALKGN,Normal,Genomic DNA
+541,3977,None,HiSeq-ATC,2012-09-27,PALKGN,Tumor,Genomic DNA
+542,3977,None,HiSeq-ATC,2013-05-09,PALKGN,Tumor,Genomic DNA
+543,4062,None,HiSeq-ATC,2012-09-27,PASEFS,Normal,Genomic DNA
+544,4063,None,HiSeq-ATC,2012-09-27,PASEFS,Tumor,Genomic DNA
+545,4063,None,HiSeq-ATC,2013-02-04,PASEFS,Tumor,Genomic DNA
+546,4064,None,HiSeq-ATC,2012-09-27,PARFTG,Tumor,Genomic DNA
+547,4064,None,HiSeq-ATC,2013-02-04,PARFTG,Tumor,Genomic DNA
+548,4065,None,HiSeq-ATC,2012-09-27,PARFTG,Normal,Genomic DNA
+549,4066,None,HiSeq-ATC,2012-09-27,PALECC,Tumor,Genomic DNA
+550,4066,None,HiSeq-ATC,2013-05-09,PALECC,Tumor,Genomic DNA
+551,4067,None,HiSeq-ATC,2012-09-27,PALECC,Normal,Genomic DNA
+552,4068,None,HiSeq-ATC,2012-09-27,PAKUZU,Tumor,Genomic DNA
+553,4068,None,HiSeq-ATC,2013-05-09,PAKUZU,Tumor,Genomic DNA
+554,4068,None,HiSeq-ATC,2013-06-24,PAKUZU,Tumor,Genomic DNA
+555,4069,None,HiSeq-ATC,2012-12-04,PAKUZU,Normal,Genomic DNA
+556,4070,None,HiSeq-ATC,2012-12-04,0A4HZR,Tumor,Genomic DNA
+557,4070,None,HiSeq-ATC,2013-02-04,0A4HZR,Tumor,Genomic DNA
+558,4071,None,HiSeq-ATC,2012-12-04,0A4HZR,Normal,Genomic DNA
+559,4072,None,HiSeq-ATC,2012-12-04,0A4HXG,Tumor,Genomic DNA
+560,4072,None,HiSeq-ATC,2013-02-04,0A4HXG,Tumor,Genomic DNA
+561,4073,None,HiSeq-ATC,2012-12-04,0A4HXG,Normal,Genomic DNA
+562,4938,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PATKSS,Tumor,Genomic DNA
+563,4938,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PATKSS,Tumor,Genomic DNA
+564,4939,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUTWB,Tumor,Genomic DNA
+565,4939,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUTWB,Tumor,Genomic DNA
+566,4940,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUTYB,Tumor,Genomic DNA
+567,4940,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUTYB,Tumor,Genomic DNA
+568,4941,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUUML,Tumor,Genomic DNA
+569,4941,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUUML,Tumor,Genomic DNA
+570,4942,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUVUL,Tumor,Genomic DNA
+571,4942,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUVUL,Tumor,Genomic DNA
+572,4943,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUXPZ,Tumor,Genomic DNA
+573,4943,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUXPZ,Tumor,Genomic DNA
+574,4944,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUYTT,Tumor,Genomic DNA
+575,4944,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUYTT,Tumor,Genomic DNA
+576,4946,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVALD,Tumor,Genomic DNA
+577,4946,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVALD,Tumor,Genomic DNA
+578,4947,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVCLP,Tumor,Genomic DNA
+579,4947,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVCLP,Tumor,Genomic DNA
+580,4948,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVDTY,Tumor,Genomic DNA
+581,4948,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVDTY,Tumor,Genomic DNA
+582,4949,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVECB,Tumor,Genomic DNA
+583,4949,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVECB,Tumor,Genomic DNA
+584,4950,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PATXFN,Tumor,Genomic DNA
+585,4950,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PATXFN,Tumor,Genomic DNA
+586,4951,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUBIT,Tumor,Genomic DNA
+587,4951,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUBIT,Tumor,Genomic DNA
+588,4953,None,HiSeq-ATC,2013-01-22,PAPVYW,Normal,Genomic DNA
+589,4954,None,HiSeq-ATC,2013-01-22,PAPVYW,Tumor,Genomic DNA
+590,4954,None,HiSeq-ATC,2013-06-24,PAPVYW,Tumor,Genomic DNA
+591,4955,None,HiSeq-ATC,2013-01-22,PANZHX,Normal,Genomic DNA
+592,4956,None,HiSeq-ATC,2013-01-22,PANZHX,Tumor,Genomic DNA
+593,4957,None,HiSeq-ATC,2013-01-22,PATAWV,Normal,Genomic DNA
+594,4958,None,HiSeq-ATC,2013-01-22,PATAWV,Tumor,Genomic DNA
+595,4958,None,HiSeq-ATC,2013-05-09,PATAWV,Tumor,Genomic DNA
+596,4959,None,HiSeq-ATC,2013-01-22,PAMRHD,Normal,Genomic DNA
+597,4960,None,HiSeq-ATC,2013-01-22,PAMRHD,Tumor,Genomic DNA
+598,4960,None,HiSeq-ATC,2013-05-09,PAMRHD,Tumor,Genomic DNA
+599,4961,None,HiSeq-ATC,2013-01-22,PANZZJ,Normal,Genomic DNA
+600,4962,None,HiSeq-ATC,2013-01-22,PANZZJ,Tumor,Genomic DNA
+601,4962,None,HiSeq-ATC,2013-05-09,PANZZJ,Tumor,Genomic DNA
+602,4962,None,HiSeq-ATC,2013-06-24,PANZZJ,Tumor,Genomic DNA
+603,4963,None,HiSeq-ATC,2013-02-27,PASYUK,Normal,Genomic DNA
+604,4966,None,HiSeq-ATC,2013-02-27,PASYUK,Tumor,Genomic DNA
+605,4966,None,HiSeq-ATC,2013-05-09,PASYUK,Tumor,Genomic DNA
+606,4966,None,HiSeq-ATC,2013-06-24,PASYUK,Tumor,Genomic DNA
+607,4967,None,HiSeq-ATC,2013-02-27,PASUUH,Normal,Genomic DNA
+608,4968,None,HiSeq-ATC,2013-02-27,PASUUH,Tumor,Genomic DNA
+609,4968,None,HiSeq-ATC,2013-04-23,PASUUH,Tumor,Genomic DNA
+610,5133,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATKSS,Tumor,Genomic DNA
+611,5133,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATKSS,Tumor,Genomic DNA
+612,5134,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTWB,Tumor,Genomic DNA
+613,5134,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTWB,Tumor,Genomic DNA
+614,5135,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTYB,Tumor,Genomic DNA
+615,5135,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTYB,Tumor,Genomic DNA
+616,5136,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUUML,Tumor,Genomic DNA
+617,5136,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUUML,Tumor,Genomic DNA
+618,5137,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUVUL,Tumor,Genomic DNA
+619,5137,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUVUL,Tumor,Genomic DNA
+620,5138,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUXPZ,Tumor,Genomic DNA
+621,5138,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUXPZ,Tumor,Genomic DNA
+622,5139,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUYTT,Tumor,Genomic DNA
+623,5139,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUYTT,Tumor,Genomic DNA
+624,5141,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVALD,Tumor,Genomic DNA
+625,5142,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVCLP,Tumor,Genomic DNA
+626,5143,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVDTY,Tumor,Genomic DNA
+627,5144,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVECB,Tumor,Genomic DNA
+628,5145,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATXFN,Tumor,Genomic DNA
+629,5146,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUBIT,Tumor,Genomic DNA
+630,5148,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATKSS,Normal,Genomic DNA
+631,5148,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATKSS,Normal,Genomic DNA
+632,5149,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTWB,Normal,Genomic DNA
+633,5149,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTWB,Normal,Genomic DNA
+634,5150,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTYB,Normal,Genomic DNA
+635,5150,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTYB,Normal,Genomic DNA
+636,5151,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUUML,Normal,Genomic DNA
+637,5151,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUUML,Normal,Genomic DNA
+638,5152,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUVUL,Normal,Genomic DNA
+639,5152,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUVUL,Normal,Genomic DNA
+640,5153,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUXPZ,Normal,Genomic DNA
+641,5153,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUXPZ,Normal,Genomic DNA
+642,5154,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUYTT,Normal,Genomic DNA
+643,5154,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUYTT,Normal,Genomic DNA
+644,5156,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVALD,Normal,Genomic DNA
+645,5156,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVALD,Normal,Genomic DNA
+646,5157,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVCLP,Normal,Genomic DNA
+647,5157,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVCLP,Normal,Genomic DNA
+648,5158,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVDTY,Normal,Genomic DNA
+649,5158,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVDTY,Normal,Genomic DNA
+650,5159,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVECB,Normal,Genomic DNA
+651,5159,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVECB,Normal,Genomic DNA
+652,5160,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATXFN,Normal,Genomic DNA
+653,5160,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATXFN,Normal,Genomic DNA
+654,5161,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUBIT,Normal,Genomic DNA
+655,5161,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUBIT,Normal,Genomic DNA
+656,5163,,HiSeq-ATC,2013-03-11,0A4I42,Tumor,mRNA
+657,5163,,HiSeq-ATC,2013-03-11,0A4I42,Tumor,mRNA
+658,5163,,HiSeq-ATC,2013-03-11,0A4I42,Tumor,mRNA
+659,5164,,HiSeq-ATC,2013-03-11,0A4I40,Tumor,mRNA
+660,5164,,HiSeq-ATC,2013-03-11,0A4I40,Tumor,mRNA
+661,5164,,HiSeq-ATC,2013-03-11,0A4I40,Tumor,mRNA
+662,5165,,HiSeq-ATC,2013-03-11,PAUBIT,Tumor,mRNA
+663,5165,,HiSeq-ATC,2013-03-11,PAUBIT,Tumor,mRNA
+664,5165,,HiSeq-ATC,2013-03-11,PAUBIT,Tumor,mRNA
+665,5166,,HiSeq-ATC,2013-03-11,PAVCLP,Tumor,mRNA
+666,5166,,HiSeq-ATC,2013-03-11,PAVCLP,Tumor,mRNA
+667,5166,,HiSeq-ATC,2013-03-11,PAVCLP,Tumor,mRNA
+668,5352,,M00774,2013-03-20,PAUVUL,Tumor,mRNA
+669,5352,,HiSeq-ATC,2013-04-23,PAUVUL,Tumor,mRNA
+670,5353,,M00774,2013-03-20,PAUYTT,Tumor,mRNA
+671,5353,,HiSeq-ATC,2013-04-23,PAUYTT,Tumor,mRNA
+672,5354,,M00774,2013-03-20,PAVALD,Tumor,mRNA
+673,5354,,HiSeq-ATC,2013-04-23,PAVALD,Tumor,mRNA
+674,5381,,HiSeq-ATC,2013-04-23,PATKSS,Tumor,mRNA
+675,5382,,HiSeq-ATC,2013-04-23,PAUTWB,Tumor,mRNA
+676,5383,,HiSeq-ATC,2013-04-23,PAUTYB,Tumor,mRNA
+677,5384,,HiSeq-ATC,2013-04-23,PAUUML,Tumor,mRNA
+678,5385,,HiSeq-ATC,2013-04-23,PAUXPZ,Tumor,mRNA
+679,5386,,HiSeq-ATC,2013-04-23,PAVDTY,Tumor,mRNA
+680,5387,,HiSeq-ATC,2013-04-23,PAVECB,Tumor,mRNA
+681,5388,,HiSeq-ATC,2013-04-23,PAPNVD,Tumor,mRNA
+682,5389,,HiSeq-ATC,2013-04-23,PAUBIT,Tumor,mRNA
+683,5390,,HiSeq-ATC,2013-04-23,PAKUZU,Tumor,mRNA
+684,5391,,HiSeq-ATC,2013-04-23,0A4HLD,Tumor,mRNA
+685,5392,,HiSeq-ATC,2013-04-23,0A4I40,Tumor,mRNA
+686,5393,,HiSeq-ATC,2013-04-23,0A4I42,Tumor,mRNA
+687,5394,,HiSeq-ATC,2013-04-23,0A4I8U,Tumor,mRNA
+688,5401,,HiSeq-ATC,2013-04-23,PAVCLP,Tumor,mRNA
+689,5407,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I9K,Tumor,Genomic DNA
+690,5545,None,HiSeq-ATC,2012-06-15,0A4I3S,Tumor,Genomic DNA
+691,5546,None,HiSeq-ATC,2012-06-15,0A4I0S,Normal,Genomic DNA
+692,5546,None,HiSeq-ATC,2012-06-15,0A4I0S,Normal,Genomic DNA
+693,5709,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAUTWB,Tumor,Genomic DNA
+694,5710,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAUTYB,Tumor,Genomic DNA
+695,5711,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAVDTY,Tumor,Genomic DNA
+696,5712,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PATXFN,Tumor,Genomic DNA
+697,5713,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PATKSS,Normal,Genomic DNA
+698,5714,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAUVUL,Normal,Genomic DNA
+699,5715,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAUBIT,Normal,Genomic DNA
+700,6007,None,HiSeq-ATC,2013-07-10,NAAEDA,Tumor,mRNA
+701,6008,None,HiSeq-ATC,2013-07-10,NAAEDA,Tumor,mRNA
+702,6009,None,HiSeq-ATC,2013-07-10,NAAEDA,Tumor,mRNA
+703,6010,None,HiSeq-ATC,2013-07-10,NAAEDD,Tumor,mRNA
+704,6011,None,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,mRNA
+705,6012,None,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,mRNA
+706,6013,None,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,mRNA
+707,6014,None,HiSeq-ATC,2013-07-10,NAAEDI,Tumor,mRNA
+708,6015,None,HiSeq-ATC,2013-07-10,NAAEDI,Tumor,mRNA
+709,6016,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAECZ,Normal,Genomic DNA
+710,6016,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAECZ,Normal,Genomic DNA
+711,6017,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDA,Tumor,Genomic DNA
+712,6017,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDA,Tumor,Genomic DNA
+713,6018,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAECZ,Tumor,Genomic DNA
+714,6018,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAECZ,Tumor,Genomic DNA
+715,6019,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDA,Tumor,Genomic DNA
+716,6019,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDA,Tumor,Genomic DNA
+717,6021,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDA,Normal,Genomic DNA
+718,6021,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDA,Normal,Genomic DNA
+719,6022,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDB,Normal,Genomic DNA
+720,6022,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDB,Normal,Genomic DNA
+721,6023,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDD,Tumor,Genomic DNA
+722,6023,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDD,Tumor,Genomic DNA
+723,6024,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDD,Tumor,Genomic DNA
+724,6024,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDD,Tumor,Genomic DNA
+725,6026,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDG,Tumor,Genomic DNA
+726,6026,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDG,Tumor,Genomic DNA
+727,6027,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDG,Normal,Genomic DNA
+728,6027,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDG,Normal,Genomic DNA
+729,6028,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,Genomic DNA
+730,6028,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDH,Tumor,Genomic DNA
+731,6029,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,Genomic DNA
+732,6029,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDH,Tumor,Genomic DNA
+733,6031,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDH,Normal,Genomic DNA
+734,6031,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-11-01,NAAEDH,Normal,Genomic DNA
+735,6032,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDI,Tumor,Genomic DNA
+736,6032,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-11-01,NAAEDI,Tumor,Genomic DNA
+737,6033,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDI,Tumor,Genomic DNA
+738,6033,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-11-01,NAAEDI,Tumor,Genomic DNA
+739,6034,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDI,Normal,Genomic DNA
+740,6034,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-11-01,NAAEDI,Normal,Genomic DNA
+741,6420,None,HiSeq-ATC,2013-11-01,NAAEDG,Tumor,Genomic DNA
+742,6421,None,HiSeq-ATC,2013-11-01,NAAEDG,Normal,Genomic DNA
+743,6422,None,HiSeq-ATC,2013-11-01,NAAEDH,Tumor,Genomic DNA
+744,6423,None,HiSeq-ATC,2013-11-01,NAAEDH,Normal,Genomic DNA
+745,6424,Illumina_Nextera_Rapid_Capture_Exome,HiSeq-ATC,2013-11-01,NAAEDB,Tumor,Genomic DNA
+746,6425,Illumina_Nextera_Rapid_Capture_Exome,HiSeq-ATC,2013-11-01,NAAEDH,Tumor,Genomic DNA
+747,6434,Agilent_SureSelect_Human_SATB2_RUNX2_MECOM,M00774,2013-10-03,PANMIG,Tumor,Genomic DNA
+748,8297,None,HiSeq-Meltzer,2015-05-21,NAAEDH,Normal,Genomic DNA
+749,8297,None,NS500391,2015-04-28,NAAEDH,Normal,Genomic DNA
+750,8297,None,NS500391,2015-04-16,NAAEDH,Normal,Genomic DNA
+751,8298,None,HiSeq-Meltzer,2015-05-21,NAAEDH,Tumor,Genomic DNA
+752,8298,None,NS500391,2015-04-28,NAAEDH,Tumor,Genomic DNA
+753,8298,None,NS500391,2015-04-16,NAAEDH,Tumor,Genomic DNA
+754,8299,None,HiSeq-Meltzer,2015-05-21,NAAEDH,Tumor,Genomic DNA
+755,8299,None,NS500391,2015-04-28,NAAEDH,Tumor,Genomic DNA
+756,8299,None,NS500391,2015-04-16,NAAEDH,Tumor,Genomic DNA
+757,1596,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4HXS,Tumor,Genomic DNA
+758,1596,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4HXS,Tumor,Genomic DNA
+759,1597,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4I6O,Tumor,Genomic DNA
+760,1597,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4I6O,Tumor,Genomic DNA
+761,1598,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,IHRT1161,Tumor,Genomic DNA
+762,1598,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,IHRT1161,Tumor,Genomic DNA
+763,1599,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4HLQ,Normal,Genomic DNA
+764,1599,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4HLQ,Normal,Genomic DNA
+765,1600,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4HX8,Tumor,Genomic DNA
+766,1600,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4HX8,Tumor,Genomic DNA
+767,1601,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4HLD,Tumor,Genomic DNA
+768,1601,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4HLD,Tumor,Genomic DNA
+769,1602,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-06,IHRT1318,Tumor,Genomic DNA
+770,1602,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-06,IHRT1318,Tumor,Genomic DNA
+771,1603,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,IHRT1184,Normal,Genomic DNA
+772,1603,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,IHRT1184,Normal,Genomic DNA
+773,1603,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,IHRT1184,Normal,Genomic DNA
+774,1604,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,IHRT1482,Tumor,Genomic DNA
+775,1604,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,IHRT1482,Tumor,Genomic DNA
+776,1605,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,0A4HZR,Normal,Genomic DNA
+777,1605,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,0A4HZR,Normal,Genomic DNA
+778,1606,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1665,Normal,Genomic DNA
+779,1606,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,IHRT1665,Normal,Genomic DNA
+780,1804,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,0A4I0S,Tumor,Genomic DNA
+781,1804,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,0A4I0S,Tumor,Genomic DNA
+782,1805,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,IHRT1953,Tumor,Genomic DNA
+783,1805,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,IHRT1953,Tumor,Genomic DNA
+784,1806,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1667,Normal,Genomic DNA
+785,1806,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1667,Normal,Genomic DNA
+786,1807,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,0A4I0Q,Tumor,Genomic DNA
+787,1807,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,0A4I0Q,Tumor,Genomic DNA
+788,1808,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1713,Tumor,Genomic DNA
+789,1808,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1713,Tumor,Genomic DNA
+790,1969,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,IHRT1482,Normal,Genomic DNA
+791,1970,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,0A4HZR,Normal,Genomic DNA
+792,1971,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,IHRT1665,Normal,Genomic DNA
+793,1972,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,IHRT1667,Normal,Genomic DNA
+794,1973,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,0A4I0Q,Normal,Genomic DNA
+795,1974,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,IHRT1953,Normal,Genomic DNA
+796,1975,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,0A4I0S,Normal,Genomic DNA
+797,1983,,FlyingDog,2011-08-09,0A4I0Q,Tumor,mRNA
+798,1983,,FlyingDog,2011-08-22,0A4I0Q,Tumor,mRNA
+799,1984,,FlyingDog,2011-08-09,IHRT1713,Tumor,mRNA
+800,1984,,FlyingDog,2011-08-22,IHRT1713,Tumor,mRNA
+801,1985,,FlyingDog,2011-08-09,IHRT1953,Tumor,mRNA
+802,1985,,FlyingDog,2011-08-22,IHRT1953,Tumor,mRNA
+803,1986,,FlyingDog,2011-08-09,0A4I0S,Tumor,mRNA
+804,1986,,FlyingDog,2011-08-22,0A4I0S,Tumor,mRNA
+805,1987,,FlyingDog,2011-08-09,IHRT2389,Tumor,mRNA
+806,1987,,FlyingDog,2011-08-22,IHRT2389,Tumor,mRNA
+807,1988,,FlyingDog,2011-08-09,0A4I0W,Tumor,mRNA
+808,1988,,Stone,2011-08-09,0A4I0W,Tumor,mRNA
+809,1989,,FlyingDog,2011-08-09,0A4I3S,Tumor,mRNA
+810,1989,,Stone,2011-08-09,0A4I3S,Tumor,mRNA
+811,1990,,Stone,2011-08-09,IHRT2576,Tumor,mRNA
+812,1990,,FlyingDog,2011-08-22,IHRT2576,Tumor,mRNA
+813,1991,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-09,IHRT1713,Normal,Genomic DNA
+814,2004,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,0A4I44,Normal,Genomic DNA
+815,2005,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3232,Normal,Genomic DNA
+816,2006,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,0A4I8U,Normal,Genomic DNA
+817,2007,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3408,Normal,Genomic DNA
+818,2008,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3798,Normal,Genomic DNA
+819,2009,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3232,Tumor,Genomic DNA
+820,2009,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3232,Tumor,Genomic DNA
+821,2038,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,0A4HLD,Normal,Genomic DNA
+822,2039,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,0A4HLQ,Normal,Genomic DNA
+823,2040,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,0A4HX8,Normal,Genomic DNA
+824,2041,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,IHRT1161,Normal,Genomic DNA
+825,2042,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,0A4I6O,Normal,Genomic DNA
+826,2043,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,0A4HXS,Normal,Genomic DNA
+827,2044,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,IHRT2389,Normal,Genomic DNA
+828,2044,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,IHRT2389,Normal,Genomic DNA
+829,2045,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,0A4I0W,Tumor,Genomic DNA
+830,2045,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,0A4I0W,Tumor,Genomic DNA
+831,2046,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,0A4I3S,Tumor,Genomic DNA
+832,2046,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,0A4I3S,Tumor,Genomic DNA
+833,2047,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,IHRT2576,Normal,Genomic DNA
+834,2047,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,IHRT2576,Normal,Genomic DNA
+835,2048,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,0A4I42,Normal,Genomic DNA
+836,2048,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-11-23,0A4I42,Normal,Genomic DNA
+837,2048,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,0A4I42,Normal,Genomic DNA
+838,2048,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,0A4I42,Normal,Genomic DNA
+839,2049,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,IHRT2660,Normal,Genomic DNA
+840,2049,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-11-23,IHRT2660,Normal,Genomic DNA
+841,2049,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,IHRT2660,Normal,Genomic DNA
+842,2049,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,IHRT2660,Normal,Genomic DNA
+843,2050,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,IHRT2795,Normal,Genomic DNA
+844,2050,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-11-18,IHRT2795,Normal,Genomic DNA
+845,2051,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,IHRT2389,Tumor,Genomic DNA
+846,2052,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,0A4I0W,Tumor,Genomic DNA
+847,2053,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,0A4I3S,Normal,Genomic DNA
+848,2054,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,IHRT2576,Tumor,Genomic DNA
+849,2055,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-09-14,IHRT2660,Tumor,Genomic DNA
+850,2056,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,IHRT2795,Tumor,Genomic DNA
+851,2057,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,IHRT2795,Normal,Genomic DNA
+852,2058,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,0A4I44,Normal,Genomic DNA
+853,2059,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-29,IHRT2817,Normal,Genomic DNA
+854,2059,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-29,IHRT2817,Normal,Genomic DNA
+855,2060,,Stone,2012-01-13,IHRT2817,Tumor,mRNA
+856,2060,,Stone,2012-01-13,IHRT2817,Tumor,mRNA
+857,2061,,FlyingDog,2011-12-09,0A4I44,Tumor,mRNA
+858,2061,,Dogfish,2011-12-29,0A4I44,Tumor,mRNA
+859,2062,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-09-14,0A4I42,Tumor,Genomic DNA
+860,2063,,FlyingDog,2012-01-26,IHRT2660,Tumor,mRNA
+861,2063,,FlyingDog,2012-01-26,IHRT2660,Tumor,mRNA
+862,2064,,FlyingDog,2011-12-09,IHRT3232,Tumor,mRNA
+863,2064,,FlyingDog,2011-12-09,IHRT3232,Tumor,mRNA
+864,2064,,Dogfish,2011-12-29,IHRT3232,Tumor,mRNA
+865,2064,,Dogfish,2011-12-29,IHRT3232,Tumor,mRNA
+866,2065,,FlyingDog,2012-01-05,0A4I8U,Tumor,mRNA
+867,2065,,FlyingDog,2012-01-05,0A4I8U,Tumor,mRNA
+868,2065,,Stone,2012-01-13,0A4I8U,Tumor,mRNA
+869,2066,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-09-14,0A4I8U,Tumor,Genomic DNA
+870,2066,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-11-23,0A4I8U,Tumor,Genomic DNA
+871,2066,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,0A4I8U,Tumor,Genomic DNA
+872,2066,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,0A4I8U,Tumor,Genomic DNA
+873,2067,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,IHRT3408,Tumor,Genomic DNA
+874,2067,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,IHRT3408,Tumor,Genomic DNA
+875,2068,,FlyingDog,2012-01-05,IHRT3408,Tumor,mRNA
+876,2068,,FlyingDog,2012-01-05,IHRT3408,Tumor,mRNA
+877,2068,,FlyingDog,2012-01-05,IHRT3408,Tumor,mRNA
+878,2068,,FlyingDog,2012-01-05,IHRT3408,Tumor,mRNA
+879,2069,,Clipper,2011-11-23,IHRT3798,Tumor,mRNA
+880,2069,,Clipper,2011-11-23,IHRT3798,Tumor,mRNA
+881,2070,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,IHRT3798,Normal,Genomic DNA
+882,2070,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,IHRT3798,Normal,Genomic DNA
+883,2078,,Stone,2012-01-13,IHRT2795,Tumor,mRNA
+884,2078,,Stone,2012-01-13,IHRT2795,Tumor,mRNA
+885,2079,,FlyingDog,2012-01-26,0A4I42,Tumor,mRNA
+886,2079,,FlyingDog,2012-01-26,0A4I42,Tumor,mRNA
+887,2080,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,IHRT1318,Normal,Genomic DNA
+888,2081,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,IHRT1184,Normal,Genomic DNA
+889,6435,Agilent_SureSelect_Human_SATB2_RUNX2_MECOM,M00774,2013-10-03,0A4I42,Tumor,Genomic DNA
+890,6436,Agilent_SureSelect_Human_SATB2_RUNX2_MECOM,M00774,2013-10-03,CA_4388_011,Tumor,Genomic DNA
+891,839,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-09-22,PALHRL,Tumor,Genomic DNA
+892,839,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-08,PALHRL,Tumor,Genomic DNA
+893,840,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-09-22,PAKFVX,Tumor,Genomic DNA
+894,840,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-08,PAKFVX,Tumor,Genomic DNA
+895,841,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-09-22,PALFYN,Tumor,Genomic DNA
+896,841,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-08,PALFYN,Tumor,Genomic DNA
+897,842,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALKDP,Tumor,Genomic DNA
+898,842,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-08,PALKDP,Tumor,Genomic DNA
+899,843,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALKGN,Tumor,Genomic DNA
+900,843,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PALKGN,Tumor,Genomic DNA
+901,844,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALHRL,Normal,Genomic DNA
+902,845,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PAKFVX,Normal,Genomic DNA
+903,846,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALFYN,Normal,Genomic DNA
+904,847,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALKDP,Normal,Genomic DNA
+905,848,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-09-23,PALKGN,Normal,Genomic DNA
+906,848,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2010-10-22,PALKGN,Normal,Genomic DNA
+907,849,,Clipper,2010-10-05,PALHRL,Tumor,mRNA
+908,849,,Dogfish,2010-12-29,PALHRL,Tumor,mRNA
+909,850,,Dogfish,2010-09-22,PAKFVX,Tumor,mRNA
+910,850,,FlyingDog,2010-10-22,PAKFVX,Tumor,mRNA
+911,851,,Dogfish,2010-09-22,PALFYN,Tumor,mRNA
+912,851,,FlyingDog,2010-10-22,PALFYN,Tumor,mRNA
+913,851,,Dogfish,2010-12-29,PALFYN,Tumor,mRNA
+914,852,,Dogfish,2010-09-22,PALKDP,Tumor,mRNA
+915,852,,FlyingDog,2010-10-22,PALKDP,Tumor,mRNA
+916,853,,Clipper,2010-10-05,PALKGN,Tumor,mRNA
+917,853,,Stone,2010-10-15,PALKGN,Tumor,mRNA
+918,965,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PAMHYN,Normal,Genomic DNA
+919,966,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PAMJXS,Normal,Genomic DNA
+920,967,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PAMYYJ,Normal,Genomic DNA
+921,967,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-11-18,PAMYYJ,Normal,Genomic DNA
+922,968,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PANPUM,Normal,Genomic DNA
+923,969,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PANSEN,Normal,Genomic DNA
+924,970,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PANXSC,Normal,Genomic DNA
+925,970,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PANXSC,Normal,Genomic DNA
+926,971,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-10-27,PALWWX,Normal,Genomic DNA
+927,971,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-28,PALWWX,Normal,Genomic DNA
+928,972,,Stone,2010-10-29,PAMHYN,Tumor,mRNA
+929,972,,Clipper,2010-11-05,PAMHYN,Tumor,mRNA
+930,973,,Stone,2010-10-29,PAMJXS,Tumor,mRNA
+931,973,,Clipper,2010-11-05,PAMJXS,Tumor,mRNA
+932,974,,Stone,2010-10-29,PAMYYJ,Tumor,mRNA
+933,974,,Clipper,2010-11-05,PAMYYJ,Tumor,mRNA
+934,975,,Stone,2010-10-29,PANPUM,Tumor,mRNA
+935,975,,Clipper,2010-11-05,PANPUM,Tumor,mRNA
+936,976,,Stone,2010-10-29,PANSEN,Tumor,mRNA
+937,976,,Clipper,2010-11-05,PANSEN,Tumor,mRNA
+938,977,,Stone,2010-10-29,PANXSC,Tumor,mRNA
+939,977,,Stone,2010-12-02,PANXSC,Tumor,mRNA
+940,978,,Stone,2010-10-29,PALWWX,Tumor,mRNA
+941,978,,Stone,2010-12-02,PALWWX,Tumor,mRNA
+942,979,,Clipper,2010-11-05,PALZGU,Tumor,mRNA
+943,979,,Stone,2010-12-02,PALZGU,Tumor,mRNA
+944,995,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2010-11-05,PALZGU,Normal,Genomic DNA
+945,995,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PALZGU,Normal,Genomic DNA
+946,996,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PAMJXS,Tumor,Genomic DNA
+947,996,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PAMJXS,Tumor,Genomic DNA
+948,997,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PAMYYJ,Tumor,Genomic DNA
+949,997,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PAMYYJ,Tumor,Genomic DNA
+950,998,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PANPUM,Tumor,Genomic DNA
+951,998,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PANPUM,Tumor,Genomic DNA
+952,999,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PANSEN,Tumor,Genomic DNA
+953,999,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PANSEN,Tumor,Genomic DNA
+954,999,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PANSEN,Tumor,Genomic DNA
+955,999,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PANSEN,Tumor,Genomic DNA
+956,1000,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PANXSC,Tumor,Genomic DNA
+957,1000,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PANXSC,Tumor,Genomic DNA
+958,1000,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PANXSC,Tumor,Genomic DNA
+959,1000,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PANXSC,Tumor,Genomic DNA
+960,1001,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PALWWX,Tumor,Genomic DNA
+961,1001,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PALWWX,Tumor,Genomic DNA
+962,1001,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PALWWX,Tumor,Genomic DNA
+963,1001,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PALWWX,Tumor,Genomic DNA
+964,1002,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2010-11-18,PALZGU,Tumor,Genomic DNA
+965,1002,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2010-11-18,PALZGU,Tumor,Genomic DNA
+966,1002,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PALZGU,Tumor,Genomic DNA
+967,1002,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PALZGU,Tumor,Genomic DNA
+968,1003,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2010-11-24,PAMHYN,Tumor,Genomic DNA
+969,1003,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2010-11-24,PAMHYN,Tumor,Genomic DNA
+970,1003,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PAMHYN,Tumor,Genomic DNA
+971,1037,,Clipper,2011-01-26,PAPNVD,Tumor,mRNA
+972,1038,,Clipper,2011-01-26,PAPXGT,Tumor,mRNA
+973,1038,,Clipper,2011-01-26,PAPXGT,Tumor,mRNA
+974,1039,,Stone,2011-01-14,PASEBY,Tumor,mRNA
+975,1039,,Stone,2011-01-14,PASEBY,Tumor,mRNA
+976,1040,,Stone,2011-01-14,PASFCV,Tumor,mRNA
+977,1040,,Stone,2011-01-14,PASFCV,Tumor,mRNA
+978,1041,,Clipper,2011-01-26,PASKZZ,Tumor,mRNA
+979,1041,,Clipper,2011-01-26,PASKZZ,Tumor,mRNA
+980,1042,,Stone,2011-01-14,PASSLM,Tumor,mRNA
+981,1042,,Stone,2011-01-14,PASSLM,Tumor,mRNA
+982,1043,,Clipper,2011-01-26,PASEFS,Tumor,mRNA
+983,1043,,Clipper,2011-01-26,PASEFS,Tumor,mRNA
+984,1052,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASEBY,Normal,Genomic DNA
+985,1052,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PASEBY,Normal,Genomic DNA
+986,1053,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PAPNVD,Normal,Genomic DNA
+987,1053,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-11-23,PAPNVD,Normal,Genomic DNA
+988,1054,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASKZZ,Normal,Genomic DNA
+989,1054,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PASKZZ,Normal,Genomic DNA
+990,1055,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PAPXGT,Normal,Genomic DNA
+991,1055,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-28,PAPXGT,Normal,Genomic DNA
+992,1055,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PAPXGT,Normal,Genomic DNA
+993,1056,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASSLM,Normal,Genomic DNA
+994,1056,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-10-21,PASSLM,Normal,Genomic DNA
+995,1057,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASEFS,Normal,Genomic DNA
+996,1057,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PASEFS,Normal,Genomic DNA
+997,1058,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-01-13,PASFCV,Normal,Genomic DNA
+998,1058,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PASFCV,Normal,Genomic DNA
+999,1063,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASFCV,Tumor,Genomic DNA
+1000,1063,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASFCV,Tumor,Genomic DNA
+1001,1064,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASKZZ,Tumor,Genomic DNA
+1002,1064,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASKZZ,Tumor,Genomic DNA
+1003,1065,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASSLM,Tumor,Genomic DNA
+1004,1065,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-02-09,PASSLM,Tumor,Genomic DNA
+1005,1067,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PAPNVD,Tumor,Genomic DNA
+1006,1067,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PAPNVD,Tumor,Genomic DNA
+1007,1068,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PAPXGT,Tumor,Genomic DNA
+1008,1068,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PAPXGT,Tumor,Genomic DNA
+1009,1069,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PASEBY,Tumor,Genomic DNA
+1010,1069,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-02-10,PASEBY,Tumor,Genomic DNA
+1011,1071,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-02-11,PASEFS,Tumor,Genomic DNA
+1012,1071,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-02-11,PASEFS,Tumor,Genomic DNA
+1013,1072,,Clipper,2011-02-11,PAKXLD,Tumor,mRNA
+1014,1072,,FlyingDog,2011-02-11,PAKXLD,Tumor,mRNA
+1015,1073,,Clipper,2011-02-11,PAMEKS,Tumor,mRNA
+1016,1073,,FlyingDog,2011-02-11,PAMEKS,Tumor,mRNA
+1017,1074,,FlyingDog,2011-02-11,PAMLKS,Tumor,mRNA
+1018,1074,,Clipper,2011-03-02,PAMLKS,Tumor,mRNA
+1019,1074,,FlyingDog,2012-02-23,PAMLKS,Tumor,mRNA
+1020,1075,,FlyingDog,2011-02-11,PARDAX,Tumor,mRNA
+1021,1075,,Clipper,2011-03-02,PARDAX,Tumor,mRNA
+1022,1076,,FlyingDog,2011-02-11,PARFTG,Tumor,mRNA
+1023,1076,,FlyingDog,2011-03-11,PARFTG,Tumor,mRNA
+1024,1077,,FlyingDog,2011-02-11,PARGTM,Tumor,mRNA
+1025,1077,,FlyingDog,2011-03-11,PARGTM,Tumor,mRNA
+1026,1078,,FlyingDog,2011-02-11,PARJXU,Tumor,mRNA
+1027,1078,,FlyingDog,2011-03-11,PARJXU,Tumor,mRNA
+1028,1079,,FlyingDog,2011-03-11,PARKAF,Tumor,mRNA
+1029,1194,,Dogfish,2011-02-23,PAMHLF,Tumor,mRNA
+1030,1194,,Stone,2011-02-24,PAMHLF,Tumor,mRNA
+1031,1195,,Dogfish,2011-02-23,PANVJJ,Tumor,mRNA
+1032,1195,,Stone,2011-02-24,PANVJJ,Tumor,mRNA
+1033,1195,,FlyingDog,2012-02-23,PANVJJ,Tumor,mRNA
+1034,1196,,Dogfish,2011-02-23,PAMHLF,Tumor,mRNA
+1035,1196,,Stone,2011-02-24,PAMHLF,Tumor,mRNA
+1036,1197,,Dogfish,2011-02-23,PASRNE,Tumor,mRNA
+1037,1197,,Stone,2011-02-24,PASRNE,Tumor,mRNA
+1038,1197,,FlyingDog,2012-02-23,PASRNE,Tumor,mRNA
+1039,1198,,Dogfish,2011-02-23,PATJVI,Tumor,mRNA
+1040,1198,,Stone,2011-02-24,PATJVI,Tumor,mRNA
+1041,1198,,Stone,2012-02-10,PATJVI,Tumor,mRNA
+1042,1199,,Dogfish,2011-02-23,PAMRHD,Tumor,mRNA
+1043,1199,,Stone,2011-02-24,PAMRHD,Tumor,mRNA
+1044,1199,,FlyingDog,2012-02-23,PAMRHD,Tumor,mRNA
+1045,1200,,Dogfish,2011-02-23,PASYUK,Tumor,mRNA
+1046,1200,,Stone,2011-02-24,PASYUK,Tumor,mRNA
+1047,1200,,Stone,2012-02-10,PASYUK,Tumor,mRNA
+1048,1201,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PAMHLF,Tumor,Genomic DNA
+1049,1201,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PAMHLF,Tumor,Genomic DNA
+1050,1202,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PASRNE,Tumor,Genomic DNA
+1051,1202,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PASRNE,Tumor,Genomic DNA
+1052,1203,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PATJVI,Tumor,Genomic DNA
+1053,1203,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-01,PATJVI,Tumor,Genomic DNA
+1054,1210,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PAMRHD,Tumor,Genomic DNA
+1055,1210,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PAMRHD,Tumor,Genomic DNA
+1056,1211,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PASYUK,Tumor,Genomic DNA
+1057,1211,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PASYUK,Tumor,Genomic DNA
+1058,1212,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PATAWV,Tumor,Genomic DNA
+1059,1212,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PATAWV,Tumor,Genomic DNA
+1060,1213,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PAKXLD,Tumor,Genomic DNA
+1061,1213,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PAKXLD,Tumor,Genomic DNA
+1062,1214,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PAMEKS,Tumor,Genomic DNA
+1063,1214,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PAMEKS,Tumor,Genomic DNA
+1064,1214,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-04-08,PAMEKS,Tumor,Genomic DNA
+1065,1215,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PAMLKS,Tumor,Genomic DNA
+1066,1215,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PAMLKS,Tumor,Genomic DNA
+1067,1215,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PAMLKS,Tumor,Genomic DNA
+1068,1216,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-03-04,PARDAX,Tumor,Genomic DNA
+1069,1216,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-04,PARDAX,Tumor,Genomic DNA
+1070,1217,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-11,PARFTG,Tumor,Genomic DNA
+1071,1217,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-11,PARFTG,Tumor,Genomic DNA
+1072,1218,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-03-11,PAMHLF,Normal,Genomic DNA
+1073,1218,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PAMHLF,Normal,Genomic DNA
+1074,1219,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PAMEKS,Normal,Genomic DNA
+1075,1220,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PAMLKS,Normal,Genomic DNA
+1076,1220,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PAMLKS,Normal,Genomic DNA
+1077,1221,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARDAX,Normal,Genomic DNA
+1078,1222,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARFTG,Normal,Genomic DNA
+1079,1223,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARGTM,Normal,Genomic DNA
+1080,1223,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PARGTM,Normal,Genomic DNA
+1081,1224,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARJXU,Normal,Genomic DNA
+1082,1224,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PARJXU,Normal,Genomic DNA
+1083,1225,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-11,PARKAF,Normal,Genomic DNA
+1084,1226,,Dogfish,2011-03-25,PATAWV,Tumor,mRNA
+1085,1226,,Clipper,2011-03-28,PATAWV,Tumor,mRNA
+1086,1227,,Stone,2011-03-21,PANMIG,Tumor,mRNA
+1087,1227,,Stone,2011-03-21,PANMIG,Tumor,mRNA
+1088,1229,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PANVJJ,Tumor,Genomic DNA
+1089,1229,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-28,PANVJJ,Tumor,Genomic DNA
+1090,1230,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-28,PANMIG,Tumor,Genomic DNA
+1091,1230,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-04-08,PANMIG,Tumor,Genomic DNA
+1092,1231,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PASRNE,Normal,Genomic DNA
+1093,1232,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PATJVI,Normal,Genomic DNA
+1094,1232,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PATJVI,Normal,Genomic DNA
+1095,1233,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PASYUK,Normal,Genomic DNA
+1096,1233,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PASYUK,Normal,Genomic DNA
+1097,1234,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-03-28,PATAWV,Normal,Genomic DNA
+1098,1234,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PATAWV,Normal,Genomic DNA
+1099,1235,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PAKXLD,Normal,Genomic DNA
+1100,1236,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARGTM,Tumor,Genomic DNA
+1101,1236,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARGTM,Tumor,Genomic DNA
+1102,1237,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARJXU,Tumor,Genomic DNA
+1103,1237,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARJXU,Tumor,Genomic DNA
+1104,1237,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,PARJXU,Tumor,Genomic DNA
+1105,1238,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARKAF,Tumor,Genomic DNA
+1106,1238,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-15,PARKAF,Tumor,Genomic DNA
+1107,1263,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PANVJJ,Normal,Genomic DNA
+1108,1264,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-03-25,PANMIG,Normal,Genomic DNA
+1109,1270,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-04-08,PAMHLF,Tumor,Genomic DNA
+1110,1270,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-04-08,PAMHLF,Tumor,Genomic DNA
+1111,1271,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-04-08,PAMRHD,Normal,Genomic DNA
+1112,1271,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,PAMRHD,Normal,Genomic DNA
+1113,1290,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PAKZZK,Tumor,Genomic DNA
+1114,1290,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PAKZZK,Tumor,Genomic DNA
+1115,1291,,FlyingDog,2011-05-12,PANMIG,Tumor,mRNA
+1116,1291,,Stone,2011-06-01,PANMIG,Tumor,mRNA
+1117,1292,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PANMIG,Tumor,Genomic DNA
+1118,1292,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PANMIG,Tumor,Genomic DNA
+1119,1293,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PANGRW,Tumor,Genomic DNA
+1120,1293,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PANGRW,Tumor,Genomic DNA
+1121,1294,,FlyingDog,2011-05-12,PANGRW,Tumor,mRNA
+1122,1294,,Clipper,2011-07-01,PANGRW,Tumor,mRNA
+1123,1295,,FlyingDog,2011-05-12,PAKZZK,Tumor,mRNA
+1124,1295,,FlyingDog,2011-06-02,PAKZZK,Tumor,mRNA
+1125,1296,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PANZZJ,Tumor,Genomic DNA
+1126,1296,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PANZZJ,Tumor,Genomic DNA
+1127,1297,,FlyingDog,2011-05-12,PANZZJ,Tumor,mRNA
+1128,1297,,FlyingDog,2011-06-02,PANZZJ,Tumor,mRNA
+1129,1298,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PARBGW,Tumor,Genomic DNA
+1130,1298,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PARBGW,Tumor,Genomic DNA
+1131,1299,,FlyingDog,2011-05-12,PARBGW,Tumor,mRNA
+1132,1299,,FlyingDog,2011-06-02,PARBGW,Tumor,mRNA
+1133,1300,,FlyingDog,2011-05-12,PANZHX,Tumor,mRNA
+1134,1300,,FlyingDog,2011-06-02,PANZHX,Tumor,mRNA
+1135,1301,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PASUUH,Tumor,Genomic DNA
+1136,1301,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PASUUH,Tumor,Genomic DNA
+1137,1302,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-11,PATEEM,Tumor,Genomic DNA
+1138,1302,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-05-19,PATEEM,Tumor,Genomic DNA
+1139,1303,,FlyingDog,2011-05-12,PAPKWD,Tumor,mRNA
+1140,1303,,FlyingDog,2011-06-02,PAPKWD,Tumor,mRNA
+1141,1304,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PATEEM,Tumor,Genomic DNA
+1142,1304,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-01,PATEEM,Tumor,Genomic DNA
+1143,1305,,Clipper,2011-06-02,PAPWWC,Tumor,mRNA
+1144,1305,,Dogfish,2011-06-17,PAPWWC,Tumor,mRNA
+1145,1305,,FlyingDog,2011-07-06,PAPWWC,Tumor,mRNA
+1146,1306,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PAMTCM,Tumor,Genomic DNA
+1147,1306,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PAMTCM,Tumor,Genomic DNA
+1148,1307,,Clipper,2011-06-02,PAMTCM,Tumor,mRNA
+1149,1307,,Dogfish,2011-06-17,PAMTCM,Tumor,mRNA
+1150,1307,,FlyingDog,2011-07-06,PAMTCM,Tumor,mRNA
+1151,1308,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PAPWWC,Tumor,Genomic DNA
+1152,1308,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PAPWWC,Tumor,Genomic DNA
+1153,1309,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PATEEM,Tumor,Genomic DNA
+1154,1309,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-05-25,PATEEM,Tumor,Genomic DNA
+1155,1310,,Clipper,2011-06-02,PATEEM,Tumor,mRNA
+1156,1310,,FlyingDog,2011-07-06,PATEEM,Tumor,mRNA
+1157,1311,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-05-20,PANZHX,Tumor,Genomic DNA
+1158,1311,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-05-20,PANZHX,Tumor,Genomic DNA
+1159,1312,,Clipper,2011-06-02,PASUUH,Tumor,mRNA
+1160,1312,,Dogfish,2011-06-17,PASUUH,Tumor,mRNA
+1161,1312,,FlyingDog,2011-07-06,PASUUH,Tumor,mRNA
+1162,1313,,Clipper,2011-06-02,PALECC,Tumor,mRNA
+1163,1313,,Dogfish,2011-06-17,PALECC,Tumor,mRNA
+1164,1313,,FlyingDog,2011-07-06,PALECC,Tumor,mRNA
+1165,1505,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-01,PALECC,Tumor,Genomic DNA
+1166,1505,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-01,PALECC,Tumor,Genomic DNA
+1167,1506,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-06-02,PAKZZK,Normal,Genomic DNA
+1168,1506,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,PAKZZK,Normal,Genomic DNA
+1169,1507,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-06-02,PARBGW,Normal,Genomic DNA
+1170,1507,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PARBGW,Normal,Genomic DNA
+1171,1507,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,PARBGW,Normal,Genomic DNA
+1172,1528,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PANGRW,Normal,Genomic DNA
+1173,1529,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PANZZJ,Normal,Genomic DNA
+1174,1530,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PAMTCM,Normal,Genomic DNA
+1175,1530,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,PAMTCM,Normal,Genomic DNA
+1176,1531,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PANZHX,Normal,Genomic DNA
+1177,1532,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PAPKWD,Normal,Genomic DNA
+1178,1533,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-06-15,PAPWWC,Normal,Genomic DNA
+1179,1547,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PATEEM,Normal,Genomic DNA
+1180,1547,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,PATEEM,Normal,Genomic DNA
+1181,1548,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PASUUH,Normal,Genomic DNA
+1182,1548,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-11-18,PASUUH,Normal,Genomic DNA
+1183,1549,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PALECC,Normal,Genomic DNA
+1184,1553,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PAPVYW,Normal,Genomic DNA
+1185,1553,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-11-18,PAPVYW,Normal,Genomic DNA
+1186,1554,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-06-29,PAMTCM,Normal,Genomic DNA
+1187,1905,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PANGPE,Tumor,Genomic DNA
+1188,1906,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PAPFLB,Tumor,Genomic DNA
+1189,1907,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PASNZV,Tumor,Genomic DNA
+1190,1908,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PATMPU,Tumor,Genomic DNA
+1191,1909,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PATMXR,Tumor,Genomic DNA
+1192,1910,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PATPBS,Tumor,Genomic DNA
+1193,1911,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-08-12,PATUXZ,Tumor,Genomic DNA
+1194,1912,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-09,PANGPE,Normal,Genomic DNA
+1195,1913,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-22,PAPFLB,Normal,Genomic DNA
+1196,1913,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PAPFLB,Normal,Genomic DNA
+1197,1913,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PAPFLB,Normal,Genomic DNA
+1198,1914,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-22,PASNZV,Normal,Genomic DNA
+1199,1914,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PASNZV,Normal,Genomic DNA
+1200,1914,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PASNZV,Normal,Genomic DNA
+1201,1915,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-22,PATMPU,Normal,Genomic DNA
+1202,1915,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PATMPU,Normal,Genomic DNA
+1203,1916,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-22,PATMXR,Normal,Genomic DNA
+1204,1916,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-30,PATMXR,Normal,Genomic DNA
+1205,1916,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2012-03-02,PATMXR,Normal,Genomic DNA
+1206,1916,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PATMXR,Normal,Genomic DNA
+1207,1992,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-09,PATPBS,Normal,Genomic DNA
+1208,1992,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2012-03-30,PATPBS,Normal,Genomic DNA
+1209,1993,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-09,PATUXZ,Normal,Genomic DNA
+1210,1993,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-03-23,PATUXZ,Normal,Genomic DNA
+1211,2071,,Dogfish,2011-08-26,PANGPE,Tumor,mRNA
+1212,2071,,FlyingDog,2011-09-02,PANGPE,Tumor,mRNA
+1213,2072,,Dogfish,2011-08-26,PAPFLB,Tumor,mRNA
+1214,2072,,FlyingDog,2011-09-02,PAPFLB,Tumor,mRNA
+1215,2073,,Dogfish,2011-08-26,PASNZV,Tumor,mRNA
+1216,2073,,FlyingDog,2011-09-02,PASNZV,Tumor,mRNA
+1217,2074,,Dogfish,2011-08-26,PATMPU,Tumor,mRNA
+1218,2074,,FlyingDog,2011-09-02,PATMPU,Tumor,mRNA
+1219,2075,,Dogfish,2011-08-26,PATMXR,Tumor,mRNA
+1220,2075,,FlyingDog,2011-09-02,PATMXR,Tumor,mRNA
+1221,2076,,Dogfish,2011-08-26,PATPBS,Tumor,mRNA
+1222,2076,,FlyingDog,2011-09-02,PATPBS,Tumor,mRNA
+1223,2077,,Dogfish,2011-08-26,PATUXZ,Tumor,mRNA
+1224,2077,,FlyingDog,2011-09-02,PATUXZ,Tumor,mRNA
+1225,2280,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-12,0A4HLD,Tumor,Genomic DNA
+1226,2280,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-01-20,0A4HLD,Tumor,Genomic DNA
+1227,2281,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-12,0A4HLQ,Normal,Genomic DNA
+1228,2281,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-01-20,0A4HLQ,Normal,Genomic DNA
+1229,2282,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-12,0A4HMJ,Tumor,Genomic DNA
+1230,2282,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-01-20,0A4HMJ,Tumor,Genomic DNA
+1231,2282,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4HMJ,Tumor,Genomic DNA
+1232,2283,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-12,0A4HX8,Tumor,Genomic DNA
+1233,2283,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-01-20,0A4HX8,Tumor,Genomic DNA
+1234,2284,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HXG,Tumor,Genomic DNA
+1235,2285,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HYB,Normal,Genomic DNA
+1236,2286,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HZR,Normal,Genomic DNA
+1237,2287,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I0W,Tumor,Genomic DNA
+1238,2288,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I3S,Tumor,Genomic DNA
+1239,2289,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I40,Tumor,Genomic DNA
+1240,2290,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I42,Tumor,Genomic DNA
+1241,2290,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2013-05-30,0A4I42,Tumor,Genomic DNA
+1242,2291,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I44,Tumor,Genomic DNA
+1243,2292,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I48,Tumor,Genomic DNA
+1244,2293,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I4E,Tumor,Genomic DNA
+1245,2294,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I65,Tumor,Genomic DNA
+1246,2295,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I8U,Tumor,Genomic DNA
+1247,2296,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I0S,Tumor,Genomic DNA
+1248,2297,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I4M,Tumor,Genomic DNA
+1249,2298,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I5B,Tumor,Genomic DNA
+1250,2299,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4I4O,Tumor,Genomic DNA
+1251,2300,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HLD,Normal,Genomic DNA
+1252,2301,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HLQ,Normal,Genomic DNA
+1253,2302,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HMJ,Normal,Genomic DNA
+1254,2303,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,0A4HX8,Normal,Genomic DNA
+1255,2304,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,PAKUZU,Normal,Genomic DNA
+1256,2305,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,PAPIJR,Normal,Genomic DNA
+1257,2306,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,PAKUZU,Tumor,Genomic DNA
+1258,2307,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-11-23,PAPIJR,Tumor,Genomic DNA
+1259,2388,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I9I,Tumor,Genomic DNA
+1260,2389,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I9K,Tumor,Genomic DNA
+1261,2390,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HMC,Tumor,Genomic DNA
+1262,2390,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4HMC,Tumor,Genomic DNA
+1263,2391,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HY5,Tumor,Genomic DNA
+1264,2392,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HXG,Normal,Genomic DNA
+1265,2393,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HYB,Normal,Genomic DNA
+1266,2394,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HZR,Normal,Genomic DNA
+1267,2395,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I0W,Normal,Genomic DNA
+1268,2396,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I3S,Normal,Genomic DNA
+1269,2396,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I3S,Normal,Genomic DNA
+1270,2397,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I40,Normal,Genomic DNA
+1271,2398,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I42,Normal,Genomic DNA
+1272,2399,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I44,Normal,Genomic DNA
+1273,2400,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I48,Normal,Genomic DNA
+1274,2401,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I4E,Normal,Genomic DNA
+1275,2402,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I65,Normal,Genomic DNA
+1276,2402,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I65,Normal,Genomic DNA
+1277,2403,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I8U,Normal,Genomic DNA
+1278,2403,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I8U,Normal,Genomic DNA
+1279,2404,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I9I,Normal,Genomic DNA
+1280,2404,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I9I,Normal,Genomic DNA
+1281,2405,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I9K,Normal,Genomic DNA
+1282,2406,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HMC,Normal,Genomic DNA
+1283,2407,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4HY5,Normal,Genomic DNA
+1284,2408,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I0S,Normal,Genomic DNA
+1285,2409,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I4M,Normal,Genomic DNA
+1286,2410,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I4O,Normal,Genomic DNA
+1287,2411,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2011-12-29,0A4I5B,Normal,Genomic DNA
+1288,2412,,HiSeq-ATC,2011-12-29,PAKUZU,Tumor,mRNA
+1289,2413,,HiSeq-ATC,2011-12-29,0A4I4M,Tumor,mRNA
+1290,2414,,HiSeq-ATC,2011-12-29,0A4I9I,Tumor,mRNA
+1291,2415,,HiSeq-ATC,2011-12-29,0A4I8U,Tumor,mRNA
+1292,2416,,HiSeq-ATC,2011-12-29,0A4I65,Tumor,mRNA
+1293,2417,,HiSeq-ATC,2011-12-29,0A4I44,Tumor,mRNA
+1294,2418,,HiSeq-ATC,2011-12-29,0A4I48,Tumor,mRNA
+1295,2419,,HiSeq-ATC,2011-12-29,0A4I42,Tumor,mRNA
+1296,2420,,HiSeq-ATC,2011-12-29,0A4I3S,Tumor,mRNA
+1297,2421,,HiSeq-ATC,2011-12-29,0A4I0W,Tumor,mRNA
+1298,2422,,HiSeq-ATC,2011-12-29,0A4HZR,Tumor,mRNA
+1299,2423,,HiSeq-ATC,2011-12-29,0A4HYB,Tumor,mRNA
+1300,2424,,HiSeq-ATC,2011-12-29,0A4HXG,Tumor,mRNA
+1301,2425,,HiSeq-ATC,2012-01-05,0A4HX8,Tumor,mRNA
+1302,2426,,HiSeq-ATC,2012-01-05,0A4HMJ,Tumor,mRNA
+1303,2427,,HiSeq-ATC,2012-01-05,0A4HLQ,Tumor,mRNA
+1304,2428,,HiSeq-ATC,2012-01-05,0A4HLD,Tumor,mRNA
+1305,2780,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAMTCM,Tumor,Genomic DNA
+1306,2781,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAPWWC,Tumor,Genomic DNA
+1307,2782,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PANZHX,Tumor,Genomic DNA
+1308,2782,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2013-05-09,PANZHX,Tumor,Genomic DNA
+1309,2783,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAPKWD,Tumor,Genomic DNA
+1310,2784,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAPVYW,Tumor,Genomic DNA
+1311,2784,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2013-05-09,PAPVYW,Tumor,Genomic DNA
+1312,2785,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PANGRW,Tumor,Genomic DNA
+1313,2786,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PASUUH,Tumor,Genomic DNA
+1314,2787,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-02-23,PAMEKS,Tumor,Genomic DNA
+1315,3273,,HiSeq-ATC,2012-05-24,0A4HMC,Tumor,mRNA
+1316,3274,,HiSeq-ATC,2012-05-24,0A4HY5,Tumor,mRNA
+1317,3275,,HiSeq-ATC,2012-05-24,0A4I0S,Tumor,mRNA
+1318,3276,,HiSeq-ATC,2012-05-24,0A4I4O,Tumor,mRNA
+1319,3277,,HiSeq-ATC,2012-05-24,0A4I5B,Tumor,mRNA
+1320,3278,,HiSeq-ATC,2012-05-03,0A4I4E,Tumor,mRNA
+1321,3279,,HiSeq-ATC,2012-05-03,0A4I9K,Tumor,mRNA
+1322,3280,,HiSeq-ATC,2012-05-03,PAPIJR,Tumor,mRNA
+1323,3281,,HiSeq-ATC,2012-05-03,0A4I40,Tumor,mRNA
+1324,3282,,HiSeq-ATC,2012-04-16,PATMIF,Tumor,mRNA
+1325,3283,,HiSeq-ATC,2012-04-16,0A4HXS,Tumor,mRNA
+1326,3284,,HiSeq-ATC,2012-04-16,0A4I0Q,Tumor,mRNA
+1327,3285,,HiSeq-ATC,2012-04-16,0A4I6O,Tumor,mRNA
+1328,3449,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HLD,Normal,Genomic DNA
+1329,3449,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HLD,Normal,Genomic DNA
+1330,3449,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4HLD,Normal,Genomic DNA
+1331,3450,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I5B,Tumor,Genomic DNA
+1332,3450,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I5B,Tumor,Genomic DNA
+1333,3450,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I5B,Tumor,Genomic DNA
+1334,3451,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I40,Tumor,Genomic DNA
+1335,3451,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I40,Tumor,Genomic DNA
+1336,3451,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I40,Tumor,Genomic DNA
+1337,3452,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HX8,Normal,Genomic DNA
+1338,3452,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HX8,Normal,Genomic DNA
+1339,3452,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4HX8,Normal,Genomic DNA
+1340,3453,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I44,Tumor,Genomic DNA
+1341,3453,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I44,Tumor,Genomic DNA
+1342,3453,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I44,Tumor,Genomic DNA
+1343,3454,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I4M,Tumor,Genomic DNA
+1344,3454,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I4M,Tumor,Genomic DNA
+1345,3454,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I4M,Tumor,Genomic DNA
+1346,3455,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I4O,Tumor,Genomic DNA
+1347,3455,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4I4O,Tumor,Genomic DNA
+1348,3455,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4I4O,Tumor,Genomic DNA
+1349,3457,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HLQ,Normal,Genomic DNA
+1350,3457,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-03,0A4HLQ,Normal,Genomic DNA
+1351,3457,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4HLQ,Normal,Genomic DNA
+1352,3479,None,HiSeq-ATC,2012-06-15,0A4HMJ,Tumor,Genomic DNA
+1353,3479,None,HiSeq-ATC,2012-07-03,0A4HMJ,Tumor,Genomic DNA
+1354,3479,None,HiSeq-ATC,2012-08-10,0A4HMJ,Tumor,Genomic DNA
+1355,3479,None,HiSeq-ATC,2013-02-04,0A4HMJ,Tumor,Genomic DNA
+1356,3480,None,HiSeq-ATC,2012-06-15,0A4HMJ,Normal,Genomic DNA
+1357,3480,None,HiSeq-ATC,2012-07-03,0A4HMJ,Normal,Genomic DNA
+1358,3480,None,HiSeq-ATC,2012-08-10,0A4HMJ,Normal,Genomic DNA
+1359,3481,None,HiSeq-ATC,2012-06-15,0A4HY5,Tumor,Genomic DNA
+1360,3481,None,HiSeq-ATC,2012-07-03,0A4HY5,Tumor,Genomic DNA
+1361,3481,None,HiSeq-ATC,2012-08-10,0A4HY5,Tumor,Genomic DNA
+1362,3481,None,HiSeq-ATC,2013-02-27,0A4HY5,Tumor,Genomic DNA
+1363,3482,None,M00357,2012-05-09,0A4I3S,Tumor,Genomic DNA
+1364,3482,None,HiSeq-ATC,2013-02-27,0A4I3S,Tumor,Genomic DNA
+1365,3483,None,M00357,2012-05-09,0A4I3S,Normal,Genomic DNA
+1366,3483,None,HiSeq-ATC,2012-06-15,0A4I3S,Normal,Genomic DNA
+1367,3483,None,HiSeq-ATC,2012-07-03,0A4I3S,Normal,Genomic DNA
+1368,3484,None,M00357,2012-05-09,0A4I0S,Normal,Genomic DNA
+1369,3484,None,HiSeq-ATC,2012-07-03,0A4I0S,Normal,Genomic DNA
+1370,3484,None,HiSeq-ATC,2012-08-10,0A4I0S,Normal,Genomic DNA
+1371,3484,None,HiSeq-ATC,2013-02-27,0A4I0S,Normal,Genomic DNA
+1372,3488,None,M00357,2012-05-09,0A4HY5,Tumor,Genomic DNA
+1373,3707,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PARKAF,Tumor,Genomic DNA
+1374,3708,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PANVJJ,Tumor,Genomic DNA
+1375,3710,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I42,Tumor,Genomic DNA
+1376,3711,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I0S,Tumor,Genomic DNA
+1377,3712,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PARBGW,Tumor,Genomic DNA
+1378,3713,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PAKZZK,Tumor,Genomic DNA
+1379,3714,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PANZZJ,Tumor,Genomic DNA
+1380,3715,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,PATEEM,Tumor,Genomic DNA
+1381,3716,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4HMJ,Normal,Genomic DNA
+1382,3717,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I42,Normal,Genomic DNA
+1383,3718,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I3S,Normal,Genomic DNA
+1384,3728,None,HiSeq-ATC,2012-07-20,0A4I42,Tumor,Genomic DNA
+1385,3729,None,HiSeq-ATC,2012-07-20,0A4I42,Normal,Genomic DNA
+1386,3730,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-07-20,0A4I3S,Tumor,Genomic DNA
+1387,3751,None,HiSeq-ATC,2012-07-20,0A4HY5,Normal,Genomic DNA
+1388,3751,None,HiSeq-ATC,2013-04-23,0A4HY5,Normal,Genomic DNA
+1389,3752,None,HiSeq-ATC,2012-07-20,0A4I0S,Normal,Genomic DNA
+1390,3806,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-08-10,0A4HMC,Normal,Genomic DNA
+1391,3806,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4HMC,Normal,Genomic DNA
+1392,3872,None,HiSeq-ATC,2012-08-31,0A4I8U,Tumor,Genomic DNA
+1393,3872,None,HiSeq-ATC,2012-12-12,0A4I8U,Tumor,Genomic DNA
+1394,3873,None,HiSeq-ATC,2012-08-31,0A4I8U,Normal,Genomic DNA
+1395,3874,None,HiSeq-ATC,2012-08-31,PAPIJR,Tumor,Genomic DNA
+1396,3874,None,HiSeq-ATC,2012-12-12,PAPIJR,Tumor,Genomic DNA
+1397,3875,None,HiSeq-ATC,2012-08-31,PAPIJR,Normal,Genomic DNA
+1398,3877,None,HiSeq-ATC,2012-08-31,PAMLKS,Normal,Genomic DNA
+1399,3878,None,HiSeq-ATC,2012-08-31,PAMYYJ,Tumor,Genomic DNA
+1400,3878,None,HiSeq-ATC,2012-12-12,PAMYYJ,Tumor,Genomic DNA
+1401,3880,None,HiSeq-ATC,2012-08-31,PANSEN,Tumor,Genomic DNA
+1402,3880,None,HiSeq-ATC,2012-12-12,PANSEN,Tumor,Genomic DNA
+1403,3881,None,HiSeq-ATC,2012-09-13,PANSEN,Normal,Genomic DNA
+1404,3882,None,HiSeq-ATC,2012-09-13,PASEBY,Tumor,Genomic DNA
+1405,3882,None,HiSeq-ATC,2012-12-12,PASEBY,Tumor,Genomic DNA
+1406,3882,None,HiSeq-ATC,2013-10-01,PASEBY,Tumor,Genomic DNA
+1407,3882,None,HiSeq-ATC,2013-10-01,PASEBY,Tumor,Genomic DNA
+1408,3883,None,HiSeq-ATC,2012-09-13,PASEBY,Normal,Genomic DNA
+1409,3885,None,HiSeq-ATC,2012-09-13,PASKZZ,Normal,Genomic DNA
+1410,3887,None,HiSeq-ATC,2012-09-13,PASSLM,Normal,Genomic DNA
+1411,3959,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,PATMIF,Tumor,Genomic DNA
+1412,3960,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4HXS,Tumor,Genomic DNA
+1413,3961,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4I0Q,Tumor,Genomic DNA
+1414,3962,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4I6O,Tumor,Genomic DNA
+1415,3963,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,PATMIF,Normal,Genomic DNA
+1416,3964,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4HXS,Normal,Genomic DNA
+1417,3965,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4I0Q,Normal,Genomic DNA
+1418,3966,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-09-13,0A4I6O,Normal,Genomic DNA
+1419,3970,None,HiSeq-ATC,2012-09-13,PAMLKS,Tumor,Genomic DNA
+1420,3970,None,HiSeq-ATC,2012-12-12,PAMLKS,Tumor,Genomic DNA
+1421,3970,None,HiSeq-ATC,2013-02-04,PAMLKS,Tumor,Genomic DNA
+1422,3971,None,HiSeq-ATC,2012-09-13,PASKZZ,Tumor,Genomic DNA
+1423,3971,None,HiSeq-ATC,2013-02-04,PASKZZ,Tumor,Genomic DNA
+1424,3972,None,HiSeq-ATC,2012-09-13,PASSLM,Tumor,Genomic DNA
+1425,3972,None,HiSeq-ATC,2012-12-04,PASSLM,Tumor,Genomic DNA
+1426,3973,None,HiSeq-ATC,2012-09-27,PAMHYN,Tumor,Genomic DNA
+1427,3973,None,HiSeq-ATC,2013-05-09,PAMHYN,Tumor,Genomic DNA
+1428,3973,None,HiSeq-ATC,2013-05-30,PAMHYN,Tumor,Genomic DNA
+1429,3974,None,HiSeq-ATC,2012-09-27,PAMYYJ,Normal,Genomic DNA
+1430,3975,None,HiSeq-ATC,2012-09-27,PAMHYN,Normal,Genomic DNA
+1431,3976,None,HiSeq-ATC,2012-09-27,PALKGN,Normal,Genomic DNA
+1432,3977,None,HiSeq-ATC,2012-09-27,PALKGN,Tumor,Genomic DNA
+1433,3977,None,HiSeq-ATC,2013-05-09,PALKGN,Tumor,Genomic DNA
+1434,4062,None,HiSeq-ATC,2012-09-27,PASEFS,Normal,Genomic DNA
+1435,4063,None,HiSeq-ATC,2012-09-27,PASEFS,Tumor,Genomic DNA
+1436,4063,None,HiSeq-ATC,2013-02-04,PASEFS,Tumor,Genomic DNA
+1437,4064,None,HiSeq-ATC,2012-09-27,PARFTG,Tumor,Genomic DNA
+1438,4064,None,HiSeq-ATC,2013-02-04,PARFTG,Tumor,Genomic DNA
+1439,4065,None,HiSeq-ATC,2012-09-27,PARFTG,Normal,Genomic DNA
+1440,4066,None,HiSeq-ATC,2012-09-27,PALECC,Tumor,Genomic DNA
+1441,4066,None,HiSeq-ATC,2013-05-09,PALECC,Tumor,Genomic DNA
+1442,4067,None,HiSeq-ATC,2012-09-27,PALECC,Normal,Genomic DNA
+1443,4068,None,HiSeq-ATC,2012-09-27,PAKUZU,Tumor,Genomic DNA
+1444,4068,None,HiSeq-ATC,2013-05-09,PAKUZU,Tumor,Genomic DNA
+1445,4068,None,HiSeq-ATC,2013-06-24,PAKUZU,Tumor,Genomic DNA
+1446,4069,None,HiSeq-ATC,2012-12-04,PAKUZU,Normal,Genomic DNA
+1447,4070,None,HiSeq-ATC,2012-12-04,0A4HZR,Tumor,Genomic DNA
+1448,4070,None,HiSeq-ATC,2013-02-04,0A4HZR,Tumor,Genomic DNA
+1449,4071,None,HiSeq-ATC,2012-12-04,0A4HZR,Normal,Genomic DNA
+1450,4072,None,HiSeq-ATC,2012-12-04,0A4HXG,Tumor,Genomic DNA
+1451,4072,None,HiSeq-ATC,2013-02-04,0A4HXG,Tumor,Genomic DNA
+1452,4073,None,HiSeq-ATC,2012-12-04,0A4HXG,Normal,Genomic DNA
+1453,4938,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PATKSS,Tumor,Genomic DNA
+1454,4938,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PATKSS,Tumor,Genomic DNA
+1455,4939,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUTWB,Tumor,Genomic DNA
+1456,4939,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUTWB,Tumor,Genomic DNA
+1457,4940,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUTYB,Tumor,Genomic DNA
+1458,4940,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUTYB,Tumor,Genomic DNA
+1459,4941,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUUML,Tumor,Genomic DNA
+1460,4941,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUUML,Tumor,Genomic DNA
+1461,4942,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUVUL,Tumor,Genomic DNA
+1462,4942,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUVUL,Tumor,Genomic DNA
+1463,4943,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUXPZ,Tumor,Genomic DNA
+1464,4943,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUXPZ,Tumor,Genomic DNA
+1465,4944,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUYTT,Tumor,Genomic DNA
+1466,4944,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUYTT,Tumor,Genomic DNA
+1467,4946,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVALD,Tumor,Genomic DNA
+1468,4946,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVALD,Tumor,Genomic DNA
+1469,4947,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVCLP,Tumor,Genomic DNA
+1470,4947,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVCLP,Tumor,Genomic DNA
+1471,4948,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVDTY,Tumor,Genomic DNA
+1472,4948,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVDTY,Tumor,Genomic DNA
+1473,4949,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVECB,Tumor,Genomic DNA
+1474,4949,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAVECB,Tumor,Genomic DNA
+1475,4950,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PATXFN,Tumor,Genomic DNA
+1476,4950,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PATXFN,Tumor,Genomic DNA
+1477,4951,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUBIT,Tumor,Genomic DNA
+1478,4951,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-01-22,PAUBIT,Tumor,Genomic DNA
+1479,4953,None,HiSeq-ATC,2013-01-22,PAPVYW,Normal,Genomic DNA
+1480,4954,None,HiSeq-ATC,2013-01-22,PAPVYW,Tumor,Genomic DNA
+1481,4954,None,HiSeq-ATC,2013-06-24,PAPVYW,Tumor,Genomic DNA
+1482,4955,None,HiSeq-ATC,2013-01-22,PANZHX,Normal,Genomic DNA
+1483,4956,None,HiSeq-ATC,2013-01-22,PANZHX,Tumor,Genomic DNA
+1484,4957,None,HiSeq-ATC,2013-01-22,PATAWV,Normal,Genomic DNA
+1485,4958,None,HiSeq-ATC,2013-01-22,PATAWV,Tumor,Genomic DNA
+1486,4958,None,HiSeq-ATC,2013-05-09,PATAWV,Tumor,Genomic DNA
+1487,4959,None,HiSeq-ATC,2013-01-22,PAMRHD,Normal,Genomic DNA
+1488,4960,None,HiSeq-ATC,2013-01-22,PAMRHD,Tumor,Genomic DNA
+1489,4960,None,HiSeq-ATC,2013-05-09,PAMRHD,Tumor,Genomic DNA
+1490,4961,None,HiSeq-ATC,2013-01-22,PANZZJ,Normal,Genomic DNA
+1491,4962,None,HiSeq-ATC,2013-01-22,PANZZJ,Tumor,Genomic DNA
+1492,4962,None,HiSeq-ATC,2013-05-09,PANZZJ,Tumor,Genomic DNA
+1493,4962,None,HiSeq-ATC,2013-06-24,PANZZJ,Tumor,Genomic DNA
+1494,4963,None,HiSeq-ATC,2013-02-27,PASYUK,Normal,Genomic DNA
+1495,4966,None,HiSeq-ATC,2013-02-27,PASYUK,Tumor,Genomic DNA
+1496,4966,None,HiSeq-ATC,2013-05-09,PASYUK,Tumor,Genomic DNA
+1497,4966,None,HiSeq-ATC,2013-06-24,PASYUK,Tumor,Genomic DNA
+1498,4967,None,HiSeq-ATC,2013-02-27,PASUUH,Normal,Genomic DNA
+1499,4968,None,HiSeq-ATC,2013-02-27,PASUUH,Tumor,Genomic DNA
+1500,4968,None,HiSeq-ATC,2013-04-23,PASUUH,Tumor,Genomic DNA
+1501,5133,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATKSS,Tumor,Genomic DNA
+1502,5133,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATKSS,Tumor,Genomic DNA
+1503,5134,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTWB,Tumor,Genomic DNA
+1504,5134,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTWB,Tumor,Genomic DNA
+1505,5135,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTYB,Tumor,Genomic DNA
+1506,5135,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTYB,Tumor,Genomic DNA
+1507,5136,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUUML,Tumor,Genomic DNA
+1508,5136,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUUML,Tumor,Genomic DNA
+1509,5137,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUVUL,Tumor,Genomic DNA
+1510,5137,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUVUL,Tumor,Genomic DNA
+1511,5138,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUXPZ,Tumor,Genomic DNA
+1512,5138,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUXPZ,Tumor,Genomic DNA
+1513,5139,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUYTT,Tumor,Genomic DNA
+1514,5139,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUYTT,Tumor,Genomic DNA
+1515,5141,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVALD,Tumor,Genomic DNA
+1516,5142,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVCLP,Tumor,Genomic DNA
+1517,5143,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVDTY,Tumor,Genomic DNA
+1518,5144,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVECB,Tumor,Genomic DNA
+1519,5145,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATXFN,Tumor,Genomic DNA
+1520,5146,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUBIT,Tumor,Genomic DNA
+1521,5148,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATKSS,Normal,Genomic DNA
+1522,5148,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATKSS,Normal,Genomic DNA
+1523,5149,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTWB,Normal,Genomic DNA
+1524,5149,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTWB,Normal,Genomic DNA
+1525,5150,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTYB,Normal,Genomic DNA
+1526,5150,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUTYB,Normal,Genomic DNA
+1527,5151,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUUML,Normal,Genomic DNA
+1528,5151,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUUML,Normal,Genomic DNA
+1529,5152,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUVUL,Normal,Genomic DNA
+1530,5152,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUVUL,Normal,Genomic DNA
+1531,5153,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUXPZ,Normal,Genomic DNA
+1532,5153,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUXPZ,Normal,Genomic DNA
+1533,5154,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUYTT,Normal,Genomic DNA
+1534,5154,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUYTT,Normal,Genomic DNA
+1535,5156,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVALD,Normal,Genomic DNA
+1536,5156,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVALD,Normal,Genomic DNA
+1537,5157,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVCLP,Normal,Genomic DNA
+1538,5157,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVCLP,Normal,Genomic DNA
+1539,5158,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVDTY,Normal,Genomic DNA
+1540,5158,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVDTY,Normal,Genomic DNA
+1541,5159,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVECB,Normal,Genomic DNA
+1542,5159,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAVECB,Normal,Genomic DNA
+1543,5160,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATXFN,Normal,Genomic DNA
+1544,5160,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PATXFN,Normal,Genomic DNA
+1545,5161,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUBIT,Normal,Genomic DNA
+1546,5161,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-03-11,PAUBIT,Normal,Genomic DNA
+1547,5163,,HiSeq-ATC,2013-03-11,0A4I42,Tumor,mRNA
+1548,5163,,HiSeq-ATC,2013-03-11,0A4I42,Tumor,mRNA
+1549,5163,,HiSeq-ATC,2013-03-11,0A4I42,Tumor,mRNA
+1550,5164,,HiSeq-ATC,2013-03-11,0A4I40,Tumor,mRNA
+1551,5164,,HiSeq-ATC,2013-03-11,0A4I40,Tumor,mRNA
+1552,5164,,HiSeq-ATC,2013-03-11,0A4I40,Tumor,mRNA
+1553,5165,,HiSeq-ATC,2013-03-11,PAUBIT,Tumor,mRNA
+1554,5165,,HiSeq-ATC,2013-03-11,PAUBIT,Tumor,mRNA
+1555,5165,,HiSeq-ATC,2013-03-11,PAUBIT,Tumor,mRNA
+1556,5166,,HiSeq-ATC,2013-03-11,PAVCLP,Tumor,mRNA
+1557,5166,,HiSeq-ATC,2013-03-11,PAVCLP,Tumor,mRNA
+1558,5166,,HiSeq-ATC,2013-03-11,PAVCLP,Tumor,mRNA
+1559,5352,,M00774,2013-03-20,PAUVUL,Tumor,mRNA
+1560,5352,,HiSeq-ATC,2013-04-23,PAUVUL,Tumor,mRNA
+1561,5353,,M00774,2013-03-20,PAUYTT,Tumor,mRNA
+1562,5353,,HiSeq-ATC,2013-04-23,PAUYTT,Tumor,mRNA
+1563,5354,,M00774,2013-03-20,PAVALD,Tumor,mRNA
+1564,5354,,HiSeq-ATC,2013-04-23,PAVALD,Tumor,mRNA
+1565,5381,,HiSeq-ATC,2013-04-23,PATKSS,Tumor,mRNA
+1566,5382,,HiSeq-ATC,2013-04-23,PAUTWB,Tumor,mRNA
+1567,5383,,HiSeq-ATC,2013-04-23,PAUTYB,Tumor,mRNA
+1568,5384,,HiSeq-ATC,2013-04-23,PAUUML,Tumor,mRNA
+1569,5385,,HiSeq-ATC,2013-04-23,PAUXPZ,Tumor,mRNA
+1570,5386,,HiSeq-ATC,2013-04-23,PAVDTY,Tumor,mRNA
+1571,5387,,HiSeq-ATC,2013-04-23,PAVECB,Tumor,mRNA
+1572,5388,,HiSeq-ATC,2013-04-23,PAPNVD,Tumor,mRNA
+1573,5389,,HiSeq-ATC,2013-04-23,PAUBIT,Tumor,mRNA
+1574,5390,,HiSeq-ATC,2013-04-23,PAKUZU,Tumor,mRNA
+1575,5391,,HiSeq-ATC,2013-04-23,0A4HLD,Tumor,mRNA
+1576,5392,,HiSeq-ATC,2013-04-23,0A4I40,Tumor,mRNA
+1577,5393,,HiSeq-ATC,2013-04-23,0A4I42,Tumor,mRNA
+1578,5394,,HiSeq-ATC,2013-04-23,0A4I8U,Tumor,mRNA
+1579,5401,,HiSeq-ATC,2013-04-23,PAVCLP,Tumor,mRNA
+1580,5407,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,HiSeq-ATC,2012-04-16,0A4I9K,Tumor,Genomic DNA
+1581,5545,None,HiSeq-ATC,2012-06-15,0A4I3S,Tumor,Genomic DNA
+1582,5546,None,HiSeq-ATC,2012-06-15,0A4I0S,Normal,Genomic DNA
+1583,5546,None,HiSeq-ATC,2012-06-15,0A4I0S,Normal,Genomic DNA
+1584,5709,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAUTWB,Tumor,Genomic DNA
+1585,5710,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAUTYB,Tumor,Genomic DNA
+1586,5711,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAVDTY,Tumor,Genomic DNA
+1587,5712,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PATXFN,Tumor,Genomic DNA
+1588,5713,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PATKSS,Normal,Genomic DNA
+1589,5714,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAUVUL,Normal,Genomic DNA
+1590,5715,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-05-30,PAUBIT,Normal,Genomic DNA
+1591,6007,None,HiSeq-ATC,2013-07-10,NAAEDA,Tumor,mRNA
+1592,6008,None,HiSeq-ATC,2013-07-10,NAAEDA,Tumor,mRNA
+1593,6009,None,HiSeq-ATC,2013-07-10,NAAEDA,Tumor,mRNA
+1594,6010,None,HiSeq-ATC,2013-07-10,NAAEDD,Tumor,mRNA
+1595,6011,None,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,mRNA
+1596,6012,None,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,mRNA
+1597,6013,None,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,mRNA
+1598,6014,None,HiSeq-ATC,2013-07-10,NAAEDI,Tumor,mRNA
+1599,6015,None,HiSeq-ATC,2013-07-10,NAAEDI,Tumor,mRNA
+1600,6016,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAECZ,Normal,Genomic DNA
+1601,6016,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAECZ,Normal,Genomic DNA
+1602,6017,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDA,Tumor,Genomic DNA
+1603,6017,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDA,Tumor,Genomic DNA
+1604,6018,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAECZ,Tumor,Genomic DNA
+1605,6018,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAECZ,Tumor,Genomic DNA
+1606,6019,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDA,Tumor,Genomic DNA
+1607,6019,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDA,Tumor,Genomic DNA
+1608,6021,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDA,Normal,Genomic DNA
+1609,6021,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDA,Normal,Genomic DNA
+1610,6022,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDB,Normal,Genomic DNA
+1611,6022,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDB,Normal,Genomic DNA
+1612,6023,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDD,Tumor,Genomic DNA
+1613,6023,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDD,Tumor,Genomic DNA
+1614,6024,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-25,NAAEDD,Tumor,Genomic DNA
+1615,6024,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDD,Tumor,Genomic DNA
+1616,6026,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDG,Tumor,Genomic DNA
+1617,6026,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDG,Tumor,Genomic DNA
+1618,6027,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDG,Normal,Genomic DNA
+1619,6027,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDG,Normal,Genomic DNA
+1620,6028,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,Genomic DNA
+1621,6028,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDH,Tumor,Genomic DNA
+1622,6029,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDH,Tumor,Genomic DNA
+1623,6029,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-10-01,NAAEDH,Tumor,Genomic DNA
+1624,6031,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDH,Normal,Genomic DNA
+1625,6031,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-11-01,NAAEDH,Normal,Genomic DNA
+1626,6032,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDI,Tumor,Genomic DNA
+1627,6032,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-11-01,NAAEDI,Tumor,Genomic DNA
+1628,6033,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDI,Tumor,Genomic DNA
+1629,6033,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-11-01,NAAEDI,Tumor,Genomic DNA
+1630,6034,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-07-10,NAAEDI,Normal,Genomic DNA
+1631,6034,Illumina_TruSeq_Exome_Enrichment_Kit,HiSeq-ATC,2013-11-01,NAAEDI,Normal,Genomic DNA
+1632,6420,None,HiSeq-ATC,2013-11-01,NAAEDG,Tumor,Genomic DNA
+1633,6421,None,HiSeq-ATC,2013-11-01,NAAEDG,Normal,Genomic DNA
+1634,6422,None,HiSeq-ATC,2013-11-01,NAAEDH,Tumor,Genomic DNA
+1635,6423,None,HiSeq-ATC,2013-11-01,NAAEDH,Normal,Genomic DNA
+1636,6424,Illumina_Nextera_Rapid_Capture_Exome,HiSeq-ATC,2013-11-01,NAAEDB,Tumor,Genomic DNA
+1637,6425,Illumina_Nextera_Rapid_Capture_Exome,HiSeq-ATC,2013-11-01,NAAEDH,Tumor,Genomic DNA
+1638,6434,Agilent_SureSelect_Human_SATB2_RUNX2_MECOM,M00774,2013-10-03,PANMIG,Tumor,Genomic DNA
+1639,8297,None,HiSeq-Meltzer,2015-05-21,NAAEDH,Normal,Genomic DNA
+1640,8297,None,NS500391,2015-04-28,NAAEDH,Normal,Genomic DNA
+1641,8297,None,NS500391,2015-04-16,NAAEDH,Normal,Genomic DNA
+1642,8298,None,HiSeq-Meltzer,2015-05-21,NAAEDH,Tumor,Genomic DNA
+1643,8298,None,NS500391,2015-04-28,NAAEDH,Tumor,Genomic DNA
+1644,8298,None,NS500391,2015-04-16,NAAEDH,Tumor,Genomic DNA
+1645,8299,None,HiSeq-Meltzer,2015-05-21,NAAEDH,Tumor,Genomic DNA
+1646,8299,None,NS500391,2015-04-28,NAAEDH,Tumor,Genomic DNA
+1647,8299,None,NS500391,2015-04-16,NAAEDH,Tumor,Genomic DNA
+1648,1596,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4HXS,Tumor,Genomic DNA
+1649,1596,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4HXS,Tumor,Genomic DNA
+1650,1597,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4I6O,Tumor,Genomic DNA
+1651,1597,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4I6O,Tumor,Genomic DNA
+1652,1598,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,IHRT1161,Tumor,Genomic DNA
+1653,1598,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,IHRT1161,Tumor,Genomic DNA
+1654,1599,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4HLQ,Normal,Genomic DNA
+1655,1599,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4HLQ,Normal,Genomic DNA
+1656,1600,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4HX8,Tumor,Genomic DNA
+1657,1600,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4HX8,Tumor,Genomic DNA
+1658,1601,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-01,0A4HLD,Tumor,Genomic DNA
+1659,1601,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-05,0A4HLD,Tumor,Genomic DNA
+1660,1602,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-06,IHRT1318,Tumor,Genomic DNA
+1661,1602,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-07-06,IHRT1318,Tumor,Genomic DNA
+1662,1603,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,IHRT1184,Normal,Genomic DNA
+1663,1603,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,IHRT1184,Normal,Genomic DNA
+1664,1603,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,IHRT1184,Normal,Genomic DNA
+1665,1604,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,IHRT1482,Tumor,Genomic DNA
+1666,1604,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,IHRT1482,Tumor,Genomic DNA
+1667,1605,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,0A4HZR,Normal,Genomic DNA
+1668,1605,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,0A4HZR,Normal,Genomic DNA
+1669,1606,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1665,Normal,Genomic DNA
+1670,1606,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-07-12,IHRT1665,Normal,Genomic DNA
+1671,1804,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,0A4I0S,Tumor,Genomic DNA
+1672,1804,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,0A4I0S,Tumor,Genomic DNA
+1673,1805,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,IHRT1953,Tumor,Genomic DNA
+1674,1805,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-07-21,IHRT1953,Tumor,Genomic DNA
+1675,1806,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1667,Normal,Genomic DNA
+1676,1806,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1667,Normal,Genomic DNA
+1677,1807,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,0A4I0Q,Tumor,Genomic DNA
+1678,1807,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,0A4I0Q,Tumor,Genomic DNA
+1679,1808,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1713,Tumor,Genomic DNA
+1680,1808,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-07-22,IHRT1713,Tumor,Genomic DNA
+1681,1969,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,IHRT1482,Normal,Genomic DNA
+1682,1970,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,0A4HZR,Normal,Genomic DNA
+1683,1971,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,IHRT1665,Normal,Genomic DNA
+1684,1972,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,IHRT1667,Normal,Genomic DNA
+1685,1973,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,0A4I0Q,Normal,Genomic DNA
+1686,1974,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,IHRT1953,Normal,Genomic DNA
+1687,1975,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-08-04,0A4I0S,Normal,Genomic DNA
+1688,1983,,FlyingDog,2011-08-09,0A4I0Q,Tumor,mRNA
+1689,1983,,FlyingDog,2011-08-22,0A4I0Q,Tumor,mRNA
+1690,1984,,FlyingDog,2011-08-09,IHRT1713,Tumor,mRNA
+1691,1984,,FlyingDog,2011-08-22,IHRT1713,Tumor,mRNA
+1692,1985,,FlyingDog,2011-08-09,IHRT1953,Tumor,mRNA
+1693,1985,,FlyingDog,2011-08-22,IHRT1953,Tumor,mRNA
+1694,1986,,FlyingDog,2011-08-09,0A4I0S,Tumor,mRNA
+1695,1986,,FlyingDog,2011-08-22,0A4I0S,Tumor,mRNA
+1696,1987,,FlyingDog,2011-08-09,IHRT2389,Tumor,mRNA
+1697,1987,,FlyingDog,2011-08-22,IHRT2389,Tumor,mRNA
+1698,1988,,FlyingDog,2011-08-09,0A4I0W,Tumor,mRNA
+1699,1988,,Stone,2011-08-09,0A4I0W,Tumor,mRNA
+1700,1989,,FlyingDog,2011-08-09,0A4I3S,Tumor,mRNA
+1701,1989,,Stone,2011-08-09,0A4I3S,Tumor,mRNA
+1702,1990,,Stone,2011-08-09,IHRT2576,Tumor,mRNA
+1703,1990,,FlyingDog,2011-08-22,IHRT2576,Tumor,mRNA
+1704,1991,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-09,IHRT1713,Normal,Genomic DNA
+1705,2004,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,0A4I44,Normal,Genomic DNA
+1706,2005,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3232,Normal,Genomic DNA
+1707,2006,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,0A4I8U,Normal,Genomic DNA
+1708,2007,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3408,Normal,Genomic DNA
+1709,2008,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3798,Normal,Genomic DNA
+1710,2009,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3232,Tumor,Genomic DNA
+1711,2009,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-10,IHRT3232,Tumor,Genomic DNA
+1712,2038,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,0A4HLD,Normal,Genomic DNA
+1713,2039,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,0A4HLQ,Normal,Genomic DNA
+1714,2040,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,0A4HX8,Normal,Genomic DNA
+1715,2041,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,IHRT1161,Normal,Genomic DNA
+1716,2042,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-08-23,0A4I6O,Normal,Genomic DNA
+1717,2043,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,0A4HXS,Normal,Genomic DNA
+1718,2044,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,IHRT2389,Normal,Genomic DNA
+1719,2044,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,IHRT2389,Normal,Genomic DNA
+1720,2045,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,0A4I0W,Tumor,Genomic DNA
+1721,2045,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,0A4I0W,Tumor,Genomic DNA
+1722,2046,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,0A4I3S,Tumor,Genomic DNA
+1723,2046,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,0A4I3S,Tumor,Genomic DNA
+1724,2047,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,IHRT2576,Normal,Genomic DNA
+1725,2047,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,IHRT2576,Normal,Genomic DNA
+1726,2048,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,0A4I42,Normal,Genomic DNA
+1727,2048,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-11-23,0A4I42,Normal,Genomic DNA
+1728,2048,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,0A4I42,Normal,Genomic DNA
+1729,2048,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,0A4I42,Normal,Genomic DNA
+1730,2049,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,IHRT2660,Normal,Genomic DNA
+1731,2049,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-11-23,IHRT2660,Normal,Genomic DNA
+1732,2049,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,IHRT2660,Normal,Genomic DNA
+1733,2049,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,IHRT2660,Normal,Genomic DNA
+1734,2050,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-08-23,IHRT2795,Normal,Genomic DNA
+1735,2050,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-11-18,IHRT2795,Normal,Genomic DNA
+1736,2051,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,IHRT2389,Tumor,Genomic DNA
+1737,2052,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,0A4I0W,Tumor,Genomic DNA
+1738,2053,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,0A4I3S,Normal,Genomic DNA
+1739,2054,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,IHRT2576,Tumor,Genomic DNA
+1740,2055,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-09-14,IHRT2660,Tumor,Genomic DNA
+1741,2056,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,IHRT2795,Tumor,Genomic DNA
+1742,2057,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,IHRT2795,Normal,Genomic DNA
+1743,2058,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Stone,2011-09-02,0A4I44,Normal,Genomic DNA
+1744,2059,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-29,IHRT2817,Normal,Genomic DNA
+1745,2059,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-29,IHRT2817,Normal,Genomic DNA
+1746,2060,,Stone,2012-01-13,IHRT2817,Tumor,mRNA
+1747,2060,,Stone,2012-01-13,IHRT2817,Tumor,mRNA
+1748,2061,,FlyingDog,2011-12-09,0A4I44,Tumor,mRNA
+1749,2061,,Dogfish,2011-12-29,0A4I44,Tumor,mRNA
+1750,2062,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-09-14,0A4I42,Tumor,Genomic DNA
+1751,2063,,FlyingDog,2012-01-26,IHRT2660,Tumor,mRNA
+1752,2063,,FlyingDog,2012-01-26,IHRT2660,Tumor,mRNA
+1753,2064,,FlyingDog,2011-12-09,IHRT3232,Tumor,mRNA
+1754,2064,,FlyingDog,2011-12-09,IHRT3232,Tumor,mRNA
+1755,2064,,Dogfish,2011-12-29,IHRT3232,Tumor,mRNA
+1756,2064,,Dogfish,2011-12-29,IHRT3232,Tumor,mRNA
+1757,2065,,FlyingDog,2012-01-05,0A4I8U,Tumor,mRNA
+1758,2065,,FlyingDog,2012-01-05,0A4I8U,Tumor,mRNA
+1759,2065,,Stone,2012-01-13,0A4I8U,Tumor,mRNA
+1760,2066,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-09-14,0A4I8U,Tumor,Genomic DNA
+1761,2066,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Clipper,2011-11-23,0A4I8U,Tumor,Genomic DNA
+1762,2066,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,0A4I8U,Tumor,Genomic DNA
+1763,2066,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-12-15,0A4I8U,Tumor,Genomic DNA
+1764,2067,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,IHRT3408,Tumor,Genomic DNA
+1765,2067,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,Dogfish,2011-10-31,IHRT3408,Tumor,Genomic DNA
+1766,2068,,FlyingDog,2012-01-05,IHRT3408,Tumor,mRNA
+1767,2068,,FlyingDog,2012-01-05,IHRT3408,Tumor,mRNA
+1768,2068,,FlyingDog,2012-01-05,IHRT3408,Tumor,mRNA
+1769,2068,,FlyingDog,2012-01-05,IHRT3408,Tumor,mRNA
+1770,2069,,Clipper,2011-11-23,IHRT3798,Tumor,mRNA
+1771,2069,,Clipper,2011-11-23,IHRT3798,Tumor,mRNA
+1772,2070,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,IHRT3798,Normal,Genomic DNA
+1773,2070,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-11-10,IHRT3798,Normal,Genomic DNA
+1774,2078,,Stone,2012-01-13,IHRT2795,Tumor,mRNA
+1775,2078,,Stone,2012-01-13,IHRT2795,Tumor,mRNA
+1776,2079,,FlyingDog,2012-01-26,0A4I42,Tumor,mRNA
+1777,2079,,FlyingDog,2012-01-26,0A4I42,Tumor,mRNA
+1778,2080,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,IHRT1318,Normal,Genomic DNA
+1779,2081,Agilent_SureSelect_Human_All_Exon_50Mb_Kit,FlyingDog,2011-09-13,IHRT1184,Normal,Genomic DNA
+1780,6435,Agilent_SureSelect_Human_SATB2_RUNX2_MECOM,M00774,2013-10-03,0A4I42,Tumor,Genomic DNA
+1781,6436,Agilent_SureSelect_Human_SATB2_RUNX2_MECOM,M00774,2013-10-03,CA_4388_011,Tumor,Genomic DNA

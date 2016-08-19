@@ -1,0 +1,50 @@
+    <EXPERIMENT alias="{$library_name}" center_name="{$center_name}" broker_name="{$broker_name}">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="{$center_name}">{$library_name}</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample {$barcode}</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000465</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000465">{$barcode}</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>{$library_name}</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160" />
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>

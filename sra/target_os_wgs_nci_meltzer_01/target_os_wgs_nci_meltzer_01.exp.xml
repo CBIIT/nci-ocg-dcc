@@ -1,0 +1,2451 @@
+<EXPERIMENT_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.experiment.xsd?view=co">
+    <EXPERIMENT alias="3481" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3481</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-0A4HY5 Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-0A4HY5-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-0A4HY5-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3481</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3751" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3751</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-0A4HY5 Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-0A4HY5-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-0A4HY5-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3751</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3482,5545" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3482,5545</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-0A4I3S Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-0A4I3S-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-0A4I3S-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3482,5545</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3483" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3483</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-0A4I3S Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-0A4I3S-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-0A4I3S-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3483</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3872" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3872</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-0A4I8U Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-0A4I8U-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-0A4I8U-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3872</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3873" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3873</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-0A4I8U Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-0A4I8U-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-0A4I8U-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3873</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3728" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3728</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-0A4I42 Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-0A4I42-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-0A4I42-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3728</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3729" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3729</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-0A4I42 Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-0A4I42-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-0A4I42-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3729</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4068" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4068</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAKUZU Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAKUZU-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAKUZU-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4068</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4069" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4069</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAKUZU Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAKUZU-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAKUZU-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4069</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4066" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4066</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PALECC Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PALECC-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PALECC-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4066</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4067" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4067</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PALECC Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PALECC-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PALECC-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4067</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3977" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3977</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PALKGN Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PALKGN-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PALKGN-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3977</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3976" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3976</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PALKGN Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PALKGN-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PALKGN-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3976</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3973" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3973</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAMHYN Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAMHYN-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAMHYN-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3973</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3975" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3975</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAMHYN Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAMHYN-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAMHYN-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3975</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3970" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3970</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAMLKS Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAMLKS-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAMLKS-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3970</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3877" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3877</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAMLKS Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAMLKS-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAMLKS-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3877</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4960" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4960</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAMRHD Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAMRHD-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAMRHD-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4960</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4959" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4959</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAMRHD Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAMRHD-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAMRHD-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4959</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3878" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3878</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAMYYJ Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAMYYJ-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAMYYJ-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3878</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3974" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3974</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAMYYJ Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAMYYJ-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAMYYJ-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3974</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3880" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3880</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PANSEN Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PANSEN-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PANSEN-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3880</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3881" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3881</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PANSEN Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PANSEN-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PANSEN-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3881</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4956" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4956</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PANZHX Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PANZHX-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PANZHX-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4956</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4955" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4955</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PANZHX Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PANZHX-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PANZHX-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4955</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4962" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4962</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PANZZJ Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PANZZJ-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PANZZJ-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4962</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4961" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4961</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PANZZJ Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PANZZJ-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PANZZJ-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4961</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3874" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3874</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAPIJR Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAPIJR-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAPIJR-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3874</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3875" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3875</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAPIJR Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAPIJR-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAPIJR-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3875</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4954" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4954</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAPVYW Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAPVYW-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAPVYW-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4954</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4953" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4953</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PAPVYW Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PAPVYW-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PAPVYW-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4953</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4064" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4064</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PARFTG Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PARFTG-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PARFTG-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4064</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4065" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4065</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PARFTG Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PARFTG-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PARFTG-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4065</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3882" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3882</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASEBY Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASEBY-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASEBY-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3882</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3883" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3883</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASEBY Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASEBY-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASEBY-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3883</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4063" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4063</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASEFS Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASEFS-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASEFS-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4063</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4062" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4062</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASEFS Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASEFS-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASEFS-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4062</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3971" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3971</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASKZZ Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASKZZ-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASKZZ-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3971</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3885" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3885</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASKZZ Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASKZZ-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASKZZ-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3885</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3972" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3972</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASSLM Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASSLM-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASSLM-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3972</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="3887" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">3887</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASSLM Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASSLM-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASSLM-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>3887</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4968" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4968</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASUUH Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASUUH-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASUUH-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4968</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4967" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4967</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASUUH Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASUUH-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASUUH-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4967</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4966" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4966</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASYUK Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASYUK-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASYUK-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4966</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4963" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4963</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PASYUK Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PASYUK-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PASYUK-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4963</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4958" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4958</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PATAWV Primary Solid Tumor Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PATAWV-01A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PATAWV-01A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4958</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="4957" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">4957</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>TARGET Osteosarcoma Subject TARGET-40-PATAWV Normal Peripheral Blood Whole Genome Sequence</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Whole genome sequence analysis of TARGET-40-PATAWV-10A-01D.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">TARGET-40-PATAWV-10A-01D</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>4957</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>Genomic DNA was isolated using the Qiagen AllPrep Kit. Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep Kit according to the manufacturer's protocol.</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+</EXPERIMENT_SET>

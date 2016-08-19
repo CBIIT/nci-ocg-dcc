@@ -1,0 +1,2499 @@
+<RUN_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.run.xsd?view=co">
+    <RUN alias="TARGET-40-0A4HY5-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4HY5-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3481</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="f07a700fe569a1419821a8410928561e" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4HY5-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-06-15,2012-07-03,2012-08-10,2013-02-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4HY5-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4HY5-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3751</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="4452b340e068c0ed4566c7c1addc361a" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4HY5-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-07-20,2013-04-23</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I3S-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I3S-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3482,5545</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="52a43909fb767610dac27ee824f57feb" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I3S-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-05-09,2012-06-15,2013-02-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I3S-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I3S-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3483</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="1d105d036fd15ae7082beb2e7e9bc296" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I3S-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-05-09,2012-06-15,2012-07-03</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I8U-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I8U-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3872</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="bcad42f50f42bd22d7cdd7dae1eca6bf" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I8U-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-08-31,2012-12-12</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I8U-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I8U-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3873</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="4114f54e622cc4e55bdca7453787e04a" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I8U-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-08-31</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I42-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I42-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3728</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="38306fb9887716076ab0d5cc1e377d25" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I42-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-07-20</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I42-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I42-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3729</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="13a95a6739b7882bbd02fd140bdc417f" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I42-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-07-20</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAKUZU-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAKUZU-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4068</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a108ec76b2f441f29ea8b7aae682c1bc" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAKUZU-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27,2013-05-09,2013-06-24</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAKUZU-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAKUZU-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4069</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="7030aa0f35e7b259eedb8c3b3b4c997f" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAKUZU-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-12-04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PALECC-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PALECC-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4066</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="605e9aaef7616c3cad19d3b3a80e703f" checksum_method="MD5" filetype="bam" filename="TARGET-40-PALECC-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27,2013-05-09</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PALECC-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PALECC-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4067</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="f944841107f9d70f3944ca5811e7e911" checksum_method="MD5" filetype="bam" filename="TARGET-40-PALECC-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PALKGN-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PALKGN-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3977</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="838e5a5fb15b0e82a67fd24e2f413f4a" checksum_method="MD5" filetype="bam" filename="TARGET-40-PALKGN-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27,2013-05-09</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PALKGN-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PALKGN-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3976</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="066bd7048b2ab47eeac92d73f6d037be" checksum_method="MD5" filetype="bam" filename="TARGET-40-PALKGN-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMHYN-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMHYN-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3973</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a8734d21dd21e4ebe6b2050deff3026a" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMHYN-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27,2013-05-09,2013-05-30</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMHYN-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMHYN-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3975</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="4e44ed3b61b17297adfad09c78d78a66" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMHYN-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMLKS-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMLKS-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3970</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="15e8a39c50370c4bba2a099bd6fc4ff2" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMLKS-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-13,2012-12-12,2013-02-04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMLKS-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMLKS-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3877</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="da6f6f1ec6cb79c87650e27c42183687" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMLKS-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-08-31</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMRHD-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMRHD-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4960</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="54ce3f9c520e344b15149bd7bda151d4" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMRHD-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22,2013-05-09</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMRHD-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMRHD-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4959</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="97427c5c9b1ad4551a7c21a0391035a3" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMRHD-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMYYJ-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMYYJ-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3878</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="de958e3367b9c19dcf08ff247921d801" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMYYJ-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-08-31,2012-12-12</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMYYJ-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMYYJ-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3974</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="68ba952b10dc143f909995e865c8dc63" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMYYJ-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PANSEN-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PANSEN-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3880</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="05f937fca83d8d0710c2d2975151a7bc" checksum_method="MD5" filetype="bam" filename="TARGET-40-PANSEN-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-08-31,2012-12-12</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PANSEN-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PANSEN-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3881</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="920cca2728e05a881980353f4f3bf31b" checksum_method="MD5" filetype="bam" filename="TARGET-40-PANSEN-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-13</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PANZHX-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PANZHX-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4956</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="9e07fc34bee0f6c1f51800b17f8cd88f" checksum_method="MD5" filetype="bam" filename="TARGET-40-PANZHX-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PANZHX-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PANZHX-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4955</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="9680433a29f8ced74a810c669fecf1fa" checksum_method="MD5" filetype="bam" filename="TARGET-40-PANZHX-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PANZZJ-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PANZZJ-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4962</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="d6a121e30e905a14b2b107264b0fe351" checksum_method="MD5" filetype="bam" filename="TARGET-40-PANZZJ-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22,2013-05-09,2013-06-24</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PANZZJ-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PANZZJ-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4961</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="166f2f0bf4d051e54a430bb42eb0bf4d" checksum_method="MD5" filetype="bam" filename="TARGET-40-PANZZJ-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAPIJR-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAPIJR-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3874</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="d5e345ee77f14b2feae0f950c5e5b838" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAPIJR-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-08-31,2012-12-12</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAPIJR-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAPIJR-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3875</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="8193988a1ecd599a7c8e1e395351e1c3" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAPIJR-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-08-31</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAPVYW-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAPVYW-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4954</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="d6cd2f29e9dde1a1b47e67ef664d5f5a" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAPVYW-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22,2013-06-24</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAPVYW-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAPVYW-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4953</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="118c85d0ff21920a5b21a38a9d4a4677" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAPVYW-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PARFTG-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PARFTG-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4064</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="3616e7668e1ff30c92da09c755b012c4" checksum_method="MD5" filetype="bam" filename="TARGET-40-PARFTG-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27,2013-02-04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PARFTG-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PARFTG-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4065</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="053ca13f62fbf71bb53b5d7ab8327b9f" checksum_method="MD5" filetype="bam" filename="TARGET-40-PARFTG-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASEBY-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASEBY-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3882</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="c7852df774859009cbda4b2d059b6abe" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASEBY-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-13,2012-12-12,2013-10-01</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASEBY-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASEBY-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3883</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="9f7c4489171af38be051954dc1254434" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASEBY-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-13</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASEFS-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASEFS-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4063</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="c07b92123c935c14246b0766c27ad4bc" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASEFS-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27,2013-02-04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASEFS-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASEFS-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4062</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="3d5eaf6c76c38325c223ac251efe0324" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASEFS-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASKZZ-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASKZZ-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3971</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="9ad91ebeb45855c56e3783710ac2887a" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASKZZ-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-13,2013-02-04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASKZZ-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASKZZ-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3885</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a6f01b9413467d9816a7742f1a8cd060" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASKZZ-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-13</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASSLM-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASSLM-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3972</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="12aebdf677298803af8aeed3b9336ae9" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASSLM-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-13,2012-12-04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASSLM-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASSLM-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">3887</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="73f1ba276ff29aa549cb15152587b0cb" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASSLM-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2012-09-13</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASUUH-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASUUH-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4968</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="58ab7ddad8170bdaca4e89e4904ab52e" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASUUH-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-02-27,2013-04-23</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASUUH-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASUUH-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4967</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="76efb8b05c4899c812a72c047e87ae23" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASUUH-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-02-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASYUK-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASYUK-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4966</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="54d9098dcb88d85946559c7c4cec7ab5" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASYUK-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-02-27,2013-05-09,2013-06-24</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PASYUK-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PASYUK-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4963</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="78664de278646ef401e1458e28fae513" checksum_method="MD5" filetype="bam" filename="TARGET-40-PASYUK-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-02-27</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PATAWV-01A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PATAWV-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4958</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="ee03821651b63771b9a01ca58b2f291a" checksum_method="MD5" filetype="bam" filename="TARGET-40-PATAWV-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22,2013-05-09</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PATAWV-10A-01D_genome.bam" center_name="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PATAWV-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="NCI-MELTZER">4957</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>BUSTARD</PROGRAM>
+                    <VERSION>1.9.4</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="bae8c1d4835ef90cd06a48456fd6c1d6" checksum_method="MD5" filetype="bam" filename="TARGET-40-PATAWV-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>2013-01-22</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+</RUN_SET>

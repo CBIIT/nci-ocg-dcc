@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUBMISSION_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.submission.xsd?view=co">
+    <SUBMISSION broker_name="{$broker_name}">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="{$center_name}">{$submission_name}</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <CONTACTS>
+            <CONTACT name="{$contact_name}" inform_on_error="{$contact_email}" inform_on_status="{$contact_email}" />
+        </CONTACTS>
+        <ACTIONS>
+            <ACTION>
+                <ADD source="{$submission_label}_exp.xml" schema="experiment" />
+            </ACTION>
+            <ACTION>
+                <ADD source="{$submission_label}_run.xml" schema="run" />
+            </ACTION>
+        </ACTIONS>
+    </SUBMISSION>
+</SUBMISSION_SET>

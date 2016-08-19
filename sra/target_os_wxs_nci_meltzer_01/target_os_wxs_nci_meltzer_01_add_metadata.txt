@@ -1,0 +1,329 @@
+library_id	sequencer	run_date	design_description
+839	Illumina Genome Analyzer IIx	2010-09-22,2010-10-08
+840	Illumina Genome Analyzer IIx	2010-09-22,2010-10-08
+841	Illumina Genome Analyzer IIx	2010-09-22,2010-10-08
+842	Illumina Genome Analyzer IIx	2010-09-23,2010-10-08
+843	Illumina Genome Analyzer IIx	2010-09-23,2011-04-08
+844	Illumina Genome Analyzer IIx	2010-09-23
+845	Illumina Genome Analyzer IIx	2010-09-23
+846	Illumina Genome Analyzer IIx	2010-09-23
+847	Illumina Genome Analyzer IIx	2010-09-23
+848	Illumina Genome Analyzer IIx	2010-09-23,2010-10-22
+965	Illumina Genome Analyzer IIx	2010-10-27
+966	Illumina Genome Analyzer IIx	2010-10-27
+967	Illumina Genome Analyzer IIx	2010-10-27,2011-11-18
+968	Illumina Genome Analyzer IIx	2010-10-27
+969	Illumina Genome Analyzer IIx	2010-10-27
+970	Illumina Genome Analyzer IIx	2010-10-27,2011-10-31
+971	Illumina Genome Analyzer IIx	2010-10-27,2011-09-28
+995	Illumina Genome Analyzer IIx	2010-11-05,2011-10-21
+996	Illumina Genome Analyzer IIx	2010-11-18
+997	Illumina Genome Analyzer IIx	2010-11-18
+998	Illumina Genome Analyzer IIx	2010-11-18
+999	Illumina Genome Analyzer IIx	2010-11-18,2011-04-08,2011-10-31
+1000	Illumina Genome Analyzer IIx	2010-11-18,2011-04-08,2011-10-31
+1001	Illumina Genome Analyzer IIx	2010-11-18,2011-04-08,2011-10-31
+1002	Illumina Genome Analyzer IIx	2010-11-18,2011-04-08,2011-10-21
+1003	Illumina Genome Analyzer IIx	2010-11-24,2011-04-08
+1052	Illumina Genome Analyzer IIx	2011-01-13,2011-10-21
+1053	Illumina Genome Analyzer IIx	2011-01-13,2011-11-23
+1054	Illumina Genome Analyzer IIx	2011-01-13,2011-09-30
+1055	Illumina Genome Analyzer IIx	2011-01-13,2011-09-28,2011-10-21
+1056	Illumina Genome Analyzer IIx	2011-01-13,2011-10-21
+1057	Illumina Genome Analyzer IIx	2011-01-13,2011-09-30
+1058	Illumina Genome Analyzer IIx	2011-01-13,2011-09-30
+1063	Illumina Genome Analyzer IIx	2011-02-09
+1064	Illumina Genome Analyzer IIx	2011-02-09
+1065	Illumina Genome Analyzer IIx	2011-02-09
+1067	Illumina Genome Analyzer IIx	2011-02-10
+1068	Illumina Genome Analyzer IIx	2011-02-10
+1069	Illumina Genome Analyzer IIx	2011-02-10
+1071	Illumina Genome Analyzer IIx	2011-02-11
+1201	Illumina Genome Analyzer IIx	2011-03-01
+1202	Illumina Genome Analyzer IIx	2011-03-01
+1203	Illumina Genome Analyzer IIx	2011-03-01
+1210	Illumina Genome Analyzer IIx	2011-03-04
+1211	Illumina Genome Analyzer IIx	2011-03-04
+1212	Illumina Genome Analyzer IIx	2011-03-04
+1213	Illumina Genome Analyzer IIx	2011-03-04
+1214	Illumina Genome Analyzer IIx	2011-03-04,2011-04-08
+1215	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-03-04,2012-03-23
+1216	Illumina Genome Analyzer IIx	2011-03-04
+1217	Illumina Genome Analyzer IIx	2011-03-11
+1218	Illumina Genome Analyzer IIx	2011-03-11,2012-03-30
+1219	Illumina Genome Analyzer IIx	2011-03-11
+1220	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-03-11,2012-03-23
+1221	Illumina Genome Analyzer IIx	2011-03-11
+1222	Illumina Genome Analyzer IIx	2011-03-11
+1223	Illumina Genome Analyzer IIx	2011-03-11,2012-03-30
+1224	Illumina Genome Analyzer IIx	2011-03-11,2012-03-30
+1225	Illumina Genome Analyzer IIx	2011-03-11
+1229	Illumina Genome Analyzer IIx	2011-03-25,2011-03-28
+1230	Illumina Genome Analyzer IIx	2011-03-28,2011-04-08
+1231	Illumina Genome Analyzer IIx	2011-03-25
+1232	Illumina Genome Analyzer IIx	2011-03-25,2012-03-30
+1233	Illumina Genome Analyzer IIx	2011-03-25,2012-03-30
+1234	Illumina Genome Analyzer IIx	2011-03-28,2012-03-30
+1235	Illumina Genome Analyzer IIx	2011-03-15
+1236	Illumina Genome Analyzer IIx	2011-03-15
+1237	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-03-15,2012-04-16
+1238	Illumina Genome Analyzer IIx	2011-03-15
+1263	Illumina Genome Analyzer IIx	2011-03-25
+1264	Illumina Genome Analyzer IIx	2011-03-25
+1270	Illumina Genome Analyzer IIx	2011-04-08
+1271	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-04-08,2012-04-16
+1290	Illumina Genome Analyzer IIx	2011-05-11,2011-05-19
+1292	Illumina Genome Analyzer IIx	2011-05-11,2011-05-19
+1293	Illumina Genome Analyzer IIx	2011-05-11,2011-05-19
+1296	Illumina Genome Analyzer IIx	2011-05-11,2011-05-19
+1298	Illumina Genome Analyzer IIx	2011-05-11,2011-05-19
+1301	Illumina Genome Analyzer IIx	2011-05-11,2011-05-19
+1302	Illumina Genome Analyzer IIx	2011-05-11,2011-05-19
+1304	Illumina Genome Analyzer IIx	2011-05-25,2011-06-01
+1306	Illumina Genome Analyzer IIx	2011-05-25
+1308	Illumina Genome Analyzer IIx	2011-05-25
+1309	Illumina Genome Analyzer IIx	2011-05-25
+1311	Illumina Genome Analyzer IIx	2011-05-20
+1505	Illumina Genome Analyzer IIx	2011-06-01
+1506	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-06-02,2012-04-16
+1507	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-06-02,2012-03-23,2012-04-16
+1528	Illumina Genome Analyzer IIx	2011-06-15
+1529	Illumina Genome Analyzer IIx	2011-06-15
+1530	Illumina Genome Analyzer IIx	2011-06-15,2011-10-31
+1531	Illumina Genome Analyzer IIx	2011-06-15
+1532	Illumina Genome Analyzer IIx	2011-06-15
+1533	Illumina Genome Analyzer IIx	2011-06-15
+1547	Illumina Genome Analyzer IIx	2011-06-29,2011-07-05
+1548	Illumina Genome Analyzer IIx	2011-06-29,2011-11-18
+1549	Illumina Genome Analyzer IIx	2011-06-29
+1553	Illumina Genome Analyzer IIx	2011-06-29,2011-11-18
+1554	Illumina Genome Analyzer IIx	2011-06-29
+1596	Illumina Genome Analyzer IIx	2011-07-01,2011-07-05
+1597	Illumina Genome Analyzer IIx	2011-07-01,2011-07-05
+1598	Illumina Genome Analyzer IIx	2011-07-01,2011-07-05
+1599	Illumina Genome Analyzer IIx	2011-07-01,2011-07-05
+1600	Illumina Genome Analyzer IIx	2011-07-01,2011-07-05
+1601	Illumina Genome Analyzer IIx	2011-07-01,2011-07-05
+1602	Illumina Genome Analyzer IIx	2011-07-06
+1603	Illumina Genome Analyzer IIx	2011-07-21,2011-07-12
+1604	Illumina Genome Analyzer IIx	2011-07-21,2011-07-12
+1605	Illumina Genome Analyzer IIx	2011-07-21,2011-07-12
+1606	Illumina Genome Analyzer IIx	2011-07-22,2011-07-12
+1804	Illumina Genome Analyzer IIx	2011-07-21
+1805	Illumina Genome Analyzer IIx	2011-07-21
+1806	Illumina Genome Analyzer IIx	2011-07-22
+1807	Illumina Genome Analyzer IIx	2011-07-22
+1808	Illumina Genome Analyzer IIx	2011-07-22
+1905	Illumina HiSeq 2000	2011-08-12
+1906	Illumina HiSeq 2000	2011-08-12
+1907	Illumina HiSeq 2000	2011-08-12
+1908	Illumina HiSeq 2000	2011-08-12
+1909	Illumina HiSeq 2000	2011-08-12
+1910	Illumina HiSeq 2000	2011-08-12
+1911	Illumina HiSeq 2000	2011-08-12
+1912	Illumina Genome Analyzer IIx	2011-08-09
+1913	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-07-22,2011-09-30,2012-03-23
+1914	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-07-22,2011-09-30,2012-03-23
+1915	Illumina Genome Analyzer IIx	2011-07-22,2011-09-30
+1916	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-07-22,2011-09-30,2012-03-02,2012-03-23
+1969	Illumina Genome Analyzer IIx	2011-08-04
+1970	Illumina Genome Analyzer IIx	2011-08-04
+1971	Illumina Genome Analyzer IIx	2011-08-04
+1972	Illumina Genome Analyzer IIx	2011-08-04
+1973	Illumina Genome Analyzer IIx	2011-08-04
+1974	Illumina Genome Analyzer IIx	2011-08-04
+1975	Illumina Genome Analyzer IIx	2011-08-04
+1991	Illumina Genome Analyzer IIx	2011-08-09
+1992	Illumina Genome Analyzer IIx	2011-08-09,2012-03-30
+1993	Illumina Genome Analyzer IIx,Illumina HiSeq 2000	2011-08-09,2012-03-23
+2004	Illumina Genome Analyzer IIx	2011-08-10
+2005	Illumina Genome Analyzer IIx	2011-08-10
+2006	Illumina Genome Analyzer IIx	2011-08-10
+2007	Illumina Genome Analyzer IIx	2011-08-10
+2008	Illumina Genome Analyzer IIx	2011-08-10
+2009	Illumina Genome Analyzer IIx	2011-08-10
+2038	Illumina Genome Analyzer IIx	2011-08-23
+2039	Illumina Genome Analyzer IIx	2011-08-23
+2040	Illumina Genome Analyzer IIx	2011-08-23
+2041	Illumina Genome Analyzer IIx	2011-08-23
+2042	Illumina Genome Analyzer IIx	2011-08-23
+2043	Illumina Genome Analyzer IIx	2011-09-13
+2044	Illumina Genome Analyzer IIx	2011-08-23,2011-11-10
+2045	Illumina Genome Analyzer IIx	2011-08-23,2011-11-10
+2046	Illumina Genome Analyzer IIx	2011-08-23,2011-11-10
+2047	Illumina Genome Analyzer IIx	2011-08-23,2011-11-10
+2048	Illumina Genome Analyzer IIx	2011-08-23,2011-11-23,2011-12-15
+2049	Illumina Genome Analyzer IIx	2011-08-23,2011-11-23,2011-12-15
+2050	Illumina Genome Analyzer IIx	2011-08-23,2011-11-18
+2051	Illumina Genome Analyzer IIx	2011-09-02
+2052	Illumina Genome Analyzer IIx	2011-09-02
+2053	Illumina Genome Analyzer IIx	2011-09-02
+2054	Illumina Genome Analyzer IIx	2011-09-02
+2055	Illumina Genome Analyzer IIx	2011-09-14
+2056	Illumina Genome Analyzer IIx	2011-09-02
+2057	Illumina Genome Analyzer IIx	2011-09-02
+2058	Illumina Genome Analyzer IIx	2011-09-02
+2059	Illumina Genome Analyzer IIx	2011-12-29
+2062	Illumina Genome Analyzer IIx	2011-09-14
+2066	Illumina Genome Analyzer IIx	2011-09-14,2011-11-23,2011-12-15
+2067	Illumina Genome Analyzer IIx	2011-09-13,2011-10-31
+2070	Illumina Genome Analyzer IIx	2011-09-13,2011-11-10
+2080	Illumina Genome Analyzer IIx	2011-09-13
+2081	Illumina Genome Analyzer IIx	2011-09-13
+2280	Illumina HiSeq 2000	2011-12-12,2012-01-20
+2281	Illumina HiSeq 2000	2011-12-12,2012-01-20
+2282	Illumina HiSeq 2000	2011-12-12,2012-01-20,2012-04-16
+2283	Illumina HiSeq 2000	2011-12-12,2012-01-20
+2284	Illumina HiSeq 2000	2011-11-23
+2285	Illumina HiSeq 2000	2011-11-23
+2286	Illumina HiSeq 2000	2011-11-23
+2287	Illumina HiSeq 2000	2011-11-23
+2288	Illumina HiSeq 2000	2011-11-23
+2289	Illumina HiSeq 2000	2011-11-23
+2290	Illumina HiSeq 2000	2011-11-23,2013-05-30
+2291	Illumina HiSeq 2000	2011-11-23
+2292	Illumina HiSeq 2000	2011-11-23
+2293	Illumina HiSeq 2000	2011-11-23
+2294	Illumina HiSeq 2000	2011-11-23
+2295	Illumina HiSeq 2000	2011-11-23
+2296	Illumina HiSeq 2000	2011-11-23
+2297	Illumina HiSeq 2000	2011-11-23
+2298	Illumina HiSeq 2000	2011-11-23
+2299	Illumina HiSeq 2000	2011-11-23
+2300	Illumina HiSeq 2000	2011-11-23
+2301	Illumina HiSeq 2000	2011-11-23
+2302	Illumina HiSeq 2000	2011-11-23
+2303	Illumina HiSeq 2000	2011-11-23
+2304	Illumina HiSeq 2000	2011-11-23
+2305	Illumina HiSeq 2000	2011-11-23
+2306	Illumina HiSeq 2000	2011-11-23
+2307	Illumina HiSeq 2000	2011-11-23
+2388	Illumina HiSeq 2000	2011-12-29
+2389	Illumina HiSeq 2000	2011-12-29
+2390	Illumina HiSeq 2000	2011-12-29,2012-04-16
+2391	Illumina HiSeq 2000	2011-12-29
+2392	Illumina HiSeq 2000	2011-12-29
+2393	Illumina HiSeq 2000	2011-12-29
+2394	Illumina HiSeq 2000	2011-12-29
+2395	Illumina HiSeq 2000	2011-12-29
+2396	Illumina HiSeq 2000	2011-12-29,2012-04-16
+2397	Illumina HiSeq 2000	2011-12-29
+2398	Illumina HiSeq 2000	2011-12-29
+2399	Illumina HiSeq 2000	2011-12-29
+2400	Illumina HiSeq 2000	2011-12-29
+2401	Illumina HiSeq 2000	2011-12-29
+2402	Illumina HiSeq 2000	2011-12-29,2012-04-16
+2403	Illumina HiSeq 2000	2011-12-29,2012-04-16
+2404	Illumina HiSeq 2000	2011-12-29,2012-04-16
+2405	Illumina HiSeq 2000	2011-12-29
+2406	Illumina HiSeq 2000	2011-12-29
+2407	Illumina HiSeq 2000	2011-12-29
+2408	Illumina HiSeq 2000	2011-12-29
+2409	Illumina HiSeq 2000	2011-12-29
+2410	Illumina HiSeq 2000	2011-12-29
+2411	Illumina HiSeq 2000	2011-12-29
+2780	Illumina HiSeq 2000	2012-02-23
+2781	Illumina HiSeq 2000	2012-02-23
+2782	Illumina HiSeq 2000	2012-02-23,2013-05-09
+2783	Illumina HiSeq 2000	2012-02-23
+2784	Illumina HiSeq 2000	2012-02-23,2013-05-09
+2785	Illumina HiSeq 2000	2012-02-23
+2786	Illumina HiSeq 2000	2012-02-23
+2787	Illumina HiSeq 2000	2012-02-23
+3449	Illumina HiSeq 2000	2012-07-03,2012-08-10
+3450	Illumina HiSeq 2000	2012-07-03,2012-08-10
+3451	Illumina HiSeq 2000	2012-07-03,2012-08-10
+3452	Illumina HiSeq 2000	2012-07-03,2012-08-10
+3453	Illumina HiSeq 2000	2012-07-03,2012-08-10
+3454	Illumina HiSeq 2000	2012-07-03,2012-08-10
+3455	Illumina HiSeq 2000	2012-07-03,2012-08-10
+3457	Illumina HiSeq 2000	2012-07-03,2012-08-10
+3707	Illumina HiSeq 2000	2012-07-20
+3708	Illumina HiSeq 2000	2012-07-20
+3710	Illumina HiSeq 2000	2012-07-20
+3711	Illumina HiSeq 2000	2012-07-20
+3712	Illumina HiSeq 2000	2012-07-20
+3713	Illumina HiSeq 2000	2012-07-20
+3714	Illumina HiSeq 2000	2012-07-20
+3715	Illumina HiSeq 2000	2012-07-20
+3716	Illumina HiSeq 2000	2012-07-20
+3717	Illumina HiSeq 2000	2012-07-20
+3718	Illumina HiSeq 2000	2012-07-20
+3730	Illumina HiSeq 2000	2012-07-20
+3806	Illumina HiSeq 2000	2012-08-10,2012-09-13
+3959	Illumina HiSeq 2000	2012-09-13
+3960	Illumina HiSeq 2000	2012-09-13
+3961	Illumina HiSeq 2000	2012-09-13
+3962	Illumina HiSeq 2000	2012-09-13
+3963	Illumina HiSeq 2000	2012-09-13
+3964	Illumina HiSeq 2000	2012-09-13
+3965	Illumina HiSeq 2000	2012-09-13
+3966	Illumina HiSeq 2000	2012-09-13
+4938	Illumina HiSeq 2000	2013-01-22
+4939	Illumina HiSeq 2000	2013-01-22
+4940	Illumina HiSeq 2000	2013-01-22
+4941	Illumina HiSeq 2000	2013-01-22
+4942	Illumina HiSeq 2000	2013-01-22
+4943	Illumina HiSeq 2000	2013-01-22
+4944	Illumina HiSeq 2000	2013-01-22
+4946	Illumina HiSeq 2000	2013-01-22
+4947	Illumina HiSeq 2000	2013-01-22
+4948	Illumina HiSeq 2000	2013-01-22
+4949	Illumina HiSeq 2000	2013-01-22
+4950	Illumina HiSeq 2000	2013-01-22
+4951	Illumina HiSeq 2000	2013-01-22
+5133	Illumina HiSeq 2000	2013-03-11
+5134	Illumina HiSeq 2000	2013-03-11
+5135	Illumina HiSeq 2000	2013-03-11
+5136	Illumina HiSeq 2000	2013-03-11
+5137	Illumina HiSeq 2000	2013-03-11
+5138	Illumina HiSeq 2000	2013-03-11
+5139	Illumina HiSeq 2000	2013-03-11
+5141	Illumina HiSeq 2000	2013-03-11
+5142	Illumina HiSeq 2000	2013-03-11
+5143	Illumina HiSeq 2000	2013-03-11
+5144	Illumina HiSeq 2000	2013-03-11
+5145	Illumina HiSeq 2000	2013-03-11
+5146	Illumina HiSeq 2000	2013-03-11
+5148	Illumina HiSeq 2000	2013-03-11
+5149	Illumina HiSeq 2000	2013-03-11
+5150	Illumina HiSeq 2000	2013-03-11
+5151	Illumina HiSeq 2000	2013-03-11
+5152	Illumina HiSeq 2000	2013-03-11
+5153	Illumina HiSeq 2000	2013-03-11
+5154	Illumina HiSeq 2000	2013-03-11
+5156	Illumina HiSeq 2000	2013-03-11
+5157	Illumina HiSeq 2000	2013-03-11
+5158	Illumina HiSeq 2000	2013-03-11
+5159	Illumina HiSeq 2000	2013-03-11
+5160	Illumina HiSeq 2000	2013-03-11
+5161	Illumina HiSeq 2000	2013-03-11
+5407	Illumina HiSeq 2000	2012-04-16
+5709	Illumina HiSeq 2000	2013-05-30
+5710	Illumina HiSeq 2000	2013-05-30
+5711	Illumina HiSeq 2000	2013-05-30
+5712	Illumina HiSeq 2000	2013-05-30
+5713	Illumina HiSeq 2000	2013-05-30
+5714	Illumina HiSeq 2000	2013-05-30
+5715	Illumina HiSeq 2000	2013-05-30
+6016	Illumina HiSeq 2000	2013-07-25,2013-10-01
+6017	Illumina HiSeq 2000	2013-07-25,2013-10-01
+6018	Illumina HiSeq 2000	2013-07-25,2013-10-01
+6019	Illumina HiSeq 2000	2013-07-25,2013-10-01
+6021	Illumina HiSeq 2000	2013-07-25,2013-10-01
+6022	Illumina HiSeq 2000	2013-07-25,2013-10-01
+6023	Illumina HiSeq 2000	2013-07-25,2013-10-01
+6024	Illumina HiSeq 2000	2013-07-25,2013-10-01
+6026	Illumina HiSeq 2000	2013-07-10,2013-10-01
+6027	Illumina HiSeq 2000	2013-07-10,2013-10-01
+6028	Illumina HiSeq 2000	2013-07-10,2013-10-01
+6029	Illumina HiSeq 2000	2013-07-10,2013-10-01
+6031	Illumina HiSeq 2000	2013-07-10,2013-11-01
+6032	Illumina HiSeq 2000	2013-07-10,2013-11-01
+6033	Illumina HiSeq 2000	2013-07-10,2013-11-01
+6034	Illumina HiSeq 2000	2013-07-10,2013-11-01
+6424	Illumina HiSeq 2000	2013-11-01
+6425	Illumina HiSeq 2000	2013-11-01
+6434	Illumina MiSeq	2013-10-03
+6435	Illumina MiSeq	2013-10-03
+6436	Illumina MiSeq	2013-10-03

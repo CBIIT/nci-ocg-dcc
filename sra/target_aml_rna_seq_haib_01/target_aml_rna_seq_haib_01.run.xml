@@ -1,0 +1,2519 @@
+<RUN_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.run.xsd?view=co">
+    <RUN alias="TARGET-20-PABHET-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PABHET-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0036</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a0e8ce4420577a79ed897ab0c4866dba" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PABHET-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="74a7a568b4e83fa5b75e3a67fbbbd6d1" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PABHET-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PABHKY-03A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PABHKY-03A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0037</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="6489f0be4241984323d2b8c9bb36c0c3" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PABHKY-03A-01R_r1.fastq.gz"/>
+                <FILE checksum="a7e5e886885bc306d9203efc2584450f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PABHKY-03A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PACDZR-09A-02R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PACDZR-09A-02R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0016</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="8cc54f871d3747411fff0c06c274abc3" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PACDZR-09A-02R_r1.fastq.gz"/>
+                <FILE checksum="b45c8faf363520b7113eb634c32a8631" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PACDZR-09A-02R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PADDXZ-03A-02R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PADDXZ-03A-02R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0041</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a44bee6b2996a60e37aa30ef25b24829" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PADDXZ-03A-02R_r1.fastq.gz"/>
+                <FILE checksum="473787fdcc03d2c6baa4cf23c52a42ea" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PADDXZ-03A-02R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAEAFC-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAEAFC-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0023</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="9d98a465174283423aa26bfa3e5a7efb" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAEAFC-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="ba4caf20601390a08376ec11ca42d11c" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAEAFC-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAEFHC-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAEFHC-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0028</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="9d2a648adc25faaa2cba84ce57ac272f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAEFHC-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="c4ab2b3baab1c42dbb79a6c745464b16" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAEFHC-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAERAH-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAERAH-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0066</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="bf9a4973470d728c9de3cd4fba66bb1f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAERAH-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="52cd077326d13c527533ac81d40d6b05" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAERAH-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAKVYM-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAKVYM-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0047</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="b00066d6b135bcb8947f3bd6c353cb90" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAKVYM-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="b54e7ab9b1d455faf8e2751d6398b2ea" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAKVYM-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PALHVV-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PALHVV-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0018</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="71e3db060e4e5f5f94682d4605db4865" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PALHVV-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="32cdc15a8270208e246a875daa937a83" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PALHVV-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PALNAT-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PALNAT-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0004</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="e54d064fa7195da517c4debc9c1b6577" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PALNAT-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="028f7d163d4a359bda58103c30fe3172" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PALNAT-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PALVKV-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PALVKV-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0050</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="89a0f495f53ed27dd52642ddce88af6e" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PALVKV-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="41c864813377535a618202960cf5e333" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PALVKV-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAMYWW-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAMYWW-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0019</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="4d88ba7365004fdfb2c1b24874dd2923" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAMYWW-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="df6f4187e7d2381b8bf18711e4b3b555" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAMYWW-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANBWF-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANBWF-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0024</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="f483660339448a22e65da37adc370874" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANBWF-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="6f96aeb797c6618d37514105826a9b87" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANBWF-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANDER-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANDER-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0038</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="b8ec5462aa95651acbe15525884efe51" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANDER-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="d9fa0706f34c141e9027485d5e023cdb" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANDER-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANGCM-03A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANGCM-03A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0046</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="f1491f2766e387a94efe44d3999f2e13" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANGCM-03A-01R_r1.fastq.gz"/>
+                <FILE checksum="4526af69cc74e8eba3ce9ea633b202a3" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANGCM-03A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANJGR-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANJGR-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0039</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="3e13e713b8108149151aaf9c408ba3e3" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANJGR-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="f403c653fff1611cca1c00e746d70afa" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANJGR-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANJTK-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANJTK-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0040</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="34431285f5a636ba4c403c73ec971227" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANJTK-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="54440bbf3cd62f3a34a1c73d490c87f9" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANJTK-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANKNB-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANKNB-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0059</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="0db884360b4305ef81e202bf7d380303" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANKNB-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="cc4ca8f55ed0066a35f3bf377ddd7e4c" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANKNB-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANLIZ-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANLIZ-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0065</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="5238b4c523df3b6b6520898f7e2d2001" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANLIZ-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="09a43b98fe0d6c1b03e20c0279741e96" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANLIZ-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANLRE-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANLRE-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0043</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="516ce6e19836a02c520bef9d39ff9eae" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANLRE-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="7a70b12b920856bf902d801ef21264e1" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANLRE-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANLXM-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANLXM-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0026</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="7ade8b19d626b98b9a2a2a223b942f6f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANLXM-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="0126fd2b61977f6392d1a9ec38388106" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANLXM-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANRIK-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANRIK-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0025</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="71902246a6025f4e525e12778f72f2bb" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANRIK-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="3cfa6ce99fc5787fea5fb2a169c66b6e" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANRIK-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANSJB-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANSJB-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0029</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="23e47e88082b19fe9ecd956d78b4aa7b" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANSJB-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="895eb77911b954b052ad2d3f9f8a9234" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANSJB-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANTPW-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANTPW-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0060</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="3557cc6a49b57cfce1cfdd9d2d873ee0" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANTPW-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="19df8b78f1eab2fe70bea5d4860d5a60" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANTPW-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANUTB-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANUTB-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0052</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="d2f326f6756d2fa246fb3b23bd321519" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANUTB-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="61affa2a11f0df88112a93f924b7f82a" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANUTB-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANVGP-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANVGP-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0042</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="91518a072cbf97ff3c6fc4417c922862" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANVGP-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="716badf50114cccb34225d8bfa83e378" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANVGP-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PANWHP-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PANWHP-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0044</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="0fa7d32c875ef8ebaa450287270ade6e" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANWHP-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="99be79ef03fd59bfab903d9b7993bc08" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PANWHP-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAPAEG-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAPAEG-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0020</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="ad174759bcde97f1d138f29e24ce1420" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPAEG-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="f9f8371d2d2398b833580fa2ee8c5c33" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPAEG-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAPVCN-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAPVCN-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0053</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="0d00f8bb49268820d88e94ec366ccd11" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPVCN-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="c55f7a85aa3cde84f251ab60889e034f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPVCN-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAPVZK-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAPVZK-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0054</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="b24692d21ccef85bbaeaaebcdda38295" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPVZK-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="363ec9eb40df4d743989ff418b9065e5" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPVZK-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAPWIU-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAPWIU-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0005</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="0386f6d2cf48e3e7be7e25d8ad2b0fdb" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPWIU-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="d01c4d643d9a6688f2edc476b6c9ab34" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPWIU-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PAPXUF-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PAPXUF-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0021</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a10c8ca992f0a736779543ee670d6c7b" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPXUF-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="dff4e850f7b31ee8ba3c5b591e3f0d77" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PAPXUF-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARAHF-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARAHF-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0055</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="494f955b78b9f48b4895ae207565423a" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARAHF-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="ebd0e39e033adb4047879191222b4290" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARAHF-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARBFJ-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARBFJ-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0015</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="566173f6e797198c0b2a05a7805086ef" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARBFJ-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="4b373df7bf913dc4115ec53d265d7f6b" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARBFJ-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARBTV-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARBTV-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0001</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="5b93679304dd99cfcd44b5d38e56ca65" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARBTV-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="264e7abe882889d0c1397345b2e5e7e1" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARBTV-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARDDA-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARDDA-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0034</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="973e1c30446f1df7a703033eeb0b7c23" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARDDA-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="a4df17f52b0b12fd276fa62e45f74210" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARDDA-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARENB-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARENB-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0032</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="f71220258b3e1f54defe37e6cd388564" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARENB-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="ab7951feda1669d4d64012ecd270322f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARENB-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARFGK-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARFGK-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0009</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a49f36be8a2d6afb1ffac4f9a0cb88ba" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARFGK-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="3b3b0d35d3180bcd4b12b2f065cbdb21" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARFGK-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARHPP-03A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARHPP-03A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0003</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="fb98a5bb70fd7116f360807dab949fc6" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARHPP-03A-01R_r1.fastq.gz"/>
+                <FILE checksum="84157d96277e06d20f2c3a8aec1b59c4" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARHPP-03A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARJYP-03A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARJYP-03A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0002</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="7e42dc33d377d77eb2bab59007778c44" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARJYP-03A-01R_r1.fastq.gz"/>
+                <FILE checksum="8fe3ed5a7b7ed5042a858295861f8443" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARJYP-03A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARLVL-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARLVL-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0017</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="ae0d8489594c7f24346a38fff1deed85" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARLVL-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="421e90e18ebcc6a34fa27a69d7a71cf2" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARLVL-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARMZF-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARMZF-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0051</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="b187fa0a6203e17aa66cd995559bc031" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARMZF-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="475d8cc2312a68cd9e48dafe450e64f1" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARMZF-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARTYK-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARTYK-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0014</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="2fcff96c5683b0d0f6c7348568376bb0" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARTYK-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="72e065b69737b08c167691dc6d37d909" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARTYK-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARUTH-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARUTH-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0064</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="0f8906cf77158d1573451a2097ede950" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARUTH-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="175aa7b6daf5830e9c82846385c87eba" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARUTH-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARUUB-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARUUB-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0033</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="ab9114076d23e09ae99dec3a6b018885" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARUUB-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="538df2f0cbd505bc736d256de50c8766" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARUUB-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARXBT-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARXBT-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0048</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="3a8581702f24634ad891c111a2a8aaf5" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARXBT-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="1b8c08f33db27379571a8f9421002e71" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARXBT-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARXNG-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARXNG-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0013</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="37174a4d6f58e9b9626347bef6306cd3" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARXNG-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="cc7358e3498e178f2bbb5f5af6febd4f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARXNG-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARYEB-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARYEB-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0010</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="323e3b72afa9babfbe7b3c7528fe7ded" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARYEB-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="af0861bd1594390b96f5f5b78938b0a2" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARYEB-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARYGA-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARYGA-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0011</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="6615c179187ddf0a4de97bdad48ed3ce" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARYGA-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="20f47340a60f843ff5c7a2529ca9ddc9" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARYGA-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARZUU-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARZUU-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0067</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="61d56bb0e8de6e57d77f46db64f7790f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARZUU-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="8aefe88641123499351e3352806360bc" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARZUU-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PARZWH-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PARZWH-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0008</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="66354df99417ffd251c7e769996214ba" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARZWH-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="af8f730ec6387d049ed363420759dd6d" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PARZWH-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASAFM-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASAFM-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0012</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="123397b009f7e7b129eb0d96b259daa3" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASAFM-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="1ccc0eed6a05fa1e43e455901a17fd54" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASAFM-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASFJB-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASFJB-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0056</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="3d1210d84f89155fdf4f803379c52cab" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASFJB-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="400e5eea02afc208ede0cae596ed6bd7" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASFJB-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASHBI-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASHBI-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0035</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="09dccbd41284549d3dea10d4e00cd0c4" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASHBI-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="e88afd1250b9c43607a597b72be65201" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASHBI-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASIEP-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASIEP-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0022</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="00b9e2734bb4d743f1de98b7e31630f8" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASIEP-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="93cff443c1048a3ba7cba3acde948494" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASIEP-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASILA-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASILA-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0061</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="89954dbffe2c815e4eb6f3e7a54390bf" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASILA-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="365daf9a3faecf7d6721bf1f04691635" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASILA-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASKUA-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASKUA-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0031</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a70a91aa7b348c598bfbcba9cf5f522f" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASKUA-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="a235504dee5dee06480103b2e3464f8c" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASKUA-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASPGA-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASPGA-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0006</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="430f28fc3c4152f75e6127596021874a" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASPGA-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="a9ab5f7fec373ab5d0164505dd5405f5" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASPGA-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASPKE-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASPKE-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0063</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="fe759f2278941fc0202942681bd564e3" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASPKE-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="511ed9a2515f7445eae47941d751d44b" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASPKE-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASPLU-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASPLU-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0030</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="984fb71ce3d5463786c2ddf34c08bf6d" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASPLU-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="52e0c9a940c38821d633d66d4c2a7f2a" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASPLU-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASPTM-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASPTM-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0007</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="38886c50bee4e6d979421374a28f1e5e" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASPTM-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="2303430c69feff620b9ed2081d2bac02" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASPTM-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASRTP-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASRTP-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0027</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="4b3152d76f1a20c1f78923d6ca4f4b18" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASRTP-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="ddb302fc23ae6772b906db76c1eb11d1" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASRTP-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASTFY-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASTFY-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0057</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="5e7fbe71916f98c1ee8f4b8ee53927df" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASTFY-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="2c542f112a43da11354301445552eb1a" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASTFY-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASXYG-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASXYG-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0062</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="34a6a31c1f457b7a2a60b5a1aaaf3afb" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASXYG-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="6f322fa33fdc8bce1051500586977843" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASXYG-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASYDC-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASYDC-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0049</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="388246d79649476c1dc9e24c266fd8f7" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASYDC-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="b866e434d0dc6388d97268efb8c8a215" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASYDC-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASYJI-09A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASYJI-09A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0045</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="b6a40c80d65edeee45b6b3bf14f1ab21" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASYJI-09A-01R_r1.fastq.gz"/>
+                <FILE checksum="ac6d179abaa1683233e7c0bd2facfc4a" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASYJI-09A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PASYRN-03A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PASYRN-03A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0068</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a738ab258d1c4998b82b4cd4d611985d" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASYRN-03A-01R_r1.fastq.gz"/>
+                <FILE checksum="176a2a06ce81b6aa11e6a0cc055e9d94" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PASYRN-03A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+    <RUN alias="TARGET-20-PATELT-03A-01R.fastq" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">TARGET-20-PATELT-03A-01R.fastq</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="HAIB">1170-SL-0058</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>                                                
+                <PIPE_SECTION section_name="BASE_CALLS">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="QUALITY_SCORES">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>CASAVA</PROGRAM>
+                    <VERSION>1.8</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="f35ad91cbe3977f1402b28f5c0eda004" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PATELT-03A-01R_r1.fastq.gz"/>
+                <FILE checksum="a728a5f1a36e3fa24afba6e240333c37" checksum_method="MD5" filetype="fastq" filename="TARGET-20-PATELT-03A-01R_r2.fastq.gz"/>
+            </FILES>
+        </DATA_BLOCK>
+    </RUN>
+</RUN_SET>

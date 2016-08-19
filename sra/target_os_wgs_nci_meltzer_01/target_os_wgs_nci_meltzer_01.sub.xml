@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUBMISSION_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.submission.xsd?view=co">
+    <SUBMISSION broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET_OS_WGS_NCI_MELTZER_01</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <CONTACTS>
+            <CONTACT name="Leandro Hermida" inform_on_status="leandro.hermida@nih.gov" inform_on_error="leandro.hermida@nih.gov" />
+            <CONTACT name="NCI Cancer Genomics Office" inform_on_status="ocg@mail.nih.gov" />
+            <CONTACT name="Sean Davis" inform_on_status="sean.davis@nih.gov" />
+        </CONTACTS>
+        <ACTIONS>
+            <ACTION>
+                <ADD source="target_os_wgs_nci_meltzer_01.exp.xml" schema="experiment" />
+            </ACTION>
+            <ACTION>
+                <ADD source="target_os_wgs_nci_meltzer_01.run.xml" schema="run" />
+            </ACTION>
+        </ACTIONS>
+    </SUBMISSION>
+</SUBMISSION_SET>

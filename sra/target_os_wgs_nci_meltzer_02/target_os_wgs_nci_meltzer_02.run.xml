@@ -1,0 +1,1253 @@
+<RUN_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.run.xsd?view=co">
+    <RUN alias="TARGET-40-0A4HMC-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4HMC-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX202909" refcenter="CompleteGenomics" refname="GS00827-DNA_E04" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="f6dd44dfec8d70c6a6dc4eb78cfcf697" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4HMC-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128494</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_E04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4HMC-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4HMC-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX202910" refcenter="CompleteGenomics" refname="GS00827-DNA_H08" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="2badc0e7b84ff6d36f06560a71c20c04" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4HMC-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128611</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_H08</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I4E-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I4E-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204602" refcenter="CompleteGenomics" refname="GS00827-DNA_C04" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="90d34052979ebb92c2f3c865a5662b01" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I4E-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128497</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_C04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I4E-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I4E-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204603" refcenter="CompleteGenomics" refname="GS00827-DNA_F08" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="9343863de3832970f9eac4d5279fbe67" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I4E-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128614</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_F08</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I5B-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I5B-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204604" refcenter="CompleteGenomics" refname="GS00827-DNA_B05" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="2e432b705633b2632393cfb066d27d74" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I5B-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128498</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_B05</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I5B-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I5B-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204605" refcenter="CompleteGenomics" refname="GS00827-DNA_E09" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="b1c8cb54b0881d45c2320610cec736c6" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I5B-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128615</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_E09</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I48-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I48-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204540" refcenter="CompleteGenomics" refname="GS00827-DNA_B04" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="7da442924a410ebd8db861e986f14fd8" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I48-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128496</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_B04</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I48-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I48-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204541" refcenter="CompleteGenomics" refname="GS00827-DNA_E08" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="288d46574991c843e5d4697d7da253fe" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I48-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128613</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_E08</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I65-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I65-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204734" refcenter="CompleteGenomics" refname="GS00827-DNA_C03" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="c536990c5676dced49f5e9f0da46b5c1" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I65-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128499</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_C03</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-0A4I65-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-0A4I65-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204735" refcenter="CompleteGenomics" refname="GS00827-DNA_F07" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="5f4156a1bbe30d11625934b46464beb0" checksum_method="MD5" filetype="bam" filename="TARGET-40-0A4I65-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128616</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_F07</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAKXLD-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAKXLD-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204738" refcenter="CompleteGenomics" refname="GS00827-DNA_D01" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="abfbfcf1f575366b8611c0071a546c43" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAKXLD-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128501</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_D01</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAKXLD-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAKXLD-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204739" refcenter="CompleteGenomics" refname="GS00827-DNA_G05" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="2621654aa25965707daa33448f92bb4b" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAKXLD-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128618</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_G05</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PALHRL-01A-01D_genome.bam" center_name="BCCAGSC" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PALHRL-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX100084" refname="A04925-1">
+            <IDENTIFIERS>
+                <PRIMARY_ID>SRX100084</PRIMARY_ID>
+                <SUBMITTER_ID namespace="BCCAGSC">A04925-1</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.10.36.0</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.10.36.0</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="cff19db2a9801101726ea1ce188af2c4" checksum_method="MD5" filetype="bam" filename="TARGET-40-PALHRL-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>RUN</TAG>
+                <VALUE>119990</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PALHRL-10A-01D_genome.bam" center_name="BCCAGSC" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PALHRL-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX100083" refname="A04924-1">
+            <IDENTIFIERS>
+                <PRIMARY_ID>SRX100083</PRIMARY_ID>
+                <SUBMITTER_ID namespace="BCCAGSC">A04924-1</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.10.36.0</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.10.36.0</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="846b4ee9496ac10fbf78c91f9275eaa4" checksum_method="MD5" filetype="bam" filename="TARGET-40-PALHRL-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>RUN</TAG>
+                <VALUE>119988</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PALZGU-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PALZGU-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204736" refcenter="CompleteGenomics" refname="GS00827-DNA_B01" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="24556ce8626fa4862f1be88a42cd5e83" checksum_method="MD5" filetype="bam" filename="TARGET-40-PALZGU-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128506</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_B01</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PALZGU-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PALZGU-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204737" refcenter="CompleteGenomics" refname="GS00827-DNA_E05" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="58818d2151ab18dababc1cb031707fbe" checksum_method="MD5" filetype="bam" filename="TARGET-40-PALZGU-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128647</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_E05</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMJXS-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMJXS-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204740" refcenter="CompleteGenomics" refname="GS00827-DNA_A01" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="d76eb2cb06ed810e5d676a1daac66216" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMJXS-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128507</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_A01</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAMJXS-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAMJXS-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204741" refcenter="CompleteGenomics" refname="GS00827-DNA_D05" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="63b30fa6fc584c9c543f1b6c62bfb012" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAMJXS-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128648</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_D05</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAPFLB-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAPFLB-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204726" refcenter="CompleteGenomics" refname="GS00827-DNA_D02" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="a6993121eab5df4b17c778827afd34d2" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAPFLB-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128508</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_D02</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PAPFLB-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PAPFLB-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204727" refcenter="CompleteGenomics" refname="GS00827-DNA_G06" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="8969b870d352250c884264b4b17cb01f" checksum_method="MD5" filetype="bam" filename="TARGET-40-PAPFLB-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128649</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_G06</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PATMPU-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PATMPU-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204732" refcenter="CompleteGenomics" refname="GS00827-DNA_F02" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="759f5c0ae0de89cbfa2c5fb0bbeda2af" checksum_method="MD5" filetype="bam" filename="TARGET-40-PATMPU-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128651</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_F02</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PATMPU-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PATMPU-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204733" refcenter="CompleteGenomics" refname="GS00827-DNA_A07" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="e0a18304b809d8fecc903367456c1ec7" checksum_method="MD5" filetype="bam" filename="TARGET-40-PATMPU-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128653</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_A07</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PATUXZ-01A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PATUXZ-01A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204728" refcenter="CompleteGenomics" refname="GS00827-DNA_A03" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="549a8980f3fc1bf2938b28026fb1c22c" checksum_method="MD5" filetype="bam" filename="TARGET-40-PATUXZ-01A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128652</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_A03</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+    <RUN alias="TARGET-40-PATUXZ-10A-01D_genome.bam" center_name="CompleteGenomics" run_center="NCI-MELTZER" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET-40-PATUXZ-10A-01D_genome.bam</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF accession="SRX204729" refcenter="CompleteGenomics" refname="GS00827-DNA_D07" />
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>Illumina RTA</PROGRAM>
+                    <VERSION>1.12.4.2</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="0ff79430a05b9c6bcccea3971ce7a0fc" checksum_method="MD5" filetype="bam" filename="TARGET-40-PATUXZ-10A-01D_genome.bam" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>GRCh37</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Runs</TAG>
+                <VALUE>128654</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>CompleteGenomics sample ID</TAG>
+                <VALUE>GS00827-DNA_D07</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>
+</RUN_SET>

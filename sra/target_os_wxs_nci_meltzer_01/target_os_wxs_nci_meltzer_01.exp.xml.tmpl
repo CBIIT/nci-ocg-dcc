@@ -1,0 +1,51 @@
+    <EXPERIMENT alias="{$library_name}" center_name="{$center_name}" broker_name="{$broker_name}">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="{$center_name}">{$library_name}</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>{$title}</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="dbGaP">phs000468</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>{$design_description}</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="phs000468">{$barcode}</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>{$library_name}</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>WXS</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>Hybrid Selection</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="200" />
+                </LIBRARY_LAYOUT>
+                <LIBRARY_CONSTRUCTION_PROTOCOL>{$library_construction_protocol}</LIBRARY_CONSTRUCTION_PROTOCOL>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>200</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>101</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>{$sequencer_model}</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>

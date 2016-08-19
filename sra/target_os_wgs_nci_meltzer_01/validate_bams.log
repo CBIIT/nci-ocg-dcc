@@ -1,0 +1,1055 @@
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-0A4HY5-01A-01D_genomic.bam
+
+Number of records read = 1150154070
+Number of valid records = 1150154070
+
+TotalReads(e6)	1150.15
+MappedReads(e6)	1116.03
+PairedReads(e6)	1055.46
+ProperPair(e6)	1015.32
+DuplicateReads(e6)	115.16
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	97.03
+PairedReads(%)	91.77
+ProperPair(%)	88.28
+DupRate(%)	10.01
+QCFailRate(%)	0.00
+
+TotalBases(e6)	104492.72
+BasesInMappedReads(e6)	101499.23
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-0A4HY5-10A-01D_genomic.bam
+
+Number of records read = 429309562
+Number of valid records = 429309562
+
+TotalReads(e6)	429.31
+MappedReads(e6)	410.95
+PairedReads(e6)	414.67
+ProperPair(e6)	385.13
+DuplicateReads(e6)	41.85
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.72
+PairedReads(%)	96.59
+ProperPair(%)	89.71
+DupRate(%)	9.75
+QCFailRate(%)	0.00
+
+TotalBases(e6)	42316.86
+BasesInMappedReads(e6)	40566.17
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-0A4I3S-01A-01D_genomic.bam
+
+Number of records read = 582025520
+Number of valid records = 582025520
+
+TotalReads(e6)	582.03
+MappedReads(e6)	564.21
+PairedReads(e6)	529.89
+ProperPair(e6)	509.19
+DuplicateReads(e6)	28.05
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.94
+PairedReads(%)	91.04
+ProperPair(%)	87.49
+DupRate(%)	4.82
+QCFailRate(%)	0.00
+
+TotalBases(e6)	53254.10
+BasesInMappedReads(e6)	51740.06
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-0A4I3S-10A-01D_genomic.bam
+
+Number of records read = 640840401
+Number of valid records = 640840401
+
+TotalReads(e6)	640.84
+MappedReads(e6)	620.28
+PairedReads(e6)	614.94
+ProperPair(e6)	587.44
+DuplicateReads(e6)	35.82
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.79
+PairedReads(%)	95.96
+ProperPair(%)	91.67
+DupRate(%)	5.59
+QCFailRate(%)	0.00
+
+TotalBases(e6)	60349.13
+BasesInMappedReads(e6)	58513.86
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-0A4I42-01A-01D_genomic.bam
+
+Number of records read = 184726783
+Number of valid records = 184726783
+
+TotalReads(e6)	184.73
+MappedReads(e6)	177.43
+PairedReads(e6)	177.46
+ProperPair(e6)	167.49
+DuplicateReads(e6)	4.96
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.05
+PairedReads(%)	96.07
+ProperPair(%)	90.67
+DupRate(%)	2.68
+QCFailRate(%)	0.00
+
+TotalBases(e6)	17997.97
+BasesInMappedReads(e6)	17306.50
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-0A4I42-10A-01D_genomic.bam
+
+Number of records read = 168536774
+Number of valid records = 168536774
+
+TotalReads(e6)	168.54
+MappedReads(e6)	160.13
+PairedReads(e6)	161.59
+ProperPair(e6)	150.62
+DuplicateReads(e6)	5.05
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.01
+PairedReads(%)	95.88
+ProperPair(%)	89.37
+DupRate(%)	3.00
+QCFailRate(%)	0.00
+
+TotalBases(e6)	16473.10
+BasesInMappedReads(e6)	15671.08
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-0A4I8U-01A-01D_genomic.bam
+
+Number of records read = 872900656
+Number of valid records = 872900656
+
+TotalReads(e6)	872.90
+MappedReads(e6)	849.32
+PairedReads(e6)	830.59
+ProperPair(e6)	789.46
+DuplicateReads(e6)	117.90
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	97.30
+PairedReads(%)	95.15
+ProperPair(%)	90.44
+DupRate(%)	13.51
+QCFailRate(%)	0.00
+
+TotalBases(e6)	83220.91
+BasesInMappedReads(e6)	81020.52
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-0A4I8U-10A-01D_genomic.bam
+
+Number of records read = 255224729
+Number of valid records = 255224729
+
+TotalReads(e6)	255.22
+MappedReads(e6)	241.38
+PairedReads(e6)	250.15
+ProperPair(e6)	231.04
+DuplicateReads(e6)	11.19
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	94.57
+PairedReads(%)	98.01
+ProperPair(%)	90.53
+DupRate(%)	4.39
+QCFailRate(%)	0.00
+
+TotalBases(e6)	24920.82
+BasesInMappedReads(e6)	23555.53
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAKUZU-01A-01D_genomic.bam
+
+Number of records read = 1059973454
+Number of valid records = 1059973454
+
+TotalReads(e6)	1059.97
+MappedReads(e6)	1028.97
+PairedReads(e6)	1034.27
+ProperPair(e6)	991.49
+DuplicateReads(e6)	70.90
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	97.08
+PairedReads(%)	97.58
+ProperPair(%)	93.54
+DupRate(%)	6.69
+QCFailRate(%)	0.00
+
+TotalBases(e6)	103987.59
+BasesInMappedReads(e6)	100996.91
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAKUZU-10A-01D_genomic.bam
+
+Number of records read = 313656144
+Number of valid records = 313656144
+
+TotalReads(e6)	313.66
+MappedReads(e6)	299.30
+PairedReads(e6)	305.87
+ProperPair(e6)	287.23
+DuplicateReads(e6)	12.65
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.42
+PairedReads(%)	97.52
+ProperPair(%)	91.58
+DupRate(%)	4.03
+QCFailRate(%)	0.00
+
+TotalBases(e6)	30953.00
+BasesInMappedReads(e6)	29550.52
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PALECC-01A-01D_genomic.bam
+
+Number of records read = 753593503
+Number of valid records = 753593503
+
+TotalReads(e6)	753.59
+MappedReads(e6)	730.91
+PairedReads(e6)	736.28
+ProperPair(e6)	707.31
+DuplicateReads(e6)	42.31
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.99
+PairedReads(%)	97.70
+ProperPair(%)	93.86
+DupRate(%)	5.61
+QCFailRate(%)	0.00
+
+TotalBases(e6)	73459.09
+BasesInMappedReads(e6)	71291.00
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PALECC-10A-01D_genomic.bam
+
+Number of records read = 276663940
+Number of valid records = 276663940
+
+TotalReads(e6)	276.66
+MappedReads(e6)	266.15
+PairedReads(e6)	273.09
+ProperPair(e6)	259.79
+DuplicateReads(e6)	7.65
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.20
+PairedReads(%)	98.71
+ProperPair(%)	93.90
+DupRate(%)	2.76
+QCFailRate(%)	0.00
+
+TotalBases(e6)	27309.98
+BasesInMappedReads(e6)	26290.01
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PALKGN-01A-01D_genomic.bam
+
+Number of records read = 698751642
+Number of valid records = 698751642
+
+TotalReads(e6)	698.75
+MappedReads(e6)	674.32
+PairedReads(e6)	680.60
+ProperPair(e6)	649.52
+DuplicateReads(e6)	34.92
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.50
+PairedReads(%)	97.40
+ProperPair(%)	92.95
+DupRate(%)	5.00
+QCFailRate(%)	0.00
+
+TotalBases(e6)	68105.86
+BasesInMappedReads(e6)	65740.96
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PALKGN-10A-01D_genomic.bam
+
+Number of records read = 419175085
+Number of valid records = 419175085
+
+TotalReads(e6)	419.18
+MappedReads(e6)	405.24
+PairedReads(e6)	409.76
+ProperPair(e6)	391.99
+DuplicateReads(e6)	16.06
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.68
+PairedReads(%)	97.75
+ProperPair(%)	93.51
+DupRate(%)	3.83
+QCFailRate(%)	0.00
+
+TotalBases(e6)	40808.00
+BasesInMappedReads(e6)	39483.69
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAMHYN-01A-01D_genomic.bam
+
+Number of records read = 1105757108
+Number of valid records = 1105757108
+
+TotalReads(e6)	1105.76
+MappedReads(e6)	1072.64
+PairedReads(e6)	1082.81
+ProperPair(e6)	1038.56
+DuplicateReads(e6)	66.66
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	97.01
+PairedReads(%)	97.93
+ProperPair(%)	93.92
+DupRate(%)	6.03
+QCFailRate(%)	0.00
+
+TotalBases(e6)	108740.01
+BasesInMappedReads(e6)	105523.25
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAMHYN-10A-01D_genomic.bam
+
+Number of records read = 311105294
+Number of valid records = 311105294
+
+TotalReads(e6)	311.11
+MappedReads(e6)	297.51
+PairedReads(e6)	306.40
+ProperPair(e6)	289.91
+DuplicateReads(e6)	9.00
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.63
+PairedReads(%)	98.49
+ProperPair(%)	93.19
+DupRate(%)	2.89
+QCFailRate(%)	0.00
+
+TotalBases(e6)	30571.63
+BasesInMappedReads(e6)	29259.88
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAMLKS-01A-01D_genomic.bam
+
+Number of records read = 847582842
+Number of valid records = 847582842
+
+TotalReads(e6)	847.58
+MappedReads(e6)	809.66
+PairedReads(e6)	823.94
+ProperPair(e6)	778.04
+DuplicateReads(e6)	47.30
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.53
+PairedReads(%)	97.21
+ProperPair(%)	91.80
+DupRate(%)	5.58
+QCFailRate(%)	0.00
+
+TotalBases(e6)	82873.66
+BasesInMappedReads(e6)	79183.37
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAMLKS-10A-01D_genomic.bam
+
+Number of records read = 385309684
+Number of valid records = 385309684
+
+TotalReads(e6)	385.31
+MappedReads(e6)	372.00
+PairedReads(e6)	375.36
+ProperPair(e6)	356.31
+DuplicateReads(e6)	16.56
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.55
+PairedReads(%)	97.42
+ProperPair(%)	92.47
+DupRate(%)	4.30
+QCFailRate(%)	0.00
+
+TotalBases(e6)	37524.59
+BasesInMappedReads(e6)	36240.20
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAMRHD-01A-01D_genomic.bam
+
+Number of records read = 543159920
+Number of valid records = 543159920
+
+TotalReads(e6)	543.16
+MappedReads(e6)	522.65
+PairedReads(e6)	531.12
+ProperPair(e6)	503.85
+DuplicateReads(e6)	25.16
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.22
+PairedReads(%)	97.78
+ProperPair(%)	92.76
+DupRate(%)	4.63
+QCFailRate(%)	0.00
+
+TotalBases(e6)	53331.75
+BasesInMappedReads(e6)	51342.90
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAMRHD-10A-01D_genomic.bam
+
+Number of records read = 360934707
+Number of valid records = 360934707
+
+TotalReads(e6)	360.93
+MappedReads(e6)	349.48
+PairedReads(e6)	351.67
+ProperPair(e6)	337.25
+DuplicateReads(e6)	13.93
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.83
+PairedReads(%)	97.43
+ProperPair(%)	93.44
+DupRate(%)	3.86
+QCFailRate(%)	0.00
+
+TotalBases(e6)	35386.10
+BasesInMappedReads(e6)	34275.42
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAMYYJ-01A-01D_genomic.bam
+
+Number of records read = 548959556
+Number of valid records = 548959556
+
+TotalReads(e6)	548.96
+MappedReads(e6)	522.13
+PairedReads(e6)	533.40
+ProperPair(e6)	497.17
+DuplicateReads(e6)	26.39
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.11
+PairedReads(%)	97.17
+ProperPair(%)	90.57
+DupRate(%)	4.81
+QCFailRate(%)	0.00
+
+TotalBases(e6)	53610.11
+BasesInMappedReads(e6)	51000.84
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAMYYJ-10A-01D_genomic.bam
+
+Number of records read = 324655041
+Number of valid records = 324655041
+
+TotalReads(e6)	324.66
+MappedReads(e6)	312.21
+PairedReads(e6)	319.21
+ProperPair(e6)	303.37
+DuplicateReads(e6)	11.62
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.17
+PairedReads(%)	98.32
+ProperPair(%)	93.44
+DupRate(%)	3.58
+QCFailRate(%)	0.00
+
+TotalBases(e6)	31981.56
+BasesInMappedReads(e6)	30767.93
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PANSEN-01A-01D_genomic.bam
+
+Number of records read = 544225829
+Number of valid records = 544225829
+
+TotalReads(e6)	544.23
+MappedReads(e6)	520.69
+PairedReads(e6)	529.04
+ProperPair(e6)	495.19
+DuplicateReads(e6)	74.28
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.68
+PairedReads(%)	97.21
+ProperPair(%)	90.99
+DupRate(%)	13.65
+QCFailRate(%)	0.00
+
+TotalBases(e6)	52976.13
+BasesInMappedReads(e6)	50688.08
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PANSEN-10A-01D_genomic.bam
+
+Number of records read = 312945746
+Number of valid records = 312945746
+
+TotalReads(e6)	312.95
+MappedReads(e6)	300.39
+PairedReads(e6)	308.09
+ProperPair(e6)	290.69
+DuplicateReads(e6)	10.90
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.99
+PairedReads(%)	98.45
+ProperPair(%)	92.89
+DupRate(%)	3.48
+QCFailRate(%)	0.00
+
+TotalBases(e6)	30753.94
+BasesInMappedReads(e6)	29531.70
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PANZHX-01A-01D_genomic.bam
+
+Number of records read = 288278185
+Number of valid records = 288278185
+
+TotalReads(e6)	288.28
+MappedReads(e6)	276.67
+PairedReads(e6)	282.30
+ProperPair(e6)	267.22
+DuplicateReads(e6)	9.26
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.97
+PairedReads(%)	97.93
+ProperPair(%)	92.70
+DupRate(%)	3.21
+QCFailRate(%)	0.00
+
+TotalBases(e6)	28431.28
+BasesInMappedReads(e6)	27292.52
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PANZHX-10A-01D_genomic.bam
+
+Number of records read = 296223694
+Number of valid records = 296223694
+
+TotalReads(e6)	296.22
+MappedReads(e6)	284.21
+PairedReads(e6)	292.35
+ProperPair(e6)	277.14
+DuplicateReads(e6)	8.69
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.94
+PairedReads(%)	98.69
+ProperPair(%)	93.56
+DupRate(%)	2.93
+QCFailRate(%)	0.00
+
+TotalBases(e6)	27082.23
+BasesInMappedReads(e6)	25990.25
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PANZZJ-01A-01D_genomic.bam
+
+Number of records read = 846348558
+Number of valid records = 846348558
+
+TotalReads(e6)	846.35
+MappedReads(e6)	811.86
+PairedReads(e6)	829.38
+ProperPair(e6)	784.52
+DuplicateReads(e6)	49.30
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.93
+PairedReads(%)	97.99
+ProperPair(%)	92.69
+DupRate(%)	5.82
+QCFailRate(%)	0.00
+
+TotalBases(e6)	83663.12
+BasesInMappedReads(e6)	80277.45
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PANZZJ-10A-01D_genomic.bam
+
+Number of records read = 301931119
+Number of valid records = 301931119
+
+TotalReads(e6)	301.93
+MappedReads(e6)	289.96
+PairedReads(e6)	294.72
+ProperPair(e6)	279.21
+DuplicateReads(e6)	10.09
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.04
+PairedReads(%)	97.61
+ProperPair(%)	92.48
+DupRate(%)	3.34
+QCFailRate(%)	0.00
+
+TotalBases(e6)	29654.13
+BasesInMappedReads(e6)	28490.41
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAPIJR-01A-01D_genomic.bam
+
+Number of records read = 540008183
+Number of valid records = 540008183
+
+TotalReads(e6)	540.01
+MappedReads(e6)	514.75
+PairedReads(e6)	523.36
+ProperPair(e6)	489.80
+DuplicateReads(e6)	20.69
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.32
+PairedReads(%)	96.92
+ProperPair(%)	90.70
+DupRate(%)	3.83
+QCFailRate(%)	0.00
+
+TotalBases(e6)	52620.66
+BasesInMappedReads(e6)	50163.89
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAPIJR-10A-01D_genomic.bam
+
+Number of records read = 282387151
+Number of valid records = 282387151
+
+TotalReads(e6)	282.39
+MappedReads(e6)	268.87
+PairedReads(e6)	276.33
+ProperPair(e6)	256.82
+DuplicateReads(e6)	13.79
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.21
+PairedReads(%)	97.85
+ProperPair(%)	90.95
+DupRate(%)	4.88
+QCFailRate(%)	0.00
+
+TotalBases(e6)	27446.02
+BasesInMappedReads(e6)	26133.65
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAPVYW-01A-01D_genomic.bam
+
+Number of records read = 584725099
+Number of valid records = 584725099
+
+TotalReads(e6)	584.73
+MappedReads(e6)	561.22
+PairedReads(e6)	575.83
+ProperPair(e6)	543.51
+DuplicateReads(e6)	27.35
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.98
+PairedReads(%)	98.48
+ProperPair(%)	92.95
+DupRate(%)	4.68
+QCFailRate(%)	0.00
+
+TotalBases(e6)	55833.30
+BasesInMappedReads(e6)	53589.18
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PAPVYW-10A-01D_genomic.bam
+
+Number of records read = 401806644
+Number of valid records = 401806644
+
+TotalReads(e6)	401.81
+MappedReads(e6)	391.34
+PairedReads(e6)	393.74
+ProperPair(e6)	380.91
+DuplicateReads(e6)	19.18
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	97.40
+PairedReads(%)	97.99
+ProperPair(%)	94.80
+DupRate(%)	4.77
+QCFailRate(%)	0.00
+
+TotalBases(e6)	36396.02
+BasesInMappedReads(e6)	35457.18
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PARFTG-01A-01D_genomic.bam
+
+Number of records read = 633158057
+Number of valid records = 633158057
+
+TotalReads(e6)	633.16
+MappedReads(e6)	608.54
+PairedReads(e6)	620.91
+ProperPair(e6)	589.43
+DuplicateReads(e6)	32.53
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.11
+PairedReads(%)	98.07
+ProperPair(%)	93.09
+DupRate(%)	5.14
+QCFailRate(%)	0.00
+
+TotalBases(e6)	62364.18
+BasesInMappedReads(e6)	59966.39
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PARFTG-10A-01D_genomic.bam
+
+Number of records read = 238235442
+Number of valid records = 238235442
+
+TotalReads(e6)	238.24
+MappedReads(e6)	226.75
+PairedReads(e6)	235.61
+ProperPair(e6)	220.24
+DuplicateReads(e6)	7.16
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.18
+PairedReads(%)	98.90
+ProperPair(%)	92.45
+DupRate(%)	3.00
+QCFailRate(%)	0.00
+
+TotalBases(e6)	23657.96
+BasesInMappedReads(e6)	22523.40
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASEBY-01A-01D_genomic.bam
+
+Number of records read = 1144901122
+Number of valid records = 1144901122
+
+TotalReads(e6)	1144.90
+MappedReads(e6)	1081.16
+PairedReads(e6)	1120.36
+ProperPair(e6)	1040.21
+DuplicateReads(e6)	74.00
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	94.43
+PairedReads(%)	97.86
+ProperPair(%)	90.86
+DupRate(%)	6.46
+QCFailRate(%)	0.00
+
+TotalBases(e6)	112565.46
+BasesInMappedReads(e6)	106312.92
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASEBY-10A-01D_genomic.bam
+
+Number of records read = 364099096
+Number of valid records = 364099096
+
+TotalReads(e6)	364.10
+MappedReads(e6)	349.44
+PairedReads(e6)	357.45
+ProperPair(e6)	337.46
+DuplicateReads(e6)	14.04
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.97
+PairedReads(%)	98.17
+ProperPair(%)	92.68
+DupRate(%)	3.85
+QCFailRate(%)	0.00
+
+TotalBases(e6)	35747.59
+BasesInMappedReads(e6)	34324.38
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASEFS-01A-01D_genomic.bam
+
+Number of records read = 696278012
+Number of valid records = 696278012
+
+TotalReads(e6)	696.28
+MappedReads(e6)	673.28
+PairedReads(e6)	679.71
+ProperPair(e6)	649.65
+DuplicateReads(e6)	35.41
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.70
+PairedReads(%)	97.62
+ProperPair(%)	93.30
+DupRate(%)	5.09
+QCFailRate(%)	0.00
+
+TotalBases(e6)	67805.22
+BasesInMappedReads(e6)	65601.39
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASEFS-10A-01D_genomic.bam
+
+Number of records read = 284351709
+Number of valid records = 284351709
+
+TotalReads(e6)	284.35
+MappedReads(e6)	273.43
+PairedReads(e6)	280.44
+ProperPair(e6)	266.16
+DuplicateReads(e6)	10.64
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.16
+PairedReads(%)	98.62
+ProperPair(%)	93.60
+DupRate(%)	3.74
+QCFailRate(%)	0.00
+
+TotalBases(e6)	28104.07
+BasesInMappedReads(e6)	27036.88
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASKZZ-01A-01D_genomic.bam
+
+Number of records read = 662267839
+Number of valid records = 662267839
+
+TotalReads(e6)	662.27
+MappedReads(e6)	634.94
+PairedReads(e6)	646.77
+ProperPair(e6)	613.01
+DuplicateReads(e6)	36.98
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.87
+PairedReads(%)	97.66
+ProperPair(%)	92.56
+DupRate(%)	5.58
+QCFailRate(%)	0.00
+
+TotalBases(e6)	64658.74
+BasesInMappedReads(e6)	62027.17
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASKZZ-10A-01D_genomic.bam
+
+Number of records read = 314598849
+Number of valid records = 314598849
+
+TotalReads(e6)	314.60
+MappedReads(e6)	298.96
+PairedReads(e6)	309.43
+ProperPair(e6)	289.20
+DuplicateReads(e6)	7.10
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.03
+PairedReads(%)	98.36
+ProperPair(%)	91.93
+DupRate(%)	2.26
+QCFailRate(%)	0.00
+
+TotalBases(e6)	30862.28
+BasesInMappedReads(e6)	29342.17
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASSLM-01A-01D_genomic.bam
+
+Number of records read = 502559983
+Number of valid records = 502559983
+
+TotalReads(e6)	502.56
+MappedReads(e6)	474.70
+PairedReads(e6)	492.77
+ProperPair(e6)	459.48
+DuplicateReads(e6)	21.35
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	94.46
+PairedReads(%)	98.05
+ProperPair(%)	91.43
+DupRate(%)	4.25
+QCFailRate(%)	0.00
+
+TotalBases(e6)	49632.33
+BasesInMappedReads(e6)	46895.81
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASSLM-10A-01D_genomic.bam
+
+Number of records read = 294486181
+Number of valid records = 294486181
+
+TotalReads(e6)	294.49
+MappedReads(e6)	281.03
+PairedReads(e6)	290.25
+ProperPair(e6)	272.07
+DuplicateReads(e6)	9.94
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.43
+PairedReads(%)	98.56
+ProperPair(%)	92.39
+DupRate(%)	3.37
+QCFailRate(%)	0.00
+
+TotalBases(e6)	29067.01
+BasesInMappedReads(e6)	27745.40
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASUUH-01A-01D_genomic.bam
+
+Number of records read = 551827032
+Number of valid records = 551827032
+
+TotalReads(e6)	551.83
+MappedReads(e6)	527.60
+PairedReads(e6)	543.86
+ProperPair(e6)	513.93
+DuplicateReads(e6)	22.88
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.61
+PairedReads(%)	98.56
+ProperPair(%)	93.13
+DupRate(%)	4.15
+QCFailRate(%)	0.00
+
+TotalBases(e6)	54719.85
+BasesInMappedReads(e6)	52333.81
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASUUH-10A-01D_genomic.bam
+
+Number of records read = 262904796
+Number of valid records = 262904796
+
+TotalReads(e6)	262.90
+MappedReads(e6)	251.76
+PairedReads(e6)	259.17
+ProperPair(e6)	244.37
+DuplicateReads(e6)	7.75
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.76
+PairedReads(%)	98.58
+ProperPair(%)	92.95
+DupRate(%)	2.95
+QCFailRate(%)	0.00
+
+TotalBases(e6)	26066.00
+BasesInMappedReads(e6)	24965.49
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASYUK-01A-01D_genomic.bam
+
+Number of records read = 801202965
+Number of valid records = 801202965
+
+TotalReads(e6)	801.20
+MappedReads(e6)	768.69
+PairedReads(e6)	789.12
+ProperPair(e6)	745.81
+DuplicateReads(e6)	42.38
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.94
+PairedReads(%)	98.49
+ProperPair(%)	93.09
+DupRate(%)	5.29
+QCFailRate(%)	0.00
+
+TotalBases(e6)	79530.87
+BasesInMappedReads(e6)	76317.44
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PASYUK-10A-01D_genomic.bam
+
+Number of records read = 297885451
+Number of valid records = 297885451
+
+TotalReads(e6)	297.89
+MappedReads(e6)	287.07
+PairedReads(e6)	292.82
+ProperPair(e6)	277.58
+DuplicateReads(e6)	11.04
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.37
+PairedReads(%)	98.30
+ProperPair(%)	93.18
+DupRate(%)	3.71
+QCFailRate(%)	0.00
+
+TotalBases(e6)	29388.41
+BasesInMappedReads(e6)	28331.88
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PATAWV-01A-01D_genomic.bam
+
+Number of records read = 585139032
+Number of valid records = 585139032
+
+TotalReads(e6)	585.14
+MappedReads(e6)	563.79
+PairedReads(e6)	570.94
+ProperPair(e6)	544.08
+DuplicateReads(e6)	23.10
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	96.35
+PairedReads(%)	97.57
+ProperPair(%)	92.98
+DupRate(%)	3.95
+QCFailRate(%)	0.00
+
+TotalBases(e6)	57211.38
+BasesInMappedReads(e6)	55141.57
+Returning: 0 (SUCCESS)
+
+Validating /local/target/data/Globus/OS/WGS/L2/NCI-MELTZER/TARGET-40-PATAWV-10A-01D_genomic.bam
+
+Number of records read = 292589864
+Number of valid records = 292589864
+
+TotalReads(e6)	292.59
+MappedReads(e6)	280.00
+PairedReads(e6)	285.78
+ProperPair(e6)	269.58
+DuplicateReads(e6)	10.07
+QCFailureReads(e6)	0.00
+
+MappingRate(%)	95.70
+PairedReads(%)	97.67
+ProperPair(%)	92.13
+DupRate(%)	3.44
+QCFailRate(%)	0.00
+
+TotalBases(e6)	28823.60
+BasesInMappedReads(e6)	27591.32
+Returning: 0 (SUCCESS)

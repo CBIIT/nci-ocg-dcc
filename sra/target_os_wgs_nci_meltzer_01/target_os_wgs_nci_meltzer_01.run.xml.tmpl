@@ -1,0 +1,52 @@
+    <RUN alias="{$file_name_1}" center_name="{$center_name}" broker_name="{$broker_name}">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="{$center_name}">{$file_name_1}</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <EXPERIMENT_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="{$center_name}">{$library_name}</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </EXPERIMENT_REF>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>{$sequencer_model}</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <PROCESSING>
+            <PIPELINE>
+                <PIPE_SECTION section_name="Base Calls">
+                    <STEP_INDEX>1</STEP_INDEX>
+                    <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+                    <PROGRAM>{$software}</PROGRAM>
+                    <VERSION>{$software_version}</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Quality Scores">
+                    <STEP_INDEX>2</STEP_INDEX>
+                    <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+                    <PROGRAM>{$software}</PROGRAM>
+                    <VERSION>{$software_version}</VERSION>
+                </PIPE_SECTION>
+                <PIPE_SECTION section_name="Alignment">
+                    <STEP_INDEX>3</STEP_INDEX>
+                    <PREV_STEP_INDEX>2</PREV_STEP_INDEX>
+                    <PROGRAM>BWA-MEM</PROGRAM>
+                    <VERSION>0.7.5a</VERSION>
+                </PIPE_SECTION>
+            </PIPELINE>
+        </PROCESSING>
+        <DATA_BLOCK>
+            <FILES>
+                <FILE checksum="{$file_checksum_1}" checksum_method="{$file_checksum_method_1}" filetype="bam" filename="{$file_name_1}" />
+            </FILES>
+        </DATA_BLOCK>
+        <RUN_ATTRIBUTES>
+            <RUN_ATTRIBUTE>
+                <TAG>Assembly</TAG>
+                <VALUE>{$assembly}</VALUE>
+            </RUN_ATTRIBUTE>
+            <RUN_ATTRIBUTE>
+                <TAG>Sequencing Dates</TAG>
+                <VALUE>{$run_dates}</VALUE>
+            </RUN_ATTRIBUTE>
+        </RUN_ATTRIBUTES>
+    </RUN>

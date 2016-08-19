@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<SUBMISSION_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.submission.xsd?view=co">
+  <SUBMISSION>
+    <IDENTIFIERS>
+      <SUBMITTER_ID namespace="STJUDE">TARGET_ALL_STJUDE_265_TALL_RNASEQ</SUBMITTER_ID>
+    </IDENTIFIERS>
+    <CONTACTS>
+      <CONTACT name="Mark Wilkinson" inform_on_status="mark.wilkinson@stjude.org" inform_on_error="mark.wilkinson@stjude.org"/>
+      <CONTACT name="Charles Mullighan" inform_on_status="charles.mullighan@stjude.org"/>
+    </CONTACTS>
+    <ACTIONS>
+      <ACTION>
+        <PROTECT/>
+      </ACTION>
+      <ACTION>
+        <ADD source="stjude_265_tall_rnaseq.sra.exp.xml" schema="experiment"/>
+      </ACTION>
+      <ACTION>
+        <ADD source="stjude_265_tall_rnaseq.sra.run.xml" schema="run"/>
+      </ACTION>
+    </ACTIONS>
+  </SUBMISSION>
+</SUBMISSION_SET>

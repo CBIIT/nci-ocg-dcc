@@ -1,0 +1,56 @@
+    <EXPERIMENT alias="{$library_name}" center_name="{$center_name}" broker_name="{$broker_name}">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="{$center_name}">{$library_name}</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>{$experiment_title}</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <EXTERNAL_ID namespace="{$dbgap_namespace}">{$dbgap_study_id}</EXTERNAL_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>{$design_description}</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <EXTERNAL_ID namespace="{$dbgap_study_id}">{$barcode}</EXTERNAL_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>{$library_name}</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>{$library_strategy}</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>{$library_source}</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>{$library_selection}</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="{$nominal_length}" NOMINAL_SDEV="{$nominal_sdev}" />
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>{$spot_length}</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>{$reverse_read_start}</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>{$instrument_model}</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+        <EXPERIMENT_ATTRIBUTES>
+            <EXPERIMENT_ATTRIBUTE>
+                <TAG>LIBRARY_CONSTRUCTION_BATCH</TAG>
+                <VALUE>{$library_batch}</VALUE>
+            </EXPERIMENT_ATTRIBUTE>
+        </EXPERIMENT_ATTRIBUTES>
+    </EXPERIMENT>

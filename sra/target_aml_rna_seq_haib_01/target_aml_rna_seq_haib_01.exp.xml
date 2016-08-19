@@ -1,0 +1,3403 @@
+<EXPERIMENT_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.experiment.xsd?view=co">
+    <EXPERIMENT alias="1170-SL-0036" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0036</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PABHET-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PABHET-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0036</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0037" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0037</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PABHKY-03A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PABHKY-03A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0037</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0016" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0016</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PACDZR-09A-02R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PACDZR-09A-02R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0016</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0041" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0041</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PADDXZ-03A-02R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PADDXZ-03A-02R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0041</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0023" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0023</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAEAFC-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAEAFC-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0023</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0028" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0028</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAEFHC-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAEFHC-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0028</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0066" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0066</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAERAH-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAERAH-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0066</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0047" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0047</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAKVYM-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAKVYM-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0047</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0018" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0018</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PALHVV-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PALHVV-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0018</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0004" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0004</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PALNAT-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PALNAT-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0004</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0050" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0050</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PALVKV-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PALVKV-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0050</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0019" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0019</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAMYWW-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAMYWW-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0019</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0024" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0024</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANBWF-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANBWF-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0024</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0038" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0038</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANDER-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANDER-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0038</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0046" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0046</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANGCM-03A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANGCM-03A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0046</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0039" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0039</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANJGR-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANJGR-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0039</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0040" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0040</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANJTK-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANJTK-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0040</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0059" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0059</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANKNB-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANKNB-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0059</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0065" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0065</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANLIZ-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANLIZ-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0065</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0043" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0043</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANLRE-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANLRE-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0043</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0026" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0026</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANLXM-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANLXM-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0026</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0025" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0025</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANRIK-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANRIK-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0025</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0029" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0029</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANSJB-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANSJB-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0029</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0060" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0060</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANTPW-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANTPW-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0060</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0052" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0052</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANUTB-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANUTB-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0052</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0042" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0042</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANVGP-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANVGP-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0042</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0044" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0044</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PANWHP-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PANWHP-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0044</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0020" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0020</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAPAEG-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAPAEG-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0020</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0053" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0053</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAPVCN-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAPVCN-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0053</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0054" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0054</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAPVZK-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAPVZK-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0054</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0005" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0005</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAPWIU-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAPWIU-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0005</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0021" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0021</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PAPXUF-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PAPXUF-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0021</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0055" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0055</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARAHF-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARAHF-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0055</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0015" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0015</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARBFJ-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARBFJ-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0015</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0001" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0001</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARBTV-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARBTV-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0001</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0034" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0034</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARDDA-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARDDA-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0034</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0032" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0032</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARENB-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARENB-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0032</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0009" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0009</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARFGK-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARFGK-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0009</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0003" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0003</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARHPP-03A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARHPP-03A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0003</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0002" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0002</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARJYP-03A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARJYP-03A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0002</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0017" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0017</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARLVL-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARLVL-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0017</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0051" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0051</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARMZF-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARMZF-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0051</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0014" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0014</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARTYK-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARTYK-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0014</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0064" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0064</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARUTH-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARUTH-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0064</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0033" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0033</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARUUB-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARUUB-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0033</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0048" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0048</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARXBT-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARXBT-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0048</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0013" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0013</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARXNG-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARXNG-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0013</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0010" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0010</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARYEB-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARYEB-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0010</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0011" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0011</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARYGA-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARYGA-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0011</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0067" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0067</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARZUU-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARZUU-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0067</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0008" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0008</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PARZWH-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PARZWH-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0008</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0012" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0012</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASAFM-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASAFM-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0012</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0056" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0056</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASFJB-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASFJB-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0056</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0035" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0035</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASHBI-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASHBI-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0035</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0022" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0022</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASIEP-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASIEP-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0022</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0061" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0061</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASILA-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASILA-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0061</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0031" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0031</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASKUA-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASKUA-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0031</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0006" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0006</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASPGA-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASPGA-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0006</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0063" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0063</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASPKE-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASPKE-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0063</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0030" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0030</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASPLU-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASPLU-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0030</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0007" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0007</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASPTM-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASPTM-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0007</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0027" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0027</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASRTP-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASRTP-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0027</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0057" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0057</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASTFY-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASTFY-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0057</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0062" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0062</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASXYG-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASXYG-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0062</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0049" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0049</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASYDC-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASYDC-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0049</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0045" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0045</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASYJI-09A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASYJI-09A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0045</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0068" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0068</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PASYRN-03A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PASYRN-03A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0068</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+    <EXPERIMENT alias="1170-SL-0058" center_name="HAIB" broker_name="NCI">
+        <IDENTIFIERS>
+            <SUBMITTER_ID namespace="HAIB">1170-SL-0058</SUBMITTER_ID>
+        </IDENTIFIERS>
+        <TITLE>RNA-Seq analysis of AML sample TARGET-20-PATELT-03A-01R</TITLE>
+        <STUDY_REF>
+            <IDENTIFIERS>
+                <SUBMITTER_ID namespace="dbGaP">phs000465</SUBMITTER_ID>
+            </IDENTIFIERS>
+        </STUDY_REF>
+        <DESIGN>
+            <DESIGN_DESCRIPTION>Acute myeloid leukemia and four normal bone marrow samples were extracted using AllPrep DNA/RNA Mini Kit. Total RNA was used for conversion of mRNA into a cDNA library using Illumina TruSeq RNA Sample Prep Kit. After adaptor ligation, each cDNA library was purified and enriched by PCR amplification. Each library underwent 50-cycle paired-end sequencing on the Illumina HiSeq 2000, with 4 samples multiplexed into each flow cell lane.</DESIGN_DESCRIPTION>
+            <SAMPLE_DESCRIPTOR>
+                <IDENTIFIERS>
+                    <SUBMITTER_ID namespace="phs000465">TARGET-20-PATELT-03A-01R</SUBMITTER_ID>
+                </IDENTIFIERS>
+            </SAMPLE_DESCRIPTOR>
+            <LIBRARY_DESCRIPTOR>
+                <LIBRARY_NAME>1170-SL-0058</LIBRARY_NAME>
+                <LIBRARY_STRATEGY>RNA-Seq</LIBRARY_STRATEGY>
+                <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+                <LIBRARY_SELECTION>cDNA</LIBRARY_SELECTION>
+                <LIBRARY_LAYOUT>
+                    <PAIRED NOMINAL_LENGTH="160"/>
+                </LIBRARY_LAYOUT>
+            </LIBRARY_DESCRIPTOR>
+            <SPOT_DESCRIPTOR>
+                <SPOT_DECODE_SPEC>
+                    <SPOT_LENGTH>100</SPOT_LENGTH>
+                    <READ_SPEC>
+                        <READ_INDEX>0</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Forward</READ_TYPE>
+                        <BASE_COORD>1</BASE_COORD>
+                    </READ_SPEC>
+                    <READ_SPEC>
+                        <READ_INDEX>1</READ_INDEX>
+                        <READ_CLASS>Application Read</READ_CLASS>
+                        <READ_TYPE>Reverse</READ_TYPE>
+                        <BASE_COORD>51</BASE_COORD>
+                    </READ_SPEC>
+                </SPOT_DECODE_SPEC>
+            </SPOT_DESCRIPTOR>
+        </DESIGN>
+        <PLATFORM>
+            <ILLUMINA>
+                <INSTRUMENT_MODEL>Illumina HiSeq 2000</INSTRUMENT_MODEL>
+            </ILLUMINA>
+        </PLATFORM>
+    </EXPERIMENT>
+</EXPERIMENT_SET>
