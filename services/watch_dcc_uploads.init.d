@@ -1,0 +1,66 @@
+#!/bin/bash
+#
+# start/stop watch_dcc_uploads service
+#
+# chkconfig: 2345 99 00
+# description: Watch DCC uploads service
+# processname: watch_dcc_uploads
+
+# source function library
+. /etc/rc.d/init.d/functions
+
+PROG_DIR=/usr/local/bin
+PROG_NAME=watch_dcc_uploads
+DEFAULT_SLEEP_INTERVAL=3600
+LOG_FILE="/tmp/${PROG_NAME}.log"
+PID_FILE="/var/run/${PROG_NAME}.pid"
+
+[ ! -z "$2" ] && SLEEP_INTERVAL=$2 || SLEEP_INTERVAL=$DEFAULT_SLEEP_INTERVAL
+
+PATH=$PROG_DIR:$PATH
+export PATH
+
+start() {
+    echo -n "Starting OCG DCC Upload Watcher..."
+    cd $PROG_DIR
+    nohup $PROG_DIR/$PROG_NAME $SLEEP_INTERVAL >> $LOG_FILE 2>&1 &
+    RETVAL=$?
+    PID=$!
+    [ "$RETVAL" = 0 ] && success || failure
+    echo
+    echo $PID > $PID_FILE
+}
+
+stop() {
+    echo -n "Stopping OCG DCC Upload Watcher..."
+    killproc -p $PID_FILE $PROG_DIR/$PROG_NAME
+    RETVAL=$?
+    [ "$RETVAL" = 0 ] && success || failure
+    echo
+}
+
+getstatus() {
+    status -p $PID_FILE $PROG_NAME
+    RETVAL=$?
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        sleep 5
+        start
+        ;;
+    status)
+        getstatus
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|status}"
+        exit 1
+esac
+exit 0
