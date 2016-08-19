@@ -1,0 +1,3 @@
+Illumina miRNA sequencing reads were aligned to the hg19 reference using BWA version 0.5.7. 
+This reference contains chromosomes 1-22, X, Y, MT, 20 unlocalized scaffolds and 39 unplaced 
+scaffolds. Duplicated reads were marked with Picard Tools.

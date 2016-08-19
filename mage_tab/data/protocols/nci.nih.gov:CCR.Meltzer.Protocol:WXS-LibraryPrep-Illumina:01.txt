@@ -1,0 +1,5 @@
+Conventional Illumina DNA sequencing libraries for whole exome sequencing were 
+prepared using 1 mcg genomic DNA fragmented to a mean size of approximately 350 
+bp in an S1 Covaris Sonicator. Exome sequence was captured for Illumina sequencing 
+following the manufacturers' instructions using the Agilent SureSelect Human All 
+Exon V3 50Mb Kit or the Illumina TruSeq Exome Enrichment Kit.

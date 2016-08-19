@@ -1,0 +1,1 @@
+Each library underwent 100-cycle paired-end sequencing on the Illumina HiSeq 2000.  Four samples were multiplexed into each flow cell lane for sequencing.

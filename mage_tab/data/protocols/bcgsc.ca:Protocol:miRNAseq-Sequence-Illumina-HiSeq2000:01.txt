@@ -1,0 +1,3 @@
+Each pool is then diluted to a target concentration for cluster generation and loaded into a single 
+lane of a HiSeq 2000 flow cell for sequencing with a 31-bp main read (for the insert) and a 7-bp read 
+for the index.

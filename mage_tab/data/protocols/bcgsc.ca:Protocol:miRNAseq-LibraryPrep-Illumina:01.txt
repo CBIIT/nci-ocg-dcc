@@ -1,0 +1,12 @@
+Small RNAs, containing microRNA (miRNA), in the flow-through material following mRNA purification 
+on a MultiMACS separator (Miltenyi Biotec, Germany) are recovered by ethanol precipitation. 
+MiRNA-seq libraries are constructed using a 96-well plate-based protocol developed at the BC 
+Cancer Agency, Genome Sciences Centre.  Briefly, an adenylated single-stranded DNA 3' adapter is 
+selectively ligated to miRNAs using a truncated T4 RNA ligase2 (NEB Canada, cat. M0242L). An RNA 5'
+adapter is then added, using a T4 RNA ligase (Ambion USA, cat. AM2141) and ATP. Next, first strand
+cDNA is synthesized using Superscript II Reverse Transcriptase (Invitrogen, cat.18064 014), and 
+serves as the template for PCR. Index sequences (6 nucleotides) are introduced at this PCR step to 
+enable multiplexed pooling of miRNA libraries. PCR products are pooled, then size-selected on an 
+in-house developed 96-channel robot to enrich the miRNA containing fraction and remove adapter 
+contaminants. Each size-selected indexed pool is ethanol precipitated and quality checked on an 
+Agilent Bioanalyzer DNA 1000 chip and quantified using a Qubit fluorometer (Invitrogen, cat. Q32854). 

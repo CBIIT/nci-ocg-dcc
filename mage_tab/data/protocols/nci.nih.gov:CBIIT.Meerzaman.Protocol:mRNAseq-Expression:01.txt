@@ -1,0 +1,9 @@
+htseq (version 0.6.1p1) was used to get gene raw count
+http://www-huber.embl.de/users/anders/HTSeq/doc/count.html
+https://hpc.nih.gov/apps/htseq.html
+Genome reference used: Homo_sapiens.GRCh37.69
+
+The Bioconductor package edgeR(3.12.0) was used to get the gene length and calculation of RPKM
+https://bioconductor.org/packages/release/bioc/html/edgeR.html
+https://hpc.nih.gov/apps/R.html
+Genome reference used: Homo_sapiens.GRCh37.69

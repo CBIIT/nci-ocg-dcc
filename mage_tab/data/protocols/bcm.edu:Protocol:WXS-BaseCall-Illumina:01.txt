@@ -1,0 +1,2 @@
+Real Time Analysis (RTA) software was used to process the image analysis and nucleotide base calling. 
+On average, about 80-100 million successful reads, consisting of 2X 100 bp, were generated on each lane of a flow cell.

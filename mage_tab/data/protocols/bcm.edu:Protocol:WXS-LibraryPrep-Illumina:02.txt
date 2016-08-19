@@ -1,0 +1,24 @@
+DNA samples were constructed into Illumina paired-end libraries and processed through exome capture 
+according to the manufacturer's specifications with modifications as described in the BCM-HGSC Illumina 
+Barcoded Paired-End Capture Library Preparation protocol 
+(https://hgsc.bcm.edu/sites/default/files/documents/Illumina_Barcoded_Paired-End_Capture_Library_Preparation.pdf).
+
+Pre-capture libraries were prepared using Beckman robotic workstations (Biomek NXp and FXp models). 
+Briefly, 500ng of DNA was sheared into fragments of approximately 300-400 base pairs in a Covaris plate 
+with E210 system (Covaris, Inc. Woburn, MA) followed by end-repair, A-tailing and ligation of the Illumina 
+multiplexing PE adaptors.  Pre-capture Ligation Mediated-PCR (LM-PCR) was performed for 6 cycles of 
+amplification using the KAPA HiFi DNA Polymerase (Kapa Biosystems, Inc., Cat. no. KM2602).  Purification 
+was performed with Agencourt AMPure XP beads after enzymatic reactions.  Following the final XP beads 
+purification, quantification and size distribution of the pre-capture LM-PCR product was determined using 
+the LabChip GX electrophoresis system (PerkinElmer).
+
+For exome capture, four pre-capture libraries were pooled together in equimolar amounts (totaling 1 ug/pool). 
+These pooled libraries were then hybridized in solution to the HGSC VCRome 2.1 design1 (42Mb, NimbleGen) 
+according to the manufacturer's protocol NimbleGen SeqCap EZ Exome Library SR User's Guide (Version 2.2) 
+with minor revisions.  Human COT1 DNA and full-length Illumina adaptor-specific blocking oligonucleotides 
+were added into the hybridization to block repetitive genomic sequences and the adaptor sequences. 
+Post-capture LM-PCR amplification was performed using KAPA HiFi DNA Polymerase with 12 cycles of amplification. 
+After the final AMPure XP bead purification, quantity and size of the capture library was analyzed using the 
+Agilent Bioanalyzer 2100 DNA Chip 7500.  The efficiency of the capture was evaluated by performing a qPCR-based 
+quality check on the four standard NimbleGen internal controls.  Successful enrichment of the capture libraries 
+was estimated to range from a 6 to 9 of 'Ct value over the non-enriched samples.

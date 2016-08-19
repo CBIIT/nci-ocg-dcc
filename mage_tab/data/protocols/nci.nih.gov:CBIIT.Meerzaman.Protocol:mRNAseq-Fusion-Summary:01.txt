@@ -1,0 +1,3 @@
+Filtering by individual method and removing HLA genes, selected potential fusions that must concur in at least by 2 methods or 1 method with a ChimerDB hit. 
+
+ChimerDB 2.0: A knowledgebase for fusion genes updated. Kim P et al. Nucleic Acids Res. 2010

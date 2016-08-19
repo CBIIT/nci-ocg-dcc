@@ -1,0 +1,7 @@
+Illumina paired-end RNA sequencing reads were aligned to GRCh37-lite genome-plus-junctions reference using BWA version 0.5.7. 
+This reference combined genomic sequences in the GRCh37-lite assembly and exon-exon junction sequences whose corresponding 
+coordinates were defined based on annotations of any transcripts in Ensembl (v59), Refseq and known genes from the UCSC 
+genome browser, which was downloaded on August 19 2010, August 8 2010, and August 19 2010, respectively. Reads that mapped 
+to junction regions were then repositioned back to the genome, and were marked with 'ZJ:Z' tags. BWA is run using default 
+parameters, except that the option (-s) is included to disable Smith-Waterman alignment. Finally, reads failing the 
+Illumina chastity filter are flagged with a custom script, and duplicated reads were flagged with Picard Tools.

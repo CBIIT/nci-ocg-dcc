@@ -1,0 +1,1 @@
+Total RNA was Poly-A Purified using the Ambion-AM1919 kit. cDNA was constructed using random hexamers (Invitrogen Superscript II-18064-014 and Hexamers N8080127). Library Prep was performed using Illumina original multiplex (Catalog # PE-930-1002).

@@ -1,0 +1,6 @@
+Mapping Reads: Illumina HiSeq bcl files were processed using BCLConvertor v1.7.1. All reads from the 
+prepared libraries that passed the Illumina Chastity filter were formatted into fastq files. The fastq 
+files were aligned to human reference genome build37 (NCBI) using BWA (bwa-0.5.9-R16) with default 
+parameters with the following exceptions: seed sequence: 40 bpseed mismatch: 2, total mismatches 
+allowed: 3. BAM files generated from alignment were preprocessed using GATK (v1.3-8-gb0e6afe) 
+[1] to recalibrate and locally realign reads.

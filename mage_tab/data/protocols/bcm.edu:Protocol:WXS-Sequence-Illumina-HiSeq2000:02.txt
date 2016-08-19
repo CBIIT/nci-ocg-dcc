@@ -1,0 +1,8 @@
+Illumina sequencing libraries were amplified by a bridge-amplification process using Illumina HiSeq 
+pair read cluster generation kits (TruSeq PE Cluster Kit v2.5) according to the manufacturer's recommended protocol. 
+Briefly, the libraries were denatured with sodium hydroxide and diluted to 3-4 pM in hybridization buffer for loading 
+onto a single lane of a flow cell in order to achieve 600-700k clusters/mm. All lanes were spiked with 1% phiX 
+control library. Cluster formation, primer hybridization were performed on the flow cell with Illumina's cBot 
+cluster generation system. Sequencing was performed in paired-end mode on Illumina Hiseq 2000 instruments. 
+Sequencing reactions were extended for 202 cycles of SBS using TruSeq SBS Kit. 
+The Illumina Sequence Control Software (SCS) controlled reagent delivery and collected raw images.

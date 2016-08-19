@@ -1,0 +1,24 @@
+2-3 ug total RNA samples were arrayed into a 96-well plate and polyadenylated (PolyA+) RNA was purified using 
+the 96-well MultiMACS mRNA isolation kit on the MultiMACS 96 separator (Miltenyi Biotec, Germany) with on column 
+DNaseI-treatment as per the manufacturer's instructions. The eluted PolyA+ RNA was ethanol precipitated and 
+resuspended in 10uL of DEPC treated water with 1:20 SuperaseIN (Life Technologies, USA). Double-stranded cDNA 
+was synthesized from the purified polyA+RNA using the Superscript Double-Stranded cDNA Synthesis kit (Life 
+Technologies, USA) and random hexamer primers at a concentration of 5uM. The cDNA was quantified in a 96-well 
+format using PicoGreen (Life Technologies, USA) and VICTOR3V Spectrophotometer (PerkinElmer, Inc. USA). The 
+quality was checked for a random sampling on an Agilent Bioanalyzer using the High Sensitivity DNA chip Assay. 
+cDNA was fragmented by Covaris E210 (Covaris, USA) sonication for 55 seconds, a "Duty cycle" of 20% and 
+"Intensity" of 5. Plate-based libraries were prepared following the BC Cancer Agency, Genome Sciences Centre 
+paired-end (PE) protocol on a Biomek FX robot (Beckman-Coulter, USA). Briefly, the cDNA was purified in 96-well 
+format using Ampure XP SPRI beads, and was subject to end-repair and phosphorylation by T4 DNA polymerase, 
+Klenow DNA Polymerase, and T4 polynucleotide kinase respectively in a single reaction, followed by cleanup using 
+Ampure XP SPRI beads and 3' A-tailing by Klenow fragment (3' to 5' exo minus). After cleanup using Ampure XP 
+SPRI beads, picogreen quantification was performed to determine the amount of Illumina PE adapters used in the 
+next step of adapter ligation reaction. The adapter-ligated products were purified using Ampure XP SPRI beads, 
+then PCR-amplified with Phusion DNA Polymerase (Thermo Fisher Scientific Inc. USA) using Illumina's PE primer set, 
+with cycle condition 98 degC  30sec followed by 10-15 cycles of 98 degC  10 sec, 65 degC  30 sec and 72 degC  30 sec, 
+and then 72 degC 5min. The PCR products were purified using Ampure XP SPRI beads, and checked with Caliper 
+LabChip GX for DNA samples using the High Sensitivity Assay (PerkinElmer, Inc. USA). PCR product of desired size 
+range was purified using an in-house 96-channel size selection robot, and the DNA quality was assessed and 
+quantified using an Agilent DNA 1000 series II assay and Quant-iT dsDNA HS Assay Kit using Qubit fluorometer 
+(Invitrogen), then diluted to 8nM. The final concentration was verified by Quant-iT dsDNA HS Assay prior to Illumina 
+HiSeq2000 PE 75 base sequencing. 

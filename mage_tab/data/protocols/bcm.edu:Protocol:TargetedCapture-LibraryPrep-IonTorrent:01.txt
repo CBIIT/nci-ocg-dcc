@@ -1,0 +1,11 @@
+Verification of putative SNV and Indel mutation calls from whole exome sequencing was performed using 
+alternative instrumentation and chemistries to avoid any systematic errors inherent to the processes 
+described above. We submitted sample-sites for amplification by PCR followed by analysis on the 
+Ion Torrent sequencing platform.  Ion Torrent libraries were constructed using Life Technologies 
+protocols and reagents (Cat. No. 4471269).  Briefly, 500 ug of amplicon DNA (143 bp average size) was 
+processed through end-repair, followed by ligation with Ion Xpress Barcode Adapters (1-32; Cat. No. 
+4471250 and 4474009) and purification with Agencourt XP beads.  The resultant libraries were quantified 
+using the Agilent Bioanalyzer 2100 DNA Chip 7500 (Cat. No. 5067-1506) and then pooled for sequencing.  
+Library templates were clonally amplified on Ion Sphere Particles (ISPs) through emulsion PCR and then 
+enriched for template-positive ISPs using manufacturer reagents (Cat. No. 4479878). Approximately 35 
+million template-positive ISPs were deposited onto each Ion 318C chip (Cat. No. 4484355).

@@ -1,0 +1,11 @@
+Mutation Detection:  Sequence variants were called from tumor and matched normal BAM files using Atlas [2] an integrative 
+variant analysis suite of tools specializing in the separation of true SNPs and insertions and deletions (indels) from 
+sequencing and mapping errors in whole exome capture sequencing (WXS) data.  The suite implements logistic regression 
+models trained on validated WXS data to identify the true variants. ATLAS-SNP-2 (v1.3) [3] and ATLAS-Indel-2 (v0.3.1) 
+along with Pindel (v0.2.4q) [4] were run on the BAM files producing variant data that were further filtered to remove 
+all those observed fewer than 5 times or were present in less than 0.08 of the reads (e.g., variant allele fraction must 
+be greater than 0.08 to undergo validation). At least one variant read of Q30 or better was required, and the variant had 
+to lie in the central portion of the read (15% from the 5? end of the read and 20% from the 3? end).  In addition, reads 
+harboring the variant must have been observed in both forward and reverse orientations.  Finally, the variant base was not 
+observed in the normal tissue. Indels were discovered by similar processing except indels must have been observed in at 
+least 10 of the reads.

@@ -1,0 +1,2 @@
+Sequencing was performed on the Ion PGM platform using the corresponding reagents 
+(Cat. No. 4482002) and the 850 flow (400 bp) run format.

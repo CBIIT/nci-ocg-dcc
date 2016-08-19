@@ -1,0 +1,17 @@
+Initial sequence analysis was performed using the HGSC Mercury analysis pipeline (https://www.hgsc.bcm.edu/software/mercury). 
+First, the primary analysis software on the instrument produces .bcl files that are transferred off-instrument into the 
+HGSC analysis infrastructure by the HiSeq Real-time Analysis module.  Once the run is complete and all .bcl files are 
+transferred, Mercury runs the vendor's primary analysis software (CASAVA), which demultiplexes pooled samples and generates 
+sequence reads and base-call confidence values (qualities).  The next step is the mapping of reads to the GRCh37 Human 
+reference genome (http://www.ncbi.nlm.nih.gov/projects/genome/assembly/grc/human/) using the Burrows-Wheeler aligner 
+(BWA2, http://bio-bwa.sourceforge.net/) and producing a BAM3 (binary alignment/map) file.  The third step involves quality 
+recalibration (using GATK4, http://www.broadinstitute.org/gatk/), and where necessary the merging of separate sequence-event 
+BAMs into a single sample-level BAM.  BAM sorting, duplicate read marking, and realignment to improve in/del discovery 
+all occur at this step.
+
+References:
+1. Bainbridge MN, Wang M, Wu Y, Newsham I, Muzny DM, Jefferies JL, Albert TJ, Burgess DL, Gibbs RA. Targeted enrichment beyond the consensus coding DNA sequence exome reveals exons with higher variant densities. Genome Biol. 2011. 12(7):R68. PubMed PMID: 21787409; PubMed Central PMCID: PMC3218830.
+2. Li H. and Durbin R. (2009) Fast and accurate short read alignment with Burrows-Wheeler Transform. Bioinformatics, 25:1754-60. [PMID:19451168]
+3. Li H.*, Handsaker B.*, Wysoker A., Fennell T., Ruan J., Homer N., Marth G., Abecasis G., Durbin R. and 1000 Genome Project Data Processing Subgroup (2009) The Sequence alignment/map (SAM) format and SAMtools. Bioinformatics, 25, 2078-9. [PMID: 19505943]
+4. DePristo M, Banks E, Poplin R, Garimella K, Maguire J, Hartl C, Philippakis A, del Angel G, Rivas MA, Hanna M, McKenna A, Fennell T, Kernytsky A, Sivachenko A, Cibulskis K, Gabriel S, Altshuler D and Daly, M (2011). A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nature Genetics. 43:491-498
+5. Challis D, Yu J, Evani US, Jackson AR, Paithankar S, Coarfa C, Milosavljevic A, Gibbs RA, Yu F: An integrative variant analysis suite for whole exome next-generation sequencing data. BMC Bioinformatics, 2012 Jan 12;13:8. 

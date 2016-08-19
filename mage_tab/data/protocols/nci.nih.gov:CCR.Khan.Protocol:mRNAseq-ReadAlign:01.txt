@@ -1,0 +1,3 @@
+Align reads to reference genome (GRCh37) using Tophat version 2.0.8b with default options, expect for options specifying number of processor threads and fusion search. An example code for alignment with fastq files is shown below. 
+
+Options: -o tophat.out -p 6 --fusion-search --fusion-min-dist 100000 GRCh37 read_1.fq read_2.fq

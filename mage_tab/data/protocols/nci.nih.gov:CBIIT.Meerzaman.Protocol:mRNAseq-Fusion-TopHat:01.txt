@@ -1,0 +1,1 @@
+TophatFusion:  An algorithm for discovery of novel fusion transcripts. Daehwan Kim et al. Genome Biology 2011

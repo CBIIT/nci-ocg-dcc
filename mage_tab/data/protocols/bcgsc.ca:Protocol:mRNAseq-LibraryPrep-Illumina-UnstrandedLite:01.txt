@@ -1,0 +1,7 @@
+For each sample, approximately 10ng of total RNA was processed using the SMART(TM) 
+cDNA synthesis protocol including SMARTScribe Reverse Transcriptase (Clontech, #639536). 
+This method deploys a modified oligo(dT) primer to prime the first strand synthesis reaction 
+and a template switching mechanism to generate full-length single-stranded cDNAs containing 
+the complete 5' end of the mRNA as well as universal priming sequences for end-to-end 
+amplification during 20 cycles of PCR. The amplified cDNA was subject to Illumina paired-end 
+library construction using NEBNext paired-end DNA sample Prep Kit (NEB, E6000B-25).

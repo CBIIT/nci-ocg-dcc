@@ -1,0 +1,14 @@
+After repositioning, hg19-aligned BAM files were split into positive-fragment and negative-fragment 
+BAM files based on the orientation of the paired-end reads. Unmapped and improperly paired aligned 
+reads were put into the mix-fragment BAM. SNVs were then detected on positive- and negative-split 
+BAMs separately using SNVMix2 (Goya et al., 2010) with parameters Mb and Q30.  The SNVs were further 
+filtered to exclude those called based on 1) reference base N; 2) only 1 read supports the variant; 
+3) probability of heterozygous and homozygous of variant allele smaller than 0.99; 4) a position 
+overlapping with insertions or deletions; 5) read supports from positions no more than 5 bases from 
+read ends; 6) supports from reads only spanning an exon-exon junction; 7) more than 0.5 proportion 
+of supporting reads were improper paired; 8) fewer than 2 proper-paired supporting reads.  SNVs 
+located in exons equal or smaller than the read length, 100bp in this case, are a special case, 
+because all their coverage may come from exon-exon junction spanning reads, so we also identified 
+small-exonic SNVs that ware only supported by reads that spanning exon-exon junction but passed all 
+other 7 filtering criteria mentioned above. These SNVs were finally annotated with SnpEff (Cingolani 
+et al., 2012b) (Ensembl 66) and SnpSift (Cingolani et al., 2012a) (dbSNP137 and COSMIC64).

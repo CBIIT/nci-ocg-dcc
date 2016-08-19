@@ -1,0 +1,3 @@
+Whole genome sequencing libraries were prepared using either Illumina's Genomic DNA 
+Sample Prep starting with 1 mcg genomic DNA or the Illumina Nextera DNA Library Prep 
+Kit according to the manufacturer's protocol.

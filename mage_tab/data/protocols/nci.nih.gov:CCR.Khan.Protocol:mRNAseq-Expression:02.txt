@@ -1,0 +1,9 @@
+Gene and isoform expression from RNA-seq data was generated using Cufflinks version 2.1.1. 
+with default options and supplied reference annotation (Homo_sapiens.GRCh37.71.gtf) for estimation 
+of expression. Cufflinks will not assemble novel transcripts, and it will ignore alignments not 
+structurally compatible with any reference transcript.
+
+RPKM for a given exon is determined by:  ( (raw base counts / median read length) * 10^9) / (total reads * exon length). 
+The raw base counts for a given exon is the total number of bases aligned to that genomic segment. 
+Raw base counts are used instead of raw read counts because in many cases only a portion of a 
+read will align to a given exon.

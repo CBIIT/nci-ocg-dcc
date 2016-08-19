@@ -1,0 +1,12 @@
+Library templates were prepared for sequencing using Illumina's cBot cluster generation system with 
+TruSeq PE Cluster Generation Kits (Part no. PE-401-3001).  Briefly, these libraries were denatured with 
+sodium hydroxide and diluted to 6-9 pM in hybridization buffer in order to achieve a load density of 
+~800K clusters/mm2.  Each library pool was loaded in a single lane of a HiSeq flow cell, and each lane 
+was spiked with 2% phiX control library for run quality control.  The sample libraries then underwent 
+bridge amplification to form clonal clusters, followed by hybridization with the sequencing primer.  
+Sequencing runs were performed in paired-end mode using the Illumina HiSeq 2000 platform.  Using the 
+TruSeq SBS Kits (Part no. FC-401-3001), sequencing-by-synthesis reactions were extended for 101 cycles 
+from each end, with an additional 7 cycles for the index read.  Sequencing runs generated approximately 
+300-400 million successful reads on each lane of a flow cell, with approximately 9-10 Gb produced per sample.  
+With these sequencing yields, samples achieved an average of 95% of the targeted exome bases covered to a 
+depth of 20X or greater.

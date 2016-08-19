@@ -1,0 +1,8 @@
+Gene and isoform expression from RNA-seq data was generated using Cufflinks version 2.1.1. 
+with default options and supplied reference annotation (Homo_sapiens.GRCh37.71.gtf) for estimation 
+of expression. Cufflinks will not assemble novel transcripts, and it will ignore alignments not 
+structurally compatible with any reference transcript.
+
+Exon expression file was generated using dexseq_count.py included in R package DEXseq 1.12.1 with 
+annotation (Homo_sapiens.GRCh37.71.gff) and default parameters except for -p yes (indicates the data is paired end) 
+and -s no (indicates the data is not from a strand-specific assay).

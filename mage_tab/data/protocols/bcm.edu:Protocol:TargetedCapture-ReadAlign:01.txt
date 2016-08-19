@@ -1,0 +1,6 @@
+Verification sequencing results were analyzed employing a highly accurate two-step mapping process. 
+First, verification fastq sequence files are aligned to the human genome reference using BLAT; 
+the top-scoring alignment is reported from the cognate amplicon hits if, and only if that top scoring 
+hit is greater than 90% of the next-best hit.  Second, the passing BLAT hits are pair-wise aligned 
+to their respective amplicon sequence using Crossmatch.  A passing verification status is assigned 
+if at least 50 reads spanned a sample-site (depth of 50x).

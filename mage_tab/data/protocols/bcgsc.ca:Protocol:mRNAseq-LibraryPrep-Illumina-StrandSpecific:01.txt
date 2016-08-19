@@ -1,0 +1,27 @@
+Total RNA samples were checked using an Agilent Bioanalyzer RNA nanochip or Caliper GX HT RNA LabChip, and samples passing quality 
+control were arrayed into a 96-well plate. PolyA+ RNA was purified using the 96-well MultiMACS mRNA isolation kit on the MultiMACS 
+96 separator (Miltenyi Biotec, Germany) from 2ug total RNA with on-column DNaseI-treatment as per the manufacturer's instructions. 
+The eluted PolyA+ RNA was ethanol precipitated and resuspended in 10uL of DEPC treated water with 1:20 SuperaseIN 
+(Life Technologies, USA).
+
+First-stranded cDNA was synthesized from the purified polyA+RNA using the Superscript cDNA Synthesis kit (Life Technologies, USA) 
+and random hexamer primers at a concentration of 5uM along with a final concentration of 1ug/uL Actinomycin D, followed by Ampure 
+XP SPRI beads on a Biomek FX robot (Beckman-Coulter, USA). The second strand cDNA was synthesized following the Superscript cDNA 
+Synthesis protocol by replacing the dTTP with dUTP in dNTP mix, allowing second strand to be digested using UNG (Uracil-N-Glycosylase, 
+Life Technologies, USA) in the post-adapter ligation reaction and thus achieving strand specificity.
+
+The cDNA was quantified in a 96-well format using PicoGreen (Life Technologies, USA) and VICTOR3V Spectrophotometer (PerkinElmer, Inc. USA). 
+The cDNA was fragmented by Covaris E210 sonication for 55 seconds at a "Duty cycle? of 20% and ?Intensity? of 5. The paired-end sequencing 
+library was prepared following the BC Cancer Agency Genome Sciences Centre strand-specific, plate-based and paired-end library construction 
+protocol on a Biomek FX robot (Beckman-Coulter, USA). Briefly, the cDNA was purified in 96-well format using Ampure XP SPRI beads, and 
+was subject to end-repair, and phosphorylation by T4 DNA polymerase, Klenow DNA Polymerase, and T4 polynucleotide kinase respectively in 
+a single reaction, followed by cleanup using Ampure XP SPRI beads and 3? A-tailing by Klenow fragment (3? to 5? exo minus). After purification 
+using Ampure XP SPRI beads, picogreen quantification was performed to determine the amount of Illumina PE adapters to be used in the next 
+step of adapter ligation reaction. The adapter-ligated products were purified using Ampure XP SPRI beads, and digested with UNG (1U/ul) at 
+37 degC for 30 min followed by deactivation at 95oC for 15 min. The digested cDNA was purified using Ampure XP SPRI beads, and then PCR-amplified 
+with Phusion DNA Polymerase (Thermo Fisher Scientific Inc. USA) using Illumina?s PE primer set,  with cycle condition 98 degC  30sec followed by 
+10-13 cycles of 98 degC  10 sec, 65 degC  30 sec and 72 degC  30 sec, and then 72 degC  5min. The PCR products were purified using Ampure XP 
+SPRI beads, and checked with Caliper LabChip GX for DNA samples using the High Sensitivity Assay (PerkinElmer, Inc. USA). PCR product of the 
+desired size range was purified using 8% PAGE, and the DNA quality was assessed and quantified using an Agilent DNA 1000 series II assay and 
+Quant-iT dsDNA HS Assay Kit using Qubit fluorometer (Invitrogen), then diluted to 8nM. The final library concentration was double checked and 
+determined by Quant-iT dsDNA HS Assay again for Illumina Sequencing.

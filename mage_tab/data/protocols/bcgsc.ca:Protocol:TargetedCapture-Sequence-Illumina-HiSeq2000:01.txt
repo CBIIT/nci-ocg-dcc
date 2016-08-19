@@ -1,0 +1,1 @@
+Paired-end 100 base reads were sequenced per pool in a single lane of an Illumina HiSeq2000 instrument.

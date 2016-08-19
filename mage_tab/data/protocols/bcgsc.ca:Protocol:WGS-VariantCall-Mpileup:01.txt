@@ -1,0 +1,6 @@
+SNVs were analyzed with SAMtools mpileup v.0.1.17 (Li et al., 2009) either on single or paired libraries. 
+Each chromosome was analyzed separately using the -C50-DSBuf parameters. The resulting vcf files were 
+merged and filtered to remove low quality SNVs by using samtools varFilter (with default parameters) 
+as well as to remove SNVs with a QUAL score of less than 20 (vcf column 6). Finally, SNVs were annotated 
+with gene annotations from ensembl v66 using snpEff (Cingolani et al., 2012b) and the dbSNP v137 db 
+membership assigned using snpSift  (Cingolani et al., 2012a).

@@ -1,0 +1,2 @@
+Libraries were sequenced, two per 75 paired-end lane, on the Illumina HiSeq 2500 platform using v3 
+chemistry and the HiSeq Control Software (version 2.0.10).

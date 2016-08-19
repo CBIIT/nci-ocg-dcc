@@ -1,0 +1,1 @@
+500ng DNaseI treated total RNA had ribosomal RNA removed using Ribo-Zero rRNA removal beads and was converted into a cDNA library using Illumina TruSeq stranded Total RNA Kit with Ribo-Zero Gold.  After adapter ligation each cDNA library was purified and enriched by PCR amplification.

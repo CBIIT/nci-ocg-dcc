@@ -1,0 +1,1 @@
+Illumina TruSeqRNA Sample Preparation V2 kits were used to construct RNA-seq libraries according to the manufacturer's protocol. In brief, poly-A containing mRNA was purified using poly-T oligo-attached magnetic beads and then fragmented. RNA fragments of ~200bp were reverse-transcribed and ligated with adaptors for sequencing.

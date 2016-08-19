@@ -1,0 +1,1 @@
+Base calls and quality scores were produced by CASAVA 1.8

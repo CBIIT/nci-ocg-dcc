@@ -1,0 +1,1 @@
+FusionMap:  Detecting fusion genes from next-generation sequencing data at base-pair resolution. Ge H  et al. Bioinformatics 2011

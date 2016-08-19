@@ -1,0 +1,37 @@
+Variant calling was performed using an integrative variant analysis program suite, called Atlas. 
+Atlas5 is a suite of variant analysis tools specializing in the separation of true single nucleotide 
+variants (SNVs) and insertions and deletions (indels) from sequencing and mapping errors in Whole 
+Exome Capture (WEC) sequencing data. The suite implements logistic regression models trained on 
+validated WEC sequencing data to identify the true variants. There is a separate regression model 
+for each of the available sequencing platforms at BCM-HGSC.
+
+Putative variant calls from tumor-only xenografts and cell lines derived from xenograft were 
+further filtered utilizing the Mouse Xenograft Subtraction (MXS) pipeline, designed for the 
+annotation and removal of contaminating variants from mouse sequences within the primary xenograft 
+tissue.  Such xenograft tissue samples have varying degrees of contamination/infiltration with 
+normal mouse tissue, which may be mistaken for tumor somatic mutation. Sequencing reads derived 
+from this mouse DNA result in false positive mutation calls, especially in regions with high 
+sequence similarity between mouse and human.  The MXS pipeline employs genome liftover (hg19 to mm10) 
+to identify equivalent position in the mouse genome for human variant calls.  For SNVs the basepair 
+to basepair liftover equivalent is relatively straightforward; however, for indels it is necessary 
+to create a window upstream and downstream of any given event in order to properly capture equivalent 
+sequence and alleviate gap/breakpoint positions slippage at aberrant junction sites showing sequence 
+homology.  Once the equivalent sequence has been identified between the human and mouse reference 
+genomes, a comparison is performed to determine if the variant matches the mouse reference base, 
+and if matched the variant is subsequently removed from the putative mutation list.
+
+To address the absence of matched normal tissues for the xenograft and cell line derived xenograft 
+tissue samples, a Virtual Normal (VN) was employed to help predict somatic versus germline variant 
+status. A BCM-HGSC cohort of normal samples was used to construct the virtual normal, consisting of 
+a group of 277 normal samples from a diverse racial background (Asian, Caucasian, African, Native American) 
+and a mixture of male and female subjects. Application of such a VN is advantageous for tumor-only 
+projects; allowing the annotation of population germline variants that are not present in the 
+population databases (such as dbSNP or 1000 genomes), and the identification of systematic sequencing 
+and mapping errors that are normally addressed by standard normal sample germline subtraction.  
+
+References:
+1. Bainbridge MN, Wang M, Wu Y, Newsham I, Muzny DM, Jefferies JL, Albert TJ, Burgess DL, Gibbs RA. Targeted enrichment beyond the consensus coding DNA sequence exome reveals exons with higher variant densities. Genome Biol. 2011. 12(7):R68. PubMed PMID: 21787409; PubMed Central PMCID: PMC3218830.
+2. Li H. and Durbin R. (2009) Fast and accurate short read alignment with Burrows-Wheeler Transform. Bioinformatics, 25:1754-60. [PMID:19451168]
+3. Li H.*, Handsaker B.*, Wysoker A., Fennell T., Ruan J., Homer N., Marth G., Abecasis G., Durbin R. and 1000 Genome Project Data Processing Subgroup (2009) The Sequence alignment/map (SAM) format and SAMtools. Bioinformatics, 25, 2078-9. [PMID: 19505943]
+4. DePristo M, Banks E, Poplin R, Garimella K, Maguire J, Hartl C, Philippakis A, del Angel G, Rivas MA, Hanna M, McKenna A, Fennell T, Kernytsky A, Sivachenko A, Cibulskis K, Gabriel S, Altshuler D and Daly, M (2011). A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nature Genetics. 43:491-498
+5. Challis D, Yu J, Evani US, Jackson AR, Paithankar S, Coarfa C, Milosavljevic A, Gibbs RA, Yu F: An integrative variant analysis suite for whole exome next-generation sequencing data. BMC Bioinformatics, 2012 Jan 12;13:8. 
