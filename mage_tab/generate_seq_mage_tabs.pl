@@ -52,7 +52,7 @@ my $cache_dir = "$ENV{'HOME'}/.ocg-dcc";
 my $protocol_data_store = "$FindBin::Bin/data/protocols";
 my %config_file_info = (
     'mage-tab' => {
-        file => "$FindBin::Bin/conf/mage_tab.conf",
+        file => "$FindBin::Bin/conf/mage_tab_conf.pl",
         plugin => 'Config::Any::Perl',
     },
 );

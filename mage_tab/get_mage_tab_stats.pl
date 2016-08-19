@@ -196,11 +196,11 @@ get_mage_tab_stats.pl - MAGE-TAB Statistcs
  get_mage_tab_stats.pl [options] <top-level data download directory path>
  
  Parameters:
-    <top-level directory path>          Path to top-level data/download directory tree to search for MAGE-TAB archives
+    <top-level directory path>      Path to top-level data/download directory tree to search for MAGE-TAB archives
  
  Options:
-    --list-mage-tabs                    List MAGE-TAB archives found and exit
-    --help                              Display usage message and exit
-    --version                           Display program version and exit
+    --list-mage-tabs                List MAGE-TAB archives found and exit
+    --help                          Display usage message and exit
+    --version                       Display program version and exit
 
 =cut
