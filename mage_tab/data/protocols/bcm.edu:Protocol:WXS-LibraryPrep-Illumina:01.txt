@@ -11,7 +11,7 @@ buffer, 3 ul Klenow fragment (NEBNext dA-Tailing Module; Cat. No. E6053L) and H2
 at 37 degC for 30 minutes. Illumina multiplex adapter ligation (NEBNext Quick Ligation Module Cat. No. E6056L) 
 was performed in a total reaction volume of 90 ul containing 18 ul 5X buffer, 5 ul ligase, 0.5 ul 100 uM 
 adaptor and H2O at room temperature for 30 minutes. After ligation, PCR with Illumina PE 1.0 and modified 
-barcode primers (manuscript in preparation) was performed in 170 ?l reactions containing 85 ul of 2x Phusion 
+barcode primers (manuscript in preparation) was performed in 170 ul reactions containing 85 ul of 2x Phusion 
 High-Fidelity PCR master mix, adaptor ligated DNA, 1.75 ul of 50 uM primers and H2O. PCR was performed using 
 a 5 minute initial denaturation at 95C, 6-10 cycles of 15 seconds at 95 degC, 15 seconds at 60 degC and 30 seconds 
 at 72 degC followed by a final extension for 5 minute at 72 degC.  Agencourt XP Beads (Beckman Coulter Genomics, 
@@ -21,7 +21,7 @@ Assay Labchip (Hopkinton, MA, Cat. No. 760517).
  
 Exome capture: Illumina pre-capture libraries (1 ug DNA input) were hybridized in solution to SeqCap EZ Human 
 Exome 2.0 (Nimblegen, Madison, WI) probes targeting approximately 44Mbs of sequence from approximately 30K genes 
-according to the manufacturer?s protocol with the following modifications: hybridization enhancing oligos IHE1, 
+according to the manufacturer's protocol with the following modifications: hybridization enhancing oligos IHE1, 
 IHE2 and IHE3 replaced oligos HE1.1 and HE2.1 and post-capture LM-PCR was performed using 14 cycles. Capture 
 libraries were quantified using Caliper GX 1K/12K/High Sensitivity Assay Labchip (Hopkinton, MA, Cat. No. 760517). 
 The efficiency of the capture was evaluated by performing a qPCR-based quality check on the built-in controls 

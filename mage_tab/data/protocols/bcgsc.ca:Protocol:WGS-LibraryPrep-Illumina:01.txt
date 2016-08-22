@@ -11,8 +11,8 @@ and 3' A-tailing by Klenow fragment (3' to 5' exo minus). After cleanup using Am
 SPRI beads, picogreen quantification was performed to determine the amount of Illumina 
 PE adapters used in the next step of adapter ligation reaction. The adapter-ligated 
 products were purified using Ampure XP SPRI beads, then PCR-amplified with Phusion DNA 
-Polymerase (Thermo Fisher Scientific Inc. USA) using Illumina?s PE indexed primer set, 
-with cycle conditions: 98?C for 30sec followed by 6 cycles of 98 degC for 15 sec, 62 degC 
+Polymerase (Thermo Fisher Scientific Inc. USA) using Illumina's PE indexed primer set, 
+with cycle conditions: 98 degC for 30sec followed by 6 cycles of 98 degC for 15 sec, 62 degC 
 for 30 sec and 72 degC for 30 sec, and a final extension at 72 degC for 5min. The PCR 
 products were purified using Ampure XP SPRI beads, and checked with Caliper LabChip GX 
 for DNA samples using the High Sensitivity Assay (PerkinElmer, Inc. USA). PCR product 
