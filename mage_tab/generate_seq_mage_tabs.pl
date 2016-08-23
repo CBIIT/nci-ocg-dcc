@@ -3308,22 +3308,27 @@ for my $program_name (@program_names) {
                                 defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
                                 defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
                             ) {
-                                $protocol_hashref = clone(
-                                    (
-                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                        any { $barcode eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{barcodes}}
-                                    )
-                                        ? $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data}
-                                        : $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data}
-                                );
-                                # set default values if not specified in override
-                                for my $field (qw( idf_type term_source_ref )) {
-                                    if (!defined($protocol_hashref->{$field})) {
-                                        $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                if (
+                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                    any { $barcode eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{barcodes}}
+                                ) {
+                                    $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                }
+                                elsif (
+                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                ) {
+                                    $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                }
+                                if (defined $protocol_hashref) {
+                                    # set default values if not specified in override
+                                    for my $field (qw( idf_type term_source_ref )) {
+                                        if (!defined($protocol_hashref->{$field})) {
+                                            $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                        }
                                     }
                                 }
                             }
-                            else {
+                            if (!defined $protocol_hashref) {
                                 my $nucleic_acid_type = 
                                     uc($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_SOURCE}) eq 'GENOMIC' ? 'DNA' :
                                     uc($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_SOURCE}) eq 'TRANSCRIPTOMIC' ? 'RNA' :
@@ -3448,22 +3453,27 @@ for my $program_name (@program_names) {
                                 defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
                                 defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
                             ) {
-                                $protocol_hashref = clone(
-                                    (
-                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                        any { $exp_library_name eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
-                                    )
-                                        ? $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data}
-                                        : $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data}
-                                );
-                                # set default values if not specified in override
-                                for my $field (qw( idf_type term_source_ref )) {
-                                    if (!defined($protocol_hashref->{$field})) {
-                                        $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                if (
+                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                    any { $exp_library_name eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
+                                ) {
+                                    $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                }
+                                elsif (
+                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                ) {
+                                    $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                }
+                                if (defined $protocol_hashref) {
+                                    # set default values if not specified in override
+                                    for my $field (qw( idf_type term_source_ref )) {
+                                        if (!defined($protocol_hashref->{$field})) {
+                                            $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                        }
                                     }
                                 }
                             }
-                            else {
+                            if (!defined $protocol_hashref) {
                                 $protocol_hashref = clone(
                                     $protocol_base_types{$protocol_type}{data}
                                 );
@@ -3498,22 +3508,27 @@ for my $program_name (@program_names) {
                                     defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
                                     defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
                                 ) {
-                                    $protocol_hashref = clone(
-                                        (
-                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                            any { $exp_library_name eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
-                                        )
-                                            ? $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data}
-                                            : $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data}
-                                    );
-                                    # set default values if not specified in override
-                                    for my $field (qw( idf_type term_source_ref )) {
-                                        if (!defined($protocol_hashref->{$field})) {
-                                            $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                    if (
+                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                        any { $exp_library_name eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
+                                    ) {
+                                        $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                    }
+                                    elsif (
+                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                    ) {
+                                        $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                    }
+                                    if (defined $protocol_hashref) {
+                                        # set default values if not specified in override
+                                        for my $field (qw( idf_type term_source_ref )) {
+                                            if (!defined($protocol_hashref->{$field})) {
+                                                $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                            }
                                         }
                                     }
                                 }
-                                else {
+                                if (!defined $protocol_hashref) {
                                     $protocol_hashref = clone(
                                         $protocol_base_types{$protocol_type}{data}
                                     );
@@ -3644,22 +3659,27 @@ for my $program_name (@program_names) {
                                         defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
                                         defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
                                     ) {
-                                        $protocol_hashref = clone(
-                                            (
-                                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                                any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
-                                            )
-                                                ? $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data}
-                                                : $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data}
-                                        );
-                                        # set default values if not specified in override
-                                        for my $field (qw( idf_type term_source_ref )) {
-                                            if (!defined($protocol_hashref->{$field})) {
-                                                $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                        if (
+                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
+                                            any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                        ) {
+                                            $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                        }
+                                        elsif (
+                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                        ) {
+                                            $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                        }
+                                        if (defined $protocol_hashref) {
+                                            # set default values if not specified in override
+                                            for my $field (qw( idf_type term_source_ref )) {
+                                                if (!defined($protocol_hashref->{$field})) {
+                                                    $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                }
                                             }
                                         }
                                     }
-                                    else {
+                                    if (!defined $protocol_hashref) {
                                         $protocol_hashref = clone(
                                             $protocol_base_types{$protocol_type}{data}
                                         );
@@ -3726,22 +3746,27 @@ for my $program_name (@program_names) {
                                         defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
                                         defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
                                     ) {
-                                        $protocol_hashref = clone(
-                                            (
-                                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                                any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
-                                            )
-                                                ? $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data}
-                                                : $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data}
-                                        );
-                                        # set default values if not specified in override
-                                        for my $field (qw( idf_type term_source_ref )) {
-                                            if (!defined($protocol_hashref->{$field})) {
-                                                $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                        if (
+                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
+                                            any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                        ) {
+                                            $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                        }
+                                        elsif (
+                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                        ) {
+                                            $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                        }
+                                        if (defined $protocol_hashref) {
+                                            # set default values if not specified in override
+                                            for my $field (qw( idf_type term_source_ref )) {
+                                                if (!defined($protocol_hashref->{$field})) {
+                                                    $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                }
                                             }
                                         }
                                     }
-                                    else {
+                                    if (!defined $protocol_hashref) {
                                         $protocol_hashref = clone(
                                             $protocol_base_types{$protocol_type}{data}
                                         );
@@ -3880,22 +3905,27 @@ for my $program_name (@program_names) {
                                             defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
                                             defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
                                         ) {
-                                            $protocol_hashref = clone(
-                                                (
-                                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                                    any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
-                                                )
-                                                    ? $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data}
-                                                    : $config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data}
-                                            );
-                                            # set default values if not specified in override
-                                            for my $field (qw( idf_type term_source_ref )) {
-                                                if (!defined($protocol_hashref->{$field})) {
-                                                    $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                            if (
+                                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
+                                                any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                            ) {
+                                                $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                            }
+                                            elsif (
+                                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                            ) {
+                                                $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                            }
+                                            if (defined $protocol_hashref) {
+                                                # set default values if not specified in override
+                                                for my $field (qw( idf_type term_source_ref )) {
+                                                    if (!defined($protocol_hashref->{$field})) {
+                                                        $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                    }
                                                 }
                                             }
                                         }
-                                        else {
+                                        if (!defined $protocol_hashref) {
                                             $protocol_hashref = clone(
                                                 $protocol_base_types{$protocol_type}{data}
                                             );
