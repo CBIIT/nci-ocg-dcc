@@ -52,24 +52,24 @@
         },
         'term_sources' => [
             {
-                name => 'NCBITaxon',
-                file => 'http://www.ncbi.nlm.nih.gov/taxonomy',
+                'name' => 'NCBITaxon',
+                'file' => 'http://www.ncbi.nlm.nih.gov/taxonomy',
             },
             {
-                name => 'NCIt',
-                file => 'http://ncit.nci.nih.gov/',
+                'name' => 'NCIt',
+                'file' => 'http://ncit.nci.nih.gov/',
             },
             {
-                name => 'MO',
-                file => 'http://mged.sourceforge.net/ontologies/MGEDontology.php',
+                'name' => 'MO',
+                'file' => 'http://mged.sourceforge.net/ontologies/MGEDontology.php',
             },
             {
-                name => 'EFO',
-                file => 'http://www.ebi.ac.uk/efo',
+                'name' => 'EFO',
+                'file' => 'http://www.ebi.ac.uk/efo',
             },
             {
-                name => 'OBI',
-                file => 'http://purl.obolibrary.org/obo/obi',
+                'name' => 'OBI',
+                'file' => 'http://purl.obolibrary.org/obo/obi',
             },
         ],
     },
@@ -2722,7 +2722,7 @@
                                 'StJude' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
+                                            'name' => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
                                         },
                                     },
                                 },
@@ -2732,14 +2732,14 @@
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
                                         },
                                     },
                                 },
                                 'StJude' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'stjude.org:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
+                                            'name' => 'stjude.org:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
                                         },
                                     },
                                 },
@@ -2755,7 +2755,7 @@
                                 'StJude' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
+                                            'name' => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
                                         },
                                     },
                                 },
@@ -2764,14 +2764,14 @@
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
                                         },
                                     },
                                 },
                                 'StJude' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'stjude.org:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                            'name' => 'stjude.org:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
                                         },
                                     },
                                 },
@@ -2817,7 +2817,7 @@
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
                                         },
                                     },
                                 },
@@ -2939,7 +2939,7 @@
                                 'BCCA' => {
                                     'filter' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-UnstrandedLite:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-UnstrandedLite:01',
                                         },
                                         'library_names' => [qw(
                                             A24311  A24312  A24313  A24314  A24315
@@ -2957,14 +2957,14 @@
                                     },
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
                                         },
                                     },
                                 },
                                 'HAIB' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'hudsonalpha.org:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
+                                            'name' => 'hudsonalpha.org:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
                                         },
                                     },
                                 },
@@ -3057,7 +3057,7 @@
                                 'BCCA' => {
                                     'filter' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
                                         },
                                         'barcodes' => [qw(
                                             TARGET-20-PAKIYW-03A-01D
@@ -3172,7 +3172,7 @@
                                 'NCI-Khan' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'nci.nih.gov:CCR.Khan.Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
+                                            'name' => 'nci.nih.gov:CCR.Khan.Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
                                         },
                                     },
                                 },
@@ -3192,7 +3192,7 @@
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcm.edu:Protocol:WXS-LibraryPrep-Illumina:02',
+                                            'name' => 'bcm.edu:Protocol:WXS-LibraryPrep-Illumina:02',
                                         },
                                     },
                                 },
@@ -3201,7 +3201,7 @@
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcm.edu:Protocol:WXS-Sequence-Illumina-HiSeq2000:02',
+                                            'name' => 'bcm.edu:Protocol:WXS-Sequence-Illumina-HiSeq2000:02',
                                         },
                                     },
                                 },
@@ -3210,7 +3210,7 @@
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcm.edu:Protocol:WXS-ReadAlign:02',
+                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign:02',
                                         },
                                     },
                                 },
@@ -3277,7 +3277,7 @@
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcm.edu:Protocol:WXS-LibraryPrep-Illumina:02',
+                                            'name' => 'bcm.edu:Protocol:WXS-LibraryPrep-Illumina:02',
                                         },
                                     },
                                 },
@@ -3286,7 +3286,7 @@
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcm.edu:Protocol:WXS-Sequence-Illumina-HiSeq2000:02',
+                                            'name' => 'bcm.edu:Protocol:WXS-Sequence-Illumina-HiSeq2000:02',
                                         },
                                     },
                                 },
@@ -3295,7 +3295,7 @@
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcm.edu:Protocol:WXS-ReadAlign:02',
+                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign:02',
                                         },
                                     },
                                 },
@@ -3369,7 +3369,7 @@
                                 'BCCA' => {
                                     'filter' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
                                         },
                                         'library_names' => [qw(
                                             HS1194  HS1195  HS1196  HS1197  HS1198  HS1795
@@ -3378,14 +3378,14 @@
                                     },
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
                                         },
                                     },
                                 },
                                 'NCI-Khan' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'nci.nih.gov:CCR.Khan.Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
+                                            'name' => 'nci.nih.gov:CCR.Khan.Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
                                         },
                                     },
                                 },
@@ -3420,7 +3420,7 @@
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
                                         },
                                     },
                                 },
@@ -3535,7 +3535,7 @@
                                 'NCI-Meltzer' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'nci.nih.gov:CCR.Meltzer.Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
+                                            'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
                                         },
                                     },
                                 },
@@ -3764,7 +3764,7 @@
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
                                         },
                                     },
                                 },
@@ -3781,7 +3781,7 @@
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
                                         },
                                     },
                                 },
@@ -3810,7 +3810,7 @@
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            name => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
                                         },
                                     },
                                 },
