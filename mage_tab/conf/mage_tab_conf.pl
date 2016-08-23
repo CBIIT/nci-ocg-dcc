@@ -2812,6 +2812,17 @@
                             'Comment[BioProject]',
                             'Comment[dbGaP Study]',
                         ],
+                        'protocol_info' => {
+                            'Extraction' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            name => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'exp_centers_design_desc_protocol' => [
                             'BCCA',
                         ],
@@ -2931,61 +2942,17 @@
                                             name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-UnstrandedLite:01',
                                         },
                                         'library_names' => [qw(
-                                            A24311
-                                            A24312
-                                            A24313
-                                            A24314
-                                            A24315
-                                            A24316
-                                            A24317
-                                            A24318
-                                            A24319
-                                            A24320
-                                            A24321
-                                            A24322
-                                            A24323
-                                            A24324
-                                            A24325
-                                            A24326
-                                            A24327
-                                            A24328
-                                            A24329
-                                            A24330
-                                            A24331
-                                            A24332
-                                            A24333
-                                            A24334
-                                            A24335
-                                            A24336
-                                            A24337
-                                            A24338
-                                            A24339
-                                            A24340
-                                            A24341
-                                            A24342
-                                            A24343
-                                            A24344
-                                            A24345
-                                            A24346
-                                            A24347
-                                            A24348
-                                            A24349
-                                            A24350
-                                            A24351
-                                            A24352
-                                            A24353
-                                            A24354
-                                            A24355
-                                            A24356
-                                            A24357
-                                            A24358
-                                            A24359
-                                            A24360
-                                            A24362
-                                            A24363
-                                            A24364
-                                            A24365
-                                            A31166
+                                            A24311  A24312  A24313  A24314  A24315
+                                            A24316  A24317  A24318  A24319  A24320
+                                            A24321  A24322  A24323  A24324  A24325
+                                            A24326  A24327  A24328  A24329  A24330
+                                            A24331  A24332  A24333  A24334  A24335
+                                            A24336  A24337  A24338  A24339  A24340
+                                            A24341  A24342  A24343  A24344  A24345
+                                            A24346  A24347  A24348  A24349  A24350
+                                            A24351  A24352  A24353  A24354  A24355
+                                            A24356  A24357  A24358  A24359  A24360
+                                            A24362  A24363  A24364  A24365  A31166
                                         )],
                                     },
                                     'default' => {
@@ -3085,6 +3052,21 @@
                 },
                 'WGS' => {
                     '_default' => {
+                        'protocol_info' => {
+                            'Extraction' => {
+                                'BCCA' => {
+                                    'filter' => {
+                                        'data' => {
+                                            name => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                        },
+                                        'barcodes' => [qw(
+                                            TARGET-20-PAKIYW-03A-01D
+                                            TARGET-20-PAKIYW-14A-01D
+                                        )],
+                                    },
+                                },
+                            },
+                        },
                         'exp_centers_design_desc_protocol' => [
                             'BCCA',
                         ],
@@ -3390,16 +3372,8 @@
                                             name => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
                                         },
                                         'library_names' => [qw(
-                                            HS1194
-                                            HS1195
-                                            HS1196
-                                            HS1197
-                                            HS1198
-                                            HS1795
-                                            HS1797
-                                            HS1799
-                                            HS1801
-                                            HS1803
+                                            HS1194  HS1195  HS1196  HS1197  HS1198  HS1795
+                                            HS1797  HS1799  HS1801  HS1803  
                                         )],
                                     },
                                     'default' => {
@@ -3441,6 +3415,17 @@
                 },
                 'WGS' => {
                     '_default' => {
+                        'protocol_info' => {
+                            'Extraction' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            name => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'exp_centers_design_desc_protocol' => [
                             'BCCA',
                         ],
@@ -3816,6 +3801,24 @@
                             'TARGET-50-CAAAAR-01A-04D' => 'TARGET-50-PAJNPS-01A-03D',
                             'TARGET-50-CAAAAS-01A-02D' => 'TARGET-50-PAKGHT-01A-01D',
                         },
+                    },
+                },
+                'WGS' => {
+                    '_default' => {
+                        'protocol_info' => {
+                            'Extraction' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            name => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        'exp_centers_design_desc_protocol' => [
+                            'BCCA',
+                        ],
                     },
                 },
                 'WXS' => {
