@@ -2747,6 +2747,7 @@
                         },
                         'exp_centers_design_desc_protocol' => [
                             'BCCA',
+                            'StJude',
                         ],
                     },
                     'Phase2' => {
