@@ -305,6 +305,7 @@ my %mage_tab_sdrf_base_col_names_by_type = (
         'Comment[SRA_RUN]',
         'Comment[SRA_FILE_URI]',
         'Comment[OCG Data Level]',
+        'Comment[QC Warning]',
     ],
     'run_bam' => [
         'Protocol REF',
@@ -315,6 +316,7 @@ my %mage_tab_sdrf_base_col_names_by_type = (
         'Comment[SRA_FILE_URI]',
         'Comment[OCG Data Level]',
         'Comment[ASSEMBLY_NAME]',
+        'Comment[QC Warning]',
     ],
 );
 my @mage_tab_sdrf_dcc_col_conf = (
@@ -3881,6 +3883,16 @@ for my $program_name (@program_names) {
                                     elsif ($col_key eq 'Comment[OCG Data Level]') {
                                         $field_value = '1';
                                     }
+                                    elsif ($col_key eq 'Comment[QC Warning]') {
+                                        if (
+                                            defined($config_hashref->{dataset}) and
+                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}) and
+                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}) and
+                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name})
+                                        ) {
+                                            $field_value = $config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name};
+                                        }
+                                    }
                                     $sdrf_run_fastq_data[$mage_tab_sdrf_base_col_idx_by_type_key{run_fastq}{$col_key}] = defined($field_value) ? $field_value : '';
                                 }
                                 push @sdrf_run_set_data, {
@@ -4029,6 +4041,16 @@ for my $program_name (@program_names) {
                                     }
                                     elsif ($col_key eq 'Comment[ASSEMBLY_NAME]') {
                                             $field_value = $run_xml->{assembly};
+                                    }
+                                    elsif ($col_key eq 'Comment[QC Warning]') {
+                                        if (
+                                            defined($config_hashref->{dataset}) and
+                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}) and
+                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}) and
+                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name})
+                                        ) {
+                                            $field_value = $config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name};
+                                        }
                                     }
                                     $sdrf_run_bam_data[$mage_tab_sdrf_base_col_idx_by_type_key{run_bam}{$col_key}] = defined($field_value) ? $field_value : '';
                                 }
@@ -4201,21 +4223,28 @@ for my $program_name (@program_names) {
                         # special case mRNA-seq run set with one or more FASTQ + one BAM run needs to be collapsed properly
                         if (
                             $data_type eq 'mRNA-seq' and
-                            one {
-                                defined($_->{Databases}) and
-                                defined($_->{Databases}->{Table}) and
-                                defined($_->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
-                            } @{$exp_pkg_xml->{RUN_SET}} and
                             any {
                                 !defined($_->{Databases}) or
                                 !defined($_->{Databases}->{Table}) or
                                 !defined($_->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
+                            } @{$exp_pkg_xml->{RUN_SET}} and
+                            one {
+                                defined($_->{Databases}) and
+                                defined($_->{Databases}->{Table}) and
+                                defined($_->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
                             } @{$exp_pkg_xml->{RUN_SET}}
                         ) {
                             my $sdrf_run_bam_data_idx = firstidx { $_->{is_bam_run} } @sdrf_run_set_data;
                             my $sdrf_run_bam_data_hashref = $sdrf_run_set_data[$sdrf_run_bam_data_idx];
                             splice(@sdrf_run_set_data, $sdrf_run_bam_data_idx, 1);
                             for my $sdrf_run_data_hashref (@sdrf_run_set_data) {
+                                # remove redudant BAM Comment[QC Warning] if needed
+                                if (
+                                    $sdrf_run_data_hashref->{data}->[$mage_tab_sdrf_base_col_idx_by_type_key{run_fastq}{'Comment[QC Warning]'}] ne '' and
+                                    $sdrf_run_bam_data_hashref->{data}->[$mage_tab_sdrf_base_col_idx_by_type_key{run_bam}{'Comment[QC Warning]'}] ne ''
+                                ) {
+                                    $sdrf_run_bam_data_hashref->{data}->[$mage_tab_sdrf_base_col_idx_by_type_key{run_bam}{'Comment[QC Warning]'}] = '';
+                                }
                                 push @{$sdrf_run_data_hashref->{data}}, @{$sdrf_run_bam_data_hashref->{data}};
                             }
                         }
