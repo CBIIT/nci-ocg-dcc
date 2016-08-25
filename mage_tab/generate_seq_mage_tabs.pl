@@ -62,7 +62,7 @@ my @program_names = qw(
     CTD2
 );
 my %program_project_names = (
-    TARGET => [qw(
+    'TARGET' => [qw(
         ALL
         AML
         CCSK
@@ -76,7 +76,7 @@ my %program_project_names = (
         WT
         Resources
     )],
-    CGCI => [qw(
+    'CGCI' => [qw(
         BLGSP
         HTMCP-CC
         HTMCP-DLBCL
