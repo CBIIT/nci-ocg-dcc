@@ -270,6 +270,7 @@ my %mage_tab_sdrf_base_col_names_by_type = (
         'Term Source REF',
         'Comment[SRA_SAMPLE]',
         'Comment[Alternate ID]',
+        'Description',
     ],
     'lib' => [
         'Protocol REF',
@@ -820,7 +821,7 @@ my $config_any_hashref = Config::Any->load_files({
     flatten_to_hash => 1,
 });
 my $config_hashref;
-@{$config_hashref}{qw( defaults idf )} = @{$config_any_hashref->{$config_file_info{'mage-tab'}{file}}}{qw( defaults idf )};
+@{$config_hashref}{qw( defaults idf sdrf )} = @{$config_any_hashref->{$config_file_info{'mage-tab'}{file}}}{qw( defaults idf sdrf )};
 my $ua = LWP::UserAgent->new();
 for my $program_name (@program_names) {
     next if defined($user_params{programs}) and none { $program_name eq $_ } @{$user_params{programs}};
@@ -2985,17 +2986,33 @@ for my $program_name (@program_names) {
                                 ? uc($exp_pkg_xml->{SAMPLE}->{'alias'})
                                 : die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
                                       ": could not determine sample ID/barcode from SRA-XML";
-                    my ($case_id, $true_sample_id, $disease_code, $tissue_code, $tissue_type, $xeno_cell_line_code);
+                    my (
+                        $case_id, 
+                        $true_sample_id, 
+                        $disease_code, 
+                        $tissue_code, 
+                        $tissue_type, 
+                        $xeno_cell_line_code, 
+                        $nucleic_acid_ltr,
+                    );
                     if ($barcode =~ /^$BARCODE_REGEXP$/) {
-                        ($case_id, $true_sample_id, $disease_code, $tissue_code, $tissue_type, $xeno_cell_line_code) =
-                            @{get_barcode_info($barcode)}{qw(
-                                case_id
-                                sample_id
-                                disease_code
-                                tissue_code
-                                tissue_type
-                                xeno_cell_line_code
-                            )};
+                        (
+                            $case_id, 
+                            $true_sample_id, 
+                            $disease_code, 
+                            $tissue_code, 
+                            $tissue_type, 
+                            $xeno_cell_line_code,
+                            $nucleic_acid_ltr,
+                        ) = @{get_barcode_info($barcode)}{qw(
+                            case_id
+                            sample_id
+                            disease_code
+                            tissue_code
+                            tissue_type
+                            xeno_cell_line_code
+                            nucleic_acid_ltr
+                        )};
                     }
                     # older projects that didn't have proper barcodes
                     elsif ($program_name eq 'CGCI' and $disease_proj eq 'NHL') {
@@ -3296,10 +3313,23 @@ for my $program_name (@program_names) {
                         elsif ($col_key eq 'Term Source REF 6') {
                             $field_value = 'NCIt';
                         }
-                        elsif ($col_key eq 'Description') {
-                            if (defined $exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'body site'}) {
-                                $field_value = quote_for_mage_tab($exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'body site'});
+                        elsif ($col_key eq 'Description 1') {
+                            if (defined($exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'body site'})) {
+                                $field_value = $exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'body site'};
                             }
+                            if (
+                                defined($config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}) and
+                                defined($config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}->{$nucleic_acid_ltr})
+                            ) {
+                                my $sample_desc = $config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}->{$nucleic_acid_ltr};
+                                if ($field_value ne '') {
+                                    $field_value .= "; $sample_desc";
+                                }
+                                else {
+                                    $field_value = $sample_desc;
+                                }
+                            }
+                            $field_value = quote_for_mage_tab($field_value);
                         }
                         elsif ($col_key eq 'Protocol REF') {
                             my $protocol_type = 'Extraction';
@@ -3415,6 +3445,16 @@ for my $program_name (@program_names) {
                             ) {
                                 my $barcode_by_alt_id_hashref = $config_hashref->{project}->{barcode_by_alt_id};
                                 $field_value = first { $barcode_by_alt_id_hashref->{$_} eq $barcode } keys %{$barcode_by_alt_id_hashref};
+                            }
+                        }
+                        elsif ($col_key eq 'Description 2') {
+                            if (
+                                defined($config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}) and
+                                defined($config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}->{$nucleic_acid_ltr})
+                            ) {
+                                $field_value = quote_for_mage_tab(
+                                    $config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}->{$nucleic_acid_ltr}
+                                );
                             }
                         }
                         $sdrf_exp_data[$mage_tab_sdrf_base_col_idx_by_type_key{exp}{$col_key}] = defined($field_value) ? $field_value : '';
@@ -4671,21 +4711,21 @@ sub get_barcode_info {
     my ($barcode) = @_;
     die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid barcode '$barcode'" 
         unless $barcode =~ /^$BARCODE_REGEXP$/;
-    my ($case_id, $s_case_id, $sample_id, $disease_code, $tissue_code);
+    my ($case_id, $s_case_id, $sample_id, $disease_code, $tissue_code, $nucleic_acid_code);
     my @barcode_parts = split('-', $barcode);
     # TARGET sample ID/barcode
     if (scalar(@barcode_parts) == 5) {
         $case_id = join('-', @barcode_parts[0..2]);
         $s_case_id = $barcode_parts[2];
         $sample_id = join('-', @barcode_parts[0..3]);
-        ($disease_code, $tissue_code) = @barcode_parts[1,3];
+        ($disease_code, $tissue_code, $nucleic_acid_code) = @barcode_parts[1,3,4];
     }
     # CGCI sample ID/barcode
     elsif (scalar(@barcode_parts) == 6) {
         $case_id = join('-', @barcode_parts[0..3]);
         $s_case_id = $barcode_parts[3];
         $sample_id = join('-', @barcode_parts[0..4]);
-        ($disease_code, $tissue_code) = @barcode_parts[1,4];
+        ($disease_code, $tissue_code, $nucleic_acid_code) = @barcode_parts[1,4,5];
     }
     else {
         die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
@@ -4737,16 +4777,22 @@ sub get_barcode_info {
     elsif ($case_id eq 'TARGET-50-PAKJGM' and $tissue_type eq 'Normal') {
         $cgi_tissue_type .= $barcode_parts[$#barcode_parts];
     }
-   $cgi_tissue_type .= ( defined($xeno_cell_line_code) ? $xeno_cell_line_code : '' );
+    $cgi_tissue_type .= ( defined($xeno_cell_line_code) ? $xeno_cell_line_code : '' );
+    my $nucleic_acid_ltr = substr($nucleic_acid_code, -1);
+    #$nucleic_acid_code =~ s/\D//g;
+    $nucleic_acid_code = substr($nucleic_acid_code, 0, 2);
     return {
         case_id => $case_id,
         s_case_id => $s_case_id,
         sample_id => $sample_id,
         disease_code => $disease_code,
         tissue_code => $tissue_code,
+        tissue_ltr => $tissue_ltr,
         tissue_type => $tissue_type,
         cgi_tissue_type => $cgi_tissue_type,
         xeno_cell_line_code => $xeno_cell_line_code,
+        nucleic_acid_code => $nucleic_acid_code,
+        nucleic_acid_ltr => $nucleic_acid_ltr,
     };
 }
 

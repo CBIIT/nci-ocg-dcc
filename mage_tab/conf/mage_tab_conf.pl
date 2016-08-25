@@ -73,6 +73,17 @@
             },
         ],
     },
+    'sdrf' => {
+        'nucleic_acid_ltr_sample_desc' => {
+            'E' => 'Formalin-fixed, paraffin-embedded (FFPE) tissue',
+            'S' => 'Formalin-fixed, paraffin-embedded (FFPE) tissue',
+        },
+        'nucleic_acid_ltr_extract_desc' => {
+            'W' => 'Whole genome amplified (WGA) extract, 1st independent reaction',
+            'X' => 'Whole genome amplified (WGA) extract, 2nd independent reaction',
+            'Y' => 'Whole genome amplified (WGA) extract, pool of 1st and 2nd independent reactions',
+        },
+    },
     'project' => {
         'TARGET' => {
             'ALL' => {
