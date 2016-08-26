@@ -1,24 +1,15 @@
-Illumina genomic plate-based library construction (350-450bp insert size):
-2ug of genomic DNA in a 96-well format was fragmented by Covaris E210 sonication for 
-30 seconds using a "Duty cycle" of 20% and "Intensity" of 5. The paired-end sequencing 
-library was prepared following the BC Cancer Agency's Genome Sciences Centre 96-well 
-Genomic ~350bp-450bp insert Illumina Library Construction protocol on a Biomek FX robot 
-(Beckman-Coulter, USA). Briefly, the DNA was purified in a 96-well microtitre plate 
-using Ampure XP SPRI beads (40-45uL beads per 60uL DNA), and was subject to end-repair, 
-and phosphorylation by T4 DNA polymerase, Klenow DNA Polymerase, and T4 polynucleotide 
-kinase respectively in a single reaction, followed by cleanup using Ampure XP SPRI beads 
-and 3' A-tailing by Klenow fragment (3' to 5' exo minus). After cleanup using Ampure XP 
-SPRI beads, picogreen quantification was performed to determine the amount of Illumina 
-PE adapters used in the next step of adapter ligation reaction. The adapter-ligated 
-products were purified using Ampure XP SPRI beads, then PCR-amplified with Phusion DNA 
-Polymerase (Thermo Fisher Scientific Inc. USA) using Illumina's PE indexed primer set, 
-with cycle conditions: 98 degC for 30sec followed by 6 cycles of 98 degC for 15 sec, 62 degC 
-for 30 sec and 72 degC for 30 sec, and a final extension at 72 degC for 5min. The PCR 
-products were purified using Ampure XP SPRI beads, and checked with Caliper LabChip GX 
-for DNA samples using the High Sensitivity Assay (PerkinElmer, Inc. USA). PCR product 
-of the desired size range was gel purified  (8% PAGE or 1.5% Metaphor agarose in an 
-in-house custom built robot), and the DNA quality was assessed and quantified using an 
-Agilent DNA 1000 series II assay and Quant-iT dsDNA HS Assay Kit using Qubit fluorometer 
-(Invitrogen), then diluted to 8nM. The final concentration was confirmed by Quant-iT dsDNA 
-HS Assay prior to generating 100bp paired end reads on the Illumina HiSeq 2000/2500 
-platform using v3 chemistry. 
+DNA quality was assessed by spectrophotometry (260/280 and 260/230) and gel electrophoresis before library construction. 
+Depending on the availability of DNA, between 2 and 10ug was used in WGSS library construction. Briefly, DNA was sheared 
+for 10 min using a Sonic Dismembrator 550 with a power setting of "7" in pulses of 30 seconds interspersed with 30 seconds 
+of cooling (Cup Horn, Fisher Scientific, Ottawa, Ontario, Canada), and analyzed on 8% PAGE gels. The 200-300bp DNA fraction 
+was excised and eluted from the gel slice overnight at 4 degrees Celsius in 300 ul of elution buffer (5:1, LoTE buffer 
+(3 mM Tris-HCl, pH 7.5, 0.2 mM EDTA)-7.5 M ammonium acetate), and was purified using a Spin-X Filter Tube (Fisher 
+Scientific), and by ethanol precipitation. WGSS libraries were prepared using a modified paired-end protocol supplied by 
+Illumina Inc. (Illumina, Hayward, USA). This involved DNA end-repair and formation of 3' A overhangs using Klenow fragment 
+(3' to 5' exo minus) and ligation to Illumina PE adapters (with 5' overhangs). Adapter-ligated products were purified on 
+Qiaquick spin columns (Qiagen, Valencia, CA, USA) and PCR-amplified using Phusion DNA polymerase (NEB, Ipswich, MA, USA) 
+and 10 cycles with the PE primer 1.0 and 2.0 (Illumina). PCR products of the desired size range were purified from adapter 
+ligation artifacts using 8% PAGE gels. DNA quality was assessed and quantified using an Agilent DNA 1000 series II assay 
+(Agilent, Santa Clara CA, USA) and Nanodrop 7500 spectrophotometer (Nanodrop, Wilmington, DE, USA) and DNA was subsequently 
+diluted to 10nM. The final concentration was confirmed using a Quant-iT dsDNA HS assay kit and Qubit fluorometer 
+(Invitrogen, Carlsbad, CA, USA).
