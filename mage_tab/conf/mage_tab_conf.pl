@@ -2756,7 +2756,7 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_incl_design_desc_protocol' => [
                             'BCCA',
                             'StJude',
                         ],
@@ -2789,7 +2789,7 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_incl_design_desc_protocol' => [
                             'StJude',
                         ],
                         'exp_center_library_data_qc_warning' => {
@@ -2865,10 +2865,10 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'incl_dbgap_study_sdrf' => 1,
+                        'exp_centers_excl_exp_desc' => [
                             'BCCA',
                         ],
-                        'incl_dbgap_study_sdrf' => 1,
                     },
                 },
                 'WXS' => {
@@ -2971,6 +2971,9 @@
             'AML' => {
                 'miRNA-seq' => {
                     '_default' => {
+                        'exp_centers_excl_lib_const_protocol' => [
+                            'BCCA',
+                        ],
                         'incl_dbgap_study_sdrf' => 1,
                         'exp_center_library_data_qc_warning' => {
                             'BCCA' => {
@@ -3036,8 +3039,11 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_incl_design_desc_protocol' => [
                             'HAIB',
+                        ],
+                        'exp_centers_excl_lib_const_protocol' => [
+                            'BCCA',
                         ],
                         'incl_dbgap_study_sdrf' => 1,
                         'barcode_by_alt_id' => {
@@ -3161,10 +3167,10 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'incl_dbgap_study_sdrf' => 1,
+                        'exp_centers_excl_exp_desc' => [
                             'BCCA',
                         ],
-                        'incl_dbgap_study_sdrf' => 1,
                     },
                 },
                 'WXS' => {
@@ -3272,7 +3278,7 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_incl_design_desc_protocol' => [
                             'NCI-Khan',
                         ],
                     },
@@ -3485,7 +3491,7 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_incl_design_desc_protocol' => [
                             'BCCA',
                             'NCI-Khan',
                         ],
@@ -3520,7 +3526,7 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_excl_exp_desc' => [
                             'BCCA',
                         ],
                     },
@@ -3635,8 +3641,8 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
-                            'NCI-Meltzer',
+                        'exp_centers_excl_exp_desc' => [
+                            'NCI-Meltzer'
                         ],
                     },
                 },
@@ -3672,7 +3678,7 @@
                                 },
                             ],
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_excl_exp_desc' => [
                             'BCCA',
                         ],
                     },
@@ -3767,7 +3773,7 @@
                                 },
                             ],
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_incl_design_desc_protocol' => [
                             'NCI-Meltzer',
                         ],
                     },
@@ -3804,7 +3810,7 @@
                                 },
                             ],
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_excl_exp_desc' => [
                             'BCCA',
                         ],
                     },
@@ -3851,6 +3857,13 @@
                 },
             },
             'RT' => {
+                'miRNA-seq' => {
+                    '_default' => {
+                        'exp_centers_excl_lib_const_protocol' => [qw(
+                            BCCA
+                        )],
+                    },
+                },
                 'mRNA-seq' => {
                     '_default' => {
                         'protocol_info' => {
@@ -3864,6 +3877,9 @@
                                 },
                             },
                         },
+                        'exp_centers_excl_lib_const_protocol' => [qw(
+                            BCCA
+                        )],
                     },
                 },
             },
@@ -3926,7 +3942,7 @@
                                 },
                             },
                         },
-                        'exp_centers_design_desc_protocol' => [
+                        'exp_centers_excl_exp_desc' => [
                             'BCCA',
                         ],
                     },

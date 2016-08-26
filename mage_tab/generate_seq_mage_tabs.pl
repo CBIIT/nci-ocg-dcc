@@ -3474,6 +3474,11 @@ for my $program_name (@program_names) {
                         # extract library prep protocol if exists
                         if (
                             (
+                                (
+                                    !defined($config_hashref->{dataset}) or
+                                    !defined($config_hashref->{dataset}->{exp_centers_excl_lib_const_protocol}) or
+                                    none { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_excl_lib_const_protocol}} 
+                                ) and
                                 exists($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_CONSTRUCTION_PROTOCOL}) and
                                 !ref($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_CONSTRUCTION_PROTOCOL}) and
                                 # XXX: improve this
@@ -3482,8 +3487,8 @@ for my $program_name (@program_names) {
                             or
                             (
                                 defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{exp_centers_design_desc_protocol}) and
-                                any { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_design_desc_protocol}} and
+                                defined($config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}) and
+                                any { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}} and
                                 !ref($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{DESIGN_DESCRIPTION})
                             )
                         ) {
@@ -3527,13 +3532,20 @@ for my $program_name (@program_names) {
                                     revision => '01',
                                 );
                             }
+                            $protocol_hashref->{description} = 
+                                exists($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_CONSTRUCTION_PROTOCOL})
+                                    ? $exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_CONSTRUCTION_PROTOCOL}
+                                    : $exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{DESIGN_DESCRIPTION};
+                            $protocol_hashref->{description} =~ s/^\s+//;
+                            $protocol_hashref->{description} =~ s/\s+$//;
+                            $protocol_hashref->{description} =~ s/\s+/ /g;
                             if (none { $protocol_hashref->{name} eq $_->{name} } @protocol_data) {
-                                $protocol_hashref->{description} = 
-                                    exists($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_CONSTRUCTION_PROTOCOL})
-                                        ? $exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_CONSTRUCTION_PROTOCOL}
-                                        : $exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{DESIGN_DESCRIPTION};
                                 @{$protocol_hashref}{qw( type data_type center_name )} = ( $protocol_type, $exp_data_type, $exp_center_name );
                                 push @protocol_data, $protocol_hashref;
+                            }
+                            else {
+                                my $existing_protocol_hashref = first { $protocol_hashref->{name} eq $_->{name} } @protocol_data;
+                                $existing_protocol_hashref->{description} = $protocol_hashref->{description} unless exists $existing_protocol_hashref->{description};
                             }
                         }
                         my @sdrf_lib_data;
@@ -3653,8 +3665,14 @@ for my $program_name (@program_names) {
                             elsif ($col_key eq 'Description') {
                                 if (
                                     !defined($config_hashref->{dataset}) or
-                                    !defined($config_hashref->{dataset}->{exp_centers_design_desc_protocol}) or
-                                    none { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_design_desc_protocol}}
+                                    (
+                                        !defined($config_hashref->{dataset}->{exp_centers_excl_exp_desc}) or
+                                        none { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_excl_exp_desc}}
+                                    ) and 
+                                    (
+                                        !defined($config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}) or
+                                        none { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}}
+                                    )
                                 ) {
                                     if (!ref($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{DESIGN_DESCRIPTION})) {
                                         $field_value = quote_for_mage_tab($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{DESIGN_DESCRIPTION});
