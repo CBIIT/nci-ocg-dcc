@@ -3,28 +3,30 @@
 use strict;
 use warnings;
 use FindBin;
-use Clone qw(clone);
+use lib "$FindBin::Bin/../common/lib/perl5";
+use Clone qw( clone );
 use Config::Any;
-use Cwd qw(realpath);
-use File::Basename qw(dirname fileparse);
-use File::Copy qw(copy move);
+use Cwd qw( realpath );
+use File::Basename qw( dirname fileparse );
+use File::Copy qw( copy move );
 use File::Find;
-use File::Path 2.11 qw(make_path);
-use Getopt::Long qw(:config auto_help auto_version);
-use List::Util qw(first max);
-use List::MoreUtils qw(any all none uniq one firstidx);
+use File::Path 2.11 qw( make_path );
+use Getopt::Long qw( :config auto_help auto_version );
+use List::Util qw( first max );
+use List::MoreUtils qw( any all none uniq one firstidx );
 use LWP::UserAgent;
-use Math::Round qw(round);
-use Pod::Usage qw(pod2usage);
-use POSIX qw(strftime);
-use Sort::Key qw(nkeysort);
-use Sort::Key::Natural qw(natsort natkeysort mkkey_natural);
-use Spreadsheet::Read qw(ReadData cellrow);
-use Storable qw(lock_nstore lock_retrieve);
+use Math::Round qw( round );
+use NCI::OCGDCC::Config qw( :all );
+use Pod::Usage qw( pod2usage );
+use POSIX qw( strftime );
+use Sort::Key qw( nkeysort );
+use Sort::Key::Natural qw( natsort natkeysort mkkey_natural );
+use Spreadsheet::Read qw( ReadData cellrow );
+use Storable qw( lock_nstore lock_retrieve );
 use Term::ANSIColor;
 use Text::CSV;
 use Text::ANSITable;
-use XML::Simple qw(:strict);
+use XML::Simple qw( :strict );
 use Data::Dumper;
 
 our $VERSION = '0.1';
@@ -42,59 +44,37 @@ $Data::Dumper::Sortkeys = sub {
     return \@sorted_keys;
 };
 
-# const
-my $CASE_REGEXP = qr/[A-Z]+-\d{2}(?:-\d{2})?-[A-Z0-9]+/;
-my $CGI_CASE_DIR_REGEXP = qr/${CASE_REGEXP}(?:(?:-|_)\d+)?/;
-my $BARCODE_REGEXP = qr/${CASE_REGEXP}-\d{2}(?:\.\d+)?[A-Z]-\d{2}[A-Z]/;
-
 # config
-my $cache_dir = "$ENV{'HOME'}/.ocg-dcc";
-my $protocol_data_store = "$FindBin::Bin/data/protocols";
 my %config_file_info = (
+    'common' => {
+        file => "$FindBin::Bin/../common/conf/common_conf.pl",
+        plugin => 'Config::Any::Perl',
+    },
     'mage-tab' => {
         file => "$FindBin::Bin/conf/mage_tab_conf.pl",
         plugin => 'Config::Any::Perl',
     },
 );
-my @program_names = qw(
-    TARGET
-    CGCI
-    CTD2
-);
-my %program_project_names = (
-    'TARGET' => [qw(
-        ALL
-        AML
-        CCSK
-        MDLS-NBL
-        MDLS-PPTP
-        NBL
-        OS
-        OS-Brazil
-        OS-Toronto
-        RT
-        WT
-        Resources
-    )],
-    'CGCI' => [qw(
-        BLGSP
-        HTMCP-CC
-        HTMCP-DLBCL
-        HTMCP-LC
-        MB
-        NHL
-        Resources
-    )],
-);
-my @data_types = qw(
-    Bisulfite-seq
-    ChIP-seq
-    miRNA-seq
-    mRNA-seq
-    Targeted-Capture
-    WGS
-    WXS
-);
+my @config_files = map { $_->{file} } values %config_file_info;
+my @config_file_plugins = map { $_->{plugin} } values %config_file_info;
+my $config_hashref = Config::Any->load_files({
+    files => \@config_files,
+    force_plugins => \@config_file_plugins,
+    flatten_to_hash => 1,
+});
+# use %config_file_info key instead of file path (saves typing)
+for my $config_file (keys %{$config_hashref}) {
+    $config_hashref->{
+        first {
+            $config_file_info{$_}{file} eq $config_file
+        } keys %config_file_info
+    } = $config_hashref->{$config_file};
+    delete $config_hashref->{$config_file};
+}
+my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
+my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
+my @data_types = @{$config_hashref->{'common'}->{'seq_data_types'}};
+my $protocol_data_store = "$FindBin::Bin/data/protocols";
 my %sra2dcc_data_type = (
     'Bisulfite-Seq' => 'Bisulfite-seq',
     'ChIP-Seq' => 'ChIP-seq',
@@ -516,7 +496,7 @@ my %dcc_scanned_file_protocol_dag_conf = (
                     children => [
                         {
                             type => 'Circos',
-                            constraint_regexp => qr/(${CASE_REGEXP}_\w+Vs\w+)/i,
+                            constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
                         },
                     ],
                 },
@@ -525,11 +505,11 @@ my %dcc_scanned_file_protocol_dag_conf = (
                     children => [
                         {
                             type => 'Vcf2Maf',
-                            constraint_regexp => qr/(${CASE_REGEXP}_\w+Vs\w+)/i,
+                            constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
                             children => [
                                 {
                                     type => 'FilterSomatic',
-                                    constraint_regexp => qr/(${CASE_REGEXP}_\w+Vs\w+)/i,
+                                    constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
                                 },
                                 {
                                     type => 'HigherLevelSummary',
@@ -538,7 +518,7 @@ my %dcc_scanned_file_protocol_dag_conf = (
                         },
                         {
                             type => 'Circos',
-                            constraint_regexp => qr/(${CASE_REGEXP}_\w+Vs\w+)/i,
+                            constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
                         },
                     ],
                 },
@@ -656,7 +636,6 @@ my %debug_types = map { $_ => 1 } qw(
     sdrf
     sdrf_step
 );
-my $default_manifest_file_name = 'MANIFEST.txt';
 my $sra_exp_library_name_delimiter = ',';
 my @data_level_dir_names = qw(
     L3
@@ -813,15 +792,10 @@ if (!-d $protocol_data_store) {
     die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
         ": protocols data store $protocol_data_store not found\n";
 }
-my @config_files = map { $_->{file} } values %config_file_info;
-my @config_file_plugins = map { $_->{plugin} } values %config_file_info;
-my $config_any_hashref = Config::Any->load_files({
-    files => \@config_files,
-    force_plugins => \@config_file_plugins,
-    flatten_to_hash => 1,
-});
-my $config_hashref;
-@{$config_hashref}{qw( defaults idf sdrf )} = @{$config_any_hashref->{$config_file_info{'mage-tab'}{file}}}{qw( defaults idf sdrf )};
+# mage-tab config refactored for convenience where current project and 
+# dataset config get dynamically loaded below, saves a lot on typing
+my $mt_config_hashref = clone($config_hashref->{'mage-tab'});
+delete @{$mt_config_hashref}{qw( project dataset )};
 my $ua = LWP::UserAgent->new();
 for my $program_name (@program_names) {
     next if defined($user_params{programs}) and none { $program_name eq $_ } @{$user_params{programs}};
@@ -861,14 +835,15 @@ for my $program_name (@program_names) {
                     ": invalid disease project '$disease_proj'\n";
             }
         }
+        # current project mage-tab config hashref (saves typing)
         if (
-            defined($config_any_hashref->{$config_file_info{'mage-tab'}{file}}->{project}->{$program_name}) and
-            defined($config_any_hashref->{$config_file_info{'mage-tab'}{file}}->{project}->{$program_name}->{$project_name})
+            defined($config_hashref->{'mage-tab'}->{project}->{$program_name}) and
+            defined($config_hashref->{'mage-tab'}->{project}->{$program_name}->{$project_name})
         ) {
-            $config_hashref->{project} = $config_any_hashref->{$config_file_info{'mage-tab'}{file}}->{project}->{$program_name}->{$project_name};
+            $mt_config_hashref->{project} = $config_hashref->{'mage-tab'}->{project}->{$program_name}->{$project_name};
         }
         else {
-            $config_hashref->{project} = undef;
+            $mt_config_hashref->{project} = undef;
         }
         my ($merged_run_info_hashref, $run_info_by_study_hashref);
         my $run_info_debug_dumped = 0 if $debug{all} or $debug{run_info};
@@ -911,25 +886,26 @@ for my $program_name (@program_names) {
             }
             for my $dataset (@datasets) {
                 next if defined($user_params{data_sets}) and none { $dataset eq $_ } @{$user_params{data_sets}};
+                # current dataset mage-tab config hashref (saves typing)
                 if (
-                    defined($config_any_hashref->{$config_file_info{'mage-tab'}{file}}->{dataset}->{$program_name}) and
-                    defined($config_any_hashref->{$config_file_info{'mage-tab'}{file}}->{dataset}->{$program_name}->{$project_name}) and
-                    defined($config_any_hashref->{$config_file_info{'mage-tab'}{file}}->{dataset}->{$program_name}->{$project_name}->{$data_type}) and
-                    defined($config_any_hashref->{$config_file_info{'mage-tab'}{file}}->{dataset}->{$program_name}->{$project_name}->{$data_type}->{$dataset})
+                    defined($config_hashref->{'mage-tab'}->{dataset}->{$program_name}) and
+                    defined($config_hashref->{'mage-tab'}->{dataset}->{$program_name}->{$project_name}) and
+                    defined($config_hashref->{'mage-tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}) and
+                    defined($config_hashref->{'mage-tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}->{$dataset})
                 ) {
-                    $config_hashref->{dataset} =
-                        $config_any_hashref->{$config_file_info{'mage-tab'}{file}}->{dataset}->{$program_name}->{$project_name}->{$data_type}->{$dataset};
+                    $mt_config_hashref->{dataset} =
+                        $config_hashref->{'mage-tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}->{$dataset};
                 }
                 else {
-                    $config_hashref->{dataset} = undef;
+                    $mt_config_hashref->{dataset} = undef;
                 }
                 if (!defined $merged_run_info_hashref) {
                     my @run_info_errors;
                     # get project SRA run info
                     print "[$program_name $project_name]\n";
-                    for my $dbgap_study_id (natsort @{$config_hashref->{project}->{'dbGaP_study_ids'}}) {
+                    for my $dbgap_study_id (natsort @{$mt_config_hashref->{project}->{'dbGaP_study_ids'}}) {
                         print "Getting SRA run info for $dbgap_study_id\n";
-                        my $run_info_storable_file = "$cache_dir/sra/${dbgap_study_id}_run_info_hashref.pls";
+                        my $run_info_storable_file = "$CACHE_DIR/sra/${dbgap_study_id}_run_info_hashref.pls";
                         if (!-f $run_info_storable_file or !$use_cached_run_info) {
                             my $response = $ua->get(
                                 #"http://trace.ncbi.nlm.nih.gov/Traces/study/?acc=$dbgap_study_id&get=csv"
@@ -1088,9 +1064,9 @@ for my $program_name (@program_names) {
                             }
                         }
                     }
-                    if (defined $config_hashref->{dataset}->{'add_run_center_barcodes'}) {
-                        for my $run_center_name (keys %{$config_hashref->{dataset}->{'add_run_center_barcodes'}}) {
-                            for my $barcode (@{$config_hashref->{dataset}->{'add_run_center_barcodes'}->{$run_center_name}}) {
+                    if (defined $mt_config_hashref->{dataset}->{'add_run_center_barcodes'}) {
+                        for my $run_center_name (keys %{$mt_config_hashref->{dataset}->{'add_run_center_barcodes'}}) {
+                            for my $barcode (@{$mt_config_hashref->{dataset}->{'add_run_center_barcodes'}->{$run_center_name}}) {
                                 my ($case_id, $tissue_type) = @{get_barcode_info($barcode)}{qw( case_id tissue_type )};
                                 if (none { $barcode eq $_ } @{$barcodes_by_run_center_case_tissue_type_hashref->{$run_center_name}->{$case_id}->{$tissue_type}}) {
                                     push @{$barcodes_by_run_center_case_tissue_type_hashref->{$run_center_name}->{$case_id}->{$tissue_type}}, $barcode;
@@ -1112,7 +1088,7 @@ for my $program_name (@program_names) {
                     -d "$dataset_dir/$cgi_dir_name"
                 ) {
                     my $cgi_dataset_dir = realpath("$dataset_dir/$cgi_dir_name");
-                    my $cgi_storable_file = "$cache_dir/mage_tab/\L${program_name}_${project_name}\E_cgi_analysis_info_by_case_hashref.pls";
+                    my $cgi_storable_file = "$CACHE_DIR/mage_tab/\L${program_name}_${project_name}\E_cgi_analysis_info_by_case_hashref.pls";
                     print "Getting CGI analysis information $cgi_dataset_dir\n";
                     if (!-f $cgi_storable_file or $rescan_cgi) {
                         my @cgi_analysis_dirs;
@@ -1141,7 +1117,7 @@ for my $program_name (@program_names) {
                             } readdir($cgi_analysis_dh);
                             closedir($cgi_analysis_dh);
                             for my $case_analysis_dir_name (@case_analysis_dir_names) {
-                                if ($case_analysis_dir_name !~ /^$CGI_CASE_DIR_REGEXP$/) {
+                                if ($case_analysis_dir_name !~ /^$OCG_CGI_CASE_DIR_REGEXP$/) {
                                     push @cgi_data_errors, 
                                          "invalid CGI case analysis dir: $cgi_analysis_dir/$case_analysis_dir_name";
                                     next;
@@ -1163,7 +1139,7 @@ for my $program_name (@program_names) {
                                            ": couldn't opendir $case_analysis_dir: $!";
                                 my @barcode_dir_names = grep {
                                     -d "$case_analysis_dir/$_" and 
-                                    m/^$BARCODE_REGEXP$/
+                                    m/^$OCG_BARCODE_REGEXP$/
                                 } readdir($case_analysis_dh);
                                 close($case_analysis_dh);
                                 my (
@@ -1345,11 +1321,11 @@ for my $program_name (@program_names) {
                     my %files_to;
                     for my $ps_type (qw( parse skip configured )) {
                         if (
-                            defined($config_hashref->{dataset}) and
-                            defined($config_hashref->{dataset}->{"${ps_type}_files"})
+                            defined($mt_config_hashref->{dataset}) and
+                            defined($mt_config_hashref->{dataset}->{"${ps_type}_files"})
                         ) {
                             for my $file_rel_path (
-                                @{$config_hashref->{dataset}->{"${ps_type}_files"}->{$data_level_dir_name}}
+                                @{$mt_config_hashref->{dataset}->{"${ps_type}_files"}->{$data_level_dir_name}}
                             ) {
                                 push @{$files_to{$ps_type}}, "$data_level_dir/$file_rel_path";
                             }
@@ -1371,7 +1347,7 @@ for my $program_name (@program_names) {
                             my $file = $File::Find::name;
                             my $parent_dir = $File::Find::dir;
                             # skip manifest files
-                            return if $file_name eq $default_manifest_file_name;
+                            return if $file_name eq $config_hashref->{'common'}->{'default_manifest_file_name'};
                             # skip configured, parsed files
                             if (any { $file eq $_ } map { @{$_} } grep(defined, @files_to{qw( configured parse )})) {
                                 # do nothing
@@ -1379,7 +1355,7 @@ for my $program_name (@program_names) {
                             # WGS
                             elsif ($data_type eq 'WGS') {
                                 # CGI copy number
-                                if ($file =~ /copy_number\/CGI\/somaticCnvSegmentsDiploidBeta_($CASE_REGEXP)_(\w+Vs\w+)\.(?:tsv|txt)$/i) {
+                                if ($file =~ /copy_number\/CGI\/somaticCnvSegmentsDiploidBeta_($OCG_CASE_REGEXP)_(\w+Vs\w+)\.(?:tsv|txt)$/i) {
                                     my ($case_id, $cmp_analysis_str) = ($1, $2);
                                     if (
                                         defined($cgi_analysis_info_by_case_hashref->{$case_id}) and
@@ -1402,7 +1378,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # CGI circos
-                                elsif ($file =~ /circos\/CGI\/somaticCircos_($CASE_REGEXP)_(\w+Vs\w+)\.png$/i) {
+                                elsif ($file =~ /circos\/CGI\/somaticCircos_($OCG_CASE_REGEXP)_(\w+Vs\w+)\.png$/i) {
                                     my ($case_id, $cmp_analysis_str) = ($1, $2);
                                     if (
                                         defined($cgi_analysis_info_by_case_hashref->{$case_id}) and
@@ -1425,7 +1401,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # CGI full vcfs
-                                elsif ($file =~ /mutation\/CGI\/FullMafsVcfs\/fullVcf_($CASE_REGEXP)_(\w+Vs\w+)\.vcf\.bz2$/i) {
+                                elsif ($file =~ /mutation\/CGI\/FullMafsVcfs\/fullVcf_($OCG_CASE_REGEXP)_(\w+Vs\w+)\.vcf\.bz2$/i) {
                                     my ($case_id, $cmp_analysis_str) = ($1, $2);
                                     if (
                                         defined($cgi_analysis_info_by_case_hashref->{$case_id}) and
@@ -1448,7 +1424,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # CGI full mafs
-                                elsif ($file =~ /mutation\/CGI\/FullMafsVcfs\/fullMaf_($CASE_REGEXP)_(\w+Vs\w+)\.maf\.txt$/i) {
+                                elsif ($file =~ /mutation\/CGI\/FullMafsVcfs\/fullMaf_($OCG_CASE_REGEXP)_(\w+Vs\w+)\.maf\.txt$/i) {
                                     my ($case_id, $cmp_analysis_str) = ($1, $2);
                                     if (
                                         defined($cgi_analysis_info_by_case_hashref->{$case_id}) and
@@ -1471,7 +1447,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # CGI BCCA full vcfs
-                                elsif ($file =~ /mutation\/CGI\/FullMafsVcfs\/fullVcf_($BARCODE_REGEXP)\.vcf\.bz2$/i) {
+                                elsif ($file =~ /mutation\/CGI\/FullMafsVcfs\/fullVcf_($OCG_BARCODE_REGEXP)\.vcf\.bz2$/i) {
                                     my $barcode = $1;
                                     my ($case_id, $cgi_tissue_type) = @{get_barcode_info($barcode)}{qw( case_id cgi_tissue_type )};
                                     for my $library_name (
@@ -1484,7 +1460,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # CGI BCCA somatic vcfs
-                                elsif ($file =~ /mutation\/CGI\/SomaticVcfs\/somaticVcf_($CASE_REGEXP)_(\w+Vs\w+)\.vcf$/i) {
+                                elsif ($file =~ /mutation\/CGI\/SomaticVcfs\/somaticVcf_($OCG_CASE_REGEXP)_(\w+Vs\w+)\.vcf$/i) {
                                     my ($case_id, $cmp_analysis_str) = ($1, $2);
                                     if (
                                         defined($cgi_analysis_info_by_case_hashref->{$case_id}) and
@@ -1507,7 +1483,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # CGI somatic mafs
-                                elsif ($file =~ /mutation\/CGI\/SomaticFilteredMafs\/somaticFilteredMaf_($CASE_REGEXP)_(\w+Vs\w+)\.(tsv|maf\.txt)$/i) {
+                                elsif ($file =~ /mutation\/CGI\/SomaticFilteredMafs\/somaticFilteredMaf_($OCG_CASE_REGEXP)_(\w+Vs\w+)\.(tsv|maf\.txt)$/i) {
                                     my ($case_id, $cmp_analysis_str) = ($1, $2);
                                     if (
                                         defined($cgi_analysis_info_by_case_hashref->{$case_id}) and
@@ -1580,7 +1556,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # BCCA strelka vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)_($BARCODE_REGEXP)\.somatic\.(snv|indel)\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.somatic\.(snv|indel)\.vcf$/i) {
                                     for my $barcode ($1, $2) {
                                         push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Strelka'}}, {
                                             data_level => $data_level,
@@ -1589,7 +1565,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # BCCA strelka mafs
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)_($BARCODE_REGEXP)\..+?\.somatic\.maf(\.txt)?$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\..+?\.somatic\.maf(\.txt)?$/i) {
                                     for my $barcode ($1, $2) {
                                         push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Strelka'}}, {
                                             data_level => $data_level,
@@ -1598,7 +1574,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # BCCA mpileup vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)\.dna_(tumor|normal)\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.dna_(tumor|normal)\.vcf$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Mpileup'}}, {
                                         data_level => $data_level,
@@ -1606,7 +1582,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA mpileup mafs
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)\..+?\.dna_(tumor|normal)\.maf(\.txt)?$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\..+?\.dna_(tumor|normal)\.maf(\.txt)?$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Vcf2Maf'}}, {
                                         data_level => $data_level,
@@ -1614,7 +1590,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA indel vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)\.indel\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.indel\.vcf$/i) {
                                     my ($barcode, $file_type) = ($1, $2);
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Indel'}}, {
                                         data_level => $data_level,
@@ -1622,7 +1598,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA fusion vcfs
-                                elsif ($file =~ /structural\/BCCA\/($BARCODE_REGEXP)\.fusion\.vcf$/i) {
+                                elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)\.fusion\.vcf$/i) {
                                     my ($barcode, $file_type) = ($1, $2);
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion'}}, {
                                         data_level => $data_level,
@@ -1632,7 +1608,7 @@ for my $program_name (@program_names) {
                                 # BCCA older mafs
                                 elsif ($file =~ /mutation\/BCCA\/.+?\.maf(\.txt)?$/i) {
                                     # extract barcode(s) out of file basename
-                                    if (my @barcodes = $file_name =~ /($BARCODE_REGEXP)/g) {
+                                    if (my @barcodes = $file_name =~ /($OCG_BARCODE_REGEXP)/g) {
                                         for my $barcode (@barcodes) {
                                             push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}, {
                                                 data_level => $data_level,
@@ -1781,7 +1757,7 @@ for my $program_name (@program_names) {
                             # WXS
                             elsif ($data_type eq 'WXS') {
                                 # Broad copy number
-                                if ($file =~ /copy_number\/Broad\/($CASE_REGEXP).*?\.txt$/i) {
+                                if ($file =~ /copy_number\/Broad\/($OCG_CASE_REGEXP).*?\.txt$/i) {
                                     my $case_id = $1;
                                     if (
                                         defined($barcodes_by_run_center_case_tissue_type_hashref->{'Broad'}) and
@@ -1814,7 +1790,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # NCI-Meltzer strelka vcfs
-                                elsif ($file =~ /mutation\/NCI-Meltzer\/($CASE_REGEXP)\.somatic\.(snv|indel)\.vcf$/i) {
+                                elsif ($file =~ /mutation\/NCI-Meltzer\/($OCG_CASE_REGEXP)\.somatic\.(snv|indel)\.vcf$/i) {
                                     my $case_id = $1;
                                     if (
                                         defined($barcodes_by_run_center_case_tissue_type_hashref->{'NCI-Meltzer'}) and
@@ -1887,13 +1863,13 @@ for my $program_name (@program_names) {
                                     $file =~ /expression\/NCI-Meerzaman\/(AML_\d+)\.(?:gene|exon|isoform)\.quantification\.txt$/i
                                 ) {
                                     if (
-                                        defined($config_hashref->{dataset}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
                                     ) {
                                         my $external_id = $1;
                                         if (
-                                            my $barcode = $config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}->{$external_id}
+                                            my $barcode = $mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}->{$external_id}
                                         ) {
                                             push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'HAIB'}{'NCI-Meerzaman'}{'Expression'}}, {
                                                 data_level => $data_level,
@@ -1914,11 +1890,11 @@ for my $program_name (@program_names) {
                                     $file =~ /structural\/NCI-Meerzaman\/summary\/fusion_(?:breakpoint_seq|report)\.txt$/i
                                 ) {
                                     if (
-                                        defined($config_hashref->{dataset}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
                                     ) {
-                                        for my $barcode (values %{$config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}}) {
+                                        for my $barcode (values %{$mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}}) {
                                             push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'HAIB'}{'NCI-Meerzaman'}{'Fusion-Summary'}}, {
                                                 data_level => $data_level,
                                                 file_name => $file_name,
@@ -1934,9 +1910,9 @@ for my $program_name (@program_names) {
                                     $file =~ /structural\/NCI-Meerzaman\/(df|fm|th)\/(AML_\d+)_(?:results_filtered|FusionReport|potential_fusion)\.(?:tsv|txt)$/i
                                 ) {
                                     if (
-                                        defined($config_hashref->{dataset}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
                                     ) {
                                         my ($method_id, $external_id) = ($1, $2);
                                         my ($method) = map {
@@ -1946,7 +1922,7 @@ for my $program_name (@program_names) {
                                             undef
                                         } ($method_id);
                                         if (
-                                            my $barcode = $config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}->{$external_id}
+                                            my $barcode = $mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}->{$external_id}
                                         ) {
                                             push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'HAIB'}{'NCI-Meerzaman'}{"Fusion-${method}"}}, {
                                                 data_level => $data_level,
@@ -1966,11 +1942,11 @@ for my $program_name (@program_names) {
                                     $file =~ /structural\/NCI-Meerzaman\/ss\/(?:final_fusion_report_.+?|fusion_protein_results|mapping_good_for_primer_sequence_design)\.txt$/i
                                 ) {
                                     if (
-                                        defined($config_hashref->{dataset}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
                                     ) {
-                                        for my $barcode (values %{$config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}}) {
+                                        for my $barcode (values %{$mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}}) {
                                             push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'HAIB'}{'NCI-Meerzaman'}{'Fusion-SnowShoes'}}, {
                                                 data_level => $data_level,
                                                 file_name => $file_name,
@@ -1986,13 +1962,13 @@ for my $program_name (@program_names) {
                                     $file =~ /structural\/NCI-Meerzaman\/ss\/(AML_\d+)_fusion_summary\.txt$/i
                                 ) {
                                     if (
-                                        defined($config_hashref->{dataset}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}) and
-                                        defined($config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}) and
+                                        defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'})
                                     ) {
                                         my $external_id = $1;
                                         if (
-                                            my $barcode = $config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}->{$external_id}
+                                            my $barcode = $mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'HAIB'}->{$external_id}
                                         ) {
                                             push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'HAIB'}{'NCI-Meerzaman'}{'Fusion-SnowShoes'}}, {
                                                 data_level => $data_level,
@@ -2008,7 +1984,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # NCI-Khan gene, exon, isoform quantification
-                                elsif ($file =~ /expression\/NCI-Khan\/($BARCODE_REGEXP)\.(?:gene|exon|isoform)\.quantification\.txt$/i) {
+                                elsif ($file =~ /expression\/NCI-Khan\/($OCG_BARCODE_REGEXP)\.(?:gene|exon|isoform)\.quantification\.txt$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Expression'}}, {
                                         data_level => $data_level,
@@ -2016,7 +1992,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # NCI-Meltzer gene, exon, isoform quantification
-                                elsif ($file =~ /expression\/NCI-Meltzer\/($BARCODE_REGEXP)\.(?:gene|exon|isoform)\.quantification\.txt$/i) {
+                                elsif ($file =~ /expression\/NCI-Meltzer\/($OCG_BARCODE_REGEXP)\.(?:gene|exon|isoform)\.quantification\.txt$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'NCI-Meltzer'}{'Expression'}}, {
                                         data_level => $data_level,
@@ -2024,7 +2000,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA gene, exon, isoform quantification
-                                elsif ($file =~ /expression\/BCCA\/($BARCODE_REGEXP)\.(?:gene|exon|isoform)\.quantification\.txt$/i) {
+                                elsif ($file =~ /expression\/BCCA\/($OCG_BARCODE_REGEXP)\.(?:gene|exon|isoform)\.quantification\.txt$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Expression'}}, {
                                         data_level => $data_level,
@@ -2032,7 +2008,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA tumor/normal maf
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)\..+?\.rna_(?:tumor|normal)\.maf(\.txt)?$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\..+?\.rna_(?:tumor|normal)\.maf(\.txt)?$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Vcf2Maf'}}, {
                                         data_level => $data_level,
@@ -2040,7 +2016,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA tumor/normal vcf
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)\.rna_(?:tumor|normal)\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.rna_(?:tumor|normal)\.vcf$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-StrandSpecific'}}, {
                                         data_level => $data_level,
@@ -2048,7 +2024,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA indel vcf
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)\.indel\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.indel\.vcf$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Indel'}}, {
                                         data_level => $data_level,
@@ -2056,7 +2032,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA fusion vcf
-                                elsif ($file =~ /structural\/BCCA\/($BARCODE_REGEXP)\.fusion\.vcf$/i) {
+                                elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)\.fusion\.vcf$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion'}}, {
                                         data_level => $data_level,
@@ -2064,7 +2040,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # StJude expression
-                                elsif ($file =~ /expression\/StJude\/($BARCODE_REGEXP)\.expression\.txt$/i) {
+                                elsif ($file =~ /expression\/StJude\/($OCG_BARCODE_REGEXP)\.expression\.txt$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'StJude'}{'StJude'}{'Expression'}}, {
                                         data_level => $data_level,
@@ -2192,7 +2168,7 @@ for my $program_name (@program_names) {
                             # miRNA-seq
                             elsif ($data_type eq 'miRNA-seq') {
                                 # BCCA mirna, isoform quantification
-                                if ($file =~ /expression\/BCCA\/($BARCODE_REGEXP)\.(mirna|isoform)\.quantification\.txt$/i) {
+                                if ($file =~ /expression\/BCCA\/($OCG_BARCODE_REGEXP)\.(mirna|isoform)\.quantification\.txt$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Expression'}}, {
                                         data_level => $data_level,
@@ -2210,7 +2186,7 @@ for my $program_name (@program_names) {
                             # Targeted-Capture
                             elsif ($data_type eq 'Targeted-Capture') {
                                 # BCCA full vcfs
-                                if ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)\.capture_dna_(tumor|normal)\.vcf?$/i) {
+                                if ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.capture_dna_(tumor|normal)\.vcf?$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Mpileup'}}, {
                                         data_level => $data_level,
@@ -2218,7 +2194,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA full mafs
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)\..+?\.capture_dna_(tumor|normal)\.maf(\.txt)?$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\..+?\.capture_dna_(tumor|normal)\.maf(\.txt)?$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Vcf2Maf'}}, {
                                         data_level => $data_level,
@@ -2226,7 +2202,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA strelka vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($BARCODE_REGEXP)_($BARCODE_REGEXP)\.capture_dna\.somatic\.(snv|indel)\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.capture_dna\.somatic\.(snv|indel)\.vcf$/i) {
                                     for my $barcode ($1, $2) {
                                         push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Strelka'}}, {
                                             data_level => $data_level,
@@ -2236,7 +2212,7 @@ for my $program_name (@program_names) {
                                 }
                                 # UHN copy number (VisCap)
                                 elsif (
-                                    $file =~ /copy_number\/UHN\/VisCap_(?:Female|Male)_(?:Germline|Somatic)\/($BARCODE_REGEXP)\.bam\.cov\/.*?$BARCODE_REGEXP\.bam\.cov\.(cnvs\.xls|plot\.pdf|segments\.seg)$/i
+                                    $file =~ /copy_number\/UHN\/VisCap_(?:Female|Male)_(?:Germline|Somatic)\/($OCG_BARCODE_REGEXP)\.bam\.cov\/.*?$OCG_BARCODE_REGEXP\.bam\.cov\.(cnvs\.xls|plot\.pdf|segments\.seg)$/i
                                 ) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'UHN'}{'CnvSegment-VisCap'}}, {
@@ -2261,7 +2237,7 @@ for my $program_name (@program_names) {
                             # Bisulfite-seq
                             elsif ($data_type eq 'Bisulfite-seq') {
                                 # Methylation
-                                if ($file_name =~ /^($BARCODE_REGEXP)\..+?\.bw?$/i) {
+                                if ($file_name =~ /^($OCG_BARCODE_REGEXP)\..+?\.bw?$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Methylation'}}, {
                                         data_level => $data_level,
@@ -2281,7 +2257,7 @@ for my $program_name (@program_names) {
                             # Bisulfite-seq
                             elsif ($data_type eq 'ChIP-seq') {
                                 # PeakCall
-                                if ($file_name =~ /^($BARCODE_REGEXP)\..+?\.bw?$/i) {
+                                if ($file_name =~ /^($OCG_BARCODE_REGEXP)\..+?\.bw?$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'PeakCall'}}, {
                                         data_level => $data_level,
@@ -2332,27 +2308,27 @@ for my $program_name (@program_names) {
                 );
                 # add parsed file sdrf dag info
                 if (
-                    defined($config_hashref->{dataset}) and
-                    defined($config_hashref->{dataset}->{'sdrf_dag_info'})
+                    defined($mt_config_hashref->{dataset}) and
+                    defined($mt_config_hashref->{dataset}->{'sdrf_dag_info'})
                 ) {
                     for my $barcode (
                         natsort keys %dcc_parsed_file_names_by_barcode
                     ) {
                         for my $exp_center_name (
-                            sort by_dag_center_name keys %{$config_hashref->{dataset}->{'sdrf_dag_info'}}
+                            sort by_dag_center_name keys %{$mt_config_hashref->{dataset}->{'sdrf_dag_info'}}
                         ) {
                             for my $run_center_name (
-                                sort by_dag_center_name keys %{$config_hashref->{dataset}->{'sdrf_dag_info'}->{$exp_center_name}}
+                                sort by_dag_center_name keys %{$mt_config_hashref->{dataset}->{'sdrf_dag_info'}->{$exp_center_name}}
                             ) {
                                 for my $analysis_center_name (
-                                    sort by_dag_center_name keys %{$config_hashref->{dataset}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}}
+                                    sort by_dag_center_name keys %{$mt_config_hashref->{dataset}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}}
                                 ) {
                                     # init
                                     my $sdrf_dag_node_hashref = {};
                                     $dcc_protocol_idf_order_info{$analysis_center_name} = []
                                         unless defined $dcc_protocol_idf_order_info{$analysis_center_name};
                                     add_dcc_parsed_file_sdrf_dag_info({
-                                        conf_sdrf_dag_node => $config_hashref->{dataset}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}->{$analysis_center_name},
+                                        conf_sdrf_dag_node => $mt_config_hashref->{dataset}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}->{$analysis_center_name},
                                         sdrf_dag_node => $sdrf_dag_node_hashref,
                                         file_names => $dcc_parsed_file_names_by_barcode{$barcode},
                                         protocol_idf_order_info => $dcc_protocol_idf_order_info{$analysis_center_name},
@@ -2367,31 +2343,31 @@ for my $program_name (@program_names) {
                 }
                 # add additional data types file sdrf dag info
                 if (
-                    defined($config_hashref->{dataset}) and
-                    defined($config_hashref->{dataset}->{'add_data_types'})
+                    defined($mt_config_hashref->{dataset}) and
+                    defined($mt_config_hashref->{dataset}->{'add_data_types'})
                 ) {
                     for my $data_type (
-                        natsort keys %{$config_hashref->{dataset}->{'add_data_types'}}
+                        natsort keys %{$mt_config_hashref->{dataset}->{'add_data_types'}}
                     ) {
-                        if (defined $config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}) {
+                        if (defined $mt_config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}) {
                             for my $barcode (
                                 natsort keys %dcc_parsed_file_names_by_barcode
                             ) {
                                 for my $exp_center_name (
-                                    sort by_dag_center_name keys %{$config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}}
+                                    sort by_dag_center_name keys %{$mt_config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}}
                                 ) {
                                     for my $run_center_name (
-                                        sort by_dag_center_name keys %{$config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}}
+                                        sort by_dag_center_name keys %{$mt_config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}}
                                     ) {
                                         for my $analysis_center_name (
-                                            sort by_dag_center_name keys %{$config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}}
+                                            sort by_dag_center_name keys %{$mt_config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}}
                                         ) {
                                             # init
                                             my $sdrf_dag_node_hashref = {};
                                             $dcc_protocol_idf_order_info{$analysis_center_name} = []
                                                 unless defined $dcc_protocol_idf_order_info{$analysis_center_name};
                                             add_dcc_parsed_file_sdrf_dag_info({
-                                                conf_sdrf_dag_node => $config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}->{$analysis_center_name},
+                                                conf_sdrf_dag_node => $mt_config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}->{$analysis_center_name},
                                                 sdrf_dag_node => $sdrf_dag_node_hashref,
                                                 file_names => $dcc_parsed_file_names_by_barcode{$barcode},
                                                 protocol_idf_order_info => $dcc_protocol_idf_order_info{$analysis_center_name},
@@ -2458,12 +2434,12 @@ for my $program_name (@program_names) {
                 my @library_names = map { keys %{$_->{library_name_barcode}} } values %{$merged_run_info_hashref->{$data_type}};
                 my @run_ids = map { keys %{$_->{run_ids}} } values %{$merged_run_info_hashref->{$data_type}};
                 if (
-                    defined($config_hashref->{dataset}) and
-                    defined($config_hashref->{dataset}->{'add_data_types'})
+                    defined($mt_config_hashref->{dataset}) and
+                    defined($mt_config_hashref->{dataset}->{'add_data_types'})
                 ) {
-                    for my $data_type (keys %{$config_hashref->{dataset}->{'add_data_types'}}) {
-                        for my $exp_center_name (keys %{$config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}}) {
-                            for my $run_center_name (keys %{$config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}}) {
+                    for my $data_type (keys %{$mt_config_hashref->{dataset}->{'add_data_types'}}) {
+                        for my $exp_center_name (keys %{$mt_config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}}) {
+                            for my $run_center_name (keys %{$mt_config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}}) {
                                 push @exp_ids, keys %{$merged_run_info_hashref->{$data_type}->{$run_center_name}->{exp_ids}};
                                 push @library_names, keys %{$merged_run_info_hashref->{$data_type}->{$run_center_name}->{library_name_barcode}};
                                 push @run_ids, keys %{$merged_run_info_hashref->{$data_type}->{$run_center_name}->{run_ids}};
@@ -2497,7 +2473,7 @@ for my $program_name (@program_names) {
                 my $num_exps_skipped = 0;
                 for my $exp_id (@exp_ids) {
                     my $exp_pkg_set_xml;
-                    my $exp_pkg_set_storable_file = "$cache_dir/sra/xml/${exp_id}.pls";
+                    my $exp_pkg_set_storable_file = "$CACHE_DIR/sra/xml/${exp_id}.pls";
                     if (!-f $exp_pkg_set_storable_file or !$use_cached_xml) {
                         my $response = $ua->get(
                             "http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?save=efetch&db=sra&rettype=xml&term=$exp_id"
@@ -2715,61 +2691,61 @@ for my $program_name (@program_names) {
                         next unless !defined($mage_tab_idf_data[$mage_tab_idf_row_idx_by_name{$row_name}]) or
                                     !@{$mage_tab_idf_data[$mage_tab_idf_row_idx_by_name{$row_name}]} or
                                     ( 
-                                        defined($config_hashref->{dataset}) and
-                                        defined($config_hashref->{dataset}->{'merge_idf_row_names'}) and
-                                        any { $row_name eq $_ } @{$config_hashref->{dataset}->{'merge_idf_row_names'}}
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{'merge_idf_row_names'}) and
+                                        any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{'merge_idf_row_names'}}
                                     );
                         my @row_values;
                         if ($row_name eq 'MAGE-TAB Version') {
-                            if (defined($config_hashref->{idf}->{'mage_tab_version'})) {
-                                push @row_values, $config_hashref->{idf}->{'mage_tab_version'};
+                            if (defined($mt_config_hashref->{idf}->{'mage_tab_version'})) {
+                                push @row_values, $mt_config_hashref->{idf}->{'mage_tab_version'};
                             }
                         }
                         elsif ($row_name eq 'Investigation Title') {
                             push @row_values, (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{'investigation_title'})
-                            ) ? $config_hashref->{dataset}->{'investigation_title'}
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{'investigation_title'})
+                            ) ? $mt_config_hashref->{dataset}->{'investigation_title'}
                               : "$exp_pkg_xml->{STUDY}->{DESCRIPTOR}->{STUDY_TITLE} $data_type";
                         }
                         elsif ($row_name eq 'Experimental Design') {
                             if (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{'exp_design'})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{'exp_design'})
                             ) {
-                                push @row_values, @{$config_hashref->{dataset}->{'exp_design'}};
+                                push @row_values, @{$mt_config_hashref->{dataset}->{'exp_design'}};
                             }
                             elsif (
-                                defined($config_hashref->{idf}->{'exp_design'}) and
-                                defined($config_hashref->{idf}->{'exp_design'}->{$data_type})
+                                defined($mt_config_hashref->{idf}->{'exp_design'}) and
+                                defined($mt_config_hashref->{idf}->{'exp_design'}->{$data_type})
                             ) {
-                                push @row_values, @{$config_hashref->{idf}->{'exp_design'}->{$data_type}};
+                                push @row_values, @{$mt_config_hashref->{idf}->{'exp_design'}->{$data_type}};
                             }
                         }
                         elsif ($row_name eq 'Experimental Design Term Source REF') {
                             if (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{'exp_design'})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{'exp_design'})
                             ) {
-                                push @row_values, qw(
-                                    EFO
-                                ) x scalar(@{$config_hashref->{dataset}->{'exp_design'}});
+                                push @row_values, (
+                                    $mt_config_hashref->{default}->{'term_source_ref'}
+                                ) x scalar(@{$mt_config_hashref->{dataset}->{'exp_design'}});
                             }
                             elsif (
-                                defined($config_hashref->{idf}->{'exp_design'}) and
-                                defined($config_hashref->{idf}->{'exp_design'}->{$data_type})
+                                defined($mt_config_hashref->{idf}->{'exp_design'}) and
+                                defined($mt_config_hashref->{idf}->{'exp_design'}->{$data_type})
                             ) {
-                                push @row_values, qw(
-                                    EFO
-                                ) x scalar(@{$config_hashref->{idf}->{'exp_design'}->{$data_type}}); 
+                                push @row_values, (
+                                    $mt_config_hashref->{default}->{'term_source_ref'}
+                                ) x scalar(@{$mt_config_hashref->{idf}->{'exp_design'}->{$data_type}}); 
                             }
                         }
                         elsif ($row_name eq 'Person Last Name') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2780,9 +2756,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person First Name') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2793,9 +2769,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person Mid Initials') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2806,9 +2782,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person Email') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2819,9 +2795,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person Phone') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2832,9 +2808,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person Fax') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2845,9 +2821,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person Address') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'}
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'}
                                 )
                             ) {
                                 push @row_values, map {
@@ -2858,9 +2834,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person Affiliation') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2871,9 +2847,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person Roles') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2884,13 +2860,19 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Person Roles Term Source REF') {
                             for my $contacts_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'contacts'},
-                                    $config_hashref->{project}->{idf}->{'contacts'},
-                                    $config_hashref->{dataset}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{idf}->{'contacts'},
+                                    $mt_config_hashref->{project}->{idf}->{'contacts'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'contacts'},
                                 )
                             ) {
                                 push @row_values, map {
-                                    defined($_->{'roles'}) ? join(';', qw( EFO ) x @{$_->{'roles'}}) : ''
+                                    defined($_->{'roles'}) 
+                                        ? join(';', 
+                                            (
+                                                $mt_config_hashref->{default}->{'term_source_ref'}
+                                            ) x @{$_->{'roles'}}
+                                        )
+                                        : ''
                                 } @{$contacts_arrayref};
                             }
                         }
@@ -2903,9 +2885,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Term Source Name') {
                             for my $term_sources_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'term_sources'},
-                                    $config_hashref->{project}->{'term_sources'},
-                                    $config_hashref->{dataset}->{'term_sources'},
+                                    $mt_config_hashref->{idf}->{'term_sources'},
+                                    $mt_config_hashref->{project}->{'term_sources'},
+                                    $mt_config_hashref->{dataset}->{'term_sources'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2917,9 +2899,9 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Term Source File') {
                             for my $term_sources_arrayref (
                                 grep(defined, 
-                                    $config_hashref->{idf}->{'term_sources'},
-                                    $config_hashref->{project}->{'term_sources'},
-                                    $config_hashref->{dataset}->{'term_sources'},
+                                    $mt_config_hashref->{idf}->{'term_sources'},
+                                    $mt_config_hashref->{project}->{'term_sources'},
+                                    $mt_config_hashref->{dataset}->{'term_sources'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2958,13 +2940,13 @@ for my $program_name (@program_names) {
                             }
                             # alternate
                             if (!@row_values) {
-                                push @row_values, join(';', natsort @{$config_hashref->{project}->{'dbGaP_study_ids'}});
+                                push @row_values, join(';', natsort @{$mt_config_hashref->{project}->{'dbGaP_study_ids'}});
                             }
                         }
                         if (
-                            defined($config_hashref->{dataset}) and
-                            defined($config_hashref->{dataset}->{'merge_idf_row_names'}) and
-                            any { $row_name eq $_ } @{$config_hashref->{dataset}->{'merge_idf_row_names'}} and
+                            defined($mt_config_hashref->{dataset}) and
+                            defined($mt_config_hashref->{dataset}->{'merge_idf_row_names'}) and
+                            any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{'merge_idf_row_names'}} and
                             defined($mage_tab_idf_data[$mage_tab_idf_row_idx_by_name{$row_name}]) and
                             @{$mage_tab_idf_data[$mage_tab_idf_row_idx_by_name{$row_name}]}
                         ) {
@@ -2995,7 +2977,7 @@ for my $program_name (@program_names) {
                         $xeno_cell_line_code, 
                         $nucleic_acid_ltr,
                     );
-                    if ($barcode =~ /^$BARCODE_REGEXP$/) {
+                    if ($barcode =~ /^$OCG_BARCODE_REGEXP$/) {
                         (
                             $case_id, 
                             $true_sample_id, 
@@ -3026,10 +3008,10 @@ for my $program_name (@program_names) {
                             }
                         }
                         if (
-                            defined($config_hashref->{project}) and
-                            defined($config_hashref->{project}->{sample_info_by_old_id})
+                            defined($mt_config_hashref->{project}) and
+                            defined($mt_config_hashref->{project}->{sample_info_by_old_id})
                         ) {
-                            my $sample_info_hashref = $config_hashref->{project}->{sample_info_by_old_id};
+                            my $sample_info_hashref = $mt_config_hashref->{project}->{sample_info_by_old_id};
                             if (defined $sample_info_hashref->{$true_sample_id}) {
                                 if (uc($sample_info_hashref->{$true_sample_id}->{disease}) eq 'DLBCL') {
                                     if (!defined $disease_code) {
@@ -3088,7 +3070,7 @@ for my $program_name (@program_names) {
                             $field_value = 'whole organism';
                         }
                         elsif ($col_key eq 'Term Source REF 1') {
-                            $field_value = 'EFO';
+                            $field_value = $mt_config_hashref->{default}->{'term_source_ref'};
                         }
                         elsif ($col_key eq 'Characteristics[Organism]') {
                             $field_value = $exp_pkg_xml->{SAMPLE}->{SAMPLE_NAME}->{SCIENTIFIC_NAME};
@@ -3139,10 +3121,10 @@ for my $program_name (@program_names) {
                                     $ncit_disease = "Childhood $ncit_disease";
                                     if ($project_name eq 'ALL') {
                                         if (
-                                            defined($config_hashref->{project}) and
-                                            defined($config_hashref->{project}->{cases_by_disease})
+                                            defined($mt_config_hashref->{project}) and
+                                            defined($mt_config_hashref->{project}->{cases_by_disease})
                                         ) {
-                                            my $cases_by_disease_hashref = $config_hashref->{project}->{cases_by_disease};
+                                            my $cases_by_disease_hashref = $mt_config_hashref->{project}->{cases_by_disease};
                                             for my $disease_name (natsort keys %{$cases_by_disease_hashref}) {
                                                 if (any { $case_id eq $_ } @{$cases_by_disease_hashref->{$disease_name}}) {
                                                     if ($disease_name eq 'B-ALL') {
@@ -3210,10 +3192,10 @@ for my $program_name (@program_names) {
                         }
                         elsif ($col_key eq 'Comment[OCG Cohort]') {
                             if (
-                                defined($config_hashref->{project}) and
-                                defined($config_hashref->{project}->{cases_by_cohort})
+                                defined($mt_config_hashref->{project}) and
+                                defined($mt_config_hashref->{project}->{cases_by_cohort})
                             ) {
-                                my $cases_by_cohort_hashref = $config_hashref->{project}->{cases_by_cohort};
+                                my $cases_by_cohort_hashref = $mt_config_hashref->{project}->{cases_by_cohort};
                                 for my $cohort_name (natsort keys %{$cases_by_cohort_hashref}) {
                                     if (any { $case_id eq $_ } @{$cases_by_cohort_hashref->{$cohort_name}}) {
                                         $field_value = ucfirst(lc($cohort_name));
@@ -3229,8 +3211,8 @@ for my $program_name (@program_names) {
                         elsif ($col_key eq 'Comment[dbGaP Study]') {
                             # only for datasets with runs from multiple dbGaP studies
                             if (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{incl_dbgap_study_sdrf})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{incl_dbgap_study_sdrf})
                             ) {
                                 for my $external_id_hashref (@{$exp_pkg_xml->{STUDY}->{IDENTIFIERS}->{EXTERNAL_ID}}) {
                                     if ($external_id_hashref->{'namespace'} =~ /dbgap/i) {
@@ -3242,33 +3224,33 @@ for my $program_name (@program_names) {
                         }
                         elsif ($col_key eq 'Comment[Alternate ID] 1') {
                             if (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{alt_id_by_case})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{alt_id_by_case})
                             ) {
-                                if (defined($config_hashref->{dataset}->{alt_id_by_case}->{$case_id})) {
-                                    $field_value = $config_hashref->{dataset}->{alt_id_by_case}->{$case_id};
+                                if (defined($mt_config_hashref->{dataset}->{alt_id_by_case}->{$case_id})) {
+                                    $field_value = $mt_config_hashref->{dataset}->{alt_id_by_case}->{$case_id};
                                 }
                             }
                             elsif (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{case_by_alt_id})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{case_by_alt_id})
                             ) {
-                                my $case_by_alt_id_hashref = $config_hashref->{dataset}->{case_by_alt_id};
+                                my $case_by_alt_id_hashref = $mt_config_hashref->{dataset}->{case_by_alt_id};
                                 $field_value = first { $case_by_alt_id_hashref->{$_} eq $case_id } keys %{$case_by_alt_id_hashref};
                             }
                             elsif (
-                                defined($config_hashref->{project}) and
-                                defined($config_hashref->{project}->{alt_id_by_case})
+                                defined($mt_config_hashref->{project}) and
+                                defined($mt_config_hashref->{project}->{alt_id_by_case})
                             ) {
-                                if (defined($config_hashref->{project}->{alt_id_by_case}->{$case_id})) {
-                                    $field_value = $config_hashref->{project}->{alt_id_by_case}->{$case_id};
+                                if (defined($mt_config_hashref->{project}->{alt_id_by_case}->{$case_id})) {
+                                    $field_value = $mt_config_hashref->{project}->{alt_id_by_case}->{$case_id};
                                 }
                             }
                             elsif (
-                                defined($config_hashref->{project}) and
-                                defined($config_hashref->{project}->{case_by_alt_id})
+                                defined($mt_config_hashref->{project}) and
+                                defined($mt_config_hashref->{project}->{case_by_alt_id})
                             ) {
-                                my $case_by_alt_id_hashref = $config_hashref->{project}->{case_by_alt_id};
+                                my $case_by_alt_id_hashref = $mt_config_hashref->{project}->{case_by_alt_id};
                                 $field_value = first { $case_by_alt_id_hashref->{$_} eq $case_id } keys %{$case_by_alt_id_hashref};
                             }
                         }
@@ -3281,7 +3263,7 @@ for my $program_name (@program_names) {
                                                                   'organism part';
                         }
                         elsif ($col_key eq 'Term Source REF 5') {
-                            $field_value = 'EFO';
+                            $field_value = $mt_config_hashref->{default}->{'term_source_ref'};
                         }
                         elsif ($col_key eq 'Characteristics[OrganismPart]') {
                             my $ncit_organism_part = $tissue_code eq '01' ? 'Solid Tumor' :
@@ -3318,10 +3300,10 @@ for my $program_name (@program_names) {
                                 $field_value = $exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'body site'};
                             }
                             if (
-                                defined($config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}) and
-                                defined($config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}->{$nucleic_acid_ltr})
+                                defined($mt_config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}) and
+                                defined($mt_config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}->{$nucleic_acid_ltr})
                             ) {
-                                my $sample_desc = $config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}->{$nucleic_acid_ltr};
+                                my $sample_desc = $mt_config_hashref->{sdrf}->{'nucleic_acid_ltr_sample_desc'}->{$nucleic_acid_ltr};
                                 if ($field_value ne '') {
                                     $field_value .= "; $sample_desc";
                                 }
@@ -3335,21 +3317,21 @@ for my $program_name (@program_names) {
                             my $protocol_type = 'Extraction';
                             my $protocol_hashref;
                             if (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{protocol_info}) and
-                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{protocol_info}) and
+                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
+                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
                             ) {
                                 if (
-                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                    any { $barcode eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{barcodes}}
+                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                    any { $barcode eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{barcodes}}
                                 ) {
-                                    $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                    $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
                                 }
                                 elsif (
-                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
                                 ) {
-                                    $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                    $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
                                 }
                                 if (defined $protocol_hashref) {
                                     # set default values if not specified in override
@@ -3407,53 +3389,53 @@ for my $program_name (@program_names) {
                             }
                         }
                         elsif ($col_key eq 'Term Source REF 7') {
-                            $field_value = 'EFO';
+                            $field_value = $mt_config_hashref->{default}->{'term_source_ref'};
                         }
                         elsif ($col_key eq 'Comment[SRA_SAMPLE]') {
                             $field_value = $exp_pkg_xml->{SAMPLE}->{accession};
                         }
                         elsif ($col_key eq 'Comment[Alternate ID] 2') {
                             if (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{alt_id_by_barcode})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{alt_id_by_barcode})
                             ) {
-                                if (defined($config_hashref->{dataset}->{alt_id_by_barcode}->{$barcode})) {
-                                    $field_value = $config_hashref->{dataset}->{alt_id_by_barcode}->{$barcode};
+                                if (defined($mt_config_hashref->{dataset}->{alt_id_by_barcode}->{$barcode})) {
+                                    $field_value = $mt_config_hashref->{dataset}->{alt_id_by_barcode}->{$barcode};
                                 }
                             }
                             elsif (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{barcode_by_alt_id})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{barcode_by_alt_id})
                             ) {
                                 my $barcode_by_alt_id_hashref = 
-                                    defined($config_hashref->{dataset}->{barcode_by_alt_id}->{$exp_center_name})
-                                        ? $config_hashref->{dataset}->{barcode_by_alt_id}->{$exp_center_name}
-                                        : $config_hashref->{dataset}->{barcode_by_alt_id}->{'_default'};
+                                    defined($mt_config_hashref->{dataset}->{barcode_by_alt_id}->{$exp_center_name})
+                                        ? $mt_config_hashref->{dataset}->{barcode_by_alt_id}->{$exp_center_name}
+                                        : $mt_config_hashref->{dataset}->{barcode_by_alt_id}->{'_default'};
                                 $field_value = first { $barcode_by_alt_id_hashref->{$_} eq $barcode } keys %{$barcode_by_alt_id_hashref};
                             }
                             elsif (
-                                defined($config_hashref->{project}) and
-                                defined($config_hashref->{project}->{alt_id_by_barcode})
+                                defined($mt_config_hashref->{project}) and
+                                defined($mt_config_hashref->{project}->{alt_id_by_barcode})
                             ) {
-                                if (defined($config_hashref->{project}->{alt_id_by_barcode}->{$barcode})) {
-                                    $field_value = $config_hashref->{project}->{alt_id_by_barcode}->{$barcode};
+                                if (defined($mt_config_hashref->{project}->{alt_id_by_barcode}->{$barcode})) {
+                                    $field_value = $mt_config_hashref->{project}->{alt_id_by_barcode}->{$barcode};
                                 }
                             }
                             elsif (
-                                defined($config_hashref->{project}) and
-                                defined($config_hashref->{project}->{barcode_by_alt_id})
+                                defined($mt_config_hashref->{project}) and
+                                defined($mt_config_hashref->{project}->{barcode_by_alt_id})
                             ) {
-                                my $barcode_by_alt_id_hashref = $config_hashref->{project}->{barcode_by_alt_id};
+                                my $barcode_by_alt_id_hashref = $mt_config_hashref->{project}->{barcode_by_alt_id};
                                 $field_value = first { $barcode_by_alt_id_hashref->{$_} eq $barcode } keys %{$barcode_by_alt_id_hashref};
                             }
                         }
                         elsif ($col_key eq 'Description 2') {
                             if (
-                                defined($config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}) and
-                                defined($config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}->{$nucleic_acid_ltr})
+                                defined($mt_config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}) and
+                                defined($mt_config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}->{$nucleic_acid_ltr})
                             ) {
                                 $field_value = quote_for_mage_tab(
-                                    $config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}->{$nucleic_acid_ltr}
+                                    $mt_config_hashref->{sdrf}->{'nucleic_acid_ltr_extract_desc'}->{$nucleic_acid_ltr}
                                 );
                             }
                         }
@@ -3475,9 +3457,9 @@ for my $program_name (@program_names) {
                         if (
                             (
                                 (
-                                    !defined($config_hashref->{dataset}) or
-                                    !defined($config_hashref->{dataset}->{exp_centers_excl_lib_const_protocol}) or
-                                    none { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_excl_lib_const_protocol}} 
+                                    !defined($mt_config_hashref->{dataset}) or
+                                    !defined($mt_config_hashref->{dataset}->{exp_centers_excl_lib_const_protocol}) or
+                                    none { $exp_center_name eq $_ } @{$mt_config_hashref->{dataset}->{exp_centers_excl_lib_const_protocol}}
                                 ) and
                                 exists($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_CONSTRUCTION_PROTOCOL}) and
                                 !ref($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_CONSTRUCTION_PROTOCOL}) and
@@ -3486,30 +3468,30 @@ for my $program_name (@program_names) {
                             )
                             or
                             (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}) and
-                                any { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}} and
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}) and
+                                any { $exp_center_name eq $_ } @{$mt_config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}} and
                                 !ref($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{DESIGN_DESCRIPTION})
                             )
                         ) {
                             my $protocol_type = 'LibraryPrep';
                             my $protocol_hashref;
                             if (
-                                defined($config_hashref->{dataset}) and
-                                defined($config_hashref->{dataset}->{protocol_info}) and
-                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{protocol_info}) and
+                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
+                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
                             ) {
                                 if (
-                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                    any { $exp_library_name eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
+                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                    any { $exp_library_name eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
                                 ) {
-                                    $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                    $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
                                 }
                                 elsif (
-                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
                                 ) {
-                                    $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                    $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
                                 }
                                 if (defined $protocol_hashref) {
                                     # set default values if not specified in override
@@ -3557,21 +3539,21 @@ for my $program_name (@program_names) {
                                 my $protocol_type = 'LibraryPrep';
                                 my $protocol_hashref;
                                 if (
-                                    defined($config_hashref->{dataset}) and
-                                    defined($config_hashref->{dataset}->{protocol_info}) and
-                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                    defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
+                                    defined($mt_config_hashref->{dataset}) and
+                                    defined($mt_config_hashref->{dataset}->{protocol_info}) and
+                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
+                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
                                 ) {
                                     if (
-                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                        any { $exp_library_name eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                        any { $exp_library_name eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
                                     ) {
-                                        $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                        $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
                                     }
                                     elsif (
-                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
                                     ) {
-                                        $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                        $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
                                     }
                                     if (defined $protocol_hashref) {
                                         # set default values if not specified in override
@@ -3664,14 +3646,14 @@ for my $program_name (@program_names) {
                             }
                             elsif ($col_key eq 'Description') {
                                 if (
-                                    !defined($config_hashref->{dataset}) or
+                                    !defined($mt_config_hashref->{dataset}) or
                                     (
-                                        !defined($config_hashref->{dataset}->{exp_centers_excl_exp_desc}) or
-                                        none { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_excl_exp_desc}}
+                                        !defined($mt_config_hashref->{dataset}->{exp_centers_excl_exp_desc}) or
+                                        none { $exp_center_name eq $_ } @{$mt_config_hashref->{dataset}->{exp_centers_excl_exp_desc}}
                                     ) and 
                                     (
-                                        !defined($config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}) or
-                                        none { $exp_center_name eq $_ } @{$config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}}
+                                        !defined($mt_config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}) or
+                                        none { $exp_center_name eq $_ } @{$mt_config_hashref->{dataset}->{exp_centers_incl_design_desc_protocol}}
                                     )
                                 ) {
                                     if (!ref($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{DESIGN_DESCRIPTION})) {
@@ -3714,21 +3696,21 @@ for my $program_name (@program_names) {
                                     my $protocol_type = 'Sequence';
                                     my $protocol_hashref;
                                     if (
-                                        defined($config_hashref->{dataset}) and
-                                        defined($config_hashref->{dataset}->{protocol_info}) and
-                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
                                     ) {
                                         if (
-                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                            any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
+                                            any { $run_xml->{accession} eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
                                         ) {
-                                            $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
                                         }
                                         elsif (
-                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
                                         ) {
-                                            $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
                                         }
                                         if (defined $protocol_hashref) {
                                             # set default values if not specified in override
@@ -3780,7 +3762,7 @@ for my $program_name (@program_names) {
                                     $field_value = 'sequencing assay';
                                 }
                                 elsif ($col_key eq 'Term Source REF') {
-                                    $field_value = 'EFO';
+                                    $field_value = $mt_config_hashref->{default}->{'term_source_ref'};
                                 }
                                 elsif ($col_key eq 'Comment[SPOT_LENGTH]') {
                                     if (
@@ -3801,21 +3783,21 @@ for my $program_name (@program_names) {
                                     my $protocol_type = 'BaseCall';
                                     my $protocol_hashref;
                                     if (
-                                        defined($config_hashref->{dataset}) and
-                                        defined($config_hashref->{dataset}->{protocol_info}) and
-                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                        defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
                                     ) {
                                         if (
-                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                            any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
+                                            any { $run_xml->{accession} eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
                                         ) {
-                                            $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
                                         }
                                         elsif (
-                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
                                         ) {
-                                            $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
                                         }
                                         if (defined $protocol_hashref) {
                                             # set default values if not specified in override
@@ -3943,12 +3925,12 @@ for my $program_name (@program_names) {
                                     }
                                     elsif ($col_key eq 'Comment[QC Warning]') {
                                         if (
-                                            defined($config_hashref->{dataset}) and
-                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}) and
-                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}) and
-                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name})
+                                            defined($mt_config_hashref->{dataset}) and
+                                            defined($mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}) and
+                                            defined($mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}) and
+                                            defined($mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name})
                                         ) {
-                                            $field_value = $config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name};
+                                            $field_value = $mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name};
                                         }
                                     }
                                     $sdrf_run_fastq_data[$mage_tab_sdrf_base_col_idx_by_type_key{run_fastq}{$col_key}] = defined($field_value) ? $field_value : '';
@@ -3970,21 +3952,21 @@ for my $program_name (@program_names) {
                                         my $protocol_type = 'ReadAlign';
                                         my $protocol_hashref;
                                         if (
-                                            defined($config_hashref->{dataset}) and
-                                            defined($config_hashref->{dataset}->{protocol_info}) and
-                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                            defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
+                                            defined($mt_config_hashref->{dataset}) and
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}) and
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
                                         ) {
                                             if (
-                                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                                any { $run_xml->{accession} eq $_ } @{$config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
+                                                any { $run_xml->{accession} eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
                                             ) {
-                                                $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                                $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
                                             }
                                             elsif (
-                                                defined($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
                                             ) {
-                                                $protocol_hashref = clone($config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                                $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
                                             }
                                             if (defined $protocol_hashref) {
                                                 # set default values if not specified in override
@@ -4102,12 +4084,12 @@ for my $program_name (@program_names) {
                                     }
                                     elsif ($col_key eq 'Comment[QC Warning]') {
                                         if (
-                                            defined($config_hashref->{dataset}) and
-                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}) and
-                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}) and
-                                            defined($config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name})
+                                            defined($mt_config_hashref->{dataset}) and
+                                            defined($mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}) and
+                                            defined($mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}) and
+                                            defined($mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name})
                                         ) {
-                                            $field_value = $config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name};
+                                            $field_value = $mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name};
                                         }
                                     }
                                     $sdrf_run_bam_data[$mage_tab_sdrf_base_col_idx_by_type_key{run_bam}{$col_key}] = defined($field_value) ? $field_value : '';
@@ -4371,9 +4353,10 @@ for my $program_name (@program_names) {
                                                         run_center_name => $run_center_name,
                                                         analysis_center_name => $dcc_analysis_center_name,
                                                         config => $exp_data_type eq $data_type
-                                                            ? $config_hashref->{dataset}->{protocol_info}
-                                                            : $config_hashref->{dataset}->{'add_data_types'}->{protocol_info},
+                                                            ? $mt_config_hashref->{dataset}->{protocol_info}
+                                                            : $mt_config_hashref->{dataset}->{'add_data_types'}->{protocol_info},
                                                     },
+                                                    mt_config => $mt_config_hashref,
                                                 });
                                                 $added_dcc_metadata++;
                                                 $dcc_sdrf_dag_info{$exp_data_type}{$barcode}{$dcc_exp_center_name}{$dcc_exp_library_name}{$dcc_run_center_name}{$dcc_analysis_center_name}{'_linked_to_sra'}++;
@@ -4605,9 +4588,9 @@ for my $program_name (@program_names) {
                         my $row_name = $mage_tab_idf_row_names[$row_idx];
                         # merge possible configured IDF row values
                         if (
-                            defined($config_hashref->{dataset}) and
-                            defined($config_hashref->{dataset}->{'merge_idf_row_names'}) and
-                            any { $row_name eq $_ } @{$config_hashref->{dataset}->{'merge_idf_row_names'}}
+                            defined($mt_config_hashref->{dataset}) and
+                            defined($mt_config_hashref->{dataset}->{'merge_idf_row_names'}) and
+                            any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{'merge_idf_row_names'}}
                         ) {
                             my $delimiter = ( $row_name eq 'Experiment Description' ? '. ' : '; ' );
                             $mage_tab_idf_data[$row_idx] = [ join($delimiter, @{$mage_tab_idf_data[$row_idx]}) ];
@@ -4728,7 +4711,7 @@ sub merge_run_info_hash {
 sub get_barcode_info {
     my ($barcode) = @_;
     die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid barcode '$barcode'" 
-        unless $barcode =~ /^$BARCODE_REGEXP$/;
+        unless $barcode =~ /^$OCG_BARCODE_REGEXP$/;
     my ($case_id, $s_case_id, $sample_id, $disease_code, $tissue_code, $nucleic_acid_code);
     my @barcode_parts = split('-', $barcode);
     # TARGET sample ID/barcode
@@ -4867,13 +4850,13 @@ sub get_barcodes_from_data_file {
         for my $barcode (natsort keys %uniq_barcodes) {
             # skip empty barcodes
             next if $barcode =~ /^\s*$/ or $barcode eq '.';
-            if ($barcode =~ /^$BARCODE_REGEXP$/) {
+            if ($barcode =~ /^$OCG_BARCODE_REGEXP$/) {
                 push @uniq_barcodes, $barcode;
             }
             # special fix for bad TARGET WT WXS mafs
             elsif ($program_name eq 'TARGET' and $project_name eq 'WT' and $data_type eq 'WXS') {
                 my $new_barcode = "${barcode}-01D";
-                if ($new_barcode =~ /^$BARCODE_REGEXP$/) {
+                if ($new_barcode =~ /^$OCG_BARCODE_REGEXP$/) {
                     push @uniq_barcodes, $new_barcode;
                 }
                 else {
@@ -4906,7 +4889,7 @@ sub get_barcodes_from_data_file {
         close($vcf_fh);
         splice(@data_file_col_headers, 0, 9);
         for my $col_header (@data_file_col_headers) {
-            if ($col_header !~ /^$BARCODE_REGEXP$/) {
+            if ($col_header !~ /^$OCG_BARCODE_REGEXP$/) {
                 warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid barcode: $col_header\n";
             }
         }
@@ -4951,7 +4934,7 @@ sub get_barcodes_from_data_file {
             for my $barcode (natsort keys %uniq_barcodes) {
                 # skip empty barcodes
                 next if $barcode =~ /^\s*$/ or $barcode eq '.';
-                if ($barcode =~ /^$BARCODE_REGEXP$/) {
+                if ($barcode =~ /^$OCG_BARCODE_REGEXP$/) {
                     push @uniq_barcodes, $barcode;
                 }
                 else {
@@ -5073,17 +5056,25 @@ sub quote_for_mage_tab {
 sub add_dcc_sdrf_data {
     my ($params_hashref) = @_;
     # init
-    $params_hashref->{sdrf_row_dcc_data} = [] unless defined $params_hashref->{sdrf_row_dcc_data};
-    $params_hashref->{sdrf_row_dcc_col_headers} = [] unless defined $params_hashref->{sdrf_row_dcc_col_headers};
-    my ($program_name, $project_name, $data_type, $dataset, $analysis_center_name, $config_hashref) = 
-        @{$params_hashref->{protocol_info}}{qw(
-            program_name
-            project_name
-            data_type
-            dataset
-            analysis_center_name
-            config
-        )};
+    $params_hashref->{sdrf_row_dcc_data} = []
+        unless defined $params_hashref->{sdrf_row_dcc_data};
+    $params_hashref->{sdrf_row_dcc_col_headers} = []
+        unless defined $params_hashref->{sdrf_row_dcc_col_headers};
+    my (
+        $program_name,
+        $project_name,
+        $data_type,
+        $dataset,
+        $analysis_center_name,
+        $protocol_config_hashref,
+    ) = @{$params_hashref->{protocol_info}}{qw(
+        program_name
+        project_name
+        data_type
+        dataset
+        analysis_center_name
+        config
+    )};
     (my $protocol_data_type = $data_type) =~ s/-//g;
     for my $protocol_type (
         natsort keys %{$params_hashref->{sdrf_dag_node}->{child_data_by_protocol_type}}
@@ -5093,16 +5084,18 @@ sub add_dcc_sdrf_data {
         ) {
             my $protocol_hashref;
             if (
-                defined($config_hashref) and
-                defined($config_hashref->{$protocol_type}) and
-                defined($config_hashref->{$protocol_type}->{$analysis_center_name})
+                defined($protocol_config_hashref) and
+                defined($protocol_config_hashref->{$protocol_type}) and
+                defined($protocol_config_hashref->{$protocol_type}->{$analysis_center_name})
             ) {
                 $protocol_hashref = clone(
-                    $config_hashref->{$protocol_type}->{$analysis_center_name}->{default}->{data}
+                    $protocol_config_hashref->{$protocol_type}->{$analysis_center_name}->{default}->{data}
                 );
                 # set default values if not specified in override
-                $protocol_hashref->{idf_type} = 'data transformation protocol' unless defined($protocol_hashref->{idf_type});
-                $protocol_hashref->{term_source_ref} = 'EFO' unless defined($protocol_hashref->{term_source_ref});
+                $protocol_hashref->{idf_type} = 'data transformation protocol'
+                    unless defined $protocol_hashref->{idf_type};
+                $protocol_hashref->{term_source_ref} = $mt_config_hashref->{default}->{'term_source_ref'}
+                    unless defined $protocol_hashref->{term_source_ref};
             }
             else {
                 $protocol_hashref = {
@@ -5112,7 +5105,7 @@ sub add_dcc_sdrf_data {
                         $protocol_type =~ /^Expression/i
                     ) ? 'normalization data transformation protocol'
                       : 'data transformation protocol',
-                    term_source_ref => 'EFO',
+                    term_source_ref => $mt_config_hashref->{default}->{'term_source_ref'},
                 };
                 $protocol_hashref->{name} = get_lsid(
                     authority => $center_info{$analysis_center_name}{authority},
@@ -5126,7 +5119,9 @@ sub add_dcc_sdrf_data {
                 @{$protocol_hashref}{qw( type data_type center_name )} = ( $protocol_type, $data_type, $analysis_center_name );
                 push @{$params_hashref->{protocol_data}}, $protocol_hashref;
             }
-            my @sdrf_dcc_col_w_data_conf = grep { exists $sdrf_dag_node_hashref->{$_->{key}} } @mage_tab_sdrf_dcc_col_conf;
+            my @sdrf_dcc_col_w_data_conf = grep {
+                exists $sdrf_dag_node_hashref->{$_->{key}}
+            } @{$params_hashref->{mt_config}->{sdrf}->{dcc_col_info}};
             my @new_sdrf_row_dcc_data = (
                 @{$params_hashref->{sdrf_row_dcc_data}},
                 $protocol_hashref->{name},
@@ -5145,6 +5140,7 @@ sub add_dcc_sdrf_data {
                     sdrf_dag_node => $sdrf_dag_node_hashref,
                     protocol_data => $params_hashref->{protocol_data},
                     protocol_info => $params_hashref->{protocol_info},
+                    mt_config => $params_hashref->{mt_config},
                     sdrf_row_dcc_data => \@new_sdrf_row_dcc_data,
                     sdrf_row_dcc_col_headers => \@new_sdrf_row_dcc_col_headers,
                 });
