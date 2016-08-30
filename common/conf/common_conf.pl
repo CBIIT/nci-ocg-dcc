@@ -39,4 +39,5 @@
         WGS
         WXS
     )],
+    'default_manifest_file_name' => 'MANIFEST.txt',
 }
