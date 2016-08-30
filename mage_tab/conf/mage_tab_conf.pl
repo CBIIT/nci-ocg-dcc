@@ -1,6 +1,6 @@
 # mage-tab generator config
-{    
-    'defaults' => {
+{
+    'default' => {
         'term_source_ref' => 'EFO',
     },
     'idf' => {
@@ -74,6 +74,20 @@
         ],
     },
     'sdrf' => {
+        'dcc_col_info' => [
+            {
+                name => 'Derived Array Data File',
+                key => 'file_name',
+            },
+            {
+                name => 'Comment[OCG Data Level]',
+                key => 'data_level',
+            },
+            {
+                name => 'Comment[miRBase Version]',
+                key => 'mirbase_version',
+            },
+        ],
         'nucleic_acid_ltr_sample_desc' => {
             'E' => 'Formalin-fixed, paraffin-embedded (FFPE) tissue',
             'S' => 'Formalin-fixed, paraffin-embedded (FFPE) tissue',
