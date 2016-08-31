@@ -18,13 +18,3 @@ at 72 degC followed by a final extension for 5 minute at 72 degC.  Agencourt XP 
 Inc., Danvers, MA, Cat. No. A63882) were used to purify DNA after each enzymatic reaction. After purification, 
 PCR product quantification and size distribution was determined using the Caliper GX 1K/12K/High Sensitivity 
 Assay Labchip (Hopkinton, MA, Cat. No. 760517).
- 
-Exome capture: Illumina pre-capture libraries (1 ug DNA input) were hybridized in solution to SeqCap EZ Human 
-Exome 2.0 (Nimblegen, Madison, WI) probes targeting approximately 44Mbs of sequence from approximately 30K genes 
-according to the manufacturer's protocol with the following modifications: hybridization enhancing oligos IHE1, 
-IHE2 and IHE3 replaced oligos HE1.1 and HE2.1 and post-capture LM-PCR was performed using 14 cycles. Capture 
-libraries were quantified using Caliper GX 1K/12K/High Sensitivity Assay Labchip (Hopkinton, MA, Cat. No. 760517). 
-The efficiency of the capture was evaluated by performing a qPCR-based quality check on the built-in controls 
-(qPCR SYBR Green assays, Applied Biosystems, Grand Island, NY). Four standardized oligo sets, RUNX2, PRKG1, SMG1, 
-and NLK, were employed as internal quality controls. The enrichment of the capture libraries was estimated to 
-range from 7- to 9-fold over background. 

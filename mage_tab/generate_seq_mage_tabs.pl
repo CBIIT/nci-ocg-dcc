@@ -99,26 +99,33 @@ my %protocol_base_types = (
         },
         idf_order_num => 2,
     },
+    'ExomeCapture' => {
+        data => {
+            idf_type => 'nucleic acid library construction protocol',
+            term_source_ref => 'EFO',
+        },
+        idf_order_num => 3,
+    },
     'Sequence' => {
         data => {
             idf_type => 'nucleic acid sequencing protocol',
             term_source_ref => 'EFO',
         },
-        idf_order_num => 3,
+        idf_order_num => 4,
     },
     'BaseCall' => {
         data => {
             idf_type => 'data transformation protocol',
             term_source_ref => 'EFO',
         },
-        idf_order_num => 4,
+        idf_order_num => 5,
     },
     'ReadAlign' => {
         data => {
             idf_type => 'data transformation protocol',
             term_source_ref => 'EFO',
         },
-        idf_order_num => 5,
+        idf_order_num => 6,
     },
 );
 my %center_info = (
@@ -253,6 +260,7 @@ my %mage_tab_sdrf_base_col_names_by_type = (
         'Description',
     ],
     'lib' => [
+        'Protocol REF',
         'Protocol REF',
         'Performer',
         'Extract Name',
@@ -3535,7 +3543,7 @@ for my $program_name (@program_names) {
                             nkeysort { $mage_tab_sdrf_base_col_idx_by_type_key{lib}{$_} } keys %{$mage_tab_sdrf_base_col_idx_by_type_key{lib}}
                         ) {
                             my $field_value = '';
-                            if ($col_key eq 'Protocol REF') {
+                            if ($col_key eq 'Protocol REF 1') {
                                 my $protocol_type = 'LibraryPrep';
                                 my $protocol_hashref;
                                 if (
@@ -3581,6 +3589,55 @@ for my $program_name (@program_names) {
                                     push @protocol_data, $protocol_hashref;
                                 }
                                 $field_value = $protocol_hashref->{name};
+                            }
+                            elsif ($col_key eq 'Protocol REF 2') {
+                                if ($exp_data_type eq 'WXS') {
+                                    my $protocol_type = 'ExomeCapture';
+                                    my $protocol_hashref;
+                                    if (
+                                        defined($mt_config_hashref->{dataset}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
+                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
+                                    ) {
+                                        if (
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                            any { $exp_library_name eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
+                                        ) {
+                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                        }
+                                        elsif (
+                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                        ) {
+                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                        }
+                                        if (defined $protocol_hashref) {
+                                            # set default values if not specified in override
+                                            for my $field (qw( idf_type term_source_ref )) {
+                                                if (!defined($protocol_hashref->{$field})) {
+                                                    $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if (!defined $protocol_hashref) {
+                                        $protocol_hashref = clone(
+                                            $protocol_base_types{$protocol_type}{data}
+                                        );
+                                        $protocol_hashref->{name} = get_lsid(
+                                            authority => $center_info{$exp_center_name}{authority},
+                                            namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
+                                            namespace => 'Protocol',
+                                            object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
+                                            revision => '01',
+                                        );
+                                    }
+                                    if (none { $protocol_hashref->{name} eq $_->{name} } @protocol_data) {
+                                        @{$protocol_hashref}{qw( type data_type center_name )} = ( $protocol_type, $exp_data_type, $exp_center_name );
+                                        push @protocol_data, $protocol_hashref;
+                                    }
+                                    $field_value = $protocol_hashref->{name};
+                                }
                             }
                             elsif ($col_key eq 'Performer') {
                                 $field_value = (

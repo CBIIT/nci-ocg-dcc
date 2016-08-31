@@ -1,0 +1,10 @@
+For exome capture, four pre-capture libraries were pooled together in equimolar amounts (totaling 1 ug/pool). 
+These pooled libraries were then hybridized in solution to the HGSC VCRome 2.1 design1 (42Mb, NimbleGen) 
+according to the manufacturer's protocol NimbleGen SeqCap EZ Exome Library SR User's Guide (Version 2.2) 
+with minor revisions.  Human COT1 DNA and full-length Illumina adaptor-specific blocking oligonucleotides 
+were added into the hybridization to block repetitive genomic sequences and the adaptor sequences. 
+Post-capture LM-PCR amplification was performed using KAPA HiFi DNA Polymerase with 12 cycles of amplification. 
+After the final AMPure XP bead purification, quantity and size of the capture library was analyzed using the 
+Agilent Bioanalyzer 2100 DNA Chip 7500.  The efficiency of the capture was evaluated by performing a qPCR-based 
+quality check on the four standard NimbleGen internal controls.  Successful enrichment of the capture libraries 
+was estimated to range from a 6 to 9 of 'Ct value over the non-enriched samples.

@@ -1,0 +1,2 @@
+Exome sequence was captured for Illumina sequencing following the manufacturers' 
+instructions using the Agilent SureSelect Human All Exon V3 50Mb Kit.

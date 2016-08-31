@@ -2887,6 +2887,17 @@
                 },
                 'WXS' => {
                     'Phase2' => {
+                        'protocol_info' => {
+                            'ExomeCapture' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:WXS-ExomeCapture-NimbleGen-SeqCapEZHumanExomeV2:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'parse_files' => {
                             'L3' => [
                                 'mutation/BCM/Germline/target-all-hg19-germline.mafplus.txt',
@@ -3189,6 +3200,17 @@
                 },
                 'WXS' => {
                     '_default' => {
+                        'protocol_info' => {
+                            'ExomeCapture' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:WXS-ExomeCapture-NimbleGen-SeqCapEZHumanExomeV2:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'parse_files' => {
                             'L3' => [
                                 'mutation/BCM/Germline/target-aml-germline-primary-dbsnp-nonsilent.txt',
@@ -3311,6 +3333,15 @@
                                     },
                                 },
                             },
+                            'ExomeCapture' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:WXS-ExomeCapture-NimbleGen-SeqCapEZHGSCVCRomeV2.1:01',
+                                        },
+                                    },
+                                },
+                            },
                             'Sequence' => {
                                 'BCM' => {
                                     'default' => {
@@ -3392,6 +3423,15 @@
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcm.edu:Protocol:WXS-LibraryPrep-Illumina:02',
+                                        },
+                                    },
+                                },
+                            },
+                            'ExomeCapture' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:WXS-ExomeCapture-NimbleGen-SeqCapEZHGSCVCRomeV2.1:01',
                                         },
                                     },
                                 },
@@ -3547,6 +3587,17 @@
                 },
                 'WXS' => {
                     '_default' => {
+                        'protocol_info' => {
+                            'ExomeCapture' => {
+                                'Broad' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'broadinstitute.org:Protocol:WXS-ExomeCapture-Agilent-WholeExome1.1RefSeqPlus3Boosters:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'parse_files' => {
                             'L3' => [
                                 'mutation/Broad/Germline/NB170_germline_calls_from_tumors.vcf',
@@ -3728,6 +3779,30 @@
                                     ],
                                 },
                             ],
+                        },
+                        'protocol_info' => {
+                            'ExomeCapture' => {
+                                'NCI-Meltzer' => {
+                                    'filter' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:WXS-ExomeCapture-Illumina-TruSeqExome:01',
+                                        },
+                                        'library_names' => [
+                                            '4938,5133', '5148,5713',      '4950,5145,5712', '5160',           '4951,5146',
+                                            '5161,5715', '4939,5134,5709', '5149',           '4940,5135,5710', '5150',
+                                            '4941,5136', '5151',           '4942,5137',      '5152,5714',      '4943,5138',
+                                            '5153',      '4944,5139',      '5154',           '4946,5141',      '5156',
+                                            '4947,5142', '5157',           '4948,5143,5711', '5158',           '4949,5144',
+                                            '5159',
+                                        ],
+                                    },
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:WXS-ExomeCapture-Agilent-SureSelectHumanAllExonV3:01',
+                                        },
+                                    },
+                                },
+                            },
                         },
                         'parse_files' => {
                             'L3' => [
@@ -3963,6 +4038,17 @@
                 },
                 'WXS' => {
                     '_default' => {
+                        'protocol_info' => {
+                            'ExomeCapture' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:WXS-ExomeCapture-NimbleGen-SeqCapEZHumanExomeV2:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'parse_files' => {
                             'L3' => [
                                 'mutation/BCM/Germline/target-wt-hg19-germline.mafplus.txt',

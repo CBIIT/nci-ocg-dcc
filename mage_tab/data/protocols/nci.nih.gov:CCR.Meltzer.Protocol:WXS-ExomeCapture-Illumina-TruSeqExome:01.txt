@@ -1,0 +1,2 @@
+Exome sequence was captured for Illumina sequencing following the manufacturers' 
+instructions using the Illumina TruSeq Exome Enrichment Kit.
