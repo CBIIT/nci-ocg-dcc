@@ -34,7 +34,7 @@ my @program_names = qw(
     CTD2
 );
 my %program_project_names = (
-    TARGET => [qw(
+    'TARGET' => [qw(
         ALL
         AML
         CCSK
@@ -48,7 +48,7 @@ my %program_project_names = (
         WT
         Resources
     )],
-    CGCI => [qw(
+    'CGCI' => [qw(
         BLGSP
         HTMCP-CC
         HTMCP-DLBCL
@@ -57,7 +57,7 @@ my %program_project_names = (
         NHL
         Resources
     )],
-    CTD2 => [qw(
+    'CTD2' => [qw(
         Broad
         Columbia
         CSHL
@@ -121,6 +121,7 @@ my @data_level_dir_names = (
     'L4',
     'METADATA',
     $target_cgi_dir_name,
+    'DESIGN',
 );
 my @dests = qw(
     PreRelease
@@ -263,16 +264,14 @@ my %sync_config = (
                     'no_data' => 1,
                 },
             },
+            'DESIGN' => {
+                'controlled' => {
+                    'no_data' => 1,
+                },
+            },
         },
         '_custom' => {
             'TARGET' => {
-                'Resources' => {
-                    'controlled' => {
-                        'no_data' => 1,
-                    },
-                },
-            },
-            'CGCI' => {
                 'Resources' => {
                     'controlled' => {
                         'no_data' => 1,
@@ -419,18 +418,6 @@ my %sync_config = (
                         },
                     },
                 },
-                'Resources' => {
-                    'controlled' => {
-                        'no_data' => 1,
-                    },
-                },
-            },
-            'CGCI' => {
-                'Resources' => {
-                    'controlled' => {
-                        'no_data' => 1,
-                    },
-                },
             },
         },
     },
@@ -519,20 +506,9 @@ my %sync_config = (
                     'no_data' => 1,
                 },
             },
-        },
-        '_custom' => {
-            'TARGET' => {
-                'Resources' => {
-                    'controlled' => {
-                        'no_data' => 1,
-                    },
-                },
-            },
-            'CGCI' => {
-                'Resources' => {
-                    'controlled' => {
-                        'no_data' => 1,
-                    },
+            'DESIGN' => {
+                'controlled' => {
+                    'no_data' => 1,
                 },
             },
         },
@@ -728,6 +704,11 @@ my %sync_config = (
                     'no_data' => 1,
                 },
             },
+            'DESIGN' => {
+                'controlled' => {
+                    'no_data' => 1,
+                },
+            },
         },
         '_custom' => {
             'TARGET' => {
@@ -764,6 +745,11 @@ my %sync_config = (
                         },
                     },
                     'METADATA' => {
+                        'controlled' => {
+                            'no_data' => 1,
+                        },
+                    },
+                    'DESIGN' => {
                         'controlled' => {
                             'no_data' => 1,
                         },
@@ -908,6 +894,11 @@ my %sync_config = (
                 },
             },
             'METADATA' => {
+                'controlled' => {
+                    'no_data' => 1,
+                },
+            },
+            'DESIGN' => {
                 'controlled' => {
                     'no_data' => 1,
                 },
