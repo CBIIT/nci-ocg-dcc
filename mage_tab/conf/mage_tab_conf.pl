@@ -2889,10 +2889,24 @@
                     'Phase2' => {
                         'protocol_info' => {
                             'ExomeCapture' => {
+                                'BCG-Danvers' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'beckmangenomics.com:Protocol:WXS-ExomeCapture-Agilent-SureSelectHumanAllExonV5:01',
+                                        },
+                                    },
+                                },
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcm.edu:Protocol:WXS-ExomeCapture-NimbleGen-SeqCapEZHumanExomeV2:01',
+                                        },
+                                    },
+                                },
+                                'StJude' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'stjude.org:Protocol:WXS-ExomeCapture-Illumina-NexteraRapidCaptureExome:01',
                                         },
                                     },
                                 },
