@@ -2883,6 +2883,17 @@
                         'exp_centers_excl_exp_desc' => [
                             'BCCA',
                         ],
+                        'exp_center_library_data_qc_warning' => {
+                            'BCCA' => {
+                                'HS2773' => 
+                                    'While analyzing this WGS library for subclonal mutations, we discovered that this sample has been contaminated (most likely during ' .
+                                    'library construction) with a significant amount of DNA from another patient in the study (TARGET-10-PALJDL-03A-01D). We determined ' .
+                                    'that the contaminating DNA is likely from the malignant cells of the other patient as sequences corresponding to polymorphisms and ' .
+                                    'somatic mutations in the contaminating patient\'s genome can be detected. Based on the mean level of read support for variants unique ' .
+                                    'to the contaminating patient\'s genome, we estimate the amount of contamination to be 20-30%. Despite this contamination, we had ' .
+                                    'sufficient power to detect clonal somatic mutations in the genome of this patient as described in Roberts et al, 2012.',
+                            },
+                        },
                     },
                 },
                 'WXS' => {
