@@ -1,0 +1,7 @@
+DepthOfCoverage tool from the GATK (v3.0-0) was run on BAMs from TARGET NBL validation 
+cohort data (998 tumor/normal pairs). In order to find copy number changes in this 
+targeted gene panel, we used the copy number tool VisCap. VisCap uses DepthOfCoverage 
+data in order to find small and large-scale copy number changes across the targeted 
+gene panel. The advantage of VisCap is its sensitivity to small-scale copy number 
+changes within genes at the exon level. Thus it was deemed appropriate to find focal 
+and sub-genic copy number changes in this gene panel.
