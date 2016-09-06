@@ -3061,6 +3061,7 @@ for my $program_name (@program_names) {
                                  ": 'sample_info_by_old_id' config missing\n";
                         }
                         $tissue_code = '' unless defined $tissue_code;
+                        $nucleic_acid_ltr = '';
                     }
                     # build SDRF data
                     my @sdrf_exp_data;
@@ -3894,6 +3895,7 @@ for my $program_name (@program_names) {
                                                     defined($pipe_section_hashref->{section_name}) and
                                                     # matching BaseCall pipeline sections
                                                     $pipe_section_hashref->{section_name} =~ /^(BASE(_|-|\s+)CALL|QUALITY(_|-|\s+)SCORE|Bcl-to-Fastq)/i and
+                                                    !ref($pipe_section_hashref->{PROGRAM}) and
                                                     (
                                                         !defined($stored_protocol_hashref->{software}) or
                                                         none { $pipe_section_hashref->{PROGRAM} eq $_ } @{$stored_protocol_hashref->{software}}
@@ -3924,6 +3926,7 @@ for my $program_name (@program_names) {
                                                     defined($pipe_section_hashref->{section_name}) and
                                                     # matching BaseCall pipeline sections
                                                     $pipe_section_hashref->{section_name} =~ /^(BASE(_|-|\s+)CALL|QUALITY(_|-|\s+)SCORE|Bcl-to-Fastq)/i and
+                                                    !ref($pipe_section_hashref->{VERSION}) and
                                                     none { "$pipe_section_hashref->{PROGRAM} $pipe_section_hashref->{VERSION}" eq $_ } @software_versions
                                                 ) {
                                                     push @software_versions, "$pipe_section_hashref->{PROGRAM} $pipe_section_hashref->{VERSION}";
@@ -4063,6 +4066,7 @@ for my $program_name (@program_names) {
                                                         defined($pipe_section_hashref->{section_name}) and
                                                         # not matching BaseCall pipeline sections
                                                         $pipe_section_hashref->{section_name} !~ /^(BASE(_|-|\s+)CALL|QUALITY(_|-|\s+)SCORE|Bcl-to-Fastq)/i and
+                                                        !ref($pipe_section_hashref->{PROGRAM}) and
                                                         (
                                                             !defined($stored_protocol_hashref->{software}) or
                                                             none { $pipe_section_hashref->{PROGRAM} eq $_ } @{$stored_protocol_hashref->{software}}
@@ -4093,6 +4097,7 @@ for my $program_name (@program_names) {
                                                         defined($pipe_section_hashref->{section_name}) and
                                                         # not matching BaseCall pipeline sections
                                                         $pipe_section_hashref->{section_name} !~ /^(BASE(_|-|\s+)CALL|QUALITY(_|-|\s+)SCORE|Bcl-to-Fastq)/i and
+                                                        !ref($pipe_section_hashref->{VERSION}) and
                                                         none { "$pipe_section_hashref->{PROGRAM} $pipe_section_hashref->{VERSION}" eq $_ } @software_versions
                                                     ) {
                                                         push @software_versions, "$pipe_section_hashref->{PROGRAM} $pipe_section_hashref->{VERSION}";
@@ -4683,10 +4688,10 @@ for my $program_name (@program_names) {
                             )
                         } @mage_tab_sdrf_data
                     ) {
-                        for my $col_idx (@mage_tab_sdrf_col_idxs_with_data) {
-                            print $sdrf_out_fh 
-                                $sdrf_row_data_arrayref->[$col_idx], 
-                                $col_idx != $#{$sdrf_row_data_arrayref} ? "\t" : "\n";
+                        for my $col_idx (0 .. $#mage_tab_sdrf_col_idxs_with_data) {
+                            print $sdrf_out_fh
+                                $sdrf_row_data_arrayref->[$mage_tab_sdrf_col_idxs_with_data[$col_idx]],
+                                $col_idx != $#mage_tab_sdrf_col_idxs_with_data ? "\t" : "\n";
                         }
                     }
                     close($sdrf_out_fh);

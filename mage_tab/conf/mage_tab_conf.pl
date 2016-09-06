@@ -4206,5 +4206,50 @@
                 },    
             },
         },
+        'CGCI' => {
+            'HTMCP-DLBCL' => {
+                'WGS' => {
+                    '_default' => {
+                        'protocol_info' => {
+                            'Extraction' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        'exp_centers_excl_exp_desc' => [
+                            'BCCA',
+                        ],
+                        'exp_centers_excl_lib_const_protocol' => [
+                            'BCCA',
+                        ],
+                    },
+                },
+            },
+            'HTMCP-LC' => {
+                'WGS' => {
+                    '_default' => {
+                        'protocol_info' => {
+                            'Extraction' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        'exp_centers_excl_lib_const_protocol' => [
+                            'BCCA',
+                        ],
+                    },
+                },
+            },
+        },
     },
 }
