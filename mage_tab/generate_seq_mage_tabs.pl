@@ -249,6 +249,7 @@ my %mage_tab_sdrf_base_col_names_by_type = (
         'Term Source REF',
         'Characteristics[OrganismPart]',
         'Term Source REF',
+        'Characteristics[PassageNumber]',
         'Description',
         'Protocol REF',
         'Performer',
@@ -3303,6 +3304,16 @@ for my $program_name (@program_names) {
                         }
                         elsif ($col_key eq 'Term Source REF 6') {
                             $field_value = 'NCIt';
+                        }
+                        elsif ($col_key eq 'Characteristics[PassageNumber]') {
+                            if (
+                                defined($mt_config_hashref->{dataset}) and
+                                defined($mt_config_hashref->{dataset}->{exp_center_barcode_passage_number}) and
+                                defined($mt_config_hashref->{dataset}->{exp_center_barcode_passage_number}->{$exp_center_name}) and
+                                defined($mt_config_hashref->{dataset}->{exp_center_barcode_passage_number}->{$exp_center_name}->{$barcode})
+                            ) {
+                                $field_value = $mt_config_hashref->{dataset}->{exp_center_barcode_passage_number}->{$exp_center_name}->{$barcode};
+                            }
                         }
                         elsif ($col_key eq 'Description 1') {
                             if (defined($exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'body site'})) {
