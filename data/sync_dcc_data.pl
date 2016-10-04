@@ -1523,11 +1523,11 @@ __END__
 
 =head1 NAME 
 
-sync_dcc_data - Data-to-Download Area(s) Synchronizer
+sync_dcc_data - OCG DCC Master Data-to-Download Areas Synchronizer
 
 =head1 SYNOPSIS
 
- sync_dcc_data.pl [options] <program name(s)> <project name(s)> <data type(s)> <data set(s)> <data level dir(s)> <destination(s)>
+ sync_dcc_data.pl <program name(s)> <project name(s)> <data type(s)> <data set(s)> <data level dir(s)> <destination(s)> [options]
  
  Parameters:
     <program name(s)>       Comma-separated list of program name(s) (optional, default: all programs)
