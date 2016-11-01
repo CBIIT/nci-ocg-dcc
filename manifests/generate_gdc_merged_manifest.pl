@@ -137,7 +137,7 @@ for my $program_name (@program_names) {
                 # directories
                 if (-d) {
                     # skip hidden and directories with duplicate data or data not of interest
-                    if ($File::Find::name =~ /^$search_download_dir\/(CGI|DBGAP_METADATA|OS\/(?:Brazil|Toronto)|Resources)$/) {
+                    if ($File::Find::name =~ /^\Q$search_download_dir\E\/(CGI|DBGAP_METADATA|OS\/(?:Brazil|Toronto)|Resources)$/) {
                         print "Skipping $File::Find::name\n" if $verbose;
                         $File::Find::prune = 1;
                         return;

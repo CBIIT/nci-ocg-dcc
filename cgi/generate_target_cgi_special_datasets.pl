@@ -83,6 +83,7 @@ my @job_types = qw(
 );
 my $target_data_dir = '/local/target/data';
 my $target_download_ctrld_dir = '/local/target/download/Controlled';
+my $data_type_dir_name = 'WGS';
 my $cgi_dir_name = 'CGI';
 my $default_manifest_file_name = 'MANIFEST.txt';
 my @target_cgi_data_dir_names = qw(
@@ -186,7 +187,7 @@ for my $job_type (@job_types) {
                     $project_dir = "$project_dir/PPTP";
                 }
                 else {
-                    die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
+                    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
                 }
             }
             elsif ($disease_proj eq 'OS') {
@@ -197,27 +198,40 @@ for my $job_type (@job_types) {
                     $project_dir = "$project_dir/Brazil";
                 }
                 else {
-                    die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
+                    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
                 }
             }
             else {
-                die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": invalid disease project '$disease_proj'\n";
+                die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid disease project '$disease_proj'\n";
             }
         }
-        my $cgi_dataset_dir = "$target_download_ctrld_dir/$project_dir/WGS/$cgi_dir_name";
-        my $output_cgi_dataset_dir;
+        my $data_type_dir = "$target_download_ctrld_dir/$project_dir/$data_type_dir_name";
+        my $dataset_dir_name = $project_name eq 'ALL' 
+                             ? 'Phase1+2'
+                             : '';
+        my $dataset_dir = $dataset_dir_name
+                        ? "$data_type_dir/$dataset_dir_name"
+                        : $data_type_dir;
+        my $dataset_cgi_dir = "$dataset_dir/$cgi_dir_name";
+        my $output_dataset_cgi_dir;
         if (any { $job_type eq $_ } qw( BCCA Germline TEMP )) {
-            $output_cgi_dataset_dir = "$target_data_dir/$job_type/$project_dir/WGS/current/$cgi_dir_name";
+            $output_dataset_cgi_dir = $dataset_dir_name
+                                    ? "$target_data_dir/$job_type/$project_dir/$data_type_dir_name/$dataset_dir_name/current/$cgi_dir_name"
+                                    : "$target_data_dir/$job_type/$project_dir/$data_type_dir_name/current/$cgi_dir_name";
         }
         my (@cgi_data_dirs, @output_cgi_data_dirs);
         for my $data_dir_name (@target_cgi_data_dir_names) {
-            my $cgi_data_dir = "$cgi_dataset_dir/$data_dir_name";
+            my $cgi_data_dir = "$dataset_cgi_dir/$data_dir_name";
             push @cgi_data_dirs, $cgi_data_dir if -d $cgi_data_dir;
             my $output_cgi_data_dir = $job_type eq 'FullMafsVcfs'
-                                    ? "$target_download_ctrld_dir/$project_dir/WGS/L3/mutation/$cgi_dir_name/$job_type"
+                                    ? $dataset_dir_name
+                                        ? "$target_download_ctrld_dir/$project_dir/$data_type_dir_name/$dataset_dir_name/L3/mutation/$cgi_dir_name/$job_type"
+                                        : "$target_download_ctrld_dir/$project_dir/$data_type_dir_name/L3/mutation/$cgi_dir_name/$job_type"
                                     : $job_type eq 'SomaticVcfs'
-                                    ? "$target_data_dir/$project_dir/WGS/current/L3/mutation/$cgi_dir_name/$job_type"
-                                    : "$output_cgi_dataset_dir/$data_dir_name";
+                                    ? $dataset_dir_name
+                                        ? "$target_data_dir/$project_dir/$data_type_dir_name/$dataset_dir_name/current/L3/mutation/$cgi_dir_name/$job_type"
+                                        : "$target_data_dir/$project_dir/$data_type_dir_name/current/L3/mutation/$cgi_dir_name/$job_type"
+                                    : "$output_dataset_cgi_dir/$data_dir_name";
             if (none { $_ eq $output_cgi_data_dir } @output_cgi_data_dirs) {
                 push @output_cgi_data_dirs, $output_cgi_data_dir;
             }
@@ -269,7 +283,7 @@ for my $job_type (@job_types) {
                     }
                 },
             }, @output_cgi_data_dirs);
-            for my $dir (@output_cgi_data_dirs, ( ( any { $job_type eq $_ } qw( BCCA Germline TEMP ) ) ? $output_cgi_dataset_dir : () )) {
+            for my $dir (@output_cgi_data_dirs, ( ( any { $job_type eq $_ } qw( BCCA Germline TEMP ) ) ? $output_dataset_cgi_dir : () )) {
                 if (-z $dir) {
                     print "Deleting $dir\n" if $verbose;
                     if (!$dry_run) {
@@ -352,7 +366,7 @@ for my $job_type (@job_types) {
                                     $tissue_type =~ /(Primary|CellLine|Xenograft)/
                                 )
                             ) {
-                                (my $output_dir = $parent_dir) =~ s/^$cgi_dataset_dir/$output_cgi_dataset_dir/
+                                (my $output_dir = $parent_dir) =~ s/^\Q$dataset_cgi_dir\E/$output_dataset_cgi_dir/
                                     or die "\nERROR: bad path $parent_dir\n";
                                 print "Creating $output_dir\n" if $verbose;
                                 if (!$dry_run) {
@@ -428,7 +442,7 @@ for my $job_type (@job_types) {
                             # full somaticVcfBeta MAF and VCF files
                             if (m/^somaticVcfBeta.+?(?:(?<!somatic)_maf_FET\.txt|\.vcf\.bz2)$/i) {
                                 link_file(
-                                    $cgi_dataset_dir, $output_cgi_dataset_dir, 
+                                    $dataset_cgi_dir, $output_dataset_cgi_dir, 
                                     $case_exp_dir, $file_dir, $file, $file_name,
                                     \@file_dir_barcode_rel_parts,
                                 );
@@ -446,7 +460,7 @@ for my $job_type (@job_types) {
                                 m/^(?:somaticVcfBeta.+?(?<!somatic)_maf_FET\.txt|masterVarBeta.+?\.tsv\.bz2)$/i 
                             ) {
                                 link_file(
-                                    $cgi_dataset_dir, $output_cgi_dataset_dir, 
+                                    $dataset_cgi_dir, $output_dataset_cgi_dir, 
                                     $case_exp_dir, $file_dir, $file, $file_name,
                                     \@file_dir_barcode_rel_parts,
                                 );
@@ -461,7 +475,7 @@ for my $job_type (@job_types) {
                             # masterVarBeta files
                             if (m/^masterVarBeta.+?\.tsv\.bz2$/i) {
                                 link_file(
-                                    $cgi_dataset_dir, $output_cgi_dataset_dir, 
+                                    $dataset_cgi_dir, $output_dataset_cgi_dir, 
                                     $case_exp_dir, $file_dir, $file, $file_name,
                                     \@file_dir_barcode_rel_parts,
                                 );
@@ -499,7 +513,7 @@ for my $job_type (@job_types) {
                                 print STDERR "\$case_exp_dir:\n$case_exp_dir\n" if $debug;
                                 my @other_sample_dirs = grep { 
                                     -d and 
-                                    m/^$case_exp_dir\/$BARCODE_REGEXP$/ and 
+                                    m/^\Q$case_exp_dir\E\/$BARCODE_REGEXP$/ and 
                                     $_ ne "$case_exp_dir/$file_dir_parts[$#file_dir_parts - 1]"
                                 } glob("$case_exp_dir/*");
                                 print STDERR "\@other_sample_dirs:\n", Dumper(\@other_sample_dirs) if $debug;
@@ -531,7 +545,7 @@ for my $job_type (@job_types) {
                                     die "\nERROR: invalid sample data directory: $cmp_sample_dir\n\n";
                                 }
                                 if (
-                                    grep { -f and m/^$cmp_sample_dir\/ASM\/somaticVcfBeta/i }
+                                    grep { -f and m/^\Q$cmp_sample_dir\E\/ASM\/somaticVcfBeta/i }
                                     glob("$cmp_sample_dir/ASM/*")
                                 ) {
                                     die "\nERROR: comparator sample data directory contains somatic data: $cmp_sample_dir/ASM\n";
@@ -688,10 +702,10 @@ for my $job_type (@job_types) {
                         }
                     }
                     elsif (
-                        none { $file =~ /^$case_exp_dir\/$_$/ } (@target_cgi_manifest_file_names, @target_cgi_skip_file_names) and
-                        $file !~ /^$case_exp_dir\/README.*?\.txt$/
+                        none { $file =~ /^\Q$case_exp_dir\E\/$_$/ } (@target_cgi_manifest_file_names, @target_cgi_skip_file_names) and
+                        $file !~ /^\Q$case_exp_dir\E\/README.*?\.txt$/
                     ) {
-                        die "\nERROR: unsupported file $file\n";
+                        die "ERROR: unsupported file $file\n";
                     }
                 }
             },
@@ -708,13 +722,13 @@ exit;
 
 sub link_file {
     my (
-        $cgi_dataset_dir, $output_cgi_dataset_dir, 
+        $dataset_cgi_dir, $output_dataset_cgi_dir, 
         $case_exp_dir, $file_dir, $file, $file_name,
         $file_dir_barcode_rel_parts_arrayref,
     ) = @_;
-    (my $output_case_exp_dir = $case_exp_dir) =~ s/^$cgi_dataset_dir/$output_cgi_dataset_dir/
+    (my $output_case_exp_dir = $case_exp_dir) =~ s/^\Q$dataset_cgi_dir\E/$output_dataset_cgi_dir/
         or die "\nERROR: bad path $case_exp_dir\n";
-    (my $output_dir = $file_dir) =~ s/^$cgi_dataset_dir/$output_cgi_dataset_dir/
+    (my $output_dir = $file_dir) =~ s/^\Q$dataset_cgi_dir\E/$output_dataset_cgi_dir/
         or die "\nERROR: bad path $file_dir\n";
     print "Creating $output_dir\n" if $verbose;
     if (!$dry_run) {
