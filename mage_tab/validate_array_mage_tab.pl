@@ -442,7 +442,7 @@ for my $level (@data_levels) {
                 # methylation
                 elsif ($data_type eq 'methylation' and $data_file_ext eq 'txt') {
                     # ALL NimbleGen HELP
-                    if ($dataset_dir_path =~ /ALL\/Discovery\//) {
+                    if ($dataset_dir_path =~ /ALL\//) {
                         my $col_header_line = <$data_fh>;
                         $col_header_line =~ s/\s+$//;
                         if ($col_header_line !~ /^probeset\t/i) {
@@ -455,8 +455,8 @@ for my $level (@data_levels) {
                         splice(@col_headers, 0, 1);
                         @file_sample_ids = natsort uniq(@col_headers);
                     }
-                    ## OS Discovery Illumina Infinium
-                    elsif ($dataset_dir_path =~ /OS\/Discovery\//) {
+                    ## OS Illumina Infinium
+                    elsif ($dataset_dir_path =~ /OS\//) {
                         my $col_header_line = <$data_fh>;
                         $col_header_line =~ s/\s+$//;
                         if ($col_header_line !~ /^ReporterID\t/i) {
