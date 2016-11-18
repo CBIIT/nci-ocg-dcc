@@ -221,8 +221,10 @@ my %sync_config = (
             'controlled' => {
                 'includes' => [
                     '*/',
-                    '/harmonized/*protected*',
-                    '/harmonized/*controlled*',
+                    '/controlled/*',
+                    '/protected/*',
+                    '/controlled/harmonized/***',
+                    '/protected/harmonized/***',
                 ],
                 'excludes' => [
                     '*',
@@ -230,9 +232,12 @@ my %sync_config = (
             },
             'public' => {
                 'excludes' => [
-                    '/harmonized/*protected*',
-                    '/harmonized/*controlled*',
+                    '/controlled',
+                    '/protected',
+                    '/public/orig_file',
                     '/orig_file',
+                    'controlled',
+                    'protected',
                 ],
             },
         },
