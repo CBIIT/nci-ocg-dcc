@@ -375,6 +375,12 @@ my %dcc_scanned_file_protocol_dag_conf = (
                     type => 'Fusion',
                 },
                 {
+                    type => 'Fusion-Defuse',
+                },
+                {
+                    type => 'Fusion-GenomeValidator',
+                },
+                {
                     type => 'Indel',
                 },
             ],
@@ -493,10 +499,16 @@ my %dcc_scanned_file_protocol_dag_conf = (
                     type => 'Fusion',
                 },
                 {
+                    type => 'Fusion-GenomeValidator',
+                },
+                {
                     type => 'Indel',
                 },
                 {
                     type => 'VariantCall',
+                },
+                {
+                    type => 'StructVariantCall-DELLY',
                 },
             ],
             'CGI' => [
@@ -893,7 +905,7 @@ for my $program_name (@program_names) {
                     next DATA_TYPE;
                 }
             }
-            for my $dataset (@datasets) {
+            DATASET: for my $dataset (@datasets) {
                 next if defined($user_params{data_sets}) and none { $dataset eq $_ } @{$user_params{data_sets}};
                 # current dataset mage-tab config hashref (saves typing)
                 if (
@@ -1039,7 +1051,7 @@ for my $program_name (@program_names) {
                         +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), 
                         ": \$merged_run_info_hashref:\n", Dumper($merged_run_info_hashref),
                         +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), 
-                        ": \$run_info_by_study_hashref:\n", Dumper($run_info_by_study_hashref),
+                        ": \$run_info_by_study_hashref:\n", Dumper($run_info_by_study_hashref);
                     $run_info_debug_dumped++;
                 }
                 if (%list) {
@@ -1294,7 +1306,8 @@ for my $program_name (@program_names) {
                                        " could not serialize and store $cgi_storable_file: $!";
                         }
                         else {
-                            die map { (-t STDERR ? colored('ERROR', 'red') : 'ERROR') . ": $_\n" } natsort @cgi_data_errors;
+                            warn map { (-t STDERR ? colored('ERROR', 'red') : 'ERROR') . ": $_\n" } natsort @cgi_data_errors;
+                            next DATASET;
                         }
                     }
                     else {
@@ -1525,7 +1538,7 @@ for my $program_name (@program_names) {
                                             for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                 my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
                                                 # special exclusion for TARGET OS CGI BCCA data
-                                                next if $disease_proj eq 'OS' and 
+                                                next if $disease_proj eq 'OS' and
                                                         !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode});
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
                                                     if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'HigherLevelSummary'}}) {
@@ -1550,7 +1563,7 @@ for my $program_name (@program_names) {
                                             for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                 my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
                                                 # special exclusion for TARGET OS CGI BCCA data
-                                                next if $disease_proj eq 'OS' and 
+                                                next if $disease_proj eq 'OS' and
                                                         !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode});
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
                                                     if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Junction'}}) {
@@ -1614,6 +1627,10 @@ for my $program_name (@program_names) {
                                         file_name => $file_name,
                                     };
                                 }
+                                # BCCA GenomeValidator tsvs
+                                elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d\.genome\.fusions\.somatic\.(large|small)\.summary\.tsv$/i) {
+                                    
+                                }
                                 # BCCA older mafs
                                 elsif ($file =~ /mutation\/BCCA\/.+?\.maf(\.txt)?$/i) {
                                     # extract barcode(s) out of file basename
@@ -1655,9 +1672,15 @@ for my $program_name (@program_names) {
                                             next if $project_name eq 'ALL' and any { m/Xenograft/i } keys %{$case_cmp_analysis_info_hashref};
                                             for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                 my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
+                                                # special run center handing for TARGET OS CGI BCCA data
+                                                my $run_center_name = (
+                                                    $disease_proj eq 'OS' and
+                                                    !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode})
+                                                ) ? 'BCCA'
+                                                  : 'CGI';
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'StJude'}{'CnvSegment'}}) {
-                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'StJude'}{'CnvSegment'}}, {
+                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment'}}) {
+                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment'}}, {
                                                             data_level => $data_level,
                                                             file_name => $file_name,
                                                         };
@@ -1666,19 +1689,19 @@ for my $program_name (@program_names) {
                                             }
                                         }
                                     }
-                                    # special inclusion OS WGS StJude
-                                    if (
-                                        $project_name eq 'OS' and
-                                        exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
-                                        exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
-                                    ) {
-                                        for my $barcode (keys %{$merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes}}) {
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'StJude'}{'CnvSegment'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
+                                    ## special inclusion OS WGS StJude
+                                    #if (
+                                    #    $project_name eq 'OS' and
+                                    #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
+                                    #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
+                                    #) {
+                                    #    for my $barcode (keys %{$merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes}}) {
+                                    #        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'StJude'}{'CnvSegment'}}, {
+                                    #            data_level => $data_level,
+                                    #            file_name => $file_name,
+                                    #        };
+                                    #    }
+                                    #}
                                 }
                                 # StJude mafs
                                 elsif ($file =~ /mutation\/StJude\/.*?\.maf(\.txt)?$/i) {
@@ -1691,9 +1714,15 @@ for my $program_name (@program_names) {
                                                         none { m/^$file_tissue_type$/i } keys %{$case_cmp_analysis_info_hashref};
                                                 for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                     my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
+                                                    # special run center handing for TARGET OS CGI BCCA data
+                                                    my $run_center_name = (
+                                                        $disease_proj eq 'OS' and
+                                                        !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode})
+                                                    ) ? 'BCCA'
+                                                      : 'CGI';
                                                     for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'StJude'}{'VariantCall'}}) {
-                                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'StJude'}{'VariantCall'}}, {
+                                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'VariantCall'}}) {
+                                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'VariantCall'}}, {
                                                                 data_level => $data_level,
                                                                 file_name => $file_name,
                                                             };
@@ -1706,19 +1735,19 @@ for my $program_name (@program_names) {
                                     else {
                                         push @dcc_file_errors, "could not determine tumor type from file name: $file";
                                     }
-                                    # special inclusion OS WGS StJude
-                                    if (
-                                        $project_name eq 'OS' and
-                                        exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
-                                        exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
-                                    ) {
-                                        for my $barcode (keys %{$merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes}}) {
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'StJude'}{'VariantCall'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
+                                    ## special inclusion OS WGS StJude
+                                    #if (
+                                    #    $project_name eq 'OS' and
+                                    #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
+                                    #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
+                                    #) {
+                                    #    for my $barcode (keys %{$merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes}}) {
+                                    #        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'StJude'}{'VariantCall'}}, {
+                                    #            data_level => $data_level,
+                                    #            file_name => $file_name,
+                                    #        };
+                                    #    }
+                                    #}
                                 }
                                 # StJude structural
                                 elsif ($file =~ /structural\/StJude\/.*?\.tsv$/i) {
@@ -1728,9 +1757,15 @@ for my $program_name (@program_names) {
                                             next if $project_name eq 'ALL' and any { m/Xenograft/i } keys %{$case_cmp_analysis_info_hashref};
                                             for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                 my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
+                                                # special run center handing for TARGET OS CGI BCCA data
+                                                my $run_center_name = (
+                                                    $disease_proj eq 'OS' and
+                                                    !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode})
+                                                ) ? 'BCCA'
+                                                  : 'CGI';
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'StJude'}{'Fusion'}}) {
-                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'StJude'}{'Fusion'}}, {
+                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'Fusion'}}) {
+                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'Fusion'}}, {
                                                             data_level => $data_level,
                                                             file_name => $file_name,
                                                         };
@@ -1739,19 +1774,19 @@ for my $program_name (@program_names) {
                                             }
                                         }
                                     }
-                                    # special inclusion OS WGS StJude
-                                    if (
-                                        $project_name eq 'OS' and
-                                        exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
-                                        exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
-                                    ) {
-                                        for my $barcode (keys %{$merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes}}) {
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'StJude'}{'Fusion'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
+                                    ## special inclusion OS WGS StJude
+                                    #if (
+                                    #    $project_name eq 'OS' and
+                                    #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
+                                    #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
+                                    #) {
+                                    #    for my $barcode (keys %{$merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes}}) {
+                                    #        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'StJude'}{'Fusion'}}, {
+                                    #            data_level => $data_level,
+                                    #            file_name => $file_name,
+                                    #        };
+                                    #    }
+                                    #}
                                 }
                                 elsif (
                                     $file_name =~ /^((.*?README.*?|MANIFEST)\.(txt|pdf)|somaticCircosLegend\.png|.+?\.(xls|doc)x?)$/ or
@@ -2303,7 +2338,8 @@ for my $program_name (@program_names) {
                     print map { "Marked $_->{file}\n" } natkeysort { $_->{file} } @dcc_marked_file_info;
                 }
                 if (@dcc_file_errors) {
-                    die map { (-t STDERR ? colored('ERROR', 'red') : 'ERROR') . ": $_\n" } natsort @dcc_file_errors;
+                    warn map { (-t STDERR ? colored('ERROR', 'red') : 'ERROR') . ": $_\n" } natsort @dcc_file_errors;
+                    next DATASET;
                 }
                 print "$num_files_processed processed\n" unless -t STDOUT and $num_files_processed and $data_type ne 'WXS';
                 if ($debug{all} or $debug{file_info}) {
@@ -2628,14 +2664,44 @@ for my $program_name (@program_names) {
                             ": unknown hardware model $hardware_model";
                     # special experiment/run exclusions
                     if (
-                        # TARGET ALLP1 and ALLP2 mRNA-seq
+                        # TARGET ALL
                         (
                             $program_name eq 'TARGET' and
-                            $project_name eq 'ALL' and 
-                            $data_type eq 'mRNA-seq' and
+                            $project_name eq 'ALL' and
                             (
-                                ( $dataset eq 'Phase1' and $exp_pkg_xml->{STUDY}->{alias} ne 'phs000463' ) or 
-                                ( $dataset eq 'Phase2' and $exp_pkg_xml->{STUDY}->{alias} ne 'phs000464' )
+                                (
+                                    (
+                                        $dataset eq 'Phase1' and
+                                        $exp_pkg_xml->{STUDY}->{alias} ne 'phs000463'
+                                    ) or
+                                    (
+                                        $dataset eq 'Phase2' and
+                                        $exp_pkg_xml->{STUDY}->{alias} ne 'phs000464'
+                                    )
+                                ) or
+                                (
+                                    (
+                                        $dataset eq 'Phase1+2' and
+                                        none {
+                                            uc($exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'submitted subject id'}) eq $_
+                                        } (
+                                            @{$mt_config_hashref->{project}->{cases_by_substudy}->{'Phase1'}},
+                                            @{$mt_config_hashref->{project}->{cases_by_substudy}->{'Phase2'}}
+                                        )
+                                    ) or
+                                    (
+                                        $dataset eq 'Phase2' and
+                                        none {
+                                            uc($exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'submitted subject id'}) eq $_
+                                        } @{$mt_config_hashref->{project}->{cases_by_substudy}->{'Phase2'}}
+                                    ) or
+                                    (
+                                        $dataset eq 'Phase3' and
+                                        none {
+                                            uc($exp_pkg_xml->{SAMPLE}->{SAMPLE_ATTRIBUTES}->{'submitted subject id'}) eq $_
+                                        } @{$mt_config_hashref->{project}->{cases_by_substudy}->{'Phase3'}}
+                                    )
+                                )
                             )
                         ) or
                         # TARGET MDLS-PPTP
@@ -3101,6 +3167,7 @@ for my $program_name (@program_names) {
                                                $disease_code eq '01' ? 'Diffuse Large B-Cell Lymphoma' :
                                                $disease_code eq '02' ? 'Lung Cancer' :
                                                $disease_code eq '10' ? 'Acute Lymphoblastic Leukemia' :
+                                               $disease_code eq '15' ? 'Mixed Phenotype Acute Leukemia' :
                                                $disease_code eq '20' ? 'Acute Myeloid Leukemia' :
                                                $disease_code eq '21' ? 'Acute Myeloid Leukemia' :
                                                $disease_code eq '30' ? 'Neuroblastoma' :
@@ -3159,6 +3226,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 elsif (
+                                    $disease_code eq '15' or
                                     $disease_code eq '20' or
                                     $disease_code eq '21' or
                                     $disease_code eq '30' or
@@ -3174,6 +3242,8 @@ for my $program_name (@program_names) {
                                                      $tissue_code eq '04' ? "Recurrent $ncit_disease" :
                                                      $tissue_code eq '05' ? $ncit_disease :
                                                      $tissue_code eq '06' ? "Metastatic $ncit_disease" :
+                                                     $tissue_code eq '07' ? $ncit_disease :
+                                                     $tissue_code eq '08' ? $ncit_disease :
                                                      $tissue_code eq '09' ? $ncit_disease :
                                                      $tissue_code eq '10' ? $ncit_disease :
                                                      $tissue_code eq '11' ? $ncit_disease :
@@ -3182,6 +3252,8 @@ for my $program_name (@program_names) {
                                                      $tissue_code eq '14' ? $ncit_disease :
                                                      $tissue_code eq '15' ? $ncit_disease :
                                                      $tissue_code eq '16' ? $ncit_disease :
+                                                     $tissue_code eq '17' ? $ncit_disease :
+                                                     $tissue_code eq '18' ? $ncit_disease :
                                                      $tissue_code eq '20' ? $ncit_disease : 
                                                      $tissue_code eq '40' ? "Recurrent $ncit_disease" :
                                                      $tissue_code eq '41' ? $ncit_disease :
@@ -3189,6 +3261,7 @@ for my $program_name (@program_names) {
                                                      $tissue_code eq '50' ? $ncit_disease :
                                                      $tissue_code eq '60' ? $ncit_disease :
                                                      $tissue_code eq '61' ? $ncit_disease :
+                                                     $tissue_code eq '99' ? $ncit_disease :
                                                      # special exceptions
                                                      $disease_code eq '100' ? '' :
                                                      $disease_code eq '101' ? '' :
@@ -3280,13 +3353,20 @@ for my $program_name (@program_names) {
                                                      $tissue_code eq '02' ? 'Solid Tumor' :
                                                      $tissue_code eq '03' ? 'Peripheral Blood' :
                                                      $tissue_code eq '04' ? 'Bone Marrow' :
+                                                     $tissue_code eq '05' ? 'Primary Tumor' :
                                                      $tissue_code eq '06' ? 'Metastatic Tumor' :
+                                                     $tissue_code eq '07' ? 'Metastatic Tumor' :
+                                                     $tissue_code eq '08' ? 'Primary Tumor' :
                                                      $tissue_code eq '09' ? 'Bone Marrow' :
                                                      $tissue_code eq '10' ? 'Peripheral Blood' :
                                                      $tissue_code eq '11' ? 'Normal Tissue' :
-                                                     $tissue_code eq '13' ? 'EBV Immortalized Normal' :
+                                                     $tissue_code eq '12' ? 'Buccal Mucosa' :
+                                                     $tissue_code eq '13' ? 'Lymphocyte' :
                                                      $tissue_code eq '14' ? 'Bone Marrow' :
                                                      $tissue_code eq '15' ? 'Bone Marrow' :
+                                                     $tissue_code eq '16' ? 'Bone Marrow' :
+                                                     $tissue_code eq '17' ? 'Lymphoid Tissue' :
+                                                     $tissue_code eq '18' ? 'Adjacent Normal Tissue' :
                                                      $tissue_code eq '20' ? 'Cell Line' :
                                                      $tissue_code eq '40' ? 'Peripheral Blood' :
                                                      $tissue_code eq '41' ? 'Bone Marrow' :
@@ -3294,6 +3374,7 @@ for my $program_name (@program_names) {
                                                      $tissue_code eq '50' ? 'Cell Line' :
                                                      $tissue_code eq '60' ? 'Xenograft' :
                                                      $tissue_code eq '61' ? 'Xenograft' :
+                                                     $tissue_code eq '99' ? 'Granulocyte' :
                                                      # special exceptions
                                                      $disease_code eq '100' ? '' :
                                                      $disease_code eq '101' ? '' :
@@ -3952,9 +4033,12 @@ for my $program_name (@program_names) {
                                 $sdrf_run_data[$mage_tab_sdrf_base_col_idx_by_type_key{run}{$col_key}] = defined($field_value) ? $field_value : '';
                             }
                             my $is_bam_run = (
-                                defined($run_xml->{Databases}) and
-                                defined($run_xml->{Databases}->{Table}) and
-                                defined($run_xml->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
+                                (
+                                    defined($run_xml->{Databases}) and
+                                    defined($run_xml->{Databases}->{Table}) and
+                                    defined($run_xml->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
+                                ) or
+                                defined($run_xml->{AlignInfo})
                             ) ? 1 : 0;
                             if (!$is_bam_run) {
                                 my @sdrf_run_fastq_data;
@@ -4337,14 +4421,20 @@ for my $program_name (@program_names) {
                         if (
                             $data_type eq 'mRNA-seq' and
                             any {
-                                !defined($_->{Databases}) or
-                                !defined($_->{Databases}->{Table}) or
-                                !defined($_->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
+                                (
+                                    !defined($_->{Databases}) or
+                                    !defined($_->{Databases}->{Table}) or
+                                    !defined($_->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
+                                ) and
+                                !defined($_->{AlignInfo})
                             } @{$exp_pkg_xml->{RUN_SET}} and
                             one {
-                                defined($_->{Databases}) and
-                                defined($_->{Databases}->{Table}) and
-                                defined($_->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
+                                (
+                                    defined($_->{Databases}) and
+                                    defined($_->{Databases}->{Table}) and
+                                    defined($_->{Databases}->{Table}->{PRIMARY_ALIGNMENT})
+                                ) or
+                                defined($_->{AlignInfo})
                             } @{$exp_pkg_xml->{RUN_SET}}
                         ) {
                             my $sdrf_run_bam_data_idx = firstidx { $_->{is_bam_run} } @sdrf_run_set_data;
@@ -4814,8 +4904,11 @@ sub get_barcode_info {
                       $tissue_code eq '03' ? 'Primary' :
                       $tissue_code eq '04' ? 'Recurrent' :
                       $tissue_code eq '05' ? 'Primary' :
-                      # 06 is actually Metastatic but Primary for this purpose
+                      # 06,07 are Metastatic and 08 is Post Neo-Adjuvant
+                      # but all Primary for this purpose
                       $tissue_code eq '06' ? 'Primary' :
+                      $tissue_code eq '07' ? 'Primary' :
+                      $tissue_code eq '08' ? 'Primary' :
                       $tissue_code eq '09' ? 'Primary' :
                       $tissue_code eq '10' ? 'Normal' :
                       $tissue_code eq '11' ? 'Normal' :
@@ -4824,6 +4917,10 @@ sub get_barcode_info {
                       $tissue_code eq '14' ? 'Normal' :
                       $tissue_code eq '15' ? 'NormalFibroblast' :
                       $tissue_code eq '16' ? 'Normal' :
+                      $tissue_code eq '17' ? 'Normal' :
+                      # 18 is Post Neo-Adjuvant Adjacent Normal
+                      # but Normal for this purpose
+                      $tissue_code eq '18' ? 'Normal' :
                       $tissue_code eq '20' ? 'CellLineControl' : 
                       $tissue_code eq '40' ? 'Recurrent' :
                       $tissue_code eq '41' ? 'Recurrent' :
@@ -4831,6 +4928,7 @@ sub get_barcode_info {
                       $tissue_code eq '50' ? 'CellLine' :
                       $tissue_code eq '60' ? 'Xenograft' :
                       $tissue_code eq '61' ? 'Xenograft' :
+                      $tissue_code eq '99' ? 'Granulocyte' :
                       undef;
     die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
         ": unknown tissue code $tissue_code\n" unless defined $tissue_type;
