@@ -2,19 +2,19 @@
 
 use strict;
 use warnings;
-use sigtrap qw(handler sig_handler normal-signals error-signals ALRM);
-use Cwd qw(realpath);
+use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
+use Cwd qw( realpath );
 use Digest::MD5;
-#use Crypt::Digest::SHA256 qw(sha256_file_hex);
+#use Crypt::Digest::SHA256 qw( sha256_file_hex );
 use Digest::SHA;
-use File::Basename qw(fileparse);
+use File::Basename qw( fileparse );
 use File::Find;
 use File::Spec;
-use Getopt::Long qw(:config auto_help auto_version);
-use List::Util qw(any all max none);
-use List::MoreUtils qw(uniq);
-use Pod::Usage qw(pod2usage);
-use Sort::Key::Natural qw(natsort mkkey_natural);
+use Getopt::Long qw( :config auto_help auto_version );
+use List::Util qw( any all max none );
+use List::MoreUtils qw( uniq );
+use Pod::Usage qw( pod2usage );
+use Sort::Key::Natural qw( natsort mkkey_natural );
 use Term::ANSIColor;
 use Data::Dumper;
 
