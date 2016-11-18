@@ -4,11 +4,11 @@ use strict;
 use warnings;
 use File::Find;
 use File::Spec;
-use Getopt::Long qw(:config auto_help auto_version);
-use List::Util qw(any none max);
-use Pod::Usage qw(pod2usage);
-use POSIX qw(strftime);
-use Sort::Key::Natural qw(mkkey_natural);
+use Getopt::Long qw( :config auto_help auto_version );
+use List::Util qw( any none max );
+use Pod::Usage qw( pod2usage );
+use POSIX qw( strftime );
+use Sort::Key::Natural qw( natsort mkkey_natural );
 use Term::ANSIColor;
 use Data::Dumper;
 
@@ -18,9 +18,13 @@ our $VERSION = '0.1';
 select(STDERR); $| = 1;
 select(STDOUT); $| = 1;
 
-$Data::Dumper::Sortkeys = 1;
 $Data::Dumper::Terse = 1;
 $Data::Dumper::Deepcopy = 1;
+$Data::Dumper::Sortkeys = sub {
+    my ($hashref) = @_;
+    my @sorted_keys = natsort keys %{$hashref};
+    return \@sorted_keys;
+};
 
 # sort by file path (file column idx 1)
 sub manifest_by_file_path {
