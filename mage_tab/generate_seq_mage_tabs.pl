@@ -2343,8 +2343,8 @@ for my $program_name (@program_names) {
                 }
                 print "$num_files_processed processed\n" unless -t STDOUT and $num_files_processed and $data_type ne 'WXS';
                 if ($debug{all} or $debug{file_info}) {
-                    print STDERR 
-                        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), 
+                    print STDERR
+                        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'),
                         ": \%dcc_scanned_file_info:\n", Dumper(\%dcc_scanned_file_info);
                 }
                 my (
@@ -2470,11 +2470,11 @@ for my $program_name (@program_names) {
                         }
                     }
                 }
-                if ($debug{all} or $debug{file_info}) {
-                    print STDERR 
-                        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), 
-                        ": \%dcc_sdrf_dag_info:\n", Dumper(\%dcc_sdrf_dag_info);
-                }
+                #if ($debug{all} or $debug{file_info}) {
+                #    print STDERR
+                #        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'),
+                #        ": \%dcc_sdrf_dag_info:\n", Dumper(\%dcc_sdrf_dag_info);
+                #}
                 my @exp_ids = map { keys %{$_->{exp_ids}} } values %{$merged_run_info_hashref->{$data_type}};
                 my @library_names = map { keys %{$_->{library_name_barcode}} } values %{$merged_run_info_hashref->{$data_type}};
                 my @run_ids = map { keys %{$_->{run_ids}} } values %{$merged_run_info_hashref->{$data_type}};
@@ -4366,7 +4366,7 @@ for my $program_name (@program_names) {
                             }
                             if (%add_dcc_scanned_file_info and ($debug{all} or $debug{file_info})) {
                                 print STDERR "\n",
-                                    +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), 
+                                    +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'),
                                     ": \%add_dcc_scanned_file_info:\n", Dumper(\%add_dcc_scanned_file_info);
                             }
                             for my $data_type (
@@ -4411,11 +4411,6 @@ for my $program_name (@program_names) {
                                     }
                                 }
                             }
-                            #if ($debug{all} or $debug{file_info}) {
-                            #    print STDERR 
-                            #        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), 
-                            #        ": \%dcc_sdrf_dag_info:\n", Dumper(\%dcc_sdrf_dag_info);
-                            #}
                         }
                         # special case mRNA-seq run set with one or more FASTQ + one BAM run needs to be collapsed properly
                         if (
@@ -4539,6 +4534,11 @@ for my $program_name (@program_names) {
                 print "$num_exps_processed processed" unless -t STDOUT and $num_exps_processed;
                 print " / $num_exps_skipped skipped" if $num_exps_skipped;
                 print "\n";
+                if ($debug{all} or $debug{file_info}) {
+                    print STDERR
+                        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'),
+                        ": \%dcc_sdrf_dag_info:\n", Dumper(\%dcc_sdrf_dag_info);
+                }
                 # report DCC data not linked to SRA
                 my @dcc_data_no_link_sra;
                 for my $data_type (
