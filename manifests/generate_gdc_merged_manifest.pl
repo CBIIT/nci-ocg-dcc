@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use Cwd qw( cwd );
 use File::Find;
 use File::Spec;
 use Getopt::Long qw( :config auto_help auto_version );
@@ -128,7 +129,7 @@ for my $program_name (@program_names) {
     next if defined $user_params{programs} and none { $program_name eq $_ } @{$user_params{programs}};
     my $manifest_gid = getgrnam("\L$program_name\E-dn-adm")
         or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for \L$program_name\E-dn-adm\n";
-    my $program_download_dir = "/local/\L$program_name\E/download";
+    my $program_download_dir = "/local/ocg-dcc/download/\U$program_name\E";
     my @search_download_dirs = (
         "$program_download_dir/Controlled",
         "$program_download_dir/Public",
@@ -167,13 +168,19 @@ for my $program_name (@program_names) {
     }
     my @sorted_merged_manifest_lines = sort manifest_by_file_path @merged_manifest_lines;
     my $date_str = strftime('%Y%m%d', localtime);
-    my $merged_manifest_file = "$program_download_dir/PreRelease/GDC/\U$program_name\E_MANIFEST_MERGED_${date_str}.txt";
+    my $merged_manifest_file_name = "\U$program_name\E_MANIFEST_MERGED_${date_str}.txt";
+    my $merged_manifest_file = (
+        !$dry_run
+            ? "$program_download_dir/PreRelease/GDC"
+            : cwd()
+    ) . "/$merged_manifest_file_name";
     print "Writing $merged_manifest_file\n" if $verbose;
+    open(my $manifest_out_fh, '>', $merged_manifest_file) 
+        or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), 
+               ": could not write open $merged_manifest_file: $!";
+    print $manifest_out_fh @sorted_merged_manifest_lines;
+    close($manifest_out_fh);
     if (!$dry_run) {
-        open(my $manifest_out_fh, '>', $merged_manifest_file)
-            or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": could not write open $merged_manifest_file: $!";
-        print $manifest_out_fh @sorted_merged_manifest_lines;
-        close($manifest_out_fh);
         set_manifest_perms(
             $merged_manifest_file, $manifest_gid, $manifest_file_perm,
         );
@@ -205,6 +212,7 @@ generate_merged_manifest.pl - OCG DCC Merged Manifest Generator
  
  Options:
     --verbose               Be verbose
+    --dry-run               Perform trial run creating new merged manifest in $PWD (sudo not required, default: off)
     --help                  Display usage message and exit
     --version               Display program version and exit
 

@@ -332,7 +332,7 @@ for my $program_name (@program_names) {
         DATA_TYPE: for my $data_type (@data_types) {
             next if defined($user_params{data_types}) and none { $data_type eq $_ } @{$user_params{data_types}};
             (my $data_type_dir_name = $data_type) =~ s/-Seq$/-seq/i;
-            my $data_type_dir = "/local/\L$program_name\E/data/$project_dir/$data_type_dir_name";
+            my $data_type_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_dir/$data_type_dir_name";
             next unless -d $data_type_dir;
             opendir(my $data_type_dh, $data_type_dir) 
                 or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $data_type_dir: $!";
@@ -409,7 +409,7 @@ for my $program_name (@program_names) {
                                         check_manifests(
                                             $real_data_dir, 
                                             \@manifest_file_names,
-                                            $real_data_dir =~ /^\/local\/\L$program_name\E\/download\// ? 1 : 0,
+                                            $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
                                             $manifest_download_gid,
                                             \@data_file_names,
                                         );
@@ -509,7 +509,7 @@ for my $program_name (@program_names) {
                                 check_manifests(
                                     $real_data_dir, 
                                     \@manifest_file_names,
-                                    $real_data_dir =~ /^\/local\/\L$program_name\E\/download\// ? 1 : 0,
+                                    $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
                                     $manifest_download_gid,
                                     \@data_file_names,
                                 );

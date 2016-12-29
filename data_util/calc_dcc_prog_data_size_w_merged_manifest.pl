@@ -68,7 +68,7 @@ while (<$fh>) {
     next if m/^\s*$/;
     s/\s+$//;
     my ($checksum, $file_rel_path) = split /$manifest_delimiter_regexp/, $_, 2;
-    my $file_path = "/local/\L$program_name\E/download/$file_rel_path";
+    my $file_path = "/local/ocg-dcc/download/\U$program_name\E/$file_rel_path";
     if (-e $file_path) {
         if (!exists $checksums{$checksum}) {
             $total_num_bytes += -s $file_path;

@@ -34,32 +34,32 @@ my @email_to_addresses = qw(
 my %program_info = (
     'TARGET' => {
         dirs_to_watch => [
-            '/local/target/data',
-            '/local/target/download',
+            '/local/ocg-dcc/data/TARGET',
+            '/local/ocg-dcc/download/TARGET',
         ],
         dirs_to_exclude => [
-            '/local/target/data/.snapshot',
-            '/local/target/download/.snapshot',
+            '/local/ocg-dcc/data/TARGET/.snapshot',
+            '/local/ocg-dcc/download/TARGET/.snapshot',
         ],
     },
     'CGCI' => {
         dirs_to_watch => [
-            '/local/cgci/data',
-            '/local/cgci/download',
+            '/local/ocg-dcc/data/CGCI',
+            '/local/ocg-dcc/download/CGCI',
         ],
         dirs_to_exclude => [
-            '/local/cgci/data/.snapshot',
-            '/local/cgci/download/.snapshot',
+            '/local/ocg-dcc/data/CGCI/.snapshot',
+            '/local/ocg-dcc/download/CGCI/.snapshot',
         ],
     },
     'CTD2' => {
         dirs_to_watch => [
-            '/local/ctd2/data',
-            '/local/ctd2/download',
+            '/local/ocg-dcc/data/CTD2',
+            '/local/ocg-dcc/download/CTD2',
         ],
         dirs_to_exclude => [
-            '/local/ctd2/data/.snapshot',
-            '/local/ctd2/download/.snapshot',
+            '/local/ocg-dcc/data/CTD2/.snapshot',
+            '/local/ocg-dcc/download/CTD2/.snapshot',
         ],
     },
 );

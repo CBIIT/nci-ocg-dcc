@@ -43,10 +43,10 @@ my @email_cc_addresses = qw(
 my %program_info = (
     'TARGET' => {
         dirs_to_watch => [
-            '/local/target/upload',
+            '/local/ocg-dcc/upload/TARGET',
         ],
         dirs_to_exclude => [
-            '/local/target/upload/.snapshot',
+            '/local/ocg-dcc/upload/TARGET/.snapshot',
         ],
         email_cc_addresses => [
             'jaime.guidryauvil@nih.gov',
@@ -54,10 +54,10 @@ my %program_info = (
     },
     'CGCI' => {
         dirs_to_watch => [
-            '/local/cgci/upload',
+            '/local/ocg-dcc/upload/CGCI',
         ],
         dirs_to_exclude => [
-            '/local/cgci/upload/.snapshot',
+            '/local/ocg-dcc/upload/CGCI/.snapshot',
         ],
         email_cc_addresses => [
             'jaime.guidryauvil@nih.gov',
@@ -66,10 +66,10 @@ my %program_info = (
     },
     'CTD2' => {
         dirs_to_watch => [
-            '/local/ctd2/upload',
+            '/local/ocg-dcc/upload/CTD2',
         ],
         dirs_to_exclude => [
-            '/local/ctd2/upload/.snapshot',
+            '/local/ocg-dcc/upload/CTD2/.snapshot',
         ],
         email_cc_addresses => [
             'subhashini.jagu@nih.gov',

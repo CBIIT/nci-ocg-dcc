@@ -1150,7 +1150,7 @@ for my $program_name (@program_names) {
         DATA_TYPE: for my $data_type (@data_types) {
             next if defined $user_params{data_types} and none { $data_type eq $_ } @{$user_params{data_types}};
             (my $data_type_dir_name = $data_type) =~ s/-Seq$/-seq/i;
-            my $data_type_dir = "/local/\L$program_name\E/data/$project_dir/$data_type_dir_name";
+            my $data_type_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_dir/$data_type_dir_name";
             next unless -d $data_type_dir;
             opendir(my $data_type_dh, $data_type_dir) 
                 or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $data_type_dir: $!";
@@ -1187,19 +1187,14 @@ for my $program_name (@program_names) {
                 for my $dest (@dests) {
                     next if (!defined $user_params{dests} and $dest ne 'PreRelease') or
                             ( defined $user_params{dests} and none { $dest eq $_ } @{$user_params{dests}});
-                    my $download_dir = 'download';
+                    my $download_dir_name = $dest;
                     if ($dest eq 'Controlled') {
-                        $download_dir = $project_name eq 'MB'
-                                      ? "$download_dir/${dest}_Pediatric"
-                                      : "$download_dir/$dest";
+                        $download_dir_name = "${dest}_Pediatric" if $project_name eq 'MB';
                     }
                     elsif ($dest eq 'Release') {
-                        $download_dir = "$download_dir/PreRelease";
+                        $download_dir_name = 'PreRelease';
                     }
-                    else {
-                        $download_dir = "$download_dir/$dest";
-                    }
-                    my $dest_data_type_dir = "/local/\L$program_name\E/$download_dir/$project_dir/$data_type_dir_name";
+                    my $dest_data_type_dir = "/local/ocg-dcc/download/\U$program_name\E/$download_dir_name/$project_dir/$data_type_dir_name";
                     my $dest_dataset_dir = $dest_data_type_dir . ( $dataset ? "/$dataset" : '' );
                     my $group_name = $dest eq 'Controlled'
                                    ? ( $program_name eq 'CGCI' and $project_name eq 'MB' )
