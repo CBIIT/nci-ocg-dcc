@@ -1,4 +1,4 @@
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HLD-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HLD-01A-01D_exome.bam
 
 Number of records read = 172702137
 Number of valid records = 172702137
@@ -20,7 +20,7 @@ TotalBases(e6)	16057.48
 BasesInMappedReads(e6)	15579.11
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HLD-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HLD-10A-01D_exome.bam
 
 Number of records read = 285785603
 Number of valid records = 285785603
@@ -42,7 +42,7 @@ TotalBases(e6)	27134.45
 BasesInMappedReads(e6)	25995.71
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HMC-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HMC-01A-01D_exome.bam
 
 Number of records read = 78118137
 Number of valid records = 78118137
@@ -64,7 +64,7 @@ TotalBases(e6)	7884.09
 BasesInMappedReads(e6)	7792.76
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HMC-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HMC-10A-01D_exome.bam
 
 Number of records read = 81231275
 Number of valid records = 81231275
@@ -86,7 +86,7 @@ TotalBases(e6)	8188.93
 BasesInMappedReads(e6)	8032.99
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HX8-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HX8-01A-01D_exome.bam
 
 Number of records read = 379009314
 Number of valid records = 379009314
@@ -108,7 +108,7 @@ TotalBases(e6)	34652.09
 BasesInMappedReads(e6)	33141.26
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HX8-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HX8-10A-01D_exome.bam
 
 Number of records read = 351490857
 Number of valid records = 351490857
@@ -130,7 +130,7 @@ TotalBases(e6)	34251.95
 BasesInMappedReads(e6)	31227.80
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HXS-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HXS-01A-01D_exome.bam
 
 Number of records read = 137947748
 Number of valid records = 137947748
@@ -152,7 +152,7 @@ TotalBases(e6)	11171.75
 BasesInMappedReads(e6)	10687.17
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HXS-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HXS-01A-01Y_exome.bam
 
 Number of records read = 127271287
 Number of valid records = 127271287
@@ -174,7 +174,7 @@ TotalBases(e6)	12774.29
 BasesInMappedReads(e6)	12641.46
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HXS-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HXS-10A-01D_exome.bam
 
 Number of records read = 183831953
 Number of valid records = 183831953
@@ -196,7 +196,7 @@ TotalBases(e6)	17360.12
 BasesInMappedReads(e6)	16971.70
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HY5-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HY5-01A-01D_exome.bam
 
 Number of records read = 85335283
 Number of valid records = 85335283
@@ -218,7 +218,7 @@ TotalBases(e6)	8609.59
 BasesInMappedReads(e6)	8141.83
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HY5-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4HY5-10A-01D_exome.bam
 
 Number of records read = 51469026
 Number of valid records = 51469026
@@ -240,7 +240,7 @@ TotalBases(e6)	5185.14
 BasesInMappedReads(e6)	5081.05
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0Q-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0Q-01A-01D_exome.bam
 
 Number of records read = 161131998
 Number of valid records = 161131998
@@ -262,7 +262,7 @@ TotalBases(e6)	13048.49
 BasesInMappedReads(e6)	12175.33
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0Q-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0Q-01A-01Y_exome.bam
 
 Number of records read = 130725875
 Number of valid records = 130725875
@@ -284,7 +284,7 @@ TotalBases(e6)	13090.22
 BasesInMappedReads(e6)	12935.11
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0Q-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0Q-10A-01D_exome.bam
 
 Number of records read = 139119035
 Number of valid records = 139119035
@@ -306,7 +306,7 @@ TotalBases(e6)	12637.43
 BasesInMappedReads(e6)	12217.89
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0W-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0W-01A-01D_exome.bam
 
 Number of records read = 288751284
 Number of valid records = 288751284
@@ -328,7 +328,7 @@ TotalBases(e6)	24996.76
 BasesInMappedReads(e6)	24211.95
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0W-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I0W-10A-01D_exome.bam
 
 Number of records read = 129446079
 Number of valid records = 129446079
@@ -350,7 +350,7 @@ TotalBases(e6)	13034.79
 BasesInMappedReads(e6)	12464.29
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I3S-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I3S-01A-01D_exome.bam
 
 Number of records read = 203551710
 Number of valid records = 203551710
@@ -372,7 +372,7 @@ TotalBases(e6)	17937.82
 BasesInMappedReads(e6)	17456.58
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I3S-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I3S-10A-01D_exome.bam
 
 Number of records read = 272245389
 Number of valid records = 272245389
@@ -394,7 +394,7 @@ TotalBases(e6)	25759.44
 BasesInMappedReads(e6)	25059.35
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I42-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I42-01A-01D_exome.bam
 
 Number of records read = 662373639
 Number of valid records = 662373639
@@ -416,7 +416,7 @@ TotalBases(e6)	65385.54
 BasesInMappedReads(e6)	62621.58
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I42-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I42-10A-01D_exome.bam
 
 Number of records read = 334675800
 Number of valid records = 334675800
@@ -438,7 +438,7 @@ TotalBases(e6)	31559.14
 BasesInMappedReads(e6)	30554.65
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I48-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I48-01A-01D_exome.bam
 
 Number of records read = 89165526
 Number of valid records = 89165526
@@ -460,7 +460,7 @@ TotalBases(e6)	8999.46
 BasesInMappedReads(e6)	8151.24
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I48-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I48-10A-01D_exome.bam
 
 Number of records read = 57349844
 Number of valid records = 57349844
@@ -482,7 +482,7 @@ TotalBases(e6)	5776.92
 BasesInMappedReads(e6)	5686.66
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4E-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4E-01A-01D_exome.bam
 
 Number of records read = 110259172
 Number of valid records = 110259172
@@ -504,7 +504,7 @@ TotalBases(e6)	11126.75
 BasesInMappedReads(e6)	9964.49
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4E-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4E-10A-01D_exome.bam
 
 Number of records read = 70272550
 Number of valid records = 70272550
@@ -526,7 +526,7 @@ TotalBases(e6)	7082.52
 BasesInMappedReads(e6)	6973.71
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4M-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4M-01A-01D_exome.bam
 
 Number of records read = 90483500
 Number of valid records = 90483500
@@ -548,7 +548,7 @@ TotalBases(e6)	9117.78
 BasesInMappedReads(e6)	8286.92
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4M-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4M-10A-01D_exome.bam
 
 Number of records read = 95981498
 Number of valid records = 95981498
@@ -570,7 +570,7 @@ TotalBases(e6)	9670.28
 BasesInMappedReads(e6)	9514.23
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4O-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4O-01A-01D_exome.bam
 
 Number of records read = 178348984
 Number of valid records = 178348984
@@ -592,7 +592,7 @@ TotalBases(e6)	17970.03
 BasesInMappedReads(e6)	17144.37
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4O-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I4O-10A-01D_exome.bam
 
 Number of records read = 90510325
 Number of valid records = 90510325
@@ -614,7 +614,7 @@ TotalBases(e6)	9121.65
 BasesInMappedReads(e6)	8958.82
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I5B-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I5B-01A-01D_exome.bam
 
 Number of records read = 186698425
 Number of valid records = 186698425
@@ -636,7 +636,7 @@ TotalBases(e6)	18810.67
 BasesInMappedReads(e6)	17860.95
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I5B-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I5B-10A-01D_exome.bam
 
 Number of records read = 63371395
 Number of valid records = 63371395
@@ -658,7 +658,7 @@ TotalBases(e6)	6387.84
 BasesInMappedReads(e6)	6303.46
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I65-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I65-01A-01D_exome.bam
 
 Number of records read = 99857417
 Number of valid records = 99857417
@@ -680,7 +680,7 @@ TotalBases(e6)	10079.28
 BasesInMappedReads(e6)	9158.84
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I65-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I65-10A-01D_exome.bam
 
 Number of records read = 126374160
 Number of valid records = 126374160
@@ -702,7 +702,7 @@ TotalBases(e6)	12738.09
 BasesInMappedReads(e6)	12648.31
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I6O-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I6O-01A-01D_exome.bam
 
 Number of records read = 80858905
 Number of valid records = 80858905
@@ -724,7 +724,7 @@ TotalBases(e6)	6547.80
 BasesInMappedReads(e6)	6310.23
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I6O-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I6O-01A-01Y_exome.bam
 
 Number of records read = 69932619
 Number of valid records = 69932619
@@ -746,7 +746,7 @@ TotalBases(e6)	6954.22
 BasesInMappedReads(e6)	6848.17
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I6O-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I6O-10A-01D_exome.bam
 
 Number of records read = 134617512
 Number of valid records = 134617512
@@ -768,7 +768,7 @@ TotalBases(e6)	12266.75
 BasesInMappedReads(e6)	11504.38
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I8U-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I8U-01A-01D_exome.bam
 
 Number of records read = 399623537
 Number of valid records = 399623537
@@ -790,7 +790,7 @@ TotalBases(e6)	36392.67
 BasesInMappedReads(e6)	33498.15
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I8U-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I8U-10A-01D_exome.bam
 
 Number of records read = 196571972
 Number of valid records = 196571972
@@ -812,7 +812,7 @@ TotalBases(e6)	18302.05
 BasesInMappedReads(e6)	17924.96
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I9K-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I9K-01A-01D_exome.bam
 
 Number of records read = 230178463
 Number of valid records = 230178463
@@ -834,7 +834,7 @@ TotalBases(e6)	23230.34
 BasesInMappedReads(e6)	22068.24
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I9K-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-0A4I9K-10A-01D_exome.bam
 
 Number of records read = 57254594
 Number of valid records = 57254594
@@ -856,7 +856,7 @@ TotalBases(e6)	5763.39
 BasesInMappedReads(e6)	5645.16
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKFVX-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKFVX-01A-01D_exome.bam
 
 Number of records read = 146254654
 Number of valid records = 146254654
@@ -878,7 +878,7 @@ TotalBases(e6)	11844.08
 BasesInMappedReads(e6)	11148.13
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKFVX-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKFVX-10A-01D_exome.bam
 
 Number of records read = 99667121
 Number of valid records = 99667121
@@ -900,7 +900,7 @@ TotalBases(e6)	8071.34
 BasesInMappedReads(e6)	7597.08
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKUZU-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKUZU-01A-01D_exome.bam
 
 Number of records read = 86402266
 Number of valid records = 86402266
@@ -922,7 +922,7 @@ TotalBases(e6)	8717.17
 BasesInMappedReads(e6)	8498.68
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKUZU-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKUZU-10A-01D_exome.bam
 
 Number of records read = 64345853
 Number of valid records = 64345853
@@ -944,7 +944,7 @@ TotalBases(e6)	6490.94
 BasesInMappedReads(e6)	6348.10
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKXLD-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKXLD-01A-01D_exome.bam
 
 Number of records read = 224259278
 Number of valid records = 224259278
@@ -966,7 +966,7 @@ TotalBases(e6)	18160.63
 BasesInMappedReads(e6)	15789.26
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKXLD-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKXLD-10A-01D_exome.bam
 
 Number of records read = 87266731
 Number of valid records = 87266731
@@ -988,7 +988,7 @@ TotalBases(e6)	7066.71
 BasesInMappedReads(e6)	6530.00
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKZZK-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKZZK-01A-01Y_exome.bam
 
 Number of records read = 252494947
 Number of valid records = 252494947
@@ -1010,7 +1010,7 @@ TotalBases(e6)	21584.45
 BasesInMappedReads(e6)	20731.93
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKZZK-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAKZZK-10A-01D_exome.bam
 
 Number of records read = 631142188
 Number of valid records = 631142188
@@ -1032,7 +1032,7 @@ TotalBases(e6)	62594.23
 BasesInMappedReads(e6)	60988.24
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALECC-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALECC-01A-01D_exome.bam
 
 Number of records read = 104238683
 Number of valid records = 104238683
@@ -1054,7 +1054,7 @@ TotalBases(e6)	8440.54
 BasesInMappedReads(e6)	8129.33
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALECC-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALECC-10A-01D_exome.bam
 
 Number of records read = 127498821
 Number of valid records = 127498821
@@ -1076,7 +1076,7 @@ TotalBases(e6)	12872.43
 BasesInMappedReads(e6)	11516.28
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALFYN-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALFYN-01A-01D_exome.bam
 
 Number of records read = 152534406
 Number of valid records = 152534406
@@ -1098,7 +1098,7 @@ TotalBases(e6)	12352.06
 BasesInMappedReads(e6)	11613.38
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALFYN-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALFYN-10A-01D_exome.bam
 
 Number of records read = 102292868
 Number of valid records = 102292868
@@ -1120,7 +1120,7 @@ TotalBases(e6)	8284.17
 BasesInMappedReads(e6)	7727.11
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALHRL-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALHRL-01A-01D_exome.bam
 
 Number of records read = 222912318
 Number of valid records = 222912318
@@ -1142,7 +1142,7 @@ TotalBases(e6)	18050.98
 BasesInMappedReads(e6)	16324.09
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALHRL-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALHRL-10A-01D_exome.bam
 
 Number of records read = 102918638
 Number of valid records = 102918638
@@ -1164,7 +1164,7 @@ TotalBases(e6)	8334.82
 BasesInMappedReads(e6)	7752.97
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALKDP-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALKDP-01A-01D_exome.bam
 
 Number of records read = 147420545
 Number of valid records = 147420545
@@ -1186,7 +1186,7 @@ TotalBases(e6)	11938.76
 BasesInMappedReads(e6)	11054.50
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALKDP-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALKDP-10A-01D_exome.bam
 
 Number of records read = 114494825
 Number of valid records = 114494825
@@ -1208,7 +1208,7 @@ TotalBases(e6)	9272.16
 BasesInMappedReads(e6)	8532.91
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALKGN-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALKGN-01A-01D_exome.bam
 
 Number of records read = 186093061
 Number of valid records = 186093061
@@ -1230,7 +1230,7 @@ TotalBases(e6)	15070.73
 BasesInMappedReads(e6)	14211.85
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALKGN-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALKGN-10A-01D_exome.bam
 
 Number of records read = 225641646
 Number of valid records = 225641646
@@ -1252,7 +1252,7 @@ TotalBases(e6)	18272.70
 BasesInMappedReads(e6)	16588.42
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALWWX-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALWWX-01A-01D_exome.bam
 
 Number of records read = 220214383
 Number of valid records = 220214383
@@ -1274,7 +1274,7 @@ TotalBases(e6)	17831.65
 BasesInMappedReads(e6)	17056.22
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALWWX-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALWWX-10A-01D_exome.bam
 
 Number of records read = 176207651
 Number of valid records = 176207651
@@ -1296,7 +1296,7 @@ TotalBases(e6)	14269.75
 BasesInMappedReads(e6)	13477.83
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALZGU-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALZGU-01A-01D_exome.bam
 
 Number of records read = 301603471
 Number of valid records = 301603471
@@ -1318,7 +1318,7 @@ TotalBases(e6)	24419.35
 BasesInMappedReads(e6)	22467.71
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALZGU-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PALZGU-10A-01D_exome.bam
 
 Number of records read = 169922147
 Number of valid records = 169922147
@@ -1340,7 +1340,7 @@ TotalBases(e6)	13761.28
 BasesInMappedReads(e6)	12837.09
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMEKS-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMEKS-01A-01D_exome.bam
 
 Number of records read = 465498587
 Number of valid records = 465498587
@@ -1362,7 +1362,7 @@ TotalBases(e6)	40322.42
 BasesInMappedReads(e6)	37562.64
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMEKS-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMEKS-10A-01D_exome.bam
 
 Number of records read = 67990328
 Number of valid records = 67990328
@@ -1384,7 +1384,7 @@ TotalBases(e6)	5506.23
 BasesInMappedReads(e6)	5240.36
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHLF-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHLF-01A-01Y_exome.bam
 
 Number of records read = 99662851
 Number of valid records = 99662851
@@ -1406,7 +1406,7 @@ TotalBases(e6)	8054.24
 BasesInMappedReads(e6)	7731.63
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHLF-01A-02D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHLF-01A-02D_exome.bam
 
 Number of records read = 265301435
 Number of valid records = 265301435
@@ -1428,7 +1428,7 @@ TotalBases(e6)	21476.67
 BasesInMappedReads(e6)	16504.27
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHLF-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHLF-10A-01D_exome.bam
 
 Number of records read = 132122669
 Number of valid records = 132122669
@@ -1450,7 +1450,7 @@ TotalBases(e6)	10699.70
 BasesInMappedReads(e6)	10392.71
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHYN-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHYN-01A-01D_exome.bam
 
 Number of records read = 255174325
 Number of valid records = 255174325
@@ -1472,7 +1472,7 @@ TotalBases(e6)	20664.56
 BasesInMappedReads(e6)	18635.59
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHYN-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMHYN-10A-01D_exome.bam
 
 Number of records read = 101820997
 Number of valid records = 101820997
@@ -1494,7 +1494,7 @@ TotalBases(e6)	8245.61
 BasesInMappedReads(e6)	7634.46
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMJXS-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMJXS-01A-01D_exome.bam
 
 Number of records read = 269630944
 Number of valid records = 269630944
@@ -1516,7 +1516,7 @@ TotalBases(e6)	21834.61
 BasesInMappedReads(e6)	17898.33
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMJXS-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMJXS-10A-01D_exome.bam
 
 Number of records read = 86529642
 Number of valid records = 86529642
@@ -1538,7 +1538,7 @@ TotalBases(e6)	7006.98
 BasesInMappedReads(e6)	6713.90
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMLKS-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMLKS-01A-01D_exome.bam
 
 Number of records read = 491690145
 Number of valid records = 491690145
@@ -1560,7 +1560,7 @@ TotalBases(e6)	45096.61
 BasesInMappedReads(e6)	41356.17
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMLKS-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMLKS-10A-01D_exome.bam
 
 Number of records read = 374947061
 Number of valid records = 374947061
@@ -1582,7 +1582,7 @@ TotalBases(e6)	36450.28
 BasesInMappedReads(e6)	34899.20
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMRHD-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMRHD-01A-01D_exome.bam
 
 Number of records read = 207417568
 Number of valid records = 207417568
@@ -1604,7 +1604,7 @@ TotalBases(e6)	16796.88
 BasesInMappedReads(e6)	14878.09
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMRHD-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMRHD-10A-01Y_exome.bam
 
 Number of records read = 653907830
 Number of valid records = 653907830
@@ -1626,7 +1626,7 @@ TotalBases(e6)	64906.11
 BasesInMappedReads(e6)	63193.23
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMTCM-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMTCM-01A-01D_exome.bam
 
 Number of records read = 265184096
 Number of valid records = 265184096
@@ -1648,7 +1648,7 @@ TotalBases(e6)	23349.02
 BasesInMappedReads(e6)	22842.12
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMTCM-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMTCM-10A-01Y_exome.bam
 
 Number of records read = 173864458
 Number of valid records = 173864458
@@ -1670,7 +1670,7 @@ TotalBases(e6)	15296.46
 BasesInMappedReads(e6)	14488.02
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMYYJ-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMYYJ-01A-01D_exome.bam
 
 Number of records read = 190550080
 Number of valid records = 190550080
@@ -1692,7 +1692,7 @@ TotalBases(e6)	15430.46
 BasesInMappedReads(e6)	14256.58
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMYYJ-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAMYYJ-10A-01D_exome.bam
 
 Number of records read = 180063246
 Number of valid records = 180063246
@@ -1714,7 +1714,7 @@ TotalBases(e6)	14581.68
 BasesInMappedReads(e6)	13762.60
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANGPE-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANGPE-01A-01D_exome.bam
 
 Number of records read = 568044567
 Number of valid records = 568044567
@@ -1736,7 +1736,7 @@ TotalBases(e6)	58491.60
 BasesInMappedReads(e6)	56091.83
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANGPE-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANGPE-10A-01D_exome.bam
 
 Number of records read = 70587803
 Number of valid records = 70587803
@@ -1758,7 +1758,7 @@ TotalBases(e6)	5716.39
 BasesInMappedReads(e6)	5477.87
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANGRW-01A-02D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANGRW-01A-02D_exome.bam
 
 Number of records read = 266306345
 Number of valid records = 266306345
@@ -1780,7 +1780,7 @@ TotalBases(e6)	23548.16
 BasesInMappedReads(e6)	22854.56
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANGRW-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANGRW-10A-01Y_exome.bam
 
 Number of records read = 107914355
 Number of valid records = 107914355
@@ -1802,7 +1802,7 @@ TotalBases(e6)	8734.73
 BasesInMappedReads(e6)	8276.25
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANMIG-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANMIG-01A-01Y_exome.bam
 
 Number of records read = 135725892
 Number of valid records = 135725892
@@ -1824,7 +1824,7 @@ TotalBases(e6)	10980.77
 BasesInMappedReads(e6)	10555.97
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANMIG-01A-02D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANMIG-01A-02D_exome.bam
 
 Number of records read = 168598335
 Number of valid records = 168598335
@@ -1846,7 +1846,7 @@ TotalBases(e6)	13647.34
 BasesInMappedReads(e6)	13010.10
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANMIG-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANMIG-10A-01Y_exome.bam
 
 Number of records read = 98547736
 Number of valid records = 98547736
@@ -1868,7 +1868,7 @@ TotalBases(e6)	7974.94
 BasesInMappedReads(e6)	7354.23
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANPUM-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANPUM-01A-01D_exome.bam
 
 Number of records read = 175990270
 Number of valid records = 175990270
@@ -1890,7 +1890,7 @@ TotalBases(e6)	14250.79
 BasesInMappedReads(e6)	13333.15
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANPUM-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANPUM-10A-01D_exome.bam
 
 Number of records read = 94869873
 Number of valid records = 94869873
@@ -1912,7 +1912,7 @@ TotalBases(e6)	7682.37
 BasesInMappedReads(e6)	7346.14
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANSEN-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANSEN-01A-01D_exome.bam
 
 Number of records read = 322069798
 Number of valid records = 322069798
@@ -1934,7 +1934,7 @@ TotalBases(e6)	26080.67
 BasesInMappedReads(e6)	24603.60
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANSEN-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANSEN-10A-01D_exome.bam
 
 Number of records read = 92466617
 Number of valid records = 92466617
@@ -1956,7 +1956,7 @@ TotalBases(e6)	7488.12
 BasesInMappedReads(e6)	7124.30
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANVJJ-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANVJJ-01A-01Y_exome.bam
 
 Number of records read = 224131090
 Number of valid records = 224131090
@@ -1978,7 +1978,7 @@ TotalBases(e6)	19331.69
 BasesInMappedReads(e6)	18574.60
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANVJJ-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANVJJ-10A-01D_exome.bam
 
 Number of records read = 78121059
 Number of valid records = 78121059
@@ -2000,7 +2000,7 @@ TotalBases(e6)	6326.22
 BasesInMappedReads(e6)	5833.15
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANXSC-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANXSC-01A-01D_exome.bam
 
 Number of records read = 281895901
 Number of valid records = 281895901
@@ -2022,7 +2022,7 @@ TotalBases(e6)	22825.81
 BasesInMappedReads(e6)	21601.89
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANXSC-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANXSC-10A-01D_exome.bam
 
 Number of records read = 168707981
 Number of valid records = 168707981
@@ -2044,7 +2044,7 @@ TotalBases(e6)	13662.61
 BasesInMappedReads(e6)	13075.12
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANZHX-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANZHX-01A-01D_exome.bam
 
 Number of records read = 528291450
 Number of valid records = 528291450
@@ -2066,7 +2066,7 @@ TotalBases(e6)	49808.99
 BasesInMappedReads(e6)	47584.54
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANZHX-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANZHX-10A-01Y_exome.bam
 
 Number of records read = 118937952
 Number of valid records = 118937952
@@ -2088,7 +2088,7 @@ TotalBases(e6)	9625.29
 BasesInMappedReads(e6)	8930.30
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANZZJ-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANZZJ-01A-01Y_exome.bam
 
 Number of records read = 230984716
 Number of valid records = 230984716
@@ -2110,7 +2110,7 @@ TotalBases(e6)	19928.36
 BasesInMappedReads(e6)	19248.25
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANZZJ-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PANZZJ-10A-01Y_exome.bam
 
 Number of records read = 119685592
 Number of valid records = 119685592
@@ -2132,7 +2132,7 @@ TotalBases(e6)	9683.06
 BasesInMappedReads(e6)	8990.62
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPFLB-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPFLB-01A-01D_exome.bam
 
 Number of records read = 500670603
 Number of valid records = 500670603
@@ -2154,7 +2154,7 @@ TotalBases(e6)	51550.40
 BasesInMappedReads(e6)	49743.06
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPFLB-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPFLB-10A-01D_exome.bam
 
 Number of records read = 404519599
 Number of valid records = 404519599
@@ -2176,7 +2176,7 @@ TotalBases(e6)	40085.71
 BasesInMappedReads(e6)	38212.20
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPIJR-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPIJR-01A-01D_exome.bam
 
 Number of records read = 76971310
 Number of valid records = 76971310
@@ -2198,7 +2198,7 @@ TotalBases(e6)	7766.97
 BasesInMappedReads(e6)	7523.07
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPIJR-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPIJR-10A-01D_exome.bam
 
 Number of records read = 117768589
 Number of valid records = 117768589
@@ -2220,7 +2220,7 @@ TotalBases(e6)	11883.16
 BasesInMappedReads(e6)	11507.50
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPKWD-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPKWD-01A-01D_exome.bam
 
 Number of records read = 104616072
 Number of valid records = 104616072
@@ -2242,7 +2242,7 @@ TotalBases(e6)	10559.76
 BasesInMappedReads(e6)	10464.73
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPKWD-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPKWD-10A-01Y_exome.bam
 
 Number of records read = 113805435
 Number of valid records = 113805435
@@ -2264,7 +2264,7 @@ TotalBases(e6)	9207.29
 BasesInMappedReads(e6)	8629.20
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPNVD-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPNVD-01A-01D_exome.bam
 
 Number of records read = 178012536
 Number of valid records = 178012536
@@ -2286,7 +2286,7 @@ TotalBases(e6)	14416.53
 BasesInMappedReads(e6)	13598.88
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPNVD-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPNVD-10A-01D_exome.bam
 
 Number of records read = 151244860
 Number of valid records = 151244860
@@ -2308,7 +2308,7 @@ TotalBases(e6)	12248.32
 BasesInMappedReads(e6)	11231.89
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPVYW-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPVYW-01A-01D_exome.bam
 
 Number of records read = 625531155
 Number of valid records = 625531155
@@ -2330,7 +2330,7 @@ TotalBases(e6)	62623.17
 BasesInMappedReads(e6)	60735.79
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPVYW-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPVYW-10A-01Y_exome.bam
 
 Number of records read = 96047259
 Number of valid records = 96047259
@@ -2352,7 +2352,7 @@ TotalBases(e6)	9106.09
 BasesInMappedReads(e6)	8728.28
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPWWC-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPWWC-01A-01D_exome.bam
 
 Number of records read = 260262943
 Number of valid records = 260262943
@@ -2374,7 +2374,7 @@ TotalBases(e6)	22748.55
 BasesInMappedReads(e6)	22181.44
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPWWC-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPWWC-10A-01Y_exome.bam
 
 Number of records read = 115281509
 Number of valid records = 115281509
@@ -2396,7 +2396,7 @@ TotalBases(e6)	9322.07
 BasesInMappedReads(e6)	8641.15
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPXGT-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPXGT-01A-01D_exome.bam
 
 Number of records read = 159084715
 Number of valid records = 159084715
@@ -2418,7 +2418,7 @@ TotalBases(e6)	12883.54
 BasesInMappedReads(e6)	12318.27
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPXGT-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAPXGT-10A-01D_exome.bam
 
 Number of records read = 236196866
 Number of valid records = 236196866
@@ -2440,7 +2440,7 @@ TotalBases(e6)	19128.10
 BasesInMappedReads(e6)	18100.14
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARBGW-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARBGW-01A-01Y_exome.bam
 
 Number of records read = 238452253
 Number of valid records = 238452253
@@ -2462,7 +2462,7 @@ TotalBases(e6)	20637.58
 BasesInMappedReads(e6)	20013.34
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARBGW-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARBGW-10A-01D_exome.bam
 
 Number of records read = 935563556
 Number of valid records = 935563556
@@ -2484,7 +2484,7 @@ TotalBases(e6)	93655.70
 BasesInMappedReads(e6)	90861.58
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARDAX-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARDAX-01A-01D_exome.bam
 
 Number of records read = 217661639
 Number of valid records = 217661639
@@ -2506,7 +2506,7 @@ TotalBases(e6)	17626.99
 BasesInMappedReads(e6)	15312.37
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARDAX-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARDAX-10A-01D_exome.bam
 
 Number of records read = 79011700
 Number of valid records = 79011700
@@ -2528,7 +2528,7 @@ TotalBases(e6)	6398.72
 BasesInMappedReads(e6)	6153.12
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARFTG-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARFTG-01A-01D_exome.bam
 
 Number of records read = 167103681
 Number of valid records = 167103681
@@ -2550,7 +2550,7 @@ TotalBases(e6)	13533.09
 BasesInMappedReads(e6)	13033.09
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARFTG-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARFTG-10A-01D_exome.bam
 
 Number of records read = 77257630
 Number of valid records = 77257630
@@ -2572,7 +2572,7 @@ TotalBases(e6)	6256.62
 BasesInMappedReads(e6)	6018.36
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARGTM-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARGTM-01A-01D_exome.bam
 
 Number of records read = 154580327
 Number of valid records = 154580327
@@ -2594,7 +2594,7 @@ TotalBases(e6)	12518.27
 BasesInMappedReads(e6)	11765.99
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARGTM-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARGTM-10A-01D_exome.bam
 
 Number of records read = 123729749
 Number of valid records = 123729749
@@ -2616,7 +2616,7 @@ TotalBases(e6)	10019.95
 BasesInMappedReads(e6)	9654.19
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARJXU-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARJXU-01A-01D_exome.bam
 
 Number of records read = 822894416
 Number of valid records = 822894416
@@ -2638,7 +2638,7 @@ TotalBases(e6)	80022.41
 BasesInMappedReads(e6)	74659.02
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARJXU-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARJXU-10A-01D_exome.bam
 
 Number of records read = 144645891
 Number of valid records = 144645891
@@ -2660,7 +2660,7 @@ TotalBases(e6)	11713.99
 BasesInMappedReads(e6)	11318.22
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARKAF-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARKAF-01A-01D_exome.bam
 
 Number of records read = 248567617
 Number of valid records = 248567617
@@ -2682,7 +2682,7 @@ TotalBases(e6)	21550.39
 BasesInMappedReads(e6)	20451.37
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARKAF-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PARKAF-10A-01D_exome.bam
 
 Number of records read = 71329659
 Number of valid records = 71329659
@@ -2704,7 +2704,7 @@ TotalBases(e6)	5776.89
 BasesInMappedReads(e6)	5599.91
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASEBY-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASEBY-01A-01D_exome.bam
 
 Number of records read = 148755172
 Number of valid records = 148755172
@@ -2726,7 +2726,7 @@ TotalBases(e6)	12046.84
 BasesInMappedReads(e6)	11516.45
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASEBY-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASEBY-10A-01D_exome.bam
 
 Number of records read = 168028813
 Number of valid records = 168028813
@@ -2748,7 +2748,7 @@ TotalBases(e6)	13607.74
 BasesInMappedReads(e6)	12592.33
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASEFS-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASEFS-01A-01D_exome.bam
 
 Number of records read = 188008163
 Number of valid records = 188008163
@@ -2770,7 +2770,7 @@ TotalBases(e6)	18976.98
 BasesInMappedReads(e6)	17897.79
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASEFS-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASEFS-10A-01D_exome.bam
 
 Number of records read = 152401237
 Number of valid records = 152401237
@@ -2792,7 +2792,7 @@ TotalBases(e6)	12342.37
 BasesInMappedReads(e6)	11526.32
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASFCV-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASFCV-01A-01D_exome.bam
 
 Number of records read = 148579376
 Number of valid records = 148579376
@@ -2814,7 +2814,7 @@ TotalBases(e6)	12032.44
 BasesInMappedReads(e6)	11300.47
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASFCV-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASFCV-10A-01D_exome.bam
 
 Number of records read = 166369751
 Number of valid records = 166369751
@@ -2836,7 +2836,7 @@ TotalBases(e6)	13473.30
 BasesInMappedReads(e6)	12562.89
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASKZZ-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASKZZ-01A-01D_exome.bam
 
 Number of records read = 160403525
 Number of valid records = 160403525
@@ -2858,7 +2858,7 @@ TotalBases(e6)	12989.94
 BasesInMappedReads(e6)	12135.60
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASKZZ-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASKZZ-10A-01D_exome.bam
 
 Number of records read = 143696150
 Number of valid records = 143696150
@@ -2880,7 +2880,7 @@ TotalBases(e6)	11637.23
 BasesInMappedReads(e6)	10851.38
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASNZV-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASNZV-01A-01D_exome.bam
 
 Number of records read = 535058351
 Number of valid records = 535058351
@@ -2902,7 +2902,7 @@ TotalBases(e6)	55081.44
 BasesInMappedReads(e6)	52969.75
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASNZV-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASNZV-10A-01D_exome.bam
 
 Number of records read = 379930350
 Number of valid records = 379930350
@@ -2924,7 +2924,7 @@ TotalBases(e6)	37681.60
 BasesInMappedReads(e6)	36162.22
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASRNE-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASRNE-01A-01D_exome.bam
 
 Number of records read = 245224249
 Number of valid records = 245224249
@@ -2946,7 +2946,7 @@ TotalBases(e6)	19843.54
 BasesInMappedReads(e6)	18158.10
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASRNE-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASRNE-10A-01Y_exome.bam
 
 Number of records read = 79860445
 Number of valid records = 79860445
@@ -2968,7 +2968,7 @@ TotalBases(e6)	6465.53
 BasesInMappedReads(e6)	6057.65
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASSLM-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASSLM-01A-01D_exome.bam
 
 Number of records read = 208313514
 Number of valid records = 208313514
@@ -2990,7 +2990,7 @@ TotalBases(e6)	16870.11
 BasesInMappedReads(e6)	15532.33
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASSLM-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASSLM-10A-01D_exome.bam
 
 Number of records read = 151256754
 Number of valid records = 151256754
@@ -3012,7 +3012,7 @@ TotalBases(e6)	12249.48
 BasesInMappedReads(e6)	11342.63
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASUUH-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASUUH-01A-01D_exome.bam
 
 Number of records read = 375321538
 Number of valid records = 375321538
@@ -3034,7 +3034,7 @@ TotalBases(e6)	33838.04
 BasesInMappedReads(e6)	32693.70
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASUUH-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASUUH-10A-01Y_exome.bam
 
 Number of records read = 259084233
 Number of valid records = 259084233
@@ -3056,7 +3056,7 @@ TotalBases(e6)	23525.76
 BasesInMappedReads(e6)	20881.16
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASYUK-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASYUK-01A-01D_exome.bam
 
 Number of records read = 193798624
 Number of valid records = 193798624
@@ -3078,7 +3078,7 @@ TotalBases(e6)	15694.19
 BasesInMappedReads(e6)	14125.00
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASYUK-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PASYUK-10A-01Y_exome.bam
 
 Number of records read = 103016343
 Number of valid records = 103016343
@@ -3100,7 +3100,7 @@ TotalBases(e6)	8337.36
 BasesInMappedReads(e6)	7746.17
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATAWV-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATAWV-01A-01D_exome.bam
 
 Number of records read = 219873085
 Number of valid records = 219873085
@@ -3122,7 +3122,7 @@ TotalBases(e6)	17805.60
 BasesInMappedReads(e6)	15643.52
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATAWV-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATAWV-10A-01Y_exome.bam
 
 Number of records read = 88190729
 Number of valid records = 88190729
@@ -3144,7 +3144,7 @@ TotalBases(e6)	7138.85
 BasesInMappedReads(e6)	6841.30
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATEEM-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATEEM-01A-01Y_exome.bam
 
 Number of records read = 411757413
 Number of valid records = 411757413
@@ -3166,7 +3166,7 @@ TotalBases(e6)	34736.21
 BasesInMappedReads(e6)	33443.84
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATEEM-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATEEM-10A-01Y_exome.bam
 
 Number of records read = 247721740
 Number of valid records = 247721740
@@ -3188,7 +3188,7 @@ TotalBases(e6)	22460.25
 BasesInMappedReads(e6)	19608.13
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATJVI-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATJVI-01A-01D_exome.bam
 
 Number of records read = 239464075
 Number of valid records = 239464075
@@ -3210,7 +3210,7 @@ TotalBases(e6)	19378.71
 BasesInMappedReads(e6)	17895.30
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATJVI-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATJVI-10A-01Y_exome.bam
 
 Number of records read = 121304135
 Number of valid records = 121304135
@@ -3232,7 +3232,7 @@ TotalBases(e6)	9819.59
 BasesInMappedReads(e6)	9317.44
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATKSS-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATKSS-01A-01D_exome.bam
 
 Number of records read = 183439194
 Number of valid records = 183439194
@@ -3254,7 +3254,7 @@ TotalBases(e6)	17998.58
 BasesInMappedReads(e6)	17839.70
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATKSS-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATKSS-10A-01D_exome.bam
 
 Number of records read = 55040744
 Number of valid records = 55040744
@@ -3276,7 +3276,7 @@ TotalBases(e6)	5556.79
 BasesInMappedReads(e6)	5495.02
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMIF-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMIF-01A-01Y_exome.bam
 
 Number of records read = 122266351
 Number of valid records = 122266351
@@ -3298,7 +3298,7 @@ TotalBases(e6)	12303.92
 BasesInMappedReads(e6)	12031.49
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMIF-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMIF-10A-01D_exome.bam
 
 Number of records read = 80098062
 Number of valid records = 80098062
@@ -3320,7 +3320,7 @@ TotalBases(e6)	8075.73
 BasesInMappedReads(e6)	7971.32
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMPU-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMPU-01A-01D_exome.bam
 
 Number of records read = 550669397
 Number of valid records = 550669397
@@ -3342,7 +3342,7 @@ TotalBases(e6)	56702.01
 BasesInMappedReads(e6)	54171.15
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMPU-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMPU-10A-01D_exome.bam
 
 Number of records read = 72581337
 Number of valid records = 72581337
@@ -3364,7 +3364,7 @@ TotalBases(e6)	6631.86
 BasesInMappedReads(e6)	6370.43
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMXR-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMXR-01A-01D_exome.bam
 
 Number of records read = 523166308
 Number of valid records = 523166308
@@ -3386,7 +3386,7 @@ TotalBases(e6)	53867.51
 BasesInMappedReads(e6)	51836.30
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMXR-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATMXR-10A-01D_exome.bam
 
 Number of records read = 494045644
 Number of valid records = 494045644
@@ -3408,7 +3408,7 @@ TotalBases(e6)	48290.62
 BasesInMappedReads(e6)	46293.22
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATPBS-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATPBS-01A-01D_exome.bam
 
 Number of records read = 538116663
 Number of valid records = 538116663
@@ -3430,7 +3430,7 @@ TotalBases(e6)	55406.90
 BasesInMappedReads(e6)	53259.65
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATPBS-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATPBS-10A-01D_exome.bam
 
 Number of records read = 92349681
 Number of valid records = 92349681
@@ -3452,7 +3452,7 @@ TotalBases(e6)	7478.34
 BasesInMappedReads(e6)	7141.92
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATUXZ-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATUXZ-01A-01D_exome.bam
 
 Number of records read = 551729144
 Number of valid records = 551729144
@@ -3474,7 +3474,7 @@ TotalBases(e6)	56799.49
 BasesInMappedReads(e6)	54289.82
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATUXZ-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATUXZ-10A-01D_exome.bam
 
 Number of records read = 390071614
 Number of valid records = 390071614
@@ -3496,7 +3496,7 @@ TotalBases(e6)	38810.28
 BasesInMappedReads(e6)	37030.09
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATXFN-01A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATXFN-01A-01Y_exome.bam
 
 Number of records read = 103575038
 Number of valid records = 103575038
@@ -3518,7 +3518,7 @@ TotalBases(e6)	9817.26
 BasesInMappedReads(e6)	9763.05
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATXFN-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PATXFN-10A-01D_exome.bam
 
 Number of records read = 74990590
 Number of valid records = 74990590
@@ -3540,7 +3540,7 @@ TotalBases(e6)	7571.17
 BasesInMappedReads(e6)	7467.82
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUBIT-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUBIT-01A-01D_exome.bam
 
 Number of records read = 117068900
 Number of valid records = 117068900
@@ -3562,7 +3562,7 @@ TotalBases(e6)	11245.96
 BasesInMappedReads(e6)	11086.85
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUBIT-10A-01Y_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUBIT-10A-01Y_exome.bam
 
 Number of records read = 41929584
 Number of valid records = 41929584
@@ -3584,7 +3584,7 @@ TotalBases(e6)	4217.60
 BasesInMappedReads(e6)	4167.93
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUTWB-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUTWB-01A-01D_exome.bam
 
 Number of records read = 109049697
 Number of valid records = 109049697
@@ -3606,7 +3606,7 @@ TotalBases(e6)	10464.05
 BasesInMappedReads(e6)	10389.21
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUTWB-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUTWB-10A-01D_exome.bam
 
 Number of records read = 91513515
 Number of valid records = 91513515
@@ -3628,7 +3628,7 @@ TotalBases(e6)	9239.36
 BasesInMappedReads(e6)	9135.31
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUTYB-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUTYB-01A-01D_exome.bam
 
 Number of records read = 115385170
 Number of valid records = 115385170
@@ -3650,7 +3650,7 @@ TotalBases(e6)	11135.57
 BasesInMappedReads(e6)	11062.79
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUTYB-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUTYB-10A-01D_exome.bam
 
 Number of records read = 49672629
 Number of valid records = 49672629
@@ -3672,7 +3672,7 @@ TotalBases(e6)	5015.19
 BasesInMappedReads(e6)	4964.27
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUUML-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUUML-01A-01D_exome.bam
 
 Number of records read = 113443216
 Number of valid records = 113443216
@@ -3694,7 +3694,7 @@ TotalBases(e6)	10932.25
 BasesInMappedReads(e6)	10857.37
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUUML-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUUML-10A-01D_exome.bam
 
 Number of records read = 64892080
 Number of valid records = 64892080
@@ -3716,7 +3716,7 @@ TotalBases(e6)	6551.60
 BasesInMappedReads(e6)	6474.24
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUVUL-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUVUL-01A-01D_exome.bam
 
 Number of records read = 148190572
 Number of valid records = 148190572
@@ -3738,7 +3738,7 @@ TotalBases(e6)	14484.40
 BasesInMappedReads(e6)	14367.39
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUVUL-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUVUL-10A-01D_exome.bam
 
 Number of records read = 82001544
 Number of valid records = 82001544
@@ -3760,7 +3760,7 @@ TotalBases(e6)	8276.25
 BasesInMappedReads(e6)	8161.81
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUXPZ-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUXPZ-01A-01D_exome.bam
 
 Number of records read = 222880540
 Number of valid records = 222880540
@@ -3782,7 +3782,7 @@ TotalBases(e6)	21318.71
 BasesInMappedReads(e6)	21144.89
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUXPZ-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUXPZ-10A-01D_exome.bam
 
 Number of records read = 49490300
 Number of valid records = 49490300
@@ -3804,7 +3804,7 @@ TotalBases(e6)	4995.77
 BasesInMappedReads(e6)	4927.95
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUYTT-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUYTT-01A-01D_exome.bam
 
 Number of records read = 145450216
 Number of valid records = 145450216
@@ -3826,7 +3826,7 @@ TotalBases(e6)	14114.40
 BasesInMappedReads(e6)	14015.70
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUYTT-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAUYTT-10A-01D_exome.bam
 
 Number of records read = 69495397
 Number of valid records = 69495397
@@ -3848,7 +3848,7 @@ TotalBases(e6)	7015.73
 BasesInMappedReads(e6)	6916.19
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVALD-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVALD-01A-01D_exome.bam
 
 Number of records read = 72742689
 Number of valid records = 72742689
@@ -3870,7 +3870,7 @@ TotalBases(e6)	6986.16
 BasesInMappedReads(e6)	6937.13
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVALD-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVALD-10A-01D_exome.bam
 
 Number of records read = 40589231
 Number of valid records = 40589231
@@ -3892,7 +3892,7 @@ TotalBases(e6)	4097.99
 BasesInMappedReads(e6)	4057.02
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVCLP-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVCLP-01A-01D_exome.bam
 
 Number of records read = 136700882
 Number of valid records = 136700882
@@ -3914,7 +3914,7 @@ TotalBases(e6)	13186.86
 BasesInMappedReads(e6)	13084.59
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVCLP-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVCLP-10A-01D_exome.bam
 
 Number of records read = 25580049
 Number of valid records = 25580049
@@ -3936,7 +3936,7 @@ TotalBases(e6)	2582.66
 BasesInMappedReads(e6)	2553.27
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVDTY-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVDTY-01A-01D_exome.bam
 
 Number of records read = 93296212
 Number of valid records = 93296212
@@ -3958,7 +3958,7 @@ TotalBases(e6)	8847.76
 BasesInMappedReads(e6)	8803.88
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVDTY-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVDTY-10A-01D_exome.bam
 
 Number of records read = 23157126
 Number of valid records = 23157126
@@ -3980,7 +3980,7 @@ TotalBases(e6)	2338.03
 BasesInMappedReads(e6)	2314.91
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVECB-01A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVECB-01A-01D_exome.bam
 
 Number of records read = 172334682
 Number of valid records = 172334682
@@ -4002,7 +4002,7 @@ TotalBases(e6)	16328.39
 BasesInMappedReads(e6)	16245.22
 Returning: 0 (SUCCESS)
 
-Validating /local/target/data/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVECB-10A-01D_exome.bam
+Validating /local/ocg-dcc/data/TARGET/Globus/OS/WXS/L2/NCI-MELTZER/TARGET-40-PAVECB-10A-01D_exome.bam
 
 Number of records read = 35203712
 Number of valid records = 35203712
