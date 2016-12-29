@@ -36,7 +36,7 @@ if (!@ARGV) {
 }
 my $root_data_dir_path = shift @ARGV;
 if (!-d $root_data_dir_path or 
-    abs_path($root_data_dir_path) !~ /^\/local\/(target|cgci)\/(data|download)\/?/) {
+    abs_path($root_data_dir_path) !~ /^\/local\/ocg-dcc\/(data|download)\/(TARGET|CGCI)\/?/) {
     pod2usage(
         -message => "Directory $root_data_dir_path is not allowed", 
         -verbose => 0,
@@ -45,7 +45,7 @@ if (!-d $root_data_dir_path or
 if (!$list_mage_tabs) {
     print "Disease Project\tAssay Type\tPlatform\tSources\tSamples\tExtracts\tRuns/Hybs\n";
 }
-my $is_data_path = abs_path($root_data_dir_path) =~ /^\/local\/(target|cgci)\/data\/?/ ? 1 : 0; 
+my $is_data_path = abs_path($root_data_dir_path) =~ /^\/local\/ocg-dcc\/data\/(TARGET|CGCI)\/?/ ? 1 : 0; 
 find({
     preprocess => \&find_preprocess,
     wanted     => \&find_wanted,

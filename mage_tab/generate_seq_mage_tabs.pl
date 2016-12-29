@@ -875,7 +875,7 @@ for my $program_name (@program_names) {
                 $data_type_dir_name = 'targeted_capture_sequencing';
             }
             my @datasets;
-            my $data_type_dir = "/local/\L$program_name\E/data/$project_dir/$data_type_dir_name";
+            my $data_type_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_dir/$data_type_dir_name";
             if (-d $data_type_dir) {
                 opendir(my $data_type_dh, $data_type_dir) 
                     or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $data_type_dir: $!";
