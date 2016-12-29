@@ -289,7 +289,7 @@ for my $program_name (reverse natsort keys %program_project_conf) {
             next if defined $user_params{data_types} and not exists $user_params{data_types}{uc($data_type)};
             print "[$program_name $project_name $data_type]\n";
             my $data_type_dir = $data_type;
-            my $disc_dataset_dir = "/local/\L$program_name\E/data/$project_disc_dir/$data_type_dir/current";
+            my $disc_dataset_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_disc_dir/$data_type_dir/current";
             if (!-d $disc_dataset_dir) {
                 print STDERR "ERROR: $disc_dataset_dir doesn't exist\n";
                 next;
@@ -300,11 +300,11 @@ for my $program_name (reverse natsort keys %program_project_conf) {
                 !-z $dataset_output_dir) {
                 remove_tree($dataset_output_dir, { keep_root => 1 }) or die "ERROR: could not re-init $dataset_output_dir: $!";
             }
-            my $disc_tcs_data_dir = "/local/\L$program_name\E/data/$project_disc_dir/targeted_capture_sequencing/current/L3";
+            my $disc_tcs_data_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_disc_dir/targeted_capture_sequencing/current/L3";
             print "Found Disc TCS $disc_tcs_data_dir\n" if -d $disc_tcs_data_dir;
-            my $vald_tcs_data_dir = "/local/\L$program_name\E/data/$project_vald_dir/targeted_capture_sequencing/current/L3";
+            my $vald_tcs_data_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_vald_dir/targeted_capture_sequencing/current/L3";
             print "Found Vald TCS $vald_tcs_data_dir\n" if -d $vald_tcs_data_dir;
-            my $disc_rna_data_dir = "/local/\L$program_name\E/data/$project_disc_dir/mRNA-seq/current/L3";
+            my $disc_rna_data_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_disc_dir/mRNA-seq/current/L3";
             print "Found Disc RNA $disc_rna_data_dir\n" if -d $disc_rna_data_dir;
             if ($data_type eq 'WGS') {
                 # CGI WGS
