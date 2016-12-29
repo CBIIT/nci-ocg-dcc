@@ -13,6 +13,12 @@ use List::Util qw(any);
 use Pod::Usage qw(pod2usage);
 use Data::Dumper;
 
+our $VERSION = '0.1';
+
+# Unbuffer error and output streams (make sure STDOUT is last so that it remains the default filehandle)
+select(STDERR); $| = 1;
+select(STDOUT); $| = 1;
+
 $Data::Dumper::Sortkeys = 1;
 $Data::Dumper::Terse = 1;
 $Data::Dumper::Deepcopy = 1;
@@ -22,14 +28,19 @@ my $CASE_REGEXP = qr/[A-Z]+-\d{2}(?:-\d{2})?-[A-Z0-9]+/;
 my $CGI_CASE_DIR_REGEXP = qr/${CASE_REGEXP}(?:(?:-|_)\d+)?/;
 
 # config
-my @target_cgi_proj_codes = qw(
+my @project_names = qw(
     ALL
     AML
     CCSK
     NBL
+    MDLS-NBL
     OS
+    OS-Toronto
     WT
 );
+my $target_download_ctrld_dir = '/local/ocg-dcc/download/TARGET/Controlled';
+my $data_type_dir_name = 'WGS';
+my $cgi_dir_name = 'CGI';
 
 my $verbose = 0;
 my $dry_run = 0;
@@ -79,7 +90,7 @@ if (!$clean_only) {
     }
 }
 my ($project, $subproject) = split('-', $project_code);
-my $wgs_dataset_dir = "/local/target/data/$project/WGS/current";
+my $wgs_dataset_dir = "$target_data_dir/$project/WGS/current";
 die "ERROR: invalid WGS dataset directory $wgs_dataset_dir\n" unless -d $wgs_dataset_dir;
 print "Using $wgs_dataset_dir\n";
 (my $wgs_ctrld_download_dir = $wgs_dataset_dir) =~ s/data/download\/Controlled/;

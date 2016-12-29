@@ -6,7 +6,7 @@ use File::Basename qw(fileparse);
 use File::Find;
 use File::Spec;
 use Getopt::Long qw(:config auto_help auto_version);
-use List::MoreUtils qw(any);
+use List::MoreUtils qw( any none );
 use Pod::Usage qw(pod2usage);
 use Sort::Key::Natural qw(natsort);
 use Data::Dumper;
@@ -27,19 +27,25 @@ my $CGI_CASE_DIR_REGEXP = qr/${CASE_REGEXP}(?:(?:-|_)\d+)?/o;
 my $BARCODE_REGEXP = qr/${CASE_REGEXP}-\d{2}(?:\.\d+)?[A-Z]-\d{2}[A-Z]/o;
 
 # config
-my @target_cgi_proj_codes = qw(
+my @project_names = qw(
     ALL
     AML
     CCSK
     NBL
+    MDLS-NBL
     OS
+    OS-Toronto
     WT
 );
-my $target_data_dir = '/local/target/data';
+my $target_download_ctrld_dir = '/local/ocg-dcc/download/TARGET/Controlled';
+my $data_type_dir_name = 'WGS';
 my $cgi_dir_name = 'CGI';
-my @cgi_data_dir_names = qw(
+my @target_cgi_data_dir_names = qw(
     PilotAnalysisPipeline2
     OptionAnalysisPipeline2
+);
+my @param_groups = qw(
+    projects
 );
 
 my $verbose = 0;
@@ -50,18 +56,82 @@ GetOptions(
     'verbose' => \$verbose,
     'debug' => \$debug,
 ) || pod2usage(-verbose => 0);
-my %user_cgi_proj_codes;
+my %user_params;
 if (@ARGV) {
-    %user_cgi_proj_codes = map { uc($_) => 1 } split(',', shift @ARGV);
-    print STDERR "\%user_cgi_proj_codes:\n", Dumper(\%user_cgi_proj_codes) if $debug;
+    for my $i (0 .. $#param_groups) {
+        next unless defined $ARGV[$i] and $ARGV[$i] !~ /^\s*$/;
+        my (@valid_user_params, @invalid_user_params, @valid_choices);
+        my @user_params = split(',', $ARGV[$i]);
+        if ($param_groups[$i] eq 'projects') {
+            for my $project_name (@project_names) {
+                push @valid_user_params, $project_name if any { m/^$project_name$/i } @user_params;
+            }
+            for my $user_param (@user_params) {
+                push @invalid_user_params, $user_param if none { m/^$user_param$/i } @project_names;
+            }
+            @valid_choices = @project_names;
+        }
+        else {
+            @valid_user_params = @user_params;
+        }
+        if (@invalid_user_params) {
+            (my $type = $param_groups[$i]) =~ s/s$//;
+            $type =~ s/_/ /g;
+            pod2usage(
+                -message => 
+                    "Invalid $type" . ( scalar(@invalid_user_params) > 1 ? 's' : '' ) . ': ' .
+                    join(', ', @invalid_user_params) . "\n" .
+                    'Choose from: ' . join(', ', @valid_choices),
+                -verbose => 0,
+            );
+        }
+        $user_params{$param_groups[$i]} = \@valid_user_params;
+    }
 }
-for my $proj_code (@target_cgi_proj_codes) {
-    next if %user_cgi_proj_codes and !$user_cgi_proj_codes{uc($proj_code)};
-    print "[$proj_code]\n";
-    my $cgi_dataset_dir = "$target_data_dir/$proj_code/WGS/current/$cgi_dir_name";
+print STDERR "\%user_params:\n", Dumper(\%user_params) if $debug;
+for my $project_name (@project_names) {
+    next if defined $user_params{projects} and none { $project_name eq $_ } @{$user_params{projects}};
+    print "[$project_name]\n";
+    my ($disease_proj, $subproject) = split /-(?=NBL|PPTP|Toronto|Brazil)/, $project_name, 2;
+    my $project_dir = $disease_proj;
+    if (defined $subproject) {
+        if ($disease_proj eq 'MDLS') {
+            if ($subproject eq 'NBL') {
+                $project_dir = "$project_dir/NBL";
+            }
+            elsif ($subproject eq 'PPTP') {
+                $project_dir = "$project_dir/PPTP";
+            }
+            else {
+                die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
+            }
+        }
+        elsif ($disease_proj eq 'OS') {
+            if ($subproject eq 'Toronto') {
+                $project_dir = "$project_dir/Toronto";
+            }
+            elsif ($subproject eq 'Brazil') {
+                $project_dir = "$project_dir/Brazil";
+            }
+            else {
+                die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
+            }
+        }
+        else {
+            die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid disease project '$disease_proj'\n";
+        }
+    }
+    my $data_type_dir = "$target_download_ctrld_dir/$project_dir/$data_type_dir_name";
+    my $dataset_dir_name = $project_name eq 'ALL' 
+                         ? 'Phase1+2'
+                         : '';
+    my $dataset_dir = $dataset_dir_name
+                    ? "$data_type_dir/$dataset_dir_name"
+                    : $data_type_dir;
+    my $dataset_cgi_dir = "$dataset_dir/$cgi_dir_name";
     my @cgi_data_dirs;
-    for my $dir_name (@cgi_data_dir_names) {
-        my $cgi_data_dir = "$cgi_dataset_dir/$dir_name";
+    for my $data_dir_name (@target_cgi_data_dir_names) {
+        my $cgi_data_dir = "$dataset_cgi_dir/$data_dir_name";
         push @cgi_data_dirs, $cgi_data_dir if -d $cgi_data_dir;
     }
     if ($debug) {
@@ -76,7 +146,7 @@ for my $proj_code (@target_cgi_proj_codes) {
                 my $dir_name = $_;
                 my $dir = $File::Find::name;
                 # skip OS Illumina READMEs directories
-                if ($proj_code eq 'OS' and $dir =~ /(Pilot|Option)AnalysisPipeline2\/Illumina\/READMEs/i) {
+                if ($project_name eq 'OS' and $dir =~ /(Pilot|Option)AnalysisPipeline2\/Illumina\/READMEs/i) {
                     $File::Find::prune = 1;
                     return;
                 }

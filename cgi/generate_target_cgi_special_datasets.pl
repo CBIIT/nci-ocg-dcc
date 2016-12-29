@@ -81,8 +81,8 @@ my @job_types = qw(
     SomaticVcfs
     TEMP
 );
-my $target_data_dir = '/local/target/data';
-my $target_download_ctrld_dir = '/local/target/download/Controlled';
+my $target_data_dir = '/local/ocg-dcc/data/TARGET';
+my $target_download_ctrld_dir = '/local/ocg-dcc/download/TARGET/Controlled';
 my $data_type_dir_name = 'WGS';
 my $cgi_dir_name = 'CGI';
 my $default_manifest_file_name = 'MANIFEST.txt';
