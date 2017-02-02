@@ -1,7 +1,14 @@
+use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin/../../common/lib/perl5";
+use NCI::OCGDCC::Config qw( :all );
+
 # mage-tab generator config
 {
     'default' => {
         'term_source_ref' => 'EFO',
+        'protocol_revision' => '01',
     },
     'idf' => {
         'mage_tab_version' => '1.1',
@@ -74,20 +81,378 @@
         ],
     },
     'sdrf' => {
-        'dcc_col_info' => [
-            {
+        'dcc_scanned_file_protocol_dag' => {
+            # data type
+            'Bisulfite-seq' => {
+                # run center
+                '_default' => {
+                    # analysis center
+                    'BCCA' => [
+                        {
+                            type => 'Methylation',
+                        },
+                    ],
+                },
+            },
+            'ChIP-seq' => {
+                '_default' => {
+                    'BCCA' => [
+                        {
+                            type => 'PeakCall',
+                        },
+                    ],
+                },
+            },
+            'miRNA-seq' => {
+                '_default' => {
+                    'BCCA' => [
+                        {
+                            type => 'Expression',
+                        },
+                    ],
+                },
+            },
+            'mRNA-seq' => {
+                '_default' => {
+                    'BCCA' => [
+                        {
+                            type => 'VariantCall',
+                        },
+                        {
+                            type => 'VariantCall-SNVMix2',
+                            children => [
+                                {
+                                    type => 'SNVMix2-Vcf2Maf',
+                                },
+                                {
+                                    type => 'SNVMix2-Vcf2Tab',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'Expression',
+                        },
+                        {
+                            type => 'Fusion',
+                        },
+                        {
+                            type => 'Fusion-Defuse',
+                        },
+                        {
+                            type => 'Fusion-GenomeValidator',
+                        },
+                        {
+                            type => 'Indel',
+                        },
+                    ],
+                    'NCI-Khan' => [
+                        {
+                            type => 'Expression',
+                        },
+                        {
+                            type => 'Fusion',
+                        },
+                    ],
+                    'NCI-Meerzaman' => [
+                        {
+                            type => 'Expression',
+                        },
+                        {
+                            type => 'Fusion-Defuse',
+                            children => [
+                                {
+                                    type => 'Fusion-Summary',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'Fusion-FusionMap',
+                            children => [
+                                {
+                                    type => 'Fusion-Summary',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'Fusion-SnowShoes',
+                            children => [
+                                {
+                                    type => 'Fusion-Summary',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'Fusion-TopHat',
+                            children => [
+                                {
+                                    type => 'Fusion-Summary',
+                                },
+                            ],
+                        },
+                    ],
+                    'NCI-Meltzer' => [
+                        {
+                            type => 'Expression',
+                        },
+                    ],
+                    'StJude' => [
+                        {
+                            type => 'VariantCall',
+                        },
+                        {
+                            type => 'Expression',
+                        },
+                        {
+                            type => 'Fusion',
+                        },
+                    ],
+                },
+            },
+            'Targeted-Capture' => {
+                '_default' => {
+                    'BCCA' => [
+                        {
+                            type => 'VariantCall-Mpileup',
+                            children => [
+                                {
+                                    type => 'Mpileup-Vcf2Maf',
+                                },
+                                {
+                                    type => 'Mpileup-Vcf2Tab',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'VariantCall-Strelka',
+                            children => [
+                                {
+                                    type => 'Strelka-Vcf2Maf',
+                                },
+                                {
+                                    type => 'Strelka-Vcf2Tab',
+                                    constraint_regexp =>
+                                        qr/(${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.capture_dna\.somatic\.(?:snv|indel))/i,
+                                },
+                            ],
+                        },
+                    ],
+                    'UHN' => [
+                        {
+                            type => 'CnvSegment-VisCap',
+                        },
+                    ],
+                },
+                'BCM' => {
+                    'BCM' => [
+                        {
+                            type => 'VariantCall-AtlasPindel',
+                            children => [
+                                {
+                                    type => 'FilterVerified',
+                                },
+                            ],
+                        },
+                    ],
+                },
+            },
+            'WGS' => {
+                '_default' => {
+                    'BCCA' => [
+                        {
+                            type => 'VariantCall-Mpileup',
+                            children => [
+                                {
+                                    type => 'Mpileup-Vcf2Maf',
+                                },
+                                {
+                                    type => 'Mpileup-Vcf2Tab',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'VariantCall-Strelka',
+                            children => [
+                                {
+                                    type => 'Strelka-Vcf2Maf',
+                                },
+                                {
+                                    type => 'Strelka-Vcf2Tab',
+                                    constraint_regexp =>
+                                        qr/(${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.somatic\.(?:snv|indel))/i,
+                                    children => [
+                                        {
+                                            type => 'CombineSomaticSNVs',
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            type => 'Fusion',
+                        },
+                        {
+                            type => 'Fusion-GenomeValidator',
+                        },
+                        {
+                            type => 'Indel',
+                        },
+                        {
+                            type => 'VariantCall',
+                        },
+                        {
+                            type => 'StructVariantCall-DELLY',
+                        },
+                    ],
+                    'CGI' => [
+                        {
+                            type => 'CnvSegment',
+                            children => [
+                                {
+                                    type => 'Circos',
+                                    constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
+                                },
+                            ],
+                        },
+                        {
+                            type => 'VariantCall',
+                            children => [
+                                {
+                                    type => 'Vcf2Maf',
+                                    constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
+                                    children => [
+                                        {
+                                            type => 'FilterSomatic',
+                                            constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
+                                        },
+                                        {
+                                            type => 'HigherLevelSummary',
+                                        },
+                                    ],
+                                },
+                                {
+                                    type => 'Circos',
+                                    constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
+                                },
+                            ],
+                        },
+                        {
+                            type => 'Junction',
+                            children => [
+                                {
+                                    type => 'Circos',
+                                },
+                            ],
+                        },
+                    ],
+                    'StJude' => [
+                        {
+                            type => 'CnvSegment',
+                        },
+                        {
+                            type => 'VariantCall',
+                        },
+                        {
+                            type => 'Fusion',
+                        },
+                    ],
+                },
+                'BCCA' => {
+                    'CGI' => [
+                        {
+                            type => 'VariantCall',
+                            children => [
+                                {
+                                    type => 'FilterSomatic',
+                                },
+                            ],
+                        },
+                    ],
+                },
+            },
+            'WXS' => {
+                '_default' => {
+                    'BCCA' => [
+                        {
+                            type => 'VariantCall',
+                        },
+                    ],
+                    'BCM' => [
+                        {
+                            type => 'VariantCall-AtlasPindel',
+                            children => [
+                                {
+                                    type => 'FilterVerified',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'CnvSegment',
+                        },
+                    ],
+                    'Broad' => [
+                        {
+                            type => 'VariantCall',
+                            children => [
+                                {
+                                    type => 'FilterVerified',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'CnvSegment',
+                        },
+                    ],
+                    'NCI-Meerzaman' => [
+                        {
+                            type => 'VariantCall',
+                            children => [
+                                {
+                                    type => 'FilterVerified',
+                                },
+                            ],
+                        },
+                    ],
+                    'NCI-Meltzer' => [
+                        {
+                            type => 'VariantCall-Strelka',
+                        },
+                    ],
+                    'StJude' => [
+                        {
+                            type => 'VariantCall',
+                            children => [
+                                {
+                                    type => 'FilterVerified',
+                                },
+                            ],
+                        },
+                    ],
+                },
+            },
+        },
+        'dcc_col_types' => {
+            'protocol' => {
+                name => 'Protocol REF',
+                key => 'protocol_ref',
+                attrs => [
+                    
+                ],
+            },
+            'file' => {
                 name => 'Derived Array Data File',
                 key => 'file_name',
+                attrs => [
+                    {
+                        name => 'Comment[OCG Data Level]',
+                        key => 'data_level',
+                    },
+                    {
+                        name => 'Comment[miRBase Version]',
+                        key => 'mirbase_version',
+                    },
+                ],
             },
-            {
-                name => 'Comment[OCG Data Level]',
-                key => 'data_level',
-            },
-            {
-                name => 'Comment[miRBase Version]',
-                key => 'mirbase_version',
-            },
-        ],
+        },
         'nucleic_acid_ltr_sample_desc' => {
             'E' => 'Formalin-fixed, paraffin-embedded (FFPE) tissue',
             'S' => 'Formalin-fixed, paraffin-embedded (FFPE) tissue',
@@ -2923,13 +3288,15 @@
                             '_default' => {
                                 'StJude' => {
                                     'StJude' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_TALL_mRNA-seq_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                            ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_TALL_mRNA-seq_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                 },
@@ -3043,75 +3410,87 @@
                             '_default' => {
                                 'BCM' => {
                                     'BCM' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall-AtlasPindel' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-all-hg19-germline.mafplus.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-all-primary-somatic-v2.4-mafplus.xlsx',
-                                                    'child_data_by_protocol_type' => {
-                                                        'FilterVerified' => [
-                                                            {
-                                                                'data_level' => '3',
-                                                                'file_name' => 'target-all-primary-somatic-verified-v2.4-mafplus.xlsx',
-                                                            },
-                                                        ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall-AtlasPindel' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-all-hg19-germline.mafplus.txt',
                                                     },
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-all-recurrent-somatic-v2.4-mafplus.xlsx',
-                                                    'child_data_by_protocol_type' => {
-                                                        'FilterVerified' => [
-                                                            {
-                                                                'data_level' => '3',
-                                                                'file_name' => 'target-all-recurrent-somatic-verified-v2.4-mafplus.xlsx',
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-all-primary-somatic-v2.4-mafplus.xlsx',
+                                                        'protocol_data_by_type' => {
+                                                            'FilterVerified' => {
+                                                                'file_data' => [
+                                                                    {
+                                                                        'data_level' => '3',
+                                                                        'file_name' => 'target-all-primary-somatic-verified-v2.4-mafplus.xlsx',
+                                                                    },
+                                                                ],
                                                             },
-                                                        ],
+                                                        },
                                                     },
-                                                },
-                                            ],
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-all-recurrent-somatic-v2.4-mafplus.xlsx',
+                                                        'protocol_data_by_type' => {
+                                                            'FilterVerified' => {
+                                                                'file_data' => [
+                                                                    {
+                                                                        'data_level' => '3',
+                                                                        'file_name' => 'target-all-recurrent-somatic-verified-v2.4-mafplus.xlsx',
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                     'StJude' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'TARGET_ALLP2_WXS_Illumina_somatic.maf.txt',
-                                                    'child_data_by_protocol_type' => {
-                                                        'FilterVerified' => [
-                                                            {
-                                                                'data_level' => '3',
-                                                                'file_name' => 'TARGET_ALLP2_WXS_Illumina_somatic_verified.maf.txt',
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'TARGET_ALLP2_WXS_Illumina_somatic.maf.txt',
+                                                        'protocol_data_by_type' => {
+                                                            'FilterVerified' => {
+                                                                'file_data' => [
+                                                                    {
+                                                                        'data_level' => '3',
+                                                                        'file_name' => 'TARGET_ALLP2_WXS_Illumina_somatic_verified.maf.txt',
+                                                                    },
+                                                                ],
                                                             },
-                                                        ],
+                                                        },
                                                     },
-                                                },
-                                            ],
+                                                ],
+                                            },
                                         },
                                     },
                                 },
                                 '_default' => {
                                     'StJude' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_BALL_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_BALL_WXS_Relapse_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_TALL_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                            ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_BALL_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_BALL_WXS_Relapse_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_TALL_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                 },
@@ -3351,55 +3730,63 @@
                             '_default' => {
                                 'BCM' => {
                                     'BCM' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall-AtlasPindel' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-aml-germline-primary-dbsnp-nonsilent.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-aml-germline-primary-novel-nonsilent.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-aml-snp-indel.mafplus.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'TARGET_AML_WXS_somatic.mafplus.xlsx',
-                                                    'child_data_by_protocol_type' => {
-                                                        'Filter' => [
-                                                            {
-                                                                'data_level' => '3',
-                                                                'file_name' => 'TARGET_AML_WXS_somatic_filtered.mafplus.txt',
-                                                                'child_data_by_protocol_type' => {
-                                                                    'FilterVerified' => [
-                                                                        {
-                                                                            'data_level' => '3',
-                                                                            'file_name' => 'TARGET_AML_WXS_somatic_filtered_verified.mafplus.txt',
-                                                                        },
-                                                                    ],
-                                                                },
-                                                            },
-                                                        ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall-AtlasPindel' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-aml-germline-primary-dbsnp-nonsilent.txt',
                                                     },
-                                                },
-                                            ],
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-aml-germline-primary-novel-nonsilent.txt',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-aml-snp-indel.mafplus.txt',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'TARGET_AML_WXS_somatic.mafplus.xlsx',
+                                                        'protocol_data_by_type' => {
+                                                            'Filter' => {
+                                                                'file_data' => [
+                                                                    {
+                                                                        'data_level' => '3',
+                                                                        'file_name' => 'TARGET_AML_WXS_somatic_filtered.mafplus.txt',
+                                                                        'protocol_data_by_type' => {
+                                                                            'FilterVerified' => {
+                                                                                'file_data' => [
+                                                                                    {
+                                                                                        'data_level' => '3',
+                                                                                        'file_name' => 'TARGET_AML_WXS_somatic_filtered_verified.mafplus.txt',
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                     'StJude' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_AML_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_AML_WXS_Relapse_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                            ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_AML_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_AML_WXS_Relapse_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                 },
@@ -3495,17 +3882,19 @@
                             '_default' => {
                                 'BCM' => {
                                     'BCM' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall-Atlas-ModelSystems' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-nbl-pptp-wxs-celllines-pdx-somatic-v1.3.mafplus.xlsx',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-nbl-pptp-wxs-pdx-failed-somatic-v1.3.mafplus.xlsx',
-                                                },
-                                            ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall-Atlas-ModelSystems' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-nbl-pptp-wxs-celllines-pdx-somatic-v1.3.mafplus.xlsx',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-nbl-pptp-wxs-pdx-failed-somatic-v1.3.mafplus.xlsx',
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                 },
@@ -3517,17 +3906,19 @@
                                     '_default' => {
                                         'BCM' => {
                                             'BCM' => {
-                                                'child_data_by_protocol_type' => {
-                                                    'VariantCall-Atlas-ModelSystems' => [
-                                                        {
-                                                            'data_level' => '3',
-                                                            'file_name' => 'target-nbl-pptp-wxs-celllines-pdx-somatic-v1.3.mafplus.xlsx',
-                                                        },
-                                                        {
-                                                            'data_level' => '3',
-                                                            'file_name' => 'target-nbl-pptp-wxs-pdx-failed-somatic-v1.3.mafplus.xlsx',
-                                                        },
-                                                    ],
+                                                'protocol_data_by_type' => {
+                                                    'VariantCall-Atlas-ModelSystems' => {
+                                                        'file_data' => [
+                                                            {
+                                                                'data_level' => '3',
+                                                                'file_name' => 'target-nbl-pptp-wxs-celllines-pdx-somatic-v1.3.mafplus.xlsx',
+                                                            },
+                                                            {
+                                                                'data_level' => '3',
+                                                                'file_name' => 'target-nbl-pptp-wxs-pdx-failed-somatic-v1.3.mafplus.xlsx',
+                                                            },
+                                                        ],
+                                                    },
                                                 },
                                             },
                                         },
@@ -3588,13 +3979,15 @@
                             '_default' => {
                                 'BCM' => {
                                     'BCM' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall-Atlas-ModelSystems' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-pptp-wxs-verified.mafplus.xlsx',
-                                                },
-                                            ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall-Atlas-ModelSystems' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-pptp-wxs-verified.mafplus.xlsx',
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                 },
@@ -3606,13 +3999,15 @@
                                     '_default' => {
                                         'BCM' => {
                                             'BCM' => {
-                                                'child_data_by_protocol_type' => {
-                                                    'VariantCall-Atlas-ModelSystems' => [
-                                                        {
-                                                            'data_level' => '3',
-                                                            'file_name' => 'target-pptp-wxs-verified.mafplus.xlsx',
-                                                        },
-                                                    ],
+                                                'protocol_data_by_type' => {
+                                                    'VariantCall-Atlas-ModelSystems' => {
+                                                        'file_data' => [
+                                                            {
+                                                                'data_level' => '3',
+                                                                'file_name' => 'target-pptp-wxs-verified.mafplus.xlsx',
+                                                            },
+                                                        ],
+                                                    },
                                                 },
                                             },
                                         },
@@ -3741,43 +4136,49 @@
                             '_default' => {
                                 'Broad' => {
                                     'Broad' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'NB170_germline_calls_from_tumors.vcf',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'NB222_exome_germline_calls.snp.recalibrated.vcf',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'NB222_germline_calls_from_tumors.vcf',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'TARGET_NBL_WXS_somatic.maf.txt',
-                                                    'child_data_by_protocol_type' => {
-                                                        'FilterVerified' => [
-                                                            {
-                                                                'data_level' => '3',
-                                                                'file_name' => 'TARGET_NBL_WXS_somatic_verified.maf.txt',
-                                                            },
-                                                        ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'NB170_germline_calls_from_tumors.vcf',
                                                     },
-                                                },
-                                            ],
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'NB222_exome_germline_calls.snp.recalibrated.vcf',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'NB222_germline_calls_from_tumors.vcf',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'TARGET_NBL_WXS_somatic.maf.txt',
+                                                        'protocol_data_by_type' => {
+                                                            'FilterVerified' => {
+                                                                'file_data' => [
+                                                                    {
+                                                                        'data_level' => '3',
+                                                                        'file_name' => 'TARGET_NBL_WXS_somatic_verified.maf.txt',
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                     'StJude' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_NBL_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                            ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_NBL_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                 },
@@ -3938,13 +4339,15 @@
                             '_default' => {
                                 'NCI-Meltzer' => {
                                     'StJude' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_OS_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                            ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_OS_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                 },
@@ -4193,81 +4596,93 @@
                             '_default' => {
                                 'BCM' => {
                                     'BCM' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall-AtlasPindel' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-wt-hg19-germline.mafplus.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-wt-snp-indel.mafplus.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-wt-17pairs-somatic-v1.1.mafplus.xlsx',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-wt-pilot-bcm-somatic-v4.0.mafplus.xlsx',
-                                                    'child_data_by_protocol_type' => {
-                                                        'FilterVerified' => [
-                                                            {
-                                                                'data_level' => '3',
-                                                                'file_name' => 'target-wt-pilot-bcm-somatic-verified-v4.0.mafplus.xlsx',
-                                                            },
-                                                        ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall-AtlasPindel' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-wt-hg19-germline.mafplus.txt',
                                                     },
-                                                },
-                                            ],
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-wt-snp-indel.mafplus.txt',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-wt-17pairs-somatic-v1.1.mafplus.xlsx',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-wt-pilot-bcm-somatic-v4.0.mafplus.xlsx',
+                                                        'protocol_data_by_type' => {
+                                                            'FilterVerified' => {
+                                                                'file_data' => [
+                                                                    {
+                                                                        'data_level' => '3',
+                                                                        'file_name' => 'target-wt-pilot-bcm-somatic-verified-v4.0.mafplus.xlsx',
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                     'NCI-Meerzaman' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-wt-17pairs-NCI-somatic-exonic.bcmmaf.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-wt-pilot-nci-somatic-v4.0.mafplus.xlsx',
-                                                    'child_data_by_protocol_type' => {
-                                                        'FilterVerified' => [
-                                                            {
-                                                                'data_level' => '3',
-                                                                'file_name' => 'target-wt-pilot-nci-somatic-verified-v4.0.mafplus.xlsx',
-                                                            },
-                                                        ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-wt-17pairs-NCI-somatic-exonic.bcmmaf.txt',
                                                     },
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'target-wt-primary-recurrent-NCI-somatic-exonic.bcmmaf.txt',
-                                                    'child_data_by_protocol_type' => {
-                                                        'FilterVerified' => [
-                                                            {
-                                                                'data_level' => '3',
-                                                                'file_name' => 'target-wt-primary-recurrent-NCI-somatic-exonic-verified.bcmmaf.txt',
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-wt-pilot-nci-somatic-v4.0.mafplus.xlsx',
+                                                        'protocol_data_by_type' => {
+                                                            'FilterVerified' => {
+                                                                'file_data' => [
+                                                                    {
+                                                                        'data_level' => '3',
+                                                                        'file_name' => 'target-wt-pilot-nci-somatic-verified-v4.0.mafplus.xlsx',
+                                                                    },
+                                                                ],
                                                             },
-                                                        ],
+                                                        },
                                                     },
-                                                },
-                                            ],
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'target-wt-primary-recurrent-NCI-somatic-exonic.bcmmaf.txt',
+                                                        'protocol_data_by_type' => {
+                                                            'FilterVerified' => {
+                                                                'file_data' => [
+                                                                    {
+                                                                        'data_level' => '3',
+                                                                        'file_name' => 'target-wt-primary-recurrent-NCI-somatic-exonic-verified.bcmmaf.txt',
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                     'StJude' => {
-                                        'child_data_by_protocol_type' => {
-                                            'VariantCall' => [
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_WT_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                                {
-                                                    'data_level' => '3',
-                                                    'file_name' => 'stjude.org_TARGET_WT_WXS_Relapse_IlluminaHiSeq_somatic.maf.txt',
-                                                },
-                                            ],
+                                        'protocol_data_by_type' => {
+                                            'VariantCall' => {
+                                                'file_data' => [
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_WT_WXS_Diagnosis_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                    {
+                                                        'data_level' => '3',
+                                                        'file_name' => 'stjude.org_TARGET_WT_WXS_Relapse_IlluminaHiSeq_somatic.maf.txt',
+                                                    },
+                                                ],
+                                            },
                                         },
                                     },
                                 },
@@ -4279,21 +4694,25 @@
                                     '_default' => {
                                         'BCM' => {
                                             'BCM' => {
-                                                'child_data_by_protocol_type' => {
-                                                    'VariantCall-AtlasPindel' => [
-                                                        {
-                                                            'data_level' => '3',
-                                                            'file_name' => 'target-wt-pilot-bcm-somatic-v4.0.mafplus.xlsx',
-                                                            'child_data_by_protocol_type' => {
-                                                                'FilterVerified' => [
-                                                                    {
-                                                                        'data_level' => '3',
-                                                                        'file_name' => 'target-wt-pilot-bcm-somatic-verified-v4.0.mafplus.xlsx',
+                                                'protocol_data_by_type' => {
+                                                    'VariantCall-AtlasPindel' => {
+                                                        'file_data' => [
+                                                            {
+                                                                'data_level' => '3',
+                                                                'file_name' => 'target-wt-pilot-bcm-somatic-v4.0.mafplus.xlsx',
+                                                                'protocol_data_by_type' => {
+                                                                    'FilterVerified' => {
+                                                                        'file_data' => [
+                                                                            {
+                                                                                'data_level' => '3',
+                                                                                'file_name' => 'target-wt-pilot-bcm-somatic-verified-v4.0.mafplus.xlsx',
+                                                                            },
+                                                                        ],
                                                                     },
-                                                                ],
+                                                                },
                                                             },
-                                                        },
-                                                    ],
+                                                        ],
+                                                    },
                                                 },
                                             },
                                         },

@@ -309,335 +309,6 @@ my %mage_tab_sdrf_base_col_names_by_type = (
         'Comment[QC Warning]',
     ],
 );
-my @mage_tab_sdrf_dcc_col_conf = (
-    {
-        name => 'Derived Array Data File',
-        key => 'file_name',
-    },
-    {
-        name => 'Comment[OCG Data Level]',
-        key => 'data_level',
-    },
-    {
-        name => 'Comment[miRBase Version]',
-        key => 'mirbase_version',
-    },
-);
-my %dcc_scanned_file_protocol_dag_conf = (
-    # data type
-    'Bisulfite-seq' => {
-        # run center
-        '_default' => {
-            # analysis center
-            'BCCA' => [
-                {
-                    type => 'Methylation',
-                },
-            ],
-        },
-    },
-    'ChIP-seq' => {
-        '_default' => {
-            'BCCA' => [
-                {
-                    type => 'PeakCall',
-                },
-            ],
-        },
-    },
-    'miRNA-seq' => {
-        '_default' => {
-            'BCCA' => [
-                {
-                    type => 'Expression',
-                },
-            ],
-        },
-    },
-    'mRNA-seq' => {
-        '_default' => {
-            'BCCA' => [
-                {
-                    type => 'VariantCall',
-                },
-                {
-                    type => 'VariantCall-StrandSpecific',
-                    children => [
-                        {
-                            type => 'Vcf2Maf',
-                        },
-                    ],
-                },
-                {
-                    type => 'Expression',
-                },
-                {
-                    type => 'Fusion',
-                },
-                {
-                    type => 'Fusion-Defuse',
-                },
-                {
-                    type => 'Fusion-GenomeValidator',
-                },
-                {
-                    type => 'Indel',
-                },
-            ],
-            'NCI-Khan' => [
-                {
-                    type => 'Expression',
-                },
-                {
-                    type => 'Fusion',
-                },
-            ],
-            'NCI-Meerzaman' => [
-                {
-                    type => 'Expression',
-                },
-                {
-                    type => 'Fusion-Defuse',
-                    children => [
-                        {
-                            type => 'Fusion-Summary',
-                        },
-                    ],
-                },
-                {
-                    type => 'Fusion-FusionMap',
-                    children => [
-                        {
-                            type => 'Fusion-Summary',
-                        },
-                    ],
-                },
-                {
-                    type => 'Fusion-SnowShoes',
-                    children => [
-                        {
-                            type => 'Fusion-Summary',
-                        },
-                    ],
-                },
-                {
-                    type => 'Fusion-TopHat',
-                    children => [
-                        {
-                            type => 'Fusion-Summary',
-                        },
-                    ],
-                },
-            ],
-            'NCI-Meltzer' => [
-                {
-                    type => 'Expression',
-                },
-            ],
-            'StJude' => [
-                {
-                    type => 'VariantCall',
-                },
-                {
-                    type => 'Expression',
-                },
-                {
-                    type => 'Fusion',
-                },
-            ],
-        },
-    },
-    'Targeted-Capture' => {
-        '_default' => {
-            'BCCA' => [
-                {
-                    type => 'VariantCall-Mpileup',
-                    children => [
-                        {
-                            type => 'Vcf2Maf',
-                        },
-                    ],
-                },
-                {
-                    type => 'VariantCall-Strelka',
-                },
-            ],
-            'UHN' => [
-                {
-                    type => 'CnvSegment-VisCap',
-                },
-            ],
-        },
-        'BCM' => {
-            'BCM' => [
-                {
-                    type => 'VariantCall-AtlasPindel',
-                    children => [
-                        {
-                            type => 'FilterVerified',
-                        },
-                    ],
-                },
-            ],
-        },
-    },
-    'WGS' => {
-        '_default' => {
-            'BCCA' => [
-                {
-                    type => 'VariantCall-Mpileup',
-                    children => [
-                        {
-                            type => 'Vcf2Maf',
-                        },
-                    ],
-                },
-                {
-                    type => 'VariantCall-Strelka',
-                },
-                {
-                    type => 'Fusion',
-                },
-                {
-                    type => 'Fusion-GenomeValidator',
-                },
-                {
-                    type => 'Indel',
-                },
-                {
-                    type => 'VariantCall',
-                },
-                {
-                    type => 'StructVariantCall-DELLY',
-                },
-            ],
-            'CGI' => [
-                {
-                    type => 'CnvSegment',
-                    children => [
-                        {
-                            type => 'Circos',
-                            constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
-                        },
-                    ],
-                },
-                {
-                    type => 'VariantCall',
-                    children => [
-                        {
-                            type => 'Vcf2Maf',
-                            constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
-                            children => [
-                                {
-                                    type => 'FilterSomatic',
-                                    constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
-                                },
-                                {
-                                    type => 'HigherLevelSummary',
-                                },
-                            ],
-                        },
-                        {
-                            type => 'Circos',
-                            constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
-                        },
-                    ],
-                },
-                {
-                    type => 'Junction',
-                    children => [
-                        {
-                            type => 'Circos',
-                        },
-                    ],
-                },
-            ],
-            'StJude' => [
-                {
-                    type => 'CnvSegment',
-                },
-                {
-                    type => 'VariantCall',
-                },
-                {
-                    type => 'Fusion',
-                },
-            ],
-        },
-        'BCCA' => {
-            'CGI' => [
-                {
-                    type => 'VariantCall',
-                    children => [
-                        {
-                            type => 'FilterSomatic',
-                        },
-                    ],
-                },
-            ],
-        },
-    },
-    'WXS' => {
-        '_default' => {
-            'BCCA' => [
-                {
-                    type => 'VariantCall',
-                },
-            ],
-            'BCM' => [
-                {
-                    type => 'VariantCall-AtlasPindel',
-                    children => [
-                        {
-                            type => 'FilterVerified',
-                        },
-                    ],
-                },
-                {
-                    type => 'CnvSegment',
-                },
-            ],
-            'Broad' => [
-                {
-                    type => 'VariantCall',
-                    children => [
-                        {
-                            type => 'FilterVerified',
-                        },
-                    ],
-                },
-                {
-                    type => 'CnvSegment',
-                },
-            ],
-            'NCI-Meerzaman' => [
-                {
-                    type => 'VariantCall',
-                    children => [
-                        {
-                            type => 'FilterVerified',
-                        },
-                    ],
-                },
-            ],
-            'NCI-Meltzer' => [
-                {
-                    type => 'VariantCall-Strelka',
-                },
-            ],
-            'StJude' => [
-                {
-                    type => 'VariantCall',
-                    children => [
-                        {
-                            type => 'FilterVerified',
-                        },
-                    ],
-                },
-            ],
-        },
-    },
-);
 my %list_types = map { $_ => 1 } qw(
     all
     data_types
@@ -731,7 +402,7 @@ if (@ARGV) {
                 if ($user_param =~ /^RNA-seq$/i) {
                     $user_param = 'mRNA-seq';
                 }
-                elsif ($user_param =~ /^targeted_capture_seq/i) {
+                elsif ($user_param =~ /^targeted(_|-)capture((_|-)seq)?/i) {
                     $user_param = 'Targeted-Capture';
                 }
             }
@@ -1326,7 +997,6 @@ for my $program_name (@program_names) {
                 my (
                     %dcc_scanned_file_info,
                     %dcc_parsed_file_names_by_barcode,
-                    @dcc_marked_file_info,
                     @dcc_file_errors, 
                     @dcc_skipped_files, 
                     @dcc_missing_data_level_dirs,
@@ -1578,7 +1248,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # BCCA strelka vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.somatic\.(snv|indel)\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.somatic\.(snv|indel)(\..+?)?\.vcf$/i) {
                                     for my $barcode ($1, $2) {
                                         push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Strelka'}}, {
                                             data_level => $data_level,
@@ -1587,16 +1257,25 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 # BCCA strelka mafs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\..+?\.somatic\.maf(\.txt)?$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)(\..+?)?\.somatic\.maf(\.txt)?$/i) {
                                     for my $barcode ($1, $2) {
-                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Strelka'}}, {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Maf'}}, {
+                                            data_level => $data_level,
+                                            file_name => $file_name,
+                                        };
+                                    }
+                                }
+                                # BCCA strelka tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.somatic\.(snv|indel)(\..+?)?\.tab_delimited\.txt$/i) {
+                                    for my $barcode ($1, $2) {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Tab'}}, {
                                             data_level => $data_level,
                                             file_name => $file_name,
                                         };
                                     }
                                 }
                                 # BCCA mpileup vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.dna_(tumor|normal)\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?(\.dna_(tumor|normal)|(?<!\.indel))\.vcf$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Mpileup'}}, {
                                         data_level => $data_level,
@@ -1604,32 +1283,101 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA mpileup mafs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\..+?\.dna_(tumor|normal)\.maf(\.txt)?$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.dna_(tumor|normal)\.maf(\.txt)?$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Vcf2Maf'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Mpileup-Vcf2Maf'}}, {
+                                        data_level => $data_level,
+                                        file_name => $file_name,
+                                    };
+                                }
+                                # BCCA mpileup tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.tab_delimited\.txt$/i) {
+                                    my $barcode = $1;
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Mpileup-Vcf2Tab'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
                                 # BCCA indel vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.indel\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.indel\.vcf$/i) {
                                     my ($barcode, $file_type) = ($1, $2);
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Indel'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
+                                # BCCA combined snv tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_CASE_REGEXP)(\..+?)?\.combined_somatic_snvs\.tab_delimited\.txt$/i) {
+                                    my $case_id = $1;
+                                    if (
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}) and
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id})
+                                    ) {
+                                        for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
+                                            for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'CombineSomaticSNVs'}}, {
+                                                    data_level => $data_level,
+                                                    file_name => $file_name,
+                                                };
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
+                                    }
+                                }
                                 # BCCA fusion vcfs
-                                elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)\.fusion\.vcf$/i) {
+                                elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.fusion\.vcf$/i) {
                                     my ($barcode, $file_type) = ($1, $2);
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA GenomeValidator tsvs
-                                elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d\.genome\.fusions\.somatic\.(large|small)\.summary\.tsv$/i) {
-                                    
+                                # BCCA delly structural vcfs
+                                elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)(\..+?)?\.quality_tagged\.vcf$/i) {
+                                    my $case_id = $1;
+                                    if (
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}) and
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id})
+                                    ) {
+                                        for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
+                                            for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariantCall-DELLY'}}, {
+                                                    data_level => $data_level,
+                                                    file_name => $file_name,
+                                                };
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
+                                    }
+                                }
+                                # BCCA genomevalidator fusion tsvs
+                                elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d(?:\.(primary|relapse))?\.genome\.fusions\.somatic\.(?:large|small)\.summary\.tsv$/i) {
+                                    my ($case_id, $file_tissue_type) = ($1, $2);
+                                    if (defined $file_tissue_type) {
+                                        $file_tissue_type = ucfirst(lc($file_tissue_type));
+                                        $file_tissue_type = 'Recurrent' if $file_tissue_type eq 'Relapse';
+                                    }
+                                    if (
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}) and
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id})
+                                    ) {
+                                        for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
+                                            next if defined($file_tissue_type) and $tissue_type !~ /$file_tissue_type|Normal/i;
+                                            for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-GenomeValidator'}}, {
+                                                    data_level => $data_level,
+                                                    file_name => $file_name,
+                                                };
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
+                                    }
                                 }
                                 # BCCA older mafs
                                 elsif ($file =~ /mutation\/BCCA\/.+?\.maf(\.txt)?$/i) {
@@ -1657,15 +1405,12 @@ for my $program_name (@program_names) {
                                             }
                                         }
                                         if (!$barcode_found) {
-                                            push @dcc_marked_file_info, {
-                                                data_level => $data_level,
-                                                file => $file,
-                                            };
+                                            push @dcc_file_errors, "could not lookup barcode info: $file";
                                         }
                                     }
                                 }
                                 # StJude copy number
-                                elsif ($file =~ /copy_number\/StJude\/.*?\.tsv$/i) {
+                                elsif ($file =~ /copy_number\/StJude\/.+?\.tsv$/i) {
                                     for my $case_id (keys %{$cgi_analysis_info_by_case_hashref}) {
                                         for my $case_cmp_analysis_info_hashref (values %{$cgi_analysis_info_by_case_hashref->{$case_id}}) {
                                             # special filtering for TARGET ALL Xenografts
@@ -1704,7 +1449,7 @@ for my $program_name (@program_names) {
                                     #}
                                 }
                                 # StJude mafs
-                                elsif ($file =~ /mutation\/StJude\/.*?\.maf(\.txt)?$/i) {
+                                elsif ($file =~ /mutation\/StJude\/.+?\.maf(\.txt)?$/i) {
                                     if (my ($file_tissue_type) = $file_name =~ /(diagnosis|relapse)/i) {
                                         $file_tissue_type = lc($file_tissue_type) eq 'diagnosis' ? 'Primary' : 'Recurrent';
                                         for my $case_id (keys %{$cgi_analysis_info_by_case_hashref}) {
@@ -1750,7 +1495,7 @@ for my $program_name (@program_names) {
                                     #}
                                 }
                                 # StJude structural
-                                elsif ($file =~ /structural\/StJude\/.*?\.tsv$/i) {
+                                elsif ($file =~ /structural\/StJude\/.+?\.tsv$/i) {
                                     for my $case_id (keys %{$cgi_analysis_info_by_case_hashref}) {
                                         for my $case_cmp_analysis_info_hashref (values %{$cgi_analysis_info_by_case_hashref->{$case_id}}) {
                                             # special filtering for TARGET ALL Xenografts
@@ -1889,10 +1634,7 @@ for my $program_name (@program_names) {
                                         }
                                     }
                                     if (!$barcode_found) {
-                                        push @dcc_marked_file_info, {
-                                            data_level => $data_level,
-                                            file => $file,
-                                        };
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
                                 else {
@@ -2051,24 +1793,32 @@ for my $program_name (@program_names) {
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA tumor/normal maf
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\..+?\.rna_(?:tumor|normal)\.maf(\.txt)?$/i) {
+                                # BCCA mpileup vcf
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?(?<!\.indel)\.vcf$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Vcf2Maf'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-SNVMix2'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA tumor/normal vcf
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.rna_(?:tumor|normal)\.vcf$/i) {
+                                # BCCA mpileup maf
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.rna_(?:tumor|normal)\.maf(\.txt)?$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-StrandSpecific'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'SNVMix2-Vcf2Maf'}}, {
+                                        data_level => $data_level,
+                                        file_name => $file_name,
+                                    };
+                                }
+                                # BCCA mpileup tab
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.tab_delimited\.txt$/i) {
+                                    my $barcode = $1;
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'SNVMix2-Vcf2Tab'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
                                 # BCCA indel vcf
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.indel\.vcf$/i) {
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.indel\.vcf$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Indel'}}, {
                                         data_level => $data_level,
@@ -2076,9 +1826,42 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # BCCA fusion vcf
-                                elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)\.fusion\.vcf$/i) {
+                                elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.fusion\.vcf$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion'}}, {
+                                        data_level => $data_level,
+                                        file_name => $file_name,
+                                    };
+                                }
+                                # BCCA genomevalidator fusion tsvs
+                                elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d(?:\.(primary|relapse))?\.transcriptome\.fusions\.somatic\.(?:large|small)\.summary\.tsv$/i) {
+                                    my ($case_id, $file_tissue_type) = ($1, $2);
+                                    if (defined $file_tissue_type) {
+                                        $file_tissue_type = ucfirst(lc($file_tissue_type));
+                                        $file_tissue_type = 'Recurrent' if $file_tissue_type eq 'Relapse';
+                                    }
+                                    if (
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}) and
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id})
+                                    ) {
+                                        for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
+                                            next if defined($file_tissue_type) and $tissue_type !~ /$file_tissue_type|Normal/i;
+                                            for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-GenomeValidator'}}, {
+                                                    data_level => $data_level,
+                                                    file_name => $file_name,
+                                                };
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
+                                    }
+                                }
+                                # BCCA defuse fusion tsvs
+                                elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)(\.fusion)?\.results\.filtered\.tsv$/i) {
+                                    my $barcode = $1;
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-Defuse'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
@@ -2092,7 +1875,7 @@ for my $program_name (@program_names) {
                                     };
                                 }
                                 # StJude structural
-                                elsif ($file =~ /structural\/StJude\/.*?\.tsv$/i) {
+                                elsif ($file =~ /structural\/StJude\/.+?\.tsv$/i) {
                                     # only Phase2
                                     for my $barcode (keys %{$run_info_by_study_hashref->{'phs000464'}->{$data_type}->{'StJude'}->{barcodes}}) {
                                         push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'StJude'}{'StJude'}{'Fusion'}}, {
@@ -2126,10 +1909,7 @@ for my $program_name (@program_names) {
                                         }
                                     }
                                     if (!$barcode_found) {
-                                        push @dcc_marked_file_info, {
-                                            data_level => $data_level,
-                                            file => $file,
-                                        };
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
                                 # BCCA older gene, exon, spljxn quantification and maf files
@@ -2157,10 +1937,7 @@ for my $program_name (@program_names) {
                                         }
                                     }
                                     if (!$barcode_found) {
-                                        push @dcc_marked_file_info, {
-                                            data_level => $data_level,
-                                            file => $file,
-                                        };
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
                                 # NCI-Khan other gene, isoform, exon and fusion files
@@ -2196,13 +1973,10 @@ for my $program_name (@program_names) {
                                         }
                                     }
                                     if (!$barcode_found) {
-                                        push @dcc_marked_file_info, {
-                                            data_level => $data_level,
-                                            file => $file,
-                                        };
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
-                                elsif ($file_name =~ /^((README|MANIFEST)\.txt|.+?\.tar\.gz)$/i) {
+                                elsif ($file_name =~ /^(README.*?\.(txt|xlsx?)|MANIFEST\.txt|.+?\.tar\.gz)$/i) {
                                     push @dcc_skipped_files, $file;
                                 }
                                 else {
@@ -2229,24 +2003,8 @@ for my $program_name (@program_names) {
                             }
                             # Targeted-Capture
                             elsif ($data_type eq 'Targeted-Capture') {
-                                # BCCA full vcfs
-                                if ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\.capture_dna_(tumor|normal)\.vcf?$/i) {
-                                    my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Mpileup'}}, {
-                                        data_level => $data_level,
-                                        file_name => $file_name,
-                                    };
-                                }
-                                # BCCA full mafs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)\..+?\.capture_dna_(tumor|normal)\.maf(\.txt)?$/i) {
-                                    my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Vcf2Maf'}}, {
-                                        data_level => $data_level,
-                                        file_name => $file_name,
-                                    };
-                                }
                                 # BCCA strelka vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.capture_dna\.somatic\.(snv|indel)\.vcf$/i) {
+                                if ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.capture_dna\.somatic\.(snv|indel)(\..+?)?\.vcf$/i) {
                                     for my $barcode ($1, $2) {
                                         push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Strelka'}}, {
                                             data_level => $data_level,
@@ -2254,7 +2012,49 @@ for my $program_name (@program_names) {
                                         };
                                     }
                                 }
-                                # UHN copy number (VisCap)
+                                # BCCA strelka mafs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)(\..+?)?\.capture_dna\.somatic\.maf(\.txt)?$/i) {
+                                    for my $barcode ($1, $2) {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Maf'}}, {
+                                            data_level => $data_level,
+                                            file_name => $file_name,
+                                        };
+                                    }
+                                }
+                                # BCCA strelka tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.capture_dna\.somatic\.(snv|indel)(\..+?)?\.tab_delimited\.txt$/i) {
+                                    for my $barcode ($1, $2) {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Tab'}}, {
+                                            data_level => $data_level,
+                                            file_name => $file_name,
+                                        };
+                                    }
+                                }
+                                # BCCA mpileup vcfs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.capture_dna_(tumor|normal)\.vcf?$/i) {
+                                    my $barcode = $1;
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall-Mpileup'}}, {
+                                        data_level => $data_level,
+                                        file_name => $file_name,
+                                    };
+                                }
+                                # BCCA mpileup mafs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.capture_dna_(tumor|normal)\.maf(\.txt)?$/i) {
+                                    my $barcode = $1;
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Mpileup-Vcf2Maf'}}, {
+                                        data_level => $data_level,
+                                        file_name => $file_name,
+                                    };
+                                }
+                                # BCCA mpileup tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.tab_delimited\.txt$/i) {
+                                    my $barcode = $1;
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Mpileup-Vcf2Tab'}}, {
+                                        data_level => $data_level,
+                                        file_name => $file_name,
+                                    };
+                                }
+                                # UHN viscap copy number
                                 elsif (
                                     $file =~ /copy_number\/UHN\/VisCap_(?:Female|Male)_(?:Germline|Somatic)\/($OCG_BARCODE_REGEXP)\.bam\.cov\/.*?$OCG_BARCODE_REGEXP\.bam\.cov\.(cnvs\.xls|plot\.pdf|segments\.seg)$/i
                                 ) {
@@ -2281,7 +2081,7 @@ for my $program_name (@program_names) {
                             # Bisulfite-seq
                             elsif ($data_type eq 'Bisulfite-seq') {
                                 # Methylation
-                                if ($file_name =~ /^($OCG_BARCODE_REGEXP)\..+?\.bw?$/i) {
+                                if ($file_name =~ /^($OCG_BARCODE_REGEXP)(\..+?)?\.bw?$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Methylation'}}, {
                                         data_level => $data_level,
@@ -2301,7 +2101,7 @@ for my $program_name (@program_names) {
                             # Bisulfite-seq
                             elsif ($data_type eq 'ChIP-seq') {
                                 # PeakCall
-                                if ($file_name =~ /^($OCG_BARCODE_REGEXP)\..+?\.bw?$/i) {
+                                if ($file_name =~ /^($OCG_BARCODE_REGEXP)(\..+?)?\.bw?$/i) {
                                     my $barcode = $1;
                                     push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'PeakCall'}}, {
                                         data_level => $data_level,
@@ -2334,9 +2134,6 @@ for my $program_name (@program_names) {
                 if (@dcc_skipped_files and $verbose) {
                     print map { "Skipped $_\n" } natsort @dcc_skipped_files;
                 }
-                if (@dcc_marked_file_info and $verbose) {
-                    print map { "Marked $_->{file}\n" } natkeysort { $_->{file} } @dcc_marked_file_info;
-                }
                 if (@dcc_file_errors) {
                     warn map { (-t STDERR ? colored('ERROR', 'red') : 'ERROR') . ": $_\n" } natsort @dcc_file_errors;
                     next DATASET;
@@ -2349,6 +2146,7 @@ for my $program_name (@program_names) {
                 }
                 my (
                     %dcc_sdrf_dag_info,
+                    @dcc_sdrf_col_info,
                     %dcc_protocol_idf_order_info,
                 );
                 # add parsed file sdrf dag info
@@ -2370,16 +2168,27 @@ for my $program_name (@program_names) {
                                 ) {
                                     # init
                                     my $sdrf_dag_node_hashref = {};
+                                    my $sdrf_col_info_arrayref = [];
                                     $dcc_protocol_idf_order_info{$analysis_center_name} = []
                                         unless defined $dcc_protocol_idf_order_info{$analysis_center_name};
                                     add_dcc_parsed_file_sdrf_dag_info({
                                         conf_sdrf_dag_node => $mt_config_hashref->{dataset}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}->{$analysis_center_name},
                                         sdrf_dag_node => $sdrf_dag_node_hashref,
+                                        sdrf_col_info => $sdrf_col_info_arrayref,
+                                        temp_col_info => [],
+                                        sdrf_col_group_idx => 0,
                                         file_names => $dcc_parsed_file_names_by_barcode{$barcode},
                                         protocol_idf_order_info => $dcc_protocol_idf_order_info{$analysis_center_name},
+                                        dcc_col_types => $mt_config_hashref->{sdrf}->{'dcc_col_types'},
                                     });
                                     if (%{$sdrf_dag_node_hashref}) {
                                         $dcc_sdrf_dag_info{$data_type}{$barcode}{$exp_center_name}{'_default'}{$run_center_name}{$analysis_center_name} = $sdrf_dag_node_hashref;
+                                    }
+                                    if (@{$sdrf_col_info_arrayref}) {
+                                        add_dcc_sdrf_col_info(
+                                            \@dcc_sdrf_col_info,
+                                            $sdrf_col_info_arrayref,
+                                        );
                                     }
                                 }
                             }
@@ -2409,16 +2218,27 @@ for my $program_name (@program_names) {
                                         ) {
                                             # init
                                             my $sdrf_dag_node_hashref = {};
+                                            my $sdrf_col_info_arrayref = [];
                                             $dcc_protocol_idf_order_info{$analysis_center_name} = []
                                                 unless defined $dcc_protocol_idf_order_info{$analysis_center_name};
                                             add_dcc_parsed_file_sdrf_dag_info({
                                                 conf_sdrf_dag_node => $mt_config_hashref->{dataset}->{'add_data_types'}->{$data_type}->{'sdrf_dag_info'}->{$exp_center_name}->{$run_center_name}->{$analysis_center_name},
                                                 sdrf_dag_node => $sdrf_dag_node_hashref,
+                                                sdrf_col_info => $sdrf_col_info_arrayref,
+                                                temp_col_info => [],
+                                                sdrf_col_group_idx => 0,
                                                 file_names => $dcc_parsed_file_names_by_barcode{$barcode},
                                                 protocol_idf_order_info => $dcc_protocol_idf_order_info{$analysis_center_name},
+                                                dcc_col_types => $mt_config_hashref->{sdrf}->{'dcc_col_types'},
                                             });
                                             if (%{$sdrf_dag_node_hashref}) {
                                                 $dcc_sdrf_dag_info{$data_type}{$barcode}{$exp_center_name}{'_default'}{$run_center_name}{$analysis_center_name} = $sdrf_dag_node_hashref;
+                                            }
+                                            if (@{$sdrf_col_info_arrayref}) {
+                                                add_dcc_sdrf_col_info(
+                                                    \@dcc_sdrf_col_info,
+                                                    $sdrf_col_info_arrayref,
+                                                );
                                             }
                                         }
                                     }
@@ -2448,21 +2268,33 @@ for my $program_name (@program_names) {
                                     ) {
                                         # init
                                         my $sdrf_dag_node_hashref = {};
+                                        my $sdrf_col_info_arrayref = [];
                                         $dcc_protocol_idf_order_info{$analysis_center_name} = []
                                             unless defined $dcc_protocol_idf_order_info{$analysis_center_name};
                                         my $protocol_dag_custom_run_center = (
-                                            exists($dcc_scanned_file_protocol_dag_conf{$data_type}{$run_center_name}) and
-                                            exists($dcc_scanned_file_protocol_dag_conf{$data_type}{$run_center_name}{$analysis_center_name})
+                                            exists($mt_config_hashref->{sdrf}->{'dcc_scanned_file_protocol_dag'}->{$data_type}->{$run_center_name}) and
+                                            exists($mt_config_hashref->{sdrf}->{'dcc_scanned_file_protocol_dag'}->{$data_type}->{$run_center_name}->{$analysis_center_name})
                                         ) ? $run_center_name
                                           : '_default';
                                         add_dcc_scanned_file_sdrf_dag_info({
-                                            protocol_dag_nodes => $dcc_scanned_file_protocol_dag_conf{$data_type}{$protocol_dag_custom_run_center}{$analysis_center_name},
+                                            protocol_dag_nodes => $mt_config_hashref->{sdrf}->{'dcc_scanned_file_protocol_dag'}->{$data_type}->{$protocol_dag_custom_run_center}->{$analysis_center_name},
                                             file_info => $dcc_scanned_file_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}{$analysis_center_name},
                                             sdrf_dag_node => $sdrf_dag_node_hashref,
+                                            sdrf_col_info => $sdrf_col_info_arrayref,
+                                            temp_col_info => [],
+                                            sdrf_col_group_idx => 0,
                                             protocol_idf_order_info => $dcc_protocol_idf_order_info{$analysis_center_name},
+                                            dcc_col_types => $mt_config_hashref->{sdrf}->{'dcc_col_types'},
                                         });
                                         if (%{$sdrf_dag_node_hashref}) {
-                                            $dcc_sdrf_dag_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}{$analysis_center_name} = $sdrf_dag_node_hashref;
+                                            $dcc_sdrf_dag_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}{$analysis_center_name} =
+                                                $sdrf_dag_node_hashref;
+                                        }
+                                        if (@{$sdrf_col_info_arrayref}) {
+                                            add_dcc_sdrf_col_info(
+                                                \@dcc_sdrf_col_info,
+                                                $sdrf_col_info_arrayref,
+                                            );
                                         }
                                     }
                                 }
@@ -2470,11 +2302,13 @@ for my $program_name (@program_names) {
                         }
                     }
                 }
-                #if ($debug{all} or $debug{file_info}) {
-                #    print STDERR
-                #        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'),
-                #        ": \%dcc_sdrf_dag_info:\n", Dumper(\%dcc_sdrf_dag_info);
-                #}
+                if ($debug{all} or $debug{file_info}) {
+                    print STDERR
+                        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'),
+                        ": \@dcc_sdrf_col_info:\n", Dumper(\@dcc_sdrf_col_info);
+                        #+(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'),
+                        #": \%dcc_sdrf_dag_info:\n", Dumper(\%dcc_sdrf_dag_info);
+                }
                 my @exp_ids = map { keys %{$_->{exp_ids}} } values %{$merged_run_info_hashref->{$data_type}};
                 my @library_names = map { keys %{$_->{library_name_barcode}} } values %{$merged_run_info_hashref->{$data_type}};
                 my @run_ids = map { keys %{$_->{run_ids}} } values %{$merged_run_info_hashref->{$data_type}};
@@ -2495,7 +2329,7 @@ for my $program_name (@program_names) {
                 @exp_ids = natsort uniq(@exp_ids);
                 @library_names = natsort uniq(@library_names);
                 @run_ids = natsort uniq(@run_ids);
-                print scalar(@exp_ids), ' experiments / ', 
+                print scalar(@exp_ids), ' experiments / ',
                       scalar(@library_names), ' libraries / ',
                       scalar(@run_ids), " runs\n";
                 # get experiment package SRA-XML for each experiment and build MAGE-TAB IDF and SDRF data
@@ -2503,7 +2337,6 @@ for my $program_name (@program_names) {
                 my (
                     @mage_tab_idf_data,
                     @mage_tab_sdrf_data,
-                    @mage_tab_sdrf_dcc_col_headers,
                     @protocol_data,
                 );
                 my @mage_tab_file_basename_parts = (
@@ -2675,9 +2508,19 @@ for my $program_name (@program_names) {
                                         $exp_pkg_xml->{STUDY}->{alias} ne 'phs000463'
                                     ) or
                                     (
-                                        $dataset eq 'Phase2' and
+                                        (
+                                            $dataset eq 'Phase2' or
+                                            $dataset eq 'Phase3'
+                                        ) and
                                         $exp_pkg_xml->{STUDY}->{alias} ne 'phs000464'
                                     )
+                                ) or
+                                (
+                                    defined($mt_config_hashref->{dataset}) and
+                                    defined($mt_config_hashref->{dataset}->{'exp_ids_excl'}) and
+                                    any {
+                                        $exp_id eq $_
+                                    } @{$mt_config_hashref->{dataset}->{'exp_ids_excl'}}
                                 ) or
                                 (
                                     (
@@ -3295,7 +3138,7 @@ for my $program_name (@program_names) {
                             # only for datasets with runs from multiple dbGaP studies
                             if (
                                 defined($mt_config_hashref->{dataset}) and
-                                defined($mt_config_hashref->{dataset}->{incl_dbgap_study_sdrf})
+                                defined($mt_config_hashref->{dataset}->{sdrf_incl_dbgap_study})
                             ) {
                                 for my $external_id_hashref (@{$exp_pkg_xml->{STUDY}->{IDENTIFIERS}->{EXTERNAL_ID}}) {
                                     if ($external_id_hashref->{'namespace'} =~ /dbgap/i) {
@@ -3458,7 +3301,7 @@ for my $program_name (@program_names) {
                                     namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
                                     namespace => 'Protocol',
                                     object => $protocol_object_name,
-                                    revision => '01',
+                                    revision => $mt_config_hashref->{default}->{'protocol_revision'},
                                 );
                             }
                             if (none { $protocol_hashref->{name} eq $_->{name} } @protocol_data) {
@@ -3612,7 +3455,7 @@ for my $program_name (@program_names) {
                                     namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
                                     namespace => 'Protocol',
                                     object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
-                                    revision => '01',
+                                    revision => $mt_config_hashref->{default}->{'protocol_revision'},
                                 );
                             }
                             $protocol_hashref->{description} = 
@@ -3674,7 +3517,7 @@ for my $program_name (@program_names) {
                                         namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
                                         namespace => 'Protocol',
                                         object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
-                                        revision => '01',
+                                        revision => $mt_config_hashref->{default}->{'protocol_revision'},
                                     );
                                 }
                                 if (none { $protocol_hashref->{name} eq $_->{name} } @protocol_data) {
@@ -3722,7 +3565,7 @@ for my $program_name (@program_names) {
                                             namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
                                             namespace => 'Protocol',
                                             object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
-                                            revision => '01',
+                                            revision => $mt_config_hashref->{default}->{'protocol_revision'},
                                         );
                                     }
                                     if (none { $protocol_hashref->{name} eq $_->{name} } @protocol_data) {
@@ -3880,7 +3723,7 @@ for my $program_name (@program_names) {
                                             namespace_prefix => $center_info{$run_center_name}{namespace_prefix},
                                             namespace => 'Protocol',
                                             object => "${protocol_exp_data_type}-${protocol_type}-${platform}-${protocol_hardware_model}",
-                                            revision => '01',
+                                            revision => $mt_config_hashref->{default}->{'protocol_revision'},
                                         );
                                         $protocol_hashref->{hardware} = $hardware_model;
                                     }
@@ -3967,7 +3810,7 @@ for my $program_name (@program_names) {
                                             namespace_prefix => $center_info{$run_center_name}{namespace_prefix},
                                             namespace => 'Protocol',
                                             object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
-                                            revision => '01',
+                                            revision => $mt_config_hashref->{default}->{'protocol_revision'},
                                         );
                                     }
                                     if (none { $protocol_hashref->{name} eq $_->{name} } @protocol_data) {
@@ -4085,7 +3928,9 @@ for my $program_name (@program_names) {
                                             defined($mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}) and
                                             defined($mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name})
                                         ) {
-                                            $field_value = $mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name};
+                                            $field_value = quote_for_mage_tab(
+                                                $mt_config_hashref->{dataset}->{exp_center_library_data_qc_warning}->{$exp_center_name}->{$exp_library_name}
+                                            );
                                         }
                                     }
                                     $sdrf_run_fastq_data[$mage_tab_sdrf_base_col_idx_by_type_key{run_fastq}{$col_key}] = defined($field_value) ? $field_value : '';
@@ -4141,7 +3986,7 @@ for my $program_name (@program_names) {
                                                 namespace_prefix => $center_info{$run_center_name}{namespace_prefix},
                                                 namespace => 'Protocol',
                                                 object => "${protocol_exp_data_type}-${protocol_type}",
-                                                revision => '01',
+                                                revision => $mt_config_hashref->{default}->{'protocol_revision'},
                                             );
                                         }
                                         if (none { $protocol_hashref->{name} eq $_->{name} } @protocol_data) {
@@ -4258,159 +4103,6 @@ for my $program_name (@program_names) {
                                     run_center_name => $run_center_name,
                                 };
                             }
-                            # scan marked DCC data using exp library name or run submitted file basename (barcode/sample ID already scanned)
-                            # fix for NCI-Khan TARGET CCSK,NBL mRNA-seq
-                            my $search_library_name = $exp_library_name;
-                            if ($program_name eq 'TARGET' and $project_name eq 'CCSK' and $data_type eq 'mRNA-seq') {
-                                ($search_library_name) = $search_library_name =~ /^(CCSK\d+)/i;
-                            }
-                            elsif ($program_name eq 'TARGET' and $project_name eq 'NBL' and $data_type eq 'mRNA-seq') {
-                                ($search_library_name) = $search_library_name =~ /^(NB\d+)/i;
-                            }
-                            my $run_data_file_basename;
-                            if (defined $run_xml->{alias}) {
-                                $run_data_file_basename = fileparse($run_xml->{alias}, qr/\.[^.]*/);
-                            }
-                            my %add_dcc_scanned_file_info;
-                            for my $dcc_marked_file_info_hashref (@dcc_marked_file_info) {
-                                my $file = $dcc_marked_file_info_hashref->{file};
-                                my $data_level = $dcc_marked_file_info_hashref->{data_level};
-                                my $file_name = fileparse($file);
-                                # WGS
-                                if ($data_type eq 'WGS') {
-                                    # BCCA older mafs
-                                    if ($file =~ /mutation\/BCCA\/.*?_?($search_library_name|$run_data_file_basename)_?.*?\.maf(\.txt)?$/i) {
-                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}) {
-                                            push @{$add_dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
-                                }
-                                # WXS
-                                elsif ($data_type eq 'WXS') {
-                                    # BCCA older mafs
-                                    if ($file =~ /mutation\/BCCA\/.*?_?($search_library_name|$run_data_file_basename)_?.*?\.maf(\.txt)?$/i) {
-                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}) {
-                                            push @{$add_dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
-                                }
-                                # mRNA-seq
-                                elsif ($data_type eq 'mRNA-seq') {
-                                    # older BCCA gene, exon, spljxn quantification files
-                                    if ($file =~ /expression\/BCCA\/.*?_?($search_library_name|$run_data_file_basename)_?.*?\.((gene|exon|spljxn)\.quantification\.txt)$/i) {
-                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Expression'}}) {
-                                            push @{$add_dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Expression'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Expression'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
-                                    # older BCCA mafs
-                                    elsif ($file =~ /mutation\/BCCA\/.*?_?($search_library_name|$run_data_file_basename)_?.*?\.maf(\.txt)?$/i) {
-                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}) {
-                                            push @{$add_dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'VariantCall'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
-                                    # NCI-Khan gene, isoform, exon files
-                                    elsif ($file =~ /expression\/NCI-Khan\/.*?_?($search_library_name|$run_data_file_basename)_?.*?\.(((gene|isoform)\.fpkm|exon\.(count|rpkm))\.txt)$/i) {
-                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Expression'}}) {
-                                            push @{$add_dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Expression'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Expression'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
-                                    # NCI-Khan fusion files
-                                    elsif ($file =~ /structural\/NCI-Khan\/.*?_?($search_library_name|$run_data_file_basename)_?.*?\.fusion(\.results\.filtered)?\.tsv$/i) {
-                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Fusion'}}) {
-                                            push @{$add_dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Fusion'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Fusion'}}, {
-                                                data_level => $data_level,
-                                                file_name => $file_name,
-                                            };
-                                        }
-                                    }
-                                }
-                            }
-                            if (%add_dcc_scanned_file_info and ($debug{all} or $debug{file_info})) {
-                                print STDERR "\n",
-                                    +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'),
-                                    ": \%add_dcc_scanned_file_info:\n", Dumper(\%add_dcc_scanned_file_info);
-                            }
-                            for my $data_type (
-                                natsort keys %add_dcc_scanned_file_info
-                            ) {
-                                for my $barcode (
-                                    natsort keys %{$add_dcc_scanned_file_info{$data_type}}
-                                ) {
-                                    for my $exp_center_name (
-                                        sort by_dag_center_name keys %{$add_dcc_scanned_file_info{$data_type}{$barcode}}
-                                    ) {
-                                        for my $library_name (
-                                            natsort keys %{$add_dcc_scanned_file_info{$data_type}{$barcode}{$exp_center_name}}
-                                        ) {
-                                            for my $run_center_name (
-                                                sort by_dag_center_name keys %{$add_dcc_scanned_file_info{$data_type}{$barcode}{$exp_center_name}{$library_name}}
-                                            ) {
-                                                for my $analysis_center_name (
-                                                    sort by_dag_center_name keys %{$add_dcc_scanned_file_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}}
-                                                ) {
-                                                    # init
-                                                    my $sdrf_dag_node_hashref = {};
-                                                    $dcc_protocol_idf_order_info{$analysis_center_name} = []
-                                                        unless defined $dcc_protocol_idf_order_info{$analysis_center_name};
-                                                    my $protocol_dag_custom_run_center = (
-                                                        exists($dcc_scanned_file_protocol_dag_conf{$data_type}{$run_center_name}) and
-                                                        exists($dcc_scanned_file_protocol_dag_conf{$data_type}{$run_center_name}{$analysis_center_name})
-                                                    ) ? $run_center_name
-                                                      : '_default';
-                                                    add_dcc_scanned_file_sdrf_dag_info({
-                                                        protocol_dag_nodes => $dcc_scanned_file_protocol_dag_conf{$data_type}{$protocol_dag_custom_run_center}{$analysis_center_name},
-                                                        file_info => $add_dcc_scanned_file_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}{$analysis_center_name},
-                                                        sdrf_dag_node => $sdrf_dag_node_hashref,
-                                                        protocol_idf_order_info => $dcc_protocol_idf_order_info{$analysis_center_name},
-                                                    });
-                                                    if (%{$sdrf_dag_node_hashref}) {
-                                                        $dcc_sdrf_dag_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}{$analysis_center_name} = $sdrf_dag_node_hashref;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
                         }
                         # special case mRNA-seq run set with one or more FASTQ + one BAM run needs to be collapsed properly
                         if (
@@ -4498,9 +4190,12 @@ for my $program_name (@program_names) {
                                             ) {
                                                 add_dcc_sdrf_data({
                                                     mage_tab_sdrf_data => \@mage_tab_sdrf_data,
-                                                    mage_tab_sdrf_dcc_col_headers => \@mage_tab_sdrf_dcc_col_headers,
                                                     sdrf_row_data => \@sdrf_row_data,
+                                                    sdrf_row_dcc_data => [],
                                                     sdrf_dag_node => $dcc_sdrf_dag_info{$exp_data_type}{$barcode}{$dcc_exp_center_name}{$dcc_exp_library_name}{$dcc_run_center_name}{$dcc_analysis_center_name},
+                                                    sdrf_col_info => \@dcc_sdrf_col_info,
+                                                    sdrf_col_group_idx => 0,
+                                                    protocol_col_group_idx => 0,
                                                     protocol_data => \@protocol_data,
                                                     protocol_info => {
                                                         program_name => $program_name,
@@ -4512,12 +4207,12 @@ for my $program_name (@program_names) {
                                                         analysis_center_name => $dcc_analysis_center_name,
                                                         config => $exp_data_type eq $data_type
                                                             ? $mt_config_hashref->{dataset}->{protocol_info}
-                                                            : $mt_config_hashref->{dataset}->{'add_data_types'}->{protocol_info},
+                                                            : $mt_config_hashref->{dataset}->{add_data_types}->{protocol_info},
                                                     },
-                                                    mt_config => $mt_config_hashref,
+                                                    default_config => $mt_config_hashref->{default},
                                                 });
                                                 $added_dcc_metadata++;
-                                                $dcc_sdrf_dag_info{$exp_data_type}{$barcode}{$dcc_exp_center_name}{$dcc_exp_library_name}{$dcc_run_center_name}{$dcc_analysis_center_name}{'_linked_to_sra'}++;
+                                                $dcc_sdrf_dag_info{$exp_data_type}{$barcode}{$dcc_exp_center_name}{$dcc_exp_library_name}{$dcc_run_center_name}{$dcc_analysis_center_name}{'has_sra_data'}++;
                                             }
                                         }
                                     }
@@ -4560,7 +4255,7 @@ for my $program_name (@program_names) {
                                         natsort keys %{$dcc_sdrf_dag_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}}
                                     ) {
                                         if (
-                                            !exists($dcc_sdrf_dag_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}{$analysis_center_name}{'_linked_to_sra'})
+                                            !exists($dcc_sdrf_dag_info{$data_type}{$barcode}{$exp_center_name}{$library_name}{$run_center_name}{$analysis_center_name}{'has_sra_data'})
                                         ) {
                                             my @file_names;
                                             get_file_names_from_sdrf_dag_node({
@@ -4682,10 +4377,18 @@ for my $program_name (@program_names) {
                             +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), 
                             ": \@mage_tab_idf_data:\n", Dumper(\@mage_tab_idf_data);
                     }
-                    my @mage_tab_sdrf_col_headers = (
-                        @mage_tab_sdrf_base_col_headers,
-                        @mage_tab_sdrf_dcc_col_headers,
-                    );
+                    # build column headers
+                    my @mage_tab_sdrf_col_headers = @mage_tab_sdrf_base_col_headers;
+                    for my $sdrf_col_info_group_hashref (@dcc_sdrf_col_info) {
+                        for my $protocol_col_info_hashref (@{$sdrf_col_info_group_hashref->{protocols}}) {
+                            push @mage_tab_sdrf_col_headers,
+                                $protocol_col_info_hashref->{name},
+                                map { $_->{name} } @{$protocol_col_info_hashref->{attrs}};
+                        }
+                        push @mage_tab_sdrf_col_headers,
+                            $sdrf_col_info_group_hashref->{file}->{name},
+                            map { $_->{name} } @{$sdrf_col_info_group_hashref->{file}->{attrs}};
+                    }
                     # pad empty fields at end of SDRF rows as necessary to box out
                     for my $row_idx (0 .. $#mage_tab_sdrf_data) {
                         my $num_cols_diff = scalar(@mage_tab_sdrf_col_headers) - scalar(@{$mage_tab_sdrf_data[$row_idx]});
@@ -4875,30 +4578,28 @@ sub get_barcode_info {
     my ($barcode) = @_;
     die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid barcode '$barcode'" 
         unless $barcode =~ /^$OCG_BARCODE_REGEXP$/;
-    my ($case_id, $s_case_id, $sample_id, $disease_code, $tissue_code, $nucleic_acid_code);
+    my ($case_id, $s_case_id, $sample_id, $disease_code, $tissue_code_str, $nucleic_acid_code_str);
     my @barcode_parts = split('-', $barcode);
     # TARGET sample ID/barcode
     if (scalar(@barcode_parts) == 5) {
         $case_id = join('-', @barcode_parts[0..2]);
         $s_case_id = $barcode_parts[2];
         $sample_id = join('-', @barcode_parts[0..3]);
-        ($disease_code, $tissue_code, $nucleic_acid_code) = @barcode_parts[1,3,4];
+        ($disease_code, $tissue_code_str, $nucleic_acid_code_str) = @barcode_parts[1,3,4];
     }
     # CGCI sample ID/barcode
     elsif (scalar(@barcode_parts) == 6) {
         $case_id = join('-', @barcode_parts[0..3]);
         $s_case_id = $barcode_parts[3];
         $sample_id = join('-', @barcode_parts[0..4]);
-        ($disease_code, $tissue_code, $nucleic_acid_code) = @barcode_parts[1,4,5];
+        ($disease_code, $tissue_code_str, $nucleic_acid_code_str) = @barcode_parts[1,4,5];
     }
     else {
         die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
             ": invalid sample ID/barcode $barcode\n";
     }
-    ($tissue_code, my $xeno_cell_line_code) = split(/\./, $tissue_code);
-    my $tissue_ltr = substr($tissue_code, -1);
-    #$tissue_code =~ s/\D//g;
-    $tissue_code = substr($tissue_code, 0, 2);
+    my ($tissue_code, $xeno_cell_line_code, $tissue_ltr, $tissue_sort_code) =
+        $tissue_code_str =~ /^(\d{2})(?:\.(\d+))?([A-Z])(?:\.(\d+))?$/;
     my $tissue_type = $tissue_code eq '01' ? 'Primary' :
                       $tissue_code eq '02' ? 'Recurrent' :
                       $tissue_code eq '03' ? 'Primary' :
@@ -4950,9 +4651,8 @@ sub get_barcode_info {
         $cgi_tissue_type .= $barcode_parts[$#barcode_parts];
     }
     $cgi_tissue_type .= ( defined($xeno_cell_line_code) ? $xeno_cell_line_code : '' );
-    my $nucleic_acid_ltr = substr($nucleic_acid_code, -1);
-    #$nucleic_acid_code =~ s/\D//g;
-    $nucleic_acid_code = substr($nucleic_acid_code, 0, 2);
+    my $nucleic_acid_code = substr($nucleic_acid_code_str, 0, 2);
+    my $nucleic_acid_ltr = substr($nucleic_acid_code_str, -1);
     return {
         case_id => $case_id,
         s_case_id => $s_case_id,
@@ -4960,6 +4660,7 @@ sub get_barcode_info {
         disease_code => $disease_code,
         tissue_code => $tissue_code,
         tissue_ltr => $tissue_ltr,
+        tissue_sort_code => $tissue_sort_code,
         tissue_type => $tissue_type,
         cgi_tissue_type => $cgi_tissue_type,
         xeno_cell_line_code => $xeno_cell_line_code,
@@ -5137,28 +4838,98 @@ sub get_barcodes_from_data_file {
 sub add_dcc_parsed_file_sdrf_dag_info {
     my ($params_hashref) = @_;
     for my $protocol_type (
-        natsort keys %{$params_hashref->{conf_sdrf_dag_node}->{child_data_by_protocol_type}}
+        natsort keys %{$params_hashref->{conf_sdrf_dag_node}->{protocol_data_by_type}}
     ) {
-        push @{$params_hashref->{protocol_idf_order_info}}, $protocol_type
-            unless any { $protocol_type eq $_ } @{$params_hashref->{protocol_idf_order_info}};
+        my $new_protocol_col_info_hashref = clone($params_hashref->{dcc_col_types}->{protocol});
+        my $temp_col_info_arrayref = clone($params_hashref->{temp_col_info});
+        push @{$temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{protocols}},
+            $new_protocol_col_info_hashref;
+        if (none { $protocol_type eq $_ } @{$params_hashref->{protocol_idf_order_info}}) {
+            push @{$params_hashref->{protocol_idf_order_info}}, $protocol_type;
+        }
         for my $conf_sdrf_dag_node_hashref (
-            natkeysort { $_->{file_name} } @{$params_hashref->{conf_sdrf_dag_node}->{child_data_by_protocol_type}->{$protocol_type}}
+            sort by_file_name_key @{$params_hashref->{conf_sdrf_dag_node}->{protocol_data_by_type}->{$protocol_type}->{file_data}}
         ) {
-            if (any { $conf_sdrf_dag_node_hashref->{file_name} eq $_ } @{$params_hashref->{file_names}}) {
-                # make copy
-                my $sdrf_dag_node_hashref = {
-                    data_level => $conf_sdrf_dag_node_hashref->{data_level},
-                    file_name => $conf_sdrf_dag_node_hashref->{file_name},
-                };
-                push @{$params_hashref->{sdrf_dag_node}->{child_data_by_protocol_type}->{$protocol_type}}, 
-                     $sdrf_dag_node_hashref;
-                if (exists $conf_sdrf_dag_node_hashref->{child_data_by_protocol_type}) {
-                    add_dcc_parsed_file_sdrf_dag_info({
-                        conf_sdrf_dag_node => $conf_sdrf_dag_node_hashref,
-                        sdrf_dag_node => $sdrf_dag_node_hashref,
-                        file_names => $params_hashref->{file_names},
-                        protocol_idf_order_info => $params_hashref->{protocol_idf_order_info},
-                    });
+            if (defined($conf_sdrf_dag_node_hashref->{file_name})) {
+                if (any { $conf_sdrf_dag_node_hashref->{file_name} eq $_ } @{$params_hashref->{file_names}}) {
+                    # make copy (without children)
+                    my $sdrf_dag_node_hashref = clone($conf_sdrf_dag_node_hashref);
+                    delete($sdrf_dag_node_hashref->{protocol_data_by_type});
+                    push @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_type}->{file_data}},
+                         $sdrf_dag_node_hashref;
+                    if (defined($conf_sdrf_dag_node_hashref->{protocol_data_by_type})) {
+                        add_dcc_parsed_file_sdrf_dag_info({
+                            conf_sdrf_dag_node => $conf_sdrf_dag_node_hashref,
+                            sdrf_dag_node => $sdrf_dag_node_hashref,
+                            sdrf_col_info => $params_hashref->{sdrf_col_info},
+                            sdrf_col_group_idx => $params_hashref->{sdrf_col_group_idx} + 1,
+                            temp_col_info => $temp_col_info_arrayref,
+                            file_names => $params_hashref->{file_names},
+                            protocol_idf_order_info => $params_hashref->{protocol_idf_order_info},
+                            dcc_col_types => $params_hashref->{dcc_col_types},
+                        });
+                    }
+                    my $new_file_col_info_hashref = clone($params_hashref->{dcc_col_types}->{file});
+                    @{$new_file_col_info_hashref->{attrs}} = grep {
+                        exists($conf_sdrf_dag_node_hashref->{$_->{key}})
+                    } @{$new_file_col_info_hashref->{attrs}};
+                    if (
+                        defined($temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]) and
+                        defined($temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file})
+                    ) {
+                        $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs} =
+                            merge_col_info(
+                                $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs},
+                                $new_file_col_info_hashref->{attrs},
+                            );
+                    }
+                    else {
+                        $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file} =
+                            $new_file_col_info_hashref;
+                    }
+                    for my $col_info_group (qw( protocols file )) {
+                        if (
+                            defined($params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]) and
+                            defined($params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group})
+                        ) {
+                            if ($col_info_group eq 'protocols') {
+                                $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group} =
+                                    merge_col_info(
+                                        $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group},
+                                        $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group},
+                                    );
+                            }
+                            else {
+                                $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group}->{attrs} =
+                                    merge_col_info(
+                                        $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group}->{attrs},
+                                        $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group}->{attrs},
+                                    );
+                            }
+                        }
+                        else {
+                            $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group} =
+                                $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group};
+                        }
+                    }
+                }
+            }
+            elsif (defined($conf_sdrf_dag_node_hashref->{protocol_data_by_type})) {
+                # init
+                my $sdrf_dag_node_hashref = {};
+                add_dcc_parsed_file_sdrf_dag_info({
+                    conf_sdrf_dag_node => $conf_sdrf_dag_node_hashref,
+                    sdrf_dag_node => $sdrf_dag_node_hashref,
+                    sdrf_col_info => $params_hashref->{sdrf_col_info},
+                    sdrf_col_group_idx => $params_hashref->{sdrf_col_group_idx},
+                    temp_col_info => $temp_col_info_arrayref,
+                    file_names => $params_hashref->{file_names},
+                    protocol_idf_order_info => $params_hashref->{protocol_idf_order_info},
+                    dcc_col_types => $params_hashref->{dcc_col_types},
+                });
+                if (defined($sdrf_dag_node_hashref->{protocol_data_by_type})) {
+                    push @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_type}->{file_data}},
+                        $sdrf_dag_node_hashref;
                 }
             }
         }
@@ -5168,45 +4939,203 @@ sub add_dcc_parsed_file_sdrf_dag_info {
 sub add_dcc_scanned_file_sdrf_dag_info {
     my ($params_hashref) = @_;
     for my $protocol_dag_node_hashref (@{$params_hashref->{protocol_dag_nodes}}) {
-        if (exists($params_hashref->{file_info}->{$protocol_dag_node_hashref->{type}})) {
-            push @{$params_hashref->{protocol_idf_order_info}}, $protocol_dag_node_hashref->{type}
-                unless any { $protocol_dag_node_hashref->{type} eq $_ } @{$params_hashref->{protocol_idf_order_info}};
+        my $new_protocol_col_info_hashref = clone($params_hashref->{dcc_col_types}->{protocol});
+        my $temp_col_info_arrayref = clone($params_hashref->{temp_col_info});
+        push @{$temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{protocols}},
+            $new_protocol_col_info_hashref;
+        if (defined($params_hashref->{file_info}->{$protocol_dag_node_hashref->{type}})) {
+            if (none { $protocol_dag_node_hashref->{type} eq $_ } @{$params_hashref->{protocol_idf_order_info}}) {
+                push @{$params_hashref->{protocol_idf_order_info}}, $protocol_dag_node_hashref->{type};
+            }
             for my $file_info_hashref (@{$params_hashref->{file_info}->{$protocol_dag_node_hashref->{type}}}) {
-                # file constraint
-                if (exists $protocol_dag_node_hashref->{constraint_regexp}) {
-                    my ($capture_str) = $file_info_hashref->{file_name} =~ /$protocol_dag_node_hashref->{constraint_regexp}/;
-                    if ($params_hashref->{sdrf_dag_node}->{file_name} =~ /$capture_str/i) {
-                        # make copy
-                        my $sdrf_dag_node_hashref = clone($file_info_hashref);
-                        push @{$params_hashref->{sdrf_dag_node}->{child_data_by_protocol_type}->{$protocol_dag_node_hashref->{type}}}, 
-                             $sdrf_dag_node_hashref;
-                        if (exists($protocol_dag_node_hashref->{children})) {
-                            add_dcc_scanned_file_sdrf_dag_info({
-                                protocol_dag_nodes => $protocol_dag_node_hashref->{children},
-                                file_info => $params_hashref->{file_info},
-                                sdrf_dag_node => $sdrf_dag_node_hashref,
-                                protocol_idf_order_info => $params_hashref->{protocol_idf_order_info},
-                            });
-                        }
-                    }
-                }
-                else {
+                if (!defined($protocol_dag_node_hashref->{constraint_regexp})) {
                     # make copy
                     my $sdrf_dag_node_hashref = clone($file_info_hashref);
-                    push @{$params_hashref->{sdrf_dag_node}->{child_data_by_protocol_type}->{$protocol_dag_node_hashref->{type}}}, 
-                         $sdrf_dag_node_hashref;
-                    if (exists($protocol_dag_node_hashref->{children})) {
+                    push @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_dag_node_hashref->{type}}->{file_data}},
+                        $sdrf_dag_node_hashref;
+                    if (defined($protocol_dag_node_hashref->{children})) {
                         add_dcc_scanned_file_sdrf_dag_info({
                             protocol_dag_nodes => $protocol_dag_node_hashref->{children},
                             file_info => $params_hashref->{file_info},
                             sdrf_dag_node => $sdrf_dag_node_hashref,
+                            sdrf_col_info => $params_hashref->{sdrf_col_info},
+                            sdrf_col_group_idx => $params_hashref->{sdrf_col_group_idx} + 1,
+                            temp_col_info => $temp_col_info_arrayref,
                             protocol_idf_order_info => $params_hashref->{protocol_idf_order_info},
+                            dcc_col_types => $params_hashref->{dcc_col_types},
                         });
+                    }
+                    my $new_file_col_info_hashref = clone($params_hashref->{dcc_col_types}->{file});
+                    @{$new_file_col_info_hashref->{attrs}} = grep {
+                        exists($file_info_hashref->{$_->{key}})
+                    } @{$new_file_col_info_hashref->{attrs}};
+                    if (
+                        defined($temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]) and
+                        defined($temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file})
+                    ) {
+                        $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs} =
+                            merge_col_info(
+                                $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs},
+                                $new_file_col_info_hashref->{attrs},
+                            );
+                    }
+                    else {
+                        $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file} =
+                            $new_file_col_info_hashref;
+                    }
+                }
+                # file constraint
+                else {
+                    my ($capture_str) = $file_info_hashref->{file_name} =~ /$protocol_dag_node_hashref->{constraint_regexp}/;
+                    if ($params_hashref->{sdrf_dag_node}->{file_name} =~ /$capture_str/i) {
+                        # make copy
+                        my $sdrf_dag_node_hashref = clone($file_info_hashref);
+                        push @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_dag_node_hashref->{type}}->{file_data}},
+                            $sdrf_dag_node_hashref;
+                        if (defined($protocol_dag_node_hashref->{children})) {
+                            add_dcc_scanned_file_sdrf_dag_info({
+                                protocol_dag_nodes => $protocol_dag_node_hashref->{children},
+                                file_info => $params_hashref->{file_info},
+                                sdrf_dag_node => $sdrf_dag_node_hashref,
+                                sdrf_col_info => $params_hashref->{sdrf_col_info},
+                                sdrf_col_group_idx => $params_hashref->{sdrf_col_group_idx} + 1,
+                                temp_col_info => $temp_col_info_arrayref,
+                                protocol_idf_order_info => $params_hashref->{protocol_idf_order_info},
+                                dcc_col_types => $params_hashref->{dcc_col_types},
+                            });
+                        }
+                        my $new_file_col_info_hashref = clone($params_hashref->{dcc_col_types}->{file});
+                        @{$new_file_col_info_hashref->{attrs}} = grep {
+                            exists($file_info_hashref->{$_->{key}})
+                        } @{$new_file_col_info_hashref->{attrs}};
+                        if (
+                            defined($temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]) and
+                            defined($temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file})
+                        ) {
+                            $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs} =
+                                merge_col_info(
+                                    $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs},
+                                    $new_file_col_info_hashref->{attrs},
+                                );
+                        }
+                        else {
+                            $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file} =
+                                $new_file_col_info_hashref;
+                        }
                     }
                 }
             }
+            for my $col_info_group (qw( protocols file )) {
+                if (
+                    defined($params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]) and
+                    defined($params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group})
+                ) {
+                    if ($col_info_group eq 'protocols') {
+                        $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group} =
+                            merge_col_info(
+                                $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group},
+                                $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group},
+                            );
+                    }
+                    else {
+                        $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group}->{attrs} =
+                            merge_col_info(
+                                $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group}->{attrs},
+                                $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group}->{attrs},
+                            );
+                    }
+                }
+                else {
+                    $params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group} =
+                        $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{$col_info_group};
+                }
+            }
+        }
+        elsif (defined($protocol_dag_node_hashref->{children})) {
+            # init
+            my $sdrf_dag_node_hashref = {};
+            add_dcc_scanned_file_sdrf_dag_info({
+                protocol_dag_nodes => $protocol_dag_node_hashref->{children},
+                file_info => $params_hashref->{file_info},
+                sdrf_dag_node => $sdrf_dag_node_hashref,
+                sdrf_col_info => $params_hashref->{sdrf_col_info},
+                sdrf_col_group_idx => $params_hashref->{sdrf_col_group_idx},
+                temp_col_info => $temp_col_info_arrayref,
+                protocol_idf_order_info => $params_hashref->{protocol_idf_order_info},
+                dcc_col_types => $params_hashref->{dcc_col_types},
+            });
+            if (defined($sdrf_dag_node_hashref->{protocol_data_by_type})) {
+                if (none { $protocol_dag_node_hashref->{type} eq $_ } @{$params_hashref->{protocol_idf_order_info}}) {
+                    push @{$params_hashref->{protocol_idf_order_info}}, $protocol_dag_node_hashref->{type};
+                }
+                push @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_dag_node_hashref->{type}}->{file_data}},
+                    $sdrf_dag_node_hashref;
+            }
         }
     }
+}
+
+sub add_dcc_sdrf_col_info {
+    my (
+        $dcc_sdrf_col_info_arrayref,
+        $new_sdrf_col_info_arrayref,
+    ) = @_;
+    for my $i (0 .. max($#{$dcc_sdrf_col_info_arrayref}, $#{$new_sdrf_col_info_arrayref})) {
+        if (defined($dcc_sdrf_col_info_arrayref->[$i]) and defined($new_sdrf_col_info_arrayref->[$i])) {
+            $dcc_sdrf_col_info_arrayref->[$i]->{protocols} = merge_col_info(
+                $dcc_sdrf_col_info_arrayref->[$i]->{protocols},
+                $new_sdrf_col_info_arrayref->[$i]->{protocols},
+            );
+            $dcc_sdrf_col_info_arrayref->[$i]->{file}->{attrs} = merge_col_info(
+                $dcc_sdrf_col_info_arrayref->[$i]->{file}->{attrs},
+                $new_sdrf_col_info_arrayref->[$i]->{file}->{attrs},
+            );
+        }
+        elsif (defined($new_sdrf_col_info_arrayref->[$i])) {
+            $dcc_sdrf_col_info_arrayref->[$i] = $new_sdrf_col_info_arrayref->[$i];
+        }
+    }
+}
+
+sub merge_col_info {
+    my (
+        $existing_col_info_arrayref,
+        $new_col_info_arrayref,
+    ) = @_;
+    my $merged_col_info_arrayref = [];
+    for my $i (0 .. max($#{$existing_col_info_arrayref}, $#{$new_col_info_arrayref})) {
+        if (
+            defined($existing_col_info_arrayref->[$i]) and
+            defined($new_col_info_arrayref->[$i])
+        ) {
+            if (
+                $existing_col_info_arrayref->[$i]->{key} eq
+                $new_col_info_arrayref->[$i]->{key}
+            ) {
+                push @{$merged_col_info_arrayref}, $existing_col_info_arrayref->[$i];
+                if (exists($existing_col_info_arrayref->[$i]->{attrs})) {
+                    $merged_col_info_arrayref->[$#{$merged_col_info_arrayref}]->{attrs} =
+                        merge_col_info(
+                            $existing_col_info_arrayref->[$i]->{attrs},
+                            $new_col_info_arrayref->[$i]->{attrs},
+                        );
+                }
+            }
+            else {
+                push @{$merged_col_info_arrayref}, (
+                    $existing_col_info_arrayref->[$i],
+                    $new_col_info_arrayref->[$i],
+                );
+            }
+        }
+        elsif (defined($existing_col_info_arrayref->[$i])) {
+            push @{$merged_col_info_arrayref}, $existing_col_info_arrayref->[$i];
+        }
+        elsif (defined($new_col_info_arrayref->[$i])) {
+            push @{$merged_col_info_arrayref}, $new_col_info_arrayref->[$i];
+        }
+    }
+    return $merged_col_info_arrayref;
 }
 
 sub get_lsid {
@@ -5226,11 +5155,6 @@ sub quote_for_mage_tab {
 
 sub add_dcc_sdrf_data {
     my ($params_hashref) = @_;
-    # init
-    $params_hashref->{sdrf_row_dcc_data} = []
-        unless defined $params_hashref->{sdrf_row_dcc_data};
-    $params_hashref->{sdrf_row_dcc_col_headers} = []
-        unless defined $params_hashref->{sdrf_row_dcc_col_headers};
     my (
         $program_name,
         $project_name,
@@ -5248,95 +5172,131 @@ sub add_dcc_sdrf_data {
     )};
     (my $protocol_data_type = $data_type) =~ s/-//g;
     for my $protocol_type (
-        natsort keys %{$params_hashref->{sdrf_dag_node}->{child_data_by_protocol_type}}
+        natsort keys %{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}}
     ) {
-        for my $sdrf_dag_node_hashref (
-            natkeysort { $_->{file_name} } @{$params_hashref->{sdrf_dag_node}->{child_data_by_protocol_type}->{$protocol_type}}
+        my $protocol_hashref;
+        if (
+            defined($protocol_config_hashref) and
+            defined($protocol_config_hashref->{$protocol_type}) and
+            defined($protocol_config_hashref->{$protocol_type}->{$analysis_center_name})
         ) {
-            my $protocol_hashref;
-            if (
-                defined($protocol_config_hashref) and
-                defined($protocol_config_hashref->{$protocol_type}) and
-                defined($protocol_config_hashref->{$protocol_type}->{$analysis_center_name})
-            ) {
-                $protocol_hashref = clone(
-                    $protocol_config_hashref->{$protocol_type}->{$analysis_center_name}->{default}->{data}
-                );
-                # set default values if not specified in override
-                $protocol_hashref->{idf_type} = 'data transformation protocol'
-                    unless defined $protocol_hashref->{idf_type};
-                $protocol_hashref->{term_source_ref} = $mt_config_hashref->{default}->{'term_source_ref'}
-                    unless defined $protocol_hashref->{term_source_ref};
-            }
-            else {
-                $protocol_hashref = {
-                    name => $protocol_type,
-                    idf_type => (
-                        $data_type eq 'mRNA-seq' and
-                        $protocol_type =~ /^Expression/i
-                    ) ? 'normalization data transformation protocol'
-                      : 'data transformation protocol',
-                    term_source_ref => $mt_config_hashref->{default}->{'term_source_ref'},
-                };
-                $protocol_hashref->{name} = get_lsid(
-                    authority => $center_info{$analysis_center_name}{authority},
-                    namespace_prefix => $center_info{$analysis_center_name}{namespace_prefix},
-                    namespace => 'Protocol',
-                    object => "${protocol_data_type}-${protocol_type}",
-                    revision => '01',
-                );
-            }
-            if (none { $protocol_hashref->{name} eq $_->{name} } @{$params_hashref->{protocol_data}}) {
-                @{$protocol_hashref}{qw( type data_type center_name )} = ( $protocol_type, $data_type, $analysis_center_name );
-                push @{$params_hashref->{protocol_data}}, $protocol_hashref;
-            }
-            my @sdrf_dcc_col_w_data_conf = grep {
-                exists $sdrf_dag_node_hashref->{$_->{key}}
-            } @{$params_hashref->{mt_config}->{sdrf}->{dcc_col_info}};
-            my @new_sdrf_row_dcc_data = (
-                @{$params_hashref->{sdrf_row_dcc_data}},
+            $protocol_hashref = clone(
+                $protocol_config_hashref->{$protocol_type}->{$analysis_center_name}->{default}->{data}
+            );
+            # set default values if not specified in override
+            $protocol_hashref->{idf_type} = 'data transformation protocol'
+                unless defined $protocol_hashref->{idf_type};
+            $protocol_hashref->{term_source_ref} = $params_hashref->{default_config}->{'term_source_ref'}
+                unless defined $protocol_hashref->{term_source_ref};
+        }
+        else {
+            $protocol_hashref = {
+                name => $protocol_type,
+                idf_type => (
+                    $data_type eq 'mRNA-seq' and
+                    $protocol_type =~ /^Expression/i
+                ) ? 'normalization data transformation protocol'
+                  : 'data transformation protocol',
+                term_source_ref => $params_hashref->{default_config}->{'term_source_ref'},
+            };
+            $protocol_hashref->{name} = get_lsid(
+                authority => $center_info{$analysis_center_name}{authority},
+                namespace_prefix => $center_info{$analysis_center_name}{namespace_prefix},
+                namespace => 'Protocol',
+                object => "${protocol_data_type}-${protocol_type}",
+                revision => $params_hashref->{default_config}->{'protocol_revision'},
+            );
+        }
+        if (none { $protocol_hashref->{name} eq $_->{name} } @{$params_hashref->{protocol_data}}) {
+            @{$protocol_hashref}{qw( type data_type center_name )} = ( $protocol_type, $data_type, $analysis_center_name );
+            push @{$params_hashref->{protocol_data}}, $protocol_hashref;
+        }
+        for my $sdrf_dag_node_hashref (
+            sort by_file_name_key @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_type}->{file_data}}
+        ) {
+            my $new_sdrf_row_dcc_data_arrayref = clone($params_hashref->{sdrf_row_dcc_data});
+            push @{$new_sdrf_row_dcc_data_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{protocols}}, (
                 $protocol_hashref->{name},
-                @{$sdrf_dag_node_hashref}{ map { $_->{key} } @sdrf_dcc_col_w_data_conf },
+                map {
+                    exists($sdrf_dag_node_hashref->{$_->{key}})
+                        ? $sdrf_dag_node_hashref->{$_->{key}}
+                        : ''
+                } @{$params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{protocols}->[$params_hashref->{protocol_col_group_idx}]->{attrs}}
             );
-            my @new_sdrf_row_dcc_col_headers = (
-                @{$params_hashref->{sdrf_row_dcc_col_headers}},
-                'Protocol REF',
-                map { $_->{name} } @sdrf_dcc_col_w_data_conf,
-            );
-            if (exists($sdrf_dag_node_hashref->{child_data_by_protocol_type})) {
+            if (defined($sdrf_dag_node_hashref->{file_name})) {
+                # fill in any needed blank protocol group column data
+                if (
+                    $#{$params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{protocols}} >
+                    $params_hashref->{protocol_col_group_idx}
+                ) {
+                    for my $protocol_col_info_hashref (
+                        @{$params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{protocols}}[
+                            ( $params_hashref->{protocol_col_group_idx} + 1 ) ..
+                            $#{$params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{protocols}}
+                        ]
+                    ) {
+                        push @{$new_sdrf_row_dcc_data_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{protocols}}, '';
+                        for my $protocol_attr_col_info_hashref (@{$protocol_col_info_hashref->{attrs}}) {
+                            push @{$new_sdrf_row_dcc_data_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{protocols}}, '';
+                        }
+                    }
+                }
+                push @{$new_sdrf_row_dcc_data_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}}, (
+                    $sdrf_dag_node_hashref->{file_name},
+                    map {
+                        exists($sdrf_dag_node_hashref->{$_->{key}})
+                            ? $sdrf_dag_node_hashref->{$_->{key}}
+                            : ''
+                    } @{$params_hashref->{sdrf_col_info}->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs}}
+                );
+            }
+            if (defined($sdrf_dag_node_hashref->{protocol_data_by_type})) {
                 add_dcc_sdrf_data({
                     mage_tab_sdrf_data => $params_hashref->{mage_tab_sdrf_data},
-                    mage_tab_sdrf_dcc_col_headers => $params_hashref->{mage_tab_sdrf_dcc_col_headers},
                     sdrf_row_data => $params_hashref->{sdrf_row_data},
+                    sdrf_row_dcc_data => $new_sdrf_row_dcc_data_arrayref,
                     sdrf_dag_node => $sdrf_dag_node_hashref,
+                    sdrf_col_info => $params_hashref->{sdrf_col_info},
+                    sdrf_col_group_idx =>
+                        defined($sdrf_dag_node_hashref->{file_name})
+                            ? $params_hashref->{sdrf_col_group_idx} + 1
+                            : $params_hashref->{sdrf_col_group_idx},
+                    protocol_col_group_idx =>
+                        defined($sdrf_dag_node_hashref->{file_name})
+                            ? 0
+                            : $params_hashref->{protocol_col_group_idx} + 1,
                     protocol_data => $params_hashref->{protocol_data},
                     protocol_info => $params_hashref->{protocol_info},
-                    mt_config => $params_hashref->{mt_config},
-                    sdrf_row_dcc_data => \@new_sdrf_row_dcc_data,
-                    sdrf_row_dcc_col_headers => \@new_sdrf_row_dcc_col_headers,
+                    default_config => $params_hashref->{default_config},
                 });
             }
             else {
+                my @new_sdrf_row_dcc_data_flattened = map {
+                    @{$_->{protocols}},
+                    @{$_->{file}}
+                } @{$new_sdrf_row_dcc_data_arrayref};
                 push @{$params_hashref->{mage_tab_sdrf_data}}, [
                     @{$params_hashref->{sdrf_row_data}},
-                    @new_sdrf_row_dcc_data,
+                    @new_sdrf_row_dcc_data_flattened,
                 ];
-                if (
-                    !@{$params_hashref->{mage_tab_sdrf_dcc_col_headers}} or 
-                    (
-                        @{$params_hashref->{mage_tab_sdrf_dcc_col_headers}} and 
-                        scalar(@new_sdrf_row_dcc_col_headers) > scalar(@{$params_hashref->{mage_tab_sdrf_dcc_col_headers}})
-                    )
-                ) {
-                    @{$params_hashref->{mage_tab_sdrf_dcc_col_headers}} = @new_sdrf_row_dcc_col_headers;
-                }
                 if ($debug{sdrf_step}) {
+                    my @sdrf_dcc_col_headers;
+                    for my $sdrf_col_info_group_hashref (@{$params_hashref->{sdrf_col_info}}) {
+                        for my $protocol_col_info_hashref (@{$sdrf_col_info_group_hashref->{protocols}}) {
+                            push @sdrf_dcc_col_headers,
+                                $protocol_col_info_hashref->{name},
+                                map { $_->{name} } @{$protocol_col_info_hashref->{attrs}};
+                        }
+                        push @sdrf_dcc_col_headers,
+                            $sdrf_col_info_group_hashref->{file}->{name},
+                            map { $_->{name} } @{$sdrf_col_info_group_hashref->{file}->{attrs}};
+                    }
                     local $Data::Dumper::Indent = 0;
                     print STDERR 
+                        +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), ': ',
+                        Dumper(\@sdrf_dcc_col_headers),
                         "\n", +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), ': ',
-                        Dumper(\@new_sdrf_row_dcc_col_headers),
-                        "\n", +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), ': ',
-                        Dumper(\@new_sdrf_row_dcc_data);
+                        Dumper(\@new_sdrf_row_dcc_data_flattened);
                     print "\nPress Enter to Continue...";
                     <STDIN>;
                 }
@@ -5348,22 +5308,21 @@ sub add_dcc_sdrf_data {
 sub get_file_names_from_sdrf_dag_node {
     my ($params_hashref) = @_;
     for my $protocol_type (
-        natsort keys %{$params_hashref->{sdrf_dag_node}->{child_data_by_protocol_type}}
+        natsort keys %{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}}
     ) {
         for my $sdrf_dag_node_hashref (
-            natkeysort { $_->{file_name} } @{$params_hashref->{sdrf_dag_node}->{child_data_by_protocol_type}->{$protocol_type}}
+            sort by_file_name_key @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_type}->{file_data}}
         ) {
-            if (
-                !defined($params_hashref->{file_names}) or
-                none { $sdrf_dag_node_hashref->{file_name} eq $_ } @{$params_hashref->{file_names}}
-            ) {
-                push @{$params_hashref->{file_names}}, $sdrf_dag_node_hashref->{file_name};
-                if (exists($sdrf_dag_node_hashref->{child_data_by_protocol_type})) {
-                    get_file_names_from_sdrf_dag_node({
-                        sdrf_dag_node => $sdrf_dag_node_hashref,
-                        file_names => $params_hashref->{file_names},
-                    });
+            if (defined($sdrf_dag_node_hashref->{file_name})) {
+                if (none { $sdrf_dag_node_hashref->{file_name} eq $_ } @{$params_hashref->{file_names}}) {
+                    push @{$params_hashref->{file_names}}, $sdrf_dag_node_hashref->{file_name};
                 }
+            }
+            if (defined($sdrf_dag_node_hashref->{protocol_data_by_type})) {
+                get_file_names_from_sdrf_dag_node({
+                    sdrf_dag_node => $sdrf_dag_node_hashref,
+                    file_names => $params_hashref->{file_names},
+                });
             }
         }
     }
@@ -5375,9 +5334,21 @@ sub by_dag_center_name {
     )
     ? mkkey_natural(lc($a)) cmp mkkey_natural(lc($b))
     : $a eq '_default'
-    ? -1 
+    ? -1
     : $b eq '_default'
-    ? 1 
+    ? 1
+    : 0;
+}
+
+sub by_file_name_key {
+    (
+        defined($a->{file_name}) and defined($b->{file_name})
+    )
+    ? mkkey_natural($a->{file_name}) cmp mkkey_natural($b->{file_name})
+    : defined($a->{file_name})
+    ? -1
+    : defined($b->{file_name})
+    ? 1
     : 0;
 }
 
