@@ -1200,15 +1200,22 @@ for my $program_name (@program_names) {
                                 # CGI analysis
                                 elsif ($file =~ /mutation\/CGI\/Analysis\/.+?\.(tsv|txt)$/i) {
                                     # special filtering for TARGET ALL Xenografts
-                                    my $is_all_xeno_file++ if $project_name eq 'ALL' and $file_name =~ /xenografts/i;
+                                    my $is_all_xeno_file++ if $program_name eq 'TARGET' and
+                                                              $project_name eq 'ALL' and
+                                                              $file_name =~ /xenografts/i;
                                     for my $case_id (keys %{$cgi_analysis_info_by_case_hashref}) {
-                                        next if $is_all_xeno_file and none { m/Xenograft/i } keys %{$cgi_analysis_info_by_case_hashref->{$case_id}} or
-                                               !$is_all_xeno_file and  any { m/Xenograft/i } keys %{$cgi_analysis_info_by_case_hashref->{$case_id}};
+                                        next if $program_name eq 'TARGET' and
+                                                $project_name eq 'ALL' and
+                                                (
+                                                    (  $is_all_xeno_file and none { m/Xenograft/i } keys %{$cgi_analysis_info_by_case_hashref->{$case_id}} ) or
+                                                    ( !$is_all_xeno_file and  any { m/Xenograft/i } keys %{$cgi_analysis_info_by_case_hashref->{$case_id}} )
+                                                );
                                         for my $case_cmp_analysis_info_hashref (values %{$cgi_analysis_info_by_case_hashref->{$case_id}}) {
                                             for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                 my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
                                                 # special exclusion for TARGET OS CGI BCCA data
-                                                next if $disease_proj eq 'OS' and
+                                                next if $program_name eq 'TARGET' and
+                                                        $disease_proj eq 'OS' and
                                                         !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode});
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
                                                     if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'HigherLevelSummary'}}) {
@@ -1225,15 +1232,22 @@ for my $program_name (@program_names) {
                                 # CGI junction
                                 elsif ($file =~ /structural\/CGI\/ConcatenatedJunction.+?\.(tsv|txt)$/i) {
                                     # special filtering for TARGET ALL Xenografts
-                                    my $is_all_xeno_file++ if $project_name eq 'ALL' and $file_name =~ /xenografts/i;
+                                    my $is_all_xeno_file++ if $program_name eq 'TARGET' and
+                                                              $project_name eq 'ALL' and
+                                                              $file_name =~ /xenografts/i;
                                     for my $case_id (keys %{$cgi_analysis_info_by_case_hashref}) {
-                                        next if $is_all_xeno_file and none { m/Xenograft/i } keys %{$cgi_analysis_info_by_case_hashref->{$case_id}} or
-                                               !$is_all_xeno_file and  any { m/Xenograft/i } keys %{$cgi_analysis_info_by_case_hashref->{$case_id}};
+                                        next if $program_name eq 'TARGET' and
+                                                $project_name eq 'ALL' and
+                                                (
+                                                    (  $is_all_xeno_file and none { m/Xenograft/i } keys %{$cgi_analysis_info_by_case_hashref->{$case_id}} ) or
+                                                    ( !$is_all_xeno_file and  any { m/Xenograft/i } keys %{$cgi_analysis_info_by_case_hashref->{$case_id}} )
+                                                );
                                         for my $case_cmp_analysis_info_hashref (values %{$cgi_analysis_info_by_case_hashref->{$case_id}}) {
                                             for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                 my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
                                                 # special exclusion for TARGET OS CGI BCCA data
-                                                next if $disease_proj eq 'OS' and
+                                                next if $program_name eq 'TARGET' and
+                                                        $disease_proj eq 'OS' and
                                                         !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode});
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
                                                     if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Junction'}}) {
@@ -1414,11 +1428,14 @@ for my $program_name (@program_names) {
                                     for my $case_id (keys %{$cgi_analysis_info_by_case_hashref}) {
                                         for my $case_cmp_analysis_info_hashref (values %{$cgi_analysis_info_by_case_hashref->{$case_id}}) {
                                             # special filtering for TARGET ALL Xenografts
-                                            next if $project_name eq 'ALL' and any { m/Xenograft/i } keys %{$case_cmp_analysis_info_hashref};
+                                            next if $program_name eq 'TARGET' and
+                                                    $project_name eq 'ALL' and
+                                                    any { m/Xenograft/i } keys %{$case_cmp_analysis_info_hashref};
                                             for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                 my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
                                                 # special run center handing for TARGET OS CGI BCCA data
                                                 my $run_center_name = (
+                                                    $program_name eq 'TARGET' and
                                                     $disease_proj eq 'OS' and
                                                     !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode})
                                                 ) ? 'BCCA'
@@ -1455,12 +1472,17 @@ for my $program_name (@program_names) {
                                         for my $case_id (keys %{$cgi_analysis_info_by_case_hashref}) {
                                             for my $case_cmp_analysis_info_hashref (values %{$cgi_analysis_info_by_case_hashref->{$case_id}}) {
                                                 # special filtering for TARGET ALL Xenografts
-                                                next if $project_name eq 'ALL' and any { m/Xenograft/i } keys %{$case_cmp_analysis_info_hashref} or
+                                                next if (
+                                                            $program_name eq 'TARGET' and
+                                                            $project_name eq 'ALL' and
+                                                            any { m/Xenograft/i } keys %{$case_cmp_analysis_info_hashref}
+                                                        ) or
                                                         none { m/^$file_tissue_type$/i } keys %{$case_cmp_analysis_info_hashref};
                                                 for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                     my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
                                                     # special run center handing for TARGET OS CGI BCCA data
                                                     my $run_center_name = (
+                                                        $program_name eq 'TARGET' and
                                                         $disease_proj eq 'OS' and
                                                         !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode})
                                                     ) ? 'BCCA'
@@ -1499,11 +1521,14 @@ for my $program_name (@program_names) {
                                     for my $case_id (keys %{$cgi_analysis_info_by_case_hashref}) {
                                         for my $case_cmp_analysis_info_hashref (values %{$cgi_analysis_info_by_case_hashref->{$case_id}}) {
                                             # special filtering for TARGET ALL Xenografts
-                                            next if $project_name eq 'ALL' and any { m/Xenograft/i } keys %{$case_cmp_analysis_info_hashref};
+                                            next if $program_name eq 'TARGET' and
+                                                    $project_name eq 'ALL' and
+                                                    any { m/Xenograft/i } keys %{$case_cmp_analysis_info_hashref};
                                             for my $cgi_tissue_type (keys %{$case_cmp_analysis_info_hashref}) {
                                                 my $barcode = $case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{barcode};
                                                 # special run center handing for TARGET OS CGI BCCA data
                                                 my $run_center_name = (
+                                                    $program_name eq 'TARGET' and
                                                     $disease_proj eq 'OS' and
                                                     !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode})
                                                 ) ? 'BCCA'
