@@ -1,0 +1,20 @@
+MAF files containing structural variants identified by CGI were downloaded 
+from the TARGET Data Matrix and filtered to remove germline rearrangements 
+and low confidence somatic calls. Germline variant databases used for 
+filtering included the Database of Genomic Variants (DGV), dbSNP, PCGP, 
+and also recurrent germline rearrangements from the downloaded MAF files. 
+Rearrangements where both breakpoints fall into gap regions in the human 
+genome (hg19) were also excluded. To filter out low confidence 
+rearrangements, a BLAT search was performed on the assembled sequence for 
+each rearrangement, and those that could be fully mapped (>90% similarity 
+to the reference genome) were excluded. We further required each variant 
+to have an assembled contig length of at least 10 bp on each breakpoint. 
+Since copy number alterations were highly coupled with rearrangement events, 
+to avoid over-filtering we also integrated the copy number alterations into 
+the SV analysis. Briefly, breakpoints from CNV analysis were matched to 
+those detected in SVs, using a window size of 5kb. Those rearrangements 
+with possible CNV support were rescued after manual curation. 
+Of the 1,011,810 putative CGI SVs, 3,265 passed these filters. Experimental 
+verification using 14 CGI diagnosis-remission-relapse trio samples from a 
+previous publication6 showed a validation rate of 78% as 79 out of the 101 
+SVs were experimentally verified by targeted capture sequencing. 

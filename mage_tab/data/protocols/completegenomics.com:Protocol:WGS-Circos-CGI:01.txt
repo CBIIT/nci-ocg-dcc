@@ -1,1 +1,1 @@
-Complete Genomics Inc. standard protocol
+Complete Genomics Inc. standard protocol, please see CGI READMEs for details.

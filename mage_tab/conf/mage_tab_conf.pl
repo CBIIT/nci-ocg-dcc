@@ -305,54 +305,54 @@ use NCI::OCGDCC::Config qw( :all );
                     ],
                     'CGI' => [
                         {
-                            type => 'CnvSegment',
+                            type => 'CnvSegment-CGI',
                             children => [
                                 {
-                                    type => 'Circos',
+                                    type => 'Circos-CGI',
                                     constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
                                 },
                             ],
                         },
                         {
-                            type => 'VariantCall',
+                            type => 'VariantCall-CGI',
                             children => [
                                 {
-                                    type => 'Vcf2Maf',
+                                    type => 'Vcf2Maf-CGI',
                                     constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
                                     children => [
                                         {
-                                            type => 'FilterSomatic',
+                                            type => 'FilterSomatic-CGI',
                                             constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
                                         },
                                         {
-                                            type => 'HigherLevelSummary',
+                                            type => 'HigherLevelSummary-CGI',
                                         },
                                     ],
                                 },
                                 {
-                                    type => 'Circos',
+                                    type => 'Circos-CGI',
                                     constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
                                 },
                             ],
                         },
                         {
-                            type => 'Junction',
+                            type => 'Junction-CGI',
                             children => [
                                 {
-                                    type => 'Circos',
+                                    type => 'Circos-CGI',
                                 },
                             ],
                         },
                     ],
                     'StJude' => [
                         {
-                            type => 'CnvSegment',
+                            type => 'CnvSegment-CGI-CONCERTING',
                         },
                         {
-                            type => 'VariantCall',
+                            type => 'VariantCall-CGI',
                         },
                         {
-                            type => 'Fusion',
+                            type => 'StructVariant-CGI',
                         },
                     ],
                 },
@@ -425,6 +425,9 @@ use NCI::OCGDCC::Config qw( :all );
                                     type => 'FilterVerified',
                                 },
                             ],
+                        },
+                        {
+                            type => 'VariantCall',
                         },
                     ],
                 },
@@ -3339,6 +3342,22 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                 },
                             },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                                'CGI' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'completegenomics.com:Protocol:WGS-ReadAlign-CGI:01',
+                                        },
+                                    },
+                                },
+                            },
                         },
                         'sdrf_incl_dbgap_study' => 1,
                         'exp_ids_excl' => [qw(
@@ -3360,6 +3379,29 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                     },
                     'Phase3' => {
+                        'protocol_info' => {
+                            'Extraction' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        #'exp_centers_excl_exp_desc' => [
+                        #    'BCCA',
+                        #],
                         'exp_ids_excl' => [qw(
                             SRX159555  SRX159556
                         )],
@@ -3387,6 +3429,15 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'stjude.org:Protocol:WXS-ExomeCapture-Illumina-NexteraRapidCaptureExome:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign-BWA-GATK:01',
                                         },
                                     },
                                 },
@@ -3475,7 +3526,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 '_default' => {
                                     'StJude' => {
                                         'protocol_data_by_type' => {
-                                            'VariantCall' => {
+                                            'VariantCall-Bambino-DToxoG' => {
                                                 'file_data' => [
                                                     {
                                                         'data_level' => '3',
@@ -3695,6 +3746,22 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                 },
                             },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                                'CGI' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'completegenomics.com:Protocol:WGS-ReadAlign-CGI:01',
+                                        },
+                                    },
+                                },
+                            },
                         },
                         'exp_centers_excl_exp_desc' => [
                             'BCCA',
@@ -3709,6 +3776,15 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcm.edu:Protocol:WXS-ExomeCapture-NimbleGen-SeqCapEZHumanExomeV2:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign-BWA-GATK:01',
                                         },
                                     },
                                 },
@@ -3824,10 +3900,43 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                 },
                             },
+                            'ReadAlign' => {
+                                'NCI-Khan' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Khan.Protocol:mRNAseq-ReadAlign-TopHat:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'Expression' => {
+                                'NCI-Khan' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Khan.Protocol:mRNAseq-Expression:02',
+                                        },
+                                    },
+                                },
+                            },
                         },
                         'exp_centers_incl_design_desc_protocol' => [
                             'NCI-Khan',
                         ],
+                    },
+                },
+                'WGS' => {
+                    '_default' => {
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'CGI' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'completegenomics.com:Protocol:WGS-ReadAlign-CGI:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                     },
                 },
             },
@@ -3866,7 +3975,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign:02',
+                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign-BWA-GATK:02',
                                         },
                                     },
                                 },
@@ -3964,7 +4073,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign:02',
+                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign-BWA-GATK:02',
                                         },
                                     },
                                 },
@@ -4063,6 +4172,24 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                 },
                             },
+                            'ReadAlign' => {
+                                'NCI-Khan' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Khan.Protocol:mRNAseq-ReadAlign-TopHat:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'Expression' => {
+                                'NCI-Khan' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Khan.Protocol:mRNAseq-Expression:01',
+                                        },
+                                    },
+                                },
+                            },
                         },
                         'exp_centers_incl_design_desc_protocol' => [
                             'BCCA',
@@ -4094,6 +4221,22 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                                'CGI' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'completegenomics.com:Protocol:WGS-ReadAlign-CGI:01',
                                         },
                                     },
                                 },
@@ -4267,6 +4410,24 @@ use NCI::OCGDCC::Config qw( :all );
                                     ],
                                 },
                             ],
+                        },
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                                'CGI' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'completegenomics.com:Protocol:WGS-ReadAlign-CGI:01',
+                                        },
+                                    },
+                                },
+                            },
                         },
                         'exp_centers_excl_exp_desc' => [
                             'BCCA',
@@ -4498,6 +4659,24 @@ use NCI::OCGDCC::Config qw( :all );
                         )],
                     },
                 },
+                'WGS' => {
+                    '_default' => {
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        #'exp_centers_excl_exp_desc' => [
+                        #    'BCCA',
+                        #],
+                    },
+                },
             },
             'WT' => {
                 'mRNA-seq' => {
@@ -4533,6 +4712,17 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'Targeted-Capture' => {
                     '_default' => {
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:TargetedCapture-ReadAlign-BLAT-CrossMatch:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'alt_id_by_barcode' => {
                             'TARGET-50-CAAAAC-01A-02D' => 'TARGET-50-PADWYI-01A-01D',
                             'TARGET-50-CAAAAJ-01A-02D' => 'TARGET-50-PADWMG-01A-01D',
@@ -4557,6 +4747,22 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                 },
                             },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                                'CGI' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'completegenomics.com:Protocol:WGS-ReadAlign-CGI:01',
+                                        },
+                                    },
+                                },
+                            },
                         },
                         'exp_centers_excl_exp_desc' => [
                             'BCCA',
@@ -4571,6 +4777,15 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcm.edu:Protocol:WXS-ExomeCapture-NimbleGen-SeqCapEZHumanExomeV2:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCM' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign-BWA-GATK:01',
                                         },
                                     },
                                 },

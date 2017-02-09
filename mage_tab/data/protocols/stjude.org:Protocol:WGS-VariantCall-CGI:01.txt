@@ -1,0 +1,32 @@
+Putative somatic SNVs and indels were extracted from MAF files downloaded from 
+the TARGET Data Matrix and run through a 3-step filter to remove germline, 
+low-confidence and paralog variations. In the first step, the following data 
+sets were used for filtering germline variants: 1) NLHBI Exome Sequencing 
+Project (http://evs.gs.washington.edu/EVS/); 2) dbSNP build 132 
+(https://www.ncbi.nlm.nih.gov/projects/SNP/); 3) St. Jude/Washington University 
+Pediatric Cancer Genome Project (PCGP), and 4) germline variants present in 
+>= 5 cases in TARGET CGI WGS data. In the second step, a variant will be 
+considered low-confidence unless it meets the following criteria: 1) at least 
+3 more reads support the mutant allele in the tumor sample than in the normal 
+sample; 2) the mutant read count in tumor is significantly higher than in the 
+matched normal (P<0.01 by Fisher's Exact test); and 3) mutant allele fraction 
+in normal is below 0.05. In the third step, we ran a BLAT search3 using a 
+template sequence consisting of the mutant allele and its 20-bp flanking 
+region to determine whether or not the mutation was uniquely mapped. 
+Because pathogenic germline variants may overlap with oncogenic somatic 
+mutations, we implemented a "rescue" pipeline to avoid over-filtering. All 
+putative somatic variants were first re-annotated using a customized AnnoVar 
+pipeline (Edmonson et al, unpublished) and performed variant classification 
+using Medal_Ceremony. Variants assigned "Gold" by medal ceremony are those 
+matching known mutation hotspots, or truncation mutations in tumor suppressor 
+genes. These were "rescued" and merged with the filtered variants for each 
+gene and the results further curated using our visualization program 
+ProteinPaint (https://pecan.stjude.org/proteinpaint/study/pan-target).
+The filtering process reduced the original 51 million SNVs and 38 million 
+indels from the CGI MAF files to a set of ~700,000 SNVs and 58,000 indels. 
+Of these, 9,397 SNVs and 1,000 indels are in protein coding regions. We tested 
+the filter on 14 diagnosis-remission-relapse trio samples that were analyzed 
+by both CGI and WES. Of the 661 CGI SNVs passing the filter, 580 (88%) were 
+verified by WES while the indel verification rate is 67% (48/72).  Notably, 
+all 53 variants (45 SNVs and 8 indels) on the driver genes identified in this 
+study were cross-validated by WES. 

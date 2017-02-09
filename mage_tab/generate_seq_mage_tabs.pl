@@ -1058,7 +1058,7 @@ for my $program_name (@program_names) {
                                         ) {
                                             my $barcode = $barcode_analysis_info_hashref->{barcode};
                                             for my $library_name (@{$barcode_analysis_info_hashref->{library_names}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'CnvSegment'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'CnvSegment-CGI'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1081,7 +1081,7 @@ for my $program_name (@program_names) {
                                         ) {
                                             my $barcode = $barcode_analysis_info_hashref->{barcode};
                                             for my $library_name (@{$barcode_analysis_info_hashref->{library_names}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Circos'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Circos-CGI'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1104,7 +1104,7 @@ for my $program_name (@program_names) {
                                         ) {
                                             my $barcode = $barcode_analysis_info_hashref->{barcode};
                                             for my $library_name (@{$barcode_analysis_info_hashref->{library_names}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'VariantCall'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'VariantCall-CGI'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1127,7 +1127,7 @@ for my $program_name (@program_names) {
                                         ) {
                                             my $barcode = $barcode_analysis_info_hashref->{barcode};
                                             for my $library_name (@{$barcode_analysis_info_hashref->{library_names}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Vcf2Maf'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Vcf2Maf-CGI'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1186,7 +1186,7 @@ for my $program_name (@program_names) {
                                         ) {
                                             my $barcode = $barcode_analysis_info_hashref->{barcode};
                                             for my $library_name (@{$barcode_analysis_info_hashref->{library_names}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'FilterSomatic'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'FilterSomatic-CGI'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1218,8 +1218,8 @@ for my $program_name (@program_names) {
                                                         $disease_proj eq 'OS' and
                                                         !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode});
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'HigherLevelSummary'}}) {
-                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'HigherLevelSummary'}}, {
+                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'HigherLevelSummary-CGI'}}) {
+                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'HigherLevelSummary-CGI'}}, {
                                                             data_level => $data_level,
                                                             file_name => $file_name,
                                                         };
@@ -1250,8 +1250,8 @@ for my $program_name (@program_names) {
                                                         $disease_proj eq 'OS' and
                                                         !exists($merged_run_info_hashref->{$data_type}->{'CGI'}->{barcodes}->{$barcode});
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Junction'}}) {
-                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Junction'}}, {
+                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Junction-CGI'}}) {
+                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{'CGI'}{'CGI'}{'Junction-CGI'}}, {
                                                             data_level => $data_level,
                                                             file_name => $file_name,
                                                         };
@@ -1441,8 +1441,8 @@ for my $program_name (@program_names) {
                                                 ) ? 'BCCA'
                                                   : 'CGI';
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment'}}) {
-                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment'}}, {
+                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment-CGI-CONCERTING'}}) {
+                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment-CGI-CONCERTING'}}, {
                                                             data_level => $data_level,
                                                             file_name => $file_name,
                                                         };
@@ -1488,8 +1488,8 @@ for my $program_name (@program_names) {
                                                     ) ? 'BCCA'
                                                       : 'CGI';
                                                     for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'VariantCall'}}) {
-                                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'VariantCall'}}, {
+                                                        if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'VariantCall-CGI'}}) {
+                                                            push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'VariantCall-CGI'}}, {
                                                                 data_level => $data_level,
                                                                 file_name => $file_name,
                                                             };
@@ -1534,8 +1534,8 @@ for my $program_name (@program_names) {
                                                 ) ? 'BCCA'
                                                   : 'CGI';
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'Fusion'}}) {
-                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'Fusion'}}, {
+                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'StructVariant-CGI'}}) {
+                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'StructVariant-CGI'}}, {
                                                             data_level => $data_level,
                                                             file_name => $file_name,
                                                         };
@@ -5209,10 +5209,16 @@ sub add_dcc_sdrf_data {
                 $protocol_config_hashref->{$protocol_type}->{$analysis_center_name}->{default}->{data}
             );
             # set default values if not specified in override
-            $protocol_hashref->{idf_type} = 'data transformation protocol'
-                unless defined $protocol_hashref->{idf_type};
-            $protocol_hashref->{term_source_ref} = $params_hashref->{default_config}->{'term_source_ref'}
-                unless defined $protocol_hashref->{term_source_ref};
+            if (!defined($protocol_hashref->{idf_type})) {
+                $protocol_hashref->{idf_type} = (
+                    $data_type eq 'mRNA-seq' and
+                    $protocol_type =~ /^Expression/i
+                ) ? 'normalization data transformation protocol'
+                  : 'data transformation protocol';
+            }
+            if (!defined($protocol_hashref->{term_source_ref})) {
+                $protocol_hashref->{term_source_ref} = $params_hashref->{default_config}->{'term_source_ref'};
+            }
         }
         else {
             $protocol_hashref = {
