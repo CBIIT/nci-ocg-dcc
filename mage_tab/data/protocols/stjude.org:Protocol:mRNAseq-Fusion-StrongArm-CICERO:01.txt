@@ -1,0 +1,4 @@
+RNA-seq data were mapped using StrongArm and rearrangements were identified 
+using CICERO, a novel algorithm that assembles reads around breakpoints and 
+maps the resulting contig to the genome to find fusion transcripts. All 
+fusions were manually reviewed.

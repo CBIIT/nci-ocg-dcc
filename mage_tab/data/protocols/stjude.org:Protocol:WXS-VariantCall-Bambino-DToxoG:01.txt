@@ -1,0 +1,13 @@
+Of the 1,131 paired tumor-normal WES data, all except for 23 osterosarcoma 
+pairs exhibit the expected binomial distribution of variant allele fraction 
+for known germline SNPs. The 23 outlier samples were not used for discovery 
+of driver genes due to their abnormal profile of variant allele distribution. 
+They were included only for determining mutation prevalence of the driver 
+genes identified in this study. Somatic SNVs and indels were detected by 
+the Bambino program followed by postprocessing and manual curation as 
+previously described. As 8-oxo-G artifact has been reported previously, we 
+implemented an 8-oxo-G filter following the principles described in the 
+D-ToxoG (http://archive.broadinstitute.org/cancer/cga/dtoxog) algorithm. 
+The filter was tested on the "Exome_Native" neuroblastoma samples known to 
+have 8-oxo-G artifacts and then applied to the variants identified in all 
+WES data set. 
