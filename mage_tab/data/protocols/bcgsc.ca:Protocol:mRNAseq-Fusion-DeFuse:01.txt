@@ -1,0 +1,3 @@
+DeFuse: An Algorithm for Gene Fusion Discovery in Tumor 
+RNA-Seq Data. Andrew McPherson et al. Plos Comp Bio. 2011. 
+PMID:21625565

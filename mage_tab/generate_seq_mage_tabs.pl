@@ -75,111 +75,6 @@ my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
 my @data_types = @{$config_hashref->{'common'}->{'seq_data_types'}};
 my $protocol_data_store = "$FindBin::Bin/data/protocols";
-my %sra2dcc_data_type = (
-    'Bisulfite-Seq' => 'Bisulfite-seq',
-    'ChIP-Seq' => 'ChIP-seq',
-    'miRNA-Seq' => 'miRNA-seq',
-    'RNA-Seq' => 'mRNA-seq',
-    'Targeted-Capture' => 'Targeted-Capture',
-    'WGS' => 'WGS',
-    'WXS' => 'WXS',
-);
-my %protocol_base_types = (
-    'Extraction' => {
-        data => {
-            idf_type => 'nucleic acid extraction protocol',
-            term_source_ref => 'EFO',
-        },
-        idf_order_num => 1,
-    },
-    'LibraryPrep' => {
-        data => {
-            idf_type => 'nucleic acid library construction protocol',
-            term_source_ref => 'EFO',
-        },
-        idf_order_num => 2,
-    },
-    'ExomeCapture' => {
-        data => {
-            idf_type => 'nucleic acid library construction protocol',
-            term_source_ref => 'EFO',
-        },
-        idf_order_num => 3,
-    },
-    'Sequence' => {
-        data => {
-            idf_type => 'nucleic acid sequencing protocol',
-            term_source_ref => 'EFO',
-        },
-        idf_order_num => 4,
-    },
-    'BaseCall' => {
-        data => {
-            idf_type => 'data transformation protocol',
-            term_source_ref => 'EFO',
-        },
-        idf_order_num => 5,
-    },
-    'ReadAlign' => {
-        data => {
-            idf_type => 'data transformation protocol',
-            term_source_ref => 'EFO',
-        },
-        idf_order_num => 6,
-    },
-);
-my %center_info = (
-    'BCCA' => {
-        authority => 'bcgsc.ca',
-    },
-    'BCG-Danvers' => {
-        authority => 'beckmangenomics.com',
-    },
-    'BCM' => {
-        authority => 'bcm.edu',
-    },
-    'Broad' => {
-        authority => 'broadinstitute.org',
-    },
-    'CGI' => {
-        authority => 'completegenomics.com',
-    },
-    'HAIB' => {
-        authority => 'hudsonalpha.org',
-    },
-    'NCI-Khan' => {
-        authority => 'nci.nih.gov',
-        namespace_prefix => 'CCR.Khan',
-    },
-    'NCI-Meltzer' => {
-        authority => 'nci.nih.gov',
-        namespace_prefix => 'CCR.Meltzer',
-    },
-    'NCI-Meerzaman' => {
-        authority => 'nci.nih.gov',
-        namespace_prefix => 'CBIIT.Meerzaman',
-    },
-    'StJude' => {
-        authority => 'stjude.org',
-    },
-    'UHN' => {
-        authority => 'uhnresearch.ca',
-    },
-);
-my %sra2dcc_center_name = (
-    'BCCAGSC' => 'BCCA',
-    'BCG-DANVERS' => 'BCG-Danvers',
-    'BI' => 'Broad',
-    'COMPLETEGENOMICS' => 'CGI',
-    'NCI-KHAN' => 'NCI-Khan',
-    'NCI-MELTZER' => 'NCI-Meltzer',
-    'STJUDE' => 'StJude',
-);
-my %sra2dcc_platform = (
-    'COMPLETE_GENOMICS' => 'CGI',
-    'ILLUMINA' => 'Illumina',
-    'ION_TORRENT' => 'IonTorrent',
-);
 my @mage_tab_idf_row_names = (
     'MAGE-TAB Version',
     'Investigation Title',
@@ -615,8 +510,8 @@ for my $program_name (@program_names) {
                                             my %col_header_idxs = map { $col_header_row_arrayref->[$_] => $_ } 0 .. $#{$col_header_row_arrayref};
                                             while (my $table_row_arrayref = $csv->getline($run_table_csv_fh)) {
                                                 my $data_type = $table_row_arrayref->[$col_header_idxs{'LibraryStrategy'}];
-                                                if (exists $sra2dcc_data_type{$data_type}) {
-                                                    $data_type = $sra2dcc_data_type{$data_type};
+                                                if (exists($mt_config_hashref->{sra}->{'sra2dcc_data_type'}->{$data_type})) {
+                                                    $data_type = $mt_config_hashref->{sra}->{'sra2dcc_data_type'}->{$data_type};
                                                 }
                                                 else {
                                                     push @run_info_errors, "unrecognized SRA data type '$data_type'";
@@ -625,11 +520,11 @@ for my $program_name (@program_names) {
                                                 my $run_id = $table_row_arrayref->[$col_header_idxs{'Run'}];
                                                 my $barcode = $table_row_arrayref->[$col_header_idxs{'SampleName'}];
                                                 my $exp_library_name = $table_row_arrayref->[$col_header_idxs{'LibraryName'}];
-                                                my $run_center_name = defined($sra2dcc_center_name{uc($table_row_arrayref->[$col_header_idxs{'CenterName'}])})
-                                                                    ? $sra2dcc_center_name{uc($table_row_arrayref->[$col_header_idxs{'CenterName'}])}
+                                                my $run_center_name = defined($mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($table_row_arrayref->[$col_header_idxs{'CenterName'}])})
+                                                                    ? $mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($table_row_arrayref->[$col_header_idxs{'CenterName'}])}
                                                                     : $table_row_arrayref->[$col_header_idxs{'CenterName'}];
-                                                my $platform = defined($sra2dcc_platform{uc($table_row_arrayref->[$col_header_idxs{'Platform'}])})
-                                                             ? $sra2dcc_platform{uc($table_row_arrayref->[$col_header_idxs{'Platform'}])}
+                                                my $platform = defined($mt_config_hashref->{sra}->{'sra2dcc_platform'}->{uc($table_row_arrayref->[$col_header_idxs{'Platform'}])})
+                                                             ? $mt_config_hashref->{sra}->{'sra2dcc_platform'}->{uc($table_row_arrayref->[$col_header_idxs{'Platform'}])}
                                                              : $table_row_arrayref->[$col_header_idxs{'Platform'}];
                                                 $run_info_by_study_hashref->{$dbgap_study_id}->{$data_type}->{$run_center_name}->{exp_ids}->{$exp_id}++;
                                                 $run_info_by_study_hashref->{$dbgap_study_id}->{$data_type}->{$run_center_name}->{run_ids}->{$run_id}++;
@@ -1357,7 +1252,7 @@ for my $program_name (@program_names) {
                                     ) {
                                         for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
                                             for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariantCall-DELLY'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariant-DELLY'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1368,7 +1263,7 @@ for my $program_name (@program_names) {
                                         push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
-                                # BCCA genomevalidator fusion tsvs
+                                # BCCA abyss-genomevalidator fusion tsvs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d(?:\.(primary|relapse))?\.genome\.fusions\.somatic\.(?:large|small)\.summary\.tsv$/i) {
                                     my ($case_id, $file_tissue_type) = ($1, $2);
                                     if (defined $file_tissue_type) {
@@ -1382,7 +1277,7 @@ for my $program_name (@program_names) {
                                         for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
                                             next if defined($file_tissue_type) and $tissue_type !~ /$file_tissue_type|Normal/i;
                                             for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-GenomeValidator'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-ABySS-GenomeValidator'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1441,8 +1336,8 @@ for my $program_name (@program_names) {
                                                 ) ? 'BCCA'
                                                   : 'CGI';
                                                 for my $library_name (@{$case_cmp_analysis_info_hashref->{$cgi_tissue_type}->{library_names}}) {
-                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment-CGI-CONCERTING'}}) {
-                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment-CGI-CONCERTING'}}, {
+                                                    if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment-CONCERTING-CGI'}}) {
+                                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'CGI'}{$library_name}{$run_center_name}{'StJude'}{'CnvSegment-CONCERTING-CGI'}}, {
                                                             data_level => $data_level,
                                                             file_name => $file_name,
                                                         };
@@ -1451,8 +1346,9 @@ for my $program_name (@program_names) {
                                             }
                                         }
                                     }
-                                    ## special inclusion OS WGS StJude
+                                    ## special inclusion TARGET OS WGS StJude
                                     #if (
+                                    #    $program_name eq 'TARGET' and
                                     #    $project_name eq 'OS' and
                                     #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
                                     #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
@@ -1502,8 +1398,9 @@ for my $program_name (@program_names) {
                                     else {
                                         push @dcc_file_errors, "could not determine tumor type from file name: $file";
                                     }
-                                    ## special inclusion OS WGS StJude
+                                    ## special inclusion TARGET OS WGS StJude
                                     #if (
+                                    #    $program_name eq 'TARGET' and
                                     #    $project_name eq 'OS' and
                                     #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
                                     #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
@@ -1544,8 +1441,9 @@ for my $program_name (@program_names) {
                                             }
                                         }
                                     }
-                                    ## special inclusion OS WGS StJude
+                                    ## special inclusion TARGET OS WGS StJude
                                     #if (
+                                    #    $program_name eq 'TARGET' and
                                     #    $project_name eq 'OS' and
                                     #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}) and
                                     #    exists($merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes})
@@ -1591,16 +1489,48 @@ for my $program_name (@program_names) {
                                         push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
-                                # AML MSS copy number
+                                # TARGET AML BCM copy number lohcate
                                 elsif (
+                                    $program_name eq 'TARGET' and
                                     $project_name eq 'AML' and
-                                    $file =~ /copy_number\/MSS\/.+?\.(target_aml\.txt|zip)$/i
+                                    $file =~ /copy_number\/BCM\/.+?\.target_aml\.txt$/i
                                 ) {
                                     for my $barcode (keys %{$merged_run_info_hashref->{$data_type}->{'BCM'}->{barcodes}}) {
-                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCM'}{'BCM'}{'CnvSegment'}}, {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCM'}{'BCM'}{'CnvSegment-LOHcate'}}, {
                                             data_level => $data_level,
                                             file_name => $file_name,
                                         };
+                                    }
+                                }
+                                # TARGET AML BCM copy number lohcate plots
+                                elsif (
+                                    $program_name eq 'TARGET' and
+                                    $project_name eq 'AML' and
+                                    $file =~ /copy_number\/BCM\/($OCG_BARCODE_REGEXP)\.VAF_(?:Comparison|GenomeWide_(Primary|Normal|Relapse))\.png$/i
+                                ) {
+                                    my ($barcode, $file_tissue_type) = ($1, $2);
+                                    my ($case_id, $barcode_tissue_type) = @{get_barcode_info($barcode)}{qw( case_id tissue_type )};
+                                    if (defined($file_tissue_type)) {
+                                        $file_tissue_type = ucfirst(lc($file_tissue_type));
+                                        $file_tissue_type = 'Recurrent' if $file_tissue_type eq 'Relapse';
+                                    }
+                                    if (
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCM'}) and
+                                        defined($barcodes_by_run_center_case_tissue_type_hashref->{'BCM'}->{$case_id})
+                                    ) {
+                                        for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCM'}->{$case_id}}) {
+                                            next if (  defined($file_tissue_type) and $tissue_type ne $file_tissue_type ) or
+                                                    ( !defined($file_tissue_type) and $tissue_type !~ /$barcode_tissue_type|Normal/i );
+                                            for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCM'}->{$case_id}->{$tissue_type}}) {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCM'}{'BCM'}{'CnvSegment-LOHcate'}}, {
+                                                    data_level => $data_level,
+                                                    file_name => $file_name,
+                                                };
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
                                 # NCI-Meltzer strelka vcfs
@@ -1624,14 +1554,15 @@ for my $program_name (@program_names) {
                                         push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
-                                # OS NCI-Meltzer StJude mafs
+                                # TARGET OS NCI-Meltzer StJude mafs
                                 # StJude didn't use correct barcodes in file so cannot parse, will grab barcodes from run info
                                 elsif (
+                                    $program_name eq 'TARGET' and
                                     $project_name eq 'OS' and
                                     $file =~ /mutation\/StJude\/CandidateSomatic\/.+?\.maf(\.txt)?$/i
                                 ) {
                                     for my $barcode (keys %{$merged_run_info_hashref->{$data_type}->{'NCI-Meltzer'}->{barcodes}}) {
-                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'StJude'}{'VariantCall'}}, {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'StJude'}{'VariantCall-Bambino-DToxoG'}}, {
                                             data_level => $data_level,
                                             file_name => $file_name,
                                         };
@@ -1668,8 +1599,9 @@ for my $program_name (@program_names) {
                             }
                             # mRNA-seq
                             elsif ($data_type eq 'mRNA-seq') {
-                                # AML HAIB NCI-Meerzaman gene quantification
+                                # TARGET AML HAIB NCI-Meerzaman gene quantification
                                 if (
+                                    $program_name eq 'TARGET' and
                                     $project_name eq 'AML' and
                                     $file =~ /expression\/NCI-Meerzaman\/(AML_\d+)\.(?:gene|exon|isoform)\.quantification\.txt$/i
                                 ) {
@@ -1695,8 +1627,9 @@ for my $program_name (@program_names) {
                                         push @dcc_file_errors, "'barcode_by_alt_id' HAIB configuration missing";
                                     }
                                 }
-                                # AML HAIB NCI-Meerzaman fusion
+                                # TARGET AML HAIB NCI-Meerzaman fusion
                                 elsif (
+                                    $program_name eq 'TARGET' and
                                     $project_name eq 'AML' and
                                     $file =~ /structural\/NCI-Meerzaman\/summary\/fusion_(?:breakpoint_seq|report)\.txt$/i
                                 ) {
@@ -1717,6 +1650,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 elsif (
+                                    $program_name eq 'TARGET' and
                                     $project_name eq 'AML' and
                                     $file =~ /structural\/NCI-Meerzaman\/(df|fm|th)\/(AML_\d+)_(?:results_filtered|FusionReport|potential_fusion)\.(?:tsv|txt)$/i
                                 ) {
@@ -1727,9 +1661,9 @@ for my $program_name (@program_names) {
                                     ) {
                                         my ($method_id, $external_id) = ($1, $2);
                                         my ($method) = map {
-                                            $_ eq 'df' ? 'Defuse' :
-                                            $_ eq 'fm' ? 'FusionMap'    :
-                                            $_ eq 'th' ? 'TopHat' : 
+                                            $_ eq 'df' ? 'DeFuse' :
+                                            $_ eq 'fm' ? 'FusionMap' :
+                                            $_ eq 'th' ? 'TopHat' :
                                             undef
                                         } ($method_id);
                                         if (
@@ -1749,6 +1683,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 elsif (
+                                    $program_name eq 'TARGET' and
                                     $project_name eq 'AML' and
                                     $file =~ /structural\/NCI-Meerzaman\/ss\/(?:final_fusion_report_.+?|fusion_protein_results|mapping_good_for_primer_sequence_design)\.txt$/i
                                 ) {
@@ -1769,6 +1704,7 @@ for my $program_name (@program_names) {
                                     }
                                 }
                                 elsif (
+                                    $program_name eq 'TARGET' and
                                     $project_name eq 'AML' and
                                     $file =~ /structural\/NCI-Meerzaman\/ss\/(AML_\d+)_fusion_summary\.txt$/i
                                 ) {
@@ -1858,7 +1794,7 @@ for my $program_name (@program_names) {
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA genomevalidator fusion tsvs
+                                # BCCA abyss-genomevalidator fusion tsvs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d(?:\.(primary|relapse))?\.transcriptome\.fusions\.somatic\.(?:large|small)\.summary\.tsv$/i) {
                                     my ($case_id, $file_tissue_type) = ($1, $2);
                                     if (defined $file_tissue_type) {
@@ -1872,7 +1808,7 @@ for my $program_name (@program_names) {
                                         for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
                                             next if defined($file_tissue_type) and $tissue_type !~ /$file_tissue_type|Normal/i;
                                             for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-GenomeValidator'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-ABySS-GenomeValidator'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1886,15 +1822,15 @@ for my $program_name (@program_names) {
                                 # BCCA defuse fusion tsvs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)(\.fusion)?\.results\.filtered\.tsv$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-Defuse'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-DeFuse'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
-                                # StJude expression
+                                # StJude expression htseq
                                 elsif ($file =~ /expression\/StJude\/($OCG_BARCODE_REGEXP)\.expression\.txt$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'StJude'}{'StJude'}{'Expression'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'StJude'}{'StJude'}{'Expression-HTSeq'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
@@ -2494,18 +2430,35 @@ for my $program_name (@program_names) {
                             "\n"; 
                     }
                     my $exp_data_type;
-                    if (exists $sra2dcc_data_type{$exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_STRATEGY}}) {
-                        $exp_data_type = $sra2dcc_data_type{$exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_STRATEGY}};
+                    if (exists($mt_config_hashref->{sra}->{'sra2dcc_data_type'}->{$exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_STRATEGY}})) {
+                        $exp_data_type = $mt_config_hashref->{sra}->{'sra2dcc_data_type'}->{$exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_STRATEGY}};
                     }
                     else {
                         die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
                             ": unrecognized data type $exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_STRATEGY}";
                     }
                     (my $protocol_exp_data_type = $exp_data_type) =~ s/-//g;
+                    my $protocol_config_hashref;
+                    if (defined($mt_config_hashref->{dataset})) {
+                        if (
+                            defined($mt_config_hashref->{dataset}->{protocol_info}) and
+                            $exp_data_type eq $data_type
+                        ) {
+                            $protocol_config_hashref = $mt_config_hashref->{dataset}->{protocol_info};
+                        }
+                        elsif (
+                            defined($mt_config_hashref->{dataset}->{add_data_types}) and
+                            defined($mt_config_hashref->{dataset}->{add_data_types}->{$exp_data_type}) and
+                            defined($mt_config_hashref->{dataset}->{add_data_types}->{$exp_data_type}->{protocol_info}) and
+                            $exp_data_type ne $data_type
+                        ) {
+                            $protocol_config_hashref = $mt_config_hashref->{dataset}->{add_data_types}->{$exp_data_type}->{protocol_info};
+                        }
+                    }
                     my ($platform) = keys %{$exp_pkg_xml->{EXPERIMENT}->{PLATFORM}};
                     my $hardware_model = $exp_pkg_xml->{EXPERIMENT}->{PLATFORM}->{$platform}->{INSTRUMENT_MODEL};
-                    $platform = defined($sra2dcc_platform{uc($platform)})
-                              ? $sra2dcc_platform{uc($platform)}
+                    $platform = defined($mt_config_hashref->{sra}->{'sra2dcc_platform'}->{uc($platform)})
+                              ? $mt_config_hashref->{sra}->{'sra2dcc_platform'}->{uc($platform)}
                               : $platform;
                     if ($platform eq 'CGI' and (!defined($hardware_model) or $hardware_model =~ /^(unspecified|\s*)$/i)) {
                         $hardware_model = 'Complete Genomics';
@@ -2616,12 +2569,12 @@ for my $program_name (@program_names) {
                     }
                     my $exp_center_name = 
                         defined($exp_pkg_xml->{EXPERIMENT}->{center_name})
-                            ? defined($sra2dcc_center_name{uc($exp_pkg_xml->{EXPERIMENT}->{center_name})})
-                                ? $sra2dcc_center_name{uc($exp_pkg_xml->{EXPERIMENT}->{center_name})}
+                            ? defined($mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($exp_pkg_xml->{EXPERIMENT}->{center_name})})
+                                ? $mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($exp_pkg_xml->{EXPERIMENT}->{center_name})}
                                 : $exp_pkg_xml->{EXPERIMENT}->{center_name}
                             : defined($exp_pkg_xml->{SUBMISSION}->{center_name})
-                                ? defined($sra2dcc_center_name{uc($exp_pkg_xml->{SUBMISSION}->{center_name})})
-                                    ? $sra2dcc_center_name{uc($exp_pkg_xml->{SUBMISSION}->{center_name})}
+                                ? defined($mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($exp_pkg_xml->{SUBMISSION}->{center_name})})
+                                    ? $mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($exp_pkg_xml->{SUBMISSION}->{center_name})}
                                     : $exp_pkg_xml->{SUBMISSION}->{center_name}
                                 : die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
                                       ": could not extract experiment center name from XML: $exp_id"; 
@@ -2635,8 +2588,9 @@ for my $program_name (@program_names) {
                                     !@{$mage_tab_idf_data[$mage_tab_idf_row_idx_by_name{$row_name}]} or
                                     ( 
                                         defined($mt_config_hashref->{dataset}) and
-                                        defined($mt_config_hashref->{dataset}->{'merge_idf_row_names'}) and
-                                        any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{'merge_idf_row_names'}}
+                                        defined($mt_config_hashref->{dataset}->{idf}) and
+                                        defined($mt_config_hashref->{dataset}->{idf}->{'merge_idf_row_names'}) and
+                                        any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{idf}->{'merge_idf_row_names'}}
                                     );
                         my @row_values;
                         if ($row_name eq 'MAGE-TAB Version') {
@@ -2647,16 +2601,18 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Investigation Title') {
                             push @row_values, (
                                 defined($mt_config_hashref->{dataset}) and
-                                defined($mt_config_hashref->{dataset}->{'investigation_title'})
-                            ) ? $mt_config_hashref->{dataset}->{'investigation_title'}
+                                defined($mt_config_hashref->{dataset}->{idf}) and
+                                defined($mt_config_hashref->{dataset}->{idf}->{'investigation_title'})
+                            ) ? $mt_config_hashref->{dataset}->{idf}->{'investigation_title'}
                               : "$exp_pkg_xml->{STUDY}->{DESCRIPTOR}->{STUDY_TITLE} $data_type";
                         }
                         elsif ($row_name eq 'Experimental Design') {
                             if (
                                 defined($mt_config_hashref->{dataset}) and
-                                defined($mt_config_hashref->{dataset}->{'exp_design'})
+                                defined($mt_config_hashref->{dataset}->{idf}) and
+                                defined($mt_config_hashref->{dataset}->{idf}->{'exp_design'})
                             ) {
-                                push @row_values, @{$mt_config_hashref->{dataset}->{'exp_design'}};
+                                push @row_values, @{$mt_config_hashref->{dataset}->{idf}->{'exp_design'}};
                             }
                             elsif (
                                 defined($mt_config_hashref->{idf}->{'exp_design'}) and
@@ -2668,11 +2624,12 @@ for my $program_name (@program_names) {
                         elsif ($row_name eq 'Experimental Design Term Source REF') {
                             if (
                                 defined($mt_config_hashref->{dataset}) and
-                                defined($mt_config_hashref->{dataset}->{'exp_design'})
+                                defined($mt_config_hashref->{dataset}->{idf}) and
+                                defined($mt_config_hashref->{dataset}->{idf}->{'exp_design'})
                             ) {
                                 push @row_values, (
                                     $mt_config_hashref->{default}->{'term_source_ref'}
-                                ) x scalar(@{$mt_config_hashref->{dataset}->{'exp_design'}});
+                                ) x scalar(@{$mt_config_hashref->{dataset}->{idf}->{'exp_design'}});
                             }
                             elsif (
                                 defined($mt_config_hashref->{idf}->{'exp_design'}) and
@@ -2829,8 +2786,8 @@ for my $program_name (@program_names) {
                             for my $term_sources_arrayref (
                                 grep(defined, 
                                     $mt_config_hashref->{idf}->{'term_sources'},
-                                    $mt_config_hashref->{project}->{'term_sources'},
-                                    $mt_config_hashref->{dataset}->{'term_sources'},
+                                    $mt_config_hashref->{project}->{idf}->{'term_sources'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'term_sources'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2843,8 +2800,8 @@ for my $program_name (@program_names) {
                             for my $term_sources_arrayref (
                                 grep(defined, 
                                     $mt_config_hashref->{idf}->{'term_sources'},
-                                    $mt_config_hashref->{project}->{'term_sources'},
-                                    $mt_config_hashref->{dataset}->{'term_sources'},
+                                    $mt_config_hashref->{project}->{idf}->{'term_sources'},
+                                    $mt_config_hashref->{dataset}->{idf}->{'term_sources'},
                                 )
                             ) {
                                 push @row_values, map {
@@ -2888,8 +2845,9 @@ for my $program_name (@program_names) {
                         }
                         if (
                             defined($mt_config_hashref->{dataset}) and
-                            defined($mt_config_hashref->{dataset}->{'merge_idf_row_names'}) and
-                            any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{'merge_idf_row_names'}} and
+                            defined($mt_config_hashref->{dataset}->{idf}) and
+                            defined($mt_config_hashref->{dataset}->{idf}->{'merge_idf_row_names'}) and
+                            any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{idf}->{'merge_idf_row_names'}} and
                             defined($mage_tab_idf_data[$mage_tab_idf_row_idx_by_name{$row_name}]) and
                             @{$mage_tab_idf_data[$mage_tab_idf_row_idx_by_name{$row_name}]}
                         ) {
@@ -3286,44 +3244,43 @@ for my $program_name (@program_names) {
                             my $protocol_type = 'Extraction';
                             my $protocol_hashref;
                             if (
-                                defined($mt_config_hashref->{dataset}) and
-                                defined($mt_config_hashref->{dataset}->{protocol_info}) and
-                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
+                                defined($protocol_config_hashref) and
+                                defined($protocol_config_hashref->{$protocol_type}) and
+                                defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name})
                             ) {
                                 if (
-                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                    any { $barcode eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{barcodes}}
+                                    defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                    any { $barcode eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{barcodes}}
                                 ) {
-                                    $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                    $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{data});
                                 }
                                 elsif (
-                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                    defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default})
                                 ) {
-                                    $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                    $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default}->{data});
                                 }
-                                if (defined $protocol_hashref) {
+                                if (defined($protocol_hashref)) {
                                     # set default values if not specified in override
                                     for my $field (qw( idf_type term_source_ref )) {
                                         if (!defined($protocol_hashref->{$field})) {
-                                            $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                            $protocol_hashref->{$field} = $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}->{$field};
                                         }
                                     }
                                 }
                             }
-                            if (!defined $protocol_hashref) {
+                            if (!defined($protocol_hashref)) {
                                 my $nucleic_acid_type = 
                                     uc($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_SOURCE}) eq 'GENOMIC' ? 'DNA' :
                                     uc($exp_pkg_xml->{EXPERIMENT}->{DESIGN}->{LIBRARY_DESCRIPTOR}->{LIBRARY_SOURCE}) eq 'TRANSCRIPTOMIC' ? 'RNA' :
                                     '';
                                 $protocol_hashref = clone(
-                                    $protocol_base_types{$protocol_type}{data}
+                                    $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}
                                 );
                                 my $protocol_object_name = $protocol_type;
                                 $protocol_object_name = "${nucleic_acid_type}-${protocol_type}" if $nucleic_acid_type;
                                 $protocol_hashref->{name} = get_lsid(
-                                    authority => $center_info{$exp_center_name}{authority},
-                                    namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
+                                    authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{authority},
+                                    namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{namespace_prefix},
                                     namespace => 'Protocol',
                                     object => $protocol_object_name,
                                     revision => $mt_config_hashref->{default}->{'protocol_revision'},
@@ -3446,38 +3403,37 @@ for my $program_name (@program_names) {
                             my $protocol_type = 'LibraryPrep';
                             my $protocol_hashref;
                             if (
-                                defined($mt_config_hashref->{dataset}) and
-                                defined($mt_config_hashref->{dataset}->{protocol_info}) and
-                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
+                                defined($protocol_config_hashref) and
+                                defined($protocol_config_hashref->{$protocol_type}) and
+                                defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name})
                             ) {
                                 if (
-                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                    any { $exp_library_name eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
+                                    defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                    any { $exp_library_name eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
                                 ) {
-                                    $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                    $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{data});
                                 }
                                 elsif (
-                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                    defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default})
                                 ) {
-                                    $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                    $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default}->{data});
                                 }
-                                if (defined $protocol_hashref) {
+                                if (defined($protocol_hashref)) {
                                     # set default values if not specified in override
                                     for my $field (qw( idf_type term_source_ref )) {
                                         if (!defined($protocol_hashref->{$field})) {
-                                            $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                            $protocol_hashref->{$field} = $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}->{$field};
                                         }
                                     }
                                 }
                             }
-                            if (!defined $protocol_hashref) {
+                            if (!defined($protocol_hashref)) {
                                 $protocol_hashref = clone(
-                                    $protocol_base_types{$protocol_type}{data}
+                                    $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}
                                 );
                                 $protocol_hashref->{name} = get_lsid(
-                                    authority => $center_info{$exp_center_name}{authority},
-                                    namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
+                                    authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{authority},
+                                    namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{namespace_prefix},
                                     namespace => 'Protocol',
                                     object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
                                     revision => $mt_config_hashref->{default}->{'protocol_revision'},
@@ -3508,38 +3464,37 @@ for my $program_name (@program_names) {
                                 my $protocol_type = 'LibraryPrep';
                                 my $protocol_hashref;
                                 if (
-                                    defined($mt_config_hashref->{dataset}) and
-                                    defined($mt_config_hashref->{dataset}->{protocol_info}) and
-                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                    defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
+                                    defined($protocol_config_hashref) and
+                                    defined($protocol_config_hashref->{$protocol_type}) and
+                                    defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name})
                                 ) {
                                     if (
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                        any { $exp_library_name eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
+                                        defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                        any { $exp_library_name eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
                                     ) {
-                                        $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                        $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{data});
                                     }
                                     elsif (
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                        defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default})
                                     ) {
-                                        $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                        $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default}->{data});
                                     }
-                                    if (defined $protocol_hashref) {
+                                    if (defined($protocol_hashref)) {
                                         # set default values if not specified in override
                                         for my $field (qw( idf_type term_source_ref )) {
                                             if (!defined($protocol_hashref->{$field})) {
-                                                $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                $protocol_hashref->{$field} = $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}->{$field};
                                             }
                                         }
                                     }
                                 }
-                                if (!defined $protocol_hashref) {
+                                if (!defined($protocol_hashref)) {
                                     $protocol_hashref = clone(
-                                        $protocol_base_types{$protocol_type}{data}
+                                        $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}
                                     );
                                     $protocol_hashref->{name} = get_lsid(
-                                        authority => $center_info{$exp_center_name}{authority},
-                                        namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
+                                        authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{authority},
+                                        namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{namespace_prefix},
                                         namespace => 'Protocol',
                                         object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
                                         revision => $mt_config_hashref->{default}->{'protocol_revision'},
@@ -3556,38 +3511,37 @@ for my $program_name (@program_names) {
                                     my $protocol_type = 'ExomeCapture';
                                     my $protocol_hashref;
                                     if (
-                                        defined($mt_config_hashref->{dataset}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name})
+                                        defined($protocol_config_hashref) and
+                                        defined($protocol_config_hashref->{$protocol_type}) and
+                                        defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name})
                                     ) {
                                         if (
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                            any { $exp_library_name eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
+                                            defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}) and
+                                            any { $exp_library_name eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{library_names}}
                                         ) {
-                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                            $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{data});
                                         }
                                         elsif (
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default})
+                                            defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default})
                                         ) {
-                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                            $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default}->{data});
                                         }
-                                        if (defined $protocol_hashref) {
+                                        if (defined($protocol_hashref)) {
                                             # set default values if not specified in override
                                             for my $field (qw( idf_type term_source_ref )) {
                                                 if (!defined($protocol_hashref->{$field})) {
-                                                    $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                    $protocol_hashref->{$field} = $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}->{$field};
                                                 }
                                             }
                                         }
                                     }
-                                    if (!defined $protocol_hashref) {
+                                    if (!defined($protocol_hashref)) {
                                         $protocol_hashref = clone(
-                                            $protocol_base_types{$protocol_type}{data}
+                                            $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}
                                         );
                                         $protocol_hashref->{name} = get_lsid(
-                                            authority => $center_info{$exp_center_name}{authority},
-                                            namespace_prefix => $center_info{$exp_center_name}{namespace_prefix},
+                                            authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{authority},
+                                            namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{namespace_prefix},
                                             namespace => 'Protocol',
                                             object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
                                             revision => $mt_config_hashref->{default}->{'protocol_revision'},
@@ -3692,16 +3646,16 @@ for my $program_name (@program_names) {
                         for my $run_xml (@{$exp_pkg_xml->{RUN_SET}}) {
                             my $run_center_name = 
                                 defined($run_xml->{run_center})
-                                    ? defined($sra2dcc_center_name{uc($run_xml->{run_center})})
-                                        ? $sra2dcc_center_name{uc($run_xml->{run_center})}
+                                    ? defined($mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($run_xml->{run_center})})
+                                        ? $mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($run_xml->{run_center})}
                                         : $run_xml->{run_center}
                                     : defined($run_xml->{center_name})
-                                        ? defined($sra2dcc_center_name{uc($run_xml->{center_name})})
-                                            ? $sra2dcc_center_name{uc($run_xml->{center_name})}
+                                        ? defined($mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($run_xml->{center_name})})
+                                            ? $mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($run_xml->{center_name})}
                                             : $run_xml->{center_name}
                                         : defined($exp_pkg_xml->{SUBMISSION}->{center_name})
-                                            ? defined($sra2dcc_center_name{uc($exp_pkg_xml->{SUBMISSION}->{center_name})})
-                                                ? $sra2dcc_center_name{uc($exp_pkg_xml->{SUBMISSION}->{center_name})}
+                                            ? defined($mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($exp_pkg_xml->{SUBMISSION}->{center_name})})
+                                                ? $mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($exp_pkg_xml->{SUBMISSION}->{center_name})}
                                                 : $exp_pkg_xml->{SUBMISSION}->{center_name}
                                             : die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
                                                   ": could not extract run center name from XML: $run_xml->{accession}";
@@ -3714,38 +3668,37 @@ for my $program_name (@program_names) {
                                     my $protocol_type = 'Sequence';
                                     my $protocol_hashref;
                                     if (
-                                        defined($mt_config_hashref->{dataset}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
+                                        defined($protocol_config_hashref) and
+                                        defined($protocol_config_hashref->{$protocol_type}) and
+                                        defined($protocol_config_hashref->{$protocol_type}->{$run_center_name})
                                     ) {
                                         if (
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                            any { $run_xml->{accession} eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                            defined($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}) and
+                                            any { $run_xml->{accession} eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
                                         ) {
-                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                            $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{data});
                                         }
                                         elsif (
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                            defined($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{default})
                                         ) {
-                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                            $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{default}->{data});
                                         }
-                                        if (defined $protocol_hashref) {
+                                        if (defined($protocol_hashref)) {
                                             # set default values if not specified in override
                                             for my $field (qw( idf_type term_source_ref )) {
                                                 if (!defined($protocol_hashref->{$field})) {
-                                                    $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                    $protocol_hashref->{$field} = $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}->{$field};
                                                 }
                                             }
                                         }
                                     }
-                                    if (!defined $protocol_hashref) {
+                                    if (!defined($protocol_hashref)) {
                                         $protocol_hashref = clone(
-                                            $protocol_base_types{$protocol_type}{data}
+                                            $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}
                                         );
                                         $protocol_hashref->{name} = get_lsid(
-                                            authority => $center_info{$run_center_name}{authority},
-                                            namespace_prefix => $center_info{$run_center_name}{namespace_prefix},
+                                            authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$run_center_name}->{authority},
+                                            namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$run_center_name}->{namespace_prefix},
                                             namespace => 'Protocol',
                                             object => "${protocol_exp_data_type}-${protocol_type}-${platform}-${protocol_hardware_model}",
                                             revision => $mt_config_hashref->{default}->{'protocol_revision'},
@@ -3801,38 +3754,37 @@ for my $program_name (@program_names) {
                                     my $protocol_type = 'BaseCall';
                                     my $protocol_hashref;
                                     if (
-                                        defined($mt_config_hashref->{dataset}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                        defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
+                                        defined($protocol_config_hashref) and
+                                        defined($protocol_config_hashref->{$protocol_type}) and
+                                        defined($protocol_config_hashref->{$protocol_type}->{$run_center_name})
                                     ) {
                                         if (
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                            any { $run_xml->{accession} eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                            defined($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}) and
+                                            any { $run_xml->{accession} eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
                                         ) {
-                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                            $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{data});
                                         }
                                         elsif (
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                            defined($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{default})
                                         ) {
-                                            $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                            $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{default}->{data});
                                         }
-                                        if (defined $protocol_hashref) {
+                                        if (defined($protocol_hashref)) {
                                             # set default values if not specified in override
                                             for my $field (qw( idf_type term_source_ref )) {
                                                 if (!defined($protocol_hashref->{$field})) {
-                                                    $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                    $protocol_hashref->{$field} = $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}->{$field};
                                                 }
                                             }
                                         }
                                     }
-                                    if (!defined $protocol_hashref) {
+                                    if (!defined($protocol_hashref)) {
                                         $protocol_hashref = clone(
-                                            $protocol_base_types{$protocol_type}{data}
+                                            $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}
                                         );
                                         $protocol_hashref->{name} = get_lsid(
-                                            authority => $center_info{$run_center_name}{authority},
-                                            namespace_prefix => $center_info{$run_center_name}{namespace_prefix},
+                                            authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$run_center_name}->{authority},
+                                            namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$run_center_name}->{namespace_prefix},
                                             namespace => 'Protocol',
                                             object => "${protocol_exp_data_type}-${protocol_type}-${platform}",
                                             revision => $mt_config_hashref->{default}->{'protocol_revision'},
@@ -3977,38 +3929,37 @@ for my $program_name (@program_names) {
                                         my $protocol_type = 'ReadAlign';
                                         my $protocol_hashref;
                                         if (
-                                            defined($mt_config_hashref->{dataset}) and
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}) and
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}) and
-                                            defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name})
+                                            defined($protocol_config_hashref) and
+                                            defined($protocol_config_hashref->{$protocol_type}) and
+                                            defined($protocol_config_hashref->{$protocol_type}->{$run_center_name})
                                         ) {
                                             if (
-                                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}) and
-                                                any { $run_xml->{accession} eq $_ } @{$mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
+                                                defined($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}) and
+                                                any { $run_xml->{accession} eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
                                             ) {
-                                                $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                                $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{data});
                                             }
                                             elsif (
-                                                defined($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default})
+                                                defined($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{default})
                                             ) {
-                                                $protocol_hashref = clone($mt_config_hashref->{dataset}->{protocol_info}->{$protocol_type}->{$run_center_name}->{default}->{data});
+                                                $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{default}->{data});
                                             }
-                                            if (defined $protocol_hashref) {
+                                            if (defined($protocol_hashref)) {
                                                 # set default values if not specified in override
                                                 for my $field (qw( idf_type term_source_ref )) {
                                                     if (!defined($protocol_hashref->{$field})) {
-                                                        $protocol_hashref->{$field} = $protocol_base_types{$protocol_type}{data}{$field};
+                                                        $protocol_hashref->{$field} = $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}->{$field};
                                                     }
                                                 }
                                             }
                                         }
-                                        if (!defined $protocol_hashref) {
+                                        if (!defined($protocol_hashref)) {
                                             $protocol_hashref = clone(
-                                                $protocol_base_types{$protocol_type}{data}
+                                                $mt_config_hashref->{idf}->{'protocol_base_types'}->{$protocol_type}->{data}
                                             );
                                             $protocol_hashref->{name} = get_lsid(
-                                                authority => $center_info{$run_center_name}{authority},
-                                                namespace_prefix => $center_info{$run_center_name}{namespace_prefix},
+                                                authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$run_center_name}->{authority},
+                                                namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$run_center_name}->{namespace_prefix},
                                                 namespace => 'Protocol',
                                                 object => "${protocol_exp_data_type}-${protocol_type}",
                                                 revision => $mt_config_hashref->{default}->{'protocol_revision'},
@@ -4230,9 +4181,7 @@ for my $program_name (@program_names) {
                                                         platform => $platform,
                                                         run_center_name => $run_center_name,
                                                         analysis_center_name => $dcc_analysis_center_name,
-                                                        config => $exp_data_type eq $data_type
-                                                            ? $mt_config_hashref->{dataset}->{protocol_info}
-                                                            : $mt_config_hashref->{dataset}->{add_data_types}->{protocol_info},
+                                                        config => $protocol_config_hashref,
                                                     },
                                                     default_config => $mt_config_hashref->{default},
                                                 });
@@ -4345,10 +4294,12 @@ for my $program_name (@program_names) {
                 # sort protocol data for IDF
                 @protocol_data = sort {
                     (
-                        defined($protocol_base_types{$a->{type}}) and
-                        defined($protocol_base_types{$b->{type}})
+                        defined($mt_config_hashref->{idf}->{'protocol_base_types'}->{$a->{type}}) and
+                        defined($mt_config_hashref->{idf}->{'protocol_base_types'}->{$b->{type}})
                     ) ? (
-                        $protocol_base_types{$a->{type}}{idf_order_num} <=> $protocol_base_types{$b->{type}}{idf_order_num}
+                        $mt_config_hashref->{idf}->{'protocol_base_types'}->{$a->{type}}->{idf_order_num}
+                            <=>
+                        $mt_config_hashref->{idf}->{'protocol_base_types'}->{$b->{type}}->{idf_order_num}
                             ||
                         (
                             (
@@ -4362,12 +4313,12 @@ for my $program_name (@program_names) {
                               : mkkey_natural(lc($a->{name})) cmp mkkey_natural(lc($b->{name}))
                         )
                     ) : (
-                         defined($protocol_base_types{$a->{type}}) and
-                        !defined($protocol_base_types{$b->{type}})
+                         defined($mt_config_hashref->{idf}->{'protocol_base_types'}->{$a->{type}}) and
+                        !defined($mt_config_hashref->{idf}->{'protocol_base_types'}->{$b->{type}})
                     ) ? -1
                       : (
-                        !defined($protocol_base_types{$a->{type}}) and
-                         defined($protocol_base_types{$b->{type}})
+                        !defined($mt_config_hashref->{idf}->{'protocol_base_types'}->{$a->{type}}) and
+                         defined($mt_config_hashref->{idf}->{'protocol_base_types'}->{$b->{type}})
                     ) ? 1
                       : mkkey_natural(lc($a->{center_name})) cmp mkkey_natural(lc($b->{center_name}))
                             ||
@@ -4480,8 +4431,9 @@ for my $program_name (@program_names) {
                         # merge possible configured IDF row values
                         if (
                             defined($mt_config_hashref->{dataset}) and
-                            defined($mt_config_hashref->{dataset}->{'merge_idf_row_names'}) and
-                            any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{'merge_idf_row_names'}}
+                            defined($mt_config_hashref->{dataset}->{idf}) and
+                            defined($mt_config_hashref->{dataset}->{idf}->{'merge_idf_row_names'}) and
+                            any { $row_name eq $_ } @{$mt_config_hashref->{dataset}->{idf}->{'merge_idf_row_names'}}
                         ) {
                             my $delimiter = ( $row_name eq 'Experiment Description' ? '. ' : '; ' );
                             $mage_tab_idf_data[$row_idx] = [ join($delimiter, @{$mage_tab_idf_data[$row_idx]}) ];
@@ -4506,12 +4458,12 @@ for my $program_name (@program_names) {
                                 ||
                             (
                                 (
-                                    $sra2dcc_data_type{$a->[$mage_tab_sdrf_col_idx_by_key{'Comment[LIBRARY_STRATEGY]'}]} eq $data_type and
-                                    $sra2dcc_data_type{$b->[$mage_tab_sdrf_col_idx_by_key{'Comment[LIBRARY_STRATEGY]'}]} ne $data_type
+                                    $mt_config_hashref->{sra}->{'sra2dcc_data_type'}->{$a->[$mage_tab_sdrf_col_idx_by_key{'Comment[LIBRARY_STRATEGY]'}]} eq $data_type and
+                                    $mt_config_hashref->{sra}->{'sra2dcc_data_type'}->{$b->[$mage_tab_sdrf_col_idx_by_key{'Comment[LIBRARY_STRATEGY]'}]} ne $data_type
                                 ) ? -1 
                                   : (
-                                    $sra2dcc_data_type{$a->[$mage_tab_sdrf_col_idx_by_key{'Comment[LIBRARY_STRATEGY]'}]} ne $data_type and
-                                    $sra2dcc_data_type{$b->[$mage_tab_sdrf_col_idx_by_key{'Comment[LIBRARY_STRATEGY]'}]} eq $data_type
+                                    $mt_config_hashref->{sra}->{'sra2dcc_data_type'}->{$a->[$mage_tab_sdrf_col_idx_by_key{'Comment[LIBRARY_STRATEGY]'}]} ne $data_type and
+                                    $mt_config_hashref->{sra}->{'sra2dcc_data_type'}->{$b->[$mage_tab_sdrf_col_idx_by_key{'Comment[LIBRARY_STRATEGY]'}]} eq $data_type
                                 ) ? 1
                                   : 0
                             )
@@ -5231,8 +5183,8 @@ sub add_dcc_sdrf_data {
                 term_source_ref => $params_hashref->{default_config}->{'term_source_ref'},
             };
             $protocol_hashref->{name} = get_lsid(
-                authority => $center_info{$analysis_center_name}{authority},
-                namespace_prefix => $center_info{$analysis_center_name}{namespace_prefix},
+                authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$analysis_center_name}->{authority},
+                namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$analysis_center_name}->{namespace_prefix},
                 namespace => 'Protocol',
                 object => "${protocol_data_type}-${protocol_type}",
                 revision => $params_hashref->{default_config}->{'protocol_revision'},

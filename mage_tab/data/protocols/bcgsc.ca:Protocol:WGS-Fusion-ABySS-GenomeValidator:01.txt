@@ -1,0 +1,28 @@
+Assembly-based structural variant calling using ABySS, Trans-ABySS and 
+Genome Validator: Structural variant detection was performed using ABySS 
+(v1.3.4) (Simpson et al, PMID:19251739)  and trans-ABySS (v1.4.10). 
+Genome (WGS) libraries were assembled in single end mode using k-mer 
+values of k56 and k76. The contigs and reads were then reassembled at 
+k96 in single end mode and then finally at k96 in paired end mode. The 
+meta-assemblies were then used as input to the trans-ABySS analysis 
+pipeline (Robertson et al PMID: 20935650). Large scale rearrangements 
+and gene fusions from RNA-seq libraries were identified from contigs 
+that had high confidence GMAP (v2015-06-12) alignments to two distinct 
+genomic regions.  Evidence for the alignments were provided from 
+aligning reads back to the contigs and from aligning reads to genomic 
+coordinates. Events were then filtered based on the number and types of 
+supporting reads. Large scale rearrangements and gene fusions from WGS 
+libraries were identified in a similar way, using BWA (v0.7.12r1039) 
+alignments. Insertions and deletions were identified by gapped alignment 
+of contigs to the human reference using BWA for WGS. 
+Confidence in the event was calculated from the alignment of reads back 
+to the event breakpoint in the contigs.  The events were then screened 
+against dbSNP and other variation databases to identify putative novel 
+events. An in-house tool, Genome Validator was used to determine 
+compartment specific events. The structural variant calls for each 
+patient from matched genome and RNA-seq samples were concatenated 
+together and screened for each patient against matching tumour and 
+germline alignments. This resulted in compartment specific structural 
+variant events and putative somatic calls. The events were further 
+filtered against a compendium of recurrent structural variants to remove 
+recurrent false positives.

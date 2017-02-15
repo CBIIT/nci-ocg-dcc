@@ -1,0 +1,4 @@
+Expression data were generated using HTSeq, followed by FPKM calculation. 
+All the data were generated upon gene models from GENCODE v19. HTSeq--a 
+Python framework to work with high-throughput sequencing data. PMID: 
+25260700. 

@@ -1,0 +1,18 @@
+CNA analysis was performed using LOHcate, a method that identifies CNA 
+events in whole exome tumor sequence data via detecting enrichment in 
+variant or reference allele quantities per site across polymorphic 
+exonic sites. The per-site quantities are plotted two-dimensionally 
+between matched normal and tumor. Significant sites are then clustered 
+in this Euclidean 2D space using an optimized version of the 
+Density-Based Spatial Clustering of Applications with Noise (DBSCAN) 
+algorithm, after which clusters are classified to denote the appropriate 
+CNA events: somatic gain, loss of heterozygosity (LOH), or copy neutral 
+LOH (cnLOH). The sites within these classified CNA clusters are mapped 
+back to the exome, which is subsequently segmented into CNA regions. 
+Regions and sub-regions of low to high recurrence are identified by 
+comparing CNA regions across samples. Segments with 200 or more markers 
+were visualized by Partek software (Partek Inc., St. Louis, MO) and 
+utilized in the analysis.
+
+Dewal, N et al. LOHcate: Robust detection and analysis of aneupoidy 
+in whole exome sequence data from cancer genomes.  In preparation

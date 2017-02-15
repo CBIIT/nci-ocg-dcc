@@ -6,6 +6,31 @@ use NCI::OCGDCC::Config qw( :all );
 
 # mage-tab generator config
 {
+    'sra' => {
+        'sra2dcc_center_name' => {
+            'BCCAGSC' => 'BCCA',
+            'BCG-DANVERS' => 'BCG-Danvers',
+            'BI' => 'Broad',
+            'COMPLETEGENOMICS' => 'CGI',
+            'NCI-KHAN' => 'NCI-Khan',
+            'NCI-MELTZER' => 'NCI-Meltzer',
+            'STJUDE' => 'StJude',
+        },
+        'sra2dcc_data_type' => {
+            'Bisulfite-Seq' => 'Bisulfite-seq',
+            'ChIP-Seq' => 'ChIP-seq',
+            'miRNA-Seq' => 'miRNA-seq',
+            'RNA-Seq' => 'mRNA-seq',
+            'Targeted-Capture' => 'Targeted-Capture',
+            'WGS' => 'WGS',
+            'WXS' => 'WXS',
+        },
+        'sra2dcc_platform' => {
+            'COMPLETE_GENOMICS' => 'CGI',
+            'ILLUMINA' => 'Illumina',
+            'ION_TORRENT' => 'IonTorrent',
+        },
+    },
     'default' => {
         'term_source_ref' => 'EFO',
         'protocol_revision' => '01',
@@ -16,6 +41,7 @@ use NCI::OCGDCC::Config qw( :all );
             {
                 'last_name' => 'NCI Office of Cancer Genomics (OCG)',
                 'first_name' => '',
+                'mid_initials' => '',
                 'email' => 'ocg@mail.nih.gov',
                 'phone' => '+1 301 451 8027',
                 'fax' => '+1 301 480 4368',
@@ -23,11 +49,13 @@ use NCI::OCGDCC::Config qw( :all );
                 'affiliation' => 'National Cancer Institute',
                 'roles' => [
                     'funder',
+                    'investigator',
                 ],
             },
             {
                 'last_name' => 'NCI Center for Biomedical Informatics and Information Technology (CBIIT)',
                 'first_name' => '',
+                'mid_initials' => '',
                 'email' => 'ncicbiit@mail.nih.gov',
                 'phone' => '+1 888 478 4423',
                 'fax' => '',
@@ -56,6 +84,88 @@ use NCI::OCGDCC::Config qw( :all );
             'WXS' => [
                 'disease state design',
             ],
+        },
+        'protocol_base_types' => {
+            'Extraction' => {
+                data => {
+                    idf_type => 'nucleic acid extraction protocol',
+                    term_source_ref => 'EFO',
+                },
+                idf_order_num => 1,
+            },
+            'LibraryPrep' => {
+                data => {
+                    idf_type => 'nucleic acid library construction protocol',
+                    term_source_ref => 'EFO',
+                },
+                idf_order_num => 2,
+            },
+            'ExomeCapture' => {
+                data => {
+                    idf_type => 'nucleic acid library construction protocol',
+                    term_source_ref => 'EFO',
+                },
+                idf_order_num => 3,
+            },
+            'Sequence' => {
+                data => {
+                    idf_type => 'nucleic acid sequencing protocol',
+                    term_source_ref => 'EFO',
+                },
+                idf_order_num => 4,
+            },
+            'BaseCall' => {
+                data => {
+                    idf_type => 'data transformation protocol',
+                    term_source_ref => 'EFO',
+                },
+                idf_order_num => 5,
+            },
+            'ReadAlign' => {
+                data => {
+                    idf_type => 'data transformation protocol',
+                    term_source_ref => 'EFO',
+                },
+                idf_order_num => 6,
+            },
+        },
+        'protocol_center_info_by_name' => {
+            'BCCA' => {
+                authority => 'bcgsc.ca',
+            },
+            'BCG-Danvers' => {
+                authority => 'beckmangenomics.com',
+            },
+            'BCM' => {
+                authority => 'bcm.edu',
+            },
+            'Broad' => {
+                authority => 'broadinstitute.org',
+            },
+            'CGI' => {
+                authority => 'completegenomics.com',
+            },
+            'HAIB' => {
+                authority => 'hudsonalpha.org',
+            },
+            'NCI-Khan' => {
+                authority => 'nci.nih.gov',
+                namespace_prefix => 'CCR.Khan',
+            },
+            'NCI-Meltzer' => {
+                authority => 'nci.nih.gov',
+                namespace_prefix => 'CCR.Meltzer',
+            },
+            'NCI-Meerzaman' => {
+                authority => 'nci.nih.gov',
+                namespace_prefix => 'CBIIT.Meerzaman',
+            },
+            'StJude' => {
+                authority => 'stjude.org',
+            },
+            'UHN' => {
+                authority => 'uhnresearch.ca',
+            },
         },
         'term_sources' => [
             {
@@ -136,10 +246,10 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'Fusion',
                         },
                         {
-                            type => 'Fusion-Defuse',
+                            type => 'Fusion-DeFuse',
                         },
                         {
-                            type => 'Fusion-GenomeValidator',
+                            type => 'Fusion-ABySS-GenomeValidator',
                         },
                         {
                             type => 'Indel',
@@ -158,7 +268,7 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'Expression',
                         },
                         {
-                            type => 'Fusion-Defuse',
+                            type => 'Fusion-DeFuse',
                             children => [
                                 {
                                     type => 'Fusion-Summary',
@@ -201,6 +311,9 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         {
                             type => 'Expression',
+                        },
+                        {
+                            type => 'Expression-HTSeq',
                         },
                         {
                             type => 'Fusion',
@@ -288,10 +401,21 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         {
+                            type => 'VariantCall-Mpileup-MutationSeq',
+                            children => [
+                                {
+                                    type => 'CombineSomaticSNVs',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'CombineSomaticSNVs',
+                        },
+                        {
                             type => 'Fusion',
                         },
                         {
-                            type => 'Fusion-GenomeValidator',
+                            type => 'Fusion-ABySS-GenomeValidator',
                         },
                         {
                             type => 'Indel',
@@ -300,7 +424,7 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'VariantCall',
                         },
                         {
-                            type => 'StructVariantCall-DELLY',
+                            type => 'StructVariant-DELLY',
                         },
                     ],
                     'CGI' => [
@@ -346,7 +470,7 @@ use NCI::OCGDCC::Config qw( :all );
                     ],
                     'StJude' => [
                         {
-                            type => 'CnvSegment-CGI-CONCERTING',
+                            type => 'CnvSegment-CONCERTING-CGI',
                         },
                         {
                             type => 'VariantCall-CGI',
@@ -386,7 +510,7 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         {
-                            type => 'CnvSegment',
+                            type => 'CnvSegment-LOHcate',
                         },
                     ],
                     'Broad' => [
@@ -419,15 +543,7 @@ use NCI::OCGDCC::Config qw( :all );
                     ],
                     'StJude' => [
                         {
-                            type => 'VariantCall',
-                            children => [
-                                {
-                                    type => 'FilterVerified',
-                                },
-                            ],
-                        },
-                        {
-                            type => 'VariantCall',
+                            type => 'VariantCall-Bambino-DToxoG',
                         },
                     ],
                 },
@@ -1725,7 +1841,7 @@ use NCI::OCGDCC::Config qw( :all );
                             'email' => 'cclau@txch.org',
                             'phone' => '+1 832 824 4543',
                             'fax' => '+1 832 825 4038',
-                            'address' => '1102 Bates Ave., Houston TX 77030',
+                            'address' => '1102 Bates Ave, Houston TX 77030',
                             'affiliation' => 'Baylor College of Medicine',
                             'roles' => [
                                 'investigator',
@@ -1771,7 +1887,7 @@ use NCI::OCGDCC::Config qw( :all );
                             'email' => 'cclau@txch.org',
                             'phone' => '+1 832 824 4543',
                             'fax' => '+1 832 825 4038',
-                            'address' => '1102 Bates Ave., Houston TX 77030',
+                            'address' => '1102 Bates Ave, Houston TX 77030',
                             'affiliation' => 'Baylor College of Medicine',
                             'roles' => [
                                 'investigator',
@@ -3183,8 +3299,100 @@ use NCI::OCGDCC::Config qw( :all );
     'dataset' => {
         'TARGET' => {
             'ALL' => {
+                'miRNA-seq' => {
+                    'Phase1' => {
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    'Phase2' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
                 'mRNA-seq' => {
                     'Phase1' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'Extraction' => {
                                 'StJude' => {
@@ -3194,7 +3402,6 @@ use NCI::OCGDCC::Config qw( :all );
                                         },
                                     },
                                 },
-                                
                             },
                             'LibraryPrep' => {
                                 'BCCA' => {
@@ -3212,6 +3419,15 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                 },
                             },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
                         },
                         'exp_centers_incl_design_desc_protocol' => [
                             'BCCA',
@@ -3219,6 +3435,67 @@ use NCI::OCGDCC::Config qw( :all );
                         ],
                     },
                     'Phase2' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'Extraction' => {
                                 'StJude' => {
@@ -3241,6 +3518,15 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'stjude.org:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -3307,6 +3593,38 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                     },
                     'Phase3' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'LibraryPrep' => {
                                 'BCCA' => {
@@ -3325,13 +3643,72 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'WGS' => {
                     'Phase1+2' => {
-                        'investigation_title' => 'TARGET: Acute Lymphoblastic Leukemia (ALL) Phase I/II WGS',
-                        'merge_idf_row_names' => [
-                            'Experiment Description',
-                            'Comment[SRA_STUDY]',
-                            'Comment[BioProject]',
-                            'Comment[dbGaP Study]',
-                        ],
+                        'idf' => {
+                            'investigation_title' => 'TARGET: Acute Lymphoblastic Leukemia (ALL) Phase I/II WGS',
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                            'merge_idf_row_names' => [
+                                'Experiment Description',
+                                'Comment[SRA_STUDY]',
+                                'Comment[BioProject]',
+                                'Comment[dbGaP Study]',
+                            ],
+                        },
                         'protocol_info' => {
                             'Extraction' => {
                                 'BCCA' => {
@@ -3379,6 +3756,38 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                     },
                     'Phase3' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'Extraction' => {
                                 'BCCA' => {
@@ -3409,6 +3818,39 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'WXS' => {
                     'Phase2' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'ExomeCapture' => {
                                 'BCG-Danvers' => {
@@ -3553,6 +3995,49 @@ use NCI::OCGDCC::Config qw( :all );
             'AML' => {
                 'miRNA-seq' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'exp_centers_excl_lib_const_protocol' => [
                             'BCCA',
                         ],
@@ -3584,6 +4069,38 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'mRNA-seq' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'LibraryPrep' => {
                                 'BCCA' => {
@@ -3615,6 +4132,15 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'hudsonalpha.org:Protocol:mRNAseq-LibraryPrep-Illumina-Unstranded:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -3730,8 +4256,105 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                     },
                 },
+                'Targeted-Capture' => {
+                    '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                    },
+                },
                 'WGS' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'Extraction' => {
                                 'BCCA' => {
@@ -3770,6 +4393,39 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'WXS' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'ExomeCapture' => {
                                 'BCM' => {
@@ -3784,7 +4440,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCM' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign-BWA-GATK:01',
+                                            'name' => 'bcm.edu:Protocol:WXS-ReadAlign-BWA-GATK-ITDAssembler:01',
                                         },
                                     },
                                 },
@@ -3851,7 +4507,7 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                     'StJude' => {
                                         'protocol_data_by_type' => {
-                                            'VariantCall' => {
+                                            'VariantCall-Bambino-DToxoG' => {
                                                 'file_data' => [
                                                     {
                                                         'data_level' => '3',
@@ -3886,6 +4542,8 @@ use NCI::OCGDCC::Config qw( :all );
                                     'affiliation' => 'National Cancer Institute',
                                     'roles' => [
                                         'investigator',
+                                        'data analyst',
+                                        'submitter',
                                     ],
                                 },
                             ],
@@ -4011,6 +4669,17 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'add_data_types' => {
                             'Targeted-Capture' => {
+                                'protocol_info' => {
+                                    'ReadAlign' => {
+                                        'BCM' => {
+                                            'default' => {
+                                                'data' => {
+                                                    'name' => 'bcm.edu:Protocol:TargetedCapture-ReadAlign-BLAT-CrossMatch:01',
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
                                 'sdrf_dag_info' => {
                                     '_default' => {
                                         'BCM' => {
@@ -4036,7 +4705,22 @@ use NCI::OCGDCC::Config qw( :all );
                             },
                         },
                     },
-                },    
+                },
+                'WGS' => {
+                    '_default' => {
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'CGI' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'completegenomics.com:Protocol:WGS-ReadAlign-CGI:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
             },
             'MDLS-PPTP' => {
                 'WXS' => {
@@ -4104,6 +4788,17 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'add_data_types' => {
                             'Targeted-Capture' => {
+                                'protocol_info' => {
+                                    'ReadAlign' => {
+                                        'BCM' => {
+                                            'default' => {
+                                                'data' => {
+                                                    'name' => 'bcm.edu:Protocol:TargetedCapture-ReadAlign-BLAT-CrossMatch:01',
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
                                 'sdrf_dag_info' => {
                                     '_default' => {
                                         'BCM' => {
@@ -4142,6 +4837,36 @@ use NCI::OCGDCC::Config qw( :all );
                                     'affiliation' => 'National Cancer Institute',
                                     'roles' => [
                                         'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
                                     ],
                                 },
                             ],
@@ -4173,6 +4898,13 @@ use NCI::OCGDCC::Config qw( :all );
                                 },
                             },
                             'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
                                 'NCI-Khan' => {
                                     'default' => {
                                         'data' => {
@@ -4199,6 +4931,38 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'Targeted-Capture' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'skip_files' => {
                             'L3' => [
                                 'copy_number/UHN/VisCap_Female_Germline/QC_coverage_panel_of_normals.pdf',
@@ -4215,6 +4979,67 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'WGS' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'Extraction' => {
                                 'BCCA' => {
@@ -4249,6 +5074,39 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'WXS' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'ExomeCapture' => {
                                 'Broad' => {
@@ -4314,7 +5172,7 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                     'StJude' => {
                                         'protocol_data_by_type' => {
-                                            'VariantCall' => {
+                                            'VariantCall-Bambino-DToxoG' => {
                                                 'file_data' => [
                                                     {
                                                         'data_level' => '3',
@@ -4336,18 +5194,6 @@ use NCI::OCGDCC::Config qw( :all );
                         'idf' => {
                             'contacts' => [
                                 {
-                                    'last_name' => 'Meltzer',
-                                    'first_name' => 'Paul',
-                                    'email' => 'paul.meltzer@nih.gov',
-                                    'phone' => '+1 301 496 5266',
-                                    'fax' => '',
-                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
-                                    'affiliation' => 'National Cancer Institute',
-                                    'roles' => [
-                                        'investigator',
-                                    ],
-                                },
-                                {
                                     'last_name' => 'Davis',
                                     'first_name' => 'Sean',
                                     'email' => 'sean.davis@nih.gov',
@@ -4359,6 +5205,18 @@ use NCI::OCGDCC::Config qw( :all );
                                         'investigator',
                                         'data analyst',
                                         'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Meltzer',
+                                    'first_name' => 'Paul',
+                                    'email' => 'paul.meltzer@nih.gov',
+                                    'phone' => '+1 301 496 5266',
+                                    'fax' => '',
+                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
+                                    'affiliation' => 'National Cancer Institute',
+                                    'roles' => [
+                                        'investigator',
                                     ],
                                 },
                             ],
@@ -4384,6 +5242,20 @@ use NCI::OCGDCC::Config qw( :all );
                         'idf' => {
                             'contacts' => [
                                 {
+                                    'last_name' => 'Davis',
+                                    'first_name' => 'Sean',
+                                    'email' => 'sean.davis@nih.gov',
+                                    'phone' => '+1 301 435 2652',
+                                    'fax' => '',
+                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
+                                    'affiliation' => 'National Cancer Institute',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
                                     'last_name' => 'Meltzer',
                                     'first_name' => 'Paul',
                                     'email' => 'paul.meltzer@nih.gov',
@@ -4396,17 +5268,60 @@ use NCI::OCGDCC::Config qw( :all );
                                     ],
                                 },
                                 {
-                                    'last_name' => 'Davis',
-                                    'first_name' => 'Sean',
-                                    'email' => 'sean.davis@nih.gov',
-                                    'phone' => '+1 301 435 2652',
-                                    'fax' => '',
-                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
-                                    'affiliation' => 'National Cancer Institute',
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
                                     'roles' => [
                                         'investigator',
                                         'data analyst',
                                         'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
                                     ],
                                 },
                             ],
@@ -4439,6 +5354,20 @@ use NCI::OCGDCC::Config qw( :all );
                         'idf' => {
                             'contacts' => [
                                 {
+                                    'last_name' => 'Davis',
+                                    'first_name' => 'Sean',
+                                    'email' => 'sean.davis@nih.gov',
+                                    'phone' => '+1 301 435 2652',
+                                    'fax' => '',
+                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
+                                    'affiliation' => 'National Cancer Institute',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
                                     'last_name' => 'Meltzer',
                                     'first_name' => 'Paul',
                                     'email' => 'paul.meltzer@nih.gov',
@@ -4451,17 +5380,32 @@ use NCI::OCGDCC::Config qw( :all );
                                     ],
                                 },
                                 {
-                                    'last_name' => 'Davis',
-                                    'first_name' => 'Sean',
-                                    'email' => 'sean.davis@nih.gov',
-                                    'phone' => '+1 301 435 2652',
-                                    'fax' => '',
-                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
-                                    'affiliation' => 'National Cancer Institute',
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
                                     'roles' => [
                                         'investigator',
                                         'data analyst',
                                         'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
                                     ],
                                 },
                             ],
@@ -4501,7 +5445,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'NCI-Meltzer' => {
                                     'StJude' => {
                                         'protocol_data_by_type' => {
-                                            'VariantCall' => {
+                                            'VariantCall-Bambino-DToxoG' => {
                                                 'file_data' => [
                                                     {
                                                         'data_level' => '3',
@@ -4523,18 +5467,6 @@ use NCI::OCGDCC::Config qw( :all );
                         'idf' => {
                             'contacts' => [
                                 {
-                                    'last_name' => 'Meltzer',
-                                    'first_name' => 'Paul',
-                                    'email' => 'paul.meltzer@nih.gov',
-                                    'phone' => '+1 301 496 5266',
-                                    'fax' => '',
-                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
-                                    'affiliation' => 'National Cancer Institute',
-                                    'roles' => [
-                                        'investigator',
-                                    ],
-                                },
-                                {
                                     'last_name' => 'Davis',
                                     'first_name' => 'Sean',
                                     'email' => 'sean.davis@nih.gov',
@@ -4546,6 +5478,18 @@ use NCI::OCGDCC::Config qw( :all );
                                         'investigator',
                                         'data analyst',
                                         'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Meltzer',
+                                    'first_name' => 'Paul',
+                                    'email' => 'paul.meltzer@nih.gov',
+                                    'phone' => '+1 301 496 5266',
+                                    'fax' => '',
+                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
+                                    'affiliation' => 'National Cancer Institute',
+                                    'roles' => [
+                                        'investigator',
                                     ],
                                 },
                             ],
@@ -4560,18 +5504,6 @@ use NCI::OCGDCC::Config qw( :all );
                         'idf' => {
                             'contacts' => [
                                 {
-                                    'last_name' => 'Meltzer',
-                                    'first_name' => 'Paul',
-                                    'email' => 'paul.meltzer@nih.gov',
-                                    'phone' => '+1 301 496 5266',
-                                    'fax' => '',
-                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
-                                    'affiliation' => 'National Cancer Institute',
-                                    'roles' => [
-                                        'investigator',
-                                    ],
-                                },
-                                {
                                     'last_name' => 'Davis',
                                     'first_name' => 'Sean',
                                     'email' => 'sean.davis@nih.gov',
@@ -4583,6 +5515,18 @@ use NCI::OCGDCC::Config qw( :all );
                                         'investigator',
                                         'data analyst',
                                         'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Meltzer',
+                                    'first_name' => 'Paul',
+                                    'email' => 'paul.meltzer@nih.gov',
+                                    'phone' => '+1 301 496 5266',
+                                    'fax' => '',
+                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
+                                    'affiliation' => 'National Cancer Institute',
+                                    'roles' => [
+                                        'investigator',
                                     ],
                                 },
                             ],
@@ -4597,18 +5541,6 @@ use NCI::OCGDCC::Config qw( :all );
                         'idf' => {
                             'contacts' => [
                                 {
-                                    'last_name' => 'Meltzer',
-                                    'first_name' => 'Paul',
-                                    'email' => 'paul.meltzer@nih.gov',
-                                    'phone' => '+1 301 496 5266',
-                                    'fax' => '',
-                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
-                                    'affiliation' => 'National Cancer Institute',
-                                    'roles' => [
-                                        'investigator',
-                                    ],
-                                },
-                                {
                                     'last_name' => 'Davis',
                                     'first_name' => 'Sean',
                                     'email' => 'sean.davis@nih.gov',
@@ -4620,6 +5552,18 @@ use NCI::OCGDCC::Config qw( :all );
                                         'investigator',
                                         'data analyst',
                                         'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Meltzer',
+                                    'first_name' => 'Paul',
+                                    'email' => 'paul.meltzer@nih.gov',
+                                    'phone' => '+1 301 496 5266',
+                                    'fax' => '',
+                                    'address' => '37 Convent Dr Rm 6138, Bethesda MD 20892',
+                                    'affiliation' => 'National Cancer Institute',
+                                    'roles' => [
+                                        'investigator',
                                     ],
                                 },
                             ],
@@ -4634,8 +5578,123 @@ use NCI::OCGDCC::Config qw( :all );
                 },
             },
             'RT' => {
+                'Bisulfite-seq' => {
+                    '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                    },
+                },
+                'ChIP-seq' => {
+                    '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                    },
+                },
                 'miRNA-seq' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
                         'exp_centers_excl_lib_const_protocol' => [qw(
                             BCCA
                         )],
@@ -4643,12 +5702,53 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'mRNA-seq' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'LibraryPrep' => {
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -4661,6 +5761,38 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'WGS' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'ReadAlign' => {
                                 'BCCA' => {
@@ -4679,14 +5811,102 @@ use NCI::OCGDCC::Config qw( :all );
                 },
             },
             'WT' => {
+                'miRNA-seq' => {
+                    '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                        'protocol_info' => {
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
                 'mRNA-seq' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'LibraryPrep' => {
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -4712,16 +5932,37 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'Targeted-Capture' => {
                     '_default' => {
-                        'protocol_info' => {
-                            'ReadAlign' => {
-                                'BCM' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'bcm.edu:Protocol:TargetedCapture-ReadAlign-BLAT-CrossMatch:01',
-                                        },
-                                    },
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
                                 },
-                            },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
                         },
                         'alt_id_by_barcode' => {
                             'TARGET-50-CAAAAC-01A-02D' => 'TARGET-50-PADWYI-01A-01D',
@@ -4737,6 +5978,67 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'WGS' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'Extraction' => {
                                 'BCCA' => {
@@ -4771,6 +6073,39 @@ use NCI::OCGDCC::Config qw( :all );
                 },
                 'WXS' => {
                     '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Xiaotu',
+                                    'mid_initials' => '',
+                                    'email' => 'xiaotu.ma@stjude.org',
+                                    'phone' => '+1 901 595 3774',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Zhang',
+                                    'first_name' => 'Jinghui',
+                                    'mid_initials' => '',
+                                    'email' => 'jinghui.zhang@stjude.org',
+                                    'phone' => '+1 901 595 6829',
+                                    'fax' => '+1 901 595 7100',
+                                    'address' => '262 Danny Thomas Place, Memphis, TN 38105',
+                                    'affiliation' => 'St Jude Children\'s Research Hospital',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                    ],
+                                },
+                            ],
+                        },
                         'protocol_info' => {
                             'ExomeCapture' => {
                                 'BCM' => {
@@ -4886,7 +6221,7 @@ use NCI::OCGDCC::Config qw( :all );
                                     },
                                     'StJude' => {
                                         'protocol_data_by_type' => {
-                                            'VariantCall' => {
+                                            'VariantCall-Bambino-DToxoG' => {
                                                 'file_data' => [
                                                     {
                                                         'data_level' => '3',
@@ -4905,6 +6240,17 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'add_data_types' => {
                             'Targeted-Capture' => {
+                                'protocol_info' => {
+                                    'ReadAlign' => {
+                                        'BCM' => {
+                                            'default' => {
+                                                'data' => {
+                                                    'name' => 'bcm.edu:Protocol:TargetedCapture-ReadAlign-BLAT-CrossMatch:01',
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
                                 'sdrf_dag_info' => {
                                     '_default' => {
                                         'BCM' => {

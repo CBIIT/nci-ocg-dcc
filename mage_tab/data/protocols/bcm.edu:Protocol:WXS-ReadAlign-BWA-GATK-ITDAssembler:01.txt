@@ -1,0 +1,23 @@
+Mapping Reads: Illumina HiSeq bcl files were processed using BCLConvertor 
+v1.7.1. All reads from the prepared libraries that passed the Illumina 
+Chastity filter were formatted into fastq files. The fastq files were 
+aligned to human reference genome build37 (NCBI) using BWA (bwa-0.5.9-R16) 
+with default parameters with the following exceptions: seed sequence: 40 
+bpseed mismatch: 2, total mismatches allowed: 3. BAM files generated from 
+alignment were preprocessed using GATK (v1.3-8-gb0e6afe) to recalibrate 
+and locally realign reads. ITD Detection: We used ITD Assembler, a combined 
+de novo assembly/algorithmic approach that takes the entire set of unmapped 
+and significantly soft-clipped reads, and employs a De Bruijn graph assembly 
+algorithm to select read sets that form cycles, indicative of repetitive 
+sequence structures, in order to find reads that span duplications. Read 
+sets that formed De Bruijn graph cycles are independently assembled using 
+the Overlap Layout Consensus (OLC) methodology of the Phrap algorithm 
+thereby alleviating the collapse of repeat sequences from De Bruijn graph 
+assembly approaches. Resulting OLC assembled contigs are locally aligned to 
+the reference sequence and the mapped location data from aligned soft-clipped 
+reads and aligned-unaligned read pairs from that contig, are utilized to 
+annotate the position of detected internal tandem duplications (ITDs). 
+FLT3/ITDs were also verified by fragment length analysis utilizing Life 
+Technologies GeneMapper software (Life Technologies, Grand Island, NY). 
+Variant allele fractions are reported as the size of the ITD peak divided 
+by the sum of the wild type and ITD peaks.
