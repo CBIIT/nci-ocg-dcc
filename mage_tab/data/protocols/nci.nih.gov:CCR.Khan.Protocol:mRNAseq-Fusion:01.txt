@@ -1,1 +1,0 @@
-Gene fusion file was generated using defuse version 0.6.1 with default parameters and with reference annotation Homo_sapiens.GRCh37.69.

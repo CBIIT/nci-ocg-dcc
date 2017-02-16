@@ -1,0 +1,8 @@
+An in-house tool, Genome Validator was used to determine compartment 
+specific events. The structural variant calls for each patient from 
+matched genome and RNA-seq samples were concatenated together and 
+screened for each patient against matching tumour and germline 
+alignments. This resulted in compartment specific structural variant 
+events and putative somatic calls. The events were further filtered 
+against a compendium of recurrent structural variants to remove 
+recurrent false positives.

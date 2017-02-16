@@ -1,5 +1,5 @@
-Structural variant detection was performed using ABySS (v1.3.2) and 
-Trans-ABySS (v1.4.6). The genome (WGS) libraries were assembled in single 
+Structural variant detection was performed using ABySS (v1.3.2). 
+Genome (WGS) libraries were assembled in single 
 end mode using k-mer values of k24 and k44. The contigs and reads were 
 then reassembled at k64 in single end mode and then finally at k64 in 
 paired end mode. The meta-assemblies were then used as input to the 

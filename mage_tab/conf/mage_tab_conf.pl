@@ -243,16 +243,18 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'Expression',
                         },
                         {
-                            type => 'Fusion-ABySS',
+                            type => 'StructVariant-TransABySS',
+                            children => [
+                                {
+                                    type => 'StructVariant-GenomeValidator',
+                                    constraint_regexp =>
+                                        qr/$OCG_BARCODE_REGEXP(?:\..+?)?\.fusion\.vcf/i,
+                                    constraint_parent_only => 1,
+                                },
+                            ],
                         },
                         {
                             type => 'Fusion-DeFuse',
-                        },
-                        {
-                            type => 'Fusion-ABySS-GenomeValidator',
-                        },
-                        {
-                            type => 'Indel',
                         },
                     ],
                     'NCI-Khan' => [
@@ -260,7 +262,7 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'Expression',
                         },
                         {
-                            type => 'Fusion',
+                            type => 'Fusion-DeFuse',
                         },
                     ],
                     'NCI-Meerzaman' => [
@@ -344,7 +346,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 {
                                     type => 'Strelka-Vcf2Tab',
                                     constraint_regexp =>
-                                        qr/(${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.capture_dna\.somatic\.(?:snv|indel))/i,
+                                        qr/${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.capture_dna\.somatic\.(?:snv|indel)/i,
                                 },
                             ],
                         },
@@ -391,7 +393,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 {
                                     type => 'Strelka-Vcf2Tab',
                                     constraint_regexp =>
-                                        qr/(${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.somatic\.(?:snv|indel))/i,
+                                        qr/${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.somatic\.(?:snv|indel)/i,
                                     children => [
                                         {
                                             type => 'CombineSomaticSNVs',
@@ -412,19 +414,21 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'CombineSomaticSNVs',
                         },
                         {
-                            type => 'Fusion-ABySS',
-                        },
-                        {
-                            type => 'Fusion-ABySS-GenomeValidator',
-                        },
-                        {
-                            type => 'Indel',
-                        },
-                        {
-                            type => 'VariantCall',
+                            type => 'StructVariant-ABySS',
+                            children => [
+                                {
+                                    type => 'StructVariant-GenomeValidator',
+                                    constraint_regexp =>
+                                        qr/$OCG_BARCODE_REGEXP(?:\..+?)?\.fusion\.vcf/i,
+                                    constraint_parent_only => 1,
+                                },
+                            ],
                         },
                         {
                             type => 'StructVariant-DELLY',
+                        },
+                        {
+                            type => 'VariantCall',
                         },
                     ],
                     'CGI' => [
@@ -433,7 +437,7 @@ use NCI::OCGDCC::Config qw( :all );
                             children => [
                                 {
                                     type => 'Circos-CGI',
-                                    constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
+                                    constraint_regexp => qr/${OCG_CASE_REGEXP}_\w+Vs\w+/i,
                                 },
                             ],
                         },
@@ -442,11 +446,11 @@ use NCI::OCGDCC::Config qw( :all );
                             children => [
                                 {
                                     type => 'Vcf2Maf-CGI',
-                                    constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
+                                    constraint_regexp => qr/${OCG_CASE_REGEXP}_\w+Vs\w+/i,
                                     children => [
                                         {
                                             type => 'FilterSomatic-CGI',
-                                            constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
+                                            constraint_regexp => qr/${OCG_CASE_REGEXP}_\w+Vs\w+/i,
                                         },
                                         {
                                             type => 'HigherLevelSummary-CGI',
@@ -455,7 +459,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 },
                                 {
                                     type => 'Circos-CGI',
-                                    constraint_regexp => qr/(${OCG_CASE_REGEXP}_\w+Vs\w+)/i,
+                                    constraint_regexp => qr/${OCG_CASE_REGEXP}_\w+Vs\w+/i,
                                 },
                             ],
                         },
@@ -3306,7 +3310,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:miRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -3423,7 +3427,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -3526,7 +3530,16 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'Fusion' => {
+                                'StJude' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'stjude.org:Protocol:mRNAseq-Fusion-StrongArm-CICERO:01',
                                         },
                                     },
                                 },
@@ -3632,6 +3645,24 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'StructVariant-TransABySS' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-StructVariant-TransABySS:02.txt',
                                         },
                                     },
                                 },
@@ -3805,6 +3836,15 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'StructVariant-ABySS' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-StructVariant-ABySS:02.txt',
                                         },
                                     },
                                 },
@@ -4034,7 +4074,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:miRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -4142,7 +4182,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -4903,7 +4943,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -5691,7 +5731,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:miRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -5750,7 +5790,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -5852,7 +5892,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:miRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -5908,7 +5948,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },

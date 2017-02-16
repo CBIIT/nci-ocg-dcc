@@ -1207,14 +1207,6 @@ for my $program_name (@program_names) {
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA indel vcfs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.indel\.vcf$/i) {
-                                    my ($barcode, $file_type) = ($1, $2);
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Indel'}}, {
-                                        data_level => $data_level,
-                                        file_name => $file_name,
-                                    };
-                                }
                                 # BCCA combined snv tabs
                                 elsif ($file =~ /mutation\/BCCA\/($OCG_CASE_REGEXP)(\..+?)?\.combined_somatic_snvs\.tab_delimited\.txt$/i) {
                                     my $case_id = $1;
@@ -1235,10 +1227,18 @@ for my $program_name (@program_names) {
                                         push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
-                                # BCCA abyss fusion vcfs
+                                # BCCA abyss indel vcfs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.indel\.vcf$/i) {
+                                    my ($barcode, $file_type) = ($1, $2);
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariant-ABySS'}}, {
+                                        data_level => $data_level,
+                                        file_name => $file_name,
+                                    };
+                                }
+                                # BCCA abyss structural vcfs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.fusion\.vcf$/i) {
                                     my ($barcode, $file_type) = ($1, $2);
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-ABySS'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariant-ABySS'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
@@ -1263,7 +1263,7 @@ for my $program_name (@program_names) {
                                         push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
-                                # BCCA abyss genomevalidator fusion tsvs
+                                # BCCA genomevalidator structural tsvs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d(?:\.(primary|relapse))?\.genome\.fusions\.somatic\.(?:large|small)\.summary\.tsv$/i) {
                                     my ($case_id, $file_tissue_type) = ($1, $2);
                                     if (defined $file_tissue_type) {
@@ -1277,7 +1277,7 @@ for my $program_name (@program_names) {
                                         for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
                                             next if defined($file_tissue_type) and $tissue_type !~ /$file_tissue_type|Normal/i;
                                             for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-ABySS-GenomeValidator'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariant-GenomeValidator'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1778,23 +1778,23 @@ for my $program_name (@program_names) {
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA indel vcf
+                                # BCCA trans-abyss indel vcf
                                 elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.indel\.vcf$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Indel'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariant-TransABySS'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA abyss fusion vcf
+                                # BCCA trans-abyss structural vcf
                                 elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.fusion\.vcf$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-ABySS'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariant-TransABySS'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA abyss genomevalidator fusion tsvs
+                                # BCCA genomevalidator structural tsvs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d(?:\.(primary|relapse))?\.transcriptome\.fusions\.somatic\.(?:large|small)\.summary\.tsv$/i) {
                                     my ($case_id, $file_tissue_type) = ($1, $2);
                                     if (defined $file_tissue_type) {
@@ -1808,7 +1808,7 @@ for my $program_name (@program_names) {
                                         for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
                                             next if defined($file_tissue_type) and $tissue_type !~ /$file_tissue_type|Normal/i;
                                             for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-ABySS-GenomeValidator'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariant-GenomeValidator'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1924,8 +1924,8 @@ for my $program_name (@program_names) {
                                             $barcode_found++;
                                         }
                                         elsif ($file =~ /structural\/NCI-Khan\/.*?_?${search_library_name}_?.*?\.fusion(\.results\.filtered)?\.tsv$/i) {
-                                            if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Fusion'}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Fusion'}}, {
+                                            if (none { $file_name eq $_->{file_name} } @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Fusion-DeFuse'}}) {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Khan'}{'NCI-Khan'}{'Fusion-DeFuse'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -4925,7 +4925,18 @@ sub add_dcc_scanned_file_sdrf_dag_info {
                 push @{$params_hashref->{protocol_idf_order_info}}, $protocol_dag_node_hashref->{type};
             }
             for my $file_info_hashref (@{$params_hashref->{file_info}->{$protocol_dag_node_hashref->{type}}}) {
-                if (!defined($protocol_dag_node_hashref->{constraint_regexp})) {
+                if (
+                    !defined($protocol_dag_node_hashref->{constraint_regexp}) or
+                    # file constraint
+                    (
+                        defined($params_hashref->{sdrf_dag_node}->{file_name}) and
+                        $params_hashref->{sdrf_dag_node}->{file_name} =~ /($protocol_dag_node_hashref->{constraint_regexp})/ and
+                        (
+                            exists($protocol_dag_node_hashref->{constraint_parent_only}) or
+                            $file_info_hashref->{file_name} =~ /$1/i
+                        )
+                    )
+                ) {
                     # make copy
                     my $sdrf_dag_node_hashref = clone($file_info_hashref);
                     push @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_dag_node_hashref->{type}}->{file_data}},
@@ -4959,46 +4970,6 @@ sub add_dcc_scanned_file_sdrf_dag_info {
                     else {
                         $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file} =
                             $new_file_col_info_hashref;
-                    }
-                }
-                # file constraint
-                else {
-                    my ($capture_str) = $file_info_hashref->{file_name} =~ /$protocol_dag_node_hashref->{constraint_regexp}/;
-                    if ($params_hashref->{sdrf_dag_node}->{file_name} =~ /$capture_str/i) {
-                        # make copy
-                        my $sdrf_dag_node_hashref = clone($file_info_hashref);
-                        push @{$params_hashref->{sdrf_dag_node}->{protocol_data_by_type}->{$protocol_dag_node_hashref->{type}}->{file_data}},
-                            $sdrf_dag_node_hashref;
-                        if (defined($protocol_dag_node_hashref->{children})) {
-                            add_dcc_scanned_file_sdrf_dag_info({
-                                protocol_dag_nodes => $protocol_dag_node_hashref->{children},
-                                file_info => $params_hashref->{file_info},
-                                sdrf_dag_node => $sdrf_dag_node_hashref,
-                                sdrf_col_info => $params_hashref->{sdrf_col_info},
-                                sdrf_col_group_idx => $params_hashref->{sdrf_col_group_idx} + 1,
-                                temp_col_info => $temp_col_info_arrayref,
-                                protocol_idf_order_info => $params_hashref->{protocol_idf_order_info},
-                                dcc_col_types => $params_hashref->{dcc_col_types},
-                            });
-                        }
-                        my $new_file_col_info_hashref = clone($params_hashref->{dcc_col_types}->{file});
-                        @{$new_file_col_info_hashref->{attrs}} = grep {
-                            exists($file_info_hashref->{$_->{key}})
-                        } @{$new_file_col_info_hashref->{attrs}};
-                        if (
-                            defined($temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]) and
-                            defined($temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file})
-                        ) {
-                            $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs} =
-                                merge_col_info(
-                                    $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file}->{attrs},
-                                    $new_file_col_info_hashref->{attrs},
-                                );
-                        }
-                        else {
-                            $temp_col_info_arrayref->[$params_hashref->{sdrf_col_group_idx}]->{file} =
-                                $new_file_col_info_hashref;
-                        }
                     }
                 }
             }

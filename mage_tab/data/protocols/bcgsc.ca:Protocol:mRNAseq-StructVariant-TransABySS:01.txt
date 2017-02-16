@@ -1,6 +1,6 @@
-Structural variant detection was performed using ABySS (v1.3.2) and 
-Trans-ABySS (v1.4.6). For RNA-seq assembly alternate k-mers from k50-k96 
-were performed using positive strand and ambiguous stand reads as well as 
+Structural variant detection was performed using Trans-ABySS (v1.4.6). 
+For RNA-seq assembly alternate k-mers from k50-k96 were performed 
+using positive strand and ambiguous stand reads as well as 
 negative strand and ambiguous strand reads. The positive and negative 
 strand assemblies were extended where possible, merged and then 
 concatenated together to produce a meta-assembly contig dataset. The 
