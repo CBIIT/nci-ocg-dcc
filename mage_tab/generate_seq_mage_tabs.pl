@@ -1235,10 +1235,10 @@ for my $program_name (@program_names) {
                                         push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
-                                # BCCA fusion vcfs
+                                # BCCA abyss fusion vcfs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.fusion\.vcf$/i) {
                                     my ($barcode, $file_type) = ($1, $2);
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-ABySS'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
@@ -1263,7 +1263,7 @@ for my $program_name (@program_names) {
                                         push @dcc_file_errors, "could not lookup barcode info: $file";
                                     }
                                 }
-                                # BCCA abyss-genomevalidator fusion tsvs
+                                # BCCA abyss genomevalidator fusion tsvs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d(?:\.(primary|relapse))?\.genome\.fusions\.somatic\.(?:large|small)\.summary\.tsv$/i) {
                                     my ($case_id, $file_tissue_type) = ($1, $2);
                                     if (defined $file_tissue_type) {
@@ -1786,15 +1786,15 @@ for my $program_name (@program_names) {
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA fusion vcf
+                                # BCCA abyss fusion vcf
                                 elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)(\..+?)?\.fusion\.vcf$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'BCCA'}{'BCCA'}{'Fusion-ABySS'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA abyss-genomevalidator fusion tsvs
+                                # BCCA abyss genomevalidator fusion tsvs
                                 elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)\.gv\d(?:\.(primary|relapse))?\.transcriptome\.fusions\.somatic\.(?:large|small)\.summary\.tsv$/i) {
                                     my ($case_id, $file_tissue_type) = ($1, $2);
                                     if (defined $file_tissue_type) {

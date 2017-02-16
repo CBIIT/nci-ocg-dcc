@@ -243,7 +243,7 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'Expression',
                         },
                         {
-                            type => 'Fusion',
+                            type => 'Fusion-ABySS',
                         },
                         {
                             type => 'Fusion-DeFuse',
@@ -412,7 +412,7 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'CombineSomaticSNVs',
                         },
                         {
-                            type => 'Fusion',
+                            type => 'Fusion-ABySS',
                         },
                         {
                             type => 'Fusion-ABySS-GenomeValidator',
