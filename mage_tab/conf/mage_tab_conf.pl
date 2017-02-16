@@ -3594,6 +3594,7 @@ use NCI::OCGDCC::Config qw( :all );
                     },
                     'Phase3' => {
                         'idf' => {
+                            'investigation_title' => 'TARGET: Acute Lymphoblastic Leukemia (ALL) Phase III mRNA-seq',
                             'contacts' => [
                                 {
                                     'last_name' => 'Ma',
@@ -3757,6 +3758,7 @@ use NCI::OCGDCC::Config qw( :all );
                     },
                     'Phase3' => {
                         'idf' => {
+                            'investigation_title' => 'TARGET: Acute Lymphoblastic Leukemia (ALL) Phase III WGS',
                             'contacts' => [
                                 {
                                     'last_name' => 'Ma',
