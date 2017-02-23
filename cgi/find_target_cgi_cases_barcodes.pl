@@ -173,7 +173,7 @@ find_cgi_cases_barcodes.pl - TARGET CGI Case and Barcode Finder
 
 =head1 SYNOPSIS
 
- find_cgi_cases_barcodes.pl [options] <project code> <proj 1>,<proj 2>,...,<proj n> <case 1>,<case 2>,...,<case n>
+ find_cgi_cases_barcodes.pl [options] <proj 1>,<proj 2>,...,<proj n> <case 1>,<case 2>,...,<case n>
  
  Parameters:
     <proj 1>,...,<proj n>       Disease project code(s) (optional: default all disease projects)
