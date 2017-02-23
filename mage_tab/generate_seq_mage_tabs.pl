@@ -1741,7 +1741,7 @@ for my $program_name (@program_names) {
                                 # NCI-Meltzer gene, exon, isoform quantification
                                 elsif ($file =~ /expression\/NCI-Meltzer\/($OCG_BARCODE_REGEXP)\.(?:gene|exon|isoform)\.quantification\.txt$/i) {
                                     my $barcode = $1;
-                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'NCI-Meltzer'}{'Expression'}}, {
+                                    push @{$dcc_scanned_file_info{$data_type}{$barcode}{'_default'}{'_default'}{'NCI-Meltzer'}{'NCI-Meltzer'}{'Expression-Kallisto'}}, {
                                         data_level => $data_level,
                                         file_name => $file_name,
                                     };

@@ -304,7 +304,7 @@ use NCI::OCGDCC::Config qw( :all );
                     ],
                     'NCI-Meltzer' => [
                         {
-                            type => 'Expression',
+                            type => 'Expression-Kallisto',
                         },
                     ],
                     'StJude' => [
@@ -5471,6 +5471,24 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:WXS-ExomeCapture-Agilent-SureSelectHumanAllExonV3:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'BaseCall' => {
+                                'NCI-Meltzer' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:WXS-BaseCall-Illumina-Bustard:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'NCI-Meltzer' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:WXS-ReadAlign-BWA-MEM:01',
                                         },
                                     },
                                 },
