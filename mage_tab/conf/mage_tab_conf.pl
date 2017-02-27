@@ -1576,12 +1576,27 @@ use NCI::OCGDCC::Config qw( :all );
                 'idf' => {
                     'contacts' => [
                         {
+                            'last_name' => 'Gadd',
+                            'first_name' => 'Samantha',
+                            'mid_initials' => 'L',
+                            'email' => 'sgadd@luriechildrens.org',
+                            'phone' => '+1 773 755 6392',
+                            'fax' => '',
+                            'address' => '2430 N Halsted St, Room C366 Chicago, IL 60614',
+                            'affiliation' => 'Lurie Children\'s Hospital of Chicago Research Center',
+                            'roles' => [
+                                'investigator',
+                                'data analyst',
+                            ],
+                        },
+                        {
                             'last_name' => 'Perlman',
                             'first_name' => 'Elizabeth',
+                            'mid_initials' => 'J',
                             'email' => 'eperlman@luriechildrens.org',
                             'phone' => '+1 312 227 3967',
                             'fax' => '',
-                            'address' => '225 E Chicago Avenue, Chicago, IL 60611',
+                            'address' => '225 E Chicago Ave, Chicago, IL 60611',
                             'affiliation' => 'Ann & Robert H. Lurie Children\'s Hospital of Chicago',
                             'roles' => [
                                 'investigator',
@@ -1913,7 +1928,7 @@ use NCI::OCGDCC::Config qw( :all );
                             'email' => 'eperlman@luriechildrens.org',
                             'phone' => '+1 312 227 3967',
                             'fax' => '',
-                            'address' => '225 E Chicago Avenue, Chicago, IL 60611',
+                            'address' => '225 E Chicago Ave, Chicago, IL 60611',
                             'affiliation' => 'Ann & Robert H. Lurie Children\'s Hospital of Chicago',
                             'roles' => [
                                 'investigator',
@@ -1951,12 +1966,27 @@ use NCI::OCGDCC::Config qw( :all );
                 'idf' => {
                     'contacts' => [
                         {
+                            'last_name' => 'Gadd',
+                            'first_name' => 'Samantha',
+                            'mid_initials' => 'L',
+                            'email' => 'sgadd@luriechildrens.org',
+                            'phone' => '+1 773 755 6392',
+                            'fax' => '',
+                            'address' => '2430 N Halsted St, Room C366 Chicago, IL 60614',
+                            'affiliation' => 'Lurie Children\'s Hospital of Chicago Research Center',
+                            'roles' => [
+                                'investigator',
+                                'data analyst',
+                            ],
+                        },
+                        {
                             'last_name' => 'Perlman',
                             'first_name' => 'Elizabeth',
+                            'mid_initials' => 'J',
                             'email' => 'eperlman@luriechildrens.org',
                             'phone' => '+1 312 227 3967',
                             'fax' => '',
-                            'address' => '225 E Chicago Avenue, Chicago, IL 60611',
+                            'address' => '225 E Chicago Ave, Chicago, IL 60611',
                             'affiliation' => 'Ann & Robert H. Lurie Children\'s Hospital of Chicago',
                             'roles' => [
                                 'investigator',
