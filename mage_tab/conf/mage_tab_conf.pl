@@ -5369,6 +5369,48 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Sequence' => {
+                                'NCI-Meltzer' => {
+                                    'filter' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-Sequence-Illumina-HiSeq2000:01',
+                                        },
+                                        'run_ids' => [qw(
+                                            SRR3493410  SRR3493411  SRR3493412  SRR3493413  SRR3493414  SRR3493415
+                                            SRR3493416  SRR3493417  SRR3493418  SRR3493419  SRR3493420  SRR3493421
+                                            SRR3493422  SRR3493423  SRR3493424  SRR3493425  SRR3493426  SRR3493427
+                                            SRR3493428  SRR3493429  SRR3493430  SRR3493431  SRR3493432  SRR3493433
+                                        )],
+                                        'center_name' => 'BCCA',
+                                    },
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:WGS-Sequence-Illumina-HiSeq2000:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'BaseCall' => {
+                                'NCI-Meltzer' => {
+                                    'filter' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WGS-BaseCall-Illumina:01',
+                                        },
+                                        'run_ids' => [qw(
+                                            SRR3493410  SRR3493411  SRR3493412  SRR3493413  SRR3493414  SRR3493415
+                                            SRR3493416  SRR3493417  SRR3493418  SRR3493419  SRR3493420  SRR3493421
+                                            SRR3493422  SRR3493423  SRR3493424  SRR3493425  SRR3493426  SRR3493427
+                                            SRR3493428  SRR3493429  SRR3493430  SRR3493431  SRR3493432  SRR3493433
+                                        )],
+                                        'center_name' => 'BCCA',
+                                    },
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:WGS-BaseCall-Illumina-Bustard:01',
+                                        },
+                                    },
+                                },
+                            },
                             'ReadAlign' => {
                                 'BCCA' => {
                                     'default' => {
@@ -5381,6 +5423,13 @@ use NCI::OCGDCC::Config qw( :all );
                                     'default' => {
                                         'data' => {
                                             'name' => 'completegenomics.com:Protocol:WGS-ReadAlign-CGI:01',
+                                        },
+                                    },
+                                },
+                                'NCI-Meltzer' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'nci.nih.gov:CCR.Meltzer.Protocol:WGS-ReadAlign-BWA-MEM:01',
                                         },
                                     },
                                 },

@@ -3644,7 +3644,7 @@ for my $program_name (@program_names) {
                         }
                         my @sdrf_run_set_data;
                         for my $run_xml (@{$exp_pkg_xml->{RUN_SET}}) {
-                            my $run_center_name = 
+                            my $run_center_name =
                                 defined($run_xml->{run_center})
                                     ? defined($mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($run_xml->{run_center})})
                                         ? $mt_config_hashref->{sra}->{'sra2dcc_center_name'}->{uc($run_xml->{run_center})}
@@ -3663,6 +3663,7 @@ for my $program_name (@program_names) {
                             for my $col_key (
                                 nkeysort { $mage_tab_sdrf_base_col_idx_by_type_key{run}{$_} } keys %{$mage_tab_sdrf_base_col_idx_by_type_key{run}}
                             ) {
+                                my $seq_center_name;
                                 my $field_value = '';
                                 if ($col_key eq 'Protocol REF 1') {
                                     my $protocol_type = 'Sequence';
@@ -3677,6 +3678,9 @@ for my $program_name (@program_names) {
                                             any { $run_xml->{accession} eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{run_ids}}
                                         ) {
                                             $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{data});
+                                            if (defined($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{center_name})) {
+                                                $seq_center_name = $protocol_config_hashref->{$protocol_type}->{$run_center_name}->{filter}->{center_name};
+                                            }
                                         }
                                         elsif (
                                             defined($protocol_config_hashref->{$protocol_type}->{$run_center_name}->{default})
@@ -3712,7 +3716,7 @@ for my $program_name (@program_names) {
                                     $field_value = $protocol_hashref->{name};
                                 }
                                 elsif ($col_key eq 'Performer') {
-                                    $field_value = $run_center_name;
+                                    $field_value = defined($seq_center_name) ? $seq_center_name : $run_center_name;
                                 }
                                 elsif ($col_key eq 'Date') {
                                     if (defined $run_xml->{run_date}) {
