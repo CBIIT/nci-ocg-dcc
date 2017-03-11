@@ -12,7 +12,7 @@
 PROG_DIR=/usr/local/bin
 PROG_NAME=watch_dcc_uploads
 DEFAULT_SLEEP_INTERVAL=3600
-LOG_FILE="/tmp/${PROG_NAME}.log"
+LOG_FILE="/var/log/${PROG_NAME}.log"
 PID_FILE="/var/run/${PROG_NAME}.pid"
 
 [ ! -z "$2" ] && SLEEP_INTERVAL=$2 || SLEEP_INTERVAL=$DEFAULT_SLEEP_INTERVAL
