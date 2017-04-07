@@ -31,7 +31,7 @@ my $run_id_file = shift(@ARGV) or pod2usage(
     -verbose => 0,
 );
 my $output_dir = @ARGV ? shift(@ARGV) : cwd();
-if (-d $output_dir) {
+if (!-d $output_dir) {
     make_path($output_dir, { chmod => 0770 })
         or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
                ": could not create $output_dir: $!";
