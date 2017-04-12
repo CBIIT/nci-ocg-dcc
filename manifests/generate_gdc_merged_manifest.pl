@@ -75,6 +75,44 @@ my @manifest_file_names = (
     'manifest.all.unencrypted',
     'manifest.dcc.unencrypted',
 );
+my %download_dir_config_by_program_name = (
+    'TARGET' => {
+        'dirs_to_search' => [
+            'Controlled',
+            'PreRelease/ALL/mRNA-seq/Phase2/L1',
+            'PreRelease/ALL/WGS/Phase2/L2',
+            'PreRelease/OS/WGS/L2',
+            'PreRelease/OS/WXS/L2',
+            'Public',
+        ],
+        'dirs_to_skip' => [
+            'CGI',
+            'DBGAP_METADATA',
+            'OS/Brazil',
+            'OS/Toronto',
+            'Resources',
+        ],
+    },
+    'CGCI' => {
+        'dirs_to_search' => [
+            'Controlled',
+            'Public',
+        ],
+        'dirs_to_skip' => [
+            'DBGAP_METADATA',
+            'Resources',
+        ],
+    },
+    'CTD2' => {
+        'dirs_to_search' => [
+            'Public',
+        ],
+        'dirs_to_skip' => [
+            'Dashboard',
+            'Resources',
+        ],
+    },
+);
 
 my $dry_run = 0;
 my $verbose = 0;
@@ -129,46 +167,39 @@ for my $program_name (@program_names) {
     next if defined $user_params{programs} and none { $program_name eq $_ } @{$user_params{programs}};
     my $manifest_gid = getgrnam("\L$program_name\E-dn-adm")
         or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for \L$program_name\E-dn-adm\n";
-    my $program_download_dir = "/local/ocg-dcc/download/\U$program_name\E";
-    my @search_download_dirs = (
-        "$program_download_dir/Controlled",
-        "$program_download_dir/Public",
-    );
+    my $program_download_dir = "/local/ocg-dcc/download/$program_name";
     my @merged_manifest_lines;
-    for my $search_download_dir (@search_download_dirs) {
-        find({
-            follow => 1,
-            wanted => sub {
-                # directories
-                if (-d) {
-                    # skip hidden and directories with duplicate data or data not of interest
-                    if ($File::Find::name =~ /^\Q$search_download_dir\E\/(CGI|DBGAP_METADATA|OS\/(?:Brazil|Toronto)|Resources)$/) {
-                        print "Skipping $File::Find::name\n" if $verbose;
-                        $File::Find::prune = 1;
-                        return;
-                    }
+    find({
+        follow => 1,
+        wanted => sub {
+            # directories
+            if (-d) {
+                if (any { $File::Find::name =~ /^$_/ } map { "$program_download_dir/$_" } @{$download_dir_config_by_program_name{$program_name}{'dirs_to_skip'}}) {
+                    print "Skipping $File::Find::name\n" if $verbose;
+                    $File::Find::prune = 1;
+                    return;
                 }
-                elsif (-f) {
-                    my $file_name = $_;
-                    # manifest files only
-                    return unless any { $_ eq $file_name } @manifest_file_names;
-                    my $manifest_rel_dir = File::Spec->abs2rel($File::Find::dir, $program_download_dir);
-                    print "Adding $File::Find::name\n" if $verbose;
-                    open(my $manifest_in_fh, '<', $File::Find::name)
-                        or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": could not read open $File::Find::name: $!";
-                    while (<$manifest_in_fh>) {
-                        next if m/^\s*$/;
-                        s/\b (\*?)/ $1$manifest_rel_dir\//;
-                        push @merged_manifest_lines, $_;
-                    }
-                    close($manifest_in_fh);
+            }
+            elsif (-f) {
+                my $file_name = $_;
+                # manifest files only
+                return unless any { $_ eq $file_name } @manifest_file_names;
+                my $manifest_rel_dir = File::Spec->abs2rel($File::Find::dir, $program_download_dir);
+                print "Adding $File::Find::name\n" if $verbose;
+                open(my $manifest_in_fh, '<', $File::Find::name)
+                    or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": could not read open $File::Find::name: $!";
+                while (<$manifest_in_fh>) {
+                    next if m/^\s*$/;
+                    s/\b (\*?)/ $1$manifest_rel_dir\//;
+                    push @merged_manifest_lines, $_;
                 }
-            },
-        }, $search_download_dir);
-    }
+                close($manifest_in_fh);
+            }
+        },
+    }, map { "$program_download_dir/$_" } @{$download_dir_config_by_program_name{$program_name}{'dirs_to_search'}});
     my @sorted_merged_manifest_lines = sort manifest_by_file_path @merged_manifest_lines;
     my $date_str = strftime('%Y%m%d', localtime);
-    my $merged_manifest_file_name = "\U$program_name\E_MANIFEST_MERGED_${date_str}.txt";
+    my $merged_manifest_file_name = "${program_name}_MANIFEST_MERGED_${date_str}.txt";
     my $merged_manifest_file = (
         !$dry_run
             ? "$program_download_dir/PreRelease/GDC"
