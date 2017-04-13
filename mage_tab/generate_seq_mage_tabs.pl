@@ -2357,18 +2357,18 @@ for my $program_name (@program_names) {
                                        ": could not serialize and store $exp_pkg_set_storable_file: $!";
                         }
                         else {
-                            die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
+                            warn "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
                                   ": failed to get SRA $exp_id experiment package XML: ", $response->status_line, "\n";
                             next;
                         }
                     }
                     else {
                         $exp_pkg_set_xml = lock_retrieve($exp_pkg_set_storable_file)
-                            or die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
+                            or die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
                                    ": could not deserialize and retrieve $exp_pkg_set_storable_file: $!";
                     }
                     if ($exp_pkg_set_xml->{Error}) {
-                        die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
+                        warn "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
                               ": failed to get SRA $exp_id experiment package XML: $exp_pkg_set_xml->{Error}\n";
                         next;
                     }
