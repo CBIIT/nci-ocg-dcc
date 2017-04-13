@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use open ':encoding(utf8)';
 use Cwd qw(cwd);
 use File::Path 2.11 qw( make_path );
 use Getopt::Long qw( :config auto_help auto_version );
@@ -93,8 +94,7 @@ while (my $run_id = <$ids_fh>) {
         local $SIG{__WARN__} = sub {
             my ($message) = @_;
             warn +(-t STDERR ? colored('WARN', 'red') : 'WARN'),
-                 ": XML::Tidy processing $run_id experiment package XML: ",
-                 $message, "\n";
+                 ": XML::Tidy processing $run_id experiment package XML: $message";
         };
         my $xml_tidy_obj = XML::Tidy->new('xml' => $response->decoded_content);
         $xml_tidy_obj->tidy($xml_tidy_indent_str);
