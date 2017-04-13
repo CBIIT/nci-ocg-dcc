@@ -8,6 +8,7 @@ use Getopt::Long qw( :config auto_help auto_version );
 use LWP::UserAgent;
 use Pod::Usage qw( pod2usage );
 use Term::ANSIColor;
+use XML::Simple qw( :strict );
 use XML::Tidy;
 
 our $VERSION = '0.1';
@@ -43,18 +44,62 @@ open(my $ids_fh, '<', $run_id_file)
            ": couldn't open $run_id_file: $!";
 while (my $run_id = <$ids_fh>) {
     $run_id =~ s/\s+//g;
+    my $exp_pkg_set_xml;
     my $response = $ua->get(
         "http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?save=efetch&db=sra&rettype=xml&term=$run_id"
     );
-    if (!$response->is_success) {
+    if ($response->is_success) {
+        $exp_pkg_set_xml = XMLin(
+            $response->decoded_content,
+            KeyAttr => {
+                #'SAMPLE_ATTRIBUTE' => 'TAG',
+                'Table' => 'name',
+            },
+            ForceArray => [
+                'EXPERIMENT_ATTRIBUTE',
+                #'SAMPLE_ATTRIBUTE',
+                'RUN',
+                'RUN_ATTRIBUTE',
+                'Table',
+            ],
+            GroupTags => {
+                'STUDY_ATTRIBUTES' => 'STUDY_ATTRIBUTE',
+                'SUBMISSION_ATTRIBUTES' => 'SUBMISSION_ATTRIBUTE',
+                'EXPERIMENT_ATTRIBUTES' => 'EXPERIMENT_ATTRIBUTE',
+                'SAMPLE_ATTRIBUTES' => 'SAMPLE_ATTRIBUTE',
+                'RUN_SET' => 'RUN',
+                'RUN_ATTRIBUTES' => 'RUN_ATTRIBUTE',
+                'RELATED_STUDIES' => 'RELATED_STUDY',
+                'QualityCount' => 'Quality',
+                'AlignInfo' => 'Alignment',
+                'Databases' => 'Database',
+            },
+            #SuppressEmpty => 1,
+            #StrictMode => 0,
+        );
+    }
+    else {
         warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-              ": failed to get SRA $run_id experiment package XML: ",
-              $response->status_line, "\n";
+             ": failed to get $run_id experiment package XML: ",
+             $response->status_line, "\n";
         next;
     }
-    my $xml_tidy_obj = XML::Tidy->new('xml' => $response->decoded_content);
-    $xml_tidy_obj->tidy($xml_tidy_indent_str);
-    $xml_tidy_obj->write("$output_dir/${run_id}.xml");
+    if ($exp_pkg_set_xml->{Error}) {
+        warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+             ": failed to get $run_id experiment package XML: $exp_pkg_set_xml->{Error}\n";
+        next;
+    }
+    {
+        local $SIG{__WARN__} = sub {
+            my ($message) = @_;
+            warn +(-t STDERR ? colored('WARN', 'red') : 'WARN'),
+                 ": XML::Tidy processing $run_id experiment package XML: ",
+                 $message, "\n";
+        };
+        my $xml_tidy_obj = XML::Tidy->new('xml' => $response->decoded_content);
+        $xml_tidy_obj->tidy($xml_tidy_indent_str);
+        $xml_tidy_obj->write("$output_dir/${run_id}.xml");
+    }
     $num_fetched++;
     print "\r$num_fetched xmls fetched" if -t STDOUT;
 }
