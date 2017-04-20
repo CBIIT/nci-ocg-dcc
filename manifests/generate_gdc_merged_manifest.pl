@@ -86,11 +86,13 @@ my %download_dir_config_by_program_name = (
             'Public',
         ],
         'dirs_to_skip' => [
-            'CGI',
-            'DBGAP_METADATA',
-            'OS/Brazil',
-            'OS/Toronto',
-            'Resources',
+            'Controlled/CGI',
+            'Controlled/OS/Brazil',
+            'Controlled/OS/Toronto',
+            'Public/DBGAP_METADATA',
+            'Public/OS/Brazil',
+            'Public/OS/Toronto',
+            'Public/Resources',
         ],
     },
     'CGCI' => {
