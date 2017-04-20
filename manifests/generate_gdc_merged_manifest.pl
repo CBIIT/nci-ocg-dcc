@@ -92,7 +92,9 @@ my %download_dir_config_by_program_name = (
             'Public/DBGAP_METADATA',
             'Public/OS/Brazil',
             'Public/OS/Toronto',
-            'Public/Resources',
+            'Public/Resources/copy_number_array',
+            'Public/Resources/SAMPLE_MATRIX',
+            'Public/Resources/WGS',
         ],
     },
     'CGCI' => {
@@ -101,8 +103,8 @@ my %download_dir_config_by_program_name = (
             'Public',
         ],
         'dirs_to_skip' => [
-            'DBGAP_METADATA',
-            'Resources',
+            'Public/DBGAP_METADATA',
+            'Public/Resources',
         ],
     },
     'CTD2' => {
@@ -110,8 +112,8 @@ my %download_dir_config_by_program_name = (
             'Public',
         ],
         'dirs_to_skip' => [
-            'Dashboard',
-            'Resources',
+            'Public/Dashboard',
+            'Public/Resources',
         ],
     },
 );
