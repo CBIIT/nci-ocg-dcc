@@ -71,6 +71,12 @@ for my $config_file (keys %{$config_hashref}) {
     } = $config_hashref->{$config_file};
     delete $config_hashref->{$config_file};
 }
+for my $config_key (natsort keys %config_file_info) {
+    if (!exists($config_hashref->{$config_key})) {
+        die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+        ": could not compile/load $config_file_info{$config_key}{file}\n";
+    }
+}
 my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
 my @data_types = @{$config_hashref->{'common'}->{'seq_data_types'}};
@@ -1174,10 +1180,19 @@ for my $program_name (@program_names) {
                                         };
                                     }
                                 }
-                                # BCCA strelka tabs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.somatic\.(snv|indel)(\..+?)?\.tab_delimited\.txt$/i) {
+                                # BCCA strelka snv tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.somatic\.snv(\..+?)?\.tab_delimited\.txt$/i) {
                                     for my $barcode ($1, $2) {
-                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Tab'}}, {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Tab-Snv'}}, {
+                                            data_level => $data_level,
+                                            file_name => $file_name,
+                                        };
+                                    }
+                                }
+                                # BCCA strelka indel tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.somatic\.indel(\..+?)?\.tab_delimited\.txt$/i) {
+                                    for my $barcode ($1, $2) {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Tab-Indel'}}, {
                                             data_level => $data_level,
                                             file_name => $file_name,
                                         };
@@ -1216,7 +1231,7 @@ for my $program_name (@program_names) {
                                     ) {
                                         for my $tissue_type (keys %{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}}) {
                                             for my $barcode (@{$barcodes_by_run_center_case_tissue_type_hashref->{'BCCA'}->{$case_id}->{$tissue_type}}) {
-                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'CombineSomaticSNVs'}}, {
+                                                push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'CombineSomaticSnvs'}}, {
                                                     data_level => $data_level,
                                                     file_name => $file_name,
                                                 };
@@ -1243,7 +1258,16 @@ for my $program_name (@program_names) {
                                         file_name => $file_name,
                                     };
                                 }
-                                # BCCA delly structural vcfs
+                                # BCCA delly structural vcfs (type 1)
+                                elsif ($file =~ /structural\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)(\..+?)?\.quality_tagged\.vcf$/i) {
+                                    for my $barcode ($1, $2) {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'StructVariant-DELLY'}}, {
+                                            data_level => $data_level,
+                                            file_name => $file_name,
+                                        };
+                                    }
+                                }
+                                # BCCA delly structural vcfs (type 2)
                                 elsif ($file =~ /structural\/BCCA\/($OCG_CASE_REGEXP)(\..+?)?\.quality_tagged\.vcf$/i) {
                                     my $case_id = $1;
                                     if (
@@ -1982,10 +2006,19 @@ for my $program_name (@program_names) {
                                         };
                                     }
                                 }
-                                # BCCA strelka tabs
-                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.capture_dna\.somatic\.(snv|indel)(\..+?)?\.tab_delimited\.txt$/i) {
+                                # BCCA strelka snv tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.capture_dna\.somatic\.snv(\..+?)?\.tab_delimited\.txt$/i) {
                                     for my $barcode ($1, $2) {
-                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Tab'}}, {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Tab-Snv'}}, {
+                                            data_level => $data_level,
+                                            file_name => $file_name,
+                                        };
+                                    }
+                                }
+                                # BCCA strelka indel tabs
+                                elsif ($file =~ /mutation\/BCCA\/($OCG_BARCODE_REGEXP)_($OCG_BARCODE_REGEXP)\.capture_dna\.somatic\.indel(\..+?)?\.tab_delimited\.txt$/i) {
+                                    for my $barcode ($1, $2) {
+                                        push @{$dcc_scanned_file_info{$data_type}{$barcode}{'BCCA'}{'_default'}{'BCCA'}{'BCCA'}{'Strelka-Vcf2Tab-Indel'}}, {
                                             data_level => $data_level,
                                             file_name => $file_name,
                                         };

@@ -344,11 +344,32 @@ use NCI::OCGDCC::Config qw( :all );
                                     type => 'Strelka-Vcf2Maf',
                                 },
                                 {
-                                    type => 'Strelka-Vcf2Tab',
+                                    type => 'Strelka-Vcf2Tab-Snv',
                                     constraint_regexp =>
-                                        qr/${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.capture_dna\.somatic\.(?:snv|indel)/i,
+                                        qr/${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.capture_dna\.somatic\.snv/i,
+                                    children => [
+                                        {
+                                            type => 'CombineSomaticSnvs',
+                                        },
+                                    ],
+                                },
+                                {
+                                    type => 'Strelka-Vcf2Tab-Indel',
+                                    constraint_regexp =>
+                                        qr/${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.capture_dna\.somatic\.indel/i,
                                 },
                             ],
+                        },
+                        {
+                            type => 'VariantCall-Mpileup-MutationSeq',
+                            children => [
+                                {
+                                    type => 'CombineSomaticSnvs',
+                                },
+                            ],
+                        },
+                        {
+                            type => 'CombineSomaticSnvs',
                         },
                     ],
                     'UHN' => [
@@ -391,14 +412,19 @@ use NCI::OCGDCC::Config qw( :all );
                                     type => 'Strelka-Vcf2Maf',
                                 },
                                 {
-                                    type => 'Strelka-Vcf2Tab',
+                                    type => 'Strelka-Vcf2Tab-Snv',
                                     constraint_regexp =>
-                                        qr/${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.somatic\.(?:snv|indel)/i,
+                                        qr/${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.somatic\.snv/i,
                                     children => [
                                         {
-                                            type => 'CombineSomaticSNVs',
+                                            type => 'CombineSomaticSnvs',
                                         },
                                     ],
+                                },
+                                {
+                                    type => 'Strelka-Vcf2Tab-Indel',
+                                    constraint_regexp =>
+                                        qr/${OCG_BARCODE_REGEXP}_${OCG_BARCODE_REGEXP}\.somatic\.indel/i,
                                 },
                             ],
                         },
@@ -406,12 +432,12 @@ use NCI::OCGDCC::Config qw( :all );
                             type => 'VariantCall-Mpileup-MutationSeq',
                             children => [
                                 {
-                                    type => 'CombineSomaticSNVs',
+                                    type => 'CombineSomaticSnvs',
                                 },
                             ],
                         },
                         {
-                            type => 'CombineSomaticSNVs',
+                            type => 'CombineSomaticSnvs',
                         },
                         {
                             type => 'StructVariant-ABySS',
@@ -3674,7 +3700,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-UnstrandedLite:01',
                                         },
                                     },
                                 },
@@ -3692,7 +3718,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-StructVariant-TransABySS:02.txt',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-StructVariant-TransABySS:02',
                                         },
                                     },
                                 },
@@ -3874,7 +3900,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-StructVariant-ABySS:02.txt',
+                                            'name' => 'bcgsc.ca:Protocol:WGS-StructVariant-ABySS:02',
                                         },
                                     },
                                 },
