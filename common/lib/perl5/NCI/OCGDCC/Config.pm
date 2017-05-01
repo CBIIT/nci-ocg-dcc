@@ -12,7 +12,7 @@ our @EXPORT_OK = qw(
     $OCG_CGI_CASE_DIR_REGEXP
     $OCG_BARCODE_REGEXP
 );
-our %EXPORT_TAGS = ( 
+our %EXPORT_TAGS = (
     all => \@EXPORT_OK,
 );
 our $VERSION = '0.1';
