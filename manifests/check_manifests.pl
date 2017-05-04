@@ -73,19 +73,20 @@ my %program_project_names = (
     )],
     'CTD2' => [qw(
         Broad
+        CNIS
         Columbia
         CSHL
         DFCI
         Emory
         FHCRC-1
         FHCRC-2
-        MDACC
+        Resources
         Stanford
         TGen
         UCSF-1
         UCSF-2
+        UTMDA
         UTSW
-        Resources
     )],
 );
 my @data_types = qw(
