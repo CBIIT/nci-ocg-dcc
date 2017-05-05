@@ -2,16 +2,17 @@
 
 use strict;
 use warnings;
-use sigtrap qw(handler sig_handler normal-signals error-signals ALRM);
-use Email::Sender::Simple qw(try_to_sendmail);
+use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
+use Email::Sender::Simple qw( try_to_sendmail );
 use Email::Simple;
 use Email::Simple::Creator;
-use File::Basename qw(dirname);
+use File::Basename qw( dirname );
 use File::ChangeNotify;
 use File::Spec;
-use Getopt::Long qw(:config auto_help auto_version);
-use Pod::Usage qw(pod2usage);
-use List::MoreUtils qw(firstidx firstval);
+use Getopt::Long qw( :config auto_help auto_version );
+use Pod::Usage qw( pod2usage );
+use List::MoreUtils qw( firstidx firstval );
+use Sort::Key::Natural qw( natsort );
 use Sys::Hostname;
 use Data::Dumper;
 
@@ -25,15 +26,21 @@ our $VERSION = '0.1';
 select(STDERR); $| = 1;
 select(STDOUT); $| = 1;
 
-$Data::Dumper::Sortkeys = 1;
 $Data::Dumper::Terse = 1;
 $Data::Dumper::Deepcopy = 1;
+#$Data::Dumper::Indent = 1;
+$Data::Dumper::Sortkeys = sub {
+    my ($hashref) = @_;
+    my @sorted_keys = natsort keys %{$hashref};
+    return \@sorted_keys;
+};
 
 ### config
 my $email_from_address = 'OCG DCC Upload Watcher <donotreply@' . hostname . '>';
 my @email_to_addresses = qw(
     leandro.hermida@nih.gov
     patee.gesuwan@nih.gov
+    yiwen.he@nih.gov
 );
 my @email_cc_addresses = qw(
     tanja.davidsen@nih.gov

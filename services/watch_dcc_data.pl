@@ -2,13 +2,14 @@
 
 use strict;
 use warnings;
-use sigtrap qw(handler sig_handler normal-signals error-signals ALRM);
-use Email::Sender::Simple qw(try_to_sendmail);
+use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
+use Email::Sender::Simple qw( try_to_sendmail );
 use Email::Simple;
 use Email::Simple::Creator;
 use File::ChangeNotify;
-use Getopt::Long qw(:config auto_help auto_version);
-use Pod::Usage qw(pod2usage);
+use Getopt::Long qw( :config auto_help auto_version );
+use Pod::Usage qw( pod2usage );
+use Sort::Key::Natural qw( natsort );
 use Sys::Hostname;
 use Data::Dumper;
 
@@ -22,9 +23,14 @@ our $VERSION = '0.1';
 select(STDERR); $| = 1;
 select(STDOUT); $| = 1;
 
-$Data::Dumper::Sortkeys = 1;
 $Data::Dumper::Terse = 1;
 $Data::Dumper::Deepcopy = 1;
+#$Data::Dumper::Indent = 1;
+$Data::Dumper::Sortkeys = sub {
+    my ($hashref) = @_;
+    my @sorted_keys = natsort keys %{$hashref};
+    return \@sorted_keys;
+};
 
 ### config
 my $email_from_address = 'OCG DCC Data Watcher <donotreply@' . hostname . '>';
