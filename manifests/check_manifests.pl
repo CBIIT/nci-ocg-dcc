@@ -128,6 +128,10 @@ my @data_types_w_data_levels = qw(
     WGS
     WXS
 );
+my @programs_w_data_types = qw(
+    TARGET
+    CGCI
+);
 my $target_cgi_dir_name = 'CGI';
 my @data_level_dir_names = (
     'L1',
@@ -150,6 +154,11 @@ my $manifest_delimiter_regexp = qr/( (?:\*| )?)/;
 my $manifest_out_delimiter = ' *';
 my $manifest_user_name = 'ocg-dcc-adm';
 my $manifest_group_name = 'ocg-dcc-adm';
+my %manifest_dn_group_by_program_name = (
+    'TARGET' => 'target-dn-adm',
+    'CGCI'   => 'cgci-dn-adm',
+    'CTD2'   => 'ctd2-dn-net',
+);
 my $manifest_file_mode = 0440;
 my $target_cgi_manifest_file_mode = 0444;
 my @target_cgi_analysis_dir_names = qw(
@@ -248,7 +257,7 @@ if (@ARGV) {
             (my $type = $param_groups[$i]) =~ s/s$//;
             $type =~ s/_/ /g;
             pod2usage(
-                -message => 
+                -message =>
                     "Invalid $type" . ( scalar(@invalid_user_params) > 1 ? 's' : '' ) . ': ' .
                     join(', ', @invalid_user_params) . "\n" .
                     'Choose from: ' . join(', ', @valid_choices),
@@ -259,233 +268,327 @@ if (@ARGV) {
     }
 }
 print STDERR "\%user_params:\n", Dumper(\%user_params) if $debug;
-my $manifest_uid = getpwnam($manifest_user_name) 
+my $manifest_uid = getpwnam($manifest_user_name)
     or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get uid for $manifest_user_name\n";
-my $manifest_gid = getgrnam($manifest_group_name) 
+my $manifest_gid = getgrnam($manifest_group_name)
     or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for $manifest_group_name\n";
 for my $program_name (@program_names) {
     next if defined($user_params{programs}) and none { $program_name eq $_ } @{$user_params{programs}};
-    my $manifest_download_gid = getgrnam("\L$program_name\E-dn-adm") 
-        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for \L$program_name\E-dn-adm\n";
-    for my $project_name (@{$program_project_names{$program_name}}) {
+    my $manifest_download_gid = getgrnam($manifest_dn_group_by_program_name{$program_name})
+        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+               ": couldn't get gid for $manifest_dn_group_by_program_name{$program_name}";
+    PROJECT_NAME: for my $project_name (@{$program_project_names{$program_name}}) {
         next if defined($user_params{projects}) and none { $project_name eq $_ } @{$user_params{projects}};
         my ($disease_proj, $subproject) = split /-(?=NBL|PPTP|Toronto|Brazil)/, $project_name, 2;
-        my $project_dir = $disease_proj;
+        my $project_dir_path_part = $disease_proj;
         if (defined $subproject) {
             if ($disease_proj eq 'MDLS') {
                 if ($subproject eq 'NBL') {
-                    $project_dir = "$project_dir/NBL";
+                    $project_dir_path_part = "$project_dir_path_part/NBL";
                 }
                 elsif ($subproject eq 'PPTP') {
-                    $project_dir = "$project_dir/PPTP";
+                    $project_dir_path_part = "$project_dir_path_part/PPTP";
                 }
                 else {
-                    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
+                    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                        ": invalid subproject '$subproject'\n";
                 }
             }
             elsif ($disease_proj eq 'OS') {
                 if ($subproject eq 'Toronto') {
-                    $project_dir = "$project_dir/Toronto";
+                    $project_dir_path_part = "$project_dir_path_part/Toronto";
                 }
                 elsif ($subproject eq 'Brazil') {
-                    $project_dir = "$project_dir/Brazil";
+                    $project_dir_path_part = "$project_dir_path_part/Brazil";
                 }
                 else {
-                    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
+                    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                        ": invalid subproject '$subproject'\n";
                 }
             }
             else {
-                die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid disease project '$disease_proj'\n";
+                die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                    ": invalid disease project '$disease_proj'\n";
             }
         }
-        DATA_TYPE: for my $data_type (@data_types) {
-            next if defined($user_params{data_types}) and none { $data_type eq $_ } @{$user_params{data_types}};
-            (my $data_type_dir_name = $data_type) =~ s/-Seq$/-seq/i;
-            my $data_type_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_dir/$data_type_dir_name";
-            next unless -d $data_type_dir;
-            opendir(my $data_type_dh, $data_type_dir) 
-                or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $data_type_dir: $!";
-            my @data_type_sub_dir_names = grep { -d "$data_type_dir/$_" and !m/^\./ } readdir($data_type_dh);
-            closedir($data_type_dh);
+        # programs with data types
+        if (any { $program_name eq $_ } @programs_w_data_types) {
+            DATA_TYPE: for my $data_type (@data_types) {
+                next if defined($user_params{data_types}) and none { $data_type eq $_ } @{$user_params{data_types}};
+                (my $data_type_dir_name = $data_type) =~ s/-Seq$/-seq/i;
+                my $data_type_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_dir_path_part/$data_type_dir_name";
+                next unless -d $data_type_dir;
+                opendir(my $data_type_dh, $data_type_dir)
+                    or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $data_type_dir: $!";
+                my @data_type_sub_dir_names = grep { -d "$data_type_dir/$_" and !m/^\./ } readdir($data_type_dh);
+                closedir($data_type_dh);
+                my @datasets;
+                if (all { m/^(current|old)$/ } @data_type_sub_dir_names) {
+                    push @datasets, '';
+                }
+                elsif (none { m/^(current|old)$/ } @data_type_sub_dir_names) {
+                    for my $data_type_sub_dir_name (@data_type_sub_dir_names) {
+                        my $data_type_sub_dir = "$data_type_dir/$data_type_sub_dir_name";
+                        opendir(my $data_type_sub_dh, $data_type_sub_dir)
+                            or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $data_type_sub_dir: $!";
+                        my @sub_dir_names = grep { -d "$data_type_sub_dir/$_" and !m/^\./ } readdir($data_type_sub_dh);
+                        closedir($data_type_sub_dh);
+                        if (all { m/^(current|old)$/ } @sub_dir_names) {
+                            push @datasets, $data_type_sub_dir_name;
+                        }
+                        else {
+                            warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                                 ": $data_type_dir subdirectory structure is invalid\n";
+                            next DATA_TYPE;
+                        }
+                    }
+                }
+                else {
+                    warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                         ": $data_type_dir subdirectory structure is invalid\n";
+                    next DATA_TYPE;
+                }
+                for my $dataset (@datasets) {
+                    next if defined($user_params{data_sets}) and none { $dataset eq $_ } @{$user_params{data_sets}};
+                    my $dataset_dir = $data_type_dir . ( $dataset eq '' ? $dataset : "/$dataset" ) . '/current';
+                    next unless -d $dataset_dir;
+                    # data types that have data levels (except for Resources datasets)
+                    if (( any { $data_type eq $_ } @data_types_w_data_levels ) and $project_name ne 'Resources') {
+                        for my $data_level_dir_name (@data_level_dir_names) {
+                            next if defined($user_params{data_level_dirs}) and none { $data_level_dir_name eq $_ } @{$user_params{data_level_dirs}};
+                            my $data_level_dir = "$dataset_dir/$data_level_dir_name";
+                            next unless -d $data_level_dir;
+                            my $real_data_level_dir = realpath($data_level_dir);
+                            # standard data directory
+                            if ($data_level_dir_name ne $target_cgi_dir_name) {
+                                find({
+                                    follow => 1,
+                                    wanted => sub {
+                                        # directories only
+                                        return unless -d;
+                                        my $data_dir = $File::Find::name;
+                                        my $real_data_dir = realpath($data_dir);
+                                        my (@data_file_names, @manifest_file_names);
+                                        opendir(my $dh, $real_data_dir)
+                                            or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                                                   ": couldn't opendir $real_data_dir: $!";
+                                        for (readdir($dh)) {
+                                            next unless -f "$real_data_dir/$_";
+                                            if (!m/^$default_manifest_file_name$/io) {
+                                                push @data_file_names, $_;
+                                            }
+                                            else {
+                                                push @manifest_file_names, $_;
+                                            }
+                                        }
+                                        closedir($dh);
+                                        if (@data_file_names or @manifest_file_names) {
+                                            if ($verbose) {
+                                                my $data_dir_rel_parts_str = $data_dir ne $data_level_dir
+                                                    ? join(' ', File::Spec->splitdir(File::Spec->abs2rel($data_dir, $data_level_dir)))
+                                                    : '';
+                                                print "[$program_name $project_name $data_type",
+                                                      ($dataset ne '' ? " $dataset" : ''),
+                                                      " $data_level_dir_name",
+                                                      ($data_dir_rel_parts_str ne '' ? " $data_dir_rel_parts_str" : ''),
+                                                      "]\n";
+                                            }
+                                            check_manifests(
+                                                $real_data_dir,
+                                                \@manifest_file_names,
+                                                $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
+                                                $manifest_download_gid,
+                                                \@data_file_names,
+                                            );
+                                        }
+                                    },
+                                }, $real_data_level_dir);
+                            }
+                            # TARGET WGS CGI data directory
+                            elsif (!$skip_cgi) {
+                                if ($verbose) {
+                                    print "[$program_name $project_name $data_type",
+                                          ($dataset ne '' ? " $dataset" : ''),
+                                          " $data_level_dir_name]\n";
+                                }
+                                my @analysis_dirs;
+                                for my $analysis_dir_name (@target_cgi_analysis_dir_names) {
+                                    my $analysis_dir = "$real_data_level_dir/$analysis_dir_name";
+                                    push @analysis_dirs, $analysis_dir if -d $analysis_dir;
+                                }
+                                if ($debug) {
+                                    print STDERR "\@analysis_dirs:\n", Dumper(\@analysis_dirs);
+                                }
+                                for my $analysis_dir (@analysis_dirs) {
+                                    opendir(my $analysis_dh, $analysis_dir)
+                                        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                                        ": couldn't opendir $analysis_dir: $!";
+                                    my @data_dir_names = natsort grep {
+                                        !m/^\./ and (
+                                            -d "$analysis_dir/$_" or (
+                                                -l "$analysis_dir/$_" and
+                                                -d readlink "$analysis_dir/$_"
+                                            )
+                                        )
+                                    } readdir $analysis_dh;
+                                    closedir($analysis_dh);
+                                    for my $data_dir_name (@data_dir_names) {
+                                        # CGI case dirs
+                                        if ($data_dir_name =~ /^$OCG_CGI_CASE_DIR_REGEXP$/) {
+                                            my $data_dir;
+                                            if (-d "$analysis_dir/$data_dir_name/EXP") {
+                                                $data_dir = "$analysis_dir/$data_dir_name/EXP";
+                                            }
+                                            elsif ($disease_proj eq 'OS') {
+                                                $data_dir = "$analysis_dir/$data_dir_name";
+                                            }
+                                            else {
+                                                die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                                                    ": invalid CGI data dir: $analysis_dir/$data_dir_name";
+                                            }
+                                            check_manifests(
+                                                $data_dir,
+                                                \@target_cgi_manifest_file_names,
+                                                1,
+                                                $manifest_download_gid,
+                                            );
+                                        }
+                                        else {
+                                            print +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'),
+                                                  ": CGI data dir type not supported: $analysis_dir/$data_dir_name\n";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    # data types that don't have data levels (and Resources datasets)
+                    elsif (!defined $user_params{data_level_dirs}) {
+                        find({
+                            follow => 1,
+                            wanted => sub {
+                                # directories only
+                                return unless -d;
+                                my $data_dir = $File::Find::name;
+                                my $real_data_dir = realpath($data_dir);
+                                my (@data_file_names, @manifest_file_names);
+                                opendir(my $dh, $real_data_dir)
+                                    or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                                       ": couldn't opendir $real_data_dir: $!";
+                                for (readdir($dh)) {
+                                    next unless -f "$real_data_dir/$_";
+                                    if (!m/^$default_manifest_file_name$/io) {
+                                        push @data_file_names, $_;
+                                    }
+                                    else {
+                                        push @manifest_file_names, $_;
+                                    }
+                                }
+                                closedir($dh);
+                                if (@data_file_names or @manifest_file_names) {
+                                    if ($verbose) {
+                                        my $data_dir_rel_parts_str = $data_dir ne $dataset_dir
+                                            ? join(' ', File::Spec->splitdir(File::Spec->abs2rel($data_dir, $dataset_dir)))
+                                            : '';
+                                        print "[$program_name $project_name $data_type",
+                                              ($dataset ne '' ? " $dataset" : ''),
+                                              ($data_dir_rel_parts_str ne '' ? " $data_dir_rel_parts_str" : ''),
+                                              "]\n";
+                                    }
+                                    check_manifests(
+                                        $real_data_dir,
+                                        \@manifest_file_names,
+                                        $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
+                                        $manifest_download_gid,
+                                        \@data_file_names,
+                                    );
+                                }
+                            },
+                        }, $dataset_dir);
+                    }
+                }
+            }
+        }
+        # programs w/o data types
+        else {
+            my $project_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_dir_path_part";
+            next unless -d $project_dir;
+            opendir(my $project_dh, $project_dir)
+                or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $project_dir: $!";
+            my @project_sub_dir_names = grep { -d "$project_dir/$_" and !m/^\./ } readdir($project_dh);
+            closedir($project_dh);
             my @datasets;
-            if (all { m/^(current|old)$/ } @data_type_sub_dir_names) {
+            if (all { m/^(current|old)$/ } @project_sub_dir_names) {
                 push @datasets, '';
             }
-            elsif (none { m/^(current|old)$/ } @data_type_sub_dir_names) {
-                for my $data_type_sub_dir_name (@data_type_sub_dir_names) {
-                    my $data_type_sub_dir = "$data_type_dir/$data_type_sub_dir_name";
-                    opendir(my $data_type_sub_dh, $data_type_sub_dir) 
-                        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $data_type_sub_dir: $!";
-                    my @sub_dir_names = grep { -d "$data_type_sub_dir/$_" and !m/^\./ } readdir($data_type_sub_dh);
-                    closedir($data_type_sub_dh);
+            elsif (none { m/^(current|old)$/ } @project_sub_dir_names) {
+                for my $project_sub_dir_name (@project_sub_dir_names) {
+                    my $project_sub_dir = "$project_dir/$project_sub_dir_name";
+                    opendir(my $project_sub_dh, $project_sub_dir)
+                        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                               ": could not open $project_sub_dir: $!";
+                    my @sub_dir_names = grep { -d "$project_sub_dir/$_" and !m/^\./ } readdir($project_sub_dh);
+                    closedir($project_sub_dh);
                     if (all { m/^(current|old)$/ } @sub_dir_names) {
-                        push @datasets, $data_type_sub_dir_name;
+                        push @datasets, $project_sub_dir_name;
                     }
                     else {
-                        warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": $data_type_dir subdirectory structure is invalid\n";
-                        next DATA_TYPE;
+                        warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                             ": $project_dir subdirectory structure is invalid\n";
+                        next PROJECT_NAME;
                     }
                 }
             }
             else {
-                warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": $data_type_dir subdirectory structure is invalid\n";
-                next DATA_TYPE;
+                warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                     ": $project_dir subdirectory structure is invalid\n";
+                next PROJECT_NAME;
             }
             for my $dataset (@datasets) {
                 next if defined($user_params{data_sets}) and none { $dataset eq $_ } @{$user_params{data_sets}};
-                my $dataset_dir = $data_type_dir . ($dataset eq '' ? $dataset : "/$dataset" ) . '/current';
+                my $dataset_dir = $project_dir . ( $dataset eq '' ? $dataset : "/$dataset" ) . '/current';
                 next unless -d $dataset_dir;
-                # data types that have data levels (except for Resources datasets)
-                if (( any { $data_type eq $_ } @data_types_w_data_levels ) and $project_name ne 'Resources') {
-                    for my $data_level_dir_name (@data_level_dir_names) {
-                        next if defined($user_params{data_level_dirs}) and none { $data_level_dir_name eq $_ } @{$user_params{data_level_dirs}};
-                        my $data_level_dir = "$dataset_dir/$data_level_dir_name";
-                        next unless -d $data_level_dir;
-                        my $real_data_level_dir = realpath($data_level_dir);
-                        # standard data directory
-                        if ($data_level_dir_name ne $target_cgi_dir_name) {
-                            find({
-                                follow => 1,
-                                wanted => sub {
-                                    # directories only
-                                    return unless -d;
-                                    my $data_dir = $File::Find::name;
-                                    my $real_data_dir = realpath($data_dir);
-                                    my (@data_file_names, @manifest_file_names);
-                                    opendir(my $dh, $real_data_dir) 
-                                        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't opendir $real_data_dir: $!";
-                                    for (readdir($dh)) {
-                                        next unless -f "$real_data_dir/$_";
-                                        if (!m/^$default_manifest_file_name$/io) {
-                                            push @data_file_names, $_;
-                                        }
-                                        else {
-                                            push @manifest_file_names, $_;
-                                        }
-                                    }
-                                    closedir($dh);
-                                    if (@data_file_names or @manifest_file_names) {
-                                        if ($verbose) {
-                                            my $data_dir_rel_parts_str = $data_dir ne $data_level_dir
-                                                ? join(' ', File::Spec->splitdir(File::Spec->abs2rel($data_dir, $data_level_dir)))
-                                                : '';
-                                            print "[$program_name $project_name $data_type", 
-                                                  ($dataset ne '' ? " $dataset" : ''),
-                                                  " $data_level_dir_name",
-                                                  ($data_dir_rel_parts_str ne '' ? " $data_dir_rel_parts_str" : ''),
-                                                  "]\n";
-                                        }
-                                        check_manifests(
-                                            $real_data_dir, 
-                                            \@manifest_file_names,
-                                            $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
-                                            $manifest_download_gid,
-                                            \@data_file_names,
-                                        );
-                                    }
-                                },
-                            }, $real_data_level_dir);
+                find({
+                    follow => 1,
+                    wanted => sub {
+                        # directories only
+                        return unless -d;
+                        my $data_dir = $File::Find::name;
+                        my $real_data_dir = realpath($data_dir);
+                        my (@data_file_names, @manifest_file_names);
+                        opendir(my $dh, $real_data_dir)
+                            or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                                   ": couldn't opendir $real_data_dir: $!";
+                        for (readdir($dh)) {
+                            next unless -f "$real_data_dir/$_";
+                            if (!m/^$default_manifest_file_name$/io) {
+                                push @data_file_names, $_;
+                            }
+                            else {
+                                push @manifest_file_names, $_;
+                            }
                         }
-                        # TARGET WGS CGI data directory
-                        elsif (!$skip_cgi) {
+                        closedir($dh);
+                        if (@data_file_names or @manifest_file_names) {
                             if ($verbose) {
-                                print "[$program_name $project_name $data_type", 
+                                my $data_dir_rel_parts_str = $data_dir ne $dataset_dir
+                                    ? join(' ', File::Spec->splitdir(File::Spec->abs2rel($data_dir, $dataset_dir)))
+                                    : '';
+                                print "[$program_name $project_name",
                                       ($dataset ne '' ? " $dataset" : ''),
-                                      " $data_level_dir_name]\n";
+                                      ($data_dir_rel_parts_str ne '' ? " $data_dir_rel_parts_str" : ''),
+                                      "]\n";
                             }
-                            my @analysis_dirs;
-                            for my $analysis_dir_name (@target_cgi_analysis_dir_names) {
-                                my $analysis_dir = "$real_data_level_dir/$analysis_dir_name";
-                                push @analysis_dirs, $analysis_dir if -d $analysis_dir;
-                            }
-                            if ($debug) {
-                                print STDERR "\@analysis_dirs:\n", Dumper(\@analysis_dirs);
-                            }
-                            for my $analysis_dir (@analysis_dirs) {
-                                opendir(my $analysis_dh, $analysis_dir)
-                                    or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't opendir $analysis_dir: $!";
-                                my @data_dir_names = natsort grep {
-                                    !m/^\./ and (
-                                        -d "$analysis_dir/$_" or (
-                                            -l "$analysis_dir/$_" and 
-                                            -d readlink "$analysis_dir/$_"
-                                        )
-                                    )
-                                } readdir $analysis_dh;
-                                closedir($analysis_dh);
-                                for my $data_dir_name (@data_dir_names) {
-                                    # CGI case dirs
-                                    if ($data_dir_name =~ /^$OCG_CGI_CASE_DIR_REGEXP$/) {
-                                        my $data_dir;
-                                        if (-d "$analysis_dir/$data_dir_name/EXP") {
-                                            $data_dir = "$analysis_dir/$data_dir_name/EXP";
-                                        }
-                                        elsif ($disease_proj eq 'OS') {
-                                            $data_dir = "$analysis_dir/$data_dir_name";
-                                        }
-                                        else {
-                                            die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
-                                                ": invalid CGI data dir: $analysis_dir/$data_dir_name";
-                                        }
-                                        check_manifests(
-                                            $data_dir,
-                                            \@target_cgi_manifest_file_names,
-                                            1,
-                                            $manifest_download_gid,
-                                        );
-                                    }
-                                    else {
-                                        print +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), 
-                                              ": CGI data dir type not supported: $analysis_dir/$data_dir_name\n";
-                                    }
-                                }
-                            }
+                            check_manifests(
+                                $real_data_dir,
+                                \@manifest_file_names,
+                                $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
+                                $manifest_download_gid,
+                                \@data_file_names,
+                            );
                         }
-                    }
-                }
-                # data types that don't have data levels (and Resources datasets)
-                elsif (!defined $user_params{data_level_dirs}) {
-                    find({
-                        follow => 1,
-                        wanted => sub {
-                            # directories only
-                            return unless -d;
-                            my $data_dir = $File::Find::name;
-                            my $real_data_dir = realpath($data_dir);
-                            my (@data_file_names, @manifest_file_names);
-                            opendir(my $dh, $real_data_dir) 
-                                or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't opendir $real_data_dir: $!";
-                            for (readdir($dh)) {
-                                next unless -f "$real_data_dir/$_";
-                                if (!m/^$default_manifest_file_name$/io) {
-                                    push @data_file_names, $_;
-                                }
-                                else {
-                                    push @manifest_file_names, $_;
-                                }
-                            }
-                            closedir($dh);
-                            if (@data_file_names or @manifest_file_names) {
-                                if ($verbose) {
-                                    my $data_dir_rel_parts_str = $data_dir ne $dataset_dir
-                                        ? join(' ', File::Spec->splitdir(File::Spec->abs2rel($data_dir, $dataset_dir)))
-                                        : '';
-                                    print "[$program_name $project_name $data_type", 
-                                          ($dataset ne '' ? " $dataset" : ''),
-                                          ($data_dir_rel_parts_str ne '' ? " $data_dir_rel_parts_str" : ''),
-                                          "]\n";
-                                }
-                                check_manifests(
-                                    $real_data_dir, 
-                                    \@manifest_file_names,
-                                    $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
-                                    $manifest_download_gid,
-                                    \@data_file_names,
-                                );
-                            }
-                        },
-                    }, $dataset_dir);
-                }
+                    },
+                }, $dataset_dir);
             }
         }
     }
@@ -494,7 +597,7 @@ exit;
 
 sub check_manifests {
     my (
-        $data_dir, 
+        $data_dir,
         $manifest_file_names_arrayref,
         $manifest_in_download_area,
         $manifest_download_gid,
@@ -534,7 +637,7 @@ sub check_manifests {
                         $file_checksum = Digest::SHA->new('256')->addfile($file_path, 'b')->hexdigest;
                     }
                     elsif (length($manifest_checksum) == 32) {
-                        open(my $fh, '<', $file_path) 
+                        open(my $fh, '<', $file_path)
                             or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $file_path: $!";
                         $file_checksum = Digest::MD5->new->addfile($fh)->hexdigest;
                         close($fh);
@@ -583,7 +686,7 @@ sub check_manifests {
                 }
             }
             else {
-                print !-f $file_path 
+                print !-f $file_path
                     ? ( (-t STDOUT ? colored('NOT IN FILESYSTEM', 'red') : 'NOT IN FILESYSTEM'), ": $file_path" )
                     : ( (-t STDOUT ? colored('BAD MANIFEST ENTRY', 'red') : 'BAD MANIFEST ENTRY'), ": $_" ),
                     "\n";
@@ -667,7 +770,7 @@ sub check_manifests {
                                                    $file_name eq 'somatic_filtered_data_only' or
                                                    $file_name eq 'somatic_filtered_data_utr3_utr5_tss_upstream_only' or
                                                   ($file_name =~ /^somaticVcfBeta/ and $file_ext eq '.txt')
-                                                 ) ? 'manifest.dcc.unencrypted' 
+                                                 ) ? 'manifest.dcc.unencrypted'
                                                    : 'manifest.all.unencrypted';
                         #my $file_checksum = sha256_file_hex($file);
                         my $file_checksum = Digest::SHA->new('256')->addfile($file, 'b')->hexdigest;
@@ -737,15 +840,15 @@ sub check_manifests {
 sub set_manifest_perms {
     my ($manifest_file, $manifest_gid, $manifest_file_mode) = @_;
     #chown(-1, $manifest_gid, $manifest_file);
-    chown($manifest_uid, $manifest_gid, $manifest_file) 
+    chown($manifest_uid, $manifest_gid, $manifest_file)
         or warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't chown $manifest_file\n";
-    chmod($manifest_file_mode, $manifest_file) 
+    chmod($manifest_file_mode, $manifest_file)
         or warn +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't chmod $manifest_file\n";
 }
 
 __END__
 
-=head1 NAME 
+=head1 NAME
 
 check_manifests.pl - OCG DCC Manifest and Data File Integrity Checker/Fixer/Generator
 
