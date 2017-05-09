@@ -17,6 +17,7 @@ use List::MoreUtils qw( any all none uniq one firstidx );
 use LWP::UserAgent;
 use Math::Round qw( round );
 use NCI::OCGDCC::Config qw( :all );
+use NCI::OCGDCC::Utils qw( get_barcode_info );
 use Pod::Usage qw( pod2usage );
 use POSIX qw( strftime );
 use Sort::Key qw( nkeysort );
@@ -4586,101 +4587,6 @@ sub merge_run_info_hash {
         }
     }
     return $merged_run_info_hashref;
-}
-
-sub get_barcode_info {
-    my ($barcode) = @_;
-    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid barcode '$barcode'" 
-        unless $barcode =~ /^$OCG_BARCODE_REGEXP$/;
-    my ($case_id, $s_case_id, $sample_id, $disease_code, $tissue_code_str, $nucleic_acid_code_str);
-    my @barcode_parts = split('-', $barcode);
-    # TARGET sample ID/barcode
-    if (scalar(@barcode_parts) == 5) {
-        $case_id = join('-', @barcode_parts[0..2]);
-        $s_case_id = $barcode_parts[2];
-        $sample_id = join('-', @barcode_parts[0..3]);
-        ($disease_code, $tissue_code_str, $nucleic_acid_code_str) = @barcode_parts[1,3,4];
-    }
-    # CGCI sample ID/barcode
-    elsif (scalar(@barcode_parts) == 6) {
-        $case_id = join('-', @barcode_parts[0..3]);
-        $s_case_id = $barcode_parts[3];
-        $sample_id = join('-', @barcode_parts[0..4]);
-        ($disease_code, $tissue_code_str, $nucleic_acid_code_str) = @barcode_parts[1,4,5];
-    }
-    else {
-        die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
-            ": invalid sample ID/barcode $barcode\n";
-    }
-    my ($tissue_code, $xeno_cell_line_code, $tissue_ltr, $tissue_sort_code) =
-        $tissue_code_str =~ /^(\d{2})(?:\.(\d+))?([A-Z])(?:\.(\d+))?$/;
-    my $tissue_type = $tissue_code eq '01' ? 'Primary' :
-                      $tissue_code eq '02' ? 'Recurrent' :
-                      $tissue_code eq '03' ? 'Primary' :
-                      $tissue_code eq '04' ? 'Recurrent' :
-                      $tissue_code eq '05' ? 'Primary' :
-                      # 06,07 are Metastatic and 08 is Post Neo-Adjuvant
-                      # but all Primary for this purpose
-                      $tissue_code eq '06' ? 'Primary' :
-                      $tissue_code eq '07' ? 'Primary' :
-                      $tissue_code eq '08' ? 'Primary' :
-                      $tissue_code eq '09' ? 'Primary' :
-                      $tissue_code eq '10' ? 'Normal' :
-                      $tissue_code eq '11' ? 'Normal' :
-                      $tissue_code eq '12' ? 'BuccalNormal' :
-                      $tissue_code eq '13' ? 'EBVNormal' :
-                      $tissue_code eq '14' ? 'Normal' :
-                      $tissue_code eq '15' ? 'NormalFibroblast' :
-                      $tissue_code eq '16' ? 'Normal' :
-                      $tissue_code eq '17' ? 'Normal' :
-                      # 18 is Post Neo-Adjuvant Adjacent Normal
-                      # but Normal for this purpose
-                      $tissue_code eq '18' ? 'Normal' :
-                      $tissue_code eq '20' ? 'CellLineControl' : 
-                      $tissue_code eq '40' ? 'Recurrent' :
-                      $tissue_code eq '41' ? 'Recurrent' :
-                      $tissue_code eq '42' ? 'Recurrent' : 
-                      $tissue_code eq '50' ? 'CellLine' :
-                      $tissue_code eq '60' ? 'Xenograft' :
-                      $tissue_code eq '61' ? 'Xenograft' :
-                      $tissue_code eq '99' ? 'Granulocyte' :
-                      undef;
-    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
-        ": unknown tissue code $tissue_code\n" unless defined $tissue_type;
-    my $cgi_tissue_type = $tissue_type;
-    # special fix for TARGET-10-PANKMB
-    if ($case_id eq 'TARGET-10-PANKMB' and $tissue_type eq 'Primary') {
-        $cgi_tissue_type .= "${tissue_code}${tissue_ltr}";
-    }
-    # special fix for TARGET-10-PAKKCA
-    elsif ($case_id eq 'TARGET-10-PAKKCA' and $tissue_type eq 'Primary') {
-        $cgi_tissue_type .= "${tissue_code}${tissue_ltr}";
-    }
-    # special fix for TARGET-30-PARKGJ
-    elsif ($case_id eq 'TARGET-30-PARKGJ' and ($tissue_type eq 'Primary' or $tissue_type eq 'Normal')) {
-        $cgi_tissue_type .= $barcode_parts[$#barcode_parts];
-    }
-    # special fix for TARGET-50-PAKJGM
-    elsif ($case_id eq 'TARGET-50-PAKJGM' and $tissue_type eq 'Normal') {
-        $cgi_tissue_type .= $barcode_parts[$#barcode_parts];
-    }
-    $cgi_tissue_type .= ( defined($xeno_cell_line_code) ? $xeno_cell_line_code : '' );
-    my $nucleic_acid_code = substr($nucleic_acid_code_str, 0, 2);
-    my $nucleic_acid_ltr = substr($nucleic_acid_code_str, -1);
-    return {
-        case_id => $case_id,
-        s_case_id => $s_case_id,
-        sample_id => $sample_id,
-        disease_code => $disease_code,
-        tissue_code => $tissue_code,
-        tissue_ltr => $tissue_ltr,
-        tissue_sort_code => $tissue_sort_code,
-        tissue_type => $tissue_type,
-        cgi_tissue_type => $cgi_tissue_type,
-        xeno_cell_line_code => $xeno_cell_line_code,
-        nucleic_acid_code => $nucleic_acid_code,
-        nucleic_acid_ltr => $nucleic_acid_ltr,
-    };
 }
 
 sub get_barcodes_from_data_file {
