@@ -55,7 +55,7 @@ while (<$in_fh>) {
     push @data_arrayref, \@fields;
 }
 close($in_fh);
-open(my $out_fh, '>', "$FindBin::Bin/target_os_wgs_nci_meltzer_metadata.txt");
+open(my $out_fh, '>', "$FindBin::Bin/target_os_wgs_nci-meltzer_metadata.txt");
 print $out_fh join("\t", @header_fields), "\n";
 for my $row_arrayref (nat2_keysort { $_->[0], $_->[2] } @data_arrayref) {
     print $out_fh join("\t", @{$row_arrayref}), "\n";

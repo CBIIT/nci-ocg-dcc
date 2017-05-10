@@ -175,7 +175,7 @@ while (<$metadata_fh>) {
 close($metadata_fh);
 print "$num_metadata_rows_loaded metadata rows loaded\n" if $verbose;
 my %add_metadata_by_library_id;
-if ($submission_label =~ /^target_os_w(g|x)s_nci_meltzer/) {
+if ($submission_label =~ /^target_os_w(g|x)s_nci-meltzer/) {
     open(my $s_fh, '<', "$FindBin::Bin/$submission_label/sequencers.csv")
         or die "ERROR: could not open sequencers.csv: $!";
     <$s_fh>;
@@ -255,7 +255,7 @@ for my $barcode (natsort keys %metadata_by_barcode) {
             $is_missing_metadata++;
         }
         if (%add_metadata_by_library_id) {
-            if ($submission_label =~ /^target_os_wxs_nci_meltzer/) {
+            if ($submission_label =~ /^target_os_wxs_nci-meltzer/) {
                 if (none { $add_metadata_by_library_id{$rg_hashref->{'LB'}}{wxs_kit} eq $_ } @{$metadata_by_barcode{$barcode}{wxs_kits}}) {
                     push @{$metadata_by_barcode{$barcode}{wxs_kits}}, $add_metadata_by_library_id{$rg_hashref->{'LB'}}{wxs_kit};
                 }
@@ -277,7 +277,7 @@ for my $barcode (natsort keys %metadata_by_barcode) {
     }
     if (%add_metadata_by_library_id) {
         my ($title, $design_description, $library_construction_protocol);
-        if ($submission_label =~ /^target_os_wxs_nci_meltzer/) {
+        if ($submission_label =~ /^target_os_wxs_nci-meltzer/) {
             $title = "TARGET Osteosarcoma Subject $metadata_by_barcode{$barcode}{case_id} $metadata_by_barcode{$barcode}{tissue_type} $metadata_by_barcode{$barcode}{tissue_name} Whole Exome Sequence";
             my $wxs_kits_str = join(' and ', sort @{$metadata_by_barcode{$barcode}{wxs_kits}}) . ' ' . ( scalar(@{$metadata_by_barcode{$barcode}{wxs_kits}} > 1) ? 'kits' : 'kit' );
             delete $metadata_by_barcode{$barcode}{wxs_kits};
@@ -290,7 +290,7 @@ for my $barcode (natsort keys %metadata_by_barcode) {
             Whole exome sequence analysis of $barcode using $wxs_kits_str.
             DESIGN_DESC
         }
-        elsif ($submission_label =~ /^target_os_wgs_nci_meltzer/) {
+        elsif ($submission_label =~ /^target_os_wgs_nci-meltzer/) {
             $title = "TARGET Osteosarcoma Subject $metadata_by_barcode{$barcode}{case_id} $metadata_by_barcode{$barcode}{tissue_type} $metadata_by_barcode{$barcode}{tissue_name} Whole Genome Sequence";
             $library_construction_protocol = <<"            LIB_CONST_PROT";
             Genomic DNA was isolated using the Qiagen AllPrep Kit.

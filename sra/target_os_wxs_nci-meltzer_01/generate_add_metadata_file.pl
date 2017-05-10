@@ -42,7 +42,7 @@ while (<$in_fh>) {
     }
 }
 close($in_fh);
-open(my $out_fh, '>', "$FindBin::Bin/target_os_wxs_nci_meltzer_add_metadata.txt");
+open(my $out_fh, '>', "$FindBin::Bin/target_os_wxs_nci-meltzer_add_metadata.txt");
 print $out_fh join("\t", qw(
     library_id
     sequencer

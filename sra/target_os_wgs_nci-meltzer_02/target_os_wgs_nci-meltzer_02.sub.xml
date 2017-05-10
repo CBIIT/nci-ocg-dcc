@@ -3,7 +3,7 @@
                 xsi:noNamespaceSchemaLocation="http://www.ncbi.nlm.nih.gov/viewvc/v1/trunk/sra/doc/SRA_1-5/SRA.submission.xsd?view=co">
     <SUBMISSION broker_name="NCI">
         <IDENTIFIERS>
-            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET_OS_WXS_NCI_MELTZER_01</SUBMITTER_ID>
+            <SUBMITTER_ID namespace="NCI-MELTZER">TARGET_OS_WGS_NCI_MELTZER_02</SUBMITTER_ID>
         </IDENTIFIERS>
         <CONTACTS>
             <CONTACT name="Leandro Hermida" inform_on_status="leandro.hermida@nih.gov" inform_on_error="leandro.hermida@nih.gov" />
@@ -12,10 +12,7 @@
         </CONTACTS>
         <ACTIONS>
             <ACTION>
-                <ADD source="target_os_wxs_nci_meltzer_01.exp.xml" schema="experiment" />
-            </ACTION>
-            <ACTION>
-                <ADD source="target_os_wxs_nci_meltzer_01.run.xml" schema="run" />
+                <ADD source="target_os_wgs_nci-meltzer_02.run.xml" schema="run" />
             </ACTION>
         </ACTIONS>
     </SUBMISSION>
