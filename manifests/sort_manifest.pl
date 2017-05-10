@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use FindBin;
-use lib "$FindBin::Bin/../common/lib/perl5";
+use lib "$FindBin::Bin/../lib/perl5";
 use NCI::OCGDCC::Utils qw( manifest_by_file_path );
 use Sort::Key::Natural qw( natsort );
 use Term::ANSIColor;

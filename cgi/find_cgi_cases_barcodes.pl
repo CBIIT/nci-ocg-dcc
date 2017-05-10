@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use FindBin;
-use lib "$FindBin::Bin/../common/lib/perl5";
+use lib "$FindBin::Bin/../lib/perl5";
 use Config::Any;
 use File::Find;
 use Getopt::Long qw( :config auto_help auto_version );
