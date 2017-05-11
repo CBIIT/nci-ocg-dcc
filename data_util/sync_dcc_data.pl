@@ -1423,8 +1423,9 @@ for my $program_name (@program_names) {
                         print "\n";
                     }
                     # clean up empty dest dirs (during Release or to clean up when nothing gets synced)
+                    # programs w/o data types always keep project dir
                     my ($printed_header, $empty_dirs_exist);
-                    for my $dest_dir ($dest_dataset_dir, $dest_project_dir) {
+                    for my $dest_dir ($dest_dataset_dir) {
                         if (-d -z $dest_dir) {
                             if (!$printed_header) {
                                 print "$header\n";
@@ -1676,7 +1677,7 @@ sync_dcc_data - OCG DCC Master Data-to-Download Areas Synchronizer
     <data type(s)>          Comma-separated list of data type(s) (optional, default: all project data types)
     <data set(s)>           Comma-separated list of data set(s) (optional, default: all data type data sets)
     <data level dir(s)>     Comma-separated list of data level dir(s) (optional, default: all data set data level dirs)
-    <destination(s)>        Comma-separated list of destination(s): PreRelease, Controlled, Public, Release, Germline, BCCA (optional, default: PreRelease)
+    <destination(s)>        Comma-separated list of destination(s): PreRelease/Network, Controlled, Public, Release, Germline, BCCA (optional, default: PreRelease/Network)
  
  Options:
     --dry-run               Perform trial run with no changes made (sudo not required, default: off)
