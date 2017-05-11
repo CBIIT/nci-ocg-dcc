@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use FindBin;
-use lib "$FindBin::Bin/../common/lib/perl5";
+use lib "$FindBin::Bin/../lib/perl5";
 use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
 use Cwd qw( realpath );
 use Digest::MD5;
@@ -89,6 +89,10 @@ my %program_project_names = (
         UTSW
     )],
 );
+my @programs_w_data_types = qw(
+    TARGET
+    CGCI
+);
 my @data_types = qw(
     biospecimen
     Bisulfite-seq
@@ -128,10 +132,6 @@ my @data_types_w_data_levels = qw(
     WGS
     WXS
 );
-my @programs_w_data_types = qw(
-    TARGET
-    CGCI
-);
 my $target_cgi_dir_name = 'CGI';
 my @data_level_dir_names = (
     'L1',
@@ -142,16 +142,18 @@ my @data_level_dir_names = (
     $target_cgi_dir_name,
     'DESIGN',
 );
-my @param_groups = qw(
-    programs
-    projects
-    data_types
-    data_sets
-    data_level_dirs
-);
 my $default_manifest_file_name = 'MANIFEST.txt';
 my $manifest_delimiter_regexp = qr/( (?:\*| )?)/;
 my $manifest_out_delimiter = ' *';
+my @manifest_supported_checksum_algs = qw(
+    sha256
+    md5
+);
+my %manifest_default_checksum_alg_by_program_name = (
+    'TARGET' => 'sha256',
+    'CGCI'   => 'md5',
+    'CTD2'   => 'md5',
+);
 my $manifest_user_name = 'ocg-dcc-adm';
 my $manifest_group_name = 'ocg-dcc-adm';
 my %manifest_dn_group_by_program_name = (
@@ -173,6 +175,13 @@ my @target_cgi_skip_file_names = qw(
     manifest.all.unencrypted.sig
     sha256output
 );
+my @param_groups = qw(
+    programs
+    projects
+    data_types
+    data_sets
+    data_level_dirs
+);
 
 my $verify_checksums = 0;
 my $fix = 0;
@@ -180,6 +189,7 @@ my $sort = 0;
 my $gen_new = 0;
 my $skip_existing = 0;
 my $skip_cgi = 0;
+my $manifest_checksum_alg = '';
 my $dry_run = 0;
 my $verbose = 0;
 my $debug = 0;
@@ -190,6 +200,7 @@ GetOptions(
     'gen-new' => \$gen_new,
     'skip-existing' => \$skip_existing,
     'skip-cgi' => \$skip_cgi,
+    'use-checksum-alg:s' => \$manifest_checksum_alg,
     'dry-run' => \$dry_run,
     'verbose' => \$verbose,
     'debug' => \$debug,
@@ -267,6 +278,16 @@ if (@ARGV) {
         $user_params{$param_groups[$i]} = \@valid_user_params;
     }
 }
+if (defined($manifest_checksum_alg) and $manifest_checksum_alg ne '') {
+    $manifest_checksum_alg = lc($manifest_checksum_alg);
+    if (none { $manifest_checksum_alg eq $_ } @manifest_supported_checksum_algs) {
+        pod2usage(
+            -message => "Invalid checksum algorithm: $manifest_checksum_alg\n" .
+                        "Supported algorithms: " . join(', ', @manifest_supported_checksum_algs),
+            -verbose => 0,
+        );
+    }
+}
 print STDERR "\%user_params:\n", Dumper(\%user_params) if $debug;
 my $manifest_uid = getpwnam($manifest_user_name)
     or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get uid for $manifest_user_name\n";
@@ -277,6 +298,9 @@ for my $program_name (@program_names) {
     my $manifest_download_gid = getgrnam($manifest_dn_group_by_program_name{$program_name})
         or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
                ": couldn't get gid for $manifest_dn_group_by_program_name{$program_name}";
+    if (!defined($manifest_checksum_alg) or $manifest_checksum_alg eq '') {
+        $manifest_checksum_alg = $manifest_default_checksum_alg_by_program_name{$program_name};
+    }
     PROJECT_NAME: for my $project_name (@{$program_project_names{$program_name}}) {
         next if defined($user_params{projects}) and none { $project_name eq $_ } @{$user_params{projects}};
         my ($disease_proj, $subproject) = split /-(?=NBL|PPTP|Toronto|Brazil)/, $project_name, 2;
@@ -397,6 +421,7 @@ for my $program_name (@program_names) {
                                                 $real_data_dir,
                                                 \@manifest_file_names,
                                                 $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
+                                                $manifest_checksum_alg,
                                                 $manifest_download_gid,
                                                 \@data_file_names,
                                             );
@@ -450,6 +475,7 @@ for my $program_name (@program_names) {
                                                 $data_dir,
                                                 \@target_cgi_manifest_file_names,
                                                 1,
+                                                $manifest_checksum_alg,
                                                 $manifest_download_gid,
                                             );
                                         }
@@ -499,6 +525,7 @@ for my $program_name (@program_names) {
                                         $real_data_dir,
                                         \@manifest_file_names,
                                         $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
+                                        $manifest_checksum_alg,
                                         $manifest_download_gid,
                                         \@data_file_names,
                                     );
@@ -583,6 +610,7 @@ for my $program_name (@program_names) {
                                 $real_data_dir,
                                 \@manifest_file_names,
                                 $real_data_dir =~ /^\/local\/ocg-dcc\/download\/\U$program_name\E\// ? 1 : 0,
+                                $manifest_checksum_alg,
                                 $manifest_download_gid,
                                 \@data_file_names,
                             );
@@ -600,6 +628,7 @@ sub check_manifests {
         $data_dir,
         $manifest_file_names_arrayref,
         $manifest_in_download_area,
+        $manifest_checksum_alg,
         $manifest_download_gid,
         $data_file_names_arrayref,
     ) = @_;
@@ -647,9 +676,26 @@ sub check_manifests {
                     }
                     if ($file_checksum eq $manifest_checksum) {
                         if ($fix) {
-                            if (length($manifest_checksum) == 32) {
+                            if ($manifest_checksum_alg eq 'sha256' and length($manifest_checksum) != 64) {
+                                #$file_checksum = sha256_file_hex($file_path);
                                 $file_checksum = Digest::SHA->new('256')->addfile($file_path, 'b')->hexdigest;
                                 my $new_manifest_line = "${file_checksum}${manifest_out_delimiter}${file_rel_path}\n";
+                                print "Updating $new_manifest_line" if $verbose;
+                                push @new_manifest_lines, $new_manifest_line;
+                                $write_new_manifest++;
+                            }
+                            elsif ($manifest_checksum_alg eq 'md5' and length($manifest_checksum) != 32) {
+                                open(my $fh, '<', $file_path)
+                                    or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $file_path: $!";
+                                $file_checksum = Digest::MD5->new->addfile($fh)->hexdigest;
+                                close($fh);
+                                my $new_manifest_line = "${file_checksum}${manifest_out_delimiter}${file_rel_path}\n";
+                                print "Updating $new_manifest_line" if $verbose;
+                                push @new_manifest_lines, $new_manifest_line;
+                                $write_new_manifest++;
+                            }
+                            elsif ($manifest_delimiter ne $manifest_out_delimiter) {
+                                my $new_manifest_line = "${manifest_checksum}${manifest_out_delimiter}${file_rel_path}\n";
                                 print "Updating $new_manifest_line" if $verbose;
                                 push @new_manifest_lines, $new_manifest_line;
                                 $write_new_manifest++;
@@ -662,8 +708,15 @@ sub check_manifests {
                     else {
                         print +(-t STDOUT ? colored('BAD MANIFEST CHECKSUM', 'red') : 'BAD MANIFEST CHECKSUM'), ": $_\n";
                         if ($fix) {
-                            if (length($manifest_checksum) == 32) {
+                            if ($manifest_checksum_alg eq 'sha256') {
+                                #$file_checksum = sha256_file_hex($file_path);
                                 $file_checksum = Digest::SHA->new('256')->addfile($file_path, 'b')->hexdigest;
+                            }
+                            elsif ($manifest_checksum_alg eq 'md5') {
+                                open(my $fh, '<', $file_path)
+                                    or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $file_path: $!";
+                                $file_checksum = Digest::MD5->new->addfile($fh)->hexdigest;
+                                close($fh);
                             }
                             my $new_manifest_line = "${file_checksum}${manifest_out_delimiter}${file_rel_path}\n";
                             print "Updating $new_manifest_line" if $verbose;
@@ -673,9 +726,26 @@ sub check_manifests {
                     }
                 }
                 elsif ($fix) {
-                    if (length($manifest_checksum) == 32) {
+                    if ($manifest_checksum_alg eq 'sha256' and length($manifest_checksum) != 64) {
+                        #my $file_checksum = sha256_file_hex($file_path);
                         my $file_checksum = Digest::SHA->new('256')->addfile($file_path, 'b')->hexdigest;
                         my $new_manifest_line = "${file_checksum}${manifest_out_delimiter}${file_rel_path}\n";
+                        print "Updating $new_manifest_line" if $verbose;
+                        push @new_manifest_lines, $new_manifest_line;
+                        $write_new_manifest++;
+                    }
+                    elsif ($manifest_checksum_alg eq 'md5' and length($manifest_checksum) != 32) {
+                        open(my $fh, '<', $file_path)
+                            or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $file_path: $!";
+                        my $file_checksum = Digest::MD5->new->addfile($fh)->hexdigest;
+                        close($fh);
+                        my $new_manifest_line = "${file_checksum}${manifest_out_delimiter}${file_rel_path}\n";
+                        print "Updating $new_manifest_line" if $verbose;
+                        push @new_manifest_lines, $new_manifest_line;
+                        $write_new_manifest++;
+                    }
+                    elsif ($manifest_delimiter ne $manifest_out_delimiter) {
+                        my $new_manifest_line = "${manifest_checksum}${manifest_out_delimiter}${file_rel_path}\n";
                         print "Updating $new_manifest_line" if $verbose;
                         push @new_manifest_lines, $new_manifest_line;
                         $write_new_manifest++;
@@ -734,21 +804,31 @@ sub check_manifests {
     if ($manifest_exists and !$skip_existing) {
         my %new_manifest_lines_by_manifest_name;
         # standard data directory
-        if (defined $data_file_names_arrayref) {
+        if (defined($data_file_names_arrayref)) {
             for my $data_file_name (@{$data_file_names_arrayref}) {
                 # skip files which already exist in manifests
                 next if $manifest_file_rel_paths{$data_file_name};
                 print +(-t STDOUT ? colored('NOT IN MANIFEST', 'red') : 'NOT IN MANIFEST'), ": $data_dir/$data_file_name\n";
                 if ($fix) {
-                    #my $file_checksum = sha256_file_hex("$data_dir/$data_file_name");
-                    my $file_checksum = Digest::SHA->new('256')->addfile("$data_dir/$data_file_name", 'b')->hexdigest;
+                    my $file_path = "$data_dir/$data_file_name";
+                    my $file_checksum;
+                    if ($manifest_checksum_alg eq 'sha256') {
+                        #$file_checksum = sha256_file_hex($file_path);
+                        $file_checksum = Digest::SHA->new('256')->addfile($file_path, 'b')->hexdigest;
+                    }
+                    elsif ($manifest_checksum_alg eq 'md5') {
+                        open(my $fh, '<', $file_path)
+                            or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $file_path: $!";
+                        $file_checksum = Digest::MD5->new->addfile($fh)->hexdigest;
+                        close($fh);
+                    }
                     my $new_manifest_line = "${file_checksum}${manifest_out_delimiter}${data_file_name}\n";
                     print "Adding $new_manifest_line" if $verbose;
                     push @{$new_manifest_lines_by_manifest_name{$default_manifest_file_name}}, $new_manifest_line;
                 }
             }
         }
-        # TARGET WGS CGI data directory
+        # WGS CGI data directory
         else {
             find({
                 follow => 1,
@@ -772,8 +852,17 @@ sub check_manifests {
                                                   ($file_name =~ /^somaticVcfBeta/ and $file_ext eq '.txt')
                                                  ) ? 'manifest.dcc.unencrypted'
                                                    : 'manifest.all.unencrypted';
-                        #my $file_checksum = sha256_file_hex($file);
-                        my $file_checksum = Digest::SHA->new('256')->addfile($file, 'b')->hexdigest;
+                        my $file_checksum;
+                        if ($manifest_checksum_alg eq 'sha256') {
+                            #$file_checksum = sha256_file_hex($file);
+                            $file_checksum = Digest::SHA->new('256')->addfile($file, 'b')->hexdigest;
+                        }
+                        elsif ($manifest_checksum_alg eq 'md5') {
+                            open(my $fh, '<', $file)
+                                or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $file: $!";
+                            $file_checksum = Digest::MD5->new->addfile($fh)->hexdigest;
+                            close($fh);
+                        }
                         my $new_manifest_line = "${file_checksum}${manifest_out_delimiter}${file_rel_path}\n";
                         print "Adding $new_manifest_line" if $verbose;
                         push @{$new_manifest_lines_by_manifest_name{$manifest_file_name}}, $new_manifest_line;
@@ -806,13 +895,24 @@ sub check_manifests {
         }
     }
     elsif (!$manifest_exists) {
-        # for now only generate new manifests for standard data directories
-        if ($gen_new and defined $data_file_names_arrayref) {
+        # only generate new manifests for standard data directories
+        if ($gen_new and defined($data_file_names_arrayref)) {
             my @manifest_lines;
             my $manifest_file = "$data_dir/$default_manifest_file_name";
             print "Generating $manifest_file\n";
             for my $data_file_name (@{$data_file_names_arrayref}) {
-                my $file_checksum = Digest::SHA->new('256')->addfile("$data_dir/$data_file_name", 'b')->hexdigest;
+                my $file_path = "$data_dir/$data_file_name";
+                my $file_checksum;
+                if ($manifest_checksum_alg eq 'sha256') {
+                    #$file_checksum = sha256_file_hex($file_path);
+                    $file_checksum = Digest::SHA->new('256')->addfile($file_path, 'b')->hexdigest;
+                }
+                elsif ($manifest_checksum_alg eq 'md5') {
+                    open(my $fh, '<', $file_path)
+                        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": could not open $file_path: $!";
+                    $file_checksum = Digest::MD5->new->addfile($fh)->hexdigest;
+                    close($fh);
+                }
                 my $new_manifest_line = "${file_checksum}${manifest_out_delimiter}${data_file_name}\n";
                 print "Adding $new_manifest_line" if $verbose;
                 push @manifest_lines, $new_manifest_line;
@@ -850,7 +950,7 @@ __END__
 
 =head1 NAME
 
-check_manifests.pl - OCG DCC Manifest and Data File Integrity Checker/Fixer/Generator
+check_manifests.pl - Manifest and Data File Integrity Checker/Fixer/Generator
 
 =head1 SYNOPSIS
 
@@ -870,6 +970,7 @@ check_manifests.pl - OCG DCC Manifest and Data File Integrity Checker/Fixer/Gene
     --gen-new               Generate new manifests if not found (default: off)
     --skip-existing         Skip checking of existing manifests (default: off)
     --skip-cgi              Skip checking TARGET CGI master data trees (default: off)
+    --use-checksum-alg      Override checksum algorithm (default: program-specific default checksum algorithm)
     --dry-run               Perform trial run with no changes made, only with --fix, --sort, --gen-new (sudo not required, default: off)
     --verbose               Be verbose
     --debug                 Run in debug mode
