@@ -2,11 +2,14 @@ package NCI::OCGDCC::Config;
 
 use strict;
 use warnings;
+use FindBin;
 use Const::Fast;
+use Cwd qw( abs_path );
 require Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(
+    $BASE_DIR
     $CACHE_DIR
     $OCG_CASE_REGEXP
     $OCG_CGI_CASE_DIR_REGEXP
@@ -17,6 +20,7 @@ our %EXPORT_TAGS = (
 );
 our $VERSION = '0.1';
 
+const our $BASE_DIR                 => abs_path("$FindBin/../../../..");
 const our $CACHE_DIR                => "$ENV{'HOME'}/.ocg-dcc";
 const our $OCG_CASE_REGEXP          => qr/[A-Z]+-\d{2}(?:-\d{2})?-[A-Z0-9]+/;
 const our $OCG_CGI_CASE_DIR_REGEXP  => qr/${OCG_CASE_REGEXP}(?:(?:-|_)\d+)?/;

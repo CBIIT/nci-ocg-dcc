@@ -3,16 +3,18 @@ package NCI::OCGDCC::Utils;
 use strict;
 use warnings;
 use FindBin;
-use lib "$FindBin::Bin/../..";
+use lib "$FindBin::Bin/../../../../lib/perl5";
+use Config::Any;
 use File::Spec;
-use List::Util qw( max );
+use List::Util qw( any first max uniq );
 use NCI::OCGDCC::Config qw( :all );
-use Sort::Key::Natural qw( mkkey_natural );
+use Sort::Key::Natural qw( natsort mkkey_natural );
 use Term::ANSIColor;
 require Exporter;
 
 our @ISA = qw( Exporter );
 our @EXPORT_OK = qw(
+    load_configs
     get_barcode_info
     manifest_by_file_path
 );
@@ -20,6 +22,56 @@ our %EXPORT_TAGS = (
     all => \@EXPORT_OK,
 );
 our $VERSION = '0.1';
+
+sub load_configs {
+    my @types = @_;
+    my @valid_types = qw(
+        cgi
+        common
+        data_util
+        mage_tab
+        manifests
+        services
+    );
+    my %config_file_info;
+    for my $type (natsort @types) {
+        if (any { $type eq $_ } @valid_types) {
+            $config_file_info{$type} = {
+                file => defined($ENV{PAR_TEMP})
+                    ? "$ENV{PAR_TEMP}/inc/${type}_conf.pl"
+                    : "$BASE_DIR/$type/conf/${type}_conf.pl",
+                plugin => 'Config::Any::Perl',
+            };
+        }
+        else {
+            die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+                ": invalid config type '$type'";
+        }
+    }
+    my @config_files = map { $_->{file} } values %config_file_info;
+    my @config_file_plugins = map { $_->{plugin} } values %config_file_info;
+    my $config_hashref = Config::Any->load_files({
+        files => \@config_files,
+        force_plugins => \@config_file_plugins,
+        flatten_to_hash => 1,
+    });
+    # use %config_file_info key instead of file path (saves typing)
+    for my $config_file (keys %{$config_hashref}) {
+        $config_hashref->{
+            first {
+                $config_file_info{$_}{file} eq $config_file
+            } keys %config_file_info
+        } = $config_hashref->{$config_file};
+        delete $config_hashref->{$config_file};
+    }
+    for my $config_key (natsort keys %config_file_info) {
+        if (!exists($config_hashref->{$config_key})) {
+            die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+            ": could not compile/load $config_file_info{$config_key}{file}\n";
+        }
+    }
+    return $config_hashref;
+}
 
 sub get_barcode_info {
     my ($barcode) = @_;

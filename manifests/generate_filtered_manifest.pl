@@ -2,15 +2,26 @@
 
 use strict;
 use warnings;
+use FindBin;
+use lib "$FindBin::Bin/../lib/perl5";
+use NCI::OCGDCC::Utils qw( load_configs );
 use Data::Dumper;
 
-$Data::Dumper::Sortkeys = 1;
 $Data::Dumper::Terse = 1;
 $Data::Dumper::Deepcopy = 1;
+#$Data::Dumper::Indent = 1;
+$Data::Dumper::Sortkeys = sub {
+    my ($hashref) = @_;
+    my @sorted_keys = natsort keys %{$hashref};
+    return \@sorted_keys;
+};
 
 # config
-my $default_manifest_file_name = 'MANIFEST.txt';
-my $manifest_delimiter_regexp = qr/( (?:\*| )?)/;
+my $config_hashref = load_configs(qw(
+    manifests
+));
+my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
+my $manifest_delimiter_regexp = $config_hashref->{'manifests'}->{'manifest_delimiter_regexp'};
 
 my ($in_dir, $out_dir) = @ARGV;
 opendir(my $dh, $out_dir) or die "ERROR: $!";
@@ -29,3 +40,4 @@ while (<$in_fh>) {
     }
 }
 close($in_fh);
+exit;

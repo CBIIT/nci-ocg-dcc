@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use FindBin;
 use lib "$FindBin::Bin/../lib/perl5";
-use Config::Any;
 use Cwd qw( realpath );
 use File::Basename qw( fileparse );
 use File::Copy qw( copy );
@@ -12,10 +11,9 @@ use File::Find;
 use File::Path 2.11 qw( make_path remove_tree );
 use File::Spec;
 use Getopt::Long qw( :config auto_help auto_version );
-use List::Util qw( first uniq );
-use List::MoreUtils qw( any none );
+use List::Util qw( any first none uniq );
 use NCI::OCGDCC::Config qw( :all );
-use NCI::OCGDCC::Utils qw( get_barcode_info manifest_by_file_path );
+use NCI::OCGDCC::Utils qw( load_configs get_barcode_info manifest_by_file_path );
 use Pod::Usage qw( pod2usage );
 use POSIX qw( strftime );
 use Sort::Key::Natural qw( natsort );
@@ -38,48 +36,18 @@ $Data::Dumper::Sortkeys = sub {
 };
 
 # config
-my %config_file_info = (
-    'common' => {
-        file => "$FindBin::Bin/../common/conf/common_conf.pl",
-        plugin => 'Config::Any::Perl',
-    },
-    'cgi' => {
-        file => "$FindBin::Bin/conf/cgi_conf.pl",
-        plugin => 'Config::Any::Perl',
-    },
-);
-my @config_files = map { $_->{file} } values %config_file_info;
-my @config_file_plugins = map { $_->{plugin} } values %config_file_info;
-my $config_hashref = Config::Any->load_files({
-    files => \@config_files,
-    force_plugins => \@config_file_plugins,
-    flatten_to_hash => 1,
-});
-# use %config_file_info key instead of file path (saves typing)
-for my $config_file (keys %{$config_hashref}) {
-    $config_hashref->{
-        first {
-            $config_file_info{$_}{file} eq $config_file
-        } keys %config_file_info
-    } = $config_hashref->{$config_file};
-    delete $config_hashref->{$config_file};
-}
-for my $config_key (natsort keys %config_file_info) {
-    if (!exists($config_hashref->{$config_key})) {
-        die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-        ": could not compile/load $config_file_info{$config_key}{file}\n";
-    }
-}
+my $config_hashref = load_configs(qw(
+    cgi
+));
 # use cgi (not common) program names and program project names
 my @program_names = @{$config_hashref->{'cgi'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'cgi'}->{'program_project_names'}};
 my @job_types = @{$config_hashref->{'cgi'}->{'job_types'}};
 my $data_type_dir_name = $config_hashref->{'cgi'}->{'data_type_dir_name'};
-my $cgi_dir_name = $config_hashref->{'cgi'}->{'cgi_dir_name'};
-my $default_manifest_file_name = $config_hashref->{'common'}->{'default_manifest_file_name'};
-my @cgi_data_dir_names = @{$config_hashref->{'cgi'}->{'cgi_data_dir_names'}};
-my @cgi_manifest_file_names = @{$config_hashref->{'cgi'}->{'cgi_manifest_file_names'}};
-my @cgi_skip_file_names = @{$config_hashref->{'cgi'}->{'cgi_skip_file_names'}};
+my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
+my @cgi_analysis_dir_names = @{$config_hashref->{'cgi'}->{'analysis_dir_names'}};
+my @cgi_manifest_file_names = @{$config_hashref->{'cgi'}->{'manifest_file_names'}};
+my @cgi_skip_file_names = @{$config_hashref->{'cgi'}->{'skip_file_names'}};
 my (
     $adm_owner_name,
     $dn_adm_group_name,
@@ -93,6 +61,7 @@ my (
     dn_ctrld_dir_mode
     dn_ctrld_file_mode
 )};
+my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
 my @param_groups = qw(
     programs
     projects
@@ -229,11 +198,11 @@ for my $program_name (@program_names) {
                                         ? "$program_data_dir/$job_type/$project_dir/$data_type_dir_name/$dataset_dir_name/current/$cgi_dir_name"
                                         : "$program_data_dir/$job_type/$project_dir/$data_type_dir_name/current/$cgi_dir_name";
             }
-            my (@cgi_data_dirs, @output_cgi_data_dirs);
-            for my $data_dir_name (@cgi_data_dir_names) {
-                my $cgi_data_dir = "$dataset_cgi_dir/$data_dir_name";
-                push @cgi_data_dirs, $cgi_data_dir if -d $cgi_data_dir;
-                my $output_cgi_data_dir = $job_type eq 'FullMafsVcfs'
+            my (@cgi_analysis_dirs, @output_cgi_analysis_dirs);
+            for my $analysis_dir_name (@cgi_analysis_dir_names) {
+                my $cgi_analysis_dir = "$dataset_cgi_dir/$analysis_dir_name";
+                push @cgi_analysis_dirs, $cgi_analysis_dir if -d $cgi_analysis_dir;
+                my $output_cgi_analysis_dir = $job_type eq 'FullMafsVcfs'
                                         ? $dataset_dir_name
                                             ? "$program_download_ctrld_dir/$project_dir/$data_type_dir_name/$dataset_dir_name/L3/mutation/$cgi_dir_name/$job_type"
                                             : "$program_download_ctrld_dir/$project_dir/$data_type_dir_name/L3/mutation/$cgi_dir_name/$job_type"
@@ -241,19 +210,19 @@ for my $program_name (@program_names) {
                                         ? $dataset_dir_name
                                             ? "$program_data_dir/$project_dir/$data_type_dir_name/$dataset_dir_name/current/L3/mutation/$cgi_dir_name/$job_type"
                                             : "$program_data_dir/$project_dir/$data_type_dir_name/current/L3/mutation/$cgi_dir_name/$job_type"
-                                        : "$output_dataset_cgi_dir/$data_dir_name";
-                if (none { $_ eq $output_cgi_data_dir } @output_cgi_data_dirs) {
-                    push @output_cgi_data_dirs, $output_cgi_data_dir;
+                                        : "$output_dataset_cgi_dir/$analysis_dir_name";
+                if (none { $_ eq $output_cgi_analysis_dir } @output_cgi_analysis_dirs) {
+                    push @output_cgi_analysis_dirs, $output_cgi_analysis_dir;
                 }
             }
             if ($debug) {
-                print STDERR "\@cgi_data_dirs:\n", Dumper(\@cgi_data_dirs),
-                             "\@output_cgi_data_dirs:\n", Dumper(\@output_cgi_data_dirs);
+                print STDERR "\@cgi_analysis_dirs:\n", Dumper(\@cgi_analysis_dirs),
+                             "\@output_cgi_analysis_dirs:\n", Dumper(\@output_cgi_analysis_dirs);
             }
             # clean existing datasets
-            if (grep { -d } @output_cgi_data_dirs) {
+            if (grep { -d } @output_cgi_analysis_dirs) {
                 print "Removing existing datasets:\n",
-                      join("\n", @output_cgi_data_dirs), "\n";
+                      join("\n", @output_cgi_analysis_dirs), "\n";
                 find({
                     bydepth => 1,
                     preprocess => sub {
@@ -263,7 +232,7 @@ for my $program_name (@program_names) {
                         if (-d) {
                             my $dir_name = $_;
                             my $dir = $File::Find::name;
-                            if (( none { $dir eq $_ } @output_cgi_data_dirs ) and -z $dir) {
+                            if (( none { $dir eq $_ } @output_cgi_analysis_dirs ) and -z $dir) {
                                 print "Deleting $dir\n" if $verbose;
                                 if (!$dry_run) {
                                     remove_tree($dir, { error => \my $err });
@@ -292,8 +261,8 @@ for my $program_name (@program_names) {
                             }
                         }
                     },
-                }, @output_cgi_data_dirs);
-                for my $dir (@output_cgi_data_dirs, ( ( any { $job_type eq $_ } qw( BCCA Germline TEMP ) ) ? $output_dataset_cgi_dir : () )) {
+                }, @output_cgi_analysis_dirs);
+                for my $dir (@output_cgi_analysis_dirs, ( ( any { $job_type eq $_ } qw( BCCA Germline TEMP ) ) ? $output_dataset_cgi_dir : () )) {
                     if (-z $dir) {
                         print "Deleting $dir\n" if $verbose;
                         if (!$dry_run) {
@@ -315,7 +284,7 @@ for my $program_name (@program_names) {
             }
             next if $clean_only;
             if ($job_type eq 'FullMafsVcfs' or ($disease_proj eq 'OS' and $job_type eq 'SomaticVcfs')) {
-                my @output_dirs = ($output_cgi_data_dirs[0]);
+                my @output_dirs = ($output_cgi_analysis_dirs[0]);
                 if (!$dry_run) {
                     for my $output_dir (@output_dirs) {
                         make_path($output_dir, {
@@ -517,7 +486,7 @@ for my $program_name (@program_names) {
                             }
                             # FullMafsVcfs
                             elsif ($job_type eq 'FullMafsVcfs') {
-                                my $output_dir = $output_cgi_data_dirs[0];
+                                my $output_dir = $output_cgi_analysis_dirs[0];
                                 # full somaticVcfBeta MAF and VCF files
                                 if (m/^somaticVcfBeta.+?(?:(?<!somatic)_maf_FET\.txt|\.vcf\.bz2)$/i) {
                                     my $file_to_link_realpath = realpath($file);
@@ -721,7 +690,7 @@ for my $program_name (@program_names) {
                             if ($job_type eq 'SomaticVcfs') {
                                 # OS CGI BCCA somatic VCFs
                                 if (m/^.+?\.vcf$/i) {
-                                    my $new_file = "$output_cgi_data_dirs[0]/somaticVcf_${case_dir_name}_NormalVsPrimary.vcf";
+                                    my $new_file = "$output_cgi_analysis_dirs[0]/somaticVcf_${case_dir_name}_NormalVsPrimary.vcf";
                                     if ($verbose) {
                                         print "Copying $file ->\n",
                                               "        $new_file\n";
@@ -749,7 +718,7 @@ for my $program_name (@program_names) {
                         }
                     }
                 },
-            }, @cgi_data_dirs);
+            }, @cgi_analysis_dirs);
             if ($verbose) {
                 print "$links_created links created\n";
             }

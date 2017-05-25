@@ -4,13 +4,12 @@ use strict;
 use warnings;
 use FindBin;
 use lib "$FindBin::Bin/../lib/perl5";
-use Config::Any;
 use Cwd qw( realpath );
 use File::Find;
 use File::Spec;
 use Getopt::Long qw( :config auto_help auto_version );
-use List::Util qw( first uniq );
-use List::MoreUtils qw( any none );
+use List::Util qw( any first none uniq );
+use NCI::OCGDCC::Utils qw( load_configs );
 use Pod::Usage qw( pod2usage );
 use Sort::Key::Natural qw( natsort natkeysort );
 use Term::ANSIColor;
@@ -32,44 +31,15 @@ $Data::Dumper::Sortkeys = sub {
 };
 
 # config
-my %config_file_info = (
-    'common' => {
-        file => "$FindBin::Bin/../common/conf/common_conf.pl",
-        plugin => 'Config::Any::Perl',
-    },
-    'cgi' => {
-        file => "$FindBin::Bin/conf/cgi_conf.pl",
-        plugin => 'Config::Any::Perl',
-    },
-);
-my @config_files = map { $_->{file} } values %config_file_info;
-my @config_file_plugins = map { $_->{plugin} } values %config_file_info;
-my $config_hashref = Config::Any->load_files({
-    files => \@config_files,
-    force_plugins => \@config_file_plugins,
-    flatten_to_hash => 1,
-});
-# use %config_file_info key instead of file path (saves typing)
-for my $config_file (keys %{$config_hashref}) {
-    $config_hashref->{
-        first {
-            $config_file_info{$_}{file} eq $config_file
-        } keys %config_file_info
-    } = $config_hashref->{$config_file};
-    delete $config_hashref->{$config_file};
-}
-for my $config_key (natsort keys %config_file_info) {
-    if (!exists($config_hashref->{$config_key})) {
-        die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-        ": could not compile/load $config_file_info{$config_key}{file}\n";
-    }
-}
+my $config_hashref = load_configs(qw(
+    cgi
+));
 # use cgi (not common) program names and program project names
 my @program_names = @{$config_hashref->{'cgi'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'cgi'}->{'program_project_names'}};
 my $data_type_dir_name = $config_hashref->{'cgi'}->{'data_type_dir_name'};
-my $cgi_dir_name = $config_hashref->{'cgi'}->{'cgi_dir_name'};
-my @cgi_data_dir_names = @{$config_hashref->{'cgi'}->{'cgi_data_dir_names'}};
+my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
+my @cgi_analysis_dir_names = @{$config_hashref->{'cgi'}->{'analysis_dir_names'}};
 my @param_groups = qw(
     programs
     projects
@@ -177,13 +147,13 @@ for my $program_name (@program_names) {
                         ? "$data_type_dir/$dataset_dir_name"
                         : $data_type_dir;
         my $dataset_cgi_dir = "$dataset_dir/$cgi_dir_name";
-        my @cgi_data_dirs;
-        for my $data_dir_name (@cgi_data_dir_names) {
-            my $cgi_data_dir = "$dataset_cgi_dir/$data_dir_name";
-            push @cgi_data_dirs, $cgi_data_dir if -d $cgi_data_dir;
+        my @cgi_analysis_dirs;
+        for my $analysis_dir_name (@cgi_analysis_dir_names) {
+            my $cgi_analysis_dir = "$dataset_cgi_dir/$analysis_dir_name";
+            push @cgi_analysis_dirs, $cgi_analysis_dir if -d $cgi_analysis_dir;
         }
         if ($debug) {
-            print STDERR "\@cgi_data_dirs:\n", Dumper(\@cgi_data_dirs);
+            print STDERR "\@cgi_analysis_dirs:\n", Dumper(\@cgi_analysis_dirs);
         }
         my @link_info;
         find({
@@ -201,7 +171,7 @@ for my $program_name (@program_names) {
                     $link,
                 ];
             },
-        }, @cgi_data_dirs);
+        }, @cgi_analysis_dirs);
         print join("\n", map { "$_->[0]\t$_->[1]" } natkeysort { $_->[1] } @link_info), "\n";
     }
 }

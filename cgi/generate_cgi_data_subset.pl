@@ -4,15 +4,15 @@ use strict;
 use warnings;
 use FindBin;
 use lib "$FindBin::Bin/../lib/perl5";
-use Config::Any;
 use File::Basename qw( fileparse );
 use File::Copy qw( copy );
 use File::Find;
 use File::Path 2.11 qw( make_path remove_tree );
 use File::Spec;
 use Getopt::Long qw( :config auto_help auto_version );
-use List::Util qw( any first uniq );
+use List::Util qw( any first none uniq );
 use NCI::OCGDCC::Config qw( :all );
+use NCI::OCGDCC::Utils qw( load_configs );
 use Pod::Usage qw( pod2usage );
 use Sort::Key::Natural qw( natsort );
 use Term::ANSIColor;
@@ -34,43 +34,14 @@ $Data::Dumper::Sortkeys = sub {
 };
 
 # config
-my %config_file_info = (
-    'common' => {
-        file => "$FindBin::Bin/../common/conf/common_conf.pl",
-        plugin => 'Config::Any::Perl',
-    },
-    'cgi' => {
-        file => "$FindBin::Bin/conf/cgi_conf.pl",
-        plugin => 'Config::Any::Perl',
-    },
-);
-my @config_files = map { $_->{file} } values %config_file_info;
-my @config_file_plugins = map { $_->{plugin} } values %config_file_info;
-my $config_hashref = Config::Any->load_files({
-    files => \@config_files,
-    force_plugins => \@config_file_plugins,
-    flatten_to_hash => 1,
-});
-# use %config_file_info key instead of file path (saves typing)
-for my $config_file (keys %{$config_hashref}) {
-    $config_hashref->{
-        first {
-            $config_file_info{$_}{file} eq $config_file
-        } keys %config_file_info
-    } = $config_hashref->{$config_file};
-    delete $config_hashref->{$config_file};
-}
-for my $config_key (natsort keys %config_file_info) {
-    if (!exists($config_hashref->{$config_key})) {
-        die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-        ": could not compile/load $config_file_info{$config_key}{file}\n";
-    }
-}
+my $config_hashref = load_configs(qw(
+    cgi
+));
 # use cgi (not common) program names and program project names
 my @program_names = @{$config_hashref->{'cgi'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'cgi'}->{'program_project_names'}};
 my $data_type_dir_name = $config_hashref->{'cgi'}->{'data_type_dir_name'};
-my $cgi_dir_name = $config_hashref->{'cgi'}->{'cgi_dir_name'};
+my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
 my @param_groups = qw(
     programs
     projects

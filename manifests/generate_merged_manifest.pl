@@ -8,8 +8,8 @@ use Cwd qw( cwd );
 use File::Find;
 use File::Spec;
 use Getopt::Long qw( :config auto_help auto_version );
-use List::Util qw( any none );
-use NCI::OCGDCC::Utils qw( manifest_by_file_path );
+use List::Util qw( any first none uniq );
+use NCI::OCGDCC::Utils qw( load_configs manifest_by_file_path );
 use Pod::Usage qw( pod2usage );
 use POSIX qw( strftime );
 use Sort::Key::Natural qw( natsort );
@@ -32,63 +32,24 @@ $Data::Dumper::Sortkeys = sub {
 };
 
 # config
-my @program_names = qw(
-    TARGET
-    CGCI
-    CTD2
-);
-my @param_groups = qw(
-    programs
-);
-my $default_manifest_file_name = 'MANIFEST.txt';
-my $manifest_user_name = 'ocg-dcc-adm';
-my $manifest_file_perm = 0440;
+my $config_hashref = load_configs(qw(
+    cgi
+    common
+    manifests
+));
+my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
+my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
+my $manifest_user_name = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_user_name'};
+my $manifest_file_mode = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_file_mode'};
+my @cgi_manifest_file_names = @{$config_hashref->{'cgi'}->{'manifest_file_names'}};
 my @manifest_file_names = (
     $default_manifest_file_name,
-    'manifest.all.unencrypted',
-    'manifest.dcc.unencrypted',
+    @cgi_manifest_file_names,
 );
-my %download_dir_config_by_program_name = (
-    'TARGET' => {
-        'dirs_to_search' => [
-            'Controlled',
-            'PreRelease/ALL/mRNA-seq/Phase2/L1',
-            'PreRelease/ALL/WGS/Phase2/L2',
-            'PreRelease/OS/WGS/L2',
-            'PreRelease/OS/WXS/L2',
-            'Public',
-        ],
-        'dirs_to_skip' => [
-            'Controlled/CGI',
-            'Controlled/OS/Brazil',
-            'Controlled/OS/Toronto',
-            'Public/DBGAP_METADATA',
-            'Public/OS/Brazil',
-            'Public/OS/Toronto',
-            'Public/Resources/copy_number_array',
-            'Public/Resources/SAMPLE_MATRIX',
-            'Public/Resources/WGS',
-        ],
-    },
-    'CGCI' => {
-        'dirs_to_search' => [
-            'Controlled',
-            'Public',
-        ],
-        'dirs_to_skip' => [
-            'Public/DBGAP_METADATA',
-            'Public/Resources',
-        ],
-    },
-    'CTD2' => {
-        'dirs_to_search' => [
-            'Public',
-        ],
-        'dirs_to_skip' => [
-            'Public/Dashboard',
-            'Public/Resources',
-        ],
-    },
+my %program_download_search_skip_dirs =
+    %{$config_hashref->{'manifests'}->{'merged_manifest'}->{'program_download_search_skip_dirs'}};
+my @param_groups = qw(
+    programs
 );
 
 my $dry_run = 0;
@@ -127,7 +88,7 @@ if (@ARGV) {
             (my $type = $param_groups[$i]) =~ s/s$//;
             $type =~ s/_/ /g;
             pod2usage(
-                -message => 
+                -message =>
                     "Invalid $type" . ( scalar(@invalid_user_params) > 1 ? 's' : '' ) . ': ' .
                     join(', ', @invalid_user_params) . "\n" .
                     'Choose from: ' . join(', ', @valid_choices),
@@ -138,7 +99,7 @@ if (@ARGV) {
     }
 }
 print STDERR "\%user_params:\n", Dumper(\%user_params) if $debug;
-my $manifest_uid = getpwnam($manifest_user_name) 
+my $manifest_uid = getpwnam($manifest_user_name)
     or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get uid for $manifest_user_name\n";
 for my $program_name (@program_names) {
     next if defined $user_params{programs} and none { $program_name eq $_ } @{$user_params{programs}};
@@ -151,7 +112,11 @@ for my $program_name (@program_names) {
         wanted => sub {
             # directories
             if (-d) {
-                if (any { $File::Find::name =~ /^$_/ } map { "$program_download_dir/$_" } @{$download_dir_config_by_program_name{$program_name}{'dirs_to_skip'}}) {
+                if (
+                    any { $File::Find::name =~ /^$_/ }
+                    map { "$program_download_dir/$_" }
+                    @{$program_download_search_skip_dirs{$program_name}{'dirs_to_skip'}}
+                ) {
                     print "Skipping $File::Find::name\n" if $verbose;
                     $File::Find::prune = 1;
                     return;
@@ -173,7 +138,7 @@ for my $program_name (@program_names) {
                 close($manifest_in_fh);
             }
         },
-    }, map { "$program_download_dir/$_" } @{$download_dir_config_by_program_name{$program_name}{'dirs_to_search'}});
+    }, map { "$program_download_dir/$_" } @{$program_download_search_skip_dirs{$program_name}{'dirs_to_search'}});
     my @sorted_merged_manifest_lines = sort manifest_by_file_path @merged_manifest_lines;
     my $date_str = strftime('%Y%m%d', localtime);
     my $merged_manifest_file_name = "${program_name}_MANIFEST_MERGED_${date_str}.txt";
@@ -183,31 +148,31 @@ for my $program_name (@program_names) {
             : cwd()
     ) . "/$merged_manifest_file_name";
     print "Writing $merged_manifest_file\n" if $verbose;
-    open(my $manifest_out_fh, '>', $merged_manifest_file) 
-        or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), 
+    open(my $manifest_out_fh, '>', $merged_manifest_file)
+        or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'),
                ": could not write open $merged_manifest_file: $!";
     print $manifest_out_fh @sorted_merged_manifest_lines;
     close($manifest_out_fh);
     if (!$dry_run) {
         set_manifest_perms(
-            $merged_manifest_file, $manifest_gid, $manifest_file_perm,
+            $merged_manifest_file, $manifest_gid, $manifest_file_mode,
         );
     }
 }
 exit;
 
 sub set_manifest_perms {
-    my ($manifest_file, $manifest_gid, $manifest_file_perm) = @_;
+    my ($manifest_file, $manifest_gid, $manifest_file_mode) = @_;
     #chown(-1, $manifest_gid, $manifest_file);
-    chown($manifest_uid, $manifest_gid, $manifest_file) 
+    chown($manifest_uid, $manifest_gid, $manifest_file)
         or warn +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": couldn't chown $manifest_file\n";
-    chmod($manifest_file_perm, $manifest_file) 
+    chmod($manifest_file_mode, $manifest_file)
         or warn +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": couldn't chmod $manifest_file\n";
 }
 
 __END__
 
-=head1 NAME 
+=head1 NAME
 
 generate_merged_manifest.pl - OCG DCC Merged Manifest Generator
 
@@ -221,6 +186,7 @@ generate_merged_manifest.pl - OCG DCC Merged Manifest Generator
  Options:
     --verbose               Be verbose
     --dry-run               Perform trial run creating new merged manifest in $PWD (sudo not required, default: off)
+    --debug                 Run in debug mode
     --help                  Display usage message and exit
     --version               Display program version and exit
 

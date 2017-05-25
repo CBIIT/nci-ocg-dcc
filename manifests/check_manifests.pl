@@ -13,10 +13,9 @@ use File::Basename qw( fileparse );
 use File::Find;
 use File::Spec;
 use Getopt::Long qw( :config auto_help auto_version );
-use List::Util qw( any all none );
-use List::MoreUtils qw( uniq );
+use List::Util qw( any all first none uniq );
 use NCI::OCGDCC::Config qw( :all );
-use NCI::OCGDCC::Utils qw( manifest_by_file_path );
+use NCI::OCGDCC::Utils qw( load_configs manifest_by_file_path );
 use Pod::Usage qw( pod2usage );
 use Sort::Key::Natural qw( natsort );
 use Term::ANSIColor;
@@ -42,139 +41,31 @@ $Data::Dumper::Sortkeys = sub {
 };
 
 # config
-my @program_names = qw(
-    TARGET
-    CGCI
-    CTD2
-);
-my %program_project_names = (
-    'TARGET' => [qw(
-        ALL
-        AML
-        CCSK
-        MDLS-NBL
-        MDLS-PPTP
-        NBL
-        OS
-        OS-Brazil
-        OS-Toronto
-        RT
-        WT
-        Resources
-    )],
-    'CGCI' => [qw(
-        BLGSP
-        HTMCP-CC
-        HTMCP-DLBCL
-        HTMCP-LC
-        MB
-        NHL
-        Resources
-    )],
-    'CTD2' => [qw(
-        Broad
-        CNIS
-        Columbia
-        CSHL
-        DFCI
-        Emory
-        FHCRC-1
-        FHCRC-2
-        Resources
-        Stanford
-        TGen
-        UCSF-1
-        UCSF-2
-        UTMDA
-        UTSW
-    )],
-);
-my @programs_w_data_types = qw(
-    TARGET
-    CGCI
-);
-my @data_types = qw(
-    biospecimen
-    Bisulfite-seq
-    ChIP-seq
-    clinical
-    copy_number_array
-    gene_expression_array
-    GWAS
-    kinome
-    methylation_array
-    miRNA_array
-    miRNA_pcr
-    misc
-    miRNA-seq
-    mRNA-seq
-    pathology_images
-    SAMPLE_MATRIX
-    targeted_capture_sequencing
-    targeted_pcr_sequencing
-    WGS
-    WXS
-);
-my @data_types_w_data_levels = qw(
-    Bisulfite-seq
-    ChIP-seq
-    copy_number_array
-    gene_expression_array
-    GWAS
-    kinome
-    methylation_array
-    miRNA_array
-    miRNA_pcr
-    miRNA-seq
-    mRNA-seq
-    targeted_capture_sequencing
-    targeted_pcr_sequencing
-    WGS
-    WXS
-);
-my $target_cgi_dir_name = 'CGI';
-my @data_level_dir_names = (
-    'L1',
-    'L2',
-    'L3',
-    'L4',
-    'METADATA',
-    $target_cgi_dir_name,
-    'DESIGN',
-);
-my $default_manifest_file_name = 'MANIFEST.txt';
-my $manifest_delimiter_regexp = qr/( (?:\*| )?)/;
-my $manifest_out_delimiter = ' *';
-my @manifest_supported_checksum_algs = qw(
-    sha256
-    md5
-);
-my %manifest_default_checksum_alg_by_program_name = (
-    'TARGET' => 'sha256',
-    'CGCI'   => 'md5',
-    'CTD2'   => 'md5',
-);
-my $manifest_user_name = 'ocg-dcc-adm';
-my $manifest_group_name = 'ocg-dcc-adm';
-my %manifest_dn_group_by_program_name = (
-    'TARGET' => 'target-dn-adm',
-    'CGCI'   => 'cgci-dn-adm',
-    'CTD2'   => 'ctd2-dn-net',
-);
-my $manifest_file_mode = 0440;
-my $target_cgi_manifest_file_mode = 0444;
-my @target_cgi_analysis_dir_names = qw(
-    PilotAnalysisPipeline2
-    OptionAnalysisPipeline2
-);
-my @target_cgi_manifest_file_names = qw(
-    manifest.all.unencrypted
-    manifest.dcc.unencrypted
-);
-my @target_cgi_skip_file_names = qw(
-    manifest.all.unencrypted.sig
-    sha256output
-);
+my $config_hashref = load_configs(qw(
+    cgi
+    common
+    manifests
+));
+my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
+my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
+my @programs_w_data_types = @{$config_hashref->{'common'}->{'programs_w_data_types'}};
+my @data_types = @{$config_hashref->{'common'}->{'data_types'}};
+my @data_types_w_data_levels = @{$config_hashref->{'common'}->{'data_types_w_data_levels'}};
+my @data_level_dir_names = @{$config_hashref->{'common'}->{'data_level_dir_names'}};
+my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
+my $manifest_delimiter_regexp = $config_hashref->{'manifests'}->{'manifest_delimiter_regexp'};
+my $manifest_out_delimiter = $config_hashref->{'manifests'}->{'manifest_out_delimiter'};
+my @manifest_supported_checksum_algs = @{$config_hashref->{'manifests'}->{'manifest_supported_checksum_algs'}};
+my %program_manifest_default_checksum_alg = %{$config_hashref->{'manifests'}->{'program_manifest_default_checksum_alg'}};
+my $manifest_user_name = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_user_name'};
+my $manifest_group_name = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_group_name'};
+my %program_manifest_dn_group_name = %{$config_hashref->{'manifests'}->{'data_filesys_info'}->{'program_manifest_dn_group_name'}};
+my $manifest_file_mode = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_file_mode'};
+my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
+my @cgi_analysis_dir_names = @{$config_hashref->{'cgi'}->{'analysis_dir_names'}};
+my @cgi_manifest_file_names = @{$config_hashref->{'cgi'}->{'manifest_file_names'}};
+my @cgi_skip_file_names = @{$config_hashref->{'cgi'}->{'skip_file_names'}};
+my $cgi_manifest_file_mode = $config_hashref->{'cgi'}->{'data_filesys_info'}->{'manifest_file_mode'};
 my @param_groups = qw(
     programs
     projects
@@ -295,11 +186,11 @@ my $manifest_gid = getgrnam($manifest_group_name)
     or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for $manifest_group_name\n";
 for my $program_name (@program_names) {
     next if defined($user_params{programs}) and none { $program_name eq $_ } @{$user_params{programs}};
-    my $manifest_download_gid = getgrnam($manifest_dn_group_by_program_name{$program_name})
+    my $manifest_download_gid = getgrnam($program_manifest_dn_group_name{$program_name})
         or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-               ": couldn't get gid for $manifest_dn_group_by_program_name{$program_name}";
+               ": couldn't get gid for $program_manifest_dn_group_name{$program_name}";
     if (!defined($manifest_checksum_alg) or $manifest_checksum_alg eq '') {
-        $manifest_checksum_alg = $manifest_default_checksum_alg_by_program_name{$program_name};
+        $manifest_checksum_alg = $program_manifest_default_checksum_alg{$program_name};
     }
     PROJECT_NAME: for my $project_name (@{$program_project_names{$program_name}}) {
         next if defined($user_params{projects}) and none { $project_name eq $_ } @{$user_params{projects}};
@@ -384,7 +275,7 @@ for my $program_name (@program_names) {
                             next unless -d $data_level_dir;
                             my $real_data_level_dir = realpath($data_level_dir);
                             # standard data directory
-                            if ($data_level_dir_name ne $target_cgi_dir_name) {
+                            if ($data_level_dir_name ne $cgi_dir_name) {
                                 find({
                                     follow => 1,
                                     wanted => sub {
@@ -437,7 +328,7 @@ for my $program_name (@program_names) {
                                           " $data_level_dir_name]\n";
                                 }
                                 my @analysis_dirs;
-                                for my $analysis_dir_name (@target_cgi_analysis_dir_names) {
+                                for my $analysis_dir_name (@cgi_analysis_dir_names) {
                                     my $analysis_dir = "$real_data_level_dir/$analysis_dir_name";
                                     push @analysis_dirs, $analysis_dir if -d $analysis_dir;
                                 }
@@ -473,7 +364,7 @@ for my $program_name (@program_names) {
                                             }
                                             check_manifests(
                                                 $data_dir,
-                                                \@target_cgi_manifest_file_names,
+                                                \@cgi_manifest_file_names,
                                                 1,
                                                 $manifest_checksum_alg,
                                                 $manifest_download_gid,
@@ -777,7 +668,7 @@ sub check_manifests {
                 set_manifest_perms(
                     $manifest_file,
                     ( !$manifest_in_download_area        ? $manifest_gid       : $manifest_download_gid ),
-                    ( defined($data_file_names_arrayref) ? $manifest_file_mode : $target_cgi_manifest_file_mode ),
+                    ( defined($data_file_names_arrayref) ? $manifest_file_mode : $cgi_manifest_file_mode ),
                 );
             }
         }
@@ -796,7 +687,7 @@ sub check_manifests {
                 set_manifest_perms(
                     $manifest_file,
                     ( !$manifest_in_download_area        ? $manifest_gid       : $manifest_download_gid ),
-                    ( defined($data_file_names_arrayref) ? $manifest_file_mode : $target_cgi_manifest_file_mode ),
+                    ( defined($data_file_names_arrayref) ? $manifest_file_mode : $cgi_manifest_file_mode ),
                 );
             }
         }
@@ -839,7 +730,7 @@ sub check_manifests {
                     my $file = $File::Find::name;
                     my $file_rel_path = File::Spec->abs2rel($file, $data_dir);
                     # skip top-level manifest files and TARGET CGI manifest sig files
-                    return if any { $file_rel_path eq $_ } (@{$manifest_file_names_arrayref}, @target_cgi_skip_file_names);
+                    return if any { $file_rel_path eq $_ } (@{$manifest_file_names_arrayref}, @cgi_skip_file_names);
                     # skip files which exist in manifests
                     return if $manifest_file_rel_paths{$file_rel_path};
                     print +(-t STDOUT ? colored('NOT IN MANIFEST', 'red') : 'NOT IN MANIFEST'), ": $file\n";
@@ -888,7 +779,7 @@ sub check_manifests {
                     set_manifest_perms(
                         $manifest_file,
                         ( !$manifest_in_download_area        ? $manifest_gid       : $manifest_download_gid ),
-                        ( defined($data_file_names_arrayref) ? $manifest_file_mode : $target_cgi_manifest_file_mode ),
+                        ( defined($data_file_names_arrayref) ? $manifest_file_mode : $cgi_manifest_file_mode ),
                     );
                 }
             }
@@ -927,7 +818,7 @@ sub check_manifests {
                 set_manifest_perms(
                     $manifest_file,
                     ( !$manifest_in_download_area        ? $manifest_gid       : $manifest_download_gid ),
-                    ( defined($data_file_names_arrayref) ? $manifest_file_mode : $target_cgi_manifest_file_mode ),
+                    ( defined($data_file_names_arrayref) ? $manifest_file_mode : $cgi_manifest_file_mode ),
                 );
             }
         }

@@ -2,15 +2,22 @@
 
 use strict;
 use warnings;
-use File::Basename qw(fileparse);
-use File::Path 2.11 qw(make_path remove_tree);
-use Getopt::Long qw(:config auto_help auto_version);
-use List::Util qw(any all none);
-use List::MoreUtils qw(uniq);
-use Pod::Usage qw(pod2usage);
-use Sort::Key::Natural qw(natsort);
+use FindBin;
+use lib "$FindBin::Bin/../lib/perl5";
+use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
+use File::Basename qw( fileparse );
+use File::Path 2.11 qw( make_path remove_tree );
+use Getopt::Long qw( :config auto_help auto_version );
+use List::Util qw( any all first none uniq );
+use NCI::OCGDCC::Utils qw( load_configs );
+use Pod::Usage qw( pod2usage );
+use Sort::Key::Natural qw( natsort );
 use Term::ANSIColor;
 use Data::Dumper;
+
+sub sig_handler {
+    die "Caught signal, exiting\n";
+}
 
 our $VERSION = '0.1';
 
@@ -28,53 +35,13 @@ $Data::Dumper::Sortkeys = sub {
 };
 
 # config
-my @program_names = qw(
-    TARGET
-    CGCI
-    CTD2
-);
-my %program_project_names = (
-    'TARGET' => [qw(
-        ALL
-        AML
-        CCSK
-        MDLS-NBL
-        MDLS-PPTP
-        NBL
-        OS
-        OS-Brazil
-        OS-Toronto
-        RT
-        WT
-        Resources
-    )],
-    'CGCI' => [qw(
-        BLGSP
-        HTMCP-CC
-        HTMCP-DLBCL
-        HTMCP-LC
-        MB
-        NHL
-        Resources
-    )],
-    'CTD2' => [qw(
-        Broad
-        CNIS
-        Columbia
-        CSHL
-        DFCI
-        Emory
-        FHCRC-1
-        FHCRC-2
-        Resources
-        Stanford
-        TGen
-        UCSF-1
-        UCSF-2
-        UTMDA
-        UTSW
-    )],
-);
+my $config_hashref = load_configs(qw(
+    cgi
+    common
+    data_util
+));
+my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
+my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
 my %program_dests = (
     'TARGET' => [qw(
         PreRelease
@@ -158,7 +125,7 @@ my @param_groups = qw(
     data_level_dirs
     dests
 );
-my $default_manifest_file_name = 'MANIFEST.txt';
+my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
 my $owner_name = 'ocg-dcc-adm';
 my $ctrld_dir_mode = 0550;
 my $ctrld_dir_mode_str = '550';
