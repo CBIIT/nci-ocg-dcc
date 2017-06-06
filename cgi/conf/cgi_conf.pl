@@ -42,7 +42,7 @@
         'adm_group_name' => 'ocg-dcc-adm',
         'data_dir_mode' => 0770,
         'data_file_mode' => 0660,
-        'dn_adm_group_name' => 'target-dn-adm',
+        'dn_adm_group_name' => 'ocg-dn-ro',
         'dn_ctrld_group_name' => 'target-dn-ctrld',
         'dn_ctrld_dir_mode' => 0550,
         'dn_ctrld_dir_mode_str' => '550',

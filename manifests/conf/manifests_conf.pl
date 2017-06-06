@@ -11,6 +11,7 @@
         'TARGET' => 'sha256',
         'CGCI'   => 'md5',
         'CTD2'   => 'md5',
+        'GMKF'   => 'md5',
     },
     'data_filesys_info' => {
         'manifest_user_name' => 'ocg-dcc-adm',
@@ -18,9 +19,10 @@
         'manifest_file_mode' => 0440,
         'manifest_file_mode_str' => '440',
         'program_manifest_dn_group_name' => {
-            'TARGET' => 'target-dn-adm',
-            'CGCI'   => 'cgci-dn-adm',
+            'TARGET' => 'ocg-dn-ro',
+            'CGCI'   => 'ocg-dn-ro',
             'CTD2'   => 'ctd2-dn-net',
+            'GMKF'   => 'ocg-dn-ro',
         },
     },
     'merged_manifest' => {
@@ -52,6 +54,7 @@
                     'Public',
                 ],
                 'dirs_to_skip' => [
+                    'Controlled/CGI',
                     'Public/DBGAP_METADATA',
                     'Public/Resources',
                 ],
@@ -62,6 +65,17 @@
                 ],
                 'dirs_to_skip' => [
                     'Public/Dashboard',
+                    'Public/Resources',
+                ],
+            },
+            'GMKF' => {
+                'dirs_to_search' => [
+                    'Controlled',
+                    'Public',
+                ],
+                'dirs_to_skip' => [
+                    'Controlled/CGI',
+                    'Public/DBGAP_METADATA',
                     'Public/Resources',
                 ],
             },
