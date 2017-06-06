@@ -2,12 +2,15 @@
 
 use strict;
 use warnings;
+use FindBin;
+use lib "$FindBin::Bin/../lib/perl5";
 use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
 use Email::Sender::Simple qw( try_to_sendmail );
 use Email::Simple;
 use Email::Simple::Creator;
 use File::ChangeNotify;
 use Getopt::Long qw( :config auto_help auto_version );
+use NCI::OCGDCC::Utils qw( load_configs );
 use Pod::Usage qw( pod2usage );
 use Sort::Key::Natural qw( natsort );
 use Sys::Hostname;
@@ -32,43 +35,19 @@ $Data::Dumper::Sortkeys = sub {
     return \@sorted_keys;
 };
 
-### config
-my $email_from_address = 'OCG DCC Data Watcher <donotreply@' . hostname . '>';
-my @email_to_addresses = qw(
-    leandro.hermida@nih.gov
-);
-my %program_info = (
-    'TARGET' => {
-        dirs_to_watch => [
-            '/local/ocg-dcc/data/TARGET',
-            '/local/ocg-dcc/download/TARGET',
-        ],
-        dirs_to_exclude => [
-            '/local/ocg-dcc/data/TARGET/.snapshot',
-            '/local/ocg-dcc/download/TARGET/.snapshot',
-        ],
-    },
-    'CGCI' => {
-        dirs_to_watch => [
-            '/local/ocg-dcc/data/CGCI',
-            '/local/ocg-dcc/download/CGCI',
-        ],
-        dirs_to_exclude => [
-            '/local/ocg-dcc/data/CGCI/.snapshot',
-            '/local/ocg-dcc/download/CGCI/.snapshot',
-        ],
-    },
-    'CTD2' => {
-        dirs_to_watch => [
-            '/local/ocg-dcc/data/CTD2',
-            '/local/ocg-dcc/download/CTD2',
-        ],
-        dirs_to_exclude => [
-            '/local/ocg-dcc/data/CTD2/.snapshot',
-            '/local/ocg-dcc/download/CTD2/.snapshot',
-        ],
-    },
-);
+# config
+my $config_hashref = load_configs(qw(
+    common
+    services
+));
+my $email_from_address =
+    $config_hashref->{'services'}->{'watch_dcc_data'}->{'email_from_address_prefix'} .
+    hostname .
+    $config_hashref->{'services'}->{'watch_dcc_data'}->{'email_from_address_suffix'};
+my @email_to_addresses = @{$config_hashref->{'services'}->{'watch_dcc_data'}->{'email_to_addresses'}};
+my @email_cc_addresses = @{$config_hashref->{'services'}->{'watch_dcc_data'}->{'email_cc_addresses'}};
+my %program_config = %{$config_hashref->{'services'}->{'watch_dcc_data'}->{'program_config'}};
+my %data_type_dir_names = map { $_ => 1 } @{$config_hashref->{'common'}->{'data_types'}};
 
 my $debug = 0;
 GetOptions(

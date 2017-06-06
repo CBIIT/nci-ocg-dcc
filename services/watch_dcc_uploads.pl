@@ -2,6 +2,8 @@
 
 use strict;
 use warnings;
+use FindBin;
+use lib "$FindBin::Bin/../lib/perl5";
 use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
 use Email::Sender::Simple qw( try_to_sendmail );
 use Email::Simple;
@@ -10,8 +12,9 @@ use File::Basename qw( dirname );
 use File::ChangeNotify;
 use File::Spec;
 use Getopt::Long qw( :config auto_help auto_version );
-use Pod::Usage qw( pod2usage );
 use List::MoreUtils qw( firstidx firstval );
+use NCI::OCGDCC::Utils qw( load_configs );
+use Pod::Usage qw( pod2usage );
 use Sort::Key::Natural qw( natsort );
 use Sys::Hostname;
 use Data::Dumper;
@@ -35,78 +38,19 @@ $Data::Dumper::Sortkeys = sub {
     return \@sorted_keys;
 };
 
-### config
-my $email_from_address = 'OCG DCC Upload Watcher <donotreply@' . hostname . '>';
-my @email_to_addresses = qw(
-    leandro.hermida@nih.gov
-    patee.gesuwan@nih.gov
-    yiwen.he@nih.gov
-);
-my @email_cc_addresses = qw(
-    tanja.davidsen@nih.gov
-    john.otridge@nih.gov
-    daniela.gerhard@nih.gov
-);
-my %program_info = (
-    'TARGET' => {
-        dirs_to_watch => [
-            '/local/ocg-dcc/upload/TARGET',
-        ],
-        dirs_to_exclude => [
-            '/local/ocg-dcc/upload/TARGET/.snapshot',
-        ],
-        email_cc_addresses => [
-            'jaime.guidryauvil@nih.gov',
-        ],
-    },
-    'CGCI' => {
-        dirs_to_watch => [
-            '/local/ocg-dcc/upload/CGCI',
-        ],
-        dirs_to_exclude => [
-            '/local/ocg-dcc/upload/CGCI/.snapshot',
-        ],
-        email_cc_addresses => [
-            'jaime.guidryauvil@nih.gov',
-            'nicholas.griner@nih.gov'
-        ],
-    },
-    'CTD2' => {
-        dirs_to_watch => [
-            '/local/ocg-dcc/upload/CTD2',
-        ],
-        dirs_to_exclude => [
-            '/local/ocg-dcc/upload/CTD2/.snapshot',
-        ],
-        email_cc_addresses => [
-            'subhashini.jagu@nih.gov',
-        ],
-    },
-);
-my %data_type_dir_names = map { $_ => 1 } qw(
-    clinical
-    copy_number_array
-    gene_expression_array
-    methylation_array
-    miRNA_array
-    miRNA_pcr
-    misc
-    SAMPLE_MATRIX
-    Bisulfite-seq
-    ChIP-seq
-    miRNA-seq
-    mRNA-seq
-    WGS
-    WXS
-    targeted_capture_sequencing
-    targeted_pcr_sequencing
-    kinome
-    GWAS
-    pathology_images
-    biospecimen
-    manifests
-);
-
+# config
+my $config_hashref = load_configs(qw(
+    common
+    services
+));
+my $email_from_address =
+    $config_hashref->{'services'}->{'watch_dcc_uploads'}->{'email_from_address_prefix'} .
+    hostname .
+    $config_hashref->{'services'}->{'watch_dcc_uploads'}->{'email_from_address_suffix'};
+my @email_to_addresses = @{$config_hashref->{'services'}->{'watch_dcc_uploads'}->{'email_to_addresses'}};
+my @email_cc_addresses = @{$config_hashref->{'services'}->{'watch_dcc_uploads'}->{'email_cc_addresses'}};
+my %program_config = %{$config_hashref->{'services'}->{'watch_dcc_uploads'}->{'program_config'}};
+my %data_type_dir_names = map { $_ => 1 } @{$config_hashref->{'common'}->{'data_types'}};
 my $debug = 0;
 GetOptions(
     'debug' => \$debug,
@@ -123,14 +67,14 @@ pod2usage(
 ) unless @ARGV;
 my $watcher_sleep_interval = shift @ARGV;
 my (@dirs_to_watch, @dirs_to_exclude);
-for my $program_name (keys %program_info) {
-    for my $dir_to_watch (@{$program_info{$program_name}{'dirs_to_watch'}}) {
+for my $program_name (keys %program_config) {
+    for my $dir_to_watch (@{$program_config{$program_name}{'dirs_to_watch'}}) {
         if (!-d $dir_to_watch) {
             die "Invalid directory $dir_to_watch\n";
         }
         push @dirs_to_watch, $dir_to_watch;
     }
-    for my $dir_to_exclude (@{$program_info{$program_name}{'dirs_to_exclude'}}) {
+    for my $dir_to_exclude (@{$program_config{$program_name}{'dirs_to_exclude'}}) {
         push @dirs_to_exclude, $dir_to_exclude;
     }
 }
@@ -148,8 +92,8 @@ while (1) {
         for my $event (@events) {
             # file create events
             if ($event->type eq 'create' and -f $event->path) {
-                for my $program_name (keys %program_info) {
-                    if (my $base_dir = firstval { $event->path =~ /^\Q$_\E/ } @{$program_info{$program_name}{'dirs_to_watch'}}) {
+                for my $program_name (keys %program_config) {
+                    if (my $base_dir = firstval { $event->path =~ /^\Q$_\E/ } @{$program_config{$program_name}{'dirs_to_watch'}}) {
                         my $event_dir = -d $event->path ? $event->path : dirname($event->path);
                         my @event_dir_parts = File::Spec->splitdir($event_dir);
                         my $data_type_dir_name_idx = firstidx { exists $data_type_dir_names{$_} } @event_dir_parts;
@@ -187,7 +131,7 @@ while (1) {
                     header => [
                         From => $email_from_address,
                         To => join(',', @email_to_addresses),
-                        Cc => join(',', @email_cc_addresses, @{$program_info{$program_name}{'email_cc_addresses'}}),
+                        Cc => join(',', @email_cc_addresses, @{$program_config{$program_name}{'email_cc_addresses'}}),
                         Subject => "New $program_name Uploads" . ($dataset_name ? ": $dataset_name" : ''),
                     ],
                     body => "The following data has recently been uploaded to $program_name" .
