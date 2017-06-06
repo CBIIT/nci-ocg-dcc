@@ -192,9 +192,8 @@
                     'Email::Abstract::EmailSimple',
                 ],
                 'file_paths_from_base' => [
-                    'cgi/conf/cgi_conf.pl',
                     'common/conf/common_conf.pl',
-                    'data_util/conf/data_util_conf.pl',
+                    'services/conf/services_conf.pl',
                 ],
             },
             'watch_dcc_uploads' => {
@@ -211,9 +210,8 @@
                     'Email::Abstract::EmailSimple',
                 ],
                 'file_paths_from_base' => [
-                    'cgi/conf/cgi_conf.pl',
                     'common/conf/common_conf.pl',
-                    'data_util/conf/data_util_conf.pl',
+                    'services/conf/services_conf.pl',
                 ],
             },
         },

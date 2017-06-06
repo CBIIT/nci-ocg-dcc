@@ -85,7 +85,7 @@ $pp_cmd_str .= "-c -o $script_basename $script_file";
 print "$pp_cmd_str\n";
 system($pp_cmd_str) == 0
     or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-           ": command failed, exit code: ", $? >> 8, "\n";
+           ": pp compile failed, exit code: ", $? >> 8, "\n";
 exit;
 
 __END__

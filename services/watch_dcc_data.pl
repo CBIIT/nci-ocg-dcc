@@ -65,14 +65,14 @@ pod2usage(
 ) unless @ARGV;
 my $watcher_sleep_interval = shift @ARGV;
 my (@dirs_to_watch, @dirs_to_exclude);
-for my $program_name (keys %program_info) {
-    for my $dir_to_watch (@{$program_info{$program_name}{'dirs_to_watch'}}) {
+for my $program_name (keys %program_config) {
+    for my $dir_to_watch (@{$program_config{$program_name}{'dirs_to_watch'}}) {
         if (!-d $dir_to_watch) {
             die "Invalid directory $dir_to_watch\n";
         }
         push @dirs_to_watch, $dir_to_watch;
     }
-    for my $dir_to_exclude (@{$program_info{$program_name}{'dirs_to_exclude'}}) {
+    for my $dir_to_exclude (@{$program_config{$program_name}{'dirs_to_exclude'}}) {
         push @dirs_to_exclude, $dir_to_exclude;
     }
 }
