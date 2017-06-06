@@ -25,27 +25,28 @@ our $VERSION = '0.1';
 
 sub load_configs {
     my @types = @_;
-    my @valid_types = qw(
-        cgi
-        common
-        data_util
-        mage_tab
-        manifests
-        services
-    );
     my %config_file_info;
     for my $type (natsort @types) {
-        if (any { $type eq $_ } @valid_types) {
+        if (
+            defined($ENV{PAR_TEMP}) and
+            -f "$ENV{PAR_TEMP}/inc/${type}_conf.pl"
+        ) {
             $config_file_info{$type} = {
-                file => defined($ENV{PAR_TEMP})
-                    ? "$ENV{PAR_TEMP}/inc/${type}_conf.pl"
-                    : "$BASE_DIR/$type/conf/${type}_conf.pl",
+                file => "$ENV{PAR_TEMP}/inc/${type}_conf.pl",
+                plugin => 'Config::Any::Perl',
+            };
+        }
+        elsif (
+            -f "$SCRIPT_BASE_DIR/$type/conf/${type}_conf.pl"
+        ) {
+            $config_file_info{$type} = {
+                file => "$SCRIPT_BASE_DIR/$type/conf/${type}_conf.pl",
                 plugin => 'Config::Any::Perl',
             };
         }
         else {
             die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-                ": invalid config type '$type'";
+                ": invalid config type (or forgot to include in compile): $type";
         }
     }
     my @config_files = map { $_->{file} } values %config_file_info;
@@ -131,7 +132,30 @@ sub get_barcode_info {
                       $tissue_code eq '99' ? 'Granulocyte' :
                       undef;
     die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-        ": unknown tissue code $tissue_code\n" unless defined $tissue_type;
+        ": $barcode unknown tissue code $tissue_code\n" unless defined $tissue_type;
+    my $tissue_name = $tissue_code eq '01' ? 'Solid Tumor' :
+                      $tissue_code eq '02' ? 'Solid Tumor' :
+                      $tissue_code eq '03' ? 'Peripheral Blood' :
+                      $tissue_code eq '04' ? 'Bone Marrow' :
+                      $tissue_code eq '06' ? 'Metastatic Tumor' :
+                      $tissue_code eq '07' ? 'Metastatic Tumor' :
+                      $tissue_code eq '08' ? 'Post-Neo Adjuvant Therapy Tumor' :
+                      $tissue_code eq '09' ? 'Bone Marrow' :
+                      $tissue_code eq '10' ? 'Peripheral Blood' :
+                      $tissue_code eq '11' ? 'Tissue' :
+                      $tissue_code eq '13' ? 'EBV Immortalized Normal' :
+                      $tissue_code eq '14' ? 'Bone Marrow' :
+                      $tissue_code eq '15' ? 'Bone Marrow' :
+                      $tissue_code eq '20' ? 'Cell Line' :
+                      $tissue_code eq '40' ? 'Peripheral Blood' :
+                      $tissue_code eq '41' ? 'Bone Marrow' :
+                      $tissue_code eq '42' ? 'Peripheral Blood' :
+                      $tissue_code eq '50' ? 'Cell Line' :
+                      $tissue_code eq '60' ? 'Xenograft' :
+                      $tissue_code eq '61' ? 'Xenograft' :
+                      undef;
+    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+        ": $barcode unknown tissue code $tissue_code\n" unless defined $tissue_name;
     my $cgi_tissue_type = $tissue_type;
     # special fix for TARGET-10-PANKMB
     if ($case_id eq 'TARGET-10-PANKMB' and $tissue_type eq 'Primary') {
@@ -162,6 +186,7 @@ sub get_barcode_info {
         tissue_sort_code => $tissue_sort_code,
         tissue_type => $tissue_type,
         cgi_tissue_type => $cgi_tissue_type,
+        tissue_name => $tissue_name,
         xeno_cell_line_code => $xeno_cell_line_code,
         nucleic_acid_code => $nucleic_acid_code,
         nucleic_acid_ltr => $nucleic_acid_ltr,
