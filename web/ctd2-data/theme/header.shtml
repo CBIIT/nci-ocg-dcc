@@ -1,0 +1,10 @@
+<div class="wrapper">
+<!-- we open the `wrapper` element here, but close it in the `footer.html` file -->
+<div style="float:left;display:inline-block;padding-top:20px">
+    <h1>NCI CTD<sup>2</sup> Data</h1>
+    <!--#echo var="REQUEST_URI"-->
+</div>
+<div style="float:right;padding-top:10px;padding-bottom:10px;">
+    <a href="https://ocg.cancer.gov/programs/ctd2" target="_blank"><img style="height:80px;" alt="CTD<sup>2</sup> Banner" src="/.theme/logos/CTD2_Banner.jpg"/></a>
+</div>
+<div style="clear:both;"></div>

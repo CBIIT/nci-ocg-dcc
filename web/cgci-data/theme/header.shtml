@@ -1,0 +1,10 @@
+<div class="wrapper">
+<!-- we open the `wrapper` element here, but close it in the `footer.html` file -->
+<div style="float:left;display:inline-block;padding-top:20px">
+    <h1>NCI CGCI Data</h1>
+    <!--#echo var="REQUEST_URI"-->
+</div>
+<div style="float:right;padding-top:10px;padding-bottom:10px;">
+    <a href="https://ocg.cancer.gov/programs/cgci" target="_blank"><img style="height:80px;" alt="CGCI Banner" src="/.theme/logos/CGCI_Banner.jpg"/></a>
+</div>
+<div style="clear:both;"></div>

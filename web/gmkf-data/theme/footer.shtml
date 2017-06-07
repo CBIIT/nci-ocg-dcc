@@ -1,0 +1,12 @@
+<!--/.postlisting-->
+</div>
+<!--/.wrapper-->
+<div class="footer">
+	<div><a href="http://cbiit.nci.nih.gov/" target="_blank"><img alt="link to cbiit.nci.nih.gov" style="height:40px;" src="/.theme/logos/CBIIT-54px-Logo-COLOR-Raster-RGB-cropped.png" /></a></div>
+    <div style="margin-top:10px">NIH... Turning Discovery Into Health &reg;</div>
+</div>
+<!--/.footer-->
+<script>
+// grab the 2nd child and add the parent class. tr:nth-child(2)
+document.getElementsByTagName('tr')[1].className = 'parent';
+</script>

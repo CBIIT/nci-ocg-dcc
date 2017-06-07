@@ -1,0 +1,145 @@
+/*------------------------------------*\
+    Apaxy
+\*------------------------------------*/
+/* @import url('//fonts.googleapis.com/css?family=Open+Sans'); */
+@import url('//fonts.googleapis.com/css?family=Inconsolata');
+/*
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata'), url(http://fonts.gstatic.com/s/inconsolata/v10/BjAYBlHtW3CJxDcjzrnZCIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+*/
+/* Have to use @import for the font, as you can only specify a single stylesheet */
+* {
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+       -moz-box-sizing:border-box;
+            box-sizing:border-box; 
+}
+
+html {
+    min-height:100%;
+    border-top:10px solid #ECEEF1;
+    border-bottom:10px solid #ECEEF1;
+    color:#61666C;
+    font-size:1em;
+    /* font-family:'Open Sans', sans-serif; */
+    font-family:Inconsolata, monospace;
+    /* line-height:2em; */
+}
+body {
+    -webkit-backface-visibility:hidden;
+    background-image:url(https://ocg.cancer.gov/sites/all/themes/ocg/images/bkg-tile.png);
+    background-repeat:repeat;
+}
+code {
+    font-family:consolas,monospace;
+}
+a {
+    color:#61666C;
+    text-decoration:none;
+    border:none;
+    outline:none;
+}
+a:hover {
+    color:#2A2A2A;
+}
+img {
+    border:none;
+    outline:none;
+}
+/*------------------------------------*\
+    Wrapper
+\*------------------------------------*/
+.wrapper {
+    margin:0 auto;
+    padding-right:10px;
+    padding-left:10px;
+    max-width:1000px;
+}
+/*------------------------------------*\
+    Demo block
+\*------------------------------------*/
+.block {
+    font-size:.875em;
+    margin:20px 0;
+    padding:20px;
+    color:#9099A3;
+}
+/*------------------------------------*\
+    Table (directory listing)
+\*------------------------------------*/
+table {
+    width:100%;
+    border-collapse:collapse;
+    font-size:1em;
+}
+tr {
+    outline:0;
+    border:0;
+}
+tr:hover td {
+    background:#F6F6F6;
+}
+th {
+    text-align:left;
+    font-size:.875em;
+}
+/* 2nd Column: Filename */
+th + th {
+    width:85%;
+}
+/* 3rd Column: Last Modified */
+th + th + th {
+}
+/* 4th Column: Size */
+th + th + th + th {
+}
+tr td:nth-of-type(1) {
+    padding-left:10px;
+    padding-right:10px;
+}
+tr td:nth-of-type(2) {
+    padding-right:10px;
+}
+tr td:nth-of-type(3) {
+    padding-right:10px;
+    white-space:nowrap;
+}
+tr td:nth-of-type(4) {
+    white-space:nowrap;
+}
+td {
+    padding:5px 0;
+    outline:0;
+    border:0;
+    border-bottom:1px solid #edf1f5;
+    vertical-align:middle;
+    text-align:left;
+    -webkit-transition:background 300ms ease;
+       -moz-transition:background 300ms ease;
+        -ms-transition:background 300ms ease;
+         -o-transition:background 300ms ease;
+            transition:background 300ms ease;
+}
+td a {
+    display: block;
+}
+tr.parent a[href^="/"] {
+    color:#9099A3;
+}
+.parent a[href^="/"]:hover {
+    color:#2281D0;
+}
+/*------------------------------------*\
+    Footer
+\*------------------------------------*/
+.footer {
+    text-align:center;
+    font-size:.75em;
+    padding-top:20px;
+    padding-bottom:20px;
+}
