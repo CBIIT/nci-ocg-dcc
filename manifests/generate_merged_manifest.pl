@@ -48,7 +48,7 @@ my @manifest_file_names = (
     @cgi_manifest_file_names,
 );
 my %program_download_search_skip_dirs =
-    %{$config_hashref->{'manifests'}->{'merged_manifest'}->{'program_download_search_skip_dirs'}};
+    %{$config_hashref->{'manifests'}->{'generate_merged_manifest'}->{'program_download_search_skip_dirs'}};
 my @param_groups = qw(
     programs
 );

@@ -19,7 +19,7 @@
         'manifest_file_mode' => 0440,
         'manifest_file_mode_str' => '440',
     },
-    'merged_manifest' => {
+    'generate_merged_manifest' => {
         'program_download_search_skip_dirs' => {
             'TARGET' => {
                 'dirs_to_search' => [

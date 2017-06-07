@@ -164,7 +164,7 @@
                     'manifests/conf/manifests_conf.pl',
                 ],
             },
-            'generate_merged_manifests' => {
+            'generate_merged_manifest' => {
                 'modules' => [
                     'Config::Any::Perl',
                 ],
