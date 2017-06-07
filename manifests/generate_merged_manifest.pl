@@ -38,6 +38,7 @@ my $config_hashref = load_configs(qw(
     manifests
 ));
 my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
+my %program_dn_group_name = %{$config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_group_name'}};
 my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
 my $manifest_user_name = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_user_name'};
 my $manifest_file_mode = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_file_mode'};
@@ -103,8 +104,9 @@ my $manifest_uid = getpwnam($manifest_user_name)
     or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get uid for $manifest_user_name\n";
 for my $program_name (@program_names) {
     next if defined $user_params{programs} and none { $program_name eq $_ } @{$user_params{programs}};
-    my $manifest_gid = getgrnam("\L$program_name\E-dn-adm")
-        or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for \L$program_name\E-dn-adm\n";
+    my $manifest_gid = getgrnam($program_dn_group_name{$program_name})
+        or die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'), 
+               ": couldn't get gid for $program_dn_group_name{$program_name}\n";
     my $program_download_dir = "/local/ocg-dcc/download/$program_name";
     my @merged_manifest_lines;
     find({
@@ -178,7 +180,7 @@ generate_merged_manifest.pl - OCG DCC Merged Manifest Generator
 
 =head1 SYNOPSIS
 
- generate_merged_manifest.pl [options] <program name(s)>
+ generate_merged_manifest.pl <program name(s)> [options]
  
  Parameters:
     <program name(s)>       Comma-separated list of program name(s) (optional, default: all programs)
