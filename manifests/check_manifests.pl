@@ -52,6 +52,7 @@ my @programs_w_data_types = @{$config_hashref->{'common'}->{'programs_w_data_typ
 my @data_types = @{$config_hashref->{'common'}->{'data_types'}};
 my @data_types_w_data_levels = @{$config_hashref->{'common'}->{'data_types_w_data_levels'}};
 my @data_level_dir_names = @{$config_hashref->{'common'}->{'data_level_dir_names'}};
+my %program_dn_group_name = %{$config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_group_name'}};
 my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
 my $manifest_delimiter_regexp = $config_hashref->{'manifests'}->{'manifest_delimiter_regexp'};
 my $manifest_out_delimiter = $config_hashref->{'manifests'}->{'manifest_out_delimiter'};
@@ -59,7 +60,6 @@ my @manifest_supported_checksum_algs = @{$config_hashref->{'manifests'}->{'manif
 my %program_manifest_default_checksum_alg = %{$config_hashref->{'manifests'}->{'program_manifest_default_checksum_alg'}};
 my $manifest_user_name = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_user_name'};
 my $manifest_group_name = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_group_name'};
-my %program_manifest_dn_group_name = %{$config_hashref->{'manifests'}->{'data_filesys_info'}->{'program_manifest_dn_group_name'}};
 my $manifest_file_mode = $config_hashref->{'manifests'}->{'data_filesys_info'}->{'manifest_file_mode'};
 my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
 my @cgi_analysis_dir_names = @{$config_hashref->{'cgi'}->{'analysis_dir_names'}};
@@ -186,9 +186,9 @@ my $manifest_gid = getgrnam($manifest_group_name)
     or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for $manifest_group_name\n";
 for my $program_name (@program_names) {
     next if defined($user_params{programs}) and none { $program_name eq $_ } @{$user_params{programs}};
-    my $manifest_download_gid = getgrnam($program_manifest_dn_group_name{$program_name})
+    my $manifest_download_gid = getgrnam($program_dn_group_name{$program_name})
         or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
-               ": couldn't get gid for $program_manifest_dn_group_name{$program_name}";
+               ": couldn't get gid for $program_dn_group_name{$program_name}";
     if (!defined($manifest_checksum_alg) or $manifest_checksum_alg eq '') {
         $manifest_checksum_alg = $program_manifest_default_checksum_alg{$program_name};
     }

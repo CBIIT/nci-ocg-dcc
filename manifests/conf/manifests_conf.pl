@@ -18,12 +18,6 @@
         'manifest_group_name' => 'ocg-dcc-adm',
         'manifest_file_mode' => 0440,
         'manifest_file_mode_str' => '440',
-        'program_manifest_dn_group_name' => {
-            'TARGET' => 'ocg-dn-ro',
-            'CGCI'   => 'ocg-dn-ro',
-            'CTD2'   => 'ctd2-dn-net',
-            'GMKF'   => 'ocg-dn-ro',
-        },
     },
     'merged_manifest' => {
         'program_download_search_skip_dirs' => {

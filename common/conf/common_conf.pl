@@ -122,6 +122,12 @@
         'adm_owner_name' => 'ocg-dcc-adm',
         'adm_group_name' => 'ocg-dcc-adm',
         'dn_ro_group_name' => 'ocg-dn-ro',
+        'program_dn_group_name' => {
+            'TARGET' => 'ocg-dn-ro',
+            'CGCI'   => 'ocg-dn-ro',
+            'CTD2'   => 'ctd2-dn-net',
+            'GMKF'   => 'ocg-dn-ro',
+        },
         'program_dn_ctrld_group_name' => {
             'TARGET' => 'target-dn-ctrld',
             'CGCI'   => 'cgci-dn-ctrld',
