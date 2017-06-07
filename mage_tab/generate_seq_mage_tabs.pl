@@ -94,8 +94,8 @@ my @list = ();
 my $dist = 0;
 my $clean = 0;
 my $rescan_cgi = 0;
-my $use_cached_run_info = 0;
-my $use_cached_xml = 0;
+my $get_latest_run_info = 0;
+my $get_latest_xml = 0;
 my $verbose = 0;
 my @debug = ();
 GetOptions(
@@ -103,8 +103,8 @@ GetOptions(
     'dist' => \$dist,
     'clean' => \$clean,
     'rescan-cgi' => \$rescan_cgi,
-    'use-cached-run-info' => \$use_cached_run_info,
-    'use-cached-xml' => \$use_cached_xml,
+    'get-latest-run-info' => \$get_latest_run_info,
+    'get-latest-xml' => \$get_latest_xml,
     'verbose' => \$verbose,
     'debug:s' => \@debug,
 ) || pod2usage(-verbose => 0);
@@ -338,7 +338,7 @@ for my $program_name (@program_names) {
                     for my $dbgap_study_id (natsort @{$mt_config_hashref->{project}->{'dbGaP_study_ids'}}) {
                         print "Getting SRA run info for $dbgap_study_id\n";
                         my $run_info_storable_file = "$CACHE_DIR/sra/${dbgap_study_id}_run_info_hashref.pls";
-                        if (!-f $run_info_storable_file or !$use_cached_run_info) {
+                        if (!-f $run_info_storable_file or $get_latest_run_info) {
                             my $response = $ua->get(
                                 #"http://trace.ncbi.nlm.nih.gov/Traces/study/?acc=$dbgap_study_id&get=csv"
                                 #"http://trace.ncbi.nlm.nih.gov/Traces/study/be/nph-run_selector.cgi?&acc=$dbgap_study_id&get=csv"
@@ -2185,7 +2185,7 @@ for my $program_name (@program_names) {
                 for my $exp_id (@exp_ids) {
                     my $exp_pkg_set_xml;
                     my $exp_pkg_set_storable_file = "$CACHE_DIR/sra/xml/${exp_id}.pls";
-                    if (!-f $exp_pkg_set_storable_file or !$use_cached_xml) {
+                    if (!-f $exp_pkg_set_storable_file or $get_latest_xml) {
                         my $response = $ua->get(
                             "http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?save=efetch&db=sra&rettype=xml&term=$exp_id"
                         );
@@ -5108,8 +5108,8 @@ generate_seq_mage_tabs.pl - Sequencing Dataset MAGE-TAB Generator
     --dist                  Distribute generated MAGE-TAB archives to DCC master data area
     --clean                 Clean up older versions of MAGE-TAB archives in DCC master data area (only works with --dist)
     --rescan-cgi            Rescan CGI data tree (default: use cached data store if it exists)
-    --use-cached-run-info   Use cached SRA run info (default: download latest run info table from SRA)
-    --use-cached-xml        Use cached SRA-XML files (default: download latest SRA-XML from SRA)
+    --get-latest-run-info   Download latest SRA run info (default: use cached SRA run info)
+    --get-latest-xml        Download latest SRA-XML files (default: use cached SRA-XML)
     --verbose               Be verbose
     --help                  Display usage message and exit
     --version               Display program version and exit
