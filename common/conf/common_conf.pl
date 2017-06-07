@@ -100,15 +100,6 @@
         WGS
         WXS
     )],
-    'seq_data_types' => [qw(
-        Bisulfite-seq
-        ChIP-seq
-        miRNA-seq
-        mRNA-seq
-        Targeted-Capture
-        WGS
-        WXS
-    )],
     'data_level_dir_names' => [qw(
         L1
         L2

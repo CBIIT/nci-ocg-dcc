@@ -54,9 +54,14 @@ my $config_hashref = load_configs(qw(
 ));
 my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
-my @data_types = @{$config_hashref->{'common'}->{'seq_data_types'}};
+my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
+my @cgi_analysis_dir_names = @{$config_hashref->{'cgi'}->{'analysis_dir_names'}};
+my @data_types = @{$config_hashref->{'mage_tab'}->{'data'}->{'seq_data_types'}};
+my @search_data_level_dir_names = @{$config_hashref->{'mage_tab'}->{'data'}->{'search_data_level_dir_names'}};
 my @mage_tab_idf_row_names = @{$config_hashref->{'mage_tab'}->{'idf'}->{'row_names'}};
 my %mage_tab_sdrf_base_col_names_by_type = %{$config_hashref->{'mage_tab'}->{'sdrf'}->{'base_col_names_by_type'}};
+my $sra_exp_library_name_delimiter = $config_hashref->{'mage_tab'}->{'sra'}->{'exp_library_name_delimiter'};
+my @maf_barcode_col_names = @{$config_hashref->{'mage_tab'}->{'data'}->{'maf_barcode_col_names'}};
 my $protocol_data_store = "$FindBin::Bin/data/protocols";
 my %list_types = map { $_ => 1 } qw(
     all
@@ -76,20 +81,6 @@ my %debug_types = map { $_ => 1 } qw(
     idf
     sdrf
     sdrf_step
-);
-my $sra_exp_library_name_delimiter = ',';
-my @data_level_dir_names = qw(
-    L3
-    L4
-);
-my $cgi_dir_name = 'CGI';
-my @cgi_analysis_dir_names = qw(
-    PilotAnalysisPipeline2
-    OptionAnalysisPipeline2
-);
-my @maf_barcode_col_names = qw(
-    Tumor_Sample_Barcode
-    Matched_Norm_Sample_Barcode
 );
 my @param_groups = qw(
     programs
@@ -752,7 +743,7 @@ for my $program_name (@program_names) {
                 );
                 my $num_files_processed = 0;
                 print "Getting data file information $dataset_dir\n";
-                for my $data_level_dir_name (@data_level_dir_names) {
+                for my $data_level_dir_name (@search_data_level_dir_names) {
                     my $data_level_dir = "$dataset_dir/$data_level_dir_name";
                     if (!-d $data_level_dir) {
                         push @dcc_missing_data_level_dirs, $data_level_dir;

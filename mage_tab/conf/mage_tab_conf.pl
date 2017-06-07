@@ -6,6 +6,25 @@ use NCI::OCGDCC::Config qw( :all );
 
 # mage-tab generator config
 {
+    'data' => {
+        'seq_data_types' => [qw(
+            Bisulfite-seq
+            ChIP-seq
+            miRNA-seq
+            mRNA-seq
+            Targeted-Capture
+            WGS
+            WXS
+        )],
+        'search_data_level_dir_names' => [qw(
+            L3
+            L4
+        )],
+        'maf_barcode_col_names' => [qw(
+            Tumor_Sample_Barcode
+            Matched_Norm_Sample_Barcode
+        )],
+    },
     'sra' => {
         'sra2dcc_center_name' => {
             'BCCAGSC' => 'BCCA',
@@ -30,6 +49,7 @@ use NCI::OCGDCC::Config qw( :all );
             'ILLUMINA' => 'Illumina',
             'ION_TORRENT' => 'IonTorrent',
         },
+        'exp_library_name_delimiter' => ',',
     },
     'default' => {
         'term_source_ref' => 'EFO',
