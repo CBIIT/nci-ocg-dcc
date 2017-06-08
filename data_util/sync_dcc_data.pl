@@ -202,8 +202,8 @@ if (@ARGV) {
         elsif ($param_groups[$i] eq 'dests') {
             my @program_dests = uniq(
                 defined($user_params{programs})
-                    ? map { @{$program_dests{$_}} } @{$user_params{programs}}
-                    : map { @{$program_dests{$_}} } @program_names
+                    ? map { @{$program_dests{$_}} } grep { defined($program_dests{$_}) } @{$user_params{programs}}
+                    : map { @{$program_dests{$_}} } grep { defined($program_dests{$_}) } @program_names
             );
             for my $dest (@program_dests) {
                 push @valid_user_params, $dest if any { m/^$dest$/i } @user_params;
@@ -224,6 +224,13 @@ if (@ARGV) {
         }
         else {
             @valid_user_params = @user_params;
+        }
+        if (!@valid_choices) {
+            (my $type = $param_groups[$i]) =~ s/s$//;
+            pod2usage(
+                -message => "Config missing for $type: check config file",
+                -verbose => 0,
+            );
         }
         if (@invalid_user_params) {
             (my $type = $param_groups[$i]) =~ s/s$//;
@@ -582,7 +589,7 @@ sub check_data_type_sync_config_node {
         $data_type,
         $config_section_hashref,
     ) = @_;
-    my @dests = natsort uniq(map { @{$program_dests{$_}} } @programs_w_data_types);
+    my @dests = natsort uniq(map { @{$program_dests{$_}} } grep { defined($program_dests{$_}) } @programs_w_data_types);
     for my $dest (map(lc, @dests)) {
         if (defined($config_section_hashref->{$dest})) {
             if (defined($config_section_hashref->{$dest}->{excludes})) {

@@ -23,6 +23,12 @@
                 Public
                 Release
             )],
+            'GMKF' => [qw(
+                PreRelease
+                Controlled
+                Public
+                Release
+            )],
         },
         'data_type_sync_config' => {
             'biospecimen' => {
@@ -553,6 +559,16 @@
                                 'no_data' => 1,
                             },
                         },
+                    },
+                },
+            },
+            'shipping_manifests' => {
+                'default' => {
+                    'controlled' => {
+                        'no_data' => 1,
+                    },
+                    'public' => {
+                        'no_data' => 1,
                     },
                 },
             },
