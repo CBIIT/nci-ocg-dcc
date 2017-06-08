@@ -3928,7 +3928,7 @@ use NCI::OCGDCC::Config qw( :all );
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-UnstrandedLite:01',
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-rRnaDepleted-StrandSpecific:01',
                                         },
                                     },
                                 },
@@ -5395,6 +5395,27 @@ use NCI::OCGDCC::Config qw( :all );
                         'exp_centers_incl_design_desc_protocol' => [
                             'BCCA',
                         ],
+                        'exp_center_library_data_qc_warning' => {
+                            'BCCA' => {
+                                'm17797' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17802' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17805' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17807' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17819' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17824' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17827' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17832' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17836' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17841' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17848' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17851' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17856' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17859' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17864' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17867' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                                'm17872' => 'LOW SEQUENCE YIELD/DIVERSITY (aligned reads < 1000000)',
+                            },
+                        },
                     },
                 },
                 'mRNA-seq' => {
