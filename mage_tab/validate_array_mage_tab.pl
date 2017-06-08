@@ -676,11 +676,11 @@ __END__
 
 =head1 NAME 
 
-validate_mage_tab.pl - OCG DCC MAGE-TAB-to-Dataset Validator
+validate_array_mage_tab.pl - OCG DCC Microarray MAGE-TAB-to-Dataset Validator
 
 =head1 SYNOPSIS
 
- validate_mage_tab.pl [options] <dataset directory path>
+ validate_array_mage_tab.pl [options] <dataset directory path>
  
  Parameters:
     <dataset directory path>            Path to dataset directory containing L1, L2, L3, L4, METADATA directories
