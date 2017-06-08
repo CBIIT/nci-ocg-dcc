@@ -201,39 +201,58 @@ use NCI::OCGDCC::Config qw( :all );
         'protocol_center_info_by_name' => {
             'BCCA' => {
                 authority => 'bcgsc.ca',
+                full_name => 'BC Cancer Agency Michael Smith Genome Sciences Centre',
             },
             'BCG-Danvers' => {
                 authority => 'beckmangenomics.com',
+                full_name => 'Beckman Coulter Genomics',
             },
             'BCM' => {
                 authority => 'bcm.edu',
+                full_name => 'Baylor College of Medicine',
             },
             'Broad' => {
                 authority => 'broadinstitute.org',
+                full_name => 'The Broad Institute',
             },
             'CGI' => {
                 authority => 'completegenomics.com',
+                full_name => 'Complete Genomics Inc.',
+            },
+            'FHCRC' => {
+                authority => 'fredhutch.org',
+                full_name => 'Fred Hutchinson Cancer Research Center',
             },
             'HAIB' => {
                 authority => 'hudsonalpha.org',
+                full_name => 'Hudson Alpha Institute for Biotechnology',
+            },
+            'NCH' => {
+                authority => 'nationwidechildrens.org',
+                full_name => 'Nationwide Children\'s Hospital Biospecimen Core Repository',
             },
             'NCI-Khan' => {
                 authority => 'nci.nih.gov',
                 namespace_prefix => 'CCR.Khan',
+                full_name => 'NCI Center for Cancer Research Khan Lab',
             },
             'NCI-Meltzer' => {
                 authority => 'nci.nih.gov',
                 namespace_prefix => 'CCR.Meltzer',
+                full_name => 'NCI Center for Cancer Research Meltzer Lab',
             },
             'NCI-Meerzaman' => {
                 authority => 'nci.nih.gov',
                 namespace_prefix => 'CBIIT.Meerzaman',
+                full_name => 'NCI Center for Biomedical Informatics Meerzaman Lab',
             },
             'StJude' => {
                 authority => 'stjude.org',
+                full_name => 'St. Jude Children\'s Research Hospital',
             },
             'UHN' => {
                 authority => 'uhnresearch.ca',
+                full_name => 'University Health Network Princess Margaret Cancer Centre',
             },
         },
         'term_sources' => [
@@ -3509,19 +3528,6 @@ use NCI::OCGDCC::Config qw( :all );
         'TARGET' => {
             'ALL' => {
                 'miRNA-seq' => {
-                    'Phase1' => {
-                        'protocol_info' => {
-                            'ReadAlign' => {
-                                'BCCA' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:miRNAseq-ReadAlign-BWA-Picard:01',
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
                     'Phase2' => {
                         'idf' => {
                             'contacts' => [
@@ -3556,11 +3562,75 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-TRIzol:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ReadAlign' => {
                                 'BCCA' => {
                                     'default' => {
                                         'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:WGS-ReadAlign-BWA-Picard:01',
+                                            'name' => 'bcgsc.ca:Protocol:miRNAseq-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    'Phase3' => {
+                        'idf' => {
+                            'investigation_title' => 'TARGET: Ambiguous Lineage Acute Leukemia (ALAL) Phase III miRNA-seq',
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
+                                    },
+                                },
+                                'center_name' => 'StJude',
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:miRNAseq-ReadAlign-BWA-Picard:01',
                                         },
                                     },
                                 },
@@ -3604,13 +3674,13 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'protocol_info' => {
                             'Extraction' => {
-                                'StJude' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
-                                        },
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
                                     },
                                 },
+                                'center_name' => 'StJude',
                             },
                             'LibraryPrep' => {
                                 'BCCA' => {
@@ -3707,13 +3777,13 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'protocol_info' => {
                             'Extraction' => {
-                                'StJude' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
-                                        },
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-TRIzol:01',
                                     },
                                 },
+                                'center_name' => 'NCH',
                             },
                             'LibraryPrep' => {
                                 'BCCA' => {
@@ -3812,7 +3882,7 @@ use NCI::OCGDCC::Config qw( :all );
                     },
                     'Phase3' => {
                         'idf' => {
-                            'investigation_title' => 'TARGET: Acute Lymphoblastic Leukemia (ALL) Phase III mRNA-seq',
+                            'investigation_title' => 'TARGET: Ambiguous Lineage Acute Leukemia (ALAL)  Phase III mRNA-seq',
                             'contacts' => [
                                 {
                                     'last_name' => 'Ma',
@@ -3845,6 +3915,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'stjude.org:Protocol:RNA-Extraction-TRIzol:01',
+                                    },
+                                },
+                                'center_name' => 'StJude',
+                            },
                             'LibraryPrep' => {
                                 'BCCA' => {
                                     'default' => {
@@ -3948,12 +4027,12 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'protocol_info' => {
                             'Extraction' => {
-                                'BCCA' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
-                                        },
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-QIAamp:01',
                                     },
+                                    'center_name' => 'NCH',
                                 },
                             },
                             'ReadAlign' => {
@@ -3994,7 +4073,7 @@ use NCI::OCGDCC::Config qw( :all );
                     },
                     'Phase3' => {
                         'idf' => {
-                            'investigation_title' => 'TARGET: Acute Lymphoblastic Leukemia (ALL) Phase III WGS',
+                            'investigation_title' => 'TARGET: Ambiguous Lineage Acute Leukemia (ALAL) Phase III WGS',
                             'contacts' => [
                                 {
                                     'last_name' => 'Ma',
@@ -4028,12 +4107,12 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'protocol_info' => {
                             'Extraction' => {
-                                'BCCA' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
-                                        },
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'stjude.org:Protocol:DNA-Extraction-Qiagen-QIAamp:01',
                                     },
+                                    'center_name' => 'StJude',
                                 },
                             },
                             'ReadAlign' => {
@@ -4099,6 +4178,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-QIAamp:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ExomeCapture' => {
                                 'BCG-Danvers' => {
                                     'default' => {
@@ -4237,6 +4325,79 @@ use NCI::OCGDCC::Config qw( :all );
                             },
                         },
                     },
+                    'Phase3' => {
+                        'idf' => {
+                            'investigation_title' => 'TARGET: Ambiguous Lineage Acute Leukemia (ALAL) Phase III WXS',
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'stjude.org:Protocol:DNA-Extraction-Qiagen-QIAamp:01',
+                                    },
+                                    'center_name' => 'StJude',
+                                },
+                            },
+                            'ExomeCapture' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WXS-ExomeCapture:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WXS-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                            'StructVariant-ABySS' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:WXS-StructVariant-ABySS:02',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
             'AML' => {
@@ -4275,6 +4436,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'fredhutch.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'FHCRC',
+                                },
+                            },
                             'ReadAlign' => {
                                 'BCCA' => {
                                     'default' => {
@@ -4349,6 +4519,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'fredhutch.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'FHCRC',
+                                },
+                            },
                             'LibraryPrep' => {
                                 'BCCA' => {
                                     'filter' => {
@@ -4537,6 +4716,17 @@ use NCI::OCGDCC::Config qw( :all );
                                 },
                             ],
                         },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'fredhutch.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'FHCRC',
+                                },
+                            },
+                        },
                     },
                 },
                 'WGS' => {
@@ -4604,16 +4794,22 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'protocol_info' => {
                             'Extraction' => {
-                                'BCCA' => {
-                                    'filter' => {
-                                        'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
-                                        },
-                                        'barcodes' => [qw(
-                                            TARGET-20-PAKIYW-03A-01D
-                                            TARGET-20-PAKIYW-14A-01D
-                                        )],
+                                # extraction protocol info config has no center name hash key level
+                                'filter' => {
+                                    'data' => {
+                                        'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
                                     },
+                                    'barcodes' => [qw(
+                                        TARGET-20-PAKIYW-03A-01D
+                                        TARGET-20-PAKIYW-14A-01D
+                                    )],
+                                    'center_name' => 'BCCA',
+                                },
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'fredhutch.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'FHCRC',
                                 },
                             },
                             'ReadAlign' => {
@@ -4674,6 +4870,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'fredhutch.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'FHCRC',
+                                },
+                            },
                             'ExomeCapture' => {
                                 'BCM' => {
                                     'default' => {
@@ -4796,6 +5001,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'LibraryPrep' => {
                                 'NCI-Khan' => {
                                     'default' => {
@@ -4832,6 +5046,15 @@ use NCI::OCGDCC::Config qw( :all );
                 'WGS' => {
                     '_default' => {
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ReadAlign' => {
                                 'CGI' => {
                                     'default' => {
@@ -4849,6 +5072,15 @@ use NCI::OCGDCC::Config qw( :all );
                 'WXS' => {
                     '_default' => {
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-GenomicTips:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'LibraryPrep' => {
                                 'BCM' => {
                                     'default' => {
@@ -4917,6 +5149,15 @@ use NCI::OCGDCC::Config qw( :all );
                         'add_data_types' => {
                             'Targeted-Capture' => {
                                 'protocol_info' => {
+                                    'Extraction' => {
+                                        # extraction protocol info config has no center name hash key level
+                                        'default' => {
+                                            'data' => {
+                                                'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-GenomicTips:01',
+                                            },
+                                            'center_name' => 'NCH',
+                                        },
+                                    },
                                     'ReadAlign' => {
                                         'BCM' => {
                                             'default' => {
@@ -4956,6 +5197,15 @@ use NCI::OCGDCC::Config qw( :all );
                 'WGS' => {
                     '_default' => {
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-GenomicTips:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ReadAlign' => {
                                 'CGI' => {
                                     'default' => {
@@ -4973,6 +5223,15 @@ use NCI::OCGDCC::Config qw( :all );
                 'WXS' => {
                     '_default' => {
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-GenomicTips:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'LibraryPrep' => {
                                 'BCM' => {
                                     'default' => {
@@ -5036,6 +5295,15 @@ use NCI::OCGDCC::Config qw( :all );
                         'add_data_types' => {
                             'Targeted-Capture' => {
                                 'protocol_info' => {
+                                    'Extraction' => {
+                                        # extraction protocol info config has no center name hash key level
+                                        'default' => {
+                                            'data' => {
+                                                'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-GenomicTips:01',
+                                            },
+                                            'center_name' => 'NCH',
+                                        },
+                                    },
                                     'ReadAlign' => {
                                         'BCM' => {
                                             'default' => {
@@ -5070,6 +5338,65 @@ use NCI::OCGDCC::Config qw( :all );
                 },    
             },
             'NBL' => {
+                'miRNA-seq' => {
+                    '_default' => {
+                        'idf' => {
+                            'contacts' => [
+                                {
+                                    'last_name' => 'Ma',
+                                    'first_name' => 'Yussanne',
+                                    'mid_initials' => 'P',
+                                    'email' => 'yma@bcgsc.ca',
+                                    'phone' => '+1 604 707 5800 Ext 6082',
+                                    'fax' => '+1 604 876 3561',
+                                    'address' => 'Suite 100-570 West 7th Ave, Vancouver, BC Canada V5Z 4S6',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                        'data analyst',
+                                        'submitter',
+                                    ],
+                                },
+                                {
+                                    'last_name' => 'Novik',
+                                    'first_name' => 'Karen',
+                                    'mid_initials' => 'L',
+                                    'email' => 'knovik@bcgsc.ca',
+                                    'phone' => '+1 604 707 8000 Ext 7983',
+                                    'fax' => '+1 604 675 8178',
+                                    'address' => '675 West 10th Ave Vancouver, BC Canada V5Z 1L3',
+                                    'affiliation' => 'BC Cancer Agency Canada\'s Michael Smith Genome Sciences Centre',
+                                    'roles' => [
+                                        'investigator',
+                                    ],
+                                },
+                            ],
+                        },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-TRIzol-RNAeasy:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
+                            'ReadAlign' => {
+                                'BCCA' => {
+                                    'default' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:miRNAseq-ReadAlign-BWA-Picard:01',
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        'exp_centers_incl_design_desc_protocol' => [
+                            'BCCA',
+                        ],
+                    },
+                },
                 'mRNA-seq' => {
                     '_default' => {
                         'idf' => {
@@ -5119,6 +5446,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-TRIzol-RNAeasy:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'LibraryPrep' => {
                                 'BCCA' => {
                                     'filter' => {
@@ -5210,6 +5546,17 @@ use NCI::OCGDCC::Config qw( :all );
                                 },
                             ],
                         },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-GenomicTips:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
+                        },
                         'skip_files' => {
                             'L3' => [
                                 'copy_number/UHN/VisCap_Female_Germline/QC_coverage_panel_of_normals.pdf',
@@ -5289,12 +5636,12 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'protocol_info' => {
                             'Extraction' => {
-                                'BCCA' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
-                                        },
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-GenomicTips:01',
                                     },
+                                    'center_name' => 'NCH',
                                 },
                             },
                             'ReadAlign' => {
@@ -5355,6 +5702,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-GenomicTips:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ExomeCapture' => {
                                 'Broad' => {
                                     'default' => {
@@ -5469,6 +5825,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'LibraryPrep' => {
                                 'NCI-Meltzer' => {
                                     'default' => {
@@ -5574,6 +5939,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'Sequence' => {
                                 'NCI-Meltzer' => {
                                     'filter' => {
@@ -5707,6 +6081,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ExomeCapture' => {
                                 'NCI-Meltzer' => {
                                     'filter' => {
@@ -5808,6 +6191,17 @@ use NCI::OCGDCC::Config qw( :all );
                                 },
                             ],
                         },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
+                        },
                         'exp_centers_incl_design_desc_protocol' => [
                             'NCI-Meltzer',
                         ],
@@ -5845,6 +6239,17 @@ use NCI::OCGDCC::Config qw( :all );
                                 },
                             ],
                         },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
+                        },
                         'exp_centers_excl_exp_desc' => [
                             'BCCA',
                         ],
@@ -5881,6 +6286,17 @@ use NCI::OCGDCC::Config qw( :all );
                                     ],
                                 },
                             ],
+                        },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                         },
                         'add_run_center_barcodes' => {
                             'NCI-Meltzer' => [qw(
@@ -5926,6 +6342,17 @@ use NCI::OCGDCC::Config qw( :all );
                                 },
                             ],
                         },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
+                        },
                     },
                 },
                 'ChIP-seq' => {
@@ -5961,6 +6388,17 @@ use NCI::OCGDCC::Config qw( :all );
                                     ],
                                 },
                             ],
+                        },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                         },
                     },
                 },
@@ -5999,6 +6437,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ReadAlign' => {
                                 'BCCA' => {
                                     'default' => {
@@ -6049,6 +6496,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'LibraryPrep' => {
                                 'BCCA' => {
                                     'default' => {
@@ -6108,6 +6564,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ReadAlign' => {
                                 'BCCA' => {
                                     'default' => {
@@ -6160,6 +6625,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ReadAlign' => {
                                 'BCCA' => {
                                     'default' => {
@@ -6207,6 +6681,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:RNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'LibraryPrep' => {
                                 'BCCA' => {
                                     'default' => {
@@ -6277,6 +6760,17 @@ use NCI::OCGDCC::Config qw( :all );
                                     ],
                                 },
                             ],
+                        },
+                        'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                         },
                         'alt_id_by_barcode' => {
                             'TARGET-50-CAAAAC-01A-02D' => 'TARGET-50-PADWYI-01A-01D',
@@ -6355,12 +6849,12 @@ use NCI::OCGDCC::Config qw( :all );
                         },
                         'protocol_info' => {
                             'Extraction' => {
-                                'BCCA' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
-                                        },
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
                                     },
+                                    'center_name' => 'NCH',
                                 },
                             },
                             'ReadAlign' => {
@@ -6421,6 +6915,15 @@ use NCI::OCGDCC::Config qw( :all );
                             ],
                         },
                         'protocol_info' => {
+                            'Extraction' => {
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                    },
+                                    'center_name' => 'NCH',
+                                },
+                            },
                             'ExomeCapture' => {
                                 'BCM' => {
                                     'default' => {
@@ -6555,6 +7058,15 @@ use NCI::OCGDCC::Config qw( :all );
                         'add_data_types' => {
                             'Targeted-Capture' => {
                                 'protocol_info' => {
+                                    'Extraction' => {
+                                        # extraction protocol info config has no center name hash key level
+                                        'default' => {
+                                            'data' => {
+                                                'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
+                                            },
+                                            'center_name' => 'NCH',
+                                        },
+                                    },
                                     'ReadAlign' => {
                                         'BCM' => {
                                             'default' => {
@@ -6605,12 +7117,12 @@ use NCI::OCGDCC::Config qw( :all );
                     '_default' => {
                         'protocol_info' => {
                             'Extraction' => {
-                                'BCCA' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
-                                        },
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
                                     },
+                                    'center_name' => 'NCH',
                                 },
                             },
                         },
@@ -6628,12 +7140,12 @@ use NCI::OCGDCC::Config qw( :all );
                     '_default' => {
                         'protocol_info' => {
                             'Extraction' => {
-                                'BCCA' => {
-                                    'default' => {
-                                        'data' => {
-                                            'name' => 'bcgsc.ca:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
-                                        },
+                                # extraction protocol info config has no center name hash key level
+                                'default' => {
+                                    'data' => {
+                                        'name' => 'nationwidechildrens.org:Protocol:DNA-Extraction-Qiagen-AllPrep:01',
                                     },
+                                    'center_name' => 'NCH',
                                 },
                             },
                         },

@@ -1,2 +1,3 @@
 Genomic DNA for construction of whole genome shotgun sequencing (WGSS) libraries was prepared from 
-the same biopsy material using the Qiagen AllPrep DNA/RNA Mini Kit (Qiagen, Valencia, CA, USA).
+the same biopsy material using the Qiagen AllPrep DNA/RNA Mini Kit (Qiagen, Valencia, CA, USA). 
+Please see https://ocg.cancer.gov/programs/target/target-methods for full extraction protocol details.

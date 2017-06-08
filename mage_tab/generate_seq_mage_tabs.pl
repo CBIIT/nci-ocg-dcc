@@ -17,7 +17,7 @@ use List::MoreUtils qw( any all none uniq one firstidx );
 use LWP::UserAgent;
 use Math::Round qw( round );
 use NCI::OCGDCC::Config qw( :all );
-use NCI::OCGDCC::Utils qw( get_barcode_info );
+use NCI::OCGDCC::Utils qw( load_configs get_barcode_info );
 use Pod::Usage qw( pod2usage );
 use POSIX qw( strftime );
 use Sort::Key qw( nkeysort );
@@ -56,6 +56,7 @@ my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
 my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
 my @cgi_analysis_dir_names = @{$config_hashref->{'cgi'}->{'analysis_dir_names'}};
+my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
 my @data_types = @{$config_hashref->{'mage_tab'}->{'data'}->{'seq_data_types'}};
 my @search_data_level_dir_names = @{$config_hashref->{'mage_tab'}->{'data'}->{'search_data_level_dir_names'}};
 my @mage_tab_idf_row_names = @{$config_hashref->{'mage_tab'}->{'idf'}->{'row_names'}};
@@ -224,9 +225,9 @@ if (!-d $protocol_data_store) {
     die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
         ": protocols data store $protocol_data_store not found\n";
 }
-# mage-tab config refactored for convenience where current project and 
+# mage_tab config refactored for convenience where current project and
 # dataset config get dynamically loaded below, saves a lot on typing
-my $mt_config_hashref = clone($config_hashref->{'mage-tab'});
+my $mt_config_hashref = clone($config_hashref->{'mage_tab'});
 delete @{$mt_config_hashref}{qw( project dataset )};
 my $ua = LWP::UserAgent->new();
 for my $program_name (@program_names) {
@@ -267,12 +268,12 @@ for my $program_name (@program_names) {
                     ": invalid disease project '$disease_proj'\n";
             }
         }
-        # current project mage-tab config hashref (saves typing)
+        # current project mage_tab config hashref (saves typing)
         if (
-            defined($config_hashref->{'mage-tab'}->{project}->{$program_name}) and
-            defined($config_hashref->{'mage-tab'}->{project}->{$program_name}->{$project_name})
+            defined($config_hashref->{'mage_tab'}->{project}->{$program_name}) and
+            defined($config_hashref->{'mage_tab'}->{project}->{$program_name}->{$project_name})
         ) {
-            $mt_config_hashref->{project} = $config_hashref->{'mage-tab'}->{project}->{$program_name}->{$project_name};
+            $mt_config_hashref->{project} = $config_hashref->{'mage_tab'}->{project}->{$program_name}->{$project_name};
         }
         else {
             $mt_config_hashref->{project} = undef;
@@ -318,15 +319,15 @@ for my $program_name (@program_names) {
             }
             DATASET: for my $dataset (@datasets) {
                 next if defined($user_params{data_sets}) and none { $dataset eq $_ } @{$user_params{data_sets}};
-                # current dataset mage-tab config hashref (saves typing)
+                # current dataset mage_tab config hashref (saves typing)
                 if (
-                    defined($config_hashref->{'mage-tab'}->{dataset}->{$program_name}) and
-                    defined($config_hashref->{'mage-tab'}->{dataset}->{$program_name}->{$project_name}) and
-                    defined($config_hashref->{'mage-tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}) and
-                    defined($config_hashref->{'mage-tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}->{$dataset})
+                    defined($config_hashref->{'mage_tab'}->{dataset}->{$program_name}) and
+                    defined($config_hashref->{'mage_tab'}->{dataset}->{$program_name}->{$project_name}) and
+                    defined($config_hashref->{'mage_tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}) and
+                    defined($config_hashref->{'mage_tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}->{$dataset})
                 ) {
                     $mt_config_hashref->{dataset} =
-                        $config_hashref->{'mage-tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}->{$dataset};
+                        $config_hashref->{'mage_tab'}->{dataset}->{$program_name}->{$project_name}->{$data_type}->{$dataset};
                 }
                 else {
                     $mt_config_hashref->{dataset} = undef;
@@ -779,7 +780,7 @@ for my $program_name (@program_names) {
                             my $file = $File::Find::name;
                             my $parent_dir = $File::Find::dir;
                             # skip manifest files
-                            return if $file_name eq $config_hashref->{'common'}->{'default_manifest_file_name'};
+                            return if $file_name eq $default_manifest_file_name;
                             # skip configured, parsed files
                             if (any { $file eq $_ } map { @{$_} } grep(defined, @files_to{qw( configured parse )})) {
                                 # do nothing
@@ -2829,6 +2830,7 @@ for my $program_name (@program_names) {
                         $nucleic_acid_ltr = '';
                     }
                     # build SDRF data
+                    my $extract_center_name;
                     my @sdrf_exp_data;
                     for my $col_key (
                         nkeysort { $mage_tab_sdrf_base_col_idx_by_type_key{exp}{$_} } keys %{$mage_tab_sdrf_base_col_idx_by_type_key{exp}}
@@ -3117,19 +3119,28 @@ for my $program_name (@program_names) {
                             my $protocol_hashref;
                             if (
                                 defined($protocol_config_hashref) and
-                                defined($protocol_config_hashref->{$protocol_type}) and
-                                defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name})
+                                defined($protocol_config_hashref->{$protocol_type})
                             ) {
                                 if (
-                                    defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}) and
-                                    any { $barcode eq $_ } @{$protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{barcodes}}
+                                    defined($protocol_config_hashref->{$protocol_type}->{filter}) and
+                                    any { $barcode eq $_ } @{$protocol_config_hashref->{$protocol_type}->{filter}->{barcodes}}
                                 ) {
-                                    $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{filter}->{data});
+                                    $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{filter}->{data});
+                                    if (
+                                        defined($protocol_config_hashref->{$protocol_type}->{filter}->{center_name})
+                                    ) {
+                                        $extract_center_name = $protocol_config_hashref->{$protocol_type}->{filter}->{center_name};
+                                    }
                                 }
                                 elsif (
-                                    defined($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default})
+                                    defined($protocol_config_hashref->{$protocol_type}->{default})
                                 ) {
-                                    $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{$exp_center_name}->{default}->{data});
+                                    $protocol_hashref = clone($protocol_config_hashref->{$protocol_type}->{default}->{data});
+                                    if (
+                                        defined($protocol_config_hashref->{$protocol_type}->{default}->{center_name})
+                                    ) {
+                                        $extract_center_name = $protocol_config_hashref->{$protocol_type}->{default}->{center_name};
+                                    }
                                 }
                                 if (defined($protocol_hashref)) {
                                     # set default values if not specified in override
@@ -3151,28 +3162,37 @@ for my $program_name (@program_names) {
                                 my $protocol_object_name = $protocol_type;
                                 $protocol_object_name = "${nucleic_acid_type}-${protocol_type}" if $nucleic_acid_type;
                                 $protocol_hashref->{name} = get_lsid(
-                                    authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{authority},
-                                    namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{namespace_prefix},
+                                    authority => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$extract_center_name}->{authority},
+                                    namespace_prefix => $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$extract_center_name}->{namespace_prefix},
                                     namespace => 'Protocol',
                                     object => $protocol_object_name,
                                     revision => $mt_config_hashref->{default}->{'protocol_revision'},
                                 );
                             }
                             if (none { $protocol_hashref->{name} eq $_->{name} } @protocol_data) {
-                                @{$protocol_hashref}{qw( type data_type center_name )} = ( $protocol_type, $exp_data_type, $exp_center_name );
+                                @{$protocol_hashref}{qw( type data_type center_name )} = (
+                                    $protocol_type, $exp_data_type, ( defined($extract_center_name) ? $extract_center_name : $exp_center_name )
+                                );
                                 push @protocol_data, $protocol_hashref;
                             }
                             $field_value = $protocol_hashref->{name};
                         }
                         elsif ($col_key eq 'Performer') {
-                            $field_value = (
-                                defined($exp_pkg_xml->{Organization}) and
-                                defined($exp_pkg_xml->{Organization}->{type}) and 
-                                lc($exp_pkg_xml->{Organization}->{type}) eq 'center' and
-                                defined($exp_pkg_xml->{Organization}->{Name}) and
-                                defined($exp_pkg_xml->{Organization}->{Name}->{content})
-                            ) ? $exp_pkg_xml->{Organization}->{Name}->{content}
-                              : $exp_center_name;
+                            $field_value =
+                                defined($extract_center_name)
+                                    ? defined($mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$extract_center_name}->{full_name})
+                                        ? $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$extract_center_name}->{full_name}
+                                        : $extract_center_name
+                                    : (
+                                        defined($exp_pkg_xml->{Organization}) and
+                                        defined($exp_pkg_xml->{Organization}->{type}) and
+                                        lc($exp_pkg_xml->{Organization}->{type}) eq 'center' and
+                                        defined($exp_pkg_xml->{Organization}->{Name}) and
+                                        defined($exp_pkg_xml->{Organization}->{Name}->{content})
+                                    ) ? $exp_pkg_xml->{Organization}->{Name}->{content}
+                                      : defined($mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{full_name})
+                                          ? $mt_config_hashref->{idf}->{'protocol_center_info_by_name'}->{$exp_center_name}->{full_name}
+                                          : $exp_center_name;
                         }
                         elsif ($col_key eq 'Extract Name') {
                             $field_value = $barcode;

@@ -1,0 +1,2 @@
+RNA was prepared from using the Qiagen AllPrep DNA/RNA Mini Kit (Qiagen, Valencia, CA, USA).
+Please see https://ocg.cancer.gov/programs/target/target-methods for full extraction protocol details.
