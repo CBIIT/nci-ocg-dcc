@@ -141,13 +141,13 @@ if (@ARGV) {
 }
 print STDERR "\%user_params:\n", Dumper(\%user_params) if $debug;
 my $adm_owner_uid = getpwnam($adm_owner_name)
-    or die "ERROR: couldn't get uid for $adm_owner_name: $!\n";
+    or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+           ": couldn't get uid for $adm_owner_name: $!\n";
 my $dn_ctrld_group_gid = getgrnam($dn_ctrld_group_name)
-    or die "ERROR: couldn't get gid for $dn_ctrld_group_name\n";
+    or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
+           ": couldn't get gid for $dn_ctrld_group_name\n";
 for my $program_name (@program_names) {
     next if defined($user_params{programs}) and none { $program_name eq $_ } @{$user_params{programs}};
-    my $manifest_download_gid = getgrnam("\L$program_name\E-dn-adm")
-        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for \L$program_name\E-dn-adm\n";
     my $program_data_dir = "/local/ocg-dcc/data/\U$program_name\E";
     my $program_download_ctrld_dir = "/local/ocg-dcc/download/\U$program_name\E/Controlled";
     for my $project_name (@{$program_project_names{$program_name}}) {
