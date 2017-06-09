@@ -225,13 +225,6 @@ if (@ARGV) {
         else {
             @valid_user_params = @user_params;
         }
-        if (!@valid_choices) {
-            (my $type = $param_groups[$i]) =~ s/s$//;
-            pod2usage(
-                -message => "Config missing for $type: check config file",
-                -verbose => 0,
-            );
-        }
         if (@invalid_user_params) {
             (my $type = $param_groups[$i]) =~ s/s$//;
             $type =~ s/_/ /g;
