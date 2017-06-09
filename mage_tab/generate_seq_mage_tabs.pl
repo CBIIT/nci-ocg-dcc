@@ -17,7 +17,13 @@ use List::MoreUtils qw( any all none uniq one firstidx );
 use LWP::UserAgent;
 use Math::Round qw( round );
 use NCI::OCGDCC::Config qw( :all );
-use NCI::OCGDCC::Utils qw( load_configs get_barcode_info );
+use NCI::OCGDCC::Utils qw(
+    load_configs
+    get_barcode_info
+    get_ncit_disease
+    get_ncit_disease_state
+    get_ncit_organism_part
+);
 use Pod::Usage qw( pod2usage );
 use POSIX qw( strftime );
 use Sort::Key qw( nkeysort );
@@ -2863,35 +2869,7 @@ for my $program_name (@program_names) {
                             $field_value = 'NCIt';
                         }
                         elsif ($col_key eq 'Characteristics[DiseaseState]') {
-                            my $ncit_disease = $disease_code eq '00' ? 'Normal' : 
-                                               $disease_code eq '01' ? 'Diffuse Large B-Cell Lymphoma' :
-                                               $disease_code eq '02' ? 'Lung Cancer' :
-                                               $disease_code eq '10' ? 'Acute Lymphoblastic Leukemia' :
-                                               $disease_code eq '15' ? 'Mixed Phenotype Acute Leukemia' :
-                                               $disease_code eq '20' ? 'Acute Myeloid Leukemia' :
-                                               $disease_code eq '21' ? 'Acute Myeloid Leukemia' :
-                                               $disease_code eq '30' ? 'Neuroblastoma' :
-                                               $disease_code eq '40' ? 'Osteosarcoma' :
-                                               $disease_code eq '41' ? 'Ewing Sarcoma' :
-                                               $disease_code eq '50' ? 'Kidney Wilms Tumor' :
-                                               $disease_code eq '51' ? 'Clear Cell Sarcoma of the Kidney' :
-                                               $disease_code eq '52' ? 'Rhabdoid Tumor of the Kidney' :
-                                               $disease_code eq '60' ? 'Ependymoma' :
-                                               $disease_code eq '61' ? 'Glioblastoma' :
-                                               $disease_code eq '62' ? 'Rhabdoid Tumor of the Kidney' :
-                                               $disease_code eq '63' ? 'Low Grade Glioma' :
-                                               $disease_code eq '64' ? 'Medulloblastoma' : 
-                                               $disease_code eq '65' ? 'CNS Disease Other' : 
-                                               $disease_code eq '70' ? 'Anaplastic Large Cell Lymphoma' :
-                                               $disease_code eq '71' ? 'Burkitt Lymphoma' : 
-                                               $disease_code eq '80' ? 'Rhabdomyosarcoma' :
-                                               $disease_code eq '81' ? 'Non-Rhabdomyosarcoma Soft Tissue Sarcoma' :
-                                               # special disease codes
-                                               $disease_code eq '100' ? 'Diffuse Large B-Cell Lymphoma' :
-                                               $disease_code eq '101' ? 'Follicular Lymphoma' :
-                                               undef;
-                            die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
-                                ": unknown disease code $disease_code\n" unless $ncit_disease;
+                            my $ncit_disease = get_ncit_disease($disease_code);
                             # special TARGET adjustments to NCIT disease ontology term
                             if ($program_name eq 'TARGET') {
                                 if ($disease_code eq '10') {
@@ -2936,39 +2914,7 @@ for my $program_name (@program_names) {
                                     $ncit_disease = "Childhood $ncit_disease";
                                 }
                             }
-                            my $ncit_disease_state = $tissue_code eq '01' ? $ncit_disease :
-                                                     $tissue_code eq '02' ? "Recurrent $ncit_disease" :
-                                                     $tissue_code eq '03' ? $ncit_disease :
-                                                     $tissue_code eq '04' ? "Recurrent $ncit_disease" :
-                                                     $tissue_code eq '05' ? $ncit_disease :
-                                                     $tissue_code eq '06' ? "Metastatic $ncit_disease" :
-                                                     $tissue_code eq '07' ? $ncit_disease :
-                                                     $tissue_code eq '08' ? $ncit_disease :
-                                                     $tissue_code eq '09' ? $ncit_disease :
-                                                     $tissue_code eq '10' ? $ncit_disease :
-                                                     $tissue_code eq '11' ? $ncit_disease :
-                                                     $tissue_code eq '12' ? $ncit_disease :
-                                                     $tissue_code eq '13' ? $ncit_disease :
-                                                     $tissue_code eq '14' ? $ncit_disease :
-                                                     $tissue_code eq '15' ? $ncit_disease :
-                                                     $tissue_code eq '16' ? $ncit_disease :
-                                                     $tissue_code eq '17' ? $ncit_disease :
-                                                     $tissue_code eq '18' ? $ncit_disease :
-                                                     $tissue_code eq '20' ? $ncit_disease : 
-                                                     $tissue_code eq '40' ? "Recurrent $ncit_disease" :
-                                                     $tissue_code eq '41' ? $ncit_disease :
-                                                     $tissue_code eq '42' ? $ncit_disease : 
-                                                     $tissue_code eq '50' ? $ncit_disease :
-                                                     $tissue_code eq '60' ? $ncit_disease :
-                                                     $tissue_code eq '61' ? $ncit_disease :
-                                                     $tissue_code eq '99' ? $ncit_disease :
-                                                     # special exceptions
-                                                     $disease_code eq '100' ? '' :
-                                                     $disease_code eq '101' ? '' :
-                                                     undef;
-                            die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
-                                ": unknown tissue code $tissue_code\n" unless defined $ncit_disease_state;
-                            $field_value = $ncit_disease_state;
+                            $field_value = get_ncit_disease_state($ncit_disease, $disease_code, $tissue_code);
                         }
                         elsif ($col_key eq 'Term Source REF 4') {
                             $field_value = 'NCIt';
@@ -3049,39 +2995,7 @@ for my $program_name (@program_names) {
                             $field_value = $mt_config_hashref->{default}->{'term_source_ref'};
                         }
                         elsif ($col_key eq 'Characteristics[OrganismPart]') {
-                            my $ncit_organism_part = $tissue_code eq '01' ? 'Solid Tumor' :
-                                                     $tissue_code eq '02' ? 'Solid Tumor' :
-                                                     $tissue_code eq '03' ? 'Peripheral Blood' :
-                                                     $tissue_code eq '04' ? 'Bone Marrow' :
-                                                     $tissue_code eq '05' ? 'Primary Tumor' :
-                                                     $tissue_code eq '06' ? 'Metastatic Tumor' :
-                                                     $tissue_code eq '07' ? 'Metastatic Tumor' :
-                                                     $tissue_code eq '08' ? 'Primary Tumor' :
-                                                     $tissue_code eq '09' ? 'Bone Marrow' :
-                                                     $tissue_code eq '10' ? 'Peripheral Blood' :
-                                                     $tissue_code eq '11' ? 'Normal Tissue' :
-                                                     $tissue_code eq '12' ? 'Buccal Mucosa' :
-                                                     $tissue_code eq '13' ? 'Lymphocyte' :
-                                                     $tissue_code eq '14' ? 'Bone Marrow' :
-                                                     $tissue_code eq '15' ? 'Bone Marrow' :
-                                                     $tissue_code eq '16' ? 'Bone Marrow' :
-                                                     $tissue_code eq '17' ? 'Lymphoid Tissue' :
-                                                     $tissue_code eq '18' ? 'Adjacent Normal Tissue' :
-                                                     $tissue_code eq '20' ? 'Cell Line' :
-                                                     $tissue_code eq '40' ? 'Peripheral Blood' :
-                                                     $tissue_code eq '41' ? 'Bone Marrow' :
-                                                     $tissue_code eq '42' ? 'Peripheral Blood' :
-                                                     $tissue_code eq '50' ? 'Cell Line' :
-                                                     $tissue_code eq '60' ? 'Xenograft' :
-                                                     $tissue_code eq '61' ? 'Xenograft' :
-                                                     $tissue_code eq '99' ? 'Granulocyte' :
-                                                     # special exceptions
-                                                     $disease_code eq '100' ? '' :
-                                                     $disease_code eq '101' ? '' :
-                                                     undef;
-                            die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
-                                ": unknown tissue code $tissue_code\n" unless defined $ncit_organism_part;
-                            $field_value = $ncit_organism_part;
+                            $field_value = get_ncit_organism_part($disease_code, $tissue_code);
                         }
                         elsif ($col_key eq 'Term Source REF 6') {
                             $field_value = 'NCIt';
