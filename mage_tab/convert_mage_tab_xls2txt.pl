@@ -2,16 +2,19 @@
 
 use strict;
 use warnings;
-use sigtrap qw(handler sig_handler normal-signals error-signals ALRM);
-use Cwd qw(abs_path);
-use File::Basename qw(fileparse);
+use FindBin;
+use lib "$FindBin::Bin/../lib/perl5";
+use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
+use Cwd qw( abs_path );
+use File::Basename qw( fileparse );
 use File::Find;
-use Getopt::Long qw(:config auto_help auto_version);
-use List::Util qw(any all max none);
-use List::MoreUtils qw(uniq);
-use Pod::Usage qw(pod2usage);
-use Sort::Key::Natural qw(natsort);
-use Spreadsheet::Read qw(ReadData cellrow);
+use Getopt::Long qw( :config auto_help auto_version );
+use List::Util qw( any all max none );
+use List::MoreUtils qw( uniq );
+use NCI::OCGDCC::Utils qw( load_configs );
+use Pod::Usage qw( pod2usage );
+use Sort::Key::Natural qw( natsort );
+use Spreadsheet::Read qw( ReadData cellrow );
 use Term::ANSIColor;
 use Data::Dumper;
 
@@ -35,98 +38,16 @@ $Data::Dumper::Sortkeys = sub {
 };
 
 # config
-my @program_names = qw(
-    TARGET
-    CGCI
-    CTD2
-);
-my %program_project_names = (
-    TARGET => [qw(
-        ALL
-        AML
-        CCSK
-        MDLS-NBL
-        MDLS-PPTP
-        NBL
-        OS
-        OS-Brazil
-        OS-Toronto
-        RT
-        WT
-        Resources
-    )],
-    CGCI => [qw(
-        BLGSP
-        HTMCP-CC
-        HTMCP-DLBCL
-        HTMCP-LC
-        MB
-        NHL
-        Resources
-    )],
-    CTD2 => [qw(
-        Broad
-        Columbia
-        CSHL
-        DFCI
-        Emory
-        FHCRC-1
-        FHCRC-2
-        MDACC
-        Stanford
-        TGen
-        UCSF-1
-        UCSF-2
-        UTSW
-        Resources
-    )],
-);
-my @data_types = qw(
-    biospecimen
-    Bisulfite-seq
-    ChIP-seq
-    clinical
-    copy_number_array
-    gene_expression_array
-    GWAS
-    kinome
-    methylation_array
-    miRNA_array
-    miRNA_pcr
-    misc
-    miRNA-seq
-    mRNA-seq
-    pathology_images
-    SAMPLE_MATRIX
-    targeted_capture_sequencing
-    targeted_pcr_sequencing
-    WGS
-    WXS
-);
-my @data_types_w_data_levels = qw(
-    Bisulfite-seq
-    ChIP-seq
-    copy_number_array
-    gene_expression_array
-    GWAS
-    kinome
-    methylation_array
-    miRNA_array
-    miRNA_pcr
-    miRNA-seq
-    mRNA-seq
-    targeted_capture_sequencing
-    targeted_pcr_sequencing
-    WGS
-    WXS
-);
-my @data_level_dir_names = (
-    'L1',
-    'L2',
-    'L3',
-    'L4',
-    'METADATA',
-);
+my $config_hashref = load_configs(qw(
+    common
+));
+my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
+my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
+my @programs_w_data_types = @{$config_hashref->{'common'}->{'programs_w_data_types'}};
+my @data_types = @{$config_hashref->{'common'}->{'data_types'}};
+my @data_types_w_data_levels = @{$config_hashref->{'common'}->{'data_types_w_data_levels'}};
+my @data_level_dir_names = @{$config_hashref->{'common'}->{'data_level_dir_names'}};
+my %program_dn_group_name = %{$config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_group_name'}};
 my @param_groups = qw(
     programs
     projects
@@ -211,8 +132,6 @@ if (@ARGV) {
 print STDERR "\%user_params:\n", Dumper(\%user_params) if $debug;
 for my $program_name (@program_names) {
     next if defined($user_params{programs}) and none { $program_name eq $_ } @{$user_params{programs}};
-    my $manifest_download_gid = getgrnam("\L$program_name\E-dn-adm") 
-        or die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": couldn't get gid for \L$program_name\E-dn-adm\n";
     for my $project_name (@{$program_project_names{$program_name}}) {
         next if defined($user_params{projects}) and none { $project_name eq $_ } @{$user_params{projects}};
         my ($disease_proj, $subproject) = split /-(?=NBL|PPTP|Toronto|Brazil)/, $project_name, 2;
