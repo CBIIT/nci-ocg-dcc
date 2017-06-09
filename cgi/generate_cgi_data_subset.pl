@@ -42,6 +42,19 @@ my @program_names = @{$config_hashref->{'cgi'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'cgi'}->{'program_project_names'}};
 my $data_type_dir_name = $config_hashref->{'cgi'}->{'data_type_dir_name'};
 my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
+my (
+    $adm_owner_name,
+    $dn_adm_group_name,
+    $dn_ctrld_group_name,
+    $dn_ctrld_dir_mode,
+    $dn_ctrld_file_mode,
+) = @{$config_hashref->{'cgi'}->{'data_filesys_info'}}{qw(
+    adm_owner_name
+    dn_adm_group_name
+    dn_ctrld_group_name
+    dn_ctrld_dir_mode
+    dn_ctrld_file_mode
+)};
 my @param_groups = qw(
     programs
     projects
@@ -212,8 +225,8 @@ for my $program_name (@program_names) {
                                     print "Creating $download_parent_dir\n";
                                     make_path($download_parent_dir, {
                                         chmod => 0750,
-                                        owner => 'ocg-dcc-adm',
-                                        group => 'target-dn-ctrld',
+                                        owner => $adm_owner_name,
+                                        group => $dn_ctrld_group_name,
                                     });
                                 }
                                 print "Linking $download_parent_dir/$dir_name ->\n",
@@ -250,8 +263,8 @@ for my $program_name (@program_names) {
                                 print "Creating $download_parent_dir\n";
                                 make_path($download_parent_dir, {
                                     chmod => $is_ctrld ? 0750 : 0755,
-                                    owner => 'ocg-dcc-adm',
-                                    group => $is_ctrld ? 'target-dn-ctrld' : 'target-dn-adm',
+                                    owner => $adm_owner_name,
+                                    group => $is_ctrld ? $dn_ctrld_group_name : $dn_adm_group_name,
                                 });
                             }
                             print "Linking $download_parent_dir/$dir_name ->\n",
@@ -281,8 +294,8 @@ for my $program_name (@program_names) {
                                 print "Creating $download_parent_dir\n";
                                 make_path($download_parent_dir, {
                                     chmod => $is_ctrld ? 0750 : 0755,
-                                    owner => 'ocg-dcc-adm',
-                                    group => $is_ctrld ? 'target-dn-ctrld' : 'target-dn-adm',
+                                    owner => $adm_owner_name,
+                                    group => $is_ctrld ? $dn_ctrld_group_name : $dn_adm_group_name,
                                 });
                             }
                             if (-l $file) {
@@ -308,8 +321,8 @@ for my $program_name (@program_names) {
                             print "Creating $download_parent_dir\n";
                             make_path($download_parent_dir, {
                                 chmod => 0755,
-                                owner => 'ocg-dcc-adm',
-                                group => 'target-dn-adm',
+                                owner => $adm_owner_name,
+                                group => $dn_adm_group_name,
                             });
                         }
                         if ($file_name =~ /\.idf\.txt$/) {
@@ -352,8 +365,8 @@ for my $program_name (@program_names) {
         my $dir_chmod_public_cmd_str  = "find $dataset_download_public_dir -type d -exec chmod 0555 {} \\;";
         my $file_chmod_ctrld_cmd_str  = "find $dataset_download_ctrld_dir -type f -exec chmod 0440 {} \\;";
         my $file_chmod_public_cmd_str = "find $dataset_download_public_dir -type f -exec chmod 0444 {} \\;";
-        my $chown_ctrld_cmd_str       = "chown -R ocg-dcc-adm:target-dn-ctrld $dataset_download_ctrld_dir";
-        my $chown_public_cmd_str      = "chown -R ocg-dcc-adm:target-dn-adm $dataset_download_public_dir";
+        my $chown_ctrld_cmd_str       = "chown -R $adm_owner_name:$dn_ctrld_group_name $dataset_download_ctrld_dir";
+        my $chown_public_cmd_str      = "chown -R $adm_owner_name:$dn_adm_group_name $dataset_download_public_dir";
         for my $cmd_str (
             $rmdir_ctrld_cmd_str, $rmdir_public_cmd_str,
             $dir_chmod_ctrld_cmd_str, $dir_chmod_public_cmd_str,
