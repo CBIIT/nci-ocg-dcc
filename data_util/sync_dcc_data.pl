@@ -42,6 +42,7 @@ my $config_hashref = load_configs(qw(
 ));
 my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
+my %program_subproject_names = %{$config_hashref->{'common'}->{'program_subproject_names'}};
 my @programs_w_data_types = @{$config_hashref->{'common'}->{'programs_w_data_types'}};
 my @data_types = @{$config_hashref->{'common'}->{'data_types'}};
 my @data_types_w_data_levels = @{$config_hashref->{'common'}->{'data_types_w_data_levels'}};
@@ -259,7 +260,8 @@ for my $program_name (@program_names) {
     }
     PROJECT_NAME: for my $project_name (@{$program_project_names{$program_name}}) {
         next if defined $user_params{projects} and none { $project_name eq $_ } @{$user_params{projects}};
-        my ($disease_proj, $subproject) = split /-(?=NBL|PPTP|Toronto|Brazil)/, $project_name, 2;
+        my $subproject_regexp_str = join('|', @{$program_subproject_names{$program_name}});
+        my ($disease_proj, $subproject) = split /-(?=$subproject_regexp_str)/, $project_name, 2;
         my $project_dir_path_part = $disease_proj;
         if (defined $subproject) {
             if ($disease_proj eq 'MDLS') {

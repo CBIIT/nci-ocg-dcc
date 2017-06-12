@@ -55,6 +55,14 @@
             OS
         )],
     },
+    'program_subproject_names' => {
+        'TARGET' => [qw(
+            NBL
+            PPTP
+            Brazil
+            Toronto
+        )],
+    },
     'programs_w_data_types' => [qw(
         TARGET
         CGCI
@@ -162,7 +170,7 @@
                 'file_paths_from_base' => [
                     'cgi/conf/cgi_conf.pl',
                     'common/conf/common_conf.pl',
-                    'data_util/conf/data_util_conf.pl',
+                    'manifests/conf/manifests_conf.pl',
                 ],
             },
             'sync_dcc_data' => {

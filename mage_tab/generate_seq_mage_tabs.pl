@@ -60,6 +60,7 @@ my $config_hashref = load_configs(qw(
 ));
 my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
+my %program_subproject_names = %{$config_hashref->{'common'}->{'program_subproject_names'}};
 my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
 my @cgi_analysis_dir_names = @{$config_hashref->{'cgi'}->{'analysis_dir_names'}};
 my $default_manifest_file_name = $config_hashref->{'manifests'}->{'default_manifest_file_name'};
@@ -242,7 +243,8 @@ for my $program_name (@program_names) {
         next if defined($user_params{projects}) and none { $project_name eq $_ } @{$user_params{projects}};
         # skip Resources project
         next if $project_name eq 'Resources';
-        my ($disease_proj, $subproject) = split /-(?=NBL|PPTP|Toronto|Brazil)/, $project_name, 2;
+        my $subproject_regexp_str = join('|', @{$program_subproject_names{$program_name}});
+        my ($disease_proj, $subproject) = split /-(?=$subproject_regexp_str)/, $project_name, 2;
         my $project_dir = $disease_proj;
         if (defined $subproject) {
             if ($disease_proj eq 'MDLS') {

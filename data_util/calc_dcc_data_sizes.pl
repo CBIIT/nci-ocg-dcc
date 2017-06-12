@@ -2,20 +2,23 @@
 
 use strict;
 use warnings;
-use sigtrap qw(handler sig_handler normal-signals error-signals ALRM);
-use Cwd qw(realpath);
+use FindBin;
+use lib "$FindBin::Bin/../lib/perl5";
+use sigtrap qw( handler sig_handler normal-signals error-signals ALRM );
+use Cwd qw( realpath );
 use Digest::MD5;
-#use Crypt::Digest::SHA256 qw(sha256_file_hex);
+#use Crypt::Digest::SHA256 qw( sha256_file_hex );
 use Digest::SHA;
-use File::Basename qw(fileparse);
+use File::Basename qw( fileparse );
 use File::Find;
 use File::Spec;
-use Getopt::Long qw(:config auto_help auto_version);
-use List::Util qw(any all max none);
-use List::MoreUtils qw(uniq);
+use Getopt::Long qw( :config auto_help auto_version );
+use List::Util qw( any all first max none uniq );
+use NCI::OCGDCC::Config qw( :all );
+use NCI::OCGDCC::Utils qw( load_configs manifest_by_file_path );
 use Number::Bytes::Human;
-use Pod::Usage qw(pod2usage);
-use Sort::Key::Natural qw(natsort);
+use Pod::Usage qw( pod2usage );
+use Sort::Key::Natural qw( natsort );
 use Term::ANSIColor;
 use Data::Dumper;
 
@@ -29,110 +32,28 @@ our $VERSION = '0.1';
 select(STDERR); $| = 1;
 select(STDOUT); $| = 1;
 
-$Data::Dumper::Sortkeys = 1;
 $Data::Dumper::Terse = 1;
 $Data::Dumper::Deepcopy = 1;
-
-# const
-my $CASE_REGEXP = qr/[A-Z]+-\d{2}(?:-\d{2})?-[A-Z0-9]+/;
-my $BARCODE_REGEXP = qr/${CASE_REGEXP}-\d{2}(?:\.\d+)?[A-Z]-\d{2}[A-Z]/;
-my $TARGET_CGI_CASE_DIR_REGEXP = qr/${CASE_REGEXP}(?:(?:-|_)\d+)?/;
+#$Data::Dumper::Indent = 1;
+$Data::Dumper::Sortkeys = sub {
+    my ($hashref) = @_;
+    my @sorted_keys = natsort keys %{$hashref};
+    return \@sorted_keys;
+};
 
 # config
-my @program_names = qw(
-    TARGET
-    CGCI
-    CTD2
-);
-my %program_project_names = (
-    TARGET => [qw(
-        ALL
-        AML
-        CCSK
-        MDLS-NBL
-        MDLS-PPTP
-        NBL
-        OS
-        OS-Brazil
-        OS-Toronto
-        RT
-        WT
-        Resources
-    )],
-    CGCI => [qw(
-        BLGSP
-        HTMCP-CC
-        HTMCP-DLBCL
-        HTMCP-LC
-        MB
-        NHL
-        Resources
-    )],
-    CTD2 => [qw(
-        Broad
-        Columbia
-        CSHL
-        DFCI
-        Emory
-        FHCRC-1
-        FHCRC-2
-        MDACC
-        Stanford
-        TGen
-        UCSF-1
-        UCSF-2
-        UTSW
-        Resources
-    )],
-);
-my @data_types = qw(
-    biospecimen
-    Bisulfite-seq
-    ChIP-seq
-    clinical
-    copy_number_array
-    gene_expression_array
-    GWAS
-    kinome
-    methylation_array
-    miRNA_array
-    miRNA_pcr
-    misc
-    miRNA-seq
-    mRNA-seq
-    pathology_images
-    SAMPLE_MATRIX
-    targeted_capture_sequencing
-    targeted_pcr_sequencing
-    WGS
-    WXS
-);
-my @data_types_w_data_levels = qw(
-    Bisulfite-seq
-    ChIP-seq
-    copy_number_array
-    gene_expression_array
-    GWAS
-    kinome
-    methylation_array
-    miRNA_array
-    miRNA_pcr
-    miRNA-seq
-    mRNA-seq
-    targeted_capture_sequencing
-    targeted_pcr_sequencing
-    WGS
-    WXS
-);
-my $target_cgi_dir_name = 'CGI';
-my @data_level_dir_names = (
-    'L1',
-    'L2',
-    'L3',
-    'L4',
-    'METADATA',
-    $target_cgi_dir_name,
-);
+my $config_hashref = load_configs(qw(
+    cgi
+    common
+));
+my @program_names = @{$config_hashref->{'common'}->{'program_names'}};
+my %program_project_names = %{$config_hashref->{'common'}->{'program_project_names'}};
+my %program_subproject_names = %{$config_hashref->{'common'}->{'program_subproject_names'}};
+my @programs_w_data_types = @{$config_hashref->{'common'}->{'programs_w_data_types'}};
+my @data_types = @{$config_hashref->{'common'}->{'data_types'}};
+my @data_types_w_data_levels = @{$config_hashref->{'common'}->{'data_types_w_data_levels'}};
+my @data_level_dir_names = @{$config_hashref->{'common'}->{'data_level_dir_names'}};
+my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
 my @param_groups = qw(
     programs
     projects
@@ -228,7 +149,8 @@ for my $program_name (@program_names) {
     next if defined $user_params{programs} and none { $program_name eq $_ } @{$user_params{programs}};
     for my $project_name (@{$program_project_names{$program_name}}) {
         next if defined $user_params{projects} and none { $project_name eq $_ } @{$user_params{projects}};
-        my ($disease_proj, $subproject) = split /-(?=NBL|PPTP|Toronto|Brazil)/, $project_name, 2;
+        my $subproject_regexp_str = join('|', @{$program_subproject_names{$program_name}});
+        my ($disease_proj, $subproject) = split /-(?=$subproject_regexp_str)/, $project_name, 2;
         my $project_dir = $disease_proj;
         if (defined $subproject) {
             if ($disease_proj eq 'MDLS') {

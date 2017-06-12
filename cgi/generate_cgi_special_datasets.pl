@@ -42,6 +42,7 @@ my $config_hashref = load_configs(qw(
 # use cgi (not common) program names and program project names
 my @program_names = @{$config_hashref->{'cgi'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'cgi'}->{'program_project_names'}};
+my %program_subproject_names = %{$config_hashref->{'cgi'}->{'program_subproject_names'}};
 my @job_types = @{$config_hashref->{'cgi'}->{'job_types'}};
 my $data_type_dir_name = $config_hashref->{'cgi'}->{'data_type_dir_name'};
 my $cgi_dir_name = $config_hashref->{'cgi'}->{'dir_name'};
@@ -152,7 +153,8 @@ for my $program_name (@program_names) {
     my $program_download_ctrld_dir = "/local/ocg-dcc/download/\U$program_name\E/Controlled";
     for my $project_name (@{$program_project_names{$program_name}}) {
         next if defined($user_params{projects}) and none { $project_name eq $_ } @{$user_params{projects}};
-        my ($disease_proj, $subproject) = split /-(?=NBL|PPTP|Toronto|Brazil)/, $project_name, 2;
+        my $subproject_regexp_str = join('|', @{$program_subproject_names{$program_name}});
+        my ($disease_proj, $subproject) = split /-(?=$subproject_regexp_str)/, $project_name, 2;
         my $project_dir = $disease_proj;
         if (defined $subproject) {
             if ($disease_proj eq 'MDLS') {

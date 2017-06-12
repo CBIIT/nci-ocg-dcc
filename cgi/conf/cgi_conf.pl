@@ -15,6 +15,12 @@
             WT
         )],
     },
+    'program_subproject_names' => {
+        'TARGET' => [qw(
+            NBL
+            Toronto
+        )],
+    },
     'job_types' => [qw(
         BCCA
         FullMafsVcfs
