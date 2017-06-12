@@ -11,7 +11,7 @@ use File::Find;
 use File::Path 2.11 qw( make_path remove_tree );
 use File::Spec;
 use Getopt::Long qw( :config auto_help auto_version );
-use List::Util qw( any all first none uniq );
+use List::Util qw( any all first none sum uniq );
 use List::MoreUtils qw( firstidx );
 use NCI::OCGDCC::Config qw( :all );
 use NCI::OCGDCC::Utils qw( load_configs get_barcode_info );
