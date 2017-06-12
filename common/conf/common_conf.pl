@@ -55,12 +55,12 @@
             OS
         )],
     },
-    'program_subproject_names' => {
+    'program_project_names_w_subprojects' => {
         'TARGET' => [qw(
-            NBL
-            PPTP
-            Brazil
-            Toronto
+            MDLS-NBL
+            MDLS-PPTP
+            OS-Brazil
+            OS-Toronto
         )],
     },
     'programs_w_data_types' => [qw(

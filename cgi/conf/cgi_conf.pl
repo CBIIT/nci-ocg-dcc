@@ -15,10 +15,10 @@
             WT
         )],
     },
-    'program_subproject_names' => {
+    'program_project_names_w_subprojects' => {
         'TARGET' => [qw(
-            NBL
-            Toronto
+            MDLS-NBL
+            OS-Toronto
         )],
     },
     'job_types' => [qw(

@@ -37,7 +37,7 @@ my $config_hashref = load_configs(qw(
 # use cgi (not common) program names and program project names
 my @program_names = @{$config_hashref->{'cgi'}->{'program_names'}};
 my %program_project_names = %{$config_hashref->{'cgi'}->{'program_project_names'}};
-my %program_subproject_names = %{$config_hashref->{'cgi'}->{'program_subproject_names'}};
+my %program_project_names_w_subprojects = %{$config_hashref->{'cgi'}->{'program_project_names_w_subprojects'}};
 my (
     $adm_owner_name,
     $adm_group_name,
@@ -131,35 +131,16 @@ for my $program_name (@program_names) {
     for my $project_name (@{$program_project_names{$program_name}}) {
         next if defined($user_params{projects}) and none { $project_name eq $_ } @{$user_params{projects}};
         print "[$program_name $project_name]\n";
-        my $subproject_regexp_str = join('|', @{$program_subproject_names{$program_name}});
-        my ($disease_proj, $subproject) = split /-(?=$subproject_regexp_str)/, $project_name, 2;
+        my ($disease_proj, $subproject);
+        if (any { $project_name eq $_ } @{$program_project_names_w_subprojects{$program_name}}) {
+            ($disease_proj, $subproject) = split /-/, $project_name, 2;
+        }
+        else {
+            $disease_proj = $project_name;
+        }
         my $project_dir = $disease_proj;
-        if (defined $subproject) {
-            if ($disease_proj eq 'MDLS') {
-                if ($subproject eq 'NBL') {
-                    $project_dir = "$project_dir/NBL";
-                }
-                elsif ($subproject eq 'PPTP') {
-                    $project_dir = "$project_dir/PPTP";
-                }
-                else {
-                    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
-                }
-            }
-            elsif ($disease_proj eq 'OS') {
-                if ($subproject eq 'Toronto') {
-                    $project_dir = "$project_dir/Toronto";
-                }
-                elsif ($subproject eq 'Brazil') {
-                    $project_dir = "$project_dir/Brazil";
-                }
-                else {
-                    die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid subproject '$subproject'\n";
-                }
-            }
-            else {
-                die +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": invalid disease project '$disease_proj'\n";
-            }
+        if (defined($subproject)) {
+            $project_dir = "$project_dir/$subproject";
         }
         open(my $fh, '<', $symlink_file) or
             die +(-t STDOUT ? colored('ERROR', 'red') : 'ERROR'),
