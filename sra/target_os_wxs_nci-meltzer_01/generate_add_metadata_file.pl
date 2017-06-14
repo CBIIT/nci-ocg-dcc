@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use FindBin;
+use File::Spec;
 use List::Util qw(none);
 
 open(my $s_fh, '<', "$FindBin::Bin/sequencers.csv")
@@ -42,7 +43,8 @@ while (<$in_fh>) {
     }
 }
 close($in_fh);
-open(my $out_fh, '>', "$FindBin::Bin/target_os_wxs_nci-meltzer_add_metadata.txt");
+my $sub_name = pop @{[File::Spec->splitdir($FindBin::Bin)]};
+open(my $out_fh, '>', "$FindBin::Bin/${sub_name}_add_metadata.txt");
 print $out_fh join("\t", qw(
     library_id
     sequencer

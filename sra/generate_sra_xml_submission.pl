@@ -3,13 +3,16 @@
 use strict;
 use warnings;
 use FindBin;
+use lib "$FindBin::Bin/../lib/perl5";
 use Config::Tiny;
-use Cwd qw(cwd);
-use File::Basename qw(basename);
-use Getopt::Long qw(:config auto_help auto_version);
-use List::MoreUtils qw(firstidx uniq notall none);
-use Pod::Usage qw(pod2usage);
-use Sort::Key::Natural qw(natsort);
+use Cwd qw( cwd );
+use File::Basename qw( basename );
+use Getopt::Long qw( :config auto_help auto_version );
+use List::MoreUtils qw( firstidx uniq notall none );
+use NCI::OCGDCC::Config qw( :all );
+use NCI::OCGDCC::Utils qw( get_barcode_info );
+use Pod::Usage qw( pod2usage );
+use Sort::Key::Natural qw( natsort );
 use Text::Template;
 use Time::Piece;
 use Data::Dumper;
@@ -20,13 +23,14 @@ our $VERSION = '0.1';
 select(STDERR); $| = 1;
 select(STDOUT); $| = 1;
 
-$Data::Dumper::Sortkeys = 1;
 $Data::Dumper::Terse = 1;
 $Data::Dumper::Deepcopy = 1;
-
-# const
-my $CASE_REGEXP = qr/[A-Z]+-\d{2}(?:-\d{2})?-[A-Z0-9]+/;
-my $BARCODE_REGEXP = qr/${CASE_REGEXP}-\d{2}(?:\.\d+)?[A-Z]-\d{2}[A-Z]/;
+#$Data::Dumper::Indent = 1;
+$Data::Dumper::Sortkeys = sub {
+    my ($hashref) = @_;
+    my @sorted_keys = natsort keys %{$hashref};
+    return \@sorted_keys;
+};
 
 # config
 my %sra_xml_schemas = (
@@ -72,23 +76,42 @@ my @data_file_names = natsort grep { -f "$config->{$submission_label}->{data_dir
 closedir($dh);
 my $num_data_files_used = 0;
 for my $file_name (@data_file_names) {
-    if (my ($barcode) = $file_name =~ /($BARCODE_REGEXP)/i) {
+    if (
+        my ($barcode) = $file_name =~ /($OCG_BARCODE_REGEXP)/i
+    ) {
         $barcode = uc($barcode);
         if (exists $metadata_by_barcode{$barcode}) {
-            my ($file_type) = $file_name =~ /\.(?:(bam|fastq)(?:\.gz)?)$/i;
-            $file_type = lc($file_type);
+            my ($file_ext) = $file_name =~ /\.(?:(bam(?:header\.txt)|fastq(?:\.gz)?))$/i;
+            my $file_type = lc($file_ext) eq 'bamheader.txt' ? 'bamheader' :
+                            lc($file_ext) eq 'fastq.gz'      ? 'fastq'     :
+                            lc($file_ext);
             push @{$metadata_by_barcode{$barcode}{'files'}}, {
                 name => $file_name,
                 type => $file_type,
             };
-            #print "$barcode\n";
-            for (grep { s/\s+$//; m/^\@RG/ } `samtools view -H $config->{$submission_label}->{data_dir}/$file_name`) {
-                my %rg_fields;
-                for (grep { m/:/ } split("\t")) {
-                    my ($name, $value) = split(':');
-                    $rg_fields{$name} = $value;
+            if (
+                $file_type eq 'bam' or
+                $file_type eq 'bamheader'
+            ) {
+                my @rg_lines;
+                if ($file_type eq 'bam') {
+                    @rg_lines = grep { s/\s+$//; m/^\@RG/ } `samtools view -H $config->{$submission_label}->{data_dir}/$file_name`
                 }
-                push @{$metadata_by_barcode{$barcode}{'readgroup_data'}}, \%rg_fields;
+                else {
+                    local $/;
+                    open(my $bh_fh, '<', "$config->{$submission_label}->{data_dir}/$file_name")
+                        or die "ERROR: couldn't open $config->{$submission_label}->{data_dir}/$file_name: $!";
+                    @rg_lines = grep { s/\s+$//; m/^\@RG/ } <$bh_fh>;
+                    close($bh_fh);
+                }
+                for (@rg_lines) {
+                    my %rg_fields;
+                    for (grep { m/:/ } split("\t")) {
+                        my ($name, $value) = split(':');
+                        $rg_fields{$name} = $value;
+                    }
+                    push @{$metadata_by_barcode{$barcode}{'readgroup_data'}}, \%rg_fields;
+                }
             }
             $num_data_files_used++;
         }
@@ -108,7 +131,7 @@ while (<$checksums_fh>) {
     s/^\s+//;
     s/\s+$//;
     my ($checksum, $file_name) = split / (?:\*| )/, $_, 2;
-    if (my ($barcode) = $file_name =~ /($BARCODE_REGEXP)/i) {
+    if (my ($barcode) = $file_name =~ /($OCG_BARCODE_REGEXP)/i) {
         $barcode = uc($barcode);
         if (exists $metadata_by_barcode{$barcode}) {
             my $file_idx = firstidx { $_->{'name'} eq $file_name } @{$metadata_by_barcode{$barcode}{'files'}};
@@ -202,7 +225,7 @@ if ($submission_label =~ /^target_os_w(g|x)s_nci-meltzer/) {
                 sequencer_models => [ $s_model_by_name{$fields[3]} ],
                 run_dates => [ $fields[4] ],
             };
-            $add_metadata_by_library_id{$fields[1]}{wxs_kit} = $fields[2] if $fields[2];
+            $add_metadata_by_library_id{$fields[1]}{capture_kit} = $fields[2] if $fields[2];
         }
         else {
             if (none { $fields[4] eq $_ } @{$add_metadata_by_library_id{$fields[1]}{run_dates}}) {
@@ -256,8 +279,8 @@ for my $barcode (natsort keys %metadata_by_barcode) {
         }
         if (%add_metadata_by_library_id) {
             if ($submission_label =~ /^target_os_wxs_nci-meltzer/) {
-                if (none { $add_metadata_by_library_id{$rg_hashref->{'LB'}}{wxs_kit} eq $_ } @{$metadata_by_barcode{$barcode}{wxs_kits}}) {
-                    push @{$metadata_by_barcode{$barcode}{wxs_kits}}, $add_metadata_by_library_id{$rg_hashref->{'LB'}}{wxs_kit};
+                if (none { $add_metadata_by_library_id{$rg_hashref->{'LB'}}{capture_kit} eq $_ } @{$metadata_by_barcode{$barcode}{capture_kits}}) {
+                    push @{$metadata_by_barcode{$barcode}{capture_kits}}, $add_metadata_by_library_id{$rg_hashref->{'LB'}}{capture_kit};
                 }
             }
             for my $run_date (@{$add_metadata_by_library_id{$rg_hashref->{'LB'}}{run_dates}}) {
@@ -279,15 +302,15 @@ for my $barcode (natsort keys %metadata_by_barcode) {
         my ($title, $design_description, $library_construction_protocol);
         if ($submission_label =~ /^target_os_wxs_nci-meltzer/) {
             $title = "TARGET Osteosarcoma Subject $metadata_by_barcode{$barcode}{case_id} $metadata_by_barcode{$barcode}{tissue_type} $metadata_by_barcode{$barcode}{tissue_name} Whole Exome Sequence";
-            my $wxs_kits_str = join(' and ', sort @{$metadata_by_barcode{$barcode}{wxs_kits}}) . ' ' . ( scalar(@{$metadata_by_barcode{$barcode}{wxs_kits}} > 1) ? 'kits' : 'kit' );
-            delete $metadata_by_barcode{$barcode}{wxs_kits};
+            my $capture_kits_str = join(' and ', sort @{$metadata_by_barcode{$barcode}{capture_kits}}) . ' ' . ( scalar(@{$metadata_by_barcode{$barcode}{capture_kits}} > 1) ? 'kits' : 'kit' );
+            delete $metadata_by_barcode{$barcode}{capture_kits};
             $library_construction_protocol = <<"            LIB_CONST_PROT";
             Genomic DNA was isolated using the Qiagen AllPrep Kit.
             Conventional Illumina DNA sequencing libraries for whole exome sequencing were prepared using 1 mcg genomic DNA fragmented to a mean size of approximately 350 bp in an S1 Covaris Sonicator.
-            Exome sequence was captured for Illumina sequencing following the manufacturers' instructions using the $wxs_kits_str.
+            Exome sequence was captured for Illumina sequencing following the manufacturers' instructions using the $capture_kits_str.
             LIB_CONST_PROT
             $design_description = <<"            DESIGN_DESC";
-            Whole exome sequence analysis of $barcode using $wxs_kits_str.
+            Whole exome sequence analysis of $barcode using $capture_kits_str.
             DESIGN_DESC
         }
         elsif ($submission_label =~ /^target_os_wgs_nci-meltzer/) {
@@ -446,107 +469,6 @@ for my $xml_type (sort keys %sra_xml_schemas) {
 }
 exit;
 
-sub get_barcode_info {
-    my ($barcode) = @_;
-    die "ERROR: invalid barcode '$barcode'" unless $barcode =~ /^$BARCODE_REGEXP$/;
-    my ($case_id, $s_case_id, $sample_id, $disease_code, $tissue_code, $nucleic_acid_code);
-    my @barcode_parts = split('-', $barcode);
-    # TARGET sample ID/barcode
-    if (scalar(@barcode_parts) == 5) {
-        $case_id = join('-', @barcode_parts[0..2]);
-        $s_case_id = $barcode_parts[2];
-        $sample_id = join('-', @barcode_parts[0..3]);
-        ($disease_code, $tissue_code, $nucleic_acid_code) = @barcode_parts[1,3,4];
-    }
-    # CGCI sample ID/barcode
-    elsif (scalar(@barcode_parts) == 6) {
-        $case_id = join('-', @barcode_parts[0..3]);
-        $s_case_id = $barcode_parts[3];
-        $sample_id = join('-', @barcode_parts[0..4]);
-        ($disease_code, $tissue_code, $nucleic_acid_code) = @barcode_parts[1,4,5];
-    }
-    else {
-        die "ERROR: invalid sample ID/barcode $barcode";
-    }
-    ($tissue_code, my $xeno_cell_line_code) = split(/\./, $tissue_code);
-    my $tissue_ltr = substr($tissue_code, -1);
-    #$tissue_code =~ s/\D//g;
-    $tissue_code = substr($tissue_code, 0, 2);
-    my $tissue_type = $tissue_code eq '01' ? 'Primary' :
-                      $tissue_code eq '02' ? 'Recurrent' :
-                      $tissue_code eq '03' ? 'Primary' :
-                      $tissue_code eq '04' ? 'Recurrent' :
-                      $tissue_code eq '05' ? 'Primary' :
-                      # 06,07 Metastatic but Primary for our purposes
-                      $tissue_code eq '06' ? 'Primary' :
-                      $tissue_code eq '07' ? 'Primary' :
-                      # post-adjuvant therapy Primary for our purposes
-                      $tissue_code eq '08' ? 'Primary' :
-                      $tissue_code eq '09' ? 'Primary' :
-                      $tissue_code eq '10' ? 'Normal' :
-                      $tissue_code eq '11' ? 'Normal' :
-                      $tissue_code eq '13' ? 'EBVNormal' :
-                      $tissue_code eq '14' ? 'Normal' :
-                      $tissue_code eq '15' ? 'NormalFibroblast' :
-                      $tissue_code eq '16' ? 'Normal' :
-                      $tissue_code eq '20' ? 'CellLineControl' : 
-                      $tissue_code eq '40' ? 'Recurrent' :
-                      $tissue_code eq '41' ? 'Recurrent' :
-                      $tissue_code eq '42' ? 'Recurrent' : 
-                      $tissue_code eq '50' ? 'CellLine' :
-                      $tissue_code eq '60' ? 'Xenograft' :
-                      $tissue_code eq '61' ? 'Xenograft' :
-                      undef;
-    die "ERROR: unknown tissue code $tissue_code" unless defined $tissue_type;
-    my $tissue_name = $tissue_code eq '01' ? 'Solid Tumor' :
-                      $tissue_code eq '02' ? 'Solid Tumor' :
-                      $tissue_code eq '03' ? 'Peripheral Blood' :
-                      $tissue_code eq '04' ? 'Bone Marrow' :
-                      $tissue_code eq '06' ? 'Metastatic Tumor' :
-                      $tissue_code eq '09' ? 'Bone Marrow' :
-                      $tissue_code eq '10' ? 'Peripheral Blood' :
-                      $tissue_code eq '11' ? 'Tissue' :
-                      $tissue_code eq '13' ? 'EBV Immortalized Normal' :
-                      $tissue_code eq '14' ? 'Bone Marrow' :
-                      $tissue_code eq '15' ? 'Bone Marrow' :
-                      $tissue_code eq '20' ? 'Cell Line' :
-                      $tissue_code eq '40' ? 'Peripheral Blood' :
-                      $tissue_code eq '41' ? 'Bone Marrow' :
-                      $tissue_code eq '42' ? 'Peripheral Blood' :
-                      $tissue_code eq '50' ? 'Cell Line' :
-                      $tissue_code eq '60' ? 'Xenograft' :
-                      $tissue_code eq '61' ? 'Xenograft' :
-                      undef;
-    die "ERROR: unknown tissue code $tissue_code\n" unless $tissue_name;
-    # special fix for TARGET-10-PANKMB
-    if ($case_id eq 'TARGET-10-PANKMB' and $tissue_type eq 'Primary') {
-        $tissue_type .= "${tissue_code}${tissue_ltr}";
-    }
-    # special fix for TARGET-10-PAKKCA
-    elsif ($case_id eq 'TARGET-10-PAKKCA' and $tissue_type eq 'Primary') {
-        $tissue_type .= "${tissue_code}${tissue_ltr}";
-    }
-    # special fix for TARGET-30-PARKGJ
-    elsif ($case_id eq 'TARGET-30-PARKGJ' and ($tissue_type eq 'Primary' or $tissue_type eq 'Normal')) {
-        $tissue_type .= $barcode_parts[$#barcode_parts];
-    }
-    # special fix for TARGET-50-PAKJGM
-    elsif ($case_id eq 'TARGET-50-PAKJGM' and $tissue_type eq 'Normal') {
-        $tissue_type .= $barcode_parts[$#barcode_parts];
-    }
-    return {
-        case_id => $case_id,
-        s_case_id => $s_case_id,
-        sample_id => $sample_id,
-        disease_code => $disease_code,
-        tissue_code => $tissue_code,
-        tissue_type => $tissue_type,
-        tissue_name => $tissue_name,
-        xeno_cell_line_code => $xeno_cell_line_code,
-        nucleic_acid_code => $nucleic_acid_code,
-    };
-}
-
 __END__
 
 =head1 NAME 
@@ -555,7 +477,7 @@ generate_sra_xml_submission.pl - SRA-XML Submission Generator
 
 =head1 SYNOPSIS
 
- generate_sra_xml_submission.pl [options] <submission label>
+ generate_sra_xml_submission.pl <submission label> [options]
  
  Parameters:
     <submission label>          Submission label used in config file and directory

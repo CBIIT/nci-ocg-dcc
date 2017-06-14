@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use FindBin;
+use File::Spec;
 use Sort::Key::Natural;
 use Sort::Key::Maker nat2_keysort => qw(natural natural);
 
@@ -55,7 +56,8 @@ while (<$in_fh>) {
     push @data_arrayref, \@fields;
 }
 close($in_fh);
-open(my $out_fh, '>', "$FindBin::Bin/target_os_wxs_nci-meltzer_metadata.txt");
+my $sub_name = pop @{[File::Spec->splitdir($FindBin::Bin)]};
+open(my $out_fh, '>', "$FindBin::Bin/${sub_name}_metadata.txt");
 print $out_fh join("\t", @header_fields), "\n";
 for my $row_arrayref (nat2_keysort { $_->[0], $_->[2] } @data_arrayref) {
     print $out_fh join("\t", @{$row_arrayref}), "\n";
