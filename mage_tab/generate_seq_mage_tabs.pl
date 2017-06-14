@@ -23,6 +23,7 @@ use NCI::OCGDCC::Utils qw(
     get_ncit_disease
     get_ncit_disease_state
     get_ncit_organism_part
+    get_mage_tab_protocol_hardware_model
 );
 use Pod::Usage qw( pod2usage );
 use POSIX qw( strftime );
@@ -2281,7 +2282,7 @@ for my $program_name (@program_names) {
                     if ($debug{all} or $debug{xml}) {
                         print STDERR "\n",
                             +(-t STDERR ? colored('DEBUG', 'red') : 'DEBUG'), 
-                            ": \$exp_pkg_xml:\n", Dumper($exp_pkg_xml);
+                            ": [$exp_id] \$exp_pkg_xml:\n", Dumper($exp_pkg_xml);
                     }
                     if (scalar(keys(%{$exp_pkg_xml->{EXPERIMENT}->{PLATFORM}})) > 1) {
                         die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), ": unexpected multiple experiment platforms: ", 
@@ -2322,16 +2323,7 @@ for my $program_name (@program_names) {
                     if ($platform eq 'CGI' and (!defined($hardware_model) or $hardware_model =~ /^(unspecified|\s*)$/i)) {
                         $hardware_model = 'Complete Genomics';
                     }
-                    my $protocol_hardware_model =
-                        $hardware_model =~ /complete genomics/i   ? 'CGI'       :
-                        $hardware_model =~ /genome analyzer IIx/i ? 'GAIIx'     :
-                        $hardware_model =~ /genome analyzer II/i  ? 'GAII'      :
-                        $hardware_model =~ /hiseq 2500/i          ? 'HiSeq2500' :
-                        $hardware_model =~ /hiseq 2000/i          ? 'HiSeq2000' :
-                        $hardware_model =~ /miseq/i               ? 'MiSeq'     :
-                        $hardware_model =~ /ion(_| )torrent/i     ? 'IonPGM'    :
-                        die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'), 
-                            ": unknown hardware model $hardware_model";
+                    my $protocol_hardware_model = get_mage_tab_protocol_hardware_model($hardware_model);
                     # special experiment/run exclusions
                     if (
                         # TARGET ALL

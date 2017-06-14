@@ -19,6 +19,7 @@ our @EXPORT_OK = qw(
     get_ncit_disease
     get_ncit_disease_state
     get_ncit_organism_part
+    get_mage_tab_protocol_hardware_model
     manifest_by_file_path
 );
 our %EXPORT_TAGS = (
@@ -302,6 +303,22 @@ sub get_ncit_organism_part {
     die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
         ": unknown tissue code $tissue_code\n" unless defined $ncit_organism_part;
     return $ncit_organism_part;
+}
+
+sub get_mage_tab_protocol_hardware_model {
+    my ($hardware_model) = @_;
+    my $protocol_hardware_model =
+        $hardware_model =~ /complete genomics/i   ? 'CGI'        :
+        $hardware_model =~ /genome analyzer IIx/i ? 'GAIIx'      :
+        $hardware_model =~ /genome analyzer II/i  ? 'GAII'       :
+        $hardware_model =~ /hiseq 2500/i          ? 'HiSeq2500'  :
+        $hardware_model =~ /hiseq 2000/i          ? 'HiSeq2000'  :
+        $hardware_model =~ /miseq/i               ? 'MiSeq'      :
+        $hardware_model =~ /nextseq 500/i         ? 'NextSeq500' :
+        $hardware_model =~ /ion(_| )torrent/i     ? 'IonPGM'     :
+        die "\n", +(-t STDERR ? colored('ERROR', 'red') : 'ERROR'),
+            ": unknown hardware model $hardware_model";
+    return $protocol_hardware_model;
 }
 
 # sort by file path (file column idx 1)
