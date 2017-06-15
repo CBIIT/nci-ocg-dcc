@@ -245,14 +245,21 @@ for my $program_name (@program_names) {
                             !-z $dataset_output_dir) {
                             remove_tree($dataset_output_dir, { keep_root => 1 }) or die "ERROR: could not re-init $dataset_output_dir: $!";
                         }
+                        my (@tcs_data_dirs, @rna_data_dirs);
                         my $tcs_data_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_dir_path_part/targeted_capture_sequencing" .
                                            ( $dataset eq '' ? $dataset : "/$dataset" ) .
                                            "/current/$data_level_dir_name";
-                        print "Found TCS $tcs_data_dir\n" if -d $tcs_data_dir;
+                        if (-d $tcs_data_dir) {
+                            push @tcs_data_dirs, $tcs_data_dir;
+                            print "Found TCS $tcs_data_dir\n";
+                        }
                         my $rna_data_dir = "/local/ocg-dcc/data/\U$program_name\E/$project_dir_path_part/mRNA-seq" .
                                            ( $dataset eq '' ? $dataset : "/$dataset" ) .
                                            "/current/$data_level_dir_name";
-                        print "Found RNA $rna_data_dir\n" if -d $rna_data_dir;
+                        if (-d $rna_data_dir) {
+                            push @rna_data_dirs, $rna_data_dir;
+                            print "Found RNA $rna_data_dir\n";
+                        }
                         if ($data_type eq 'WGS') {
                             # CGI WGS
                             if (-d "$dataset_dir/$cgi_dir_name") {
@@ -370,7 +377,7 @@ for my $program_name (@program_names) {
                                                 }
                                                 my $ver_data_hashref = get_verification_data(
                                                     $disease_barcode, $normal_barcode,
-                                                    $tcs_data_dir, $rna_data_dir,
+                                                    \@tcs_data_dirs, \@rna_data_dirs,
                                                 );
                                                 my (%maf_out_data_by_type, @maf_col_headers, %maf_col_idx_by_name, 
                                                     @splice_col_offsets, $maf_num_orig_cols);
@@ -670,7 +677,7 @@ for my $program_name (@program_names) {
                                                         $ver_data_hashref = undef;
                                                         $ver_data_hashref = get_verification_data(
                                                             $disease_barcode, $normal_barcode,
-                                                            $tcs_data_dir, $rna_data_dir,
+                                                            \@tcs_data_dirs, \@rna_data_dirs,
                                                         );
                                                     }
                                                     if (verify_maf_line($maf_type, \@maf_row_data, \%maf_col_idx_by_name, $ver_data_hashref)) {
@@ -759,7 +766,7 @@ for my $program_name (@program_names) {
                                                     $ver_data_hashref = undef;
                                                     $ver_data_hashref = get_verification_data(
                                                         $disease_barcode, $normal_barcode,
-                                                        $tcs_data_dir, $rna_data_dir,
+                                                        \@tcs_data_dirs, \@rna_data_dirs,
                                                     );
                                                 }
                                                 if (verify_maf_line($maf_type, \@maf_row_data, \%maf_col_idx_by_name, $ver_data_hashref)) {
@@ -818,8 +825,10 @@ for my $program_name (@program_names) {
 exit;
 
 sub get_verification_data {
-    my ($disease_barcode, $normal_barcode,
-        $tcs_data_dir, $rna_data_dir) = @_;
+    my (
+        $disease_barcode, $normal_barcode,
+        $tcs_data_dirs_arrayref, $rna_data_dirs_arrayref,
+    ) = @_;
     my ($case_id, $disease_tissue_code, $disease_tissue_type) =
         @{get_barcode_info($disease_barcode)}{qw( case_id tissue_code tissue_type )};
     my ($normal_tissue_code, $normal_tissue_type) =
@@ -835,9 +844,6 @@ sub get_verification_data {
     my $normal_tissue_code_regexp = $normal_tissue_type =~ /Normal/
                                    ? qr/(?:10|11|12|13|14|15|16|17|18)/
                                    : die "ERROR: normal barcode $normal_barcode not valid";
-    my (@tcs_data_dirs, @rna_data_dirs);
-    push @tcs_data_dirs, $tcs_data_dir if -d $tcs_data_dir;
-    push @rna_data_dirs, $rna_data_dir if -d $rna_data_dir;
     my $cache_file_suffix = !$conserve_memory ? '_i' : '';
     my $ver_data_hashref = {
         disease_barcode => $disease_barcode,
@@ -855,9 +861,9 @@ sub get_verification_data {
                               ? $normal_barcode
                               : die "ERROR invalid data type $ver_data_file_type";
         my @search_dirs = $ver_data_file_type =~ /^tcs/
-                        ? @tcs_data_dirs
+                        ? @{$tcs_data_dirs_arrayref}
                         : $ver_data_file_type =~ /^rna/
-                        ? @rna_data_dirs
+                        ? @{$rna_data_dirs_arrayref}
                         : die "ERROR invalid data type $ver_data_file_type";
         my $cache_file_name = "${cache_file_prefix}_${ver_data_file_type}${cache_file_suffix}.pls";
         if (!-f "$cache_dir/$cache_file_name" or $rebuild_cache) {
