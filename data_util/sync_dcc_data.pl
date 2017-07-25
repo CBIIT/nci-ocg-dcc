@@ -333,7 +333,10 @@ for my $program_name (@program_names) {
                                             defined($config_hashref->{'common'}->{'data_filesys_info'}->{'program_project_dn_ctrld_group_name'}->{$program_name}->{$project_name})
                                          ) ? $config_hashref->{'common'}->{'data_filesys_info'}->{'program_project_dn_ctrld_group_name'}->{$program_name}->{$project_name}
                                            : $config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_ctrld_group_name'}->{$program_name}
-                                       : $config_hashref->{'common'}->{'data_filesys_info'}->{'dn_ro_group_name'};
+                                       : (
+                                            defined($config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_group_name'}->{$program_name})
+                                         ) ? $config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_group_name'}->{$program_name}
+                                           : $config_hashref->{'common'}->{'data_filesys_info'}->{'dn_ro_group_name'};
                         # data types that have data levels (except for Resources datasets)
                         if (( any { $data_type eq $_ } @data_types_w_data_levels ) and $project_name ne 'Resources') {
                             for my $data_level_dir_name (@data_level_dir_names) {
@@ -512,7 +515,10 @@ for my $program_name (@program_names) {
                                          defined($config_hashref->{'common'}->{'data_filesys_info'}->{'program_project_dn_ctrld_group_name'}->{$program_name}->{$project_name})
                                       ) ? $config_hashref->{'common'}->{'data_filesys_info'}->{'program_project_dn_ctrld_group_name'}->{$program_name}->{$project_name}
                                         : $config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_ctrld_group_name'}->{$program_name}
-                                    : $config_hashref->{'common'}->{'data_filesys_info'}->{'dn_ro_group_name'};
+                                    : (
+                                        defined($config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_group_name'}->{$program_name})
+                                      ) ? $config_hashref->{'common'}->{'data_filesys_info'}->{'program_dn_group_name'}->{$program_name}
+                                        : $config_hashref->{'common'}->{'data_filesys_info'}->{'dn_ro_group_name'};
                     my $header = "[$program_name $project_name" . ( $dataset ? " $dataset" : '' ) . " $dest]";
                     my $dest_data_type_sync_config_node_hashref;
                     if ($dest ne 'Release') {
