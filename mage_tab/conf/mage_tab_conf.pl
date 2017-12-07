@@ -3792,16 +3792,16 @@ use NCI::OCGDCC::Config qw( :all );
                             },
                             'LibraryPrep' => {
                                 'BCCA' => {
-                                    #'filter' => {
-                                    #    'data' => {
-                                    #        'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-rRnaDepleted-StrandSpecific:01',
-                                    #    },
+                                    'filter' => {
+                                        'data' => {
+                                            'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-rRnaDepleted-StrandSpecific:01',
+                                        },
                                     # input library names below when known from SRA
-                                    #    'library_names' => [qw(
-                                    #        A24311  A24312  A24313  A24314  A24315
-                                    #        
-                                    #    )],
-                                    #},
+                                        'library_names' => [qw(
+                                            A61061  A61062  A61063  A61064  A61065  A61066  A61067
+					    A61068  A61069  A61070  A61071  A61072  A61073  A61074
+                                        )],
+                                    },
                                     'default' => {
                                         'data' => {
                                             'name' => 'bcgsc.ca:Protocol:mRNAseq-LibraryPrep-Illumina-StrandSpecific:01',
