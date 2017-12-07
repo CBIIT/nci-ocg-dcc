@@ -9,8 +9,8 @@
         )],
         'email_cc_addresses' => [qw(
             tanja.davidsen@nih.gov
-            john.otridge@nih.gov
             daniela.gerhard@nih.gov
+            Joan.Pontius@nih.gov
         )],
         'program_config' => {
             'TARGET' => {
