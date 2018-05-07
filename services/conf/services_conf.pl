@@ -57,6 +57,18 @@
                 email_cc_addresses => [
                     'jaime.guidryauvil@nih.gov',
                 ],
+	    },
+            'CMDC' => {
+                dirs_to_watch => [
+                    '/local/ocg-dcc/upload/CMDC',
+                ],
+                dirs_to_exclude => [
+                    '/local/ocg-dcc/upload/CMDC/.snapshot',
+                ],
+                email_cc_addresses => [
+                    'Caitlyn.Barrett@nih.gov',
+                    'mark.jensen@nih.gov',
+                ],
             },
         },
     },
@@ -108,6 +120,16 @@
                 dirs_to_exclude => [
                     '/local/ocg-dcc/data/GMKF/.snapshot',
                     '/local/ocg-dcc/download/GMKF/.snapshot',
+                ],
+            },
+            'CMDC' => {
+                dirs_to_watch => [
+                    '/local/ocg-dcc/data/CMDC',
+                    '/local/ocg-dcc/download/CMDC',
+                ],
+                dirs_to_exclude => [
+                    '/local/ocg-dcc/data/CMDC/.snapshot',
+                    '/local/ocg-dcc/download/CMDC/.snapshot',
                 ],
             },
         },
