@@ -536,6 +536,13 @@
                     },
                 },
             },
+            'qc_images' => {
+                'default' => {
+                    'controlled' => {
+                        'no_data' => 1,
+                    },
+                },
+            },
             'SAMPLE_MATRIX' => {
                 'default' => {
                     'controlled' => {
