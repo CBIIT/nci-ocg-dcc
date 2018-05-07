@@ -5,6 +5,7 @@
         CGCI
         CTD2
         GMKF
+        CMDC
     )],
     'program_project_names' => {
         'TARGET' => [qw(
@@ -54,6 +55,10 @@
             NBL
             OS
         )],
+        'CMDC' => [qw(
+            DCC
+            Model_QC_Data
+        )],
     },
     'program_project_names_w_subprojects' => {
         'TARGET' => [qw(
@@ -84,6 +89,7 @@
         miRNA-seq
         mRNA-seq
         pathology_images
+        qc_images
         SAMPLE_MATRIX
         shipping_manifests
         targeted_capture_sequencing
@@ -126,12 +132,14 @@
             'CGCI'   => 'ocg-dn-ro',
             'CTD2'   => 'ctd2-dn-net',
             'GMKF'   => 'ocg-dn-ro',
+            'CMDC'   => 'cmdc-dn-intnl',
         },
         'program_dn_ctrld_group_name' => {
             'TARGET' => 'target-dn-ctrld',
             'CGCI'   => 'cgci-dn-ctrld',
             'CTD2'   => 'ctd2-dn-net',
             'GMKF'   => 'gmkf-dn-ctrld',
+            'CMDC'   => 'cmdc-dn-intnl',
         },
         'program_project_dn_ctrld_group_name' => {
             'CGCI' => {
