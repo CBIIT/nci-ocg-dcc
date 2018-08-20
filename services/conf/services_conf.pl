@@ -67,6 +67,8 @@
                 email_cc_addresses => [
                     'Caitlyn.Barrett@nih.gov',
                     'mark.jensen@nih.gov',
+		    'conrado.soria@nih.gov',
+		    'anand.merchant@nih.gov',
                 ],
             },
         },
