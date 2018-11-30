@@ -31,7 +31,6 @@
                     '/local/ocg-dcc/upload/CGCI/.snapshot',
                 ],
                 email_cc_addresses => [
-                    'jaime.guidryauvil@nih.gov',
                     'nicholas.griner@nih.gov'
                 ],
             },
@@ -65,8 +64,6 @@
                     '/local/ocg-dcc/upload/CMDC/.snapshot',
                 ],
                 email_cc_addresses => [
-                    'Caitlyn.Barrett@nih.gov',
-                    'mark.jensen@nih.gov',
 		    'conrado.soria@nih.gov',
 		    'anand.merchant@nih.gov',
                 ],
