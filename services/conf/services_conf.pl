@@ -66,6 +66,7 @@
                 email_cc_addresses => [
 		    'conrado.soria@nih.gov',
 		    'anand.merchant@nih.gov',
+		    'lauren.hurd@nih.gov',
                 ],
             },
         },
