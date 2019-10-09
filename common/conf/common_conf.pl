@@ -14,6 +14,7 @@
             CCSK
             MDLS-NBL
             MDLS-PPTP
+            MDLS-RT_and_ESC
             NBL
             OS
             OS-Brazil
@@ -21,6 +22,7 @@
             RT
             WT
             Resources
+            TAWG
         )],
         'CGCI' => [qw(
             BLGSP
@@ -40,9 +42,13 @@
             Emory
             FHCRC-1
             FHCRC-2
+            JHU
+            OHSU-1
+            OHSU-2
             Resources
             Stanford
             TGen
+            UCSD
             UCSF-1
             UCSF-2
             UTMDA
@@ -64,6 +70,7 @@
         'TARGET' => [qw(
             MDLS-NBL
             MDLS-PPTP
+            MDLS-RT_and_ESC
             OS-Brazil
             OS-Toronto
         )],
