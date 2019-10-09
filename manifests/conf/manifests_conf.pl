@@ -12,6 +12,7 @@
         'CGCI'   => 'md5',
         'CTD2'   => 'md5',
         'GMKF'   => 'md5',
+	'CMDC'   => 'md5',
     },
     'data_filesys_info' => {
         'manifest_user_name' => 'ocg-dcc-adm',
