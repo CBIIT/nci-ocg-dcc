@@ -6,7 +6,6 @@
         'email_to_addresses' => [qw(
             patee.gesuwan@nih.gov
             yiwen.he@nih.gov
-            easaki@mail.nih.gov
         )],
         'email_cc_addresses' => [qw(
             tanja.davidsen@nih.gov
@@ -43,7 +42,7 @@
                     '/local/ocg-dcc/upload/CTD2/.snapshot',
                 ],
                 email_cc_addresses => [
-                    'subhashini.jagu@nih.gov',
+                    'pamela.birriel@nih.gov',
                 ],
             },
             'GMKF' => {
