@@ -9,7 +9,6 @@
         )],
         'email_cc_addresses' => [qw(
             tanja.davidsen@nih.gov
-            daniela.gerhard@nih.gov
         )],
         'program_config' => {
             'TARGET' => {
@@ -43,6 +42,7 @@
                 ],
                 email_cc_addresses => [
                     'pamela.birriel@nih.gov',
+		    'roya.rafiee@nih.gov',
                 ],
             },
             'GMKF' => {
