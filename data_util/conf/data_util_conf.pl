@@ -29,6 +29,11 @@
                 Public
                 Release
             )],
+            'CMDC' => [qw(
+                Internal
+                Public
+                Release
+            )],
         },
         'data_type_sync_config' => {
             'biospecimen' => {
@@ -367,7 +372,7 @@
             'methylation_array' => {
                 'default' => {
                     'L1' => {
-                        'controlled' => {
+                        'public' => {
                             'no_data' => 1,
                         },
                     },
